@@ -85,7 +85,7 @@ fonts:
   - family: Yanolja
     fonts:
       - asset: assets/fonts/Yanolja-Regular.ttf
-      - asset: assets/fonts/Yanolja-Bold.ttf
+      - asset: assets/fonts/Yanolja-bold.ttf
   # - family: Trajan Pro
   #   fonts:
   #     - asset: fonts/TrajanPro.ttf
