@@ -1,6 +1,7 @@
+import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/injectable.dart';
-import 'package:ddd_practice_app/presentation/main/main_page.dart';
+import 'package:ddd_practice_app/presentation/main/start_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,12 +15,16 @@ class AppWidget extends StatelessWidget {
         BlocProvider(create: (context) => getIt<MainCubit>()),
       ],
       child: MaterialApp(
-        home: const MainPage(),
+        home: const StartPage(),
         theme: ThemeData(
           fontFamily: 'Yanolja',
           primarySwatch: Colors.green,
           primaryColor: Colors.cyan,
           canvasColor: Colors.white,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.cyan,
+            centerTitle: true,
+          ),
         ),
       ),
     );
