@@ -8,4 +8,8 @@ class PracticeItemList {
   List colors = [
     [Colors.green.shade400, Colors.redAccent],
   ];
+
+  List router = [
+    '/communityMainPage',
+  ];
 }

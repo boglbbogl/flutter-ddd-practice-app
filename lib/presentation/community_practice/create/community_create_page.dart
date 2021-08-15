@@ -12,6 +12,7 @@ class CommunityCreatePage extends StatelessWidget {
       body: Column(
         children: [
           Text('내용을 입력해 주세요'),
+          // TextFormFidel(),
         ],
       ),
     );
