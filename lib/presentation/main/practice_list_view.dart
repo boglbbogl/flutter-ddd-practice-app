@@ -1,4 +1,5 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/practice_item.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,6 @@ class PracticeListView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: InkWell(
             onTap: () {
-              print('click');
               Navigator.of(context)
                   .pushNamed(PracticeItem().router[index].toString());
             },
@@ -26,8 +26,14 @@ class PracticeListView extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [...PracticeItem().colors[index]],
                   )),
-              child:
-                  Center(child: Text(PracticeItem().items[index].toString())),
+              child: Center(
+                  child: Text(
+                PracticeItem().items[index].toString(),
+                style: theme.textTheme.bodyText2!.copyWith(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              )),
             ),
           ),
         );
