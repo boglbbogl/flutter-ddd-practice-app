@@ -12,10 +12,11 @@ part 'community_main_bloc.freezed.dart';
 
 @Injectable()
 class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
-  final ICommunityRepository communityRepository;
+  // final ICommunityRepository communityRepository;
   CommunityMainBloc(
-    this.communityRepository,
-  ) : super(CommunityMainState.initial());
+      // this.communityRepository,
+      )
+      : super(CommunityMainState.initial());
 
   @override
   Stream<CommunityMainState> mapEventToState(
@@ -23,10 +24,10 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
   ) async* {
     yield* event.map(started: (e) async* {
       yield state.copyWith(isLoading: true);
-      final community = await communityRepository.getCommunity();
+      // final community = await communityRepository.getCommunity();
       yield state.copyWith(
         isLoading: false,
-        commmunity: community,
+        // commmunity: community,
       );
     });
   }

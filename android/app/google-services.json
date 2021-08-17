@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "529306570027",
-    "project_id": "flutter-ddd-practice-app",
-    "storage_bucket": "flutter-ddd-practice-app.appspot.com"
+    "project_number": "926519449755",
+    "project_id": "flutter-ddd-practice-app-686b1",
+    "storage_bucket": "flutter-ddd-practice-app-686b1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:529306570027:android:b1634b9d4c98ff60f1896e",
+        "mobilesdk_app_id": "1:926519449755:android:1fe0c56359e0b22b6f4e3e",
         "android_client_info": {
           "package_name": "com.example.ddd_practice_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "529306570027-r6smgajsf6d0b4un2rf0fe2lrfjlc7fv.apps.googleusercontent.com",
+          "client_id": "926519449755-uslc7d0f8nbvmkbg8ldfe3ef2b26grva.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBCk5Uuv9x658vC3THnSDjRhE1ICldxNBY"
+          "current_key": "AIzaSyBONOzTRyY4GcD-nEaGvuHdW7J7qslxIe0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "529306570027-r6smgajsf6d0b4un2rf0fe2lrfjlc7fv.apps.googleusercontent.com",
+              "client_id": "926519449755-uslc7d0f8nbvmkbg8ldfe3ef2b26grva.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

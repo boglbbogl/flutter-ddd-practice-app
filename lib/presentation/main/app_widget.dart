@@ -16,9 +16,7 @@ class AppWidget extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => getIt<MainCubit>()),
-        BlocProvider(
-            create: (context) => getIt<CommunityMainBloc>()
-              ..add(const CommunityMainEvent.started())),
+        BlocProvider(create: (context) => getIt<CommunityMainBloc>()),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',
@@ -27,6 +25,7 @@ class AppWidget extends StatelessWidget {
           '/communityMainPage': (context) => const CommunityMainPage(),
           '/apiMainPage': (context) => const ApiMainPage(),
         },
+        home: MainPage(),
         theme: ThemeData(
           fontFamily: 'Yanolja',
           primarySwatch: Colors.green,
