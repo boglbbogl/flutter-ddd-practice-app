@@ -15,11 +15,7 @@ class CommunityRepository implements ICommunityRepository {
     try {
       final ref = _firestore.collection("community").doc();
       final doc = await ref.get();
-      if (doc.exists) {
-        return CommunityDto.fromFireStore(doc).toDomain();
-      } else {
-        return null;
-      }
+      return CommunityDto.fromFireStore(doc).toDomain();
     } catch (error) {
       return null;
     }

@@ -14,7 +14,9 @@ class CommunityMainPage extends StatelessWidget {
     return BlocBuilder<CommunityMainBloc, CommunityMainState>(
       builder: (context, state) {
         if (state.commmunity == null) {
-          return const Scaffold();
+          return const Scaffold(
+            backgroundColor: Colors.amber,
+          );
         }
         return Scaffold(
             appBar: appBarForm(context, theme,
@@ -30,7 +32,7 @@ class CommunityMainPage extends StatelessWidget {
                       )),
                 ]),
             body: ListView.builder(
-                itemCount: state.commmunity!.title.length,
+                itemCount: 1,
                 itemBuilder: (context, index) {
                   return Container(
                     width: size.width * 0.9,

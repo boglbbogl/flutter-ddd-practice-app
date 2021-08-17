@@ -129,7 +129,7 @@ class __$CommunityDtoCopyWithImpl<$Res> extends _$CommunityDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CommunityDto extends _CommunityDto {
-  const _$_CommunityDto(
+  _$_CommunityDto(
       {@JsonKey(name: "title") required this.title,
       @JsonKey(name: "bodyText") required this.bodyText})
       : super._();
@@ -178,10 +178,10 @@ class _$_CommunityDto extends _CommunityDto {
 }
 
 abstract class _CommunityDto extends CommunityDto {
-  const factory _CommunityDto(
+  factory _CommunityDto(
       {@JsonKey(name: "title") required String title,
       @JsonKey(name: "bodyText") required String bodyText}) = _$_CommunityDto;
-  const _CommunityDto._() : super._();
+  _CommunityDto._() : super._();
 
   factory _CommunityDto.fromJson(Map<String, dynamic> json) =
       _$_CommunityDto.fromJson;

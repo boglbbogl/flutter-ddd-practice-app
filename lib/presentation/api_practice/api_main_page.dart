@@ -14,19 +14,17 @@ class ApiMainPage extends StatelessWidget {
         return Scaffold(
           body: InkWell(
               onTap: () {
-                // firestore
-                //     .collection("community")
-                //     .doc("123")
-                //     .get()
-                //     .then((DocumentSnapshot ds) {
-                //   print(ds.data());
-                // });
-
+                final ref = firestore.collection("community");
+                final test = ref
+                    .snapshots()
+                    .map((event) => event.docs.map((e) => e.data()["title"]))
+                    .toList();
                 // FirebaseFirestore test = FirebaseFirestore.instance;
                 // test.collection("community").doc('123').set({
                 //   "title": '제목',
                 //   "bodyText": "본문",
                 // });
+                print(test);
               },
               child: Center(child: Text(state.test))),
         );

@@ -7,12 +7,12 @@ part 'community_dto.g.dart';
 
 @freezed
 class CommunityDto with _$CommunityDto {
-  const factory CommunityDto({
+  factory CommunityDto({
     @JsonKey(name: "title") required String title,
     @JsonKey(name: "bodyText") required String bodyText,
   }) = _CommunityDto;
 
-  const CommunityDto._();
+  CommunityDto._();
   factory CommunityDto.fromJson(Map<String, dynamic> json) =>
       _$CommunityDtoFromJson(json);
 
