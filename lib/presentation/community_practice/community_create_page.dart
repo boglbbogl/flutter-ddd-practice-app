@@ -1,7 +1,8 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
+import 'package:ddd_practice_app/application/community_practice/main/community_main_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CommunityCreatePage extends StatelessWidget {
   const CommunityCreatePage({Key? key}) : super(key: key);
@@ -17,7 +18,9 @@ class CommunityCreatePage extends StatelessWidget {
           padding: const EdgeInsets.all(22.0),
           child: InkWell(
             onTap: () {
-              Get.back();
+              context
+                  .read<CommunityMainBloc>()
+                  .add(const CommunityMainEvent.created());
             },
             child: Container(
               height: size.height * 0.08,

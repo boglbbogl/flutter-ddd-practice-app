@@ -19,6 +19,10 @@ class _$CommunityMainEventTearOff {
   _Started started() {
     return const _Started();
   }
+
+  _Created created() {
+    return const _Created();
+  }
 }
 
 /// @nodoc
@@ -29,22 +33,26 @@ mixin _$CommunityMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? created,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Created value) created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Created value)? created,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +114,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() created,
   }) {
     return started();
   }
@@ -114,6 +123,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? created,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -126,6 +136,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Created value) created,
   }) {
     return started(this);
   }
@@ -134,6 +145,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Created value)? created,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -148,14 +160,101 @@ abstract class _Started implements CommunityMainEvent {
 }
 
 /// @nodoc
+abstract class _$CreatedCopyWith<$Res> {
+  factory _$CreatedCopyWith(_Created value, $Res Function(_Created) then) =
+      __$CreatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CreatedCopyWithImpl<$Res>
+    extends _$CommunityMainEventCopyWithImpl<$Res>
+    implements _$CreatedCopyWith<$Res> {
+  __$CreatedCopyWithImpl(_Created _value, $Res Function(_Created) _then)
+      : super(_value, (v) => _then(v as _Created));
+
+  @override
+  _Created get _value => super._value as _Created;
+}
+
+/// @nodoc
+
+class _$_Created implements _Created {
+  const _$_Created();
+
+  @override
+  String toString() {
+    return 'CommunityMainEvent.created()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Created);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() created,
+  }) {
+    return created();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? created,
+    required TResult orElse(),
+  }) {
+    if (created != null) {
+      return created();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Created value) created,
+  }) {
+    return created(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Created value)? created,
+    required TResult orElse(),
+  }) {
+    if (created != null) {
+      return created(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Created implements CommunityMainEvent {
+  const factory _Created() = _$_Created;
+}
+
+/// @nodoc
 class _$CommunityMainStateTearOff {
   const _$CommunityMainStateTearOff();
 
   _CommunityMainState call(
-      {required bool isLoading, required Community? commmunity}) {
+      {required bool isLoading,
+      required List<Community> commmunity,
+      required Community? createCommunity}) {
     return _CommunityMainState(
       isLoading: isLoading,
       commmunity: commmunity,
+      createCommunity: createCommunity,
     );
   }
 }
@@ -166,7 +265,8 @@ const $CommunityMainState = _$CommunityMainStateTearOff();
 /// @nodoc
 mixin _$CommunityMainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  Community? get commmunity => throw _privateConstructorUsedError;
+  List<Community> get commmunity => throw _privateConstructorUsedError;
+  Community? get createCommunity => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CommunityMainStateCopyWith<CommunityMainState> get copyWith =>
@@ -178,9 +278,10 @@ abstract class $CommunityMainStateCopyWith<$Res> {
   factory $CommunityMainStateCopyWith(
           CommunityMainState value, $Res Function(CommunityMainState) then) =
       _$CommunityMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, Community? commmunity});
+  $Res call(
+      {bool isLoading, List<Community> commmunity, Community? createCommunity});
 
-  $CommunityCopyWith<$Res>? get commmunity;
+  $CommunityCopyWith<$Res>? get createCommunity;
 }
 
 /// @nodoc
@@ -196,6 +297,7 @@ class _$CommunityMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? commmunity = freezed,
+    Object? createCommunity = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -205,18 +307,22 @@ class _$CommunityMainStateCopyWithImpl<$Res>
       commmunity: commmunity == freezed
           ? _value.commmunity
           : commmunity // ignore: cast_nullable_to_non_nullable
+              as List<Community>,
+      createCommunity: createCommunity == freezed
+          ? _value.createCommunity
+          : createCommunity // ignore: cast_nullable_to_non_nullable
               as Community?,
     ));
   }
 
   @override
-  $CommunityCopyWith<$Res>? get commmunity {
-    if (_value.commmunity == null) {
+  $CommunityCopyWith<$Res>? get createCommunity {
+    if (_value.createCommunity == null) {
       return null;
     }
 
-    return $CommunityCopyWith<$Res>(_value.commmunity!, (value) {
-      return _then(_value.copyWith(commmunity: value));
+    return $CommunityCopyWith<$Res>(_value.createCommunity!, (value) {
+      return _then(_value.copyWith(createCommunity: value));
     });
   }
 }
@@ -228,10 +334,11 @@ abstract class _$CommunityMainStateCopyWith<$Res>
           _CommunityMainState value, $Res Function(_CommunityMainState) then) =
       __$CommunityMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, Community? commmunity});
+  $Res call(
+      {bool isLoading, List<Community> commmunity, Community? createCommunity});
 
   @override
-  $CommunityCopyWith<$Res>? get commmunity;
+  $CommunityCopyWith<$Res>? get createCommunity;
 }
 
 /// @nodoc
@@ -249,6 +356,7 @@ class __$CommunityMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? commmunity = freezed,
+    Object? createCommunity = freezed,
   }) {
     return _then(_CommunityMainState(
       isLoading: isLoading == freezed
@@ -258,6 +366,10 @@ class __$CommunityMainStateCopyWithImpl<$Res>
       commmunity: commmunity == freezed
           ? _value.commmunity
           : commmunity // ignore: cast_nullable_to_non_nullable
+              as List<Community>,
+      createCommunity: createCommunity == freezed
+          ? _value.createCommunity
+          : createCommunity // ignore: cast_nullable_to_non_nullable
               as Community?,
     ));
   }
@@ -266,16 +378,21 @@ class __$CommunityMainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CommunityMainState implements _CommunityMainState {
-  _$_CommunityMainState({required this.isLoading, required this.commmunity});
+  _$_CommunityMainState(
+      {required this.isLoading,
+      required this.commmunity,
+      required this.createCommunity});
 
   @override
   final bool isLoading;
   @override
-  final Community? commmunity;
+  final List<Community> commmunity;
+  @override
+  final Community? createCommunity;
 
   @override
   String toString() {
-    return 'CommunityMainState(isLoading: $isLoading, commmunity: $commmunity)';
+    return 'CommunityMainState(isLoading: $isLoading, commmunity: $commmunity, createCommunity: $createCommunity)';
   }
 
   @override
@@ -287,14 +404,18 @@ class _$_CommunityMainState implements _CommunityMainState {
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.commmunity, commmunity) ||
                 const DeepCollectionEquality()
-                    .equals(other.commmunity, commmunity)));
+                    .equals(other.commmunity, commmunity)) &&
+            (identical(other.createCommunity, createCommunity) ||
+                const DeepCollectionEquality()
+                    .equals(other.createCommunity, createCommunity)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(commmunity);
+      const DeepCollectionEquality().hash(commmunity) ^
+      const DeepCollectionEquality().hash(createCommunity);
 
   @JsonKey(ignore: true)
   @override
@@ -305,12 +426,15 @@ class _$_CommunityMainState implements _CommunityMainState {
 abstract class _CommunityMainState implements CommunityMainState {
   factory _CommunityMainState(
       {required bool isLoading,
-      required Community? commmunity}) = _$_CommunityMainState;
+      required List<Community> commmunity,
+      required Community? createCommunity}) = _$_CommunityMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  Community? get commmunity => throw _privateConstructorUsedError;
+  List<Community> get commmunity => throw _privateConstructorUsedError;
+  @override
+  Community? get createCommunity => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommunityMainStateCopyWith<_CommunityMainState> get copyWith =>

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/domain/community_practice/i_community_repository.dart';
 import 'package:ddd_practice_app/infrastructure/community_practice/community_dto.dart';
@@ -11,13 +12,27 @@ class CommunityRepository implements ICommunityRepository {
   CommunityRepository(this._firestore);
 
   @override
-  Future<Community?> getCommunity() async {
+  Future<List<Community>> getCommunity() async {
     try {
-      final ref = _firestore.collection("community").doc();
+      final ref = _firestore.collection("community");
       final doc = await ref.get();
-      return CommunityDto.fromFireStore(doc).toDomain();
+      final result = doc.docs
+          .map((e) => CommunityDto.fromFireStore(e).toDomain())
+          .toList();
+
+      return result;
     } catch (error) {
-      return null;
+      return [];
     }
+  }
+
+  @override
+  Future<Unit> createCommunity({
+    required Community community,
+  }) async {
+    final ref = _firestore.collection("community").doc();
+    final toWrite = CommunityDto.fromDomain(community).toJson();
+    await ref.set(toWrite);
+    return unit;
   }
 }

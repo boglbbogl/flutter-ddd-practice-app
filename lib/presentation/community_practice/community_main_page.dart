@@ -2,6 +2,7 @@ import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/main/community_main_bloc.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_create_page.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
+import 'package:ddd_practice_app/presentation/community_practice/community_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -13,11 +14,6 @@ class CommunityMainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CommunityMainBloc, CommunityMainState>(
       builder: (context, state) {
-        if (state.commmunity == null) {
-          return const Scaffold(
-            backgroundColor: Colors.amber,
-          );
-        }
         return Scaffold(
             appBar: appBarForm(context, theme,
                 title: "Community Practice",
@@ -32,25 +28,18 @@ class CommunityMainPage extends StatelessWidget {
                       )),
                 ]),
             body: ListView.builder(
-                itemCount: 1,
+                itemCount: state.commmunity.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: size.width * 0.9,
-                    height: size.height * 0.1,
-                    color: Colors.amber,
-                    child: Column(
-                      children: [
-                        Text(state.commmunity!.title,
-                            style: theme.textTheme.bodyText2!.copyWith(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13)),
-                        Text(state.commmunity!.bodyText,
-                            style: theme.textTheme.bodyText2!.copyWith(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13)),
-                      ],
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 12),
+                    child: Container(
+                      width: size.width * 0.9,
+                      height: size.height * 0.15,
+                      decoration: BoxDecoration(
+                          color: const Color.fromRGBO(235, 235, 235, 1),
+                          borderRadius: BorderRadius.circular(30)),
+                      child: CommunityList(community: state.commmunity[index]),
                     ),
                   );
                 }));
