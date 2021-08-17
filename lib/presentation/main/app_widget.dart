@@ -1,6 +1,5 @@
 import 'package:ddd_practice_app/application/community_practice/main/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
-import 'package:ddd_practice_app/injectable.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/main_page.dart';
