@@ -36,20 +36,20 @@ class CommunityMainPage extends StatelessWidget {
                     width: size.width * 0.9,
                     height: size.height * 0.1,
                     color: Colors.amber,
-                    // child: Column(
-                    //   children: [
-                    //     Text(state.commmunity!.title,
-                    //         style: theme.textTheme.bodyText2!.copyWith(
-                    //             color: Colors.black,
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 13)),
-                    //     Text(state.commmunity!.bodyText,
-                    //         style: theme.textTheme.bodyText2!.copyWith(
-                    //             color: Colors.black,
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 13)),
-                    //   ],
-                    // ),
+                    child: Column(
+                      children: [
+                        Text(state.commmunity!.title,
+                            style: theme.textTheme.bodyText2!.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13)),
+                        Text(state.commmunity!.bodyText,
+                            style: theme.textTheme.bodyText2!.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13)),
+                      ],
+                    ),
                   );
                 }));
       },

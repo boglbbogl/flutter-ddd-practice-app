@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MainStateTearOff {
   const _$MainStateTearOff();
 
-  _MainState call({required bool isLoading}) {
+  _MainState call({required bool isLoading, required String test}) {
     return _MainState(
       isLoading: isLoading,
+      test: test,
     );
   }
 }
@@ -29,6 +30,7 @@ const $MainState = _$MainStateTearOff();
 /// @nodoc
 mixin _$MainState {
   bool get isLoading => throw _privateConstructorUsedError;
+  String get test => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainStateCopyWith<MainState> get copyWith =>
@@ -39,7 +41,7 @@ mixin _$MainState {
 abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
       _$MainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading});
+  $Res call({bool isLoading, String test});
 }
 
 /// @nodoc
@@ -53,12 +55,17 @@ class _$MainStateCopyWithImpl<$Res> implements $MainStateCopyWith<$Res> {
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? test = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      test: test == freezed
+          ? _value.test
+          : test // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -69,7 +76,7 @@ abstract class _$MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
           _MainState value, $Res Function(_MainState) then) =
       __$MainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading});
+  $Res call({bool isLoading, String test});
 }
 
 /// @nodoc
@@ -84,12 +91,17 @@ class __$MainStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? test = freezed,
   }) {
     return _then(_MainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      test: test == freezed
+          ? _value.test
+          : test // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -97,14 +109,16 @@ class __$MainStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_MainState implements _MainState {
-  _$_MainState({required this.isLoading});
+  _$_MainState({required this.isLoading, required this.test});
 
   @override
   final bool isLoading;
+  @override
+  final String test;
 
   @override
   String toString() {
-    return 'MainState(isLoading: $isLoading)';
+    return 'MainState(isLoading: $isLoading, test: $test)';
   }
 
   @override
@@ -113,12 +127,16 @@ class _$_MainState implements _MainState {
         (other is _MainState &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)));
+                    .equals(other.isLoading, isLoading)) &&
+            (identical(other.test, test) ||
+                const DeepCollectionEquality().equals(other.test, test)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isLoading);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(test);
 
   @JsonKey(ignore: true)
   @override
@@ -127,10 +145,13 @@ class _$_MainState implements _MainState {
 }
 
 abstract class _MainState implements MainState {
-  factory _MainState({required bool isLoading}) = _$_MainState;
+  factory _MainState({required bool isLoading, required String test}) =
+      _$_MainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  String get test => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MainStateCopyWith<_MainState> get copyWith =>

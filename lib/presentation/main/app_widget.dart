@@ -23,9 +23,8 @@ class AppWidget extends StatelessWidget {
         routes: {
           '/mainPage': (context) => const MainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
-          '/apiMainPage': (context) => const ApiMainPage(),
+          '/apiMainPage': (context) => ApiMainPage(),
         },
-        home: MainPage(),
         theme: ThemeData(
           fontFamily: 'Yanolja',
           primarySwatch: Colors.green,

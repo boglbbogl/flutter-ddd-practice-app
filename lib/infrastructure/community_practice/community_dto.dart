@@ -13,16 +13,18 @@ class CommunityDto with _$CommunityDto {
   }) = _CommunityDto;
 
   const CommunityDto._();
+  factory CommunityDto.fromJson(Map<String, dynamic> json) =>
+      _$CommunityDtoFromJson(json);
 
   factory CommunityDto.fromFireStore(
       DocumentSnapshot<Map<String, dynamic>> doc) {
     return CommunityDto.fromJson(doc.data()!);
   }
-  factory CommunityDto.fromJson(Map<String, dynamic> json) =>
-      _$CommunityDtoFromJson(json);
 
-  factory CommunityDto.fromDomain(Community c) =>
-      CommunityDto(title: c.title, bodyText: c.bodyText);
+  factory CommunityDto.fromDomain(Community c) => CommunityDto(
+        title: c.title,
+        bodyText: c.bodyText,
+      );
 
   Community toDomain() => Community(
         title: title,
