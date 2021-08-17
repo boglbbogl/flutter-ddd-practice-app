@@ -20,7 +20,7 @@ class CommunityMainPage extends StatelessWidget {
                 actions: [
                   IconButton(
                       onPressed: () {
-                        Get.to(() => const CommunityCreatePage());
+                        Get.to(() => CommunityCreatePage());
                       },
                       icon: const Icon(
                         Icons.create_outlined,
@@ -35,7 +35,7 @@ class CommunityMainPage extends StatelessWidget {
                         vertical: 10, horizontal: 12),
                     child: Container(
                       width: size.width * 0.9,
-                      height: size.height * 0.15,
+                      height: size.height * 0.1,
                       decoration: BoxDecoration(
                           color: const Color.fromRGBO(235, 235, 235, 1),
                           borderRadius: BorderRadius.circular(30)),

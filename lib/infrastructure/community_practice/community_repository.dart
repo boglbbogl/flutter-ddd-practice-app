@@ -28,11 +28,14 @@ class CommunityRepository implements ICommunityRepository {
 
   @override
   Future<Unit> createCommunity({
-    required Community community,
+    required String title,
+    required String bodyText,
   }) async {
     final ref = _firestore.collection("community").doc();
-    final toWrite = CommunityDto.fromDomain(community).toJson();
-    await ref.set(toWrite);
+    await ref.set({
+      "title": title,
+      "bodyText": bodyText,
+    });
     return unit;
   }
 }

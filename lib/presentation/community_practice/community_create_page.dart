@@ -3,9 +3,12 @@ import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/application/community_practice/main/community_main_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 class CommunityCreatePage extends StatelessWidget {
-  const CommunityCreatePage({Key? key}) : super(key: key);
+  CommunityCreatePage({Key? key}) : super(key: key);
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController bodyTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +21,9 @@ class CommunityCreatePage extends StatelessWidget {
           padding: const EdgeInsets.all(22.0),
           child: InkWell(
             onTap: () {
-              context
-                  .read<CommunityMainBloc>()
-                  .add(const CommunityMainEvent.created());
+              context.read<CommunityMainBloc>().add(CommunityMainEvent.created(
+                  titleController.text, bodyTextController.text));
+              Get.back();
             },
             child: Container(
               height: size.height * 0.08,
@@ -57,11 +60,13 @@ class CommunityCreatePage extends StatelessWidget {
                 ),
               ),
               communityTextForm(
+                  controller: titleController,
                   title: '제목',
                   minLines: 1,
                   maxLines: 1,
                   hintText: '제목을 입력해 수세요'),
               communityTextForm(
+                  controller: bodyTextController,
                   title: '내용',
                   minLines: 10,
                   maxLines: 10,
@@ -78,6 +83,7 @@ class CommunityCreatePage extends StatelessWidget {
     required int maxLines,
     required String title,
     required String hintText,
+    required TextEditingController controller,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,6 +101,7 @@ class CommunityCreatePage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15),
           child: TextFormField(
+            controller: controller,
             minLines: minLines,
             maxLines: maxLines,
             decoration: InputDecoration(

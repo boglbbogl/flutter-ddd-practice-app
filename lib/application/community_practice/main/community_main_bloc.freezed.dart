@@ -20,8 +20,11 @@ class _$CommunityMainEventTearOff {
     return const _Started();
   }
 
-  _Created created() {
-    return const _Created();
+  _Created created(String title, String bodyText) {
+    return _Created(
+      title,
+      bodyText,
+    );
   }
 }
 
@@ -33,13 +36,13 @@ mixin _$CommunityMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() created,
+    required TResult Function(String title, String bodyText) created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? created,
+    TResult Function(String title, String bodyText)? created,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,7 +117,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() created,
+    required TResult Function(String title, String bodyText) created,
   }) {
     return started();
   }
@@ -123,7 +126,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? created,
+    TResult Function(String title, String bodyText)? created,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -163,6 +166,7 @@ abstract class _Started implements CommunityMainEvent {
 abstract class _$CreatedCopyWith<$Res> {
   factory _$CreatedCopyWith(_Created value, $Res Function(_Created) then) =
       __$CreatedCopyWithImpl<$Res>;
+  $Res call({String title, String bodyText});
 }
 
 /// @nodoc
@@ -174,44 +178,80 @@ class __$CreatedCopyWithImpl<$Res>
 
   @override
   _Created get _value => super._value as _Created;
+
+  @override
+  $Res call({
+    Object? title = freezed,
+    Object? bodyText = freezed,
+  }) {
+    return _then(_Created(
+      title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      bodyText == freezed
+          ? _value.bodyText
+          : bodyText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Created implements _Created {
-  const _$_Created();
+  const _$_Created(this.title, this.bodyText);
+
+  @override
+  final String title;
+  @override
+  final String bodyText;
 
   @override
   String toString() {
-    return 'CommunityMainEvent.created()';
+    return 'CommunityMainEvent.created(title: $title, bodyText: $bodyText)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Created);
+    return identical(this, other) ||
+        (other is _Created &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.bodyText, bodyText) ||
+                const DeepCollectionEquality()
+                    .equals(other.bodyText, bodyText)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(bodyText);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CreatedCopyWith<_Created> get copyWith =>
+      __$CreatedCopyWithImpl<_Created>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() created,
+    required TResult Function(String title, String bodyText) created,
   }) {
-    return created();
+    return created(title, bodyText);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? created,
+    TResult Function(String title, String bodyText)? created,
     required TResult orElse(),
   }) {
     if (created != null) {
-      return created();
+      return created(title, bodyText);
     }
     return orElse();
   }
@@ -240,7 +280,13 @@ class _$_Created implements _Created {
 }
 
 abstract class _Created implements CommunityMainEvent {
-  const factory _Created() = _$_Created;
+  const factory _Created(String title, String bodyText) = _$_Created;
+
+  String get title => throw _privateConstructorUsedError;
+  String get bodyText => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$CreatedCopyWith<_Created> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

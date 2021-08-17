@@ -30,13 +30,10 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
         commmunity: community,
       );
     }, created: (e) async* {
-      yield state.copyWith(isLoading: true);
-      final commu = state.createCommunity!.copyWith(
-        title: "",
-        bodyText: "",
+      await communityRepository.createCommunity(
+        title: e.title,
+        bodyText: e.bodyText,
       );
-      final result = communityRepository.createCommunity(community: commu);
-      yield state.copyWith(isLoading: false);
     });
   }
 }
