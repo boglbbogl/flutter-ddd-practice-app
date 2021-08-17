@@ -8,4 +8,9 @@ class Community with _$Community {
     required String title,
     required String bodyText,
   }) = _Community;
+
+  factory Community.empty() => const Community(
+        title: "",
+        bodyText: "",
+      );
 }

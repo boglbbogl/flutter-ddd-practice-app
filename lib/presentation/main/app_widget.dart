@@ -1,17 +1,15 @@
 import 'package:ddd_practice_app/application/community_practice/main/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
+import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/main_page.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:get_it/get_it.dart';
 
 class AppWidget extends StatelessWidget {
-  AppWidget({Key? key}) : super(key: key);
-  final GetIt getIt = GetIt.instance;
+  const AppWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

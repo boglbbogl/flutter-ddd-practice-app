@@ -22,10 +22,10 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
     CommunityMainEvent event,
   ) async* {
     yield* event.map(started: (e) async* {
-      // yield state.copyWith(isLoading: true);
+      yield state.copyWith(isLoading: true);
       final community = await communityRepository.getCommunity();
       yield state.copyWith(
-        // isLoading: false,
+        isLoading: false,
         commmunity: community,
       );
     });

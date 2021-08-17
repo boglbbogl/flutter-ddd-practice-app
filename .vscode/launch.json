@@ -9,11 +9,17 @@
             "request": "launch",
             "type": "dart"
         },
-        {
-            "name": "flutter-ddd-practice-app (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        }
+   {
+       "name": "flutter-ddd-practice-app (production)",
+       "request": "launch",
+       "type": "dart",
+       "flutterMode": "debug",
+       "program": "lib/main_production.dart",
+    //    "args": [
+    //     "--flavor",
+    //     "qa"
+    //   ]
+   }
+        
     ]
 }

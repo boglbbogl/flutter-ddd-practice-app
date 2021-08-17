@@ -21,6 +21,9 @@ class CommunityDto with _$CommunityDto {
   factory CommunityDto.fromJson(Map<String, dynamic> json) =>
       _$CommunityDtoFromJson(json);
 
+  factory CommunityDto.fromDomain(Community c) =>
+      CommunityDto(title: c.title, bodyText: c.bodyText);
+
   Community toDomain() => Community(
         title: title,
         bodyText: bodyText,
