@@ -1,4 +1,4 @@
-import 'package:ddd_practice_app/application/community_practice/main/community_main_bloc.dart';
+import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
@@ -25,7 +25,7 @@ class AppWidget extends StatelessWidget {
         routes: {
           '/mainPage': (context) => const MainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
-          '/apiMainPage': (context) => ApiMainPage(),
+          '/apiMainPage': (context) => const ApiMainPage(),
         },
         theme: ThemeData(
           fontFamily: 'Yanolja',

@@ -31,6 +31,7 @@ class CommunityList extends StatelessWidget {
               maxLines: 2,
               style: theme.textTheme.bodyText2!
                   .copyWith(color: Colors.black, fontSize: 12)),
+          Text(community.createdAt.toString()),
         ],
       ),
     );

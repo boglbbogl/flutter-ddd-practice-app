@@ -14,7 +14,8 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i8;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/community_practice/main/community_main_bloc.dart' as _i13;
+import 'application/community_practice/main_bloc/community_main_bloc.dart'
+    as _i13;
 import 'application/main/main_cubit.dart' as _i11;
 import 'domain/community_practice/i_community_repository.dart' as _i9;
 import 'infrastructure/community_practice/community_repository.dart' as _i10;

@@ -16,10 +16,14 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CommunityTearOff {
   const _$CommunityTearOff();
 
-  _Community call({required String title, required String bodyText}) {
+  _Community call(
+      {required String title,
+      required String bodyText,
+      required DateTime createdAt}) {
     return _Community(
       title: title,
       bodyText: bodyText,
+      createdAt: createdAt,
     );
   }
 }
@@ -31,6 +35,7 @@ const $Community = _$CommunityTearOff();
 mixin _$Community {
   String get title => throw _privateConstructorUsedError;
   String get bodyText => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CommunityCopyWith<Community> get copyWith =>
@@ -41,7 +46,7 @@ mixin _$Community {
 abstract class $CommunityCopyWith<$Res> {
   factory $CommunityCopyWith(Community value, $Res Function(Community) then) =
       _$CommunityCopyWithImpl<$Res>;
-  $Res call({String title, String bodyText});
+  $Res call({String title, String bodyText, DateTime createdAt});
 }
 
 /// @nodoc
@@ -56,6 +61,7 @@ class _$CommunityCopyWithImpl<$Res> implements $CommunityCopyWith<$Res> {
   $Res call({
     Object? title = freezed,
     Object? bodyText = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -66,6 +72,10 @@ class _$CommunityCopyWithImpl<$Res> implements $CommunityCopyWith<$Res> {
           ? _value.bodyText
           : bodyText // ignore: cast_nullable_to_non_nullable
               as String,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -76,7 +86,7 @@ abstract class _$CommunityCopyWith<$Res> implements $CommunityCopyWith<$Res> {
           _Community value, $Res Function(_Community) then) =
       __$CommunityCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String bodyText});
+  $Res call({String title, String bodyText, DateTime createdAt});
 }
 
 /// @nodoc
@@ -92,6 +102,7 @@ class __$CommunityCopyWithImpl<$Res> extends _$CommunityCopyWithImpl<$Res>
   $Res call({
     Object? title = freezed,
     Object? bodyText = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_Community(
       title: title == freezed
@@ -102,6 +113,10 @@ class __$CommunityCopyWithImpl<$Res> extends _$CommunityCopyWithImpl<$Res>
           ? _value.bodyText
           : bodyText // ignore: cast_nullable_to_non_nullable
               as String,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -109,16 +124,19 @@ class __$CommunityCopyWithImpl<$Res> extends _$CommunityCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Community implements _Community {
-  const _$_Community({required this.title, required this.bodyText});
+  _$_Community(
+      {required this.title, required this.bodyText, required this.createdAt});
 
   @override
   final String title;
   @override
   final String bodyText;
+  @override
+  final DateTime createdAt;
 
   @override
   String toString() {
-    return 'Community(title: $title, bodyText: $bodyText)';
+    return 'Community(title: $title, bodyText: $bodyText, createdAt: $createdAt)';
   }
 
   @override
@@ -129,14 +147,18 @@ class _$_Community implements _Community {
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.bodyText, bodyText) ||
                 const DeepCollectionEquality()
-                    .equals(other.bodyText, bodyText)));
+                    .equals(other.bodyText, bodyText)) &&
+            (identical(other.createdAt, createdAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.createdAt, createdAt)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(bodyText);
+      const DeepCollectionEquality().hash(bodyText) ^
+      const DeepCollectionEquality().hash(createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -145,13 +167,17 @@ class _$_Community implements _Community {
 }
 
 abstract class _Community implements Community {
-  const factory _Community({required String title, required String bodyText}) =
-      _$_Community;
+  factory _Community(
+      {required String title,
+      required String bodyText,
+      required DateTime createdAt}) = _$_Community;
 
   @override
   String get title => throw _privateConstructorUsedError;
   @override
   String get bodyText => throw _privateConstructorUsedError;
+  @override
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommunityCopyWith<_Community> get copyWith =>

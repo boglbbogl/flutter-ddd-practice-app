@@ -4,13 +4,15 @@ part 'community.freezed.dart';
 
 @freezed
 class Community with _$Community {
-  const factory Community({
+  factory Community({
     required String title,
     required String bodyText,
+    required DateTime createdAt,
   }) = _Community;
 
-  factory Community.empty() => const Community(
+  factory Community.empty() => Community(
         title: "",
         bodyText: "",
+        createdAt: DateTime.now(),
       );
 }

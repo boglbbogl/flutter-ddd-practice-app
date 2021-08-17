@@ -10,9 +10,11 @@ class CommunityDto with _$CommunityDto {
   factory CommunityDto({
     @JsonKey(name: "title") required String title,
     @JsonKey(name: "bodyText") required String bodyText,
+    @JsonKey(name: "createdAt") required DateTime createdAt,
   }) = _CommunityDto;
 
   CommunityDto._();
+
   factory CommunityDto.fromJson(Map<String, dynamic> json) =>
       _$CommunityDtoFromJson(json);
 
@@ -24,10 +26,12 @@ class CommunityDto with _$CommunityDto {
   factory CommunityDto.fromDomain(Community c) => CommunityDto(
         title: c.title,
         bodyText: c.bodyText,
+        createdAt: c.createdAt,
       );
 
   Community toDomain() => Community(
         title: title,
         bodyText: bodyText,
+        createdAt: createdAt,
       );
 }
