@@ -16,24 +16,30 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
   CommunityMainBloc(
     this.communityRepository,
   ) : super(CommunityMainState.initial());
+  StreamSubscription<List<Community>?>? _likesStreamSubscription;
 
   @override
   Stream<CommunityMainState> mapEventToState(
     CommunityMainEvent event,
   ) async* {
-    yield* event.map(started: (e) async* {
-      yield state.copyWith(isLoading: true);
-      final community = await communityRepository.getCommunity();
+    yield* event.map(
+      started: (e) async* {
+        yield state.copyWith(isLoading: true);
 
-      yield state.copyWith(
-        isLoading: false,
-        commmunity: community,
-      );
-    }, created: (e) async* {
-      await communityRepository.createCommunity(
-        title: e.title,
-        bodyText: e.bodyText,
-      );
-    });
+        await _likesStreamSubscription?.cancel();
+        _likesStreamSubscription = communityRepository.getCommunity().listen(
+              (community) => add(CommunityMainEvent.recived(community)),
+            );
+      },
+      recived: (e) async* {
+        yield state.copyWith(community: e.community);
+      },
+      created: (e) async* {
+        await communityRepository.createCommunity(
+          title: e.title,
+          bodyText: e.bodyText,
+        );
+      },
+    );
   }
 }

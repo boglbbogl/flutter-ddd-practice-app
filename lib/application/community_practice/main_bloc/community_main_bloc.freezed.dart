@@ -20,6 +20,12 @@ class _$CommunityMainEventTearOff {
     return const _Started();
   }
 
+  _Recived recived(List<Community> community) {
+    return _Recived(
+      community,
+    );
+  }
+
   _Created created(String title, String bodyText) {
     return _Created(
       title,
@@ -36,12 +42,14 @@ mixin _$CommunityMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(List<Community> community) recived,
     required TResult Function(String title, String bodyText) created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(List<Community> community)? recived,
     TResult Function(String title, String bodyText)? created,
     required TResult orElse(),
   }) =>
@@ -49,12 +57,14 @@ mixin _$CommunityMainEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
     required TResult orElse(),
   }) =>
@@ -117,6 +127,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(List<Community> community) recived,
     required TResult Function(String title, String bodyText) created,
   }) {
     return started();
@@ -126,6 +137,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(List<Community> community)? recived,
     TResult Function(String title, String bodyText)? created,
     required TResult orElse(),
   }) {
@@ -139,6 +151,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
   }) {
     return started(this);
@@ -148,6 +161,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
     required TResult orElse(),
   }) {
@@ -160,6 +174,125 @@ class _$_Started implements _Started {
 
 abstract class _Started implements CommunityMainEvent {
   const factory _Started() = _$_Started;
+}
+
+/// @nodoc
+abstract class _$RecivedCopyWith<$Res> {
+  factory _$RecivedCopyWith(_Recived value, $Res Function(_Recived) then) =
+      __$RecivedCopyWithImpl<$Res>;
+  $Res call({List<Community> community});
+}
+
+/// @nodoc
+class __$RecivedCopyWithImpl<$Res>
+    extends _$CommunityMainEventCopyWithImpl<$Res>
+    implements _$RecivedCopyWith<$Res> {
+  __$RecivedCopyWithImpl(_Recived _value, $Res Function(_Recived) _then)
+      : super(_value, (v) => _then(v as _Recived));
+
+  @override
+  _Recived get _value => super._value as _Recived;
+
+  @override
+  $Res call({
+    Object? community = freezed,
+  }) {
+    return _then(_Recived(
+      community == freezed
+          ? _value.community
+          : community // ignore: cast_nullable_to_non_nullable
+              as List<Community>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Recived implements _Recived {
+  const _$_Recived(this.community);
+
+  @override
+  final List<Community> community;
+
+  @override
+  String toString() {
+    return 'CommunityMainEvent.recived(community: $community)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Recived &&
+            (identical(other.community, community) ||
+                const DeepCollectionEquality()
+                    .equals(other.community, community)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(community);
+
+  @JsonKey(ignore: true)
+  @override
+  _$RecivedCopyWith<_Recived> get copyWith =>
+      __$RecivedCopyWithImpl<_Recived>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<Community> community) recived,
+    required TResult Function(String title, String bodyText) created,
+  }) {
+    return recived(community);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<Community> community)? recived,
+    TResult Function(String title, String bodyText)? created,
+    required TResult orElse(),
+  }) {
+    if (recived != null) {
+      return recived(community);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Recived value) recived,
+    required TResult Function(_Created value) created,
+  }) {
+    return recived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Recived value)? recived,
+    TResult Function(_Created value)? created,
+    required TResult orElse(),
+  }) {
+    if (recived != null) {
+      return recived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Recived implements CommunityMainEvent {
+  const factory _Recived(List<Community> community) = _$_Recived;
+
+  List<Community> get community => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$RecivedCopyWith<_Recived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -238,6 +371,7 @@ class _$_Created implements _Created {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(List<Community> community) recived,
     required TResult Function(String title, String bodyText) created,
   }) {
     return created(title, bodyText);
@@ -247,6 +381,7 @@ class _$_Created implements _Created {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(List<Community> community)? recived,
     TResult Function(String title, String bodyText)? created,
     required TResult orElse(),
   }) {
@@ -260,6 +395,7 @@ class _$_Created implements _Created {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
   }) {
     return created(this);
@@ -269,6 +405,7 @@ class _$_Created implements _Created {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
     required TResult orElse(),
   }) {
@@ -295,11 +432,11 @@ class _$CommunityMainStateTearOff {
 
   _CommunityMainState call(
       {required bool isLoading,
-      required List<Community> commmunity,
+      required List<Community> community,
       required Community? createCommunity}) {
     return _CommunityMainState(
       isLoading: isLoading,
-      commmunity: commmunity,
+      community: community,
       createCommunity: createCommunity,
     );
   }
@@ -311,7 +448,7 @@ const $CommunityMainState = _$CommunityMainStateTearOff();
 /// @nodoc
 mixin _$CommunityMainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<Community> get commmunity => throw _privateConstructorUsedError;
+  List<Community> get community => throw _privateConstructorUsedError;
   Community? get createCommunity => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -325,7 +462,7 @@ abstract class $CommunityMainStateCopyWith<$Res> {
           CommunityMainState value, $Res Function(CommunityMainState) then) =
       _$CommunityMainStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isLoading, List<Community> commmunity, Community? createCommunity});
+      {bool isLoading, List<Community> community, Community? createCommunity});
 
   $CommunityCopyWith<$Res>? get createCommunity;
 }
@@ -342,7 +479,7 @@ class _$CommunityMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? commmunity = freezed,
+    Object? community = freezed,
     Object? createCommunity = freezed,
   }) {
     return _then(_value.copyWith(
@@ -350,9 +487,9 @@ class _$CommunityMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      commmunity: commmunity == freezed
-          ? _value.commmunity
-          : commmunity // ignore: cast_nullable_to_non_nullable
+      community: community == freezed
+          ? _value.community
+          : community // ignore: cast_nullable_to_non_nullable
               as List<Community>,
       createCommunity: createCommunity == freezed
           ? _value.createCommunity
@@ -381,7 +518,7 @@ abstract class _$CommunityMainStateCopyWith<$Res>
       __$CommunityMainStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isLoading, List<Community> commmunity, Community? createCommunity});
+      {bool isLoading, List<Community> community, Community? createCommunity});
 
   @override
   $CommunityCopyWith<$Res>? get createCommunity;
@@ -401,7 +538,7 @@ class __$CommunityMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? commmunity = freezed,
+    Object? community = freezed,
     Object? createCommunity = freezed,
   }) {
     return _then(_CommunityMainState(
@@ -409,9 +546,9 @@ class __$CommunityMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      commmunity: commmunity == freezed
-          ? _value.commmunity
-          : commmunity // ignore: cast_nullable_to_non_nullable
+      community: community == freezed
+          ? _value.community
+          : community // ignore: cast_nullable_to_non_nullable
               as List<Community>,
       createCommunity: createCommunity == freezed
           ? _value.createCommunity
@@ -426,19 +563,19 @@ class __$CommunityMainStateCopyWithImpl<$Res>
 class _$_CommunityMainState implements _CommunityMainState {
   _$_CommunityMainState(
       {required this.isLoading,
-      required this.commmunity,
+      required this.community,
       required this.createCommunity});
 
   @override
   final bool isLoading;
   @override
-  final List<Community> commmunity;
+  final List<Community> community;
   @override
   final Community? createCommunity;
 
   @override
   String toString() {
-    return 'CommunityMainState(isLoading: $isLoading, commmunity: $commmunity, createCommunity: $createCommunity)';
+    return 'CommunityMainState(isLoading: $isLoading, community: $community, createCommunity: $createCommunity)';
   }
 
   @override
@@ -448,9 +585,9 @@ class _$_CommunityMainState implements _CommunityMainState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.commmunity, commmunity) ||
+            (identical(other.community, community) ||
                 const DeepCollectionEquality()
-                    .equals(other.commmunity, commmunity)) &&
+                    .equals(other.community, community)) &&
             (identical(other.createCommunity, createCommunity) ||
                 const DeepCollectionEquality()
                     .equals(other.createCommunity, createCommunity)));
@@ -460,7 +597,7 @@ class _$_CommunityMainState implements _CommunityMainState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(commmunity) ^
+      const DeepCollectionEquality().hash(community) ^
       const DeepCollectionEquality().hash(createCommunity);
 
   @JsonKey(ignore: true)
@@ -472,13 +609,13 @@ class _$_CommunityMainState implements _CommunityMainState {
 abstract class _CommunityMainState implements CommunityMainState {
   factory _CommunityMainState(
       {required bool isLoading,
-      required List<Community> commmunity,
+      required List<Community> community,
       required Community? createCommunity}) = _$_CommunityMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  List<Community> get commmunity => throw _privateConstructorUsedError;
+  List<Community> get community => throw _privateConstructorUsedError;
   @override
   Community? get createCommunity => throw _privateConstructorUsedError;
   @override

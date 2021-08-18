@@ -28,7 +28,7 @@ class CommunityMainPage extends StatelessWidget {
                       )),
                 ]),
             body: ListView.builder(
-                itemCount: state.commmunity.length,
+                itemCount: state.community.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -39,7 +39,7 @@ class CommunityMainPage extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: const Color.fromRGBO(235, 235, 235, 1),
                           borderRadius: BorderRadius.circular(30)),
-                      child: CommunityList(community: state.commmunity[index]),
+                      child: CommunityList(community: state.community[index]),
                     ),
                   );
                 }));

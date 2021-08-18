@@ -11,20 +11,36 @@ class CommunityRepository implements ICommunityRepository {
 
   CommunityRepository(this._firestore);
 
-  @override
-  Future<List<Community>> getCommunity() async {
-    try {
-      final ref = _firestore.collection("community")
-          // .orderBy("createdAt", descending: true)
-          ;
-      final doc = await ref.get();
-      final result = doc.docs
-          .map((e) => CommunityDto.fromFireStore(e).toDomain())
-          .toList();
+  // @override
+  // Future<List<Community>> getCommunity() async {
+  //   try {
+  //     final ref = _firestore.collection("community")
+  //         // .orderBy("createdAt", descending: true)
+  //         ;
+  //     final doc = await ref.get();
+  //     final result = doc.docs
+  //         .map((e) => CommunityDto.fromFireStore(e).toDomain())
+  //         .toList();
 
-      return result;
+  //     return result;
+  //   } catch (error) {
+  //     return [];
+  //   }
+  // }
+
+  @override
+  Stream<List<Community>> getCommunity() async* {
+    try {
+      final ref = _firestore
+          .collection("community")
+          .orderBy("createdAt", descending: true);
+      yield* ref.snapshots().map((sn) {
+        return sn.docs.map((doc) {
+          return CommunityDto.fromFireStore(doc).toDomain();
+        }).toList();
+      });
     } catch (error) {
-      return [];
+      yield [];
     }
   }
 
