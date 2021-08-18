@@ -22,29 +22,34 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
   Stream<CommunityMainState> mapEventToState(
     CommunityMainEvent event,
   ) async* {
-    yield* event.map(started: (e) async* {
-      yield state.copyWith(isLoading: true);
-      await _likesStreamSubscription?.cancel();
-      _likesStreamSubscription = communityRepository.getCommunity().listen(
-            (community) => add(CommunityMainEvent.recived(community)),
-          );
-      yield state.copyWith(isLoading: false);
-    }, recived: (e) async* {
-      yield state.copyWith(isLoading: true);
-      yield state.copyWith(
-        listCommunity: e.listCommunity,
-        isLoading: false,
-      );
-    }, created: (e) async* {
-      await communityRepository.createCommunity(
-        title: e.title,
-        bodyText: e.bodyText,
-      );
-    }, updated: (e) async* {
-      // Community? community;
-      // final id = community!.id;
-      await communityRepository.updateCommunity(
-          title: e.title, bodyText: e.bodyText, id: state.id!);
-    });
+    yield* event.map(
+      started: (e) async* {
+        yield state.copyWith(isLoading: true);
+        await _likesStreamSubscription?.cancel();
+        _likesStreamSubscription = communityRepository.getCommunity().listen(
+              (community) => add(CommunityMainEvent.recived(community)),
+            );
+        yield state.copyWith(isLoading: false);
+      },
+      recived: (e) async* {
+        yield state.copyWith(isLoading: true);
+        yield state.copyWith(
+          listCommunity: e.listCommunity,
+          isLoading: false,
+        );
+      },
+      created: (e) async* {
+        await communityRepository.createCommunity(
+          title: e.title,
+          bodyText: e.bodyText,
+        );
+      },
+      updated: (e) async* {
+        // Community? community;
+        // final id = community!.id;
+        await communityRepository.updateCommunity(
+            title: e.title, bodyText: e.bodyText, id: state.id!);
+      },
+    );
   }
 }

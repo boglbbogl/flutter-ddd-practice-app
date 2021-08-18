@@ -1,6 +1,7 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/presentation/community_practice/widgets/community_bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -17,32 +18,15 @@ class CommunityCreatePage extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: appBarForm(context, theme, title: 'CREATE'),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(22.0),
-          child: InkWell(
-            onTap: () {
-              context.read<CommunityMainBloc>().add(CommunityMainEvent.created(
-                  titleController.text, bodyTextController.text));
-              Get.back();
-            },
-            child: Container(
-              height: size.height * 0.08,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Colors.cyan,
-              ),
-              child: Center(
-                child: Text(
-                  'DONE',
-                  style: theme.textTheme.bodyText2!.copyWith(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ),
+        bottomNavigationBar: communityBottomButtonForm(
+          buttonTitle: 'DONE',
+          buttonTextColor: Colors.white,
+          buttonColors: Colors.cyan,
+          onTap: () {
+            context.read<CommunityMainBloc>().add(CommunityMainEvent.created(
+                titleController.text, bodyTextController.text));
+            Get.back();
+          },
         ),
         body: Padding(
           padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
