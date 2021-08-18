@@ -29,12 +29,16 @@ class _$CommunityDtoTearOff {
           required String id,
       @TimestampConverter()
       @JsonKey(name: "createdAt")
-          required DateTime createdAt}) {
+          required DateTime createdAt,
+      @TimestampConverter()
+      @JsonKey(name: "updatedAt")
+          required DateTime updatedAt}) {
     return _CommunityDto(
       title: title,
       bodyText: bodyText,
       id: id,
       createdAt: createdAt,
+      updatedAt: updatedAt,
     );
   }
 
@@ -57,6 +61,9 @@ mixin _$CommunityDto {
   @TimestampConverter()
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @TimestampConverter()
+  @JsonKey(name: "updatedAt")
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,7 +80,8 @@ abstract class $CommunityDtoCopyWith<$Res> {
       {@JsonKey(name: "title") String title,
       @JsonKey(name: "bodyText") String bodyText,
       @JsonKey(name: "id") String id,
-      @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt});
+      @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt,
+      @TimestampConverter() @JsonKey(name: "updatedAt") DateTime updatedAt});
 }
 
 /// @nodoc
@@ -90,6 +98,7 @@ class _$CommunityDtoCopyWithImpl<$Res> implements $CommunityDtoCopyWith<$Res> {
     Object? bodyText = freezed,
     Object? id = freezed,
     Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -108,6 +117,10 @@ class _$CommunityDtoCopyWithImpl<$Res> implements $CommunityDtoCopyWith<$Res> {
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -123,7 +136,8 @@ abstract class _$CommunityDtoCopyWith<$Res>
       {@JsonKey(name: "title") String title,
       @JsonKey(name: "bodyText") String bodyText,
       @JsonKey(name: "id") String id,
-      @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt});
+      @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt,
+      @TimestampConverter() @JsonKey(name: "updatedAt") DateTime updatedAt});
 }
 
 /// @nodoc
@@ -142,6 +156,7 @@ class __$CommunityDtoCopyWithImpl<$Res> extends _$CommunityDtoCopyWithImpl<$Res>
     Object? bodyText = freezed,
     Object? id = freezed,
     Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_CommunityDto(
       title: title == freezed
@@ -160,6 +175,10 @@ class __$CommunityDtoCopyWithImpl<$Res> extends _$CommunityDtoCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -176,7 +195,10 @@ class _$_CommunityDto extends _CommunityDto {
           required this.id,
       @TimestampConverter()
       @JsonKey(name: "createdAt")
-          required this.createdAt})
+          required this.createdAt,
+      @TimestampConverter()
+      @JsonKey(name: "updatedAt")
+          required this.updatedAt})
       : super._();
 
   factory _$_CommunityDto.fromJson(Map<String, dynamic> json) =>
@@ -195,10 +217,14 @@ class _$_CommunityDto extends _CommunityDto {
   @TimestampConverter()
   @JsonKey(name: "createdAt")
   final DateTime createdAt;
+  @override
+  @TimestampConverter()
+  @JsonKey(name: "updatedAt")
+  final DateTime updatedAt;
 
   @override
   String toString() {
-    return 'CommunityDto(title: $title, bodyText: $bodyText, id: $id, createdAt: $createdAt)';
+    return 'CommunityDto(title: $title, bodyText: $bodyText, id: $id, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -214,7 +240,10 @@ class _$_CommunityDto extends _CommunityDto {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.createdAt, createdAt)));
+                    .equals(other.createdAt, createdAt)) &&
+            (identical(other.updatedAt, updatedAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.updatedAt, updatedAt)));
   }
 
   @override
@@ -223,7 +252,8 @@ class _$_CommunityDto extends _CommunityDto {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(bodyText) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(createdAt);
+      const DeepCollectionEquality().hash(createdAt) ^
+      const DeepCollectionEquality().hash(updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -246,7 +276,10 @@ abstract class _CommunityDto extends CommunityDto {
           required String id,
       @TimestampConverter()
       @JsonKey(name: "createdAt")
-          required DateTime createdAt}) = _$_CommunityDto;
+          required DateTime createdAt,
+      @TimestampConverter()
+      @JsonKey(name: "updatedAt")
+          required DateTime updatedAt}) = _$_CommunityDto;
   _CommunityDto._() : super._();
 
   factory _CommunityDto.fromJson(Map<String, dynamic> json) =
@@ -265,6 +298,10 @@ abstract class _CommunityDto extends CommunityDto {
   @TimestampConverter()
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @override
+  @TimestampConverter()
+  @JsonKey(name: "updatedAt")
+  DateTime get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommunityDtoCopyWith<_CommunityDto> get copyWith =>

@@ -15,6 +15,9 @@ class CommunityDto with _$CommunityDto {
     @TimestampConverter()
     @JsonKey(name: "createdAt")
         required DateTime createdAt,
+    @TimestampConverter()
+    @JsonKey(name: "updatedAt")
+        required DateTime updatedAt,
   }) = _CommunityDto;
 
   CommunityDto._();
@@ -31,6 +34,7 @@ class CommunityDto with _$CommunityDto {
         title: c.title,
         bodyText: c.bodyText,
         createdAt: c.createdAt,
+        updatedAt: c.updatedAt,
         id: c.id,
       );
 
@@ -38,6 +42,7 @@ class CommunityDto with _$CommunityDto {
         title: title,
         bodyText: bodyText,
         createdAt: createdAt,
+        updatedAt: updatedAt,
         id: id,
       );
 }

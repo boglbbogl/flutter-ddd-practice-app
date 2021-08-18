@@ -10,5 +10,9 @@ abstract class ICommunityRepository {
   Future<Unit> deletedCommunity({
     required String id,
   });
-  Future<List<Community>> updateCommunity();
+  Future<Unit> updateCommunity({
+    required String title,
+    required String bodyText,
+    required String id,
+  });
 }

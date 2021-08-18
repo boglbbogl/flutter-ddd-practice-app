@@ -8,6 +8,7 @@ class Community with _$Community {
     required String title,
     required String bodyText,
     required DateTime createdAt,
+    required DateTime updatedAt,
     required String id,
   }) = _Community;
 
@@ -15,6 +16,7 @@ class Community with _$Community {
         title: "",
         bodyText: "",
         createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
         id: "",
       );
 }

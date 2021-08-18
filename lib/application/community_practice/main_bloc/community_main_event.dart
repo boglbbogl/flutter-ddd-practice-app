@@ -7,4 +7,6 @@ class CommunityMainEvent with _$CommunityMainEvent {
       _Recived;
   const factory CommunityMainEvent.created(String title, String bodyText) =
       _Created;
+  const factory CommunityMainEvent.updated(String title, String bodyText) =
+      _Updated;
 }

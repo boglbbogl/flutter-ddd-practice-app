@@ -13,6 +13,8 @@ _$_CommunityDto _$_$_CommunityDtoFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     createdAt:
         const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
+    updatedAt:
+        const TimestampConverter().fromJson(json['updatedAt'] as Timestamp),
   );
 }
 
@@ -22,4 +24,5 @@ Map<String, dynamic> _$_$_CommunityDtoToJson(_$_CommunityDto instance) =>
       'bodyText': instance.bodyText,
       'id': instance.id,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
     };
