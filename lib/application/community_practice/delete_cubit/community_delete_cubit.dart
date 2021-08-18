@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/domain/community_practice/i_community_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,8 +15,8 @@ class CommunityDeleteCubit extends Cubit<CommunityDeleteState> {
     this.communityRepository,
   ) : super(CommunityDeleteState.initial());
 
-  Future<Unit> deleted() async {
-    await communityRepository.deletedCommunity();
+  Future<Unit> deleted(Community community) async {
+    await communityRepository.deletedCommunity(id: community.id);
     return unit;
   }
 }

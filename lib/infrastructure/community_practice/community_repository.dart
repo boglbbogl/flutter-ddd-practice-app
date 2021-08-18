@@ -50,17 +50,21 @@ class CommunityRepository implements ICommunityRepository {
     required String bodyText,
   }) async {
     final ref = _firestore.collection("community").doc();
+    final communityId = ref.id;
     await ref.set({
       "title": title,
       "bodyText": bodyText,
       "createdAt": DateTime.now(),
+      "id": communityId,
     });
     return unit;
   }
 
   @override
-  Future<Unit> deletedCommunity() async {
-    final ref = _firestore.collection("community").doc();
+  Future<Unit> deletedCommunity({
+    required String id,
+  }) async {
+    final ref = _firestore.collection("community").doc(id);
     await ref.delete();
     return unit;
   }

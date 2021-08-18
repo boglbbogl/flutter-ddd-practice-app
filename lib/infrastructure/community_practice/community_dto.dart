@@ -11,6 +11,7 @@ class CommunityDto with _$CommunityDto {
   factory CommunityDto({
     @JsonKey(name: "title") required String title,
     @JsonKey(name: "bodyText") required String bodyText,
+    @JsonKey(name: "id") required String id,
     @TimestampConverter()
     @JsonKey(name: "createdAt")
         required DateTime createdAt,
@@ -30,11 +31,13 @@ class CommunityDto with _$CommunityDto {
         title: c.title,
         bodyText: c.bodyText,
         createdAt: c.createdAt,
+        id: c.id,
       );
 
   Community toDomain() => Community(
         title: title,
         bodyText: bodyText,
         createdAt: createdAt,
+        id: id,
       );
 }

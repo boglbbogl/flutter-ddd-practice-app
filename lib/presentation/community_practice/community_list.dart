@@ -1,11 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/delete_cubit/community_delete_cubit.dart';
-import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 class CommunityList extends StatelessWidget {
   final Community community;
@@ -23,8 +23,14 @@ class CommunityList extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: InkWell(
-              onTap: () {
-                context.read<CommunityDeleteCubit>().deleted();
+              onLongPress: () {
+                _communityDeleteForm(
+                  context,
+                  deleteOnTap: () {
+                    context.read<CommunityDeleteCubit>().deleted(community);
+                    Get.back();
+                  },
+                );
               },
               child: Stack(
                 children: [
@@ -62,6 +68,45 @@ class CommunityList extends StatelessWidget {
             ),
           );
         },
+      ),
+    );
+  }
+
+  Future<dynamic> _communityDeleteForm(
+    BuildContext context, {
+    required Function() deleteOnTap,
+  }) {
+    return showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: Text(
+          '삭제 하시겠습니까?',
+          style: theme.textTheme.bodyText2!.copyWith(
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+        ),
+        message: const Text('삭제 후 복구 불가능 합니다 '),
+        actions: <Widget>[
+          CupertinoActionSheetAction(
+            onPressed: deleteOnTap,
+            child: Text(
+              'DELETE',
+              style: theme.textTheme.bodyText2!.copyWith(
+                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Get.back();
+            },
+            child: Text(
+              'CANCEL',
+              style: theme.textTheme.bodyText2!.copyWith(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
+          )
+        ],
       ),
     );
   }

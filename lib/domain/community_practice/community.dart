@@ -8,11 +8,13 @@ class Community with _$Community {
     required String title,
     required String bodyText,
     required DateTime createdAt,
+    required String id,
   }) = _Community;
 
   factory Community.empty() => Community(
         title: "",
         bodyText: "",
         createdAt: DateTime.now(),
+        id: "",
       );
 }

@@ -25,12 +25,15 @@ class _$CommunityDtoTearOff {
           required String title,
       @JsonKey(name: "bodyText")
           required String bodyText,
+      @JsonKey(name: "id")
+          required String id,
       @TimestampConverter()
       @JsonKey(name: "createdAt")
           required DateTime createdAt}) {
     return _CommunityDto(
       title: title,
       bodyText: bodyText,
+      id: id,
       createdAt: createdAt,
     );
   }
@@ -49,6 +52,8 @@ mixin _$CommunityDto {
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: "bodyText")
   String get bodyText => throw _privateConstructorUsedError;
+  @JsonKey(name: "id")
+  String get id => throw _privateConstructorUsedError;
   @TimestampConverter()
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -67,6 +72,7 @@ abstract class $CommunityDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "title") String title,
       @JsonKey(name: "bodyText") String bodyText,
+      @JsonKey(name: "id") String id,
       @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt});
 }
 
@@ -82,6 +88,7 @@ class _$CommunityDtoCopyWithImpl<$Res> implements $CommunityDtoCopyWith<$Res> {
   $Res call({
     Object? title = freezed,
     Object? bodyText = freezed,
+    Object? id = freezed,
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -92,6 +99,10 @@ class _$CommunityDtoCopyWithImpl<$Res> implements $CommunityDtoCopyWith<$Res> {
       bodyText: bodyText == freezed
           ? _value.bodyText
           : bodyText // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: createdAt == freezed
           ? _value.createdAt
@@ -111,6 +122,7 @@ abstract class _$CommunityDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: "title") String title,
       @JsonKey(name: "bodyText") String bodyText,
+      @JsonKey(name: "id") String id,
       @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt});
 }
 
@@ -128,6 +140,7 @@ class __$CommunityDtoCopyWithImpl<$Res> extends _$CommunityDtoCopyWithImpl<$Res>
   $Res call({
     Object? title = freezed,
     Object? bodyText = freezed,
+    Object? id = freezed,
     Object? createdAt = freezed,
   }) {
     return _then(_CommunityDto(
@@ -138,6 +151,10 @@ class __$CommunityDtoCopyWithImpl<$Res> extends _$CommunityDtoCopyWithImpl<$Res>
       bodyText: bodyText == freezed
           ? _value.bodyText
           : bodyText // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: createdAt == freezed
           ? _value.createdAt
@@ -155,6 +172,8 @@ class _$_CommunityDto extends _CommunityDto {
           required this.title,
       @JsonKey(name: "bodyText")
           required this.bodyText,
+      @JsonKey(name: "id")
+          required this.id,
       @TimestampConverter()
       @JsonKey(name: "createdAt")
           required this.createdAt})
@@ -170,13 +189,16 @@ class _$_CommunityDto extends _CommunityDto {
   @JsonKey(name: "bodyText")
   final String bodyText;
   @override
+  @JsonKey(name: "id")
+  final String id;
+  @override
   @TimestampConverter()
   @JsonKey(name: "createdAt")
   final DateTime createdAt;
 
   @override
   String toString() {
-    return 'CommunityDto(title: $title, bodyText: $bodyText, createdAt: $createdAt)';
+    return 'CommunityDto(title: $title, bodyText: $bodyText, id: $id, createdAt: $createdAt)';
   }
 
   @override
@@ -188,6 +210,8 @@ class _$_CommunityDto extends _CommunityDto {
             (identical(other.bodyText, bodyText) ||
                 const DeepCollectionEquality()
                     .equals(other.bodyText, bodyText)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)));
@@ -198,6 +222,7 @@ class _$_CommunityDto extends _CommunityDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(bodyText) ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(createdAt);
 
   @JsonKey(ignore: true)
@@ -217,6 +242,8 @@ abstract class _CommunityDto extends CommunityDto {
           required String title,
       @JsonKey(name: "bodyText")
           required String bodyText,
+      @JsonKey(name: "id")
+          required String id,
       @TimestampConverter()
       @JsonKey(name: "createdAt")
           required DateTime createdAt}) = _$_CommunityDto;
@@ -231,6 +258,9 @@ abstract class _CommunityDto extends CommunityDto {
   @override
   @JsonKey(name: "bodyText")
   String get bodyText => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: "id")
+  String get id => throw _privateConstructorUsedError;
   @override
   @TimestampConverter()
   @JsonKey(name: "createdAt")

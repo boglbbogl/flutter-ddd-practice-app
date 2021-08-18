@@ -1,9 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_create_page.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_list.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -28,23 +28,43 @@ class CommunityMainPage extends StatelessWidget {
                         color: Colors.white,
                       )),
                 ]),
-            body: ListView.builder(
-                itemCount: state.listCommunity.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 12),
-                    child: Container(
-                      width: size.width * 0.9,
-                      height: size.height * 0.1,
-                      decoration: BoxDecoration(
-                          color: const Color.fromRGBO(235, 235, 235, 1),
-                          borderRadius: BorderRadius.circular(30)),
-                      child:
-                          CommunityList(community: state.listCommunity[index]),
-                    ),
-                  );
-                }));
+            body: Stack(
+              children: [
+                ListView.builder(
+                    itemCount: state.listCommunity.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 12),
+                        child: Container(
+                          width: size.width * 0.9,
+                          height: size.height * 0.1,
+                          decoration: BoxDecoration(
+                              color: const Color.fromRGBO(235, 235, 235, 1),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: CommunityList(
+                              community: state.listCommunity[index]),
+                        ),
+                      );
+                    }),
+                if (state.isLoading) ...[
+                  Stack(
+                    children: [
+                      Container(
+                        width: size.width,
+                        height: size.height,
+                        color: Colors.white54,
+                        child: const Center(
+                          child: CupertinoActivityIndicator(
+                            radius: 25,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ],
+            ));
       },
     );
   }
