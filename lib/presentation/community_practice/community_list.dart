@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/application/community_practice/delete_cubit/community_delete_cubit.dart';
 import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
+import 'package:ddd_practice_app/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,45 +16,52 @@ class CommunityList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30),
-      child: InkWell(
-        onTap: () => context
-            .read<CommunityMainBloc>()
-            .add(CommunityMainEvent.deleted(community)),
-        child: Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(community.title,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.bodyText2!.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13)),
-                const SizedBox(
-                  height: 4,
-                ),
-                Text(community.bodyText,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: theme.textTheme.bodyText2!
-                        .copyWith(color: Colors.black, fontSize: 9)),
-              ],
+    return BlocProvider<CommunityDeleteCubit>(
+      create: (context) => getIt<CommunityDeleteCubit>(),
+      child: BlocBuilder<CommunityDeleteCubit, CommunityDeleteState>(
+        builder: (context, state) {
+          return Padding(
+            padding: const EdgeInsets.only(left: 30, right: 30),
+            child: InkWell(
+              onTap: () {
+                context.read<CommunityDeleteCubit>().deleted();
+              },
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(community.title,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.bodyText2!.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13)),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Text(community.bodyText,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: theme.textTheme.bodyText2!
+                              .copyWith(color: Colors.black, fontSize: 9)),
+                    ],
+                  ),
+                  Positioned(
+                      bottom: 5,
+                      right: 2,
+                      child: Text(
+                        community.createdAt.toString().substring(0, 10),
+                        style: theme.textTheme.bodyText2!.copyWith(
+                            color: const Color.fromRGBO(135, 135, 135, 1),
+                            fontSize: 7),
+                      )),
+                ],
+              ),
             ),
-            Positioned(
-                bottom: 5,
-                right: 2,
-                child: Text(
-                  community.createdAt.toString().substring(0, 10),
-                  style: theme.textTheme.bodyText2!.copyWith(
-                      color: const Color.fromRGBO(135, 135, 135, 1),
-                      fontSize: 7),
-                )),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
