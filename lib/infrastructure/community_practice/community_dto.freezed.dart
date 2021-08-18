@@ -21,9 +21,13 @@ class _$CommunityDtoTearOff {
   const _$CommunityDtoTearOff();
 
   _CommunityDto call(
-      {@JsonKey(name: "title") required String title,
-      @JsonKey(name: "bodyText") required String bodyText,
-      @JsonKey(name: "createdAt") required DateTime createdAt}) {
+      {@JsonKey(name: "title")
+          required String title,
+      @JsonKey(name: "bodyText")
+          required String bodyText,
+      @TimestampConverter()
+      @JsonKey(name: "createdAt")
+          required DateTime createdAt}) {
     return _CommunityDto(
       title: title,
       bodyText: bodyText,
@@ -45,6 +49,7 @@ mixin _$CommunityDto {
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: "bodyText")
   String get bodyText => throw _privateConstructorUsedError;
+  @TimestampConverter()
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
 
@@ -62,7 +67,7 @@ abstract class $CommunityDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "title") String title,
       @JsonKey(name: "bodyText") String bodyText,
-      @JsonKey(name: "createdAt") DateTime createdAt});
+      @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt});
 }
 
 /// @nodoc
@@ -106,7 +111,7 @@ abstract class _$CommunityDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: "title") String title,
       @JsonKey(name: "bodyText") String bodyText,
-      @JsonKey(name: "createdAt") DateTime createdAt});
+      @TimestampConverter() @JsonKey(name: "createdAt") DateTime createdAt});
 }
 
 /// @nodoc
@@ -146,9 +151,13 @@ class __$CommunityDtoCopyWithImpl<$Res> extends _$CommunityDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CommunityDto extends _CommunityDto {
   _$_CommunityDto(
-      {@JsonKey(name: "title") required this.title,
-      @JsonKey(name: "bodyText") required this.bodyText,
-      @JsonKey(name: "createdAt") required this.createdAt})
+      {@JsonKey(name: "title")
+          required this.title,
+      @JsonKey(name: "bodyText")
+          required this.bodyText,
+      @TimestampConverter()
+      @JsonKey(name: "createdAt")
+          required this.createdAt})
       : super._();
 
   factory _$_CommunityDto.fromJson(Map<String, dynamic> json) =>
@@ -161,6 +170,7 @@ class _$_CommunityDto extends _CommunityDto {
   @JsonKey(name: "bodyText")
   final String bodyText;
   @override
+  @TimestampConverter()
   @JsonKey(name: "createdAt")
   final DateTime createdAt;
 
@@ -203,10 +213,13 @@ class _$_CommunityDto extends _CommunityDto {
 
 abstract class _CommunityDto extends CommunityDto {
   factory _CommunityDto(
-          {@JsonKey(name: "title") required String title,
-          @JsonKey(name: "bodyText") required String bodyText,
-          @JsonKey(name: "createdAt") required DateTime createdAt}) =
-      _$_CommunityDto;
+      {@JsonKey(name: "title")
+          required String title,
+      @JsonKey(name: "bodyText")
+          required String bodyText,
+      @TimestampConverter()
+      @JsonKey(name: "createdAt")
+          required DateTime createdAt}) = _$_CommunityDto;
   _CommunityDto._() : super._();
 
   factory _CommunityDto.fromJson(Map<String, dynamic> json) =
@@ -219,6 +232,7 @@ abstract class _CommunityDto extends CommunityDto {
   @JsonKey(name: "bodyText")
   String get bodyText => throw _privateConstructorUsedError;
   @override
+  @TimestampConverter()
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
   @override

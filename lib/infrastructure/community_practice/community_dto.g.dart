@@ -10,7 +10,8 @@ _$_CommunityDto _$_$_CommunityDtoFromJson(Map<String, dynamic> json) {
   return _$_CommunityDto(
     title: json['title'] as String,
     bodyText: json['bodyText'] as String,
-    createdAt: DateTime.parse(json['createdAt'] as String),
+    createdAt:
+        const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
   );
 }
 
@@ -18,5 +19,5 @@ Map<String, dynamic> _$_$_CommunityDtoToJson(_$_CommunityDto instance) =>
     <String, dynamic>{
       'title': instance.title,
       'bodyText': instance.bodyText,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
     };

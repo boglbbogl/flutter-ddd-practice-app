@@ -13,25 +13,36 @@ class CommunityList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Stack(
         children: [
-          Text(community.title,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodyText2!.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20)),
-          const SizedBox(
-            height: 7,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(community.title,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.bodyText2!.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13)),
+              const SizedBox(
+                height: 4,
+              ),
+              Text(community.bodyText,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: theme.textTheme.bodyText2!
+                      .copyWith(color: Colors.black, fontSize: 9)),
+            ],
           ),
-          Text(community.bodyText,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              style: theme.textTheme.bodyText2!
-                  .copyWith(color: Colors.black, fontSize: 12)),
-          // Text(community.createdAt.toString()),
+          Positioned(
+              bottom: 5,
+              right: 2,
+              child: Text(
+                community.createdAt.toString().substring(0, 10),
+                style: theme.textTheme.bodyText2!.copyWith(
+                    color: const Color.fromRGBO(135, 135, 135, 1), fontSize: 7),
+              )),
         ],
       ),
     );
