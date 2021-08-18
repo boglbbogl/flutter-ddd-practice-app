@@ -20,9 +20,9 @@ class _$CommunityMainEventTearOff {
     return const _Started();
   }
 
-  _Recived recived(List<Community> community) {
+  _Recived recived(List<Community> listCommunity) {
     return _Recived(
-      community,
+      listCommunity,
     );
   }
 
@@ -30,6 +30,12 @@ class _$CommunityMainEventTearOff {
     return _Created(
       title,
       bodyText,
+    );
+  }
+
+  _Deleted deleted(Community community) {
+    return _Deleted(
+      community,
     );
   }
 }
@@ -42,15 +48,17 @@ mixin _$CommunityMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<Community> community) recived,
+    required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
+    required TResult Function(Community community) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<Community> community)? recived,
+    TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
+    TResult Function(Community community)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +67,7 @@ mixin _$CommunityMainEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
+    required TResult Function(_Deleted value) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +75,7 @@ mixin _$CommunityMainEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,8 +137,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<Community> community) recived,
+    required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
+    required TResult Function(Community community) deleted,
   }) {
     return started();
   }
@@ -137,8 +148,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<Community> community)? recived,
+    TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
+    TResult Function(Community community)? deleted,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -153,6 +165,7 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return started(this);
   }
@@ -163,6 +176,7 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -180,7 +194,7 @@ abstract class _Started implements CommunityMainEvent {
 abstract class _$RecivedCopyWith<$Res> {
   factory _$RecivedCopyWith(_Recived value, $Res Function(_Recived) then) =
       __$RecivedCopyWithImpl<$Res>;
-  $Res call({List<Community> community});
+  $Res call({List<Community> listCommunity});
 }
 
 /// @nodoc
@@ -195,12 +209,12 @@ class __$RecivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? community = freezed,
+    Object? listCommunity = freezed,
   }) {
     return _then(_Recived(
-      community == freezed
-          ? _value.community
-          : community // ignore: cast_nullable_to_non_nullable
+      listCommunity == freezed
+          ? _value.listCommunity
+          : listCommunity // ignore: cast_nullable_to_non_nullable
               as List<Community>,
     ));
   }
@@ -209,28 +223,28 @@ class __$RecivedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Recived implements _Recived {
-  const _$_Recived(this.community);
+  const _$_Recived(this.listCommunity);
 
   @override
-  final List<Community> community;
+  final List<Community> listCommunity;
 
   @override
   String toString() {
-    return 'CommunityMainEvent.recived(community: $community)';
+    return 'CommunityMainEvent.recived(listCommunity: $listCommunity)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Recived &&
-            (identical(other.community, community) ||
+            (identical(other.listCommunity, listCommunity) ||
                 const DeepCollectionEquality()
-                    .equals(other.community, community)));
+                    .equals(other.listCommunity, listCommunity)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(community);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listCommunity);
 
   @JsonKey(ignore: true)
   @override
@@ -241,22 +255,24 @@ class _$_Recived implements _Recived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<Community> community) recived,
+    required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
+    required TResult Function(Community community) deleted,
   }) {
-    return recived(community);
+    return recived(listCommunity);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<Community> community)? recived,
+    TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
+    TResult Function(Community community)? deleted,
     required TResult orElse(),
   }) {
     if (recived != null) {
-      return recived(community);
+      return recived(listCommunity);
     }
     return orElse();
   }
@@ -267,6 +283,7 @@ class _$_Recived implements _Recived {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return recived(this);
   }
@@ -277,6 +294,7 @@ class _$_Recived implements _Recived {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (recived != null) {
@@ -287,9 +305,9 @@ class _$_Recived implements _Recived {
 }
 
 abstract class _Recived implements CommunityMainEvent {
-  const factory _Recived(List<Community> community) = _$_Recived;
+  const factory _Recived(List<Community> listCommunity) = _$_Recived;
 
-  List<Community> get community => throw _privateConstructorUsedError;
+  List<Community> get listCommunity => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$RecivedCopyWith<_Recived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -371,8 +389,9 @@ class _$_Created implements _Created {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<Community> community) recived,
+    required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
+    required TResult Function(Community community) deleted,
   }) {
     return created(title, bodyText);
   }
@@ -381,8 +400,9 @@ class _$_Created implements _Created {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<Community> community)? recived,
+    TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
+    TResult Function(Community community)? deleted,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -397,6 +417,7 @@ class _$_Created implements _Created {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return created(this);
   }
@@ -407,6 +428,7 @@ class _$_Created implements _Created {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -427,17 +449,149 @@ abstract class _Created implements CommunityMainEvent {
 }
 
 /// @nodoc
+abstract class _$DeletedCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+      __$DeletedCopyWithImpl<$Res>;
+  $Res call({Community community});
+
+  $CommunityCopyWith<$Res> get community;
+}
+
+/// @nodoc
+class __$DeletedCopyWithImpl<$Res>
+    extends _$CommunityMainEventCopyWithImpl<$Res>
+    implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
+      : super(_value, (v) => _then(v as _Deleted));
+
+  @override
+  _Deleted get _value => super._value as _Deleted;
+
+  @override
+  $Res call({
+    Object? community = freezed,
+  }) {
+    return _then(_Deleted(
+      community == freezed
+          ? _value.community
+          : community // ignore: cast_nullable_to_non_nullable
+              as Community,
+    ));
+  }
+
+  @override
+  $CommunityCopyWith<$Res> get community {
+    return $CommunityCopyWith<$Res>(_value.community, (value) {
+      return _then(_value.copyWith(community: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Deleted implements _Deleted {
+  const _$_Deleted(this.community);
+
+  @override
+  final Community community;
+
+  @override
+  String toString() {
+    return 'CommunityMainEvent.deleted(community: $community)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Deleted &&
+            (identical(other.community, community) ||
+                const DeepCollectionEquality()
+                    .equals(other.community, community)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(community);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<Community> listCommunity) recived,
+    required TResult Function(String title, String bodyText) created,
+    required TResult Function(Community community) deleted,
+  }) {
+    return deleted(community);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<Community> listCommunity)? recived,
+    TResult Function(String title, String bodyText)? created,
+    TResult Function(Community community)? deleted,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(community);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Recived value) recived,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Deleted value) deleted,
+  }) {
+    return deleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Recived value)? recived,
+    TResult Function(_Created value)? created,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Deleted implements CommunityMainEvent {
+  const factory _Deleted(Community community) = _$_Deleted;
+
+  Community get community => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$CommunityMainStateTearOff {
   const _$CommunityMainStateTearOff();
 
   _CommunityMainState call(
       {required bool isLoading,
-      required List<Community> community,
-      required Community? createCommunity}) {
+      required List<Community> listCommunity,
+      required Community? community}) {
     return _CommunityMainState(
       isLoading: isLoading,
+      listCommunity: listCommunity,
       community: community,
-      createCommunity: createCommunity,
     );
   }
 }
@@ -448,8 +602,8 @@ const $CommunityMainState = _$CommunityMainStateTearOff();
 /// @nodoc
 mixin _$CommunityMainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<Community> get community => throw _privateConstructorUsedError;
-  Community? get createCommunity => throw _privateConstructorUsedError;
+  List<Community> get listCommunity => throw _privateConstructorUsedError;
+  Community? get community => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CommunityMainStateCopyWith<CommunityMainState> get copyWith =>
@@ -462,9 +616,9 @@ abstract class $CommunityMainStateCopyWith<$Res> {
           CommunityMainState value, $Res Function(CommunityMainState) then) =
       _$CommunityMainStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isLoading, List<Community> community, Community? createCommunity});
+      {bool isLoading, List<Community> listCommunity, Community? community});
 
-  $CommunityCopyWith<$Res>? get createCommunity;
+  $CommunityCopyWith<$Res>? get community;
 }
 
 /// @nodoc
@@ -479,33 +633,33 @@ class _$CommunityMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? listCommunity = freezed,
     Object? community = freezed,
-    Object? createCommunity = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      listCommunity: listCommunity == freezed
+          ? _value.listCommunity
+          : listCommunity // ignore: cast_nullable_to_non_nullable
+              as List<Community>,
       community: community == freezed
           ? _value.community
           : community // ignore: cast_nullable_to_non_nullable
-              as List<Community>,
-      createCommunity: createCommunity == freezed
-          ? _value.createCommunity
-          : createCommunity // ignore: cast_nullable_to_non_nullable
               as Community?,
     ));
   }
 
   @override
-  $CommunityCopyWith<$Res>? get createCommunity {
-    if (_value.createCommunity == null) {
+  $CommunityCopyWith<$Res>? get community {
+    if (_value.community == null) {
       return null;
     }
 
-    return $CommunityCopyWith<$Res>(_value.createCommunity!, (value) {
-      return _then(_value.copyWith(createCommunity: value));
+    return $CommunityCopyWith<$Res>(_value.community!, (value) {
+      return _then(_value.copyWith(community: value));
     });
   }
 }
@@ -518,10 +672,10 @@ abstract class _$CommunityMainStateCopyWith<$Res>
       __$CommunityMainStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isLoading, List<Community> community, Community? createCommunity});
+      {bool isLoading, List<Community> listCommunity, Community? community});
 
   @override
-  $CommunityCopyWith<$Res>? get createCommunity;
+  $CommunityCopyWith<$Res>? get community;
 }
 
 /// @nodoc
@@ -538,21 +692,21 @@ class __$CommunityMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? listCommunity = freezed,
     Object? community = freezed,
-    Object? createCommunity = freezed,
   }) {
     return _then(_CommunityMainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      listCommunity: listCommunity == freezed
+          ? _value.listCommunity
+          : listCommunity // ignore: cast_nullable_to_non_nullable
+              as List<Community>,
       community: community == freezed
           ? _value.community
           : community // ignore: cast_nullable_to_non_nullable
-              as List<Community>,
-      createCommunity: createCommunity == freezed
-          ? _value.createCommunity
-          : createCommunity // ignore: cast_nullable_to_non_nullable
               as Community?,
     ));
   }
@@ -563,19 +717,19 @@ class __$CommunityMainStateCopyWithImpl<$Res>
 class _$_CommunityMainState implements _CommunityMainState {
   _$_CommunityMainState(
       {required this.isLoading,
-      required this.community,
-      required this.createCommunity});
+      required this.listCommunity,
+      required this.community});
 
   @override
   final bool isLoading;
   @override
-  final List<Community> community;
+  final List<Community> listCommunity;
   @override
-  final Community? createCommunity;
+  final Community? community;
 
   @override
   String toString() {
-    return 'CommunityMainState(isLoading: $isLoading, community: $community, createCommunity: $createCommunity)';
+    return 'CommunityMainState(isLoading: $isLoading, listCommunity: $listCommunity, community: $community)';
   }
 
   @override
@@ -585,20 +739,20 @@ class _$_CommunityMainState implements _CommunityMainState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.listCommunity, listCommunity) ||
+                const DeepCollectionEquality()
+                    .equals(other.listCommunity, listCommunity)) &&
             (identical(other.community, community) ||
                 const DeepCollectionEquality()
-                    .equals(other.community, community)) &&
-            (identical(other.createCommunity, createCommunity) ||
-                const DeepCollectionEquality()
-                    .equals(other.createCommunity, createCommunity)));
+                    .equals(other.community, community)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(community) ^
-      const DeepCollectionEquality().hash(createCommunity);
+      const DeepCollectionEquality().hash(listCommunity) ^
+      const DeepCollectionEquality().hash(community);
 
   @JsonKey(ignore: true)
   @override
@@ -609,15 +763,15 @@ class _$_CommunityMainState implements _CommunityMainState {
 abstract class _CommunityMainState implements CommunityMainState {
   factory _CommunityMainState(
       {required bool isLoading,
-      required List<Community> community,
-      required Community? createCommunity}) = _$_CommunityMainState;
+      required List<Community> listCommunity,
+      required Community? community}) = _$_CommunityMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  List<Community> get community => throw _privateConstructorUsedError;
+  List<Community> get listCommunity => throw _privateConstructorUsedError;
   @override
-  Community? get createCommunity => throw _privateConstructorUsedError;
+  Community? get community => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommunityMainStateCopyWith<_CommunityMainState> get copyWith =>

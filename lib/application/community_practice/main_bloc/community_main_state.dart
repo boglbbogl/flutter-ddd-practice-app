@@ -4,12 +4,12 @@ part of 'community_main_bloc.dart';
 class CommunityMainState with _$CommunityMainState {
   factory CommunityMainState({
     required bool isLoading,
-    required List<Community> community,
-    required Community? createCommunity,
+    required List<Community> listCommunity,
+    required Community? community,
   }) = _CommunityMainState;
   factory CommunityMainState.initial() => _CommunityMainState(
         isLoading: false,
-        community: [],
-        createCommunity: null,
+        listCommunity: [],
+        community: null,
       );
 }

@@ -22,24 +22,24 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
   Stream<CommunityMainState> mapEventToState(
     CommunityMainEvent event,
   ) async* {
-    yield* event.map(
-      started: (e) async* {
-        yield state.copyWith(isLoading: true);
+    yield* event.map(started: (e) async* {
+      yield state.copyWith(isLoading: true);
 
-        await _likesStreamSubscription?.cancel();
-        _likesStreamSubscription = communityRepository.getCommunity().listen(
-              (community) => add(CommunityMainEvent.recived(community)),
-            );
-      },
-      recived: (e) async* {
-        yield state.copyWith(community: e.community);
-      },
-      created: (e) async* {
-        await communityRepository.createCommunity(
-          title: e.title,
-          bodyText: e.bodyText,
-        );
-      },
-    );
+      await _likesStreamSubscription?.cancel();
+      _likesStreamSubscription = communityRepository.getCommunity().listen(
+            (community) => add(CommunityMainEvent.recived(community)),
+          );
+    }, recived: (e) async* {
+      yield state.copyWith(listCommunity: e.listCommunity);
+    }, created: (e) async* {
+      await communityRepository.createCommunity(
+        title: e.title,
+        bodyText: e.bodyText,
+      );
+    }, deleted: (e) async* {
+      await communityRepository.deletedCommunity(
+        community: e.community,
+      );
+    });
   }
 }

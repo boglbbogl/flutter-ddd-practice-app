@@ -3,8 +3,9 @@ part of 'community_main_bloc.dart';
 @freezed
 class CommunityMainEvent with _$CommunityMainEvent {
   const factory CommunityMainEvent.started() = _Started;
-  const factory CommunityMainEvent.recived(List<Community> community) =
+  const factory CommunityMainEvent.recived(List<Community> listCommunity) =
       _Recived;
   const factory CommunityMainEvent.created(String title, String bodyText) =
       _Created;
+  const factory CommunityMainEvent.deleted(Community community) = _Deleted;
 }

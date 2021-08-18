@@ -16,7 +16,9 @@ class CommunityList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30),
       child: InkWell(
-        onTap: () {},
+        onTap: () => context
+            .read<CommunityMainBloc>()
+            .add(CommunityMainEvent.deleted(community)),
         child: Stack(
           children: [
             Column(

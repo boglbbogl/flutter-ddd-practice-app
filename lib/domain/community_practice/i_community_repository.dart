@@ -7,4 +7,7 @@ abstract class ICommunityRepository {
     required String title,
     required String bodyText,
   });
+  Future<Unit> deletedCommunity({
+    required Community community,
+  });
 }

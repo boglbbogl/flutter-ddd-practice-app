@@ -57,4 +57,13 @@ class CommunityRepository implements ICommunityRepository {
     });
     return unit;
   }
+
+  @override
+  Future<Unit> deletedCommunity({
+    required Community community,
+  }) async {
+    final ref = _firestore.collection("community").doc();
+    await ref.delete();
+    return unit;
+  }
 }
