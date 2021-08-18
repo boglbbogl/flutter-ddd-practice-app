@@ -23,6 +23,9 @@ class CommunityList extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: InkWell(
+              onTap: (){
+                
+              },
               onLongPress: () {
                 _communityDeleteForm(
                   context,

@@ -55,6 +55,7 @@ class CommunityRepository implements ICommunityRepository {
       "title": title,
       "bodyText": bodyText,
       "createdAt": DateTime.now(),
+      "updatedAt": DateTime.now(),
       "id": communityId,
     });
     return unit;

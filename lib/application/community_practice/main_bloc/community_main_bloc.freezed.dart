@@ -589,10 +589,15 @@ class _$CommunityMainStateTearOff {
   const _$CommunityMainStateTearOff();
 
   _CommunityMainState call(
-      {required bool isLoading, required List<Community> listCommunity}) {
+      {required bool isLoading,
+      required List<Community> listCommunity,
+      required Community? community,
+      required String? id}) {
     return _CommunityMainState(
       isLoading: isLoading,
       listCommunity: listCommunity,
+      community: community,
+      id: id,
     );
   }
 }
@@ -604,6 +609,8 @@ const $CommunityMainState = _$CommunityMainStateTearOff();
 mixin _$CommunityMainState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<Community> get listCommunity => throw _privateConstructorUsedError;
+  Community? get community => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CommunityMainStateCopyWith<CommunityMainState> get copyWith =>
@@ -615,7 +622,13 @@ abstract class $CommunityMainStateCopyWith<$Res> {
   factory $CommunityMainStateCopyWith(
           CommunityMainState value, $Res Function(CommunityMainState) then) =
       _$CommunityMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, List<Community> listCommunity});
+  $Res call(
+      {bool isLoading,
+      List<Community> listCommunity,
+      Community? community,
+      String? id});
+
+  $CommunityCopyWith<$Res>? get community;
 }
 
 /// @nodoc
@@ -631,6 +644,8 @@ class _$CommunityMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? listCommunity = freezed,
+    Object? community = freezed,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -641,7 +656,26 @@ class _$CommunityMainStateCopyWithImpl<$Res>
           ? _value.listCommunity
           : listCommunity // ignore: cast_nullable_to_non_nullable
               as List<Community>,
+      community: community == freezed
+          ? _value.community
+          : community // ignore: cast_nullable_to_non_nullable
+              as Community?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
+  }
+
+  @override
+  $CommunityCopyWith<$Res>? get community {
+    if (_value.community == null) {
+      return null;
+    }
+
+    return $CommunityCopyWith<$Res>(_value.community!, (value) {
+      return _then(_value.copyWith(community: value));
+    });
   }
 }
 
@@ -652,7 +686,14 @@ abstract class _$CommunityMainStateCopyWith<$Res>
           _CommunityMainState value, $Res Function(_CommunityMainState) then) =
       __$CommunityMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, List<Community> listCommunity});
+  $Res call(
+      {bool isLoading,
+      List<Community> listCommunity,
+      Community? community,
+      String? id});
+
+  @override
+  $CommunityCopyWith<$Res>? get community;
 }
 
 /// @nodoc
@@ -670,6 +711,8 @@ class __$CommunityMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? listCommunity = freezed,
+    Object? community = freezed,
+    Object? id = freezed,
   }) {
     return _then(_CommunityMainState(
       isLoading: isLoading == freezed
@@ -680,6 +723,14 @@ class __$CommunityMainStateCopyWithImpl<$Res>
           ? _value.listCommunity
           : listCommunity // ignore: cast_nullable_to_non_nullable
               as List<Community>,
+      community: community == freezed
+          ? _value.community
+          : community // ignore: cast_nullable_to_non_nullable
+              as Community?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -687,16 +738,24 @@ class __$CommunityMainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CommunityMainState implements _CommunityMainState {
-  _$_CommunityMainState({required this.isLoading, required this.listCommunity});
+  _$_CommunityMainState(
+      {required this.isLoading,
+      required this.listCommunity,
+      required this.community,
+      required this.id});
 
   @override
   final bool isLoading;
   @override
   final List<Community> listCommunity;
+  @override
+  final Community? community;
+  @override
+  final String? id;
 
   @override
   String toString() {
-    return 'CommunityMainState(isLoading: $isLoading, listCommunity: $listCommunity)';
+    return 'CommunityMainState(isLoading: $isLoading, listCommunity: $listCommunity, community: $community, id: $id)';
   }
 
   @override
@@ -708,14 +767,21 @@ class _$_CommunityMainState implements _CommunityMainState {
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.listCommunity, listCommunity) ||
                 const DeepCollectionEquality()
-                    .equals(other.listCommunity, listCommunity)));
+                    .equals(other.listCommunity, listCommunity)) &&
+            (identical(other.community, community) ||
+                const DeepCollectionEquality()
+                    .equals(other.community, community)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(listCommunity);
+      const DeepCollectionEquality().hash(listCommunity) ^
+      const DeepCollectionEquality().hash(community) ^
+      const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
@@ -726,12 +792,18 @@ class _$_CommunityMainState implements _CommunityMainState {
 abstract class _CommunityMainState implements CommunityMainState {
   factory _CommunityMainState(
       {required bool isLoading,
-      required List<Community> listCommunity}) = _$_CommunityMainState;
+      required List<Community> listCommunity,
+      required Community? community,
+      required String? id}) = _$_CommunityMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
   List<Community> get listCommunity => throw _privateConstructorUsedError;
+  @override
+  Community? get community => throw _privateConstructorUsedError;
+  @override
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommunityMainStateCopyWith<_CommunityMainState> get copyWith =>
