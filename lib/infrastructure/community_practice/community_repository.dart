@@ -14,9 +14,9 @@ class CommunityRepository implements ICommunityRepository {
   @override
   Future<List<Community>> getCommunity() async {
     try {
-      final ref = _firestore
-          .collection("community")
-          .orderBy("createdAt", descending: true);
+      final ref = _firestore.collection("community")
+          // .orderBy("createdAt", descending: true)
+          ;
       final doc = await ref.get();
       final result = doc.docs
           .map((e) => CommunityDto.fromFireStore(e).toDomain())
