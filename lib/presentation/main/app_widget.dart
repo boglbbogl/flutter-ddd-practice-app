@@ -1,4 +1,4 @@
-import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';

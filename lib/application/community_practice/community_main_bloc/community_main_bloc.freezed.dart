@@ -32,13 +32,6 @@ class _$CommunityMainEventTearOff {
       bodyText,
     );
   }
-
-  _Updated updated(String title, String bodyText) {
-    return _Updated(
-      title,
-      bodyText,
-    );
-  }
 }
 
 /// @nodoc
@@ -51,7 +44,6 @@ mixin _$CommunityMainEvent {
     required TResult Function() started,
     required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
-    required TResult Function(String title, String bodyText) updated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,7 +51,6 @@ mixin _$CommunityMainEvent {
     TResult Function()? started,
     TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
-    TResult Function(String title, String bodyText)? updated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +59,6 @@ mixin _$CommunityMainEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
-    required TResult Function(_Updated value) updated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,7 +66,6 @@ mixin _$CommunityMainEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
-    TResult Function(_Updated value)? updated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,7 +129,6 @@ class _$_Started implements _Started {
     required TResult Function() started,
     required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
-    required TResult Function(String title, String bodyText) updated,
   }) {
     return started();
   }
@@ -151,7 +139,6 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
-    TResult Function(String title, String bodyText)? updated,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -166,7 +153,6 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
-    required TResult Function(_Updated value) updated,
   }) {
     return started(this);
   }
@@ -177,7 +163,6 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
-    TResult Function(_Updated value)? updated,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -258,7 +243,6 @@ class _$_Recived implements _Recived {
     required TResult Function() started,
     required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
-    required TResult Function(String title, String bodyText) updated,
   }) {
     return recived(listCommunity);
   }
@@ -269,7 +253,6 @@ class _$_Recived implements _Recived {
     TResult Function()? started,
     TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
-    TResult Function(String title, String bodyText)? updated,
     required TResult orElse(),
   }) {
     if (recived != null) {
@@ -284,7 +267,6 @@ class _$_Recived implements _Recived {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
-    required TResult Function(_Updated value) updated,
   }) {
     return recived(this);
   }
@@ -295,7 +277,6 @@ class _$_Recived implements _Recived {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
-    TResult Function(_Updated value)? updated,
     required TResult orElse(),
   }) {
     if (recived != null) {
@@ -392,7 +373,6 @@ class _$_Created implements _Created {
     required TResult Function() started,
     required TResult Function(List<Community> listCommunity) recived,
     required TResult Function(String title, String bodyText) created,
-    required TResult Function(String title, String bodyText) updated,
   }) {
     return created(title, bodyText);
   }
@@ -403,7 +383,6 @@ class _$_Created implements _Created {
     TResult Function()? started,
     TResult Function(List<Community> listCommunity)? recived,
     TResult Function(String title, String bodyText)? created,
-    TResult Function(String title, String bodyText)? updated,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -418,7 +397,6 @@ class _$_Created implements _Created {
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
     required TResult Function(_Created value) created,
-    required TResult Function(_Updated value) updated,
   }) {
     return created(this);
   }
@@ -429,7 +407,6 @@ class _$_Created implements _Created {
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
     TResult Function(_Created value)? created,
-    TResult Function(_Updated value)? updated,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -450,153 +427,16 @@ abstract class _Created implements CommunityMainEvent {
 }
 
 /// @nodoc
-abstract class _$UpdatedCopyWith<$Res> {
-  factory _$UpdatedCopyWith(_Updated value, $Res Function(_Updated) then) =
-      __$UpdatedCopyWithImpl<$Res>;
-  $Res call({String title, String bodyText});
-}
-
-/// @nodoc
-class __$UpdatedCopyWithImpl<$Res>
-    extends _$CommunityMainEventCopyWithImpl<$Res>
-    implements _$UpdatedCopyWith<$Res> {
-  __$UpdatedCopyWithImpl(_Updated _value, $Res Function(_Updated) _then)
-      : super(_value, (v) => _then(v as _Updated));
-
-  @override
-  _Updated get _value => super._value as _Updated;
-
-  @override
-  $Res call({
-    Object? title = freezed,
-    Object? bodyText = freezed,
-  }) {
-    return _then(_Updated(
-      title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      bodyText == freezed
-          ? _value.bodyText
-          : bodyText // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Updated implements _Updated {
-  const _$_Updated(this.title, this.bodyText);
-
-  @override
-  final String title;
-  @override
-  final String bodyText;
-
-  @override
-  String toString() {
-    return 'CommunityMainEvent.updated(title: $title, bodyText: $bodyText)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Updated &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.bodyText, bodyText) ||
-                const DeepCollectionEquality()
-                    .equals(other.bodyText, bodyText)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(bodyText);
-
-  @JsonKey(ignore: true)
-  @override
-  _$UpdatedCopyWith<_Updated> get copyWith =>
-      __$UpdatedCopyWithImpl<_Updated>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(List<Community> listCommunity) recived,
-    required TResult Function(String title, String bodyText) created,
-    required TResult Function(String title, String bodyText) updated,
-  }) {
-    return updated(title, bodyText);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(List<Community> listCommunity)? recived,
-    TResult Function(String title, String bodyText)? created,
-    TResult Function(String title, String bodyText)? updated,
-    required TResult orElse(),
-  }) {
-    if (updated != null) {
-      return updated(title, bodyText);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Recived value) recived,
-    required TResult Function(_Created value) created,
-    required TResult Function(_Updated value) updated,
-  }) {
-    return updated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Recived value)? recived,
-    TResult Function(_Created value)? created,
-    TResult Function(_Updated value)? updated,
-    required TResult orElse(),
-  }) {
-    if (updated != null) {
-      return updated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Updated implements CommunityMainEvent {
-  const factory _Updated(String title, String bodyText) = _$_Updated;
-
-  String get title => throw _privateConstructorUsedError;
-  String get bodyText => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$UpdatedCopyWith<_Updated> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 class _$CommunityMainStateTearOff {
   const _$CommunityMainStateTearOff();
 
   _CommunityMainState call(
       {required bool isLoading,
       required List<Community> listCommunity,
-      required Community? community,
       required String? id}) {
     return _CommunityMainState(
       isLoading: isLoading,
       listCommunity: listCommunity,
-      community: community,
       id: id,
     );
   }
@@ -609,7 +449,6 @@ const $CommunityMainState = _$CommunityMainStateTearOff();
 mixin _$CommunityMainState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<Community> get listCommunity => throw _privateConstructorUsedError;
-  Community? get community => throw _privateConstructorUsedError;
   String? get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -622,13 +461,7 @@ abstract class $CommunityMainStateCopyWith<$Res> {
   factory $CommunityMainStateCopyWith(
           CommunityMainState value, $Res Function(CommunityMainState) then) =
       _$CommunityMainStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool isLoading,
-      List<Community> listCommunity,
-      Community? community,
-      String? id});
-
-  $CommunityCopyWith<$Res>? get community;
+  $Res call({bool isLoading, List<Community> listCommunity, String? id});
 }
 
 /// @nodoc
@@ -644,7 +477,6 @@ class _$CommunityMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? listCommunity = freezed,
-    Object? community = freezed,
     Object? id = freezed,
   }) {
     return _then(_value.copyWith(
@@ -656,26 +488,11 @@ class _$CommunityMainStateCopyWithImpl<$Res>
           ? _value.listCommunity
           : listCommunity // ignore: cast_nullable_to_non_nullable
               as List<Community>,
-      community: community == freezed
-          ? _value.community
-          : community // ignore: cast_nullable_to_non_nullable
-              as Community?,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  @override
-  $CommunityCopyWith<$Res>? get community {
-    if (_value.community == null) {
-      return null;
-    }
-
-    return $CommunityCopyWith<$Res>(_value.community!, (value) {
-      return _then(_value.copyWith(community: value));
-    });
   }
 }
 
@@ -686,14 +503,7 @@ abstract class _$CommunityMainStateCopyWith<$Res>
           _CommunityMainState value, $Res Function(_CommunityMainState) then) =
       __$CommunityMainStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {bool isLoading,
-      List<Community> listCommunity,
-      Community? community,
-      String? id});
-
-  @override
-  $CommunityCopyWith<$Res>? get community;
+  $Res call({bool isLoading, List<Community> listCommunity, String? id});
 }
 
 /// @nodoc
@@ -711,7 +521,6 @@ class __$CommunityMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? listCommunity = freezed,
-    Object? community = freezed,
     Object? id = freezed,
   }) {
     return _then(_CommunityMainState(
@@ -723,10 +532,6 @@ class __$CommunityMainStateCopyWithImpl<$Res>
           ? _value.listCommunity
           : listCommunity // ignore: cast_nullable_to_non_nullable
               as List<Community>,
-      community: community == freezed
-          ? _value.community
-          : community // ignore: cast_nullable_to_non_nullable
-              as Community?,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -739,23 +544,18 @@ class __$CommunityMainStateCopyWithImpl<$Res>
 
 class _$_CommunityMainState implements _CommunityMainState {
   _$_CommunityMainState(
-      {required this.isLoading,
-      required this.listCommunity,
-      required this.community,
-      required this.id});
+      {required this.isLoading, required this.listCommunity, required this.id});
 
   @override
   final bool isLoading;
   @override
   final List<Community> listCommunity;
   @override
-  final Community? community;
-  @override
   final String? id;
 
   @override
   String toString() {
-    return 'CommunityMainState(isLoading: $isLoading, listCommunity: $listCommunity, community: $community, id: $id)';
+    return 'CommunityMainState(isLoading: $isLoading, listCommunity: $listCommunity, id: $id)';
   }
 
   @override
@@ -768,9 +568,6 @@ class _$_CommunityMainState implements _CommunityMainState {
             (identical(other.listCommunity, listCommunity) ||
                 const DeepCollectionEquality()
                     .equals(other.listCommunity, listCommunity)) &&
-            (identical(other.community, community) ||
-                const DeepCollectionEquality()
-                    .equals(other.community, community)) &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)));
   }
@@ -780,7 +577,6 @@ class _$_CommunityMainState implements _CommunityMainState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(listCommunity) ^
-      const DeepCollectionEquality().hash(community) ^
       const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
@@ -793,15 +589,12 @@ abstract class _CommunityMainState implements CommunityMainState {
   factory _CommunityMainState(
       {required bool isLoading,
       required List<Community> listCommunity,
-      required Community? community,
       required String? id}) = _$_CommunityMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
   List<Community> get listCommunity => throw _privateConstructorUsedError;
-  @override
-  Community? get community => throw _privateConstructorUsedError;
   @override
   String? get id => throw _privateConstructorUsedError;
   @override

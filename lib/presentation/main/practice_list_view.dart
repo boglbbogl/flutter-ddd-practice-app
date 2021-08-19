@@ -1,6 +1,5 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
-import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
-import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
+
 import 'package:ddd_practice_app/presentation/main/practice_item.dart';
 import 'package:flutter/material.dart';
 

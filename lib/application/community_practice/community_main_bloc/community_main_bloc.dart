@@ -44,12 +44,6 @@ class CommunityMainBloc extends Bloc<CommunityMainEvent, CommunityMainState> {
           bodyText: e.bodyText,
         );
       },
-      updated: (e) async* {
-        // Community? community;
-        // final id = community!.id;
-        await communityRepository.updateCommunity(
-            title: e.title, bodyText: e.bodyText, id: state.id!);
-      },
     );
   }
 }

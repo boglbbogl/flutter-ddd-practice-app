@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
-import 'package:ddd_practice_app/application/community_practice/main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/presentation/community_practice/widgets/community_bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

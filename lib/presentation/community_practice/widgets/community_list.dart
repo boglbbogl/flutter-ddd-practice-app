@@ -2,7 +2,7 @@ import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/community_delete_cubit/community_delete_cubit.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/community_practice/widgets/community_detail.dart';
+import 'package:ddd_practice_app/presentation/community_practice/widgets/community_detail_update.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +25,7 @@ class CommunityList extends StatelessWidget {
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: InkWell(
               onTap: () {
-                Get.to(() => CommunityDetail(
+                Get.to(() => CommunityDetailUpdate(
                       community: community,
                     ));
               },
