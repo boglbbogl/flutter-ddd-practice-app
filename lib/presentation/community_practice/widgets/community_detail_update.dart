@@ -25,91 +25,88 @@ class CommunityDetailUpdate extends StatelessWidget {
         builder: (context, state) {
           titleController.text = community.title;
           bodyTextController.text = community.bodyText;
-          return GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Scaffold(
-              appBar: AppBar(
-                backgroundColor: Colors.white,
-                automaticallyImplyLeading: false,
-                elevation: 0,
-                leading: IconButton(
-                  onPressed: () => Get.back(),
-                  icon: Icon(
-                    Icons.arrow_back_ios_outlined,
-                    color: state.isChanged ? Colors.red : Colors.black,
-                  ),
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              automaticallyImplyLeading: false,
+              elevation: 0,
+              leading: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.arrow_back_ios_outlined,
+                  color: state.isChanged ? Colors.red : Colors.black,
                 ),
               ),
-              bottomNavigationBar: communityBottomButtonForm(
-                buttonTitle: state.isChanged ? 'UPDATE' : 'EDIT',
-                buttonColors: state.isChanged ? Colors.red : Colors.black,
-                buttonTextColor: Colors.white,
-                onTap: state.isChanged
-                    ? () {
-                        context
-                            .read<CommunityDetailBloc>()
-                            .add(CommunityDetailEvent.updated(
-                              titleController.text,
-                              bodyTextController.text,
-                              community.id,
-                            ));
-                        Get.back();
-                      }
-                    : () {
-                        context.read<CommunityDetailBloc>().add(
-                            const CommunityDetailEvent.screenChanged(true));
-                      },
-              ),
-              body: SingleChildScrollView(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  child: Stack(
-                    children: [
-                      if (state.isChanged)
-                        Column(
-                          children: [
-                            _communityUpdateTextForm(
-                                controller: titleController, fontSize: 30),
-                            _communityUpdateTextForm(
-                                controller: bodyTextController, fontSize: 16)
-                          ],
-                        )
-                      else
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 20),
-                              child: Text(community.title,
-                                  style: theme.textTheme.bodyText2!.copyWith(
-                                    color: Colors.black,
-                                    fontSize: 30,
-                                  )),
-                            ),
-                            if (!state.isChanged) ...[
+            ),
+            bottomNavigationBar: communityBottomButtonForm(
+              buttonTitle: state.isChanged ? 'UPDATE' : 'EDIT',
+              buttonColors: state.isChanged ? Colors.red : Colors.black,
+              buttonTextColor: Colors.white,
+              onTap: state.isChanged
+                  ? () {
+                      context
+                          .read<CommunityDetailBloc>()
+                          .add(CommunityDetailEvent.updated(
+                            titleController.text,
+                            bodyTextController.text,
+                            community.id,
+                          ));
+                      Get.back();
+                    }
+                  : () {
+                      context
+                          .read<CommunityDetailBloc>()
+                          .add(const CommunityDetailEvent.screenChanged(true));
+                    },
+            ),
+            body: SingleChildScrollView(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                child: Stack(
+                  children: [
+                    if (state.isChanged)
+                      Column(
+                        children: [
+                          _communityUpdateTextForm(
+                              controller: titleController, fontSize: 30),
+                          _communityUpdateTextForm(
+                              controller: bodyTextController, fontSize: 16)
+                        ],
+                      )
+                    else
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 20),
+                            child: Text(community.title,
+                                style: theme.textTheme.bodyText2!.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                )),
+                          ),
+                          if (!state.isChanged) ...[
+                            _communityDateForm(
+                                title: "작성한 날짜  :  ",
+                                date: community.createdAt),
+                            if (community.createdAt != community.updatedAt) ...[
                               _communityDateForm(
-                                  title: "작성한 날짜  :  ",
-                                  date: community.createdAt),
-                              if (community.createdAt !=
-                                  community.updatedAt) ...[
-                                _communityDateForm(
-                                    title: "수정한 날짜  :  ",
-                                    date: community.updatedAt),
-                              ],
+                                  title: "수정한 날짜  :  ",
+                                  date: community.updatedAt),
                             ],
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Text(community.bodyText,
-                                  style: theme.textTheme.bodyText2!.copyWith(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                  )),
-                            ),
                           ],
-                        ),
-                    ],
-                  ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Text(community.bodyText,
+                                style: theme.textTheme.bodyText2!.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                )),
+                          ),
+                        ],
+                      ),
+                  ],
                 ),
               ),
             ),
