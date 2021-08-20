@@ -49,14 +49,16 @@ class ApiMainPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () async {
-                        final ref = firestore
-                            .collection("test")
-                            .doc("9AV1cBnAqGvszQexclkj");
-                        final batch = firestore.batch();
-                        batch.update(ref, {
-                          'array': FieldValue.arrayRemove(['test1'])
+                        Map<String, bool> _modifiedUsersInterested = {};
+
+                        _modifiedUsersInterested
+                            .removeWhere((key, value) => key == 'test1');
+                        await firestore
+                            .collection('test')
+                            .doc("8WxkQntJrngWoIrHxu8E")
+                            .update({
+                          'array': _modifiedUsersInterested,
                         });
-                        batch.commit();
                       },
                       child: Text(
                         'delete',
