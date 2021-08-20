@@ -40,9 +40,9 @@ class ApiMainPage extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () async {},
                       child: Text(
-                        'update',
+                        'read',
                         style: theme.textTheme.bodyText2!
                             .copyWith(color: Colors.black, fontSize: 30),
                       ),
@@ -51,10 +51,12 @@ class ApiMainPage extends StatelessWidget {
                       onTap: () async {
                         final ref = firestore
                             .collection("test")
-                            .doc("0ufBpqjTtjEyu07VSV99");
-                        ref.update({
-                          "array": FieldValue.arrayRemove([null]),
+                            .doc("9AV1cBnAqGvszQexclkj");
+                        final batch = firestore.batch();
+                        batch.update(ref, {
+                          'array': FieldValue.arrayRemove(['test1'])
                         });
+                        batch.commit();
                       },
                       child: Text(
                         'delete',
