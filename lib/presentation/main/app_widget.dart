@@ -3,6 +3,7 @@ import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
+import 'package:ddd_practice_app/presentation/friends_selection_practice/friends_selection_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,9 @@ class AppWidget extends StatelessWidget {
         routes: {
           '/mainPage': (context) => const MainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
-          '/apiMainPage': (context) => ApiMainPage(),
+          '/apiMainPage': (context) => const ApiMainPage(),
+          '/friendsSelectionMainPage': (context) =>
+              const FriendsSelectionMainPage(),
         },
         theme: ThemeData(
           fontFamily: 'Yanolja',

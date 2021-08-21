@@ -4,12 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ApiMainPage extends StatelessWidget {
-  ApiMainPage({Key? key}) : super(key: key);
-  final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final Map<String, dynamic> mapList = {
-    "test1": true,
-    "test2": true,
-  };
+  const ApiMainPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MainCubit, MainState>(
