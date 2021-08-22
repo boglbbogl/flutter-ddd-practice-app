@@ -21,15 +21,13 @@ class _$FriendsSelectionTearOff {
       required String lastName,
       required int colors,
       required DateTime createdAt,
-      required String id,
-      required List<FriendsGroup> friendsGroup}) {
+      required String id}) {
     return _FriendsSelection(
       firstName: firstName,
       lastName: lastName,
       colors: colors,
       createdAt: createdAt,
       id: id,
-      friendsGroup: friendsGroup,
     );
   }
 }
@@ -44,7 +42,6 @@ mixin _$FriendsSelection {
   int get colors => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  List<FriendsGroup> get friendsGroup => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FriendsSelectionCopyWith<FriendsSelection> get copyWith =>
@@ -61,8 +58,7 @@ abstract class $FriendsSelectionCopyWith<$Res> {
       String lastName,
       int colors,
       DateTime createdAt,
-      String id,
-      List<FriendsGroup> friendsGroup});
+      String id});
 }
 
 /// @nodoc
@@ -81,7 +77,6 @@ class _$FriendsSelectionCopyWithImpl<$Res>
     Object? colors = freezed,
     Object? createdAt = freezed,
     Object? id = freezed,
-    Object? friendsGroup = freezed,
   }) {
     return _then(_value.copyWith(
       firstName: firstName == freezed
@@ -104,10 +99,6 @@ class _$FriendsSelectionCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      friendsGroup: friendsGroup == freezed
-          ? _value.friendsGroup
-          : friendsGroup // ignore: cast_nullable_to_non_nullable
-              as List<FriendsGroup>,
     ));
   }
 }
@@ -124,8 +115,7 @@ abstract class _$FriendsSelectionCopyWith<$Res>
       String lastName,
       int colors,
       DateTime createdAt,
-      String id,
-      List<FriendsGroup> friendsGroup});
+      String id});
 }
 
 /// @nodoc
@@ -146,7 +136,6 @@ class __$FriendsSelectionCopyWithImpl<$Res>
     Object? colors = freezed,
     Object? createdAt = freezed,
     Object? id = freezed,
-    Object? friendsGroup = freezed,
   }) {
     return _then(_FriendsSelection(
       firstName: firstName == freezed
@@ -169,10 +158,6 @@ class __$FriendsSelectionCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      friendsGroup: friendsGroup == freezed
-          ? _value.friendsGroup
-          : friendsGroup // ignore: cast_nullable_to_non_nullable
-              as List<FriendsGroup>,
     ));
   }
 }
@@ -185,8 +170,7 @@ class _$_FriendsSelection implements _FriendsSelection {
       required this.lastName,
       required this.colors,
       required this.createdAt,
-      required this.id,
-      required this.friendsGroup});
+      required this.id});
 
   @override
   final String firstName;
@@ -198,12 +182,10 @@ class _$_FriendsSelection implements _FriendsSelection {
   final DateTime createdAt;
   @override
   final String id;
-  @override
-  final List<FriendsGroup> friendsGroup;
 
   @override
   String toString() {
-    return 'FriendsSelection(firstName: $firstName, lastName: $lastName, colors: $colors, createdAt: $createdAt, id: $id, friendsGroup: $friendsGroup)';
+    return 'FriendsSelection(firstName: $firstName, lastName: $lastName, colors: $colors, createdAt: $createdAt, id: $id)';
   }
 
   @override
@@ -222,10 +204,7 @@ class _$_FriendsSelection implements _FriendsSelection {
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.friendsGroup, friendsGroup) ||
-                const DeepCollectionEquality()
-                    .equals(other.friendsGroup, friendsGroup)));
+                const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
@@ -235,8 +214,7 @@ class _$_FriendsSelection implements _FriendsSelection {
       const DeepCollectionEquality().hash(lastName) ^
       const DeepCollectionEquality().hash(colors) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(friendsGroup);
+      const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
@@ -250,8 +228,7 @@ abstract class _FriendsSelection implements FriendsSelection {
       required String lastName,
       required int colors,
       required DateTime createdAt,
-      required String id,
-      required List<FriendsGroup> friendsGroup}) = _$_FriendsSelection;
+      required String id}) = _$_FriendsSelection;
 
   @override
   String get firstName => throw _privateConstructorUsedError;
@@ -264,68 +241,60 @@ abstract class _FriendsSelection implements FriendsSelection {
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  List<FriendsGroup> get friendsGroup => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$FriendsSelectionCopyWith<_FriendsSelection> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$FriendsGroupTearOff {
-  const _$FriendsGroupTearOff();
+class _$GroupsTearOff {
+  const _$GroupsTearOff();
 
-  _FriendsGroup call(
-      {required String id, required String fullName, required int colors}) {
-    return _FriendsGroup(
-      id: id,
+  _Groups call(
+      {required String fullName, required int colors, required String id}) {
+    return _Groups(
       fullName: fullName,
       colors: colors,
+      id: id,
     );
   }
 }
 
 /// @nodoc
-const $FriendsGroup = _$FriendsGroupTearOff();
+const $Groups = _$GroupsTearOff();
 
 /// @nodoc
-mixin _$FriendsGroup {
-  String get id => throw _privateConstructorUsedError;
+mixin _$Groups {
   String get fullName => throw _privateConstructorUsedError;
   int get colors => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FriendsGroupCopyWith<FriendsGroup> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GroupsCopyWith<Groups> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FriendsGroupCopyWith<$Res> {
-  factory $FriendsGroupCopyWith(
-          FriendsGroup value, $Res Function(FriendsGroup) then) =
-      _$FriendsGroupCopyWithImpl<$Res>;
-  $Res call({String id, String fullName, int colors});
+abstract class $GroupsCopyWith<$Res> {
+  factory $GroupsCopyWith(Groups value, $Res Function(Groups) then) =
+      _$GroupsCopyWithImpl<$Res>;
+  $Res call({String fullName, int colors, String id});
 }
 
 /// @nodoc
-class _$FriendsGroupCopyWithImpl<$Res> implements $FriendsGroupCopyWith<$Res> {
-  _$FriendsGroupCopyWithImpl(this._value, this._then);
+class _$GroupsCopyWithImpl<$Res> implements $GroupsCopyWith<$Res> {
+  _$GroupsCopyWithImpl(this._value, this._then);
 
-  final FriendsGroup _value;
+  final Groups _value;
   // ignore: unused_field
-  final $Res Function(FriendsGroup) _then;
+  final $Res Function(Groups) _then;
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? fullName = freezed,
     Object? colors = freezed,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -334,41 +303,38 @@ class _$FriendsGroupCopyWithImpl<$Res> implements $FriendsGroupCopyWith<$Res> {
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
               as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$FriendsGroupCopyWith<$Res>
-    implements $FriendsGroupCopyWith<$Res> {
-  factory _$FriendsGroupCopyWith(
-          _FriendsGroup value, $Res Function(_FriendsGroup) then) =
-      __$FriendsGroupCopyWithImpl<$Res>;
+abstract class _$GroupsCopyWith<$Res> implements $GroupsCopyWith<$Res> {
+  factory _$GroupsCopyWith(_Groups value, $Res Function(_Groups) then) =
+      __$GroupsCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String fullName, int colors});
+  $Res call({String fullName, int colors, String id});
 }
 
 /// @nodoc
-class __$FriendsGroupCopyWithImpl<$Res> extends _$FriendsGroupCopyWithImpl<$Res>
-    implements _$FriendsGroupCopyWith<$Res> {
-  __$FriendsGroupCopyWithImpl(
-      _FriendsGroup _value, $Res Function(_FriendsGroup) _then)
-      : super(_value, (v) => _then(v as _FriendsGroup));
+class __$GroupsCopyWithImpl<$Res> extends _$GroupsCopyWithImpl<$Res>
+    implements _$GroupsCopyWith<$Res> {
+  __$GroupsCopyWithImpl(_Groups _value, $Res Function(_Groups) _then)
+      : super(_value, (v) => _then(v as _Groups));
 
   @override
-  _FriendsGroup get _value => super._value as _FriendsGroup;
+  _Groups get _value => super._value as _Groups;
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? fullName = freezed,
     Object? colors = freezed,
+    Object? id = freezed,
   }) {
-    return _then(_FriendsGroup(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_Groups(
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -377,68 +343,70 @@ class __$FriendsGroupCopyWithImpl<$Res> extends _$FriendsGroupCopyWithImpl<$Res>
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
               as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_FriendsGroup implements _FriendsGroup {
-  _$_FriendsGroup(
-      {required this.id, required this.fullName, required this.colors});
+class _$_Groups implements _Groups {
+  _$_Groups({required this.fullName, required this.colors, required this.id});
 
-  @override
-  final String id;
   @override
   final String fullName;
   @override
   final int colors;
+  @override
+  final String id;
 
   @override
   String toString() {
-    return 'FriendsGroup(id: $id, fullName: $fullName, colors: $colors)';
+    return 'Groups(fullName: $fullName, colors: $colors, id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FriendsGroup &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other is _Groups &&
             (identical(other.fullName, fullName) ||
                 const DeepCollectionEquality()
                     .equals(other.fullName, fullName)) &&
             (identical(other.colors, colors) ||
-                const DeepCollectionEquality().equals(other.colors, colors)));
+                const DeepCollectionEquality().equals(other.colors, colors)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(fullName) ^
-      const DeepCollectionEquality().hash(colors);
+      const DeepCollectionEquality().hash(colors) ^
+      const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
-  _$FriendsGroupCopyWith<_FriendsGroup> get copyWith =>
-      __$FriendsGroupCopyWithImpl<_FriendsGroup>(this, _$identity);
+  _$GroupsCopyWith<_Groups> get copyWith =>
+      __$GroupsCopyWithImpl<_Groups>(this, _$identity);
 }
 
-abstract class _FriendsGroup implements FriendsGroup {
-  factory _FriendsGroup(
-      {required String id,
-      required String fullName,
-      required int colors}) = _$_FriendsGroup;
+abstract class _Groups implements Groups {
+  factory _Groups(
+      {required String fullName,
+      required int colors,
+      required String id}) = _$_Groups;
 
-  @override
-  String get id => throw _privateConstructorUsedError;
   @override
   String get fullName => throw _privateConstructorUsedError;
   @override
   int get colors => throw _privateConstructorUsedError;
   @override
+  String get id => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
-  _$FriendsGroupCopyWith<_FriendsGroup> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$GroupsCopyWith<_Groups> get copyWith => throw _privateConstructorUsedError;
 }

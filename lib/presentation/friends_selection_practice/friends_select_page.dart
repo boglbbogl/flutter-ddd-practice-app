@@ -6,7 +6,6 @@ import 'package:ddd_practice_app/presentation/friends_selection_practice/my_colo
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../injection.dart';
-import 'package:kt_dart/kt.dart';
 
 class FriendsSelectPage extends StatelessWidget {
   final List<FriendsSelection> friends;
@@ -25,17 +24,8 @@ class FriendsSelectPage extends StatelessWidget {
             appBar: appBarForm(context, theme, title: ""),
             body: Column(
               children: [
-                // if (state.friendsSelection?.friendsGroup.isNotEmpty ??
-                //     false) ...[
-                //   SizedBox(
-                //     height: size.height * 0.1,
-                //     child: ListView(
-                //       children: [
-                //         ...state.friendsSelection!.friendsGroup
-                //             .map((e) => Text(e.fullName)),
-                //       ],
-                //     ),
-                //   ),
+                // if (state.groups?.groups.isNotEmpty ?? false) ...[
+                //   ...state.groups!.groups.map((e) => Text(e.firstName))
                 // ],
                 ListView(
                   shrinkWrap: true,
@@ -56,19 +46,7 @@ class FriendsSelectPage extends StatelessWidget {
                               InkWell(
                                 onTap: () {
                                   context.read<FriendsSelectionListBloc>().add(
-                                          FriendsSelectionListEvent
-                                              .selectFriends(
-                                        state.friendsSelection!.friendsGroup
-                                                .contains(f)
-                                            ? state
-                                                .friendsSelection!.friendsGroup
-                                                .where((e) => e != f)
-                                                .toList()
-                                            : state
-                                                .friendsSelection!.friendsGroup
-                                                .toImmutableList()
-                                                .asList(),
-                                      ));
+                                      FriendsSelectionListEvent.selected());
                                 },
                                 child: SizedBox(
                                   width: size.width * 0.9,
@@ -99,9 +77,6 @@ class FriendsSelectPage extends StatelessWidget {
                             ],
                           ),
                         )),
-                    if (state.friendsSelection?.friendsGroup.isNotEmpty ??
-                        false)
-                      ...[],
                   ],
                 ),
               ],

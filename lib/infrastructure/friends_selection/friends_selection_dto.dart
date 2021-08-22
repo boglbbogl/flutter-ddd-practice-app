@@ -42,6 +42,5 @@ class FriendsSelectionDto with _$FriendsSelectionDto {
         colors: colors,
         createdAt: createdAt,
         id: id,
-        friendsGroup: [],
       );
 }

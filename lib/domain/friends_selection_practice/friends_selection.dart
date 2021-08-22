@@ -10,7 +10,6 @@ class FriendsSelection with _$FriendsSelection {
     required int colors,
     required DateTime createdAt,
     required String id,
-    required List<FriendsGroup> friendsGroup,
   }) = _FriendsSelection;
 
   factory FriendsSelection.empty() => FriendsSelection(
@@ -19,15 +18,14 @@ class FriendsSelection with _$FriendsSelection {
         colors: 0,
         createdAt: DateTime.now(),
         id: "",
-        friendsGroup: [],
       );
 }
 
 @freezed
-class FriendsGroup with _$FriendsGroup {
-  factory FriendsGroup({
-    required String id,
+class Groups with _$Groups {
+  factory Groups({
     required String fullName,
     required int colors,
-  }) = _FriendsGroup;
+    required String id,
+  }) = _Groups;
 }

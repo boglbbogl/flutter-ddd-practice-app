@@ -20,10 +20,8 @@ class _$FriendsSelectionListEventTearOff {
     return const _Started();
   }
 
-  _SelectFriends selectFriends(List<FriendsGroup> friendsGroup) {
-    return _SelectFriends(
-      friendsGroup,
-    );
+  _Selected selected() {
+    return const _Selected();
   }
 }
 
@@ -35,26 +33,26 @@ mixin _$FriendsSelectionListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<FriendsGroup> friendsGroup) selectFriends,
+    required TResult Function() selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<FriendsGroup> friendsGroup)? selectFriends,
+    TResult Function()? selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SelectFriends value) selectFriends,
+    required TResult Function(_Selected value) selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SelectFriends value)? selectFriends,
+    TResult Function(_Selected value)? selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,7 +114,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<FriendsGroup> friendsGroup) selectFriends,
+    required TResult Function() selected,
   }) {
     return started();
   }
@@ -125,7 +123,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<FriendsGroup> friendsGroup)? selectFriends,
+    TResult Function()? selected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -138,7 +136,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SelectFriends value) selectFriends,
+    required TResult Function(_Selected value) selected,
   }) {
     return started(this);
   }
@@ -147,7 +145,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SelectFriends value)? selectFriends,
+    TResult Function(_Selected value)? selected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -162,86 +160,58 @@ abstract class _Started implements FriendsSelectionListEvent {
 }
 
 /// @nodoc
-abstract class _$SelectFriendsCopyWith<$Res> {
-  factory _$SelectFriendsCopyWith(
-          _SelectFriends value, $Res Function(_SelectFriends) then) =
-      __$SelectFriendsCopyWithImpl<$Res>;
-  $Res call({List<FriendsGroup> friendsGroup});
+abstract class _$SelectedCopyWith<$Res> {
+  factory _$SelectedCopyWith(_Selected value, $Res Function(_Selected) then) =
+      __$SelectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SelectFriendsCopyWithImpl<$Res>
+class __$SelectedCopyWithImpl<$Res>
     extends _$FriendsSelectionListEventCopyWithImpl<$Res>
-    implements _$SelectFriendsCopyWith<$Res> {
-  __$SelectFriendsCopyWithImpl(
-      _SelectFriends _value, $Res Function(_SelectFriends) _then)
-      : super(_value, (v) => _then(v as _SelectFriends));
+    implements _$SelectedCopyWith<$Res> {
+  __$SelectedCopyWithImpl(_Selected _value, $Res Function(_Selected) _then)
+      : super(_value, (v) => _then(v as _Selected));
 
   @override
-  _SelectFriends get _value => super._value as _SelectFriends;
-
-  @override
-  $Res call({
-    Object? friendsGroup = freezed,
-  }) {
-    return _then(_SelectFriends(
-      friendsGroup == freezed
-          ? _value.friendsGroup
-          : friendsGroup // ignore: cast_nullable_to_non_nullable
-              as List<FriendsGroup>,
-    ));
-  }
+  _Selected get _value => super._value as _Selected;
 }
 
 /// @nodoc
 
-class _$_SelectFriends implements _SelectFriends {
-  const _$_SelectFriends(this.friendsGroup);
-
-  @override
-  final List<FriendsGroup> friendsGroup;
+class _$_Selected implements _Selected {
+  const _$_Selected();
 
   @override
   String toString() {
-    return 'FriendsSelectionListEvent.selectFriends(friendsGroup: $friendsGroup)';
+    return 'FriendsSelectionListEvent.selected()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SelectFriends &&
-            (identical(other.friendsGroup, friendsGroup) ||
-                const DeepCollectionEquality()
-                    .equals(other.friendsGroup, friendsGroup)));
+    return identical(this, other) || (other is _Selected);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(friendsGroup);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SelectFriendsCopyWith<_SelectFriends> get copyWith =>
-      __$SelectFriendsCopyWithImpl<_SelectFriends>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<FriendsGroup> friendsGroup) selectFriends,
+    required TResult Function() selected,
   }) {
-    return selectFriends(friendsGroup);
+    return selected();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<FriendsGroup> friendsGroup)? selectFriends,
+    TResult Function()? selected,
     required TResult orElse(),
   }) {
-    if (selectFriends != null) {
-      return selectFriends(friendsGroup);
+    if (selected != null) {
+      return selected();
     }
     return orElse();
   }
@@ -250,33 +220,27 @@ class _$_SelectFriends implements _SelectFriends {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SelectFriends value) selectFriends,
+    required TResult Function(_Selected value) selected,
   }) {
-    return selectFriends(this);
+    return selected(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SelectFriends value)? selectFriends,
+    TResult Function(_Selected value)? selected,
     required TResult orElse(),
   }) {
-    if (selectFriends != null) {
-      return selectFriends(this);
+    if (selected != null) {
+      return selected(this);
     }
     return orElse();
   }
 }
 
-abstract class _SelectFriends implements FriendsSelectionListEvent {
-  const factory _SelectFriends(List<FriendsGroup> friendsGroup) =
-      _$_SelectFriends;
-
-  List<FriendsGroup> get friendsGroup => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$SelectFriendsCopyWith<_SelectFriends> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Selected implements FriendsSelectionListEvent {
+  const factory _Selected() = _$_Selected;
 }
 
 /// @nodoc
@@ -284,9 +248,12 @@ class _$FriendsSelectionListStateTearOff {
   const _$FriendsSelectionListStateTearOff();
 
   _FriendsSelectionListState call(
-      {required bool isLoading, required FriendsSelection? friendsSelection}) {
+      {required bool isLoading,
+      required List<Groups> groups,
+      required FriendsSelection? friendsSelection}) {
     return _FriendsSelectionListState(
       isLoading: isLoading,
+      groups: groups,
       friendsSelection: friendsSelection,
     );
   }
@@ -298,6 +265,7 @@ const $FriendsSelectionListState = _$FriendsSelectionListStateTearOff();
 /// @nodoc
 mixin _$FriendsSelectionListState {
   bool get isLoading => throw _privateConstructorUsedError;
+  List<Groups> get groups => throw _privateConstructorUsedError;
   FriendsSelection? get friendsSelection => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -310,7 +278,10 @@ abstract class $FriendsSelectionListStateCopyWith<$Res> {
   factory $FriendsSelectionListStateCopyWith(FriendsSelectionListState value,
           $Res Function(FriendsSelectionListState) then) =
       _$FriendsSelectionListStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, FriendsSelection? friendsSelection});
+  $Res call(
+      {bool isLoading,
+      List<Groups> groups,
+      FriendsSelection? friendsSelection});
 
   $FriendsSelectionCopyWith<$Res>? get friendsSelection;
 }
@@ -327,6 +298,7 @@ class _$FriendsSelectionListStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? groups = freezed,
     Object? friendsSelection = freezed,
   }) {
     return _then(_value.copyWith(
@@ -334,6 +306,10 @@ class _$FriendsSelectionListStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      groups: groups == freezed
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Groups>,
       friendsSelection: friendsSelection == freezed
           ? _value.friendsSelection
           : friendsSelection // ignore: cast_nullable_to_non_nullable
@@ -360,7 +336,10 @@ abstract class _$FriendsSelectionListStateCopyWith<$Res>
           $Res Function(_FriendsSelectionListState) then) =
       __$FriendsSelectionListStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, FriendsSelection? friendsSelection});
+  $Res call(
+      {bool isLoading,
+      List<Groups> groups,
+      FriendsSelection? friendsSelection});
 
   @override
   $FriendsSelectionCopyWith<$Res>? get friendsSelection;
@@ -381,6 +360,7 @@ class __$FriendsSelectionListStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? groups = freezed,
     Object? friendsSelection = freezed,
   }) {
     return _then(_FriendsSelectionListState(
@@ -388,6 +368,10 @@ class __$FriendsSelectionListStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      groups: groups == freezed
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Groups>,
       friendsSelection: friendsSelection == freezed
           ? _value.friendsSelection
           : friendsSelection // ignore: cast_nullable_to_non_nullable
@@ -400,16 +384,20 @@ class __$FriendsSelectionListStateCopyWithImpl<$Res>
 
 class _$_FriendsSelectionListState implements _FriendsSelectionListState {
   _$_FriendsSelectionListState(
-      {required this.isLoading, required this.friendsSelection});
+      {required this.isLoading,
+      required this.groups,
+      required this.friendsSelection});
 
   @override
   final bool isLoading;
+  @override
+  final List<Groups> groups;
   @override
   final FriendsSelection? friendsSelection;
 
   @override
   String toString() {
-    return 'FriendsSelectionListState(isLoading: $isLoading, friendsSelection: $friendsSelection)';
+    return 'FriendsSelectionListState(isLoading: $isLoading, groups: $groups, friendsSelection: $friendsSelection)';
   }
 
   @override
@@ -419,6 +407,8 @@ class _$_FriendsSelectionListState implements _FriendsSelectionListState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.groups, groups) ||
+                const DeepCollectionEquality().equals(other.groups, groups)) &&
             (identical(other.friendsSelection, friendsSelection) ||
                 const DeepCollectionEquality()
                     .equals(other.friendsSelection, friendsSelection)));
@@ -428,6 +418,7 @@ class _$_FriendsSelectionListState implements _FriendsSelectionListState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(groups) ^
       const DeepCollectionEquality().hash(friendsSelection);
 
   @JsonKey(ignore: true)
@@ -441,11 +432,14 @@ class _$_FriendsSelectionListState implements _FriendsSelectionListState {
 abstract class _FriendsSelectionListState implements FriendsSelectionListState {
   factory _FriendsSelectionListState(
           {required bool isLoading,
+          required List<Groups> groups,
           required FriendsSelection? friendsSelection}) =
       _$_FriendsSelectionListState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  List<Groups> get groups => throw _privateConstructorUsedError;
   @override
   FriendsSelection? get friendsSelection => throw _privateConstructorUsedError;
   @override
