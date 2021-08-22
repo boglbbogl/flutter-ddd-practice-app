@@ -17,12 +17,14 @@ import 'application/community_practice/community_detail_bloc/community_detail_bl
     as _i13;
 import 'application/community_practice/community_main_bloc/community_main_bloc.dart'
     as _i14;
+import 'application/friends_selection_practice/friends_selection_main/friends_selection_main_bloc.dart'
+    as _i15;
 import 'application/main/main_cubit.dart' as _i10;
 import 'domain/community_practice/i_community_repository.dart' as _i6;
 import 'domain/friends_selection_practice/i_friends_selection_repository.dart'
     as _i8;
 import 'infrastructure/community_practice/community_repository.dart' as _i7;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i15;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i16;
 import 'infrastructure/friends_selection/friends_selection_repository.dart'
     as _i9; // ignore_for_file: unnecessary_lambdas
 
@@ -50,7 +52,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i13.CommunityDetailBloc(get<_i6.ICommunityRepository>()));
   gh.factory<_i14.CommunityMainBloc>(
       () => _i14.CommunityMainBloc(get<_i6.ICommunityRepository>()));
+  gh.factory<_i15.FriendsSelectionMainBloc>(() =>
+      _i15.FriendsSelectionMainBloc(get<_i8.IFriendsSelectionRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableMudule extends _i15.FirebaseInjectableMudule {}
+class _$FirebaseInjectableMudule extends _i16.FirebaseInjectableMudule {}

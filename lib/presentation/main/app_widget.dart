@@ -1,4 +1,5 @@
 import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/application/friends_selection_practice/friends_selection_main/friends_selection_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
@@ -20,6 +21,9 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) => getIt<CommunityMainBloc>()
               ..add(const CommunityMainEvent.started())),
+        BlocProvider(
+            create: (context) => getIt<FriendsSelectionMainBloc>()
+              ..add(const FriendsSelectionMainEvent.started())),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:ddd_practice_app/domain/friends_selection_practice/friends_selection.dart';
 import 'package:ddd_practice_app/domain/friends_selection_practice/i_friends_selection_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -23,10 +24,21 @@ class FriendsSelectionMainBloc
   Stream<FriendsSelectionMainState> mapEventToState(
     FriendsSelectionMainEvent event,
   ) async* {
-    yield* event.map(started: (e) async* {
-      yield state.copyWith(isLoading: true);
-      await _friendsStreamSubscription?.cancel();
-      _friendsStreamSubscription = _friendsSelectionRepository.
-    });
+    yield* event.map(
+        started: (e) async* {
+          yield state.copyWith(isLoading: true);
+          await _friendsStreamSubscription?.cancel();
+          _friendsStreamSubscription =
+              _friendsSelectionRepository.getFriendsList().listen(
+                    (friends) =>
+                        add(FriendsSelectionMainEvent.recived(friends)),
+                  );
+        },
+        recived: (e) async* {
+          yield state.copyWith(
+            friends: e.friends,
+          );
+        },
+        created: (e) async* {});
   }
 }
