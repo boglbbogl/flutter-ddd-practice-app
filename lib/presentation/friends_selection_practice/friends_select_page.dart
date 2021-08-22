@@ -14,7 +14,6 @@ class FriendsSelectPage extends StatelessWidget {
     required this.friends,
   }) : super(key: key);
 
-  final List<String> list = [];
   @override
   Widget build(BuildContext context) {
     return BlocProvider<FriendsSelectionListBloc>(

@@ -245,3 +245,152 @@ abstract class _FriendsSelection implements FriendsSelection {
   _$FriendsSelectionCopyWith<_FriendsSelection> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$FriendsGroupTearOff {
+  const _$FriendsGroupTearOff();
+
+  _FriendsGroup call({required String id, required String fullName}) {
+    return _FriendsGroup(
+      id: id,
+      fullName: fullName,
+    );
+  }
+}
+
+/// @nodoc
+const $FriendsGroup = _$FriendsGroupTearOff();
+
+/// @nodoc
+mixin _$FriendsGroup {
+  String get id => throw _privateConstructorUsedError;
+  String get fullName => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $FriendsGroupCopyWith<FriendsGroup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FriendsGroupCopyWith<$Res> {
+  factory $FriendsGroupCopyWith(
+          FriendsGroup value, $Res Function(FriendsGroup) then) =
+      _$FriendsGroupCopyWithImpl<$Res>;
+  $Res call({String id, String fullName});
+}
+
+/// @nodoc
+class _$FriendsGroupCopyWithImpl<$Res> implements $FriendsGroupCopyWith<$Res> {
+  _$FriendsGroupCopyWithImpl(this._value, this._then);
+
+  final FriendsGroup _value;
+  // ignore: unused_field
+  final $Res Function(FriendsGroup) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? fullName = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      fullName: fullName == freezed
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$FriendsGroupCopyWith<$Res>
+    implements $FriendsGroupCopyWith<$Res> {
+  factory _$FriendsGroupCopyWith(
+          _FriendsGroup value, $Res Function(_FriendsGroup) then) =
+      __$FriendsGroupCopyWithImpl<$Res>;
+  @override
+  $Res call({String id, String fullName});
+}
+
+/// @nodoc
+class __$FriendsGroupCopyWithImpl<$Res> extends _$FriendsGroupCopyWithImpl<$Res>
+    implements _$FriendsGroupCopyWith<$Res> {
+  __$FriendsGroupCopyWithImpl(
+      _FriendsGroup _value, $Res Function(_FriendsGroup) _then)
+      : super(_value, (v) => _then(v as _FriendsGroup));
+
+  @override
+  _FriendsGroup get _value => super._value as _FriendsGroup;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? fullName = freezed,
+  }) {
+    return _then(_FriendsGroup(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      fullName: fullName == freezed
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_FriendsGroup implements _FriendsGroup {
+  _$_FriendsGroup({required this.id, required this.fullName});
+
+  @override
+  final String id;
+  @override
+  final String fullName;
+
+  @override
+  String toString() {
+    return 'FriendsGroup(id: $id, fullName: $fullName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FriendsGroup &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.fullName, fullName) ||
+                const DeepCollectionEquality()
+                    .equals(other.fullName, fullName)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(fullName);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FriendsGroupCopyWith<_FriendsGroup> get copyWith =>
+      __$FriendsGroupCopyWithImpl<_FriendsGroup>(this, _$identity);
+}
+
+abstract class _FriendsGroup implements FriendsGroup {
+  factory _FriendsGroup({required String id, required String fullName}) =
+      _$_FriendsGroup;
+
+  @override
+  String get id => throw _privateConstructorUsedError;
+  @override
+  String get fullName => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$FriendsGroupCopyWith<_FriendsGroup> get copyWith =>
+      throw _privateConstructorUsedError;
+}

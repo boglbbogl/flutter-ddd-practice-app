@@ -20,3 +20,11 @@ class FriendsSelection with _$FriendsSelection {
         id: "",
       );
 }
+
+@freezed
+class FriendsGroup with _$FriendsGroup {
+  factory FriendsGroup({
+    required String id,
+    required String fullName,
+  }) = _FriendsGroup;
+}
