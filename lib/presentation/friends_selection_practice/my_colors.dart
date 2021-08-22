@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyColors {
   List<Color> colors = [
+    Colors.indigo,
     Colors.black,
     Colors.red,
     Colors.amber,

@@ -63,6 +63,7 @@ class FriendsCreatePage extends StatelessWidget {
                       SizedBox(
                         height: size.width * 0.1,
                         child: ListView.builder(
+                          shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemCount: MyColors().colors.length,
                           itemBuilder: (context, index) {
@@ -76,19 +77,33 @@ class FriendsCreatePage extends StatelessWidget {
                                       .add(FriendsSelectionCreateEvent
                                           .colorSelected(index));
                                 },
-                                child: Container(
-                                  width: size.width * 0.1,
-                                  // height: 30,
-                                  decoration: BoxDecoration(
-                                    color: MyColors().colors[index],
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      width: size.width * 0.1,
+                                      // height: 30,
+                                      decoration: BoxDecoration(
+                                        color: MyColors().colors[index],
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: size.width * 0.1,
+                                      // height: 30,
+                                      decoration: BoxDecoration(
+                                        color: state.colorIndex == index
+                                            ? MyColors().colors[index]
+                                            : Colors.white60,
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             );
                           },
                         ),
-                      )
+                      ),
                     ],
                   ),
                   const SizedBox(
