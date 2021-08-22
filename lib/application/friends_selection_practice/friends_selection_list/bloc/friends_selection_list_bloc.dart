@@ -20,7 +20,11 @@ class FriendsSelectionListBloc
     yield* event.map(
       started: (e) async* {},
       selectFriends: (e) async* {
-        yield state.copyWith(friendsList: e.friends);
+        yield state.copyWith(
+          friendsSelection: state.friendsSelection!.copyWith(
+            friendsGroup: e.friendsGroup,
+          ),
+        );
       },
     );
   }

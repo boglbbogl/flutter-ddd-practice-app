@@ -10,6 +10,7 @@ class FriendsSelection with _$FriendsSelection {
     required int colors,
     required DateTime createdAt,
     required String id,
+    required List<FriendsGroup> friendsGroup,
   }) = _FriendsSelection;
 
   factory FriendsSelection.empty() => FriendsSelection(
@@ -18,6 +19,7 @@ class FriendsSelection with _$FriendsSelection {
         colors: 0,
         createdAt: DateTime.now(),
         id: "",
+        friendsGroup: [],
       );
 }
 
@@ -26,5 +28,6 @@ class FriendsGroup with _$FriendsGroup {
   factory FriendsGroup({
     required String id,
     required String fullName,
+    required int colors,
   }) = _FriendsGroup;
 }
