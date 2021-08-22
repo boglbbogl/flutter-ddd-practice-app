@@ -12,7 +12,7 @@ class PracticeListView extends StatelessWidget {
       itemCount: PracticeItem().items.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: InkWell(
             onTap: () {
               Navigator.of(context)

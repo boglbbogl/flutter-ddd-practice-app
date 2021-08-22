@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'friends_selection.freezed.dart';
@@ -9,13 +8,17 @@ class FriendsSelection with _$FriendsSelection {
     required String firstName,
     required String lastName,
     required int age,
-    required Color colors,
+    required int colors,
+    required DateTime createdAt,
+    required String id,
   }) = _FriendsSelection;
 
   factory FriendsSelection.empty() => FriendsSelection(
         firstName: "",
         lastName: "",
         age: 0,
-        colors: Colors.white,
+        colors: 0,
+        createdAt: DateTime.now(),
+        id: "",
       );
 }

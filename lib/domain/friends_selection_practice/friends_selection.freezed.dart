@@ -20,12 +20,16 @@ class _$FriendsSelectionTearOff {
       {required String firstName,
       required String lastName,
       required int age,
-      required Color colors}) {
+      required int colors,
+      required DateTime createdAt,
+      required String id}) {
     return _FriendsSelection(
       firstName: firstName,
       lastName: lastName,
       age: age,
       colors: colors,
+      createdAt: createdAt,
+      id: id,
     );
   }
 }
@@ -38,7 +42,9 @@ mixin _$FriendsSelection {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
-  Color get colors => throw _privateConstructorUsedError;
+  int get colors => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FriendsSelectionCopyWith<FriendsSelection> get copyWith =>
@@ -50,7 +56,13 @@ abstract class $FriendsSelectionCopyWith<$Res> {
   factory $FriendsSelectionCopyWith(
           FriendsSelection value, $Res Function(FriendsSelection) then) =
       _$FriendsSelectionCopyWithImpl<$Res>;
-  $Res call({String firstName, String lastName, int age, Color colors});
+  $Res call(
+      {String firstName,
+      String lastName,
+      int age,
+      int colors,
+      DateTime createdAt,
+      String id});
 }
 
 /// @nodoc
@@ -68,6 +80,8 @@ class _$FriendsSelectionCopyWithImpl<$Res>
     Object? lastName = freezed,
     Object? age = freezed,
     Object? colors = freezed,
+    Object? createdAt = freezed,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
       firstName: firstName == freezed
@@ -85,7 +99,15 @@ class _$FriendsSelectionCopyWithImpl<$Res>
       colors: colors == freezed
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as int,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -97,7 +119,13 @@ abstract class _$FriendsSelectionCopyWith<$Res>
           _FriendsSelection value, $Res Function(_FriendsSelection) then) =
       __$FriendsSelectionCopyWithImpl<$Res>;
   @override
-  $Res call({String firstName, String lastName, int age, Color colors});
+  $Res call(
+      {String firstName,
+      String lastName,
+      int age,
+      int colors,
+      DateTime createdAt,
+      String id});
 }
 
 /// @nodoc
@@ -117,6 +145,8 @@ class __$FriendsSelectionCopyWithImpl<$Res>
     Object? lastName = freezed,
     Object? age = freezed,
     Object? colors = freezed,
+    Object? createdAt = freezed,
+    Object? id = freezed,
   }) {
     return _then(_FriendsSelection(
       firstName: firstName == freezed
@@ -134,7 +164,15 @@ class __$FriendsSelectionCopyWithImpl<$Res>
       colors: colors == freezed
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as int,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -146,7 +184,9 @@ class _$_FriendsSelection implements _FriendsSelection {
       {required this.firstName,
       required this.lastName,
       required this.age,
-      required this.colors});
+      required this.colors,
+      required this.createdAt,
+      required this.id});
 
   @override
   final String firstName;
@@ -155,11 +195,15 @@ class _$_FriendsSelection implements _FriendsSelection {
   @override
   final int age;
   @override
-  final Color colors;
+  final int colors;
+  @override
+  final DateTime createdAt;
+  @override
+  final String id;
 
   @override
   String toString() {
-    return 'FriendsSelection(firstName: $firstName, lastName: $lastName, age: $age, colors: $colors)';
+    return 'FriendsSelection(firstName: $firstName, lastName: $lastName, age: $age, colors: $colors, createdAt: $createdAt, id: $id)';
   }
 
   @override
@@ -175,7 +219,12 @@ class _$_FriendsSelection implements _FriendsSelection {
             (identical(other.age, age) ||
                 const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.colors, colors) ||
-                const DeepCollectionEquality().equals(other.colors, colors)));
+                const DeepCollectionEquality().equals(other.colors, colors)) &&
+            (identical(other.createdAt, createdAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.createdAt, createdAt)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
@@ -184,7 +233,9 @@ class _$_FriendsSelection implements _FriendsSelection {
       const DeepCollectionEquality().hash(firstName) ^
       const DeepCollectionEquality().hash(lastName) ^
       const DeepCollectionEquality().hash(age) ^
-      const DeepCollectionEquality().hash(colors);
+      const DeepCollectionEquality().hash(colors) ^
+      const DeepCollectionEquality().hash(createdAt) ^
+      const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
@@ -197,7 +248,9 @@ abstract class _FriendsSelection implements FriendsSelection {
       {required String firstName,
       required String lastName,
       required int age,
-      required Color colors}) = _$_FriendsSelection;
+      required int colors,
+      required DateTime createdAt,
+      required String id}) = _$_FriendsSelection;
 
   @override
   String get firstName => throw _privateConstructorUsedError;
@@ -206,7 +259,11 @@ abstract class _FriendsSelection implements FriendsSelection {
   @override
   int get age => throw _privateConstructorUsedError;
   @override
-  Color get colors => throw _privateConstructorUsedError;
+  int get colors => throw _privateConstructorUsedError;
+  @override
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  @override
+  String get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$FriendsSelectionCopyWith<_FriendsSelection> get copyWith =>
