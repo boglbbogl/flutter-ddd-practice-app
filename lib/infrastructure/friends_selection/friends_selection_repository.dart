@@ -29,16 +29,13 @@ class FriendsSelectionRepository implements IFriendsSelectionRepository {
   Future<Unit> setFriendsList({
     required String firstName,
     required String lastName,
-    required int age,
     required int colors,
-    required String id,
   }) async {
     final ref = _firestore.collection("friends_selection").doc();
     final friednsId = ref.id;
     await ref.set({
       "firstName": firstName,
       "lastName": lastName,
-      "age": age,
       "colors": colors,
       "createdAt": DateTime.now(),
       "id": friednsId,

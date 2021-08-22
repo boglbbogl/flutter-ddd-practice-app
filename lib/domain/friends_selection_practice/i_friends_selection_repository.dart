@@ -5,9 +5,7 @@ abstract class IFriendsSelectionRepository {
   Future<Unit> setFriendsList({
     required String firstName,
     required String lastName,
-    required int age,
     required int colors,
-    required String id,
   });
   Stream<List<FriendsSelection>> getFriendsList();
 }

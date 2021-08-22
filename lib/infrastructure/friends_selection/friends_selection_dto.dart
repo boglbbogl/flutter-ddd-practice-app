@@ -11,7 +11,6 @@ class FriendsSelectionDto with _$FriendsSelectionDto {
   factory FriendsSelectionDto({
     @JsonKey(name: 'firstName') required String firstName,
     @JsonKey(name: 'lastName') required String lastName,
-    @JsonKey(name: 'age') required int age,
     @JsonKey(name: 'colors') required int colors,
     @JsonKey(name: 'id') required String id,
     @TimestampConverter()
@@ -33,7 +32,6 @@ class FriendsSelectionDto with _$FriendsSelectionDto {
       FriendsSelectionDto(
         firstName: f.firstName,
         lastName: f.lastName,
-        age: f.age,
         colors: f.colors,
         createdAt: f.createdAt,
         id: f.id,
@@ -41,7 +39,6 @@ class FriendsSelectionDto with _$FriendsSelectionDto {
   FriendsSelection toDomain() => FriendsSelection(
         firstName: firstName,
         lastName: lastName,
-        age: age,
         colors: colors,
         createdAt: createdAt,
         id: id,

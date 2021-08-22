@@ -25,8 +25,6 @@ class _$FriendsSelectionDtoTearOff {
           required String firstName,
       @JsonKey(name: 'lastName')
           required String lastName,
-      @JsonKey(name: 'age')
-          required int age,
       @JsonKey(name: 'colors')
           required int colors,
       @JsonKey(name: 'id')
@@ -37,7 +35,6 @@ class _$FriendsSelectionDtoTearOff {
     return _FriendsSelectionDto(
       firstName: firstName,
       lastName: lastName,
-      age: age,
       colors: colors,
       id: id,
       createdAt: createdAt,
@@ -58,8 +55,6 @@ mixin _$FriendsSelectionDto {
   String get firstName => throw _privateConstructorUsedError;
   @JsonKey(name: 'lastName')
   String get lastName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'age')
-  int get age => throw _privateConstructorUsedError;
   @JsonKey(name: 'colors')
   int get colors => throw _privateConstructorUsedError;
   @JsonKey(name: 'id')
@@ -82,7 +77,6 @@ abstract class $FriendsSelectionDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'firstName') String firstName,
       @JsonKey(name: 'lastName') String lastName,
-      @JsonKey(name: 'age') int age,
       @JsonKey(name: 'colors') int colors,
       @JsonKey(name: 'id') String id,
       @TimestampConverter() @JsonKey(name: 'createdAt') DateTime createdAt});
@@ -101,7 +95,6 @@ class _$FriendsSelectionDtoCopyWithImpl<$Res>
   $Res call({
     Object? firstName = freezed,
     Object? lastName = freezed,
-    Object? age = freezed,
     Object? colors = freezed,
     Object? id = freezed,
     Object? createdAt = freezed,
@@ -115,10 +108,6 @@ class _$FriendsSelectionDtoCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
       colors: colors == freezed
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
@@ -145,7 +134,6 @@ abstract class _$FriendsSelectionDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'firstName') String firstName,
       @JsonKey(name: 'lastName') String lastName,
-      @JsonKey(name: 'age') int age,
       @JsonKey(name: 'colors') int colors,
       @JsonKey(name: 'id') String id,
       @TimestampConverter() @JsonKey(name: 'createdAt') DateTime createdAt});
@@ -166,7 +154,6 @@ class __$FriendsSelectionDtoCopyWithImpl<$Res>
   $Res call({
     Object? firstName = freezed,
     Object? lastName = freezed,
-    Object? age = freezed,
     Object? colors = freezed,
     Object? id = freezed,
     Object? createdAt = freezed,
@@ -180,10 +167,6 @@ class __$FriendsSelectionDtoCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
       colors: colors == freezed
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
@@ -208,8 +191,6 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
           required this.firstName,
       @JsonKey(name: 'lastName')
           required this.lastName,
-      @JsonKey(name: 'age')
-          required this.age,
       @JsonKey(name: 'colors')
           required this.colors,
       @JsonKey(name: 'id')
@@ -229,9 +210,6 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
   @JsonKey(name: 'lastName')
   final String lastName;
   @override
-  @JsonKey(name: 'age')
-  final int age;
-  @override
   @JsonKey(name: 'colors')
   final int colors;
   @override
@@ -244,7 +222,7 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
 
   @override
   String toString() {
-    return 'FriendsSelectionDto(firstName: $firstName, lastName: $lastName, age: $age, colors: $colors, id: $id, createdAt: $createdAt)';
+    return 'FriendsSelectionDto(firstName: $firstName, lastName: $lastName, colors: $colors, id: $id, createdAt: $createdAt)';
   }
 
   @override
@@ -257,8 +235,6 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
             (identical(other.lastName, lastName) ||
                 const DeepCollectionEquality()
                     .equals(other.lastName, lastName)) &&
-            (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.colors, colors) ||
                 const DeepCollectionEquality().equals(other.colors, colors)) &&
             (identical(other.id, id) ||
@@ -273,7 +249,6 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(firstName) ^
       const DeepCollectionEquality().hash(lastName) ^
-      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(colors) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(createdAt);
@@ -296,8 +271,6 @@ abstract class _FriendsSelectionDto extends FriendsSelectionDto {
           required String firstName,
       @JsonKey(name: 'lastName')
           required String lastName,
-      @JsonKey(name: 'age')
-          required int age,
       @JsonKey(name: 'colors')
           required int colors,
       @JsonKey(name: 'id')
@@ -316,9 +289,6 @@ abstract class _FriendsSelectionDto extends FriendsSelectionDto {
   @override
   @JsonKey(name: 'lastName')
   String get lastName => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'age')
-  int get age => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'colors')
   int get colors => throw _privateConstructorUsedError;

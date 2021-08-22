@@ -11,7 +11,6 @@ _$_FriendsSelectionDto _$_$_FriendsSelectionDtoFromJson(
   return _$_FriendsSelectionDto(
     firstName: json['firstName'] as String,
     lastName: json['lastName'] as String,
-    age: json['age'] as int,
     colors: json['colors'] as int,
     id: json['id'] as String,
     createdAt:
@@ -24,7 +23,6 @@ Map<String, dynamic> _$_$_FriendsSelectionDtoToJson(
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
-      'age': instance.age,
       'colors': instance.colors,
       'id': instance.id,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),

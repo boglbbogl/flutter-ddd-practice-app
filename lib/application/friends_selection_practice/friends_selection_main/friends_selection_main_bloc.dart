@@ -25,20 +25,19 @@ class FriendsSelectionMainBloc
     FriendsSelectionMainEvent event,
   ) async* {
     yield* event.map(
-        started: (e) async* {
-          yield state.copyWith(isLoading: true);
-          await _friendsStreamSubscription?.cancel();
-          _friendsStreamSubscription =
-              _friendsSelectionRepository.getFriendsList().listen(
-                    (friends) =>
-                        add(FriendsSelectionMainEvent.recived(friends)),
-                  );
-        },
-        recived: (e) async* {
-          yield state.copyWith(
-            friends: e.friends,
-          );
-        },
-        created: (e) async* {});
+      started: (e) async* {
+        yield state.copyWith(isLoading: true);
+        await _friendsStreamSubscription?.cancel();
+        _friendsStreamSubscription =
+            _friendsSelectionRepository.getFriendsList().listen(
+                  (friends) => add(FriendsSelectionMainEvent.recived(friends)),
+                );
+      },
+      recived: (e) async* {
+        yield state.copyWith(
+          friends: e.friends,
+        );
+      },
+    );
   }
 }

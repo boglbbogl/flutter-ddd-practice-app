@@ -25,12 +25,6 @@ class _$FriendsSelectionMainEventTearOff {
       friends,
     );
   }
-
-  _Created created(List<FriendsSelection> friends) {
-    return _Created(
-      friends,
-    );
-  }
 }
 
 /// @nodoc
@@ -42,14 +36,12 @@ mixin _$FriendsSelectionMainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(List<FriendsSelection> friends) recived,
-    required TResult Function(List<FriendsSelection> friends) created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(List<FriendsSelection> friends)? recived,
-    TResult Function(List<FriendsSelection> friends)? created,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -57,14 +49,12 @@ mixin _$FriendsSelectionMainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
-    required TResult Function(_Created value) created,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
-    TResult Function(_Created value)? created,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +117,6 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(List<FriendsSelection> friends) recived,
-    required TResult Function(List<FriendsSelection> friends) created,
   }) {
     return started();
   }
@@ -137,7 +126,6 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(List<FriendsSelection> friends)? recived,
-    TResult Function(List<FriendsSelection> friends)? created,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -151,7 +139,6 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
-    required TResult Function(_Created value) created,
   }) {
     return started(this);
   }
@@ -161,7 +148,6 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
-    TResult Function(_Created value)? created,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -240,7 +226,6 @@ class _$_Recived implements _Recived {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(List<FriendsSelection> friends) recived,
-    required TResult Function(List<FriendsSelection> friends) created,
   }) {
     return recived(friends);
   }
@@ -250,7 +235,6 @@ class _$_Recived implements _Recived {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(List<FriendsSelection> friends)? recived,
-    TResult Function(List<FriendsSelection> friends)? created,
     required TResult orElse(),
   }) {
     if (recived != null) {
@@ -264,7 +248,6 @@ class _$_Recived implements _Recived {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Recived value) recived,
-    required TResult Function(_Created value) created,
   }) {
     return recived(this);
   }
@@ -274,7 +257,6 @@ class _$_Recived implements _Recived {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Recived value)? recived,
-    TResult Function(_Created value)? created,
     required TResult orElse(),
   }) {
     if (recived != null) {
@@ -290,124 +272,6 @@ abstract class _Recived implements FriendsSelectionMainEvent {
   List<FriendsSelection> get friends => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$RecivedCopyWith<_Recived> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$CreatedCopyWith<$Res> {
-  factory _$CreatedCopyWith(_Created value, $Res Function(_Created) then) =
-      __$CreatedCopyWithImpl<$Res>;
-  $Res call({List<FriendsSelection> friends});
-}
-
-/// @nodoc
-class __$CreatedCopyWithImpl<$Res>
-    extends _$FriendsSelectionMainEventCopyWithImpl<$Res>
-    implements _$CreatedCopyWith<$Res> {
-  __$CreatedCopyWithImpl(_Created _value, $Res Function(_Created) _then)
-      : super(_value, (v) => _then(v as _Created));
-
-  @override
-  _Created get _value => super._value as _Created;
-
-  @override
-  $Res call({
-    Object? friends = freezed,
-  }) {
-    return _then(_Created(
-      friends == freezed
-          ? _value.friends
-          : friends // ignore: cast_nullable_to_non_nullable
-              as List<FriendsSelection>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Created implements _Created {
-  const _$_Created(this.friends);
-
-  @override
-  final List<FriendsSelection> friends;
-
-  @override
-  String toString() {
-    return 'FriendsSelectionMainEvent.created(friends: $friends)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Created &&
-            (identical(other.friends, friends) ||
-                const DeepCollectionEquality().equals(other.friends, friends)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(friends);
-
-  @JsonKey(ignore: true)
-  @override
-  _$CreatedCopyWith<_Created> get copyWith =>
-      __$CreatedCopyWithImpl<_Created>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(List<FriendsSelection> friends) recived,
-    required TResult Function(List<FriendsSelection> friends) created,
-  }) {
-    return created(friends);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(List<FriendsSelection> friends)? recived,
-    TResult Function(List<FriendsSelection> friends)? created,
-    required TResult orElse(),
-  }) {
-    if (created != null) {
-      return created(friends);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Recived value) recived,
-    required TResult Function(_Created value) created,
-  }) {
-    return created(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Recived value)? recived,
-    TResult Function(_Created value)? created,
-    required TResult orElse(),
-  }) {
-    if (created != null) {
-      return created(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Created implements FriendsSelectionMainEvent {
-  const factory _Created(List<FriendsSelection> friends) = _$_Created;
-
-  List<FriendsSelection> get friends => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$CreatedCopyWith<_Created> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

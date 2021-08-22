@@ -19,14 +19,12 @@ class _$FriendsSelectionTearOff {
   _FriendsSelection call(
       {required String firstName,
       required String lastName,
-      required int age,
       required int colors,
       required DateTime createdAt,
       required String id}) {
     return _FriendsSelection(
       firstName: firstName,
       lastName: lastName,
-      age: age,
       colors: colors,
       createdAt: createdAt,
       id: id,
@@ -41,7 +39,6 @@ const $FriendsSelection = _$FriendsSelectionTearOff();
 mixin _$FriendsSelection {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
-  int get age => throw _privateConstructorUsedError;
   int get colors => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
@@ -59,7 +56,6 @@ abstract class $FriendsSelectionCopyWith<$Res> {
   $Res call(
       {String firstName,
       String lastName,
-      int age,
       int colors,
       DateTime createdAt,
       String id});
@@ -78,7 +74,6 @@ class _$FriendsSelectionCopyWithImpl<$Res>
   $Res call({
     Object? firstName = freezed,
     Object? lastName = freezed,
-    Object? age = freezed,
     Object? colors = freezed,
     Object? createdAt = freezed,
     Object? id = freezed,
@@ -92,10 +87,6 @@ class _$FriendsSelectionCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
       colors: colors == freezed
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
@@ -122,7 +113,6 @@ abstract class _$FriendsSelectionCopyWith<$Res>
   $Res call(
       {String firstName,
       String lastName,
-      int age,
       int colors,
       DateTime createdAt,
       String id});
@@ -143,7 +133,6 @@ class __$FriendsSelectionCopyWithImpl<$Res>
   $Res call({
     Object? firstName = freezed,
     Object? lastName = freezed,
-    Object? age = freezed,
     Object? colors = freezed,
     Object? createdAt = freezed,
     Object? id = freezed,
@@ -157,10 +146,6 @@ class __$FriendsSelectionCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
       colors: colors == freezed
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
@@ -183,7 +168,6 @@ class _$_FriendsSelection implements _FriendsSelection {
   _$_FriendsSelection(
       {required this.firstName,
       required this.lastName,
-      required this.age,
       required this.colors,
       required this.createdAt,
       required this.id});
@@ -193,8 +177,6 @@ class _$_FriendsSelection implements _FriendsSelection {
   @override
   final String lastName;
   @override
-  final int age;
-  @override
   final int colors;
   @override
   final DateTime createdAt;
@@ -203,7 +185,7 @@ class _$_FriendsSelection implements _FriendsSelection {
 
   @override
   String toString() {
-    return 'FriendsSelection(firstName: $firstName, lastName: $lastName, age: $age, colors: $colors, createdAt: $createdAt, id: $id)';
+    return 'FriendsSelection(firstName: $firstName, lastName: $lastName, colors: $colors, createdAt: $createdAt, id: $id)';
   }
 
   @override
@@ -216,8 +198,6 @@ class _$_FriendsSelection implements _FriendsSelection {
             (identical(other.lastName, lastName) ||
                 const DeepCollectionEquality()
                     .equals(other.lastName, lastName)) &&
-            (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.colors, colors) ||
                 const DeepCollectionEquality().equals(other.colors, colors)) &&
             (identical(other.createdAt, createdAt) ||
@@ -232,7 +212,6 @@ class _$_FriendsSelection implements _FriendsSelection {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(firstName) ^
       const DeepCollectionEquality().hash(lastName) ^
-      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(colors) ^
       const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(id);
@@ -247,7 +226,6 @@ abstract class _FriendsSelection implements FriendsSelection {
   factory _FriendsSelection(
       {required String firstName,
       required String lastName,
-      required int age,
       required int colors,
       required DateTime createdAt,
       required String id}) = _$_FriendsSelection;
@@ -256,8 +234,6 @@ abstract class _FriendsSelection implements FriendsSelection {
   String get firstName => throw _privateConstructorUsedError;
   @override
   String get lastName => throw _privateConstructorUsedError;
-  @override
-  int get age => throw _privateConstructorUsedError;
   @override
   int get colors => throw _privateConstructorUsedError;
   @override

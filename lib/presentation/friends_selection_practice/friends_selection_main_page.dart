@@ -23,7 +23,7 @@ class FriendsSelectionMainPage extends StatelessWidget {
                 friendsMainTopForm(
                     title: 'Friends Create',
                     onTap: () {
-                      Get.to(() => const FriendsCreatePage());
+                      Get.to(() => FriendsCreatePage());
                     }),
                 friendsMainTopForm(
                     title: 'Friends Select',
