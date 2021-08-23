@@ -22,16 +22,11 @@ class MemberMainPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    friendsMainTopForm(
-                        title: 'Member Create',
-                        onTap: () {
-                          Get.to(() => MemberCreatePage());
-                        }),
-                  ],
-                ),
+                friendsMainTopForm(
+                    title: 'Member Create',
+                    onTap: () {
+                      Get.to(() => MemberCreatePage());
+                    }),
                 Text(
                   'Member List',
                   style: theme.textTheme.bodyText2!.copyWith(
