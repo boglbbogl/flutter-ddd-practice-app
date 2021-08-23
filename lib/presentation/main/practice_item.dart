@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class PracticeItem {
   List items = [
-    'Community Practice',
-    'API Practice',
     'Member Practice',
+    'Community Practice',
+    'API Example Practice',
   ];
 
   List colors = [
@@ -14,8 +14,8 @@ class PracticeItem {
   ];
 
   List router = [
-    '/communityMainPage',
-    '/apiMainPage',
     '/memberMainPage',
+    '/communityMainPage',
+    '/apiExampleMainPage',
   ];
 }
