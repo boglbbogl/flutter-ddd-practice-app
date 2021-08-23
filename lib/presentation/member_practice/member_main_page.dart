@@ -5,7 +5,6 @@ import 'package:ddd_practice_app/presentation/member_practice/member_create_page
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-
 import 'member_colors.dart';
 
 class MemberMainPage extends StatelessWidget {
