@@ -13,7 +13,7 @@ _$_ApiExampleDto _$_$_ApiExampleDtoFromJson(Map<String, dynamic> json) {
     url: json['url'] as String,
     width: json['width'] as int,
     height: json['height'] as int,
-    downloadUrl: json['download_url'] as String,
+    downloadUrl: json['downloadUrl'] as String,
   );
 }
 
