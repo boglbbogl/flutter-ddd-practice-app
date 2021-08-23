@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyColors {
+class MemberColors {
   List<Color> colors = [
     Colors.indigo,
     Colors.black,

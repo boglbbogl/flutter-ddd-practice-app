@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'friends_selection_main_bloc.dart';
+part of 'member_main_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,35 +13,35 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$FriendsSelectionMainEventTearOff {
-  const _$FriendsSelectionMainEventTearOff();
+class _$MemberMainEventTearOff {
+  const _$MemberMainEventTearOff();
 
   _Started started() {
     return const _Started();
   }
 
-  _Recived recived(List<FriendsSelection> friends) {
+  _Recived recived(List<Member> member) {
     return _Recived(
-      friends,
+      member,
     );
   }
 }
 
 /// @nodoc
-const $FriendsSelectionMainEvent = _$FriendsSelectionMainEventTearOff();
+const $MemberMainEvent = _$MemberMainEventTearOff();
 
 /// @nodoc
-mixin _$FriendsSelectionMainEvent {
+mixin _$MemberMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<FriendsSelection> friends) recived,
+    required TResult Function(List<Member> member) recived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<FriendsSelection> friends)? recived,
+    TResult Function(List<Member> member)? recived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,20 +61,20 @@ mixin _$FriendsSelectionMainEvent {
 }
 
 /// @nodoc
-abstract class $FriendsSelectionMainEventCopyWith<$Res> {
-  factory $FriendsSelectionMainEventCopyWith(FriendsSelectionMainEvent value,
-          $Res Function(FriendsSelectionMainEvent) then) =
-      _$FriendsSelectionMainEventCopyWithImpl<$Res>;
+abstract class $MemberMainEventCopyWith<$Res> {
+  factory $MemberMainEventCopyWith(
+          MemberMainEvent value, $Res Function(MemberMainEvent) then) =
+      _$MemberMainEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FriendsSelectionMainEventCopyWithImpl<$Res>
-    implements $FriendsSelectionMainEventCopyWith<$Res> {
-  _$FriendsSelectionMainEventCopyWithImpl(this._value, this._then);
+class _$MemberMainEventCopyWithImpl<$Res>
+    implements $MemberMainEventCopyWith<$Res> {
+  _$MemberMainEventCopyWithImpl(this._value, this._then);
 
-  final FriendsSelectionMainEvent _value;
+  final MemberMainEvent _value;
   // ignore: unused_field
-  final $Res Function(FriendsSelectionMainEvent) _then;
+  final $Res Function(MemberMainEvent) _then;
 }
 
 /// @nodoc
@@ -84,8 +84,7 @@ abstract class _$StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res>
-    extends _$FriendsSelectionMainEventCopyWithImpl<$Res>
+class __$StartedCopyWithImpl<$Res> extends _$MemberMainEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
   __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
       : super(_value, (v) => _then(v as _Started));
@@ -101,7 +100,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'FriendsSelectionMainEvent.started()';
+    return 'MemberMainEvent.started()';
   }
 
   @override
@@ -116,7 +115,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<FriendsSelection> friends) recived,
+    required TResult Function(List<Member> member) recived,
   }) {
     return started();
   }
@@ -125,7 +124,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<FriendsSelection> friends)? recived,
+    TResult Function(List<Member> member)? recived,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -157,7 +156,7 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements FriendsSelectionMainEvent {
+abstract class _Started implements MemberMainEvent {
   const factory _Started() = _$_Started;
 }
 
@@ -165,12 +164,11 @@ abstract class _Started implements FriendsSelectionMainEvent {
 abstract class _$RecivedCopyWith<$Res> {
   factory _$RecivedCopyWith(_Recived value, $Res Function(_Recived) then) =
       __$RecivedCopyWithImpl<$Res>;
-  $Res call({List<FriendsSelection> friends});
+  $Res call({List<Member> member});
 }
 
 /// @nodoc
-class __$RecivedCopyWithImpl<$Res>
-    extends _$FriendsSelectionMainEventCopyWithImpl<$Res>
+class __$RecivedCopyWithImpl<$Res> extends _$MemberMainEventCopyWithImpl<$Res>
     implements _$RecivedCopyWith<$Res> {
   __$RecivedCopyWithImpl(_Recived _value, $Res Function(_Recived) _then)
       : super(_value, (v) => _then(v as _Recived));
@@ -180,13 +178,13 @@ class __$RecivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? friends = freezed,
+    Object? member = freezed,
   }) {
     return _then(_Recived(
-      friends == freezed
-          ? _value.friends
-          : friends // ignore: cast_nullable_to_non_nullable
-              as List<FriendsSelection>,
+      member == freezed
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as List<Member>,
     ));
   }
 }
@@ -194,27 +192,27 @@ class __$RecivedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Recived implements _Recived {
-  const _$_Recived(this.friends);
+  const _$_Recived(this.member);
 
   @override
-  final List<FriendsSelection> friends;
+  final List<Member> member;
 
   @override
   String toString() {
-    return 'FriendsSelectionMainEvent.recived(friends: $friends)';
+    return 'MemberMainEvent.recived(member: $member)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Recived &&
-            (identical(other.friends, friends) ||
-                const DeepCollectionEquality().equals(other.friends, friends)));
+            (identical(other.member, member) ||
+                const DeepCollectionEquality().equals(other.member, member)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(friends);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(member);
 
   @JsonKey(ignore: true)
   @override
@@ -225,20 +223,20 @@ class _$_Recived implements _Recived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(List<FriendsSelection> friends) recived,
+    required TResult Function(List<Member> member) recived,
   }) {
-    return recived(friends);
+    return recived(member);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(List<FriendsSelection> friends)? recived,
+    TResult Function(List<Member> member)? recived,
     required TResult orElse(),
   }) {
     if (recived != null) {
-      return recived(friends);
+      return recived(member);
     }
     return orElse();
   }
@@ -266,168 +264,164 @@ class _$_Recived implements _Recived {
   }
 }
 
-abstract class _Recived implements FriendsSelectionMainEvent {
-  const factory _Recived(List<FriendsSelection> friends) = _$_Recived;
+abstract class _Recived implements MemberMainEvent {
+  const factory _Recived(List<Member> member) = _$_Recived;
 
-  List<FriendsSelection> get friends => throw _privateConstructorUsedError;
+  List<Member> get member => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$RecivedCopyWith<_Recived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$FriendsSelectionMainStateTearOff {
-  const _$FriendsSelectionMainStateTearOff();
+class _$MemberMainStateTearOff {
+  const _$MemberMainStateTearOff();
 
-  _FriendsSelectionMainState call(
-      {required bool isLoading, required List<FriendsSelection> friends}) {
-    return _FriendsSelectionMainState(
+  _MemberMainState call(
+      {required bool isLoading, required List<Member> member}) {
+    return _MemberMainState(
       isLoading: isLoading,
-      friends: friends,
+      member: member,
     );
   }
 }
 
 /// @nodoc
-const $FriendsSelectionMainState = _$FriendsSelectionMainStateTearOff();
+const $MemberMainState = _$MemberMainStateTearOff();
 
 /// @nodoc
-mixin _$FriendsSelectionMainState {
+mixin _$MemberMainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<FriendsSelection> get friends => throw _privateConstructorUsedError;
+  List<Member> get member => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FriendsSelectionMainStateCopyWith<FriendsSelectionMainState> get copyWith =>
+  $MemberMainStateCopyWith<MemberMainState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FriendsSelectionMainStateCopyWith<$Res> {
-  factory $FriendsSelectionMainStateCopyWith(FriendsSelectionMainState value,
-          $Res Function(FriendsSelectionMainState) then) =
-      _$FriendsSelectionMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, List<FriendsSelection> friends});
+abstract class $MemberMainStateCopyWith<$Res> {
+  factory $MemberMainStateCopyWith(
+          MemberMainState value, $Res Function(MemberMainState) then) =
+      _$MemberMainStateCopyWithImpl<$Res>;
+  $Res call({bool isLoading, List<Member> member});
 }
 
 /// @nodoc
-class _$FriendsSelectionMainStateCopyWithImpl<$Res>
-    implements $FriendsSelectionMainStateCopyWith<$Res> {
-  _$FriendsSelectionMainStateCopyWithImpl(this._value, this._then);
+class _$MemberMainStateCopyWithImpl<$Res>
+    implements $MemberMainStateCopyWith<$Res> {
+  _$MemberMainStateCopyWithImpl(this._value, this._then);
 
-  final FriendsSelectionMainState _value;
+  final MemberMainState _value;
   // ignore: unused_field
-  final $Res Function(FriendsSelectionMainState) _then;
+  final $Res Function(MemberMainState) _then;
 
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? friends = freezed,
+    Object? member = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      friends: friends == freezed
-          ? _value.friends
-          : friends // ignore: cast_nullable_to_non_nullable
-              as List<FriendsSelection>,
+      member: member == freezed
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as List<Member>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$FriendsSelectionMainStateCopyWith<$Res>
-    implements $FriendsSelectionMainStateCopyWith<$Res> {
-  factory _$FriendsSelectionMainStateCopyWith(_FriendsSelectionMainState value,
-          $Res Function(_FriendsSelectionMainState) then) =
-      __$FriendsSelectionMainStateCopyWithImpl<$Res>;
+abstract class _$MemberMainStateCopyWith<$Res>
+    implements $MemberMainStateCopyWith<$Res> {
+  factory _$MemberMainStateCopyWith(
+          _MemberMainState value, $Res Function(_MemberMainState) then) =
+      __$MemberMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, List<FriendsSelection> friends});
+  $Res call({bool isLoading, List<Member> member});
 }
 
 /// @nodoc
-class __$FriendsSelectionMainStateCopyWithImpl<$Res>
-    extends _$FriendsSelectionMainStateCopyWithImpl<$Res>
-    implements _$FriendsSelectionMainStateCopyWith<$Res> {
-  __$FriendsSelectionMainStateCopyWithImpl(_FriendsSelectionMainState _value,
-      $Res Function(_FriendsSelectionMainState) _then)
-      : super(_value, (v) => _then(v as _FriendsSelectionMainState));
+class __$MemberMainStateCopyWithImpl<$Res>
+    extends _$MemberMainStateCopyWithImpl<$Res>
+    implements _$MemberMainStateCopyWith<$Res> {
+  __$MemberMainStateCopyWithImpl(
+      _MemberMainState _value, $Res Function(_MemberMainState) _then)
+      : super(_value, (v) => _then(v as _MemberMainState));
 
   @override
-  _FriendsSelectionMainState get _value =>
-      super._value as _FriendsSelectionMainState;
+  _MemberMainState get _value => super._value as _MemberMainState;
 
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? friends = freezed,
+    Object? member = freezed,
   }) {
-    return _then(_FriendsSelectionMainState(
+    return _then(_MemberMainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      friends: friends == freezed
-          ? _value.friends
-          : friends // ignore: cast_nullable_to_non_nullable
-              as List<FriendsSelection>,
+      member: member == freezed
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as List<Member>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_FriendsSelectionMainState implements _FriendsSelectionMainState {
-  _$_FriendsSelectionMainState(
-      {required this.isLoading, required this.friends});
+class _$_MemberMainState implements _MemberMainState {
+  _$_MemberMainState({required this.isLoading, required this.member});
 
   @override
   final bool isLoading;
   @override
-  final List<FriendsSelection> friends;
+  final List<Member> member;
 
   @override
   String toString() {
-    return 'FriendsSelectionMainState(isLoading: $isLoading, friends: $friends)';
+    return 'MemberMainState(isLoading: $isLoading, member: $member)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FriendsSelectionMainState &&
+        (other is _MemberMainState &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.friends, friends) ||
-                const DeepCollectionEquality().equals(other.friends, friends)));
+            (identical(other.member, member) ||
+                const DeepCollectionEquality().equals(other.member, member)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(friends);
+      const DeepCollectionEquality().hash(member);
 
   @JsonKey(ignore: true)
   @override
-  _$FriendsSelectionMainStateCopyWith<_FriendsSelectionMainState>
-      get copyWith =>
-          __$FriendsSelectionMainStateCopyWithImpl<_FriendsSelectionMainState>(
-              this, _$identity);
+  _$MemberMainStateCopyWith<_MemberMainState> get copyWith =>
+      __$MemberMainStateCopyWithImpl<_MemberMainState>(this, _$identity);
 }
 
-abstract class _FriendsSelectionMainState implements FriendsSelectionMainState {
-  factory _FriendsSelectionMainState(
+abstract class _MemberMainState implements MemberMainState {
+  factory _MemberMainState(
       {required bool isLoading,
-      required List<FriendsSelection> friends}) = _$_FriendsSelectionMainState;
+      required List<Member> member}) = _$_MemberMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  List<FriendsSelection> get friends => throw _privateConstructorUsedError;
+  List<Member> get member => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FriendsSelectionMainStateCopyWith<_FriendsSelectionMainState>
-      get copyWith => throw _privateConstructorUsedError;
+  _$MemberMainStateCopyWith<_MemberMainState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

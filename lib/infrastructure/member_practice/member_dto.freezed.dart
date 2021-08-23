@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'friends_selection_dto.dart';
+part of 'member_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,15 +12,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-FriendsSelectionDto _$FriendsSelectionDtoFromJson(Map<String, dynamic> json) {
-  return _FriendsSelectionDto.fromJson(json);
+MemberDto _$MemberDtoFromJson(Map<String, dynamic> json) {
+  return _MemberDto.fromJson(json);
 }
 
 /// @nodoc
-class _$FriendsSelectionDtoTearOff {
-  const _$FriendsSelectionDtoTearOff();
+class _$MemberDtoTearOff {
+  const _$MemberDtoTearOff();
 
-  _FriendsSelectionDto call(
+  _MemberDto call(
       {@JsonKey(name: 'firstName')
           required String firstName,
       @JsonKey(name: 'lastName')
@@ -32,7 +32,7 @@ class _$FriendsSelectionDtoTearOff {
       @TimestampConverter()
       @JsonKey(name: 'createdAt')
           required DateTime createdAt}) {
-    return _FriendsSelectionDto(
+    return _MemberDto(
       firstName: firstName,
       lastName: lastName,
       colors: colors,
@@ -41,16 +41,16 @@ class _$FriendsSelectionDtoTearOff {
     );
   }
 
-  FriendsSelectionDto fromJson(Map<String, Object> json) {
-    return FriendsSelectionDto.fromJson(json);
+  MemberDto fromJson(Map<String, Object> json) {
+    return MemberDto.fromJson(json);
   }
 }
 
 /// @nodoc
-const $FriendsSelectionDto = _$FriendsSelectionDtoTearOff();
+const $MemberDto = _$MemberDtoTearOff();
 
 /// @nodoc
-mixin _$FriendsSelectionDto {
+mixin _$MemberDto {
   @JsonKey(name: 'firstName')
   String get firstName => throw _privateConstructorUsedError;
   @JsonKey(name: 'lastName')
@@ -65,15 +65,14 @@ mixin _$FriendsSelectionDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FriendsSelectionDtoCopyWith<FriendsSelectionDto> get copyWith =>
+  $MemberDtoCopyWith<MemberDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FriendsSelectionDtoCopyWith<$Res> {
-  factory $FriendsSelectionDtoCopyWith(
-          FriendsSelectionDto value, $Res Function(FriendsSelectionDto) then) =
-      _$FriendsSelectionDtoCopyWithImpl<$Res>;
+abstract class $MemberDtoCopyWith<$Res> {
+  factory $MemberDtoCopyWith(MemberDto value, $Res Function(MemberDto) then) =
+      _$MemberDtoCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'firstName') String firstName,
       @JsonKey(name: 'lastName') String lastName,
@@ -83,13 +82,12 @@ abstract class $FriendsSelectionDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FriendsSelectionDtoCopyWithImpl<$Res>
-    implements $FriendsSelectionDtoCopyWith<$Res> {
-  _$FriendsSelectionDtoCopyWithImpl(this._value, this._then);
+class _$MemberDtoCopyWithImpl<$Res> implements $MemberDtoCopyWith<$Res> {
+  _$MemberDtoCopyWithImpl(this._value, this._then);
 
-  final FriendsSelectionDto _value;
+  final MemberDto _value;
   // ignore: unused_field
-  final $Res Function(FriendsSelectionDto) _then;
+  final $Res Function(MemberDto) _then;
 
   @override
   $Res call({
@@ -125,11 +123,10 @@ class _$FriendsSelectionDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FriendsSelectionDtoCopyWith<$Res>
-    implements $FriendsSelectionDtoCopyWith<$Res> {
-  factory _$FriendsSelectionDtoCopyWith(_FriendsSelectionDto value,
-          $Res Function(_FriendsSelectionDto) then) =
-      __$FriendsSelectionDtoCopyWithImpl<$Res>;
+abstract class _$MemberDtoCopyWith<$Res> implements $MemberDtoCopyWith<$Res> {
+  factory _$MemberDtoCopyWith(
+          _MemberDto value, $Res Function(_MemberDto) then) =
+      __$MemberDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'firstName') String firstName,
@@ -140,15 +137,13 @@ abstract class _$FriendsSelectionDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$FriendsSelectionDtoCopyWithImpl<$Res>
-    extends _$FriendsSelectionDtoCopyWithImpl<$Res>
-    implements _$FriendsSelectionDtoCopyWith<$Res> {
-  __$FriendsSelectionDtoCopyWithImpl(
-      _FriendsSelectionDto _value, $Res Function(_FriendsSelectionDto) _then)
-      : super(_value, (v) => _then(v as _FriendsSelectionDto));
+class __$MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
+    implements _$MemberDtoCopyWith<$Res> {
+  __$MemberDtoCopyWithImpl(_MemberDto _value, $Res Function(_MemberDto) _then)
+      : super(_value, (v) => _then(v as _MemberDto));
 
   @override
-  _FriendsSelectionDto get _value => super._value as _FriendsSelectionDto;
+  _MemberDto get _value => super._value as _MemberDto;
 
   @override
   $Res call({
@@ -158,7 +153,7 @@ class __$FriendsSelectionDtoCopyWithImpl<$Res>
     Object? id = freezed,
     Object? createdAt = freezed,
   }) {
-    return _then(_FriendsSelectionDto(
+    return _then(_MemberDto(
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -185,8 +180,8 @@ class __$FriendsSelectionDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FriendsSelectionDto extends _FriendsSelectionDto {
-  _$_FriendsSelectionDto(
+class _$_MemberDto extends _MemberDto {
+  _$_MemberDto(
       {@JsonKey(name: 'firstName')
           required this.firstName,
       @JsonKey(name: 'lastName')
@@ -200,8 +195,8 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
           required this.createdAt})
       : super._();
 
-  factory _$_FriendsSelectionDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_FriendsSelectionDtoFromJson(json);
+  factory _$_MemberDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_MemberDtoFromJson(json);
 
   @override
   @JsonKey(name: 'firstName')
@@ -222,13 +217,13 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
 
   @override
   String toString() {
-    return 'FriendsSelectionDto(firstName: $firstName, lastName: $lastName, colors: $colors, id: $id, createdAt: $createdAt)';
+    return 'MemberDto(firstName: $firstName, lastName: $lastName, colors: $colors, id: $id, createdAt: $createdAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FriendsSelectionDto &&
+        (other is _MemberDto &&
             (identical(other.firstName, firstName) ||
                 const DeepCollectionEquality()
                     .equals(other.firstName, firstName)) &&
@@ -255,18 +250,17 @@ class _$_FriendsSelectionDto extends _FriendsSelectionDto {
 
   @JsonKey(ignore: true)
   @override
-  _$FriendsSelectionDtoCopyWith<_FriendsSelectionDto> get copyWith =>
-      __$FriendsSelectionDtoCopyWithImpl<_FriendsSelectionDto>(
-          this, _$identity);
+  _$MemberDtoCopyWith<_MemberDto> get copyWith =>
+      __$MemberDtoCopyWithImpl<_MemberDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_FriendsSelectionDtoToJson(this);
+    return _$_$_MemberDtoToJson(this);
   }
 }
 
-abstract class _FriendsSelectionDto extends FriendsSelectionDto {
-  factory _FriendsSelectionDto(
+abstract class _MemberDto extends MemberDto {
+  factory _MemberDto(
       {@JsonKey(name: 'firstName')
           required String firstName,
       @JsonKey(name: 'lastName')
@@ -277,11 +271,11 @@ abstract class _FriendsSelectionDto extends FriendsSelectionDto {
           required String id,
       @TimestampConverter()
       @JsonKey(name: 'createdAt')
-          required DateTime createdAt}) = _$_FriendsSelectionDto;
-  _FriendsSelectionDto._() : super._();
+          required DateTime createdAt}) = _$_MemberDto;
+  _MemberDto._() : super._();
 
-  factory _FriendsSelectionDto.fromJson(Map<String, dynamic> json) =
-      _$_FriendsSelectionDto.fromJson;
+  factory _MemberDto.fromJson(Map<String, dynamic> json) =
+      _$_MemberDto.fromJson;
 
   @override
   @JsonKey(name: 'firstName')
@@ -301,6 +295,6 @@ abstract class _FriendsSelectionDto extends FriendsSelectionDto {
   DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FriendsSelectionDtoCopyWith<_FriendsSelectionDto> get copyWith =>
+  _$MemberDtoCopyWith<_MemberDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

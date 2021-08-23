@@ -1,32 +1,31 @@
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
-import 'package:ddd_practice_app/application/friends_selection_practice/friends_selection_create/bloc/friends_selection_create_bloc.dart';
+import 'package:ddd_practice_app/application/member_practice/member_create/bloc/member_create_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/friends_selection_practice/my_colors.dart';
+import 'package:ddd_practice_app/presentation/member_practice/member_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-class FriendsCreatePage extends StatelessWidget {
+class MemberCreatePage extends StatelessWidget {
   final TextEditingController firstController = TextEditingController();
   final TextEditingController lastController = TextEditingController();
-  FriendsCreatePage({Key? key}) : super(key: key);
+  MemberCreatePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<FriendsSelectionCreateBloc>(
-      create: (context) => getIt<FriendsSelectionCreateBloc>(),
-      child:
-          BlocBuilder<FriendsSelectionCreateBloc, FriendsSelectionCreateState>(
+    return BlocProvider<MemberCreateBloc>(
+      create: (context) => getIt<MemberCreateBloc>(),
+      child: BlocBuilder<MemberCreateBloc, MemberCreateState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: appBarForm(context, theme, title: ""),
+            appBar: appBarForm(context, theme, title: "", colors: Colors.green),
             bottomNavigationBar: Padding(
               padding: const EdgeInsets.all(22.0),
               child: InkWell(
                 onTap: () {
-                  context.read<FriendsSelectionCreateBloc>().add(
-                      FriendsSelectionCreateEvent.created(firstController.text,
+                  context.read<MemberCreateBloc>().add(
+                      MemberCreateEvent.created(firstController.text,
                           lastController.text, state.colorIndex));
                   Get.back();
                 },
@@ -34,7 +33,7 @@ class FriendsCreatePage extends StatelessWidget {
                   height: size.height * 0.08,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Colors.cyan,
+                    color: Colors.green,
                   ),
                   child: Center(
                     child: Text(
@@ -65,17 +64,15 @@ class FriendsCreatePage extends StatelessWidget {
                         child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          itemCount: MyColors().colors.length,
+                          itemCount: MemberColors().colors.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding:
                                   const EdgeInsets.only(left: 10, right: 5),
                               child: InkWell(
                                 onTap: () {
-                                  context
-                                      .read<FriendsSelectionCreateBloc>()
-                                      .add(FriendsSelectionCreateEvent
-                                          .colorSelected(index));
+                                  context.read<MemberCreateBloc>().add(
+                                      MemberCreateEvent.colorSelected(index));
                                 },
                                 child: Stack(
                                   children: [
@@ -83,7 +80,7 @@ class FriendsCreatePage extends StatelessWidget {
                                       width: size.width * 0.1,
                                       // height: 30,
                                       decoration: BoxDecoration(
-                                        color: MyColors().colors[index],
+                                        color: MemberColors().colors[index],
                                         borderRadius: BorderRadius.circular(40),
                                       ),
                                     ),
@@ -92,7 +89,7 @@ class FriendsCreatePage extends StatelessWidget {
                                       // height: 30,
                                       decoration: BoxDecoration(
                                         color: state.colorIndex == index
-                                            ? MyColors().colors[index]
+                                            ? MemberColors().colors[index]
                                             : Colors.white60,
                                         borderRadius: BorderRadius.circular(40),
                                       ),

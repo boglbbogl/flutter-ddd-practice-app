@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'friends_selection_create_bloc.dart';
+part of 'member_create_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$FriendsSelectionCreateEventTearOff {
-  const _$FriendsSelectionCreateEventTearOff();
+class _$MemberCreateEventTearOff {
+  const _$MemberCreateEventTearOff();
 
   _ColorSelected colorSelected(int index) {
     return _ColorSelected(
@@ -32,10 +32,10 @@ class _$FriendsSelectionCreateEventTearOff {
 }
 
 /// @nodoc
-const $FriendsSelectionCreateEvent = _$FriendsSelectionCreateEventTearOff();
+const $MemberCreateEvent = _$MemberCreateEventTearOff();
 
 /// @nodoc
-mixin _$FriendsSelectionCreateEvent {
+mixin _$MemberCreateEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int index) colorSelected,
@@ -66,21 +66,20 @@ mixin _$FriendsSelectionCreateEvent {
 }
 
 /// @nodoc
-abstract class $FriendsSelectionCreateEventCopyWith<$Res> {
-  factory $FriendsSelectionCreateEventCopyWith(
-          FriendsSelectionCreateEvent value,
-          $Res Function(FriendsSelectionCreateEvent) then) =
-      _$FriendsSelectionCreateEventCopyWithImpl<$Res>;
+abstract class $MemberCreateEventCopyWith<$Res> {
+  factory $MemberCreateEventCopyWith(
+          MemberCreateEvent value, $Res Function(MemberCreateEvent) then) =
+      _$MemberCreateEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FriendsSelectionCreateEventCopyWithImpl<$Res>
-    implements $FriendsSelectionCreateEventCopyWith<$Res> {
-  _$FriendsSelectionCreateEventCopyWithImpl(this._value, this._then);
+class _$MemberCreateEventCopyWithImpl<$Res>
+    implements $MemberCreateEventCopyWith<$Res> {
+  _$MemberCreateEventCopyWithImpl(this._value, this._then);
 
-  final FriendsSelectionCreateEvent _value;
+  final MemberCreateEvent _value;
   // ignore: unused_field
-  final $Res Function(FriendsSelectionCreateEvent) _then;
+  final $Res Function(MemberCreateEvent) _then;
 }
 
 /// @nodoc
@@ -93,7 +92,7 @@ abstract class _$ColorSelectedCopyWith<$Res> {
 
 /// @nodoc
 class __$ColorSelectedCopyWithImpl<$Res>
-    extends _$FriendsSelectionCreateEventCopyWithImpl<$Res>
+    extends _$MemberCreateEventCopyWithImpl<$Res>
     implements _$ColorSelectedCopyWith<$Res> {
   __$ColorSelectedCopyWithImpl(
       _ColorSelected _value, $Res Function(_ColorSelected) _then)
@@ -125,7 +124,7 @@ class _$_ColorSelected implements _ColorSelected {
 
   @override
   String toString() {
-    return 'FriendsSelectionCreateEvent.colorSelected(index: $index)';
+    return 'MemberCreateEvent.colorSelected(index: $index)';
   }
 
   @override
@@ -191,7 +190,7 @@ class _$_ColorSelected implements _ColorSelected {
   }
 }
 
-abstract class _ColorSelected implements FriendsSelectionCreateEvent {
+abstract class _ColorSelected implements MemberCreateEvent {
   const factory _ColorSelected(int index) = _$_ColorSelected;
 
   int get index => throw _privateConstructorUsedError;
@@ -208,8 +207,7 @@ abstract class _$CreatedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CreatedCopyWithImpl<$Res>
-    extends _$FriendsSelectionCreateEventCopyWithImpl<$Res>
+class __$CreatedCopyWithImpl<$Res> extends _$MemberCreateEventCopyWithImpl<$Res>
     implements _$CreatedCopyWith<$Res> {
   __$CreatedCopyWithImpl(_Created _value, $Res Function(_Created) _then)
       : super(_value, (v) => _then(v as _Created));
@@ -254,7 +252,7 @@ class _$_Created implements _Created {
 
   @override
   String toString() {
-    return 'FriendsSelectionCreateEvent.created(firstName: $firstName, lastName: $lastName, colors: $colors)';
+    return 'MemberCreateEvent.created(firstName: $firstName, lastName: $lastName, colors: $colors)';
   }
 
   @override
@@ -329,7 +327,7 @@ class _$_Created implements _Created {
   }
 }
 
-abstract class _Created implements FriendsSelectionCreateEvent {
+abstract class _Created implements MemberCreateEvent {
   const factory _Created(String firstName, String lastName, int colors) =
       _$_Created;
 
@@ -342,12 +340,11 @@ abstract class _Created implements FriendsSelectionCreateEvent {
 }
 
 /// @nodoc
-class _$FriendsSelectionCreateStateTearOff {
-  const _$FriendsSelectionCreateStateTearOff();
+class _$MemberCreateStateTearOff {
+  const _$MemberCreateStateTearOff();
 
-  _FriendsSelectionCreateState call(
-      {required bool isLoading, required int colorIndex}) {
-    return _FriendsSelectionCreateState(
+  _MemberCreateState call({required bool isLoading, required int colorIndex}) {
+    return _MemberCreateState(
       isLoading: isLoading,
       colorIndex: colorIndex,
     );
@@ -355,35 +352,34 @@ class _$FriendsSelectionCreateStateTearOff {
 }
 
 /// @nodoc
-const $FriendsSelectionCreateState = _$FriendsSelectionCreateStateTearOff();
+const $MemberCreateState = _$MemberCreateStateTearOff();
 
 /// @nodoc
-mixin _$FriendsSelectionCreateState {
+mixin _$MemberCreateState {
   bool get isLoading => throw _privateConstructorUsedError;
   int get colorIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FriendsSelectionCreateStateCopyWith<FriendsSelectionCreateState>
-      get copyWith => throw _privateConstructorUsedError;
+  $MemberCreateStateCopyWith<MemberCreateState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FriendsSelectionCreateStateCopyWith<$Res> {
-  factory $FriendsSelectionCreateStateCopyWith(
-          FriendsSelectionCreateState value,
-          $Res Function(FriendsSelectionCreateState) then) =
-      _$FriendsSelectionCreateStateCopyWithImpl<$Res>;
+abstract class $MemberCreateStateCopyWith<$Res> {
+  factory $MemberCreateStateCopyWith(
+          MemberCreateState value, $Res Function(MemberCreateState) then) =
+      _$MemberCreateStateCopyWithImpl<$Res>;
   $Res call({bool isLoading, int colorIndex});
 }
 
 /// @nodoc
-class _$FriendsSelectionCreateStateCopyWithImpl<$Res>
-    implements $FriendsSelectionCreateStateCopyWith<$Res> {
-  _$FriendsSelectionCreateStateCopyWithImpl(this._value, this._then);
+class _$MemberCreateStateCopyWithImpl<$Res>
+    implements $MemberCreateStateCopyWith<$Res> {
+  _$MemberCreateStateCopyWithImpl(this._value, this._then);
 
-  final FriendsSelectionCreateState _value;
+  final MemberCreateState _value;
   // ignore: unused_field
-  final $Res Function(FriendsSelectionCreateState) _then;
+  final $Res Function(MemberCreateState) _then;
 
   @override
   $Res call({
@@ -404,35 +400,32 @@ class _$FriendsSelectionCreateStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FriendsSelectionCreateStateCopyWith<$Res>
-    implements $FriendsSelectionCreateStateCopyWith<$Res> {
-  factory _$FriendsSelectionCreateStateCopyWith(
-          _FriendsSelectionCreateState value,
-          $Res Function(_FriendsSelectionCreateState) then) =
-      __$FriendsSelectionCreateStateCopyWithImpl<$Res>;
+abstract class _$MemberCreateStateCopyWith<$Res>
+    implements $MemberCreateStateCopyWith<$Res> {
+  factory _$MemberCreateStateCopyWith(
+          _MemberCreateState value, $Res Function(_MemberCreateState) then) =
+      __$MemberCreateStateCopyWithImpl<$Res>;
   @override
   $Res call({bool isLoading, int colorIndex});
 }
 
 /// @nodoc
-class __$FriendsSelectionCreateStateCopyWithImpl<$Res>
-    extends _$FriendsSelectionCreateStateCopyWithImpl<$Res>
-    implements _$FriendsSelectionCreateStateCopyWith<$Res> {
-  __$FriendsSelectionCreateStateCopyWithImpl(
-      _FriendsSelectionCreateState _value,
-      $Res Function(_FriendsSelectionCreateState) _then)
-      : super(_value, (v) => _then(v as _FriendsSelectionCreateState));
+class __$MemberCreateStateCopyWithImpl<$Res>
+    extends _$MemberCreateStateCopyWithImpl<$Res>
+    implements _$MemberCreateStateCopyWith<$Res> {
+  __$MemberCreateStateCopyWithImpl(
+      _MemberCreateState _value, $Res Function(_MemberCreateState) _then)
+      : super(_value, (v) => _then(v as _MemberCreateState));
 
   @override
-  _FriendsSelectionCreateState get _value =>
-      super._value as _FriendsSelectionCreateState;
+  _MemberCreateState get _value => super._value as _MemberCreateState;
 
   @override
   $Res call({
     Object? isLoading = freezed,
     Object? colorIndex = freezed,
   }) {
-    return _then(_FriendsSelectionCreateState(
+    return _then(_MemberCreateState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -447,9 +440,8 @@ class __$FriendsSelectionCreateStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FriendsSelectionCreateState implements _FriendsSelectionCreateState {
-  _$_FriendsSelectionCreateState(
-      {required this.isLoading, required this.colorIndex});
+class _$_MemberCreateState implements _MemberCreateState {
+  _$_MemberCreateState({required this.isLoading, required this.colorIndex});
 
   @override
   final bool isLoading;
@@ -458,13 +450,13 @@ class _$_FriendsSelectionCreateState implements _FriendsSelectionCreateState {
 
   @override
   String toString() {
-    return 'FriendsSelectionCreateState(isLoading: $isLoading, colorIndex: $colorIndex)';
+    return 'MemberCreateState(isLoading: $isLoading, colorIndex: $colorIndex)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FriendsSelectionCreateState &&
+        (other is _MemberCreateState &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
@@ -481,16 +473,14 @@ class _$_FriendsSelectionCreateState implements _FriendsSelectionCreateState {
 
   @JsonKey(ignore: true)
   @override
-  _$FriendsSelectionCreateStateCopyWith<_FriendsSelectionCreateState>
-      get copyWith => __$FriendsSelectionCreateStateCopyWithImpl<
-          _FriendsSelectionCreateState>(this, _$identity);
+  _$MemberCreateStateCopyWith<_MemberCreateState> get copyWith =>
+      __$MemberCreateStateCopyWithImpl<_MemberCreateState>(this, _$identity);
 }
 
-abstract class _FriendsSelectionCreateState
-    implements FriendsSelectionCreateState {
-  factory _FriendsSelectionCreateState(
+abstract class _MemberCreateState implements MemberCreateState {
+  factory _MemberCreateState(
       {required bool isLoading,
-      required int colorIndex}) = _$_FriendsSelectionCreateState;
+      required int colorIndex}) = _$_MemberCreateState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -498,6 +488,6 @@ abstract class _FriendsSelectionCreateState
   int get colorIndex => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FriendsSelectionCreateStateCopyWith<_FriendsSelectionCreateState>
-      get copyWith => throw _privateConstructorUsedError;
+  _$MemberCreateStateCopyWith<_MemberCreateState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -4,7 +4,7 @@ class PracticeItem {
   List items = [
     'Community Practice',
     'API Practice',
-    'Friends Selection Practice',
+    'Member Practice',
   ];
 
   List colors = [
@@ -16,6 +16,6 @@ class PracticeItem {
   List router = [
     '/communityMainPage',
     '/apiMainPage',
-    '/friendsSelectionMainPage',
+    '/memberMainPage',
   ];
 }

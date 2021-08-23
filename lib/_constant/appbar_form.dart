@@ -5,9 +5,11 @@ AppBar appBarForm(
   ThemeData theme, {
   List<Widget>? actions,
   required String title,
+  Color? colors,
 }) {
   return AppBar(
     toolbarHeight: 70,
+    backgroundColor: colors,
     title: Text(
       title,
       style: theme.textTheme.headline5!.copyWith(

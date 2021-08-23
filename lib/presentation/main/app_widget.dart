@@ -1,11 +1,11 @@
 import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
-import 'package:ddd_practice_app/application/friends_selection_practice/friends_selection_main/friends_selection_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
+import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_practice/api_main_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
-import 'package:ddd_practice_app/presentation/friends_selection_practice/friends_selection_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/main_page.dart';
+import 'package:ddd_practice_app/presentation/member_practice/member_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -22,8 +22,8 @@ class AppWidget extends StatelessWidget {
             create: (context) => getIt<CommunityMainBloc>()
               ..add(const CommunityMainEvent.started())),
         BlocProvider(
-            create: (context) => getIt<FriendsSelectionMainBloc>()
-              ..add(const FriendsSelectionMainEvent.started())),
+            create: (context) =>
+                getIt<MemberMainBloc>()..add(const MemberMainEvent.started())),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',
@@ -31,8 +31,7 @@ class AppWidget extends StatelessWidget {
           '/mainPage': (context) => const MainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
           '/apiMainPage': (context) => const ApiMainPage(),
-          '/friendsSelectionMainPage': (context) =>
-              const FriendsSelectionMainPage(),
+          '/memberMainPage': (context) => const MemberMainPage(),
         },
         theme: ThemeData(
           fontFamily: 'Yanolja',

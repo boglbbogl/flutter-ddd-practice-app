@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'friends_selection_dto.dart';
+part of 'member_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FriendsSelectionDto _$_$_FriendsSelectionDtoFromJson(
-    Map<String, dynamic> json) {
-  return _$_FriendsSelectionDto(
+_$_MemberDto _$_$_MemberDtoFromJson(Map<String, dynamic> json) {
+  return _$_MemberDto(
     firstName: json['firstName'] as String,
     lastName: json['lastName'] as String,
     colors: json['colors'] as int,
@@ -18,8 +17,7 @@ _$_FriendsSelectionDto _$_$_FriendsSelectionDtoFromJson(
   );
 }
 
-Map<String, dynamic> _$_$_FriendsSelectionDtoToJson(
-        _$_FriendsSelectionDto instance) =>
+Map<String, dynamic> _$_$_MemberDtoToJson(_$_MemberDto instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
