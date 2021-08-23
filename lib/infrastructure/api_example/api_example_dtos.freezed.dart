@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_example.dart';
+part of 'api_example_dtos.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,49 +12,59 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-class _$ApiExampleTearOff {
-  const _$ApiExampleTearOff();
+ApiExampleDto _$ApiExampleDtoFromJson(Map<String, dynamic> json) {
+  return _ApiExampleDto.fromJson(json);
+}
 
-  _ApiExample call(
+/// @nodoc
+class _$ApiExampleDtoTearOff {
+  const _$ApiExampleDtoTearOff();
+
+  _ApiExampleDto call(
       {required String id, required String author, required String url}) {
-    return _ApiExample(
+    return _ApiExampleDto(
       id: id,
       author: author,
       url: url,
     );
   }
+
+  ApiExampleDto fromJson(Map<String, Object> json) {
+    return ApiExampleDto.fromJson(json);
+  }
 }
 
 /// @nodoc
-const $ApiExample = _$ApiExampleTearOff();
+const $ApiExampleDto = _$ApiExampleDtoTearOff();
 
 /// @nodoc
-mixin _$ApiExample {
+mixin _$ApiExampleDto {
   String get id => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiExampleCopyWith<ApiExample> get copyWith =>
+  $ApiExampleDtoCopyWith<ApiExampleDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiExampleCopyWith<$Res> {
-  factory $ApiExampleCopyWith(
-          ApiExample value, $Res Function(ApiExample) then) =
-      _$ApiExampleCopyWithImpl<$Res>;
+abstract class $ApiExampleDtoCopyWith<$Res> {
+  factory $ApiExampleDtoCopyWith(
+          ApiExampleDto value, $Res Function(ApiExampleDto) then) =
+      _$ApiExampleDtoCopyWithImpl<$Res>;
   $Res call({String id, String author, String url});
 }
 
 /// @nodoc
-class _$ApiExampleCopyWithImpl<$Res> implements $ApiExampleCopyWith<$Res> {
-  _$ApiExampleCopyWithImpl(this._value, this._then);
+class _$ApiExampleDtoCopyWithImpl<$Res>
+    implements $ApiExampleDtoCopyWith<$Res> {
+  _$ApiExampleDtoCopyWithImpl(this._value, this._then);
 
-  final ApiExample _value;
+  final ApiExampleDto _value;
   // ignore: unused_field
-  final $Res Function(ApiExample) _then;
+  final $Res Function(ApiExampleDto) _then;
 
   @override
   $Res call({
@@ -80,23 +90,25 @@ class _$ApiExampleCopyWithImpl<$Res> implements $ApiExampleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ApiExampleCopyWith<$Res> implements $ApiExampleCopyWith<$Res> {
-  factory _$ApiExampleCopyWith(
-          _ApiExample value, $Res Function(_ApiExample) then) =
-      __$ApiExampleCopyWithImpl<$Res>;
+abstract class _$ApiExampleDtoCopyWith<$Res>
+    implements $ApiExampleDtoCopyWith<$Res> {
+  factory _$ApiExampleDtoCopyWith(
+          _ApiExampleDto value, $Res Function(_ApiExampleDto) then) =
+      __$ApiExampleDtoCopyWithImpl<$Res>;
   @override
   $Res call({String id, String author, String url});
 }
 
 /// @nodoc
-class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
-    implements _$ApiExampleCopyWith<$Res> {
-  __$ApiExampleCopyWithImpl(
-      _ApiExample _value, $Res Function(_ApiExample) _then)
-      : super(_value, (v) => _then(v as _ApiExample));
+class __$ApiExampleDtoCopyWithImpl<$Res>
+    extends _$ApiExampleDtoCopyWithImpl<$Res>
+    implements _$ApiExampleDtoCopyWith<$Res> {
+  __$ApiExampleDtoCopyWithImpl(
+      _ApiExampleDto _value, $Res Function(_ApiExampleDto) _then)
+      : super(_value, (v) => _then(v as _ApiExampleDto));
 
   @override
-  _ApiExample get _value => super._value as _ApiExample;
+  _ApiExampleDto get _value => super._value as _ApiExampleDto;
 
   @override
   $Res call({
@@ -104,7 +116,7 @@ class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
     Object? author = freezed,
     Object? url = freezed,
   }) {
-    return _then(_ApiExample(
+    return _then(_ApiExampleDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -122,10 +134,14 @@ class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
 }
 
 /// @nodoc
+@JsonSerializable()
+class _$_ApiExampleDto extends _ApiExampleDto {
+  const _$_ApiExampleDto(
+      {required this.id, required this.author, required this.url})
+      : super._();
 
-class _$_ApiExample implements _ApiExample {
-  const _$_ApiExample(
-      {required this.id, required this.author, required this.url});
+  factory _$_ApiExampleDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApiExampleDtoFromJson(json);
 
   @override
   final String id;
@@ -136,13 +152,13 @@ class _$_ApiExample implements _ApiExample {
 
   @override
   String toString() {
-    return 'ApiExample(id: $id, author: $author, url: $url)';
+    return 'ApiExampleDto(id: $id, author: $author, url: $url)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiExample &&
+        (other is _ApiExampleDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.author, author) ||
@@ -160,15 +176,24 @@ class _$_ApiExample implements _ApiExample {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiExampleCopyWith<_ApiExample> get copyWith =>
-      __$ApiExampleCopyWithImpl<_ApiExample>(this, _$identity);
+  _$ApiExampleDtoCopyWith<_ApiExampleDto> get copyWith =>
+      __$ApiExampleDtoCopyWithImpl<_ApiExampleDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ApiExampleDtoToJson(this);
+  }
 }
 
-abstract class _ApiExample implements ApiExample {
-  const factory _ApiExample(
+abstract class _ApiExampleDto extends ApiExampleDto {
+  const factory _ApiExampleDto(
       {required String id,
       required String author,
-      required String url}) = _$_ApiExample;
+      required String url}) = _$_ApiExampleDto;
+  const _ApiExampleDto._() : super._();
+
+  factory _ApiExampleDto.fromJson(Map<String, dynamic> json) =
+      _$_ApiExampleDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -178,6 +203,6 @@ abstract class _ApiExample implements ApiExample {
   String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiExampleCopyWith<_ApiExample> get copyWith =>
+  _$ApiExampleDtoCopyWith<_ApiExampleDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
