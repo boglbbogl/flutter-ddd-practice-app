@@ -24,15 +24,11 @@ class _$ApiExampleDtoTearOff {
       {required String id,
       required String author,
       required String url,
-      required int width,
-      required int height,
       required String downloadUrl}) {
     return _ApiExampleDto(
       id: id,
       author: author,
       url: url,
-      width: width,
-      height: height,
       downloadUrl: downloadUrl,
     );
   }
@@ -49,9 +45,9 @@ const $ApiExampleDto = _$ApiExampleDtoTearOff();
 mixin _$ApiExampleDto {
   String get id => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
-  int get width => throw _privateConstructorUsedError;
-  int get height => throw _privateConstructorUsedError;
+  String get url =>
+      throw _privateConstructorUsedError; // required String width,
+// required String height,
   String get downloadUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -65,13 +61,7 @@ abstract class $ApiExampleDtoCopyWith<$Res> {
   factory $ApiExampleDtoCopyWith(
           ApiExampleDto value, $Res Function(ApiExampleDto) then) =
       _$ApiExampleDtoCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      String author,
-      String url,
-      int width,
-      int height,
-      String downloadUrl});
+  $Res call({String id, String author, String url, String downloadUrl});
 }
 
 /// @nodoc
@@ -88,8 +78,6 @@ class _$ApiExampleDtoCopyWithImpl<$Res>
     Object? id = freezed,
     Object? author = freezed,
     Object? url = freezed,
-    Object? width = freezed,
-    Object? height = freezed,
     Object? downloadUrl = freezed,
   }) {
     return _then(_value.copyWith(
@@ -105,14 +93,6 @@ class _$ApiExampleDtoCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      width: width == freezed
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: height == freezed
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
       downloadUrl: downloadUrl == freezed
           ? _value.downloadUrl
           : downloadUrl // ignore: cast_nullable_to_non_nullable
@@ -128,13 +108,7 @@ abstract class _$ApiExampleDtoCopyWith<$Res>
           _ApiExampleDto value, $Res Function(_ApiExampleDto) then) =
       __$ApiExampleDtoCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id,
-      String author,
-      String url,
-      int width,
-      int height,
-      String downloadUrl});
+  $Res call({String id, String author, String url, String downloadUrl});
 }
 
 /// @nodoc
@@ -153,8 +127,6 @@ class __$ApiExampleDtoCopyWithImpl<$Res>
     Object? id = freezed,
     Object? author = freezed,
     Object? url = freezed,
-    Object? width = freezed,
-    Object? height = freezed,
     Object? downloadUrl = freezed,
   }) {
     return _then(_ApiExampleDto(
@@ -170,14 +142,6 @@ class __$ApiExampleDtoCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      width: width == freezed
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: height == freezed
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
       downloadUrl: downloadUrl == freezed
           ? _value.downloadUrl
           : downloadUrl // ignore: cast_nullable_to_non_nullable
@@ -193,8 +157,6 @@ class _$_ApiExampleDto extends _ApiExampleDto {
       {required this.id,
       required this.author,
       required this.url,
-      required this.width,
-      required this.height,
       required this.downloadUrl})
       : super._();
 
@@ -207,16 +169,13 @@ class _$_ApiExampleDto extends _ApiExampleDto {
   final String author;
   @override
   final String url;
-  @override
-  final int width;
-  @override
-  final int height;
-  @override
+  @override // required String width,
+// required String height,
   final String downloadUrl;
 
   @override
   String toString() {
-    return 'ApiExampleDto(id: $id, author: $author, url: $url, width: $width, height: $height, downloadUrl: $downloadUrl)';
+    return 'ApiExampleDto(id: $id, author: $author, url: $url, downloadUrl: $downloadUrl)';
   }
 
   @override
@@ -229,10 +188,6 @@ class _$_ApiExampleDto extends _ApiExampleDto {
                 const DeepCollectionEquality().equals(other.author, author)) &&
             (identical(other.url, url) ||
                 const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.width, width) ||
-                const DeepCollectionEquality().equals(other.width, width)) &&
-            (identical(other.height, height) ||
-                const DeepCollectionEquality().equals(other.height, height)) &&
             (identical(other.downloadUrl, downloadUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.downloadUrl, downloadUrl)));
@@ -244,8 +199,6 @@ class _$_ApiExampleDto extends _ApiExampleDto {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(width) ^
-      const DeepCollectionEquality().hash(height) ^
       const DeepCollectionEquality().hash(downloadUrl);
 
   @JsonKey(ignore: true)
@@ -264,8 +217,6 @@ abstract class _ApiExampleDto extends ApiExampleDto {
       {required String id,
       required String author,
       required String url,
-      required int width,
-      required int height,
       required String downloadUrl}) = _$_ApiExampleDto;
   const _ApiExampleDto._() : super._();
 
@@ -278,11 +229,8 @@ abstract class _ApiExampleDto extends ApiExampleDto {
   String get author => throw _privateConstructorUsedError;
   @override
   String get url => throw _privateConstructorUsedError;
-  @override
-  int get width => throw _privateConstructorUsedError;
-  @override
-  int get height => throw _privateConstructorUsedError;
-  @override
+  @override // required String width,
+// required String height,
   String get downloadUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

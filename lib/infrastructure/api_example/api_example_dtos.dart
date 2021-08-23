@@ -10,8 +10,8 @@ class ApiExampleDto with _$ApiExampleDto {
     required String id,
     required String author,
     required String url,
-    required int width,
-    required int height,
+    // required String width,
+    // required String height,
     required String downloadUrl,
   }) = _ApiExampleDto;
 
@@ -24,8 +24,8 @@ class ApiExampleDto with _$ApiExampleDto {
         id: id,
         author: author,
         url: url,
-        width: width,
-        height: height,
+        // width: width,
+        // height: height,
         downloadUrl: downloadUrl,
       );
 }
