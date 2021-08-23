@@ -11,7 +11,7 @@ import 'package:http/http.dart' as http;
 @LazySingleton(as: IApiExampleRepository)
 class ApiExampleRepository implements IApiExampleRepository {
   @override
-  Future<Either<ApiExampleFailure,ApiExample>> fetchExample({
+  Future<Either<ApiExampleFailure, ApiExample>> fetchExample({
     required int limit,
     required int page,
   }) async {
@@ -25,16 +25,14 @@ class ApiExampleRepository implements IApiExampleRepository {
         final apiExampleData =
             ApiExampleDto.fromJson(decoded["data"] as Map<String, dynamic>);
         // final data = decoded["data"] as List<dynamic>;
-        // final apiExampleData = data
-        //     .map((e) =>
-        //         ApiExampleDto.fromJson(e as Map<String, dynamic>).toDomain())
-        //     .toList();
+        // final apiExampleData = data.map((e) =>
+        //     ApiExampleDto.fromJson(e as Map<String, dynamic>).toDomain());
         return right(apiExampleData.toDomain());
       } else {
         return left(const ApiExampleFailure.unexpected());
       }
     } catch (error) {
-      return left(const ApiExampleFailure.serverError());
+      return left(const ApiExampleFailure.unexpected());
     }
   }
 }

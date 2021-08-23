@@ -23,7 +23,7 @@ class ApiExampleCubit extends Cubit<ApiExampleState> {
     );
     emit(state.copyWith(
       isLoading: false,
-      apiData: result,
+      apiExample: result,
     ));
     return unit;
   }

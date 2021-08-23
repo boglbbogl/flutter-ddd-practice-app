@@ -20,12 +20,12 @@ class _$ApiExampleStateTearOff {
       {required bool isLoading,
       required int limit,
       required int page,
-      required List<ApiExample> apiData}) {
+      required List<ApiExample> apiExample}) {
     return _ApiExampleState(
       isLoading: isLoading,
       limit: limit,
       page: page,
-      apiData: apiData,
+      apiExample: apiExample,
     );
   }
 }
@@ -38,7 +38,7 @@ mixin _$ApiExampleState {
   bool get isLoading => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
-  List<ApiExample> get apiData => throw _privateConstructorUsedError;
+  List<ApiExample> get apiExample => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiExampleStateCopyWith<ApiExampleState> get copyWith =>
@@ -50,7 +50,7 @@ abstract class $ApiExampleStateCopyWith<$Res> {
   factory $ApiExampleStateCopyWith(
           ApiExampleState value, $Res Function(ApiExampleState) then) =
       _$ApiExampleStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiData});
+  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiExample});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$ApiExampleStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? limit = freezed,
     Object? page = freezed,
-    Object? apiData = freezed,
+    Object? apiExample = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -82,9 +82,9 @@ class _$ApiExampleStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-      apiData: apiData == freezed
-          ? _value.apiData
-          : apiData // ignore: cast_nullable_to_non_nullable
+      apiExample: apiExample == freezed
+          ? _value.apiExample
+          : apiExample // ignore: cast_nullable_to_non_nullable
               as List<ApiExample>,
     ));
   }
@@ -97,7 +97,7 @@ abstract class _$ApiExampleStateCopyWith<$Res>
           _ApiExampleState value, $Res Function(_ApiExampleState) then) =
       __$ApiExampleStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiData});
+  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiExample});
 }
 
 /// @nodoc
@@ -116,7 +116,7 @@ class __$ApiExampleStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? limit = freezed,
     Object? page = freezed,
-    Object? apiData = freezed,
+    Object? apiExample = freezed,
   }) {
     return _then(_ApiExampleState(
       isLoading: isLoading == freezed
@@ -131,9 +131,9 @@ class __$ApiExampleStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-      apiData: apiData == freezed
-          ? _value.apiData
-          : apiData // ignore: cast_nullable_to_non_nullable
+      apiExample: apiExample == freezed
+          ? _value.apiExample
+          : apiExample // ignore: cast_nullable_to_non_nullable
               as List<ApiExample>,
     ));
   }
@@ -146,7 +146,7 @@ class _$_ApiExampleState implements _ApiExampleState {
       {required this.isLoading,
       required this.limit,
       required this.page,
-      required this.apiData});
+      required this.apiExample});
 
   @override
   final bool isLoading;
@@ -155,11 +155,11 @@ class _$_ApiExampleState implements _ApiExampleState {
   @override
   final int page;
   @override
-  final List<ApiExample> apiData;
+  final List<ApiExample> apiExample;
 
   @override
   String toString() {
-    return 'ApiExampleState(isLoading: $isLoading, limit: $limit, page: $page, apiData: $apiData)';
+    return 'ApiExampleState(isLoading: $isLoading, limit: $limit, page: $page, apiExample: $apiExample)';
   }
 
   @override
@@ -173,8 +173,9 @@ class _$_ApiExampleState implements _ApiExampleState {
                 const DeepCollectionEquality().equals(other.limit, limit)) &&
             (identical(other.page, page) ||
                 const DeepCollectionEquality().equals(other.page, page)) &&
-            (identical(other.apiData, apiData) ||
-                const DeepCollectionEquality().equals(other.apiData, apiData)));
+            (identical(other.apiExample, apiExample) ||
+                const DeepCollectionEquality()
+                    .equals(other.apiExample, apiExample)));
   }
 
   @override
@@ -183,7 +184,7 @@ class _$_ApiExampleState implements _ApiExampleState {
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(limit) ^
       const DeepCollectionEquality().hash(page) ^
-      const DeepCollectionEquality().hash(apiData);
+      const DeepCollectionEquality().hash(apiExample);
 
   @JsonKey(ignore: true)
   @override
@@ -196,7 +197,7 @@ abstract class _ApiExampleState implements ApiExampleState {
       {required bool isLoading,
       required int limit,
       required int page,
-      required List<ApiExample> apiData}) = _$_ApiExampleState;
+      required List<ApiExample> apiExample}) = _$_ApiExampleState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -205,7 +206,7 @@ abstract class _ApiExampleState implements ApiExampleState {
   @override
   int get page => throw _privateConstructorUsedError;
   @override
-  List<ApiExample> get apiData => throw _privateConstructorUsedError;
+  List<ApiExample> get apiExample => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiExampleStateCopyWith<_ApiExampleState> get copyWith =>
