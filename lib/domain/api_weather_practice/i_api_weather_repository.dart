@@ -7,4 +7,5 @@ abstract class IApiWeatherRepository {
     required double lon,
     required double lat,
   });
+  Future<GeoLocation?> getGeolocation();
 }

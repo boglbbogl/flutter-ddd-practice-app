@@ -19,7 +19,11 @@ class ApiExampleMainPage extends StatelessWidget {
         builder: (context, state) {
           if (state.apiExample.isEmpty) {
             return const Scaffold(
-              backgroundColor: Colors.green,
+              body: Center(
+                child: CupertinoActivityIndicator(
+                  radius: 25,
+                ),
+              ),
             );
           }
           return Scaffold(

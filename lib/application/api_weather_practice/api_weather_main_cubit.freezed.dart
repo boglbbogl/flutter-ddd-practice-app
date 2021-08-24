@@ -17,10 +17,10 @@ class _$ApiWeatherMainStateTearOff {
   const _$ApiWeatherMainStateTearOff();
 
   _ApiWeatherMainState call(
-      {required bool isLoading, required Weather? result}) {
+      {required bool isLoading, required Weather? weather}) {
     return _ApiWeatherMainState(
       isLoading: isLoading,
-      result: result,
+      weather: weather,
     );
   }
 }
@@ -32,7 +32,7 @@ const $ApiWeatherMainState = _$ApiWeatherMainStateTearOff();
 mixin _$ApiWeatherMainState {
   bool get isLoading =>
       throw _privateConstructorUsedError; // required List<Weather> result,
-  Weather? get result => throw _privateConstructorUsedError;
+  Weather? get weather => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiWeatherMainStateCopyWith<ApiWeatherMainState> get copyWith =>
@@ -44,9 +44,9 @@ abstract class $ApiWeatherMainStateCopyWith<$Res> {
   factory $ApiWeatherMainStateCopyWith(
           ApiWeatherMainState value, $Res Function(ApiWeatherMainState) then) =
       _$ApiWeatherMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, Weather? result});
+  $Res call({bool isLoading, Weather? weather});
 
-  $WeatherCopyWith<$Res>? get result;
+  $WeatherCopyWith<$Res>? get weather;
 }
 
 /// @nodoc
@@ -61,28 +61,28 @@ class _$ApiWeatherMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? result = freezed,
+    Object? weather = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      weather: weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
               as Weather?,
     ));
   }
 
   @override
-  $WeatherCopyWith<$Res>? get result {
-    if (_value.result == null) {
+  $WeatherCopyWith<$Res>? get weather {
+    if (_value.weather == null) {
       return null;
     }
 
-    return $WeatherCopyWith<$Res>(_value.result!, (value) {
-      return _then(_value.copyWith(result: value));
+    return $WeatherCopyWith<$Res>(_value.weather!, (value) {
+      return _then(_value.copyWith(weather: value));
     });
   }
 }
@@ -94,10 +94,10 @@ abstract class _$ApiWeatherMainStateCopyWith<$Res>
           $Res Function(_ApiWeatherMainState) then) =
       __$ApiWeatherMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, Weather? result});
+  $Res call({bool isLoading, Weather? weather});
 
   @override
-  $WeatherCopyWith<$Res>? get result;
+  $WeatherCopyWith<$Res>? get weather;
 }
 
 /// @nodoc
@@ -114,16 +114,16 @@ class __$ApiWeatherMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? result = freezed,
+    Object? weather = freezed,
   }) {
     return _then(_ApiWeatherMainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      weather: weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
               as Weather?,
     ));
   }
@@ -132,16 +132,16 @@ class __$ApiWeatherMainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiWeatherMainState implements _ApiWeatherMainState {
-  _$_ApiWeatherMainState({required this.isLoading, required this.result});
+  _$_ApiWeatherMainState({required this.isLoading, required this.weather});
 
   @override
   final bool isLoading;
   @override // required List<Weather> result,
-  final Weather? result;
+  final Weather? weather;
 
   @override
   String toString() {
-    return 'ApiWeatherMainState(isLoading: $isLoading, result: $result)';
+    return 'ApiWeatherMainState(isLoading: $isLoading, weather: $weather)';
   }
 
   @override
@@ -151,15 +151,15 @@ class _$_ApiWeatherMainState implements _ApiWeatherMainState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+            (identical(other.weather, weather) ||
+                const DeepCollectionEquality().equals(other.weather, weather)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(result);
+      const DeepCollectionEquality().hash(weather);
 
   @JsonKey(ignore: true)
   @override
@@ -171,12 +171,12 @@ class _$_ApiWeatherMainState implements _ApiWeatherMainState {
 abstract class _ApiWeatherMainState implements ApiWeatherMainState {
   factory _ApiWeatherMainState(
       {required bool isLoading,
-      required Weather? result}) = _$_ApiWeatherMainState;
+      required Weather? weather}) = _$_ApiWeatherMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override // required List<Weather> result,
-  Weather? get result => throw _privateConstructorUsedError;
+  Weather? get weather => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiWeatherMainStateCopyWith<_ApiWeatherMainState> get copyWith =>
