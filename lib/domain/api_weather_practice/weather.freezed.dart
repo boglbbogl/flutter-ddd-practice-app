@@ -241,6 +241,133 @@ abstract class _Weather implements Weather {
 }
 
 /// @nodoc
+class _$WeatherIconTearOff {
+  const _$WeatherIconTearOff();
+
+  _WeatherIcon call({required String icon}) {
+    return _WeatherIcon(
+      icon: icon,
+    );
+  }
+}
+
+/// @nodoc
+const $WeatherIcon = _$WeatherIconTearOff();
+
+/// @nodoc
+mixin _$WeatherIcon {
+  String get icon => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $WeatherIconCopyWith<WeatherIcon> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WeatherIconCopyWith<$Res> {
+  factory $WeatherIconCopyWith(
+          WeatherIcon value, $Res Function(WeatherIcon) then) =
+      _$WeatherIconCopyWithImpl<$Res>;
+  $Res call({String icon});
+}
+
+/// @nodoc
+class _$WeatherIconCopyWithImpl<$Res> implements $WeatherIconCopyWith<$Res> {
+  _$WeatherIconCopyWithImpl(this._value, this._then);
+
+  final WeatherIcon _value;
+  // ignore: unused_field
+  final $Res Function(WeatherIcon) _then;
+
+  @override
+  $Res call({
+    Object? icon = freezed,
+  }) {
+    return _then(_value.copyWith(
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$WeatherIconCopyWith<$Res>
+    implements $WeatherIconCopyWith<$Res> {
+  factory _$WeatherIconCopyWith(
+          _WeatherIcon value, $Res Function(_WeatherIcon) then) =
+      __$WeatherIconCopyWithImpl<$Res>;
+  @override
+  $Res call({String icon});
+}
+
+/// @nodoc
+class __$WeatherIconCopyWithImpl<$Res> extends _$WeatherIconCopyWithImpl<$Res>
+    implements _$WeatherIconCopyWith<$Res> {
+  __$WeatherIconCopyWithImpl(
+      _WeatherIcon _value, $Res Function(_WeatherIcon) _then)
+      : super(_value, (v) => _then(v as _WeatherIcon));
+
+  @override
+  _WeatherIcon get _value => super._value as _WeatherIcon;
+
+  @override
+  $Res call({
+    Object? icon = freezed,
+  }) {
+    return _then(_WeatherIcon(
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_WeatherIcon implements _WeatherIcon {
+  const _$_WeatherIcon({required this.icon});
+
+  @override
+  final String icon;
+
+  @override
+  String toString() {
+    return 'WeatherIcon(icon: $icon)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WeatherIcon &&
+            (identical(other.icon, icon) ||
+                const DeepCollectionEquality().equals(other.icon, icon)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(icon);
+
+  @JsonKey(ignore: true)
+  @override
+  _$WeatherIconCopyWith<_WeatherIcon> get copyWith =>
+      __$WeatherIconCopyWithImpl<_WeatherIcon>(this, _$identity);
+}
+
+abstract class _WeatherIcon implements WeatherIcon {
+  const factory _WeatherIcon({required String icon}) = _$_WeatherIcon;
+
+  @override
+  String get icon => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$WeatherIconCopyWith<_WeatherIcon> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$WeatherCityTearOff {
   const _$WeatherCityTearOff();
 

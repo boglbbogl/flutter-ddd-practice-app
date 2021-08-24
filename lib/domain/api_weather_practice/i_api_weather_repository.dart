@@ -7,6 +7,10 @@ abstract class IApiWeatherRepository {
     required double lon,
     required double lat,
   });
+  Future<WeatherIcon?> getWeatherIcon({
+    required double lon,
+    required double lat,
+  });
   Future<GeoLocation?> getGeolocation();
   Future<WeatherCity?> getWeatherCity({
     required double lon,

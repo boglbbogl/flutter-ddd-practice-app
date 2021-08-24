@@ -24,12 +24,15 @@ class ApiWeatherMainCubit extends Cubit<ApiWeatherMainState> {
       final orFailure =
           await _weatherRepository.getWeatherData(lon: lon, lat: lat);
       final result = orFailure.fold((l) => null, (r) => r);
+      final weatherIcon =
+          await _weatherRepository.getWeatherIcon(lon: lon, lat: lat);
       final cityName =
           await _weatherRepository.getWeatherCity(lon: lon, lat: lat);
       emit(state.copyWith(
         isLoading: false,
         weather: result,
         weatherCity: cityName,
+        weatherIcon: weatherIcon,
       ));
     }
 

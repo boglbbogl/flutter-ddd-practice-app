@@ -13,6 +13,13 @@ class Weather with _$Weather {
 }
 
 @freezed
+class WeatherIcon with _$WeatherIcon {
+  const factory WeatherIcon({
+    required String icon,
+  }) = _WeatherIcon;
+}
+
+@freezed
 class WeatherCity with _$WeatherCity {
   const factory WeatherCity({
     required String name,

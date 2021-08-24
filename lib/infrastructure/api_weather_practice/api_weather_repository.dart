@@ -55,6 +55,24 @@ class ApiWeatherRepository with IApiWeatherRepository {
   }
 
   @override
+  Future<WeatherIcon?> getWeatherIcon({
+    required double lat,
+    required double lon,
+  }) async {
+    String _openWeatherKey = '76fa3e54bce43b391f028213cd32ac63';
+
+    final uri = Uri.parse(
+        "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final decoded = json.decode(utf8.decode(response.bodyBytes));
+      final result = decoded["weather"][0]["icon"];
+      return WeatherIcon(icon: result.toString());
+    }
+    return null;
+  }
+
+  @override
   Future<WeatherCity?> getWeatherCity({
     required double lat,
     required double lon,
