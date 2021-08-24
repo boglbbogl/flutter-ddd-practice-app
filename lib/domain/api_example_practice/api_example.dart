@@ -7,8 +7,8 @@ class ApiExample with _$ApiExample {
     required String id,
     required String author,
     required String url,
-    // required String width,
-    // required String height,
+    required int width,
+    required int height,
     required String downloadUrl,
   }) = _ApiExample;
 }

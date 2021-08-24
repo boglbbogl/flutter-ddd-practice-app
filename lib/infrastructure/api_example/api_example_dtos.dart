@@ -10,9 +10,9 @@ class ApiExampleDto with _$ApiExampleDto {
     required String id,
     required String author,
     required String url,
-    // required String width,
-    // required String height,
-    required String downloadUrl,
+    required int width,
+    required int height,
+    required String? downloadUrl,
   }) = _ApiExampleDto;
 
   const ApiExampleDto._();
@@ -24,8 +24,8 @@ class ApiExampleDto with _$ApiExampleDto {
         id: id,
         author: author,
         url: url,
-        // width: width,
-        // height: height,
-        downloadUrl: downloadUrl,
+        width: width,
+        height: height,
+        downloadUrl: downloadUrl ?? "",
       );
 }

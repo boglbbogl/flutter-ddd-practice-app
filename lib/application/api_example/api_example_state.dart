@@ -6,13 +6,12 @@ abstract class ApiExampleState with _$ApiExampleState {
     required bool isLoading,
     required int limit,
     required int page,
-    // required List<ApiExample> apiExample,
-    required ApiExample? apiExample,
+    required List<ApiExample> apiExample,
   }) = _ApiExampleState;
   factory ApiExampleState.initial() => _ApiExampleState(
         isLoading: false,
         limit: 0,
         page: 0,
-        apiExample: null,
+        apiExample: [],
       );
 }

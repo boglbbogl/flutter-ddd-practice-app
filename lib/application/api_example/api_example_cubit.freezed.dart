@@ -20,7 +20,7 @@ class _$ApiExampleStateTearOff {
       {required bool isLoading,
       required int limit,
       required int page,
-      required ApiExample? apiExample}) {
+      required List<ApiExample> apiExample}) {
     return _ApiExampleState(
       isLoading: isLoading,
       limit: limit,
@@ -37,9 +37,8 @@ const $ApiExampleState = _$ApiExampleStateTearOff();
 mixin _$ApiExampleState {
   bool get isLoading => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
-  int get page =>
-      throw _privateConstructorUsedError; // required List<ApiExample> apiExample,
-  ApiExample? get apiExample => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+  List<ApiExample> get apiExample => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiExampleStateCopyWith<ApiExampleState> get copyWith =>
@@ -51,9 +50,7 @@ abstract class $ApiExampleStateCopyWith<$Res> {
   factory $ApiExampleStateCopyWith(
           ApiExampleState value, $Res Function(ApiExampleState) then) =
       _$ApiExampleStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, int limit, int page, ApiExample? apiExample});
-
-  $ApiExampleCopyWith<$Res>? get apiExample;
+  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiExample});
 }
 
 /// @nodoc
@@ -88,19 +85,8 @@ class _$ApiExampleStateCopyWithImpl<$Res>
       apiExample: apiExample == freezed
           ? _value.apiExample
           : apiExample // ignore: cast_nullable_to_non_nullable
-              as ApiExample?,
+              as List<ApiExample>,
     ));
-  }
-
-  @override
-  $ApiExampleCopyWith<$Res>? get apiExample {
-    if (_value.apiExample == null) {
-      return null;
-    }
-
-    return $ApiExampleCopyWith<$Res>(_value.apiExample!, (value) {
-      return _then(_value.copyWith(apiExample: value));
-    });
   }
 }
 
@@ -111,10 +97,7 @@ abstract class _$ApiExampleStateCopyWith<$Res>
           _ApiExampleState value, $Res Function(_ApiExampleState) then) =
       __$ApiExampleStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, int limit, int page, ApiExample? apiExample});
-
-  @override
-  $ApiExampleCopyWith<$Res>? get apiExample;
+  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiExample});
 }
 
 /// @nodoc
@@ -151,7 +134,7 @@ class __$ApiExampleStateCopyWithImpl<$Res>
       apiExample: apiExample == freezed
           ? _value.apiExample
           : apiExample // ignore: cast_nullable_to_non_nullable
-              as ApiExample?,
+              as List<ApiExample>,
     ));
   }
 }
@@ -171,8 +154,8 @@ class _$_ApiExampleState implements _ApiExampleState {
   final int limit;
   @override
   final int page;
-  @override // required List<ApiExample> apiExample,
-  final ApiExample? apiExample;
+  @override
+  final List<ApiExample> apiExample;
 
   @override
   String toString() {
@@ -214,7 +197,7 @@ abstract class _ApiExampleState implements ApiExampleState {
       {required bool isLoading,
       required int limit,
       required int page,
-      required ApiExample? apiExample}) = _$_ApiExampleState;
+      required List<ApiExample> apiExample}) = _$_ApiExampleState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -222,8 +205,8 @@ abstract class _ApiExampleState implements ApiExampleState {
   int get limit => throw _privateConstructorUsedError;
   @override
   int get page => throw _privateConstructorUsedError;
-  @override // required List<ApiExample> apiExample,
-  ApiExample? get apiExample => throw _privateConstructorUsedError;
+  @override
+  List<ApiExample> get apiExample => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiExampleStateCopyWith<_ApiExampleState> get copyWith =>

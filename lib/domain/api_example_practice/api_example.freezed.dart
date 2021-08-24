@@ -20,11 +20,15 @@ class _$ApiExampleTearOff {
       {required String id,
       required String author,
       required String url,
+      required int width,
+      required int height,
       required String downloadUrl}) {
     return _ApiExample(
       id: id,
       author: author,
       url: url,
+      width: width,
+      height: height,
       downloadUrl: downloadUrl,
     );
   }
@@ -37,9 +41,9 @@ const $ApiExample = _$ApiExampleTearOff();
 mixin _$ApiExample {
   String get id => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
-  String get url =>
-      throw _privateConstructorUsedError; // required String width,
-// required String height,
+  String get url => throw _privateConstructorUsedError;
+  int get width => throw _privateConstructorUsedError;
+  int get height => throw _privateConstructorUsedError;
   String get downloadUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -52,7 +56,13 @@ abstract class $ApiExampleCopyWith<$Res> {
   factory $ApiExampleCopyWith(
           ApiExample value, $Res Function(ApiExample) then) =
       _$ApiExampleCopyWithImpl<$Res>;
-  $Res call({String id, String author, String url, String downloadUrl});
+  $Res call(
+      {String id,
+      String author,
+      String url,
+      int width,
+      int height,
+      String downloadUrl});
 }
 
 /// @nodoc
@@ -68,6 +78,8 @@ class _$ApiExampleCopyWithImpl<$Res> implements $ApiExampleCopyWith<$Res> {
     Object? id = freezed,
     Object? author = freezed,
     Object? url = freezed,
+    Object? width = freezed,
+    Object? height = freezed,
     Object? downloadUrl = freezed,
   }) {
     return _then(_value.copyWith(
@@ -83,6 +95,14 @@ class _$ApiExampleCopyWithImpl<$Res> implements $ApiExampleCopyWith<$Res> {
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
       downloadUrl: downloadUrl == freezed
           ? _value.downloadUrl
           : downloadUrl // ignore: cast_nullable_to_non_nullable
@@ -97,7 +117,13 @@ abstract class _$ApiExampleCopyWith<$Res> implements $ApiExampleCopyWith<$Res> {
           _ApiExample value, $Res Function(_ApiExample) then) =
       __$ApiExampleCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String author, String url, String downloadUrl});
+  $Res call(
+      {String id,
+      String author,
+      String url,
+      int width,
+      int height,
+      String downloadUrl});
 }
 
 /// @nodoc
@@ -115,6 +141,8 @@ class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
     Object? id = freezed,
     Object? author = freezed,
     Object? url = freezed,
+    Object? width = freezed,
+    Object? height = freezed,
     Object? downloadUrl = freezed,
   }) {
     return _then(_ApiExample(
@@ -130,6 +158,14 @@ class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
       downloadUrl: downloadUrl == freezed
           ? _value.downloadUrl
           : downloadUrl // ignore: cast_nullable_to_non_nullable
@@ -145,6 +181,8 @@ class _$_ApiExample implements _ApiExample {
       {required this.id,
       required this.author,
       required this.url,
+      required this.width,
+      required this.height,
       required this.downloadUrl});
 
   @override
@@ -153,13 +191,16 @@ class _$_ApiExample implements _ApiExample {
   final String author;
   @override
   final String url;
-  @override // required String width,
-// required String height,
+  @override
+  final int width;
+  @override
+  final int height;
+  @override
   final String downloadUrl;
 
   @override
   String toString() {
-    return 'ApiExample(id: $id, author: $author, url: $url, downloadUrl: $downloadUrl)';
+    return 'ApiExample(id: $id, author: $author, url: $url, width: $width, height: $height, downloadUrl: $downloadUrl)';
   }
 
   @override
@@ -172,6 +213,10 @@ class _$_ApiExample implements _ApiExample {
                 const DeepCollectionEquality().equals(other.author, author)) &&
             (identical(other.url, url) ||
                 const DeepCollectionEquality().equals(other.url, url)) &&
+            (identical(other.width, width) ||
+                const DeepCollectionEquality().equals(other.width, width)) &&
+            (identical(other.height, height) ||
+                const DeepCollectionEquality().equals(other.height, height)) &&
             (identical(other.downloadUrl, downloadUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.downloadUrl, downloadUrl)));
@@ -183,6 +228,8 @@ class _$_ApiExample implements _ApiExample {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(url) ^
+      const DeepCollectionEquality().hash(width) ^
+      const DeepCollectionEquality().hash(height) ^
       const DeepCollectionEquality().hash(downloadUrl);
 
   @JsonKey(ignore: true)
@@ -196,6 +243,8 @@ abstract class _ApiExample implements ApiExample {
       {required String id,
       required String author,
       required String url,
+      required int width,
+      required int height,
       required String downloadUrl}) = _$_ApiExample;
 
   @override
@@ -204,8 +253,11 @@ abstract class _ApiExample implements ApiExample {
   String get author => throw _privateConstructorUsedError;
   @override
   String get url => throw _privateConstructorUsedError;
-  @override // required String width,
-// required String height,
+  @override
+  int get width => throw _privateConstructorUsedError;
+  @override
+  int get height => throw _privateConstructorUsedError;
+  @override
   String get downloadUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
