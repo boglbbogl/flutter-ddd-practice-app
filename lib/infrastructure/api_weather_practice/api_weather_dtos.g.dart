@@ -13,7 +13,6 @@ _$_ApiWeatherDto _$_$_ApiWeatherDtoFromJson(Map<String, dynamic> json) {
     temp_min: (json['temp_min'] as num).toDouble(),
     temp_max: (json['temp_max'] as num).toDouble(),
     humidity: (json['humidity'] as num).toDouble(),
-    name: json['name'] as String?,
   );
 }
 
@@ -24,5 +23,4 @@ Map<String, dynamic> _$_$_ApiWeatherDtoToJson(_$_ApiWeatherDto instance) =>
       'temp_min': instance.temp_min,
       'temp_max': instance.temp_max,
       'humidity': instance.humidity,
-      'name': instance.name,
     };

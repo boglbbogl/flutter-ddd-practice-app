@@ -9,15 +9,7 @@ class Weather with _$Weather {
     required double temp_min,
     required double temp_max,
     required double humidity,
-    required String? name,
   }) = _Weather;
-}
-
-@freezed
-class WeatherName with _$WeatherName {
-  const factory WeatherName({
-    required String name,
-  }) = _WeatherName;
 }
 
 @freezed

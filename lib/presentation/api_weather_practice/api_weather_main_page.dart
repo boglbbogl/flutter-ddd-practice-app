@@ -35,7 +35,6 @@ class ApiWeatherMainPage extends StatelessWidget {
                   Text(state.weather!.temp.toString()),
                   Text(state.weather!.temp_max.toString()),
                   Text(state.weather!.temp_min.toString()),
-                  Text(state.weather!.name.toString()),
                 ],
               ));
         },

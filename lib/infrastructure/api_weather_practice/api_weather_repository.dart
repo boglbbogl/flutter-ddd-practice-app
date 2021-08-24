@@ -53,26 +53,4 @@ class ApiWeatherRepository with IApiWeatherRepository {
       return null;
     }
   }
-
-  @override
-  Future<String> getWeatherName() async {
-    try {
-      String _openWeatherKey = '76fa3e54bce43b391f028213cd32ac63';
-
-      final uri = Uri.parse(
-          "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
-      final response = await http.get(uri);
-      if (response.statusCode == 200) {
-        final decoded = json.decode(utf8.decode(response.bodyBytes)) as String;
-        // final result =
-        //     ApiWeatherDto.fromJson(decoded[0] as Map<String, dynamic>)
-        //         .toDomain();
-        return decoded;
-      } else {
-        return "";
-      }
-    } catch (error) {
-      return "";
-    }
-  }
 }

@@ -13,7 +13,6 @@ class ApiWeatherDto with _$ApiWeatherDto {
     required double temp_min,
     required double temp_max,
     required double humidity,
-    required String? name,
   }) = _ApiWeatherDto;
 
   const ApiWeatherDto._();
@@ -27,7 +26,6 @@ class ApiWeatherDto with _$ApiWeatherDto {
         temp_min: temp_min,
         temp_max: temp_max,
         humidity: humidity,
-        name: name ?? "",
       );
 }
 

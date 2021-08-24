@@ -25,15 +25,13 @@ class _$ApiWeatherDtoTearOff {
       required double feels_like,
       required double temp_min,
       required double temp_max,
-      required double humidity,
-      required String? name}) {
+      required double humidity}) {
     return _ApiWeatherDto(
       temp: temp,
       feels_like: feels_like,
       temp_min: temp_min,
       temp_max: temp_max,
       humidity: humidity,
-      name: name,
     );
   }
 
@@ -52,7 +50,6 @@ mixin _$ApiWeatherDto {
   double get temp_min => throw _privateConstructorUsedError;
   double get temp_max => throw _privateConstructorUsedError;
   double get humidity => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -70,8 +67,7 @@ abstract class $ApiWeatherDtoCopyWith<$Res> {
       double feels_like,
       double temp_min,
       double temp_max,
-      double humidity,
-      String? name});
+      double humidity});
 }
 
 /// @nodoc
@@ -90,7 +86,6 @@ class _$ApiWeatherDtoCopyWithImpl<$Res>
     Object? temp_min = freezed,
     Object? temp_max = freezed,
     Object? humidity = freezed,
-    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
       temp: temp == freezed
@@ -113,10 +108,6 @@ class _$ApiWeatherDtoCopyWithImpl<$Res>
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as double,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -133,8 +124,7 @@ abstract class _$ApiWeatherDtoCopyWith<$Res>
       double feels_like,
       double temp_min,
       double temp_max,
-      double humidity,
-      String? name});
+      double humidity});
 }
 
 /// @nodoc
@@ -155,7 +145,6 @@ class __$ApiWeatherDtoCopyWithImpl<$Res>
     Object? temp_min = freezed,
     Object? temp_max = freezed,
     Object? humidity = freezed,
-    Object? name = freezed,
   }) {
     return _then(_ApiWeatherDto(
       temp: temp == freezed
@@ -178,10 +167,6 @@ class __$ApiWeatherDtoCopyWithImpl<$Res>
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as double,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -194,8 +179,7 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
       required this.feels_like,
       required this.temp_min,
       required this.temp_max,
-      required this.humidity,
-      required this.name})
+      required this.humidity})
       : super._();
 
   factory _$_ApiWeatherDto.fromJson(Map<String, dynamic> json) =>
@@ -211,12 +195,10 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
   final double temp_max;
   @override
   final double humidity;
-  @override
-  final String? name;
 
   @override
   String toString() {
-    return 'ApiWeatherDto(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, humidity: $humidity, name: $name)';
+    return 'ApiWeatherDto(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, humidity: $humidity)';
   }
 
   @override
@@ -236,9 +218,7 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
                     .equals(other.temp_max, temp_max)) &&
             (identical(other.humidity, humidity) ||
                 const DeepCollectionEquality()
-                    .equals(other.humidity, humidity)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+                    .equals(other.humidity, humidity)));
   }
 
   @override
@@ -248,8 +228,7 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
       const DeepCollectionEquality().hash(feels_like) ^
       const DeepCollectionEquality().hash(temp_min) ^
       const DeepCollectionEquality().hash(temp_max) ^
-      const DeepCollectionEquality().hash(humidity) ^
-      const DeepCollectionEquality().hash(name);
+      const DeepCollectionEquality().hash(humidity);
 
   @JsonKey(ignore: true)
   @override
@@ -268,8 +247,7 @@ abstract class _ApiWeatherDto extends ApiWeatherDto {
       required double feels_like,
       required double temp_min,
       required double temp_max,
-      required double humidity,
-      required String? name}) = _$_ApiWeatherDto;
+      required double humidity}) = _$_ApiWeatherDto;
   const _ApiWeatherDto._() : super._();
 
   factory _ApiWeatherDto.fromJson(Map<String, dynamic> json) =
@@ -285,8 +263,6 @@ abstract class _ApiWeatherDto extends ApiWeatherDto {
   double get temp_max => throw _privateConstructorUsedError;
   @override
   double get humidity => throw _privateConstructorUsedError;
-  @override
-  String? get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiWeatherDtoCopyWith<_ApiWeatherDto> get copyWith =>

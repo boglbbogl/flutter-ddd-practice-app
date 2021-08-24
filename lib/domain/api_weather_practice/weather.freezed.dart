@@ -21,15 +21,13 @@ class _$WeatherTearOff {
       required double feels_like,
       required double temp_min,
       required double temp_max,
-      required double humidity,
-      required String? name}) {
+      required double humidity}) {
     return _Weather(
       temp: temp,
       feels_like: feels_like,
       temp_min: temp_min,
       temp_max: temp_max,
       humidity: humidity,
-      name: name,
     );
   }
 }
@@ -44,7 +42,6 @@ mixin _$Weather {
   double get temp_min => throw _privateConstructorUsedError;
   double get temp_max => throw _privateConstructorUsedError;
   double get humidity => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WeatherCopyWith<Weather> get copyWith => throw _privateConstructorUsedError;
@@ -59,8 +56,7 @@ abstract class $WeatherCopyWith<$Res> {
       double feels_like,
       double temp_min,
       double temp_max,
-      double humidity,
-      String? name});
+      double humidity});
 }
 
 /// @nodoc
@@ -78,7 +74,6 @@ class _$WeatherCopyWithImpl<$Res> implements $WeatherCopyWith<$Res> {
     Object? temp_min = freezed,
     Object? temp_max = freezed,
     Object? humidity = freezed,
-    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
       temp: temp == freezed
@@ -101,10 +96,6 @@ class _$WeatherCopyWithImpl<$Res> implements $WeatherCopyWith<$Res> {
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as double,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -119,8 +110,7 @@ abstract class _$WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
       double feels_like,
       double temp_min,
       double temp_max,
-      double humidity,
-      String? name});
+      double humidity});
 }
 
 /// @nodoc
@@ -139,7 +129,6 @@ class __$WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res>
     Object? temp_min = freezed,
     Object? temp_max = freezed,
     Object? humidity = freezed,
-    Object? name = freezed,
   }) {
     return _then(_Weather(
       temp: temp == freezed
@@ -162,10 +151,6 @@ class __$WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res>
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as double,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -178,8 +163,7 @@ class _$_Weather implements _Weather {
       required this.feels_like,
       required this.temp_min,
       required this.temp_max,
-      required this.humidity,
-      required this.name});
+      required this.humidity});
 
   @override
   final double temp;
@@ -191,12 +175,10 @@ class _$_Weather implements _Weather {
   final double temp_max;
   @override
   final double humidity;
-  @override
-  final String? name;
 
   @override
   String toString() {
-    return 'Weather(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, humidity: $humidity, name: $name)';
+    return 'Weather(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, humidity: $humidity)';
   }
 
   @override
@@ -216,9 +198,7 @@ class _$_Weather implements _Weather {
                     .equals(other.temp_max, temp_max)) &&
             (identical(other.humidity, humidity) ||
                 const DeepCollectionEquality()
-                    .equals(other.humidity, humidity)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+                    .equals(other.humidity, humidity)));
   }
 
   @override
@@ -228,8 +208,7 @@ class _$_Weather implements _Weather {
       const DeepCollectionEquality().hash(feels_like) ^
       const DeepCollectionEquality().hash(temp_min) ^
       const DeepCollectionEquality().hash(temp_max) ^
-      const DeepCollectionEquality().hash(humidity) ^
-      const DeepCollectionEquality().hash(name);
+      const DeepCollectionEquality().hash(humidity);
 
   @JsonKey(ignore: true)
   @override
@@ -243,8 +222,7 @@ abstract class _Weather implements Weather {
       required double feels_like,
       required double temp_min,
       required double temp_max,
-      required double humidity,
-      required String? name}) = _$_Weather;
+      required double humidity}) = _$_Weather;
 
   @override
   double get temp => throw _privateConstructorUsedError;
@@ -257,137 +235,8 @@ abstract class _Weather implements Weather {
   @override
   double get humidity => throw _privateConstructorUsedError;
   @override
-  String? get name => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$WeatherCopyWith<_Weather> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$WeatherNameTearOff {
-  const _$WeatherNameTearOff();
-
-  _WeatherName call({required String name}) {
-    return _WeatherName(
-      name: name,
-    );
-  }
-}
-
-/// @nodoc
-const $WeatherName = _$WeatherNameTearOff();
-
-/// @nodoc
-mixin _$WeatherName {
-  String get name => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $WeatherNameCopyWith<WeatherName> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WeatherNameCopyWith<$Res> {
-  factory $WeatherNameCopyWith(
-          WeatherName value, $Res Function(WeatherName) then) =
-      _$WeatherNameCopyWithImpl<$Res>;
-  $Res call({String name});
-}
-
-/// @nodoc
-class _$WeatherNameCopyWithImpl<$Res> implements $WeatherNameCopyWith<$Res> {
-  _$WeatherNameCopyWithImpl(this._value, this._then);
-
-  final WeatherName _value;
-  // ignore: unused_field
-  final $Res Function(WeatherName) _then;
-
-  @override
-  $Res call({
-    Object? name = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$WeatherNameCopyWith<$Res>
-    implements $WeatherNameCopyWith<$Res> {
-  factory _$WeatherNameCopyWith(
-          _WeatherName value, $Res Function(_WeatherName) then) =
-      __$WeatherNameCopyWithImpl<$Res>;
-  @override
-  $Res call({String name});
-}
-
-/// @nodoc
-class __$WeatherNameCopyWithImpl<$Res> extends _$WeatherNameCopyWithImpl<$Res>
-    implements _$WeatherNameCopyWith<$Res> {
-  __$WeatherNameCopyWithImpl(
-      _WeatherName _value, $Res Function(_WeatherName) _then)
-      : super(_value, (v) => _then(v as _WeatherName));
-
-  @override
-  _WeatherName get _value => super._value as _WeatherName;
-
-  @override
-  $Res call({
-    Object? name = freezed,
-  }) {
-    return _then(_WeatherName(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_WeatherName implements _WeatherName {
-  const _$_WeatherName({required this.name});
-
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'WeatherName(name: $name)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _WeatherName &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
-
-  @JsonKey(ignore: true)
-  @override
-  _$WeatherNameCopyWith<_WeatherName> get copyWith =>
-      __$WeatherNameCopyWithImpl<_WeatherName>(this, _$identity);
-}
-
-abstract class _WeatherName implements WeatherName {
-  const factory _WeatherName({required String name}) = _$_WeatherName;
-
-  @override
-  String get name => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$WeatherNameCopyWith<_WeatherName> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
