@@ -24,9 +24,13 @@ class ApiWeatherMainCubit extends Cubit<ApiWeatherMainState> {
       final orFailure =
           await _weatherRepository.getWeatherData(lon: lon, lat: lat);
       final result = orFailure.fold((l) => null, (r) => r);
-      // final result =
-      //     await _weatherRepository.getWeatherData(lon: 10.0, lat: 10.0);
-      emit(state.copyWith(isLoading: false, weather: result));
+      final cityName =
+          await _weatherRepository.getWeatherCity(lon: lon, lat: lat);
+      emit(state.copyWith(
+        isLoading: false,
+        weather: result,
+        weatherCity: cityName,
+      ));
     }
 
     return unit;

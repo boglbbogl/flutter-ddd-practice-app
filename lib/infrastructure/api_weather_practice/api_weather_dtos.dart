@@ -9,9 +9,9 @@ part 'api_weather_dtos.g.dart';
 class ApiWeatherDto with _$ApiWeatherDto {
   const factory ApiWeatherDto({
     required double temp,
-    required double feels_like,
-    required double temp_min,
-    required double temp_max,
+    @JsonKey(name: 'feels_like') required double feelsLike,
+    @JsonKey(name: 'temp_min') required double tempMin,
+    @JsonKey(name: 'temp_max') required double tempMax,
     required double humidity,
   }) = _ApiWeatherDto;
 
@@ -22,9 +22,9 @@ class ApiWeatherDto with _$ApiWeatherDto {
 
   Weather toDomain() => Weather(
         temp: temp,
-        feels_like: feels_like,
-        temp_min: temp_min,
-        temp_max: temp_max,
+        feelsLike: feelsLike,
+        tempMin: tempMin,
+        tempMax: tempMax,
         humidity: humidity,
       );
 }

@@ -30,11 +30,12 @@ class ApiWeatherMainPage extends StatelessWidget {
                   title: 'API Weather Practice', colors: Colors.lightBlue),
               body: Column(
                 children: [
-                  Text(state.weather!.feels_like.toString()),
+                  Text(state.weather!.feelsLike.toString()),
                   Text(state.weather!.humidity.toString()),
                   Text(state.weather!.temp.toString()),
-                  Text(state.weather!.temp_max.toString()),
-                  Text(state.weather!.temp_min.toString()),
+                  Text(state.weather!.tempMin.toString()),
+                  Text(state.weather!.tempMax.toString()),
+                  Text(state.weatherCity!.name),
                 ],
               ));
         },

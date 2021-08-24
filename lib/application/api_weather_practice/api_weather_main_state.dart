@@ -6,9 +6,11 @@ abstract class ApiWeatherMainState with _$ApiWeatherMainState {
     required bool isLoading,
     // required List<Weather> result,
     required Weather? weather,
+    required WeatherCity? weatherCity,
   }) = _ApiWeatherMainState;
   factory ApiWeatherMainState.initial() => _ApiWeatherMainState(
         isLoading: false,
         weather: null,
+        weatherCity: null,
       );
 }

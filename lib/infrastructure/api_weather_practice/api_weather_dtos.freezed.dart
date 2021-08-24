@@ -22,15 +22,15 @@ class _$ApiWeatherDtoTearOff {
 
   _ApiWeatherDto call(
       {required double temp,
-      required double feels_like,
-      required double temp_min,
-      required double temp_max,
+      @JsonKey(name: 'feels_like') required double feelsLike,
+      @JsonKey(name: 'temp_min') required double tempMin,
+      @JsonKey(name: 'temp_max') required double tempMax,
       required double humidity}) {
     return _ApiWeatherDto(
       temp: temp,
-      feels_like: feels_like,
-      temp_min: temp_min,
-      temp_max: temp_max,
+      feelsLike: feelsLike,
+      tempMin: tempMin,
+      tempMax: tempMax,
       humidity: humidity,
     );
   }
@@ -46,9 +46,12 @@ const $ApiWeatherDto = _$ApiWeatherDtoTearOff();
 /// @nodoc
 mixin _$ApiWeatherDto {
   double get temp => throw _privateConstructorUsedError;
-  double get feels_like => throw _privateConstructorUsedError;
-  double get temp_min => throw _privateConstructorUsedError;
-  double get temp_max => throw _privateConstructorUsedError;
+  @JsonKey(name: 'feels_like')
+  double get feelsLike => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temp_min')
+  double get tempMin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temp_max')
+  double get tempMax => throw _privateConstructorUsedError;
   double get humidity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -64,9 +67,9 @@ abstract class $ApiWeatherDtoCopyWith<$Res> {
       _$ApiWeatherDtoCopyWithImpl<$Res>;
   $Res call(
       {double temp,
-      double feels_like,
-      double temp_min,
-      double temp_max,
+      @JsonKey(name: 'feels_like') double feelsLike,
+      @JsonKey(name: 'temp_min') double tempMin,
+      @JsonKey(name: 'temp_max') double tempMax,
       double humidity});
 }
 
@@ -82,9 +85,9 @@ class _$ApiWeatherDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? temp = freezed,
-    Object? feels_like = freezed,
-    Object? temp_min = freezed,
-    Object? temp_max = freezed,
+    Object? feelsLike = freezed,
+    Object? tempMin = freezed,
+    Object? tempMax = freezed,
     Object? humidity = freezed,
   }) {
     return _then(_value.copyWith(
@@ -92,17 +95,17 @@ class _$ApiWeatherDtoCopyWithImpl<$Res>
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as double,
-      feels_like: feels_like == freezed
-          ? _value.feels_like
-          : feels_like // ignore: cast_nullable_to_non_nullable
+      feelsLike: feelsLike == freezed
+          ? _value.feelsLike
+          : feelsLike // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_min: temp_min == freezed
-          ? _value.temp_min
-          : temp_min // ignore: cast_nullable_to_non_nullable
+      tempMin: tempMin == freezed
+          ? _value.tempMin
+          : tempMin // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_max: temp_max == freezed
-          ? _value.temp_max
-          : temp_max // ignore: cast_nullable_to_non_nullable
+      tempMax: tempMax == freezed
+          ? _value.tempMax
+          : tempMax // ignore: cast_nullable_to_non_nullable
               as double,
       humidity: humidity == freezed
           ? _value.humidity
@@ -121,9 +124,9 @@ abstract class _$ApiWeatherDtoCopyWith<$Res>
   @override
   $Res call(
       {double temp,
-      double feels_like,
-      double temp_min,
-      double temp_max,
+      @JsonKey(name: 'feels_like') double feelsLike,
+      @JsonKey(name: 'temp_min') double tempMin,
+      @JsonKey(name: 'temp_max') double tempMax,
       double humidity});
 }
 
@@ -141,9 +144,9 @@ class __$ApiWeatherDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? temp = freezed,
-    Object? feels_like = freezed,
-    Object? temp_min = freezed,
-    Object? temp_max = freezed,
+    Object? feelsLike = freezed,
+    Object? tempMin = freezed,
+    Object? tempMax = freezed,
     Object? humidity = freezed,
   }) {
     return _then(_ApiWeatherDto(
@@ -151,17 +154,17 @@ class __$ApiWeatherDtoCopyWithImpl<$Res>
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as double,
-      feels_like: feels_like == freezed
-          ? _value.feels_like
-          : feels_like // ignore: cast_nullable_to_non_nullable
+      feelsLike: feelsLike == freezed
+          ? _value.feelsLike
+          : feelsLike // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_min: temp_min == freezed
-          ? _value.temp_min
-          : temp_min // ignore: cast_nullable_to_non_nullable
+      tempMin: tempMin == freezed
+          ? _value.tempMin
+          : tempMin // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_max: temp_max == freezed
-          ? _value.temp_max
-          : temp_max // ignore: cast_nullable_to_non_nullable
+      tempMax: tempMax == freezed
+          ? _value.tempMax
+          : tempMax // ignore: cast_nullable_to_non_nullable
               as double,
       humidity: humidity == freezed
           ? _value.humidity
@@ -176,9 +179,9 @@ class __$ApiWeatherDtoCopyWithImpl<$Res>
 class _$_ApiWeatherDto extends _ApiWeatherDto {
   const _$_ApiWeatherDto(
       {required this.temp,
-      required this.feels_like,
-      required this.temp_min,
-      required this.temp_max,
+      @JsonKey(name: 'feels_like') required this.feelsLike,
+      @JsonKey(name: 'temp_min') required this.tempMin,
+      @JsonKey(name: 'temp_max') required this.tempMax,
       required this.humidity})
       : super._();
 
@@ -188,17 +191,20 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
   @override
   final double temp;
   @override
-  final double feels_like;
+  @JsonKey(name: 'feels_like')
+  final double feelsLike;
   @override
-  final double temp_min;
+  @JsonKey(name: 'temp_min')
+  final double tempMin;
   @override
-  final double temp_max;
+  @JsonKey(name: 'temp_max')
+  final double tempMax;
   @override
   final double humidity;
 
   @override
   String toString() {
-    return 'ApiWeatherDto(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, humidity: $humidity)';
+    return 'ApiWeatherDto(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, humidity: $humidity)';
   }
 
   @override
@@ -207,15 +213,15 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
         (other is _ApiWeatherDto &&
             (identical(other.temp, temp) ||
                 const DeepCollectionEquality().equals(other.temp, temp)) &&
-            (identical(other.feels_like, feels_like) ||
+            (identical(other.feelsLike, feelsLike) ||
                 const DeepCollectionEquality()
-                    .equals(other.feels_like, feels_like)) &&
-            (identical(other.temp_min, temp_min) ||
+                    .equals(other.feelsLike, feelsLike)) &&
+            (identical(other.tempMin, tempMin) ||
                 const DeepCollectionEquality()
-                    .equals(other.temp_min, temp_min)) &&
-            (identical(other.temp_max, temp_max) ||
+                    .equals(other.tempMin, tempMin)) &&
+            (identical(other.tempMax, tempMax) ||
                 const DeepCollectionEquality()
-                    .equals(other.temp_max, temp_max)) &&
+                    .equals(other.tempMax, tempMax)) &&
             (identical(other.humidity, humidity) ||
                 const DeepCollectionEquality()
                     .equals(other.humidity, humidity)));
@@ -225,9 +231,9 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(temp) ^
-      const DeepCollectionEquality().hash(feels_like) ^
-      const DeepCollectionEquality().hash(temp_min) ^
-      const DeepCollectionEquality().hash(temp_max) ^
+      const DeepCollectionEquality().hash(feelsLike) ^
+      const DeepCollectionEquality().hash(tempMin) ^
+      const DeepCollectionEquality().hash(tempMax) ^
       const DeepCollectionEquality().hash(humidity);
 
   @JsonKey(ignore: true)
@@ -244,9 +250,9 @@ class _$_ApiWeatherDto extends _ApiWeatherDto {
 abstract class _ApiWeatherDto extends ApiWeatherDto {
   const factory _ApiWeatherDto(
       {required double temp,
-      required double feels_like,
-      required double temp_min,
-      required double temp_max,
+      @JsonKey(name: 'feels_like') required double feelsLike,
+      @JsonKey(name: 'temp_min') required double tempMin,
+      @JsonKey(name: 'temp_max') required double tempMax,
       required double humidity}) = _$_ApiWeatherDto;
   const _ApiWeatherDto._() : super._();
 
@@ -256,11 +262,14 @@ abstract class _ApiWeatherDto extends ApiWeatherDto {
   @override
   double get temp => throw _privateConstructorUsedError;
   @override
-  double get feels_like => throw _privateConstructorUsedError;
+  @JsonKey(name: 'feels_like')
+  double get feelsLike => throw _privateConstructorUsedError;
   @override
-  double get temp_min => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temp_min')
+  double get tempMin => throw _privateConstructorUsedError;
   @override
-  double get temp_max => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temp_max')
+  double get tempMax => throw _privateConstructorUsedError;
   @override
   double get humidity => throw _privateConstructorUsedError;
   @override

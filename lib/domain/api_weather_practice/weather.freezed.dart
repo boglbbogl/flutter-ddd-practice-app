@@ -18,15 +18,15 @@ class _$WeatherTearOff {
 
   _Weather call(
       {required double temp,
-      required double feels_like,
-      required double temp_min,
-      required double temp_max,
+      required double feelsLike,
+      required double tempMin,
+      required double tempMax,
       required double humidity}) {
     return _Weather(
       temp: temp,
-      feels_like: feels_like,
-      temp_min: temp_min,
-      temp_max: temp_max,
+      feelsLike: feelsLike,
+      tempMin: tempMin,
+      tempMax: tempMax,
       humidity: humidity,
     );
   }
@@ -38,9 +38,9 @@ const $Weather = _$WeatherTearOff();
 /// @nodoc
 mixin _$Weather {
   double get temp => throw _privateConstructorUsedError;
-  double get feels_like => throw _privateConstructorUsedError;
-  double get temp_min => throw _privateConstructorUsedError;
-  double get temp_max => throw _privateConstructorUsedError;
+  double get feelsLike => throw _privateConstructorUsedError;
+  double get tempMin => throw _privateConstructorUsedError;
+  double get tempMax => throw _privateConstructorUsedError;
   double get humidity => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -53,9 +53,9 @@ abstract class $WeatherCopyWith<$Res> {
       _$WeatherCopyWithImpl<$Res>;
   $Res call(
       {double temp,
-      double feels_like,
-      double temp_min,
-      double temp_max,
+      double feelsLike,
+      double tempMin,
+      double tempMax,
       double humidity});
 }
 
@@ -70,9 +70,9 @@ class _$WeatherCopyWithImpl<$Res> implements $WeatherCopyWith<$Res> {
   @override
   $Res call({
     Object? temp = freezed,
-    Object? feels_like = freezed,
-    Object? temp_min = freezed,
-    Object? temp_max = freezed,
+    Object? feelsLike = freezed,
+    Object? tempMin = freezed,
+    Object? tempMax = freezed,
     Object? humidity = freezed,
   }) {
     return _then(_value.copyWith(
@@ -80,17 +80,17 @@ class _$WeatherCopyWithImpl<$Res> implements $WeatherCopyWith<$Res> {
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as double,
-      feels_like: feels_like == freezed
-          ? _value.feels_like
-          : feels_like // ignore: cast_nullable_to_non_nullable
+      feelsLike: feelsLike == freezed
+          ? _value.feelsLike
+          : feelsLike // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_min: temp_min == freezed
-          ? _value.temp_min
-          : temp_min // ignore: cast_nullable_to_non_nullable
+      tempMin: tempMin == freezed
+          ? _value.tempMin
+          : tempMin // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_max: temp_max == freezed
-          ? _value.temp_max
-          : temp_max // ignore: cast_nullable_to_non_nullable
+      tempMax: tempMax == freezed
+          ? _value.tempMax
+          : tempMax // ignore: cast_nullable_to_non_nullable
               as double,
       humidity: humidity == freezed
           ? _value.humidity
@@ -107,9 +107,9 @@ abstract class _$WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
   @override
   $Res call(
       {double temp,
-      double feels_like,
-      double temp_min,
-      double temp_max,
+      double feelsLike,
+      double tempMin,
+      double tempMax,
       double humidity});
 }
 
@@ -125,9 +125,9 @@ class __$WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res>
   @override
   $Res call({
     Object? temp = freezed,
-    Object? feels_like = freezed,
-    Object? temp_min = freezed,
-    Object? temp_max = freezed,
+    Object? feelsLike = freezed,
+    Object? tempMin = freezed,
+    Object? tempMax = freezed,
     Object? humidity = freezed,
   }) {
     return _then(_Weather(
@@ -135,17 +135,17 @@ class __$WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res>
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
               as double,
-      feels_like: feels_like == freezed
-          ? _value.feels_like
-          : feels_like // ignore: cast_nullable_to_non_nullable
+      feelsLike: feelsLike == freezed
+          ? _value.feelsLike
+          : feelsLike // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_min: temp_min == freezed
-          ? _value.temp_min
-          : temp_min // ignore: cast_nullable_to_non_nullable
+      tempMin: tempMin == freezed
+          ? _value.tempMin
+          : tempMin // ignore: cast_nullable_to_non_nullable
               as double,
-      temp_max: temp_max == freezed
-          ? _value.temp_max
-          : temp_max // ignore: cast_nullable_to_non_nullable
+      tempMax: tempMax == freezed
+          ? _value.tempMax
+          : tempMax // ignore: cast_nullable_to_non_nullable
               as double,
       humidity: humidity == freezed
           ? _value.humidity
@@ -160,25 +160,25 @@ class __$WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res>
 class _$_Weather implements _Weather {
   const _$_Weather(
       {required this.temp,
-      required this.feels_like,
-      required this.temp_min,
-      required this.temp_max,
+      required this.feelsLike,
+      required this.tempMin,
+      required this.tempMax,
       required this.humidity});
 
   @override
   final double temp;
   @override
-  final double feels_like;
+  final double feelsLike;
   @override
-  final double temp_min;
+  final double tempMin;
   @override
-  final double temp_max;
+  final double tempMax;
   @override
   final double humidity;
 
   @override
   String toString() {
-    return 'Weather(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, humidity: $humidity)';
+    return 'Weather(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, humidity: $humidity)';
   }
 
   @override
@@ -187,15 +187,15 @@ class _$_Weather implements _Weather {
         (other is _Weather &&
             (identical(other.temp, temp) ||
                 const DeepCollectionEquality().equals(other.temp, temp)) &&
-            (identical(other.feels_like, feels_like) ||
+            (identical(other.feelsLike, feelsLike) ||
                 const DeepCollectionEquality()
-                    .equals(other.feels_like, feels_like)) &&
-            (identical(other.temp_min, temp_min) ||
+                    .equals(other.feelsLike, feelsLike)) &&
+            (identical(other.tempMin, tempMin) ||
                 const DeepCollectionEquality()
-                    .equals(other.temp_min, temp_min)) &&
-            (identical(other.temp_max, temp_max) ||
+                    .equals(other.tempMin, tempMin)) &&
+            (identical(other.tempMax, tempMax) ||
                 const DeepCollectionEquality()
-                    .equals(other.temp_max, temp_max)) &&
+                    .equals(other.tempMax, tempMax)) &&
             (identical(other.humidity, humidity) ||
                 const DeepCollectionEquality()
                     .equals(other.humidity, humidity)));
@@ -205,9 +205,9 @@ class _$_Weather implements _Weather {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(temp) ^
-      const DeepCollectionEquality().hash(feels_like) ^
-      const DeepCollectionEquality().hash(temp_min) ^
-      const DeepCollectionEquality().hash(temp_max) ^
+      const DeepCollectionEquality().hash(feelsLike) ^
+      const DeepCollectionEquality().hash(tempMin) ^
+      const DeepCollectionEquality().hash(tempMax) ^
       const DeepCollectionEquality().hash(humidity);
 
   @JsonKey(ignore: true)
@@ -219,24 +219,151 @@ class _$_Weather implements _Weather {
 abstract class _Weather implements Weather {
   const factory _Weather(
       {required double temp,
-      required double feels_like,
-      required double temp_min,
-      required double temp_max,
+      required double feelsLike,
+      required double tempMin,
+      required double tempMax,
       required double humidity}) = _$_Weather;
 
   @override
   double get temp => throw _privateConstructorUsedError;
   @override
-  double get feels_like => throw _privateConstructorUsedError;
+  double get feelsLike => throw _privateConstructorUsedError;
   @override
-  double get temp_min => throw _privateConstructorUsedError;
+  double get tempMin => throw _privateConstructorUsedError;
   @override
-  double get temp_max => throw _privateConstructorUsedError;
+  double get tempMax => throw _privateConstructorUsedError;
   @override
   double get humidity => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WeatherCopyWith<_Weather> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$WeatherCityTearOff {
+  const _$WeatherCityTearOff();
+
+  _WeatherCity call({required String name}) {
+    return _WeatherCity(
+      name: name,
+    );
+  }
+}
+
+/// @nodoc
+const $WeatherCity = _$WeatherCityTearOff();
+
+/// @nodoc
+mixin _$WeatherCity {
+  String get name => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $WeatherCityCopyWith<WeatherCity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WeatherCityCopyWith<$Res> {
+  factory $WeatherCityCopyWith(
+          WeatherCity value, $Res Function(WeatherCity) then) =
+      _$WeatherCityCopyWithImpl<$Res>;
+  $Res call({String name});
+}
+
+/// @nodoc
+class _$WeatherCityCopyWithImpl<$Res> implements $WeatherCityCopyWith<$Res> {
+  _$WeatherCityCopyWithImpl(this._value, this._then);
+
+  final WeatherCity _value;
+  // ignore: unused_field
+  final $Res Function(WeatherCity) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$WeatherCityCopyWith<$Res>
+    implements $WeatherCityCopyWith<$Res> {
+  factory _$WeatherCityCopyWith(
+          _WeatherCity value, $Res Function(_WeatherCity) then) =
+      __$WeatherCityCopyWithImpl<$Res>;
+  @override
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$WeatherCityCopyWithImpl<$Res> extends _$WeatherCityCopyWithImpl<$Res>
+    implements _$WeatherCityCopyWith<$Res> {
+  __$WeatherCityCopyWithImpl(
+      _WeatherCity _value, $Res Function(_WeatherCity) _then)
+      : super(_value, (v) => _then(v as _WeatherCity));
+
+  @override
+  _WeatherCity get _value => super._value as _WeatherCity;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_WeatherCity(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_WeatherCity implements _WeatherCity {
+  const _$_WeatherCity({required this.name});
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'WeatherCity(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WeatherCity &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+
+  @JsonKey(ignore: true)
+  @override
+  _$WeatherCityCopyWith<_WeatherCity> get copyWith =>
+      __$WeatherCityCopyWithImpl<_WeatherCity>(this, _$identity);
+}
+
+abstract class _WeatherCity implements WeatherCity {
+  const factory _WeatherCity({required String name}) = _$_WeatherCity;
+
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$WeatherCityCopyWith<_WeatherCity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

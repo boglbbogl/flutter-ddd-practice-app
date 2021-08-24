@@ -5,11 +5,18 @@ part 'weather.freezed.dart';
 class Weather with _$Weather {
   const factory Weather({
     required double temp,
-    required double feels_like,
-    required double temp_min,
-    required double temp_max,
+    required double feelsLike,
+    required double tempMin,
+    required double tempMax,
     required double humidity,
   }) = _Weather;
+}
+
+@freezed
+class WeatherCity with _$WeatherCity {
+  const factory WeatherCity({
+    required String name,
+  }) = _WeatherCity;
 }
 
 @freezed
