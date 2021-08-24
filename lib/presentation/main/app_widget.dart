@@ -30,7 +30,7 @@ class AppWidget extends StatelessWidget {
         routes: {
           '/mainPage': (context) => const MainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
-          '/apiExampleMainPage': (context) => const ApiExampleMainPage(),
+          '/apiExampleMainPage': (context) => ApiExampleMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
         },
         theme: ThemeData(

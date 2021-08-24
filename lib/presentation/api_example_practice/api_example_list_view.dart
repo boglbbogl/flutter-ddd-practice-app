@@ -12,28 +12,59 @@ class ApiExampleListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                apiData.id,
-                style: theme.textTheme.bodyText2!.copyWith(fontSize: 30),
+                apiData.author,
+                style: theme.textTheme.bodyText2!.copyWith(
+                    color: const Color.fromRGBO(135, 135, 135, 1),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
-              Text(apiData.author),
-              Text(apiData.downloadUrl.isEmpty ? "" : apiData.downloadUrl),
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                apiData.downloadUrl.isEmpty
+                    ? "Not Download Url"
+                    : apiData.downloadUrl,
+                style: theme.textTheme.bodyText2!.copyWith(
+                    color: const Color.fromRGBO(135, 135, 135, 1),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 9),
+              ),
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Image(
                   image: NetworkImage(
-                'http://picsum.photos/id/${apiData.url}/200/200',
-                scale: 1.0,
+                'http://picsum.photos/id/${apiData.id}/200/200',
+                scale: 3.0,
               )),
-              Text(apiData.height.toString()),
-              Text(apiData.width.toString()),
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                'Height : ${apiData.height}',
+                style: theme.textTheme.bodyText2!.copyWith(
+                    color: const Color.fromRGBO(135, 135, 135, 1),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 9),
+              ),
+              Text(
+                'Width : ${apiData.width}',
+                style: theme.textTheme.bodyText2!.copyWith(
+                    color: const Color.fromRGBO(135, 135, 135, 1),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 9),
+              ),
             ],
           ),
         ],
