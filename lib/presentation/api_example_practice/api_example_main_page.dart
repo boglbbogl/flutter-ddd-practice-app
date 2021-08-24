@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
-import 'package:ddd_practice_app/application/api_example/api_example_cubit.dart';
+import 'package:ddd_practice_app/application/api_example_practice/api_example_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_example_practice/api_example_list_view.dart';
 import 'package:flutter/cupertino.dart';
