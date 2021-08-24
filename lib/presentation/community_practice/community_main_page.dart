@@ -31,6 +31,7 @@ class CommunityMainPage extends StatelessWidget {
             body: Stack(
               children: [
                 ListView.builder(
+                    shrinkWrap: true,
                     itemCount: state.listCommunity.length,
                     itemBuilder: (context, index) {
                       return Padding(

@@ -17,69 +17,74 @@ class MemberMainPage extends StatelessWidget {
         return Scaffold(
           appBar: appBarForm(context, theme,
               title: 'Member Practice', colors: Colors.green),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                friendsMainTopForm(
-                    title: 'Member Create',
-                    onTap: () {
-                      Get.to(() => MemberCreatePage());
-                    }),
-                Text(
-                  'Member List',
-                  style: theme.textTheme.bodyText2!.copyWith(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    height: 2,
-                    width: size.width,
-                    color: const Color.fromRGBO(215, 215, 215, 1),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  friendsMainTopForm(
+                      title: 'Member Create',
+                      onTap: () {
+                        Get.to(() => MemberCreatePage());
+                      }),
+                  Text(
+                    'Member List',
+                    style: theme.textTheme.bodyText2!.copyWith(
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
-                ),
-                ListView(
-                  shrinkWrap: true,
-                  children: [
-                    ...state.member.map((m) => Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 12, horizontal: 15),
-                          child: Stack(
-                            children: [
-                              SizedBox(
-                                width: size.width * 0.9,
-                                height: size.height * 0.07,
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 50,
-                                      height: 50,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(30),
-                                        color: MemberColors().colors[m.colors],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Container(
+                      height: 2,
+                      width: size.width,
+                      color: const Color.fromRGBO(215, 215, 215, 1),
+                    ),
+                  ),
+                  ListView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    children: [
+                      ...state.member.map((m) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 15),
+                            child: Stack(
+                              children: [
+                                SizedBox(
+                                  width: size.width * 0.9,
+                                  height: size.height * 0.07,
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                          color:
+                                              MemberColors().colors[m.colors],
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      width: 20,
-                                    ),
-                                    Text(m.firstName),
-                                    const SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(m.lastName),
-                                  ],
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(m.firstName),
+                                      const SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(m.lastName),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        )),
-                  ],
-                ),
-              ],
+                              ],
+                            ),
+                          )),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );
