@@ -24,14 +24,9 @@ class ApiWeatherRepository with IApiWeatherRepository {
       if (response.statusCode == 200) {
         final decoded = json.decode(utf8.decode(response.bodyBytes))
             as Map<String, dynamic>;
-        // final data = decoded["data"] as Map<String, dynamic>;
         final result =
-            ApiWeatherDto.fromJson(decoded[0] as Map<String, dynamic>)
+            ApiWeatherDto.fromJson(decoded["main"] as Map<String, dynamic>)
                 .toDomain();
-        // final result = data
-        //     .map((e) =>
-        //         ApiWeatherDto.fromJson(e as Map<String, dynamic>).toDomain())
-        //     .toList();
         return right(result);
       } else {
         return left(const WeatherFailure.serverError());
@@ -56,6 +51,28 @@ class ApiWeatherRepository with IApiWeatherRepository {
       );
     } else {
       return null;
+    }
+  }
+
+  @override
+  Future<String> getWeatherName() async {
+    try {
+      String _openWeatherKey = '76fa3e54bce43b391f028213cd32ac63';
+
+      final uri = Uri.parse(
+          "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        final decoded = json.decode(utf8.decode(response.bodyBytes)) as String;
+        // final result =
+        //     ApiWeatherDto.fromJson(decoded[0] as Map<String, dynamic>)
+        //         .toDomain();
+        return decoded;
+      } else {
+        return "";
+      }
+    } catch (error) {
+      return "";
     }
   }
 }

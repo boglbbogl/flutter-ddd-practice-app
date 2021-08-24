@@ -8,4 +8,5 @@ abstract class IApiWeatherRepository {
     required double lat,
   });
   Future<GeoLocation?> getGeolocation();
+  Future<String> getWeatherName();
 }

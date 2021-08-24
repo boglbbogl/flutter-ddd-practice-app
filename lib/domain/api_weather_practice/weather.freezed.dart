@@ -265,6 +265,133 @@ abstract class _Weather implements Weather {
 }
 
 /// @nodoc
+class _$WeatherNameTearOff {
+  const _$WeatherNameTearOff();
+
+  _WeatherName call({required String name}) {
+    return _WeatherName(
+      name: name,
+    );
+  }
+}
+
+/// @nodoc
+const $WeatherName = _$WeatherNameTearOff();
+
+/// @nodoc
+mixin _$WeatherName {
+  String get name => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $WeatherNameCopyWith<WeatherName> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WeatherNameCopyWith<$Res> {
+  factory $WeatherNameCopyWith(
+          WeatherName value, $Res Function(WeatherName) then) =
+      _$WeatherNameCopyWithImpl<$Res>;
+  $Res call({String name});
+}
+
+/// @nodoc
+class _$WeatherNameCopyWithImpl<$Res> implements $WeatherNameCopyWith<$Res> {
+  _$WeatherNameCopyWithImpl(this._value, this._then);
+
+  final WeatherName _value;
+  // ignore: unused_field
+  final $Res Function(WeatherName) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$WeatherNameCopyWith<$Res>
+    implements $WeatherNameCopyWith<$Res> {
+  factory _$WeatherNameCopyWith(
+          _WeatherName value, $Res Function(_WeatherName) then) =
+      __$WeatherNameCopyWithImpl<$Res>;
+  @override
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$WeatherNameCopyWithImpl<$Res> extends _$WeatherNameCopyWithImpl<$Res>
+    implements _$WeatherNameCopyWith<$Res> {
+  __$WeatherNameCopyWithImpl(
+      _WeatherName _value, $Res Function(_WeatherName) _then)
+      : super(_value, (v) => _then(v as _WeatherName));
+
+  @override
+  _WeatherName get _value => super._value as _WeatherName;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_WeatherName(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_WeatherName implements _WeatherName {
+  const _$_WeatherName({required this.name});
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'WeatherName(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WeatherName &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+
+  @JsonKey(ignore: true)
+  @override
+  _$WeatherNameCopyWith<_WeatherName> get copyWith =>
+      __$WeatherNameCopyWithImpl<_WeatherName>(this, _$identity);
+}
+
+abstract class _WeatherName implements WeatherName {
+  const factory _WeatherName({required String name}) = _$_WeatherName;
+
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$WeatherNameCopyWith<_WeatherName> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$GeoLocationTearOff {
   const _$GeoLocationTearOff();
 

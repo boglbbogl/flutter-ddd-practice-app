@@ -14,6 +14,13 @@ class Weather with _$Weather {
 }
 
 @freezed
+class WeatherName with _$WeatherName {
+  const factory WeatherName({
+    required String name,
+  }) = _WeatherName;
+}
+
+@freezed
 class GeoLocation with _$GeoLocation {
   const factory GeoLocation({
     required double latitude,
