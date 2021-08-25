@@ -153,6 +153,23 @@ class ApiWeatherMainPage extends StatelessWidget {
                             temp: state.weather!.tempMax.toStringAsFixed(1)),
                       ],
                     ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        tempMinAndMaxForm(
+                            title: 'Latitude',
+                            temp: state.latitude.toStringAsFixed(2)),
+                        const SizedBox(
+                          width: 40,
+                        ),
+                        tempMinAndMaxForm(
+                            title: 'Longitude',
+                            temp: state.longitude.toStringAsFixed(2)),
+                      ],
+                    ),
                   ],
                 ),
               ));

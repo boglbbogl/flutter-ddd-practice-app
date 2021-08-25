@@ -6,6 +6,7 @@ class PracticeItem {
     'API Weather Practice',
     'Community Practice',
     'API Example Practice',
+    'API Check Form',
   ];
 
   List colors = [
@@ -13,6 +14,7 @@ class PracticeItem {
     [Colors.redAccent, Colors.green.shade400],
     [Colors.green.shade400, Colors.redAccent],
     [Colors.redAccent, Colors.green.shade400],
+    [Colors.green.shade400, Colors.redAccent],
   ];
 
   List router = [
@@ -20,5 +22,6 @@ class PracticeItem {
     '/apiWeatherMainPage',
     '/communityMainPage',
     '/apiExampleMainPage',
+    '/apiCheckMainPage',
   ];
 }

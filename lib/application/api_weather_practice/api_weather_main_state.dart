@@ -8,11 +8,15 @@ abstract class ApiWeatherMainState with _$ApiWeatherMainState {
     required Weather? weather,
     required WeatherCity? weatherCity,
     required WeatherIcon? weatherIcon,
+    required double latitude,
+    required double longitude,
   }) = _ApiWeatherMainState;
   factory ApiWeatherMainState.initial() => _ApiWeatherMainState(
         isLoading: false,
         weather: null,
         weatherCity: null,
         weatherIcon: null,
+        latitude: 0.0,
+        longitude: 0.0,
       );
 }

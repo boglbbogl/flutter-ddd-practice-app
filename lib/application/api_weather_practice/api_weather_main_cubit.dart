@@ -33,6 +33,8 @@ class ApiWeatherMainCubit extends Cubit<ApiWeatherMainState> {
         weather: result,
         weatherCity: cityName,
         weatherIcon: weatherIcon,
+        latitude: lat,
+        longitude: lon,
       ));
     }
 

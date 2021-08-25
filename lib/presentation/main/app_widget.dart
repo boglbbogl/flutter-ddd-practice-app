@@ -1,3 +1,4 @@
+import 'package:ddd_practice_app/_constant/api_check/api_check_main_page.dart';
 import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
@@ -35,6 +36,7 @@ class AppWidget extends StatelessWidget {
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
           '/apiExampleMainPage': (context) => ApiExampleMainPage(),
+          '/apiCheckMainPage': (context)=> const ApiCheckMainPage(),
         },
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
