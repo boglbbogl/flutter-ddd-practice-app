@@ -3,7 +3,6 @@ import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_example_practice/api_example_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_insta_practice/api_insta_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_weather_practice/api_weather_main_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/main_page.dart';
@@ -34,7 +33,6 @@ class AppWidget extends StatelessWidget {
           '/mainPage': (context) => const MainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
-          '/apiInstMainPage': (context) => const ApiInstaMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
           '/apiExampleMainPage': (context) => ApiExampleMainPage(),
         },
