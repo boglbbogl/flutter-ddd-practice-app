@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
-import 'package:ddd_practice_app/application/member_practice/member_create/bloc/member_create_bloc.dart';
+import 'package:ddd_practice_app/application/member_practice/member_create/member_create_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/member_practice/member_colors.dart';
 import 'package:flutter/material.dart';
