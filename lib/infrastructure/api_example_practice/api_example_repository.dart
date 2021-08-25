@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:ddd_practice_app/domain/api_example_practice/api_example.dart';
 import 'package:ddd_practice_app/domain/api_example_practice/i_api_example_repository.dart';
-import 'package:ddd_practice_app/infrastructure/api_example/api_example_dtos.dart';
+import 'package:ddd_practice_app/infrastructure/api_example_practice/api_example_dtos.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 

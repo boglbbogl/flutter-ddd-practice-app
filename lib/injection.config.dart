@@ -27,7 +27,7 @@ import 'domain/api_example_practice/i_api_example_repository.dart' as _i6;
 import 'domain/api_weather_practice/i_api_weather_repository.dart' as _i8;
 import 'domain/community_practice/i_community_repository.dart' as _i10;
 import 'domain/member_practice/i_member_repository.dart' as _i12;
-import 'infrastructure/api_example/api_example_repository.dart' as _i7;
+import 'infrastructure/api_example_practice/api_example_repository.dart' as _i7;
 import 'infrastructure/api_weather_practice/api_weather_repository.dart' as _i9;
 import 'infrastructure/community_practice/community_repository.dart' as _i11;
 import 'infrastructure/core/firebase_injectable_module.dart' as _i23;
