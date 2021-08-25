@@ -1,4 +1,5 @@
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/bottom_button_form.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/api_weather_practice/api_weather_main_cubit.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,6 +29,13 @@ class ApiWeatherMainPage extends StatelessWidget {
           return Scaffold(
               appBar: appBarForm(context, theme,
                   title: 'API Weather Practice', colors: Colors.lightBlue),
+              bottomNavigationBar: bottomButtonForm(
+                  buttonTitle: 'UPDATE',
+                  buttonTextColor: Colors.lightBlue,
+                  buttonColors: Colors.white,
+                  onTap: () {
+                    context.read<ApiWeatherMainCubit>().getWeatherData();
+                  }),
               body: SingleChildScrollView(
                 child: Column(
                   children: [

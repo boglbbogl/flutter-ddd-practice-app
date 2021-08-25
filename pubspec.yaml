@@ -34,6 +34,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.0.0
+  flutter_localizations:
+   sdk: flutter
   freezed_annotation: ^0.14.1
   geolocator: ^7.0.3
   get: ^4.1.4
