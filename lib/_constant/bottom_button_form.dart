@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:flutter/material.dart';
 
-Padding communityBottomButtonForm({
+Padding bottomButtonForm({
   required String buttonTitle,
   required Color buttonTextColor,
   required Color buttonColors,

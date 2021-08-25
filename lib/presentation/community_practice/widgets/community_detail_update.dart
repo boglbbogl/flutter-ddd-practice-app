@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/community_detail_bloc/community_detail_bloc.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
-import 'package:ddd_practice_app/presentation/community_practice/widgets/community_bottom_button.dart';
+import 'package:ddd_practice_app/_constant/bottom_button_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -38,7 +38,7 @@ class CommunityDetailUpdate extends StatelessWidget {
                 ),
               ),
             ),
-            bottomNavigationBar: communityBottomButtonForm(
+            bottomNavigationBar: bottomButtonForm(
               buttonTitle: state.isChanged ? 'UPDATE' : 'EDIT',
               buttonColors: state.isChanged ? Colors.red : Colors.black,
               buttonTextColor: Colors.white,

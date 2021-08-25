@@ -30,10 +30,10 @@ class AppWidget extends StatelessWidget {
         initialRoute: '/mainPage',
         routes: {
           '/mainPage': (context) => const MainPage(),
+          '/memberMainPage': (context) => const MemberMainPage(),
+          '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
           '/apiExampleMainPage': (context) => ApiExampleMainPage(),
-          '/memberMainPage': (context) => const MemberMainPage(),
-          '/apiWeatherMainPage' : (context) => const ApiWeatherMainPage(),
         },
         theme: ThemeData(
           fontFamily: 'Yanolja',
