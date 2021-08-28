@@ -1,5 +1,7 @@
+import 'package:ddd_practice_app/_constant/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/bottom_button_form.dart';
+import 'package:ddd_practice_app/_constant/my_progress_indicator.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/api_weather_practice/api_weather_main_cubit.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,17 +20,19 @@ class ApiWeatherMainPage extends StatelessWidget {
       child: BlocBuilder<ApiWeatherMainCubit, ApiWeatherMainState>(
         builder: (context, state) {
           if (state.weather == null) {
-            return const Scaffold(
-              body: Center(
-                child: CupertinoActivityIndicator(
-                  radius: 25,
-                ),
-              ),
-            );
+            return const MyProgressIndicator();
           }
           return Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Weather Practice', colors: Colors.lightBlue),
+                  title: 'API Weather Practice',
+                  colors: Colors.lightBlue,
+                  actions: [
+                    appbarActionInfoForm(
+                      context: context,
+                      sourceText: "http://api.openweathermap.org/",
+                      colors: Colors.lightBlue,
+                    ),
+                  ]),
               bottomNavigationBar: bottomButtonForm(
                   buttonTitle: 'UPDATE',
                   buttonTextColor: Colors.lightBlue,

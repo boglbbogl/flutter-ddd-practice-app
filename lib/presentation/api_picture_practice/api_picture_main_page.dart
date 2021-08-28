@@ -1,4 +1,6 @@
+import 'package:ddd_practice_app/_constant/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/my_progress_indicator.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/api_picture_practice/api_picture_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -20,17 +22,19 @@ class ApiPictureMainPage extends StatelessWidget {
       child: BlocBuilder<ApiPictureCubit, ApiPictureState>(
         builder: (context, state) {
           if (state.apiPicture.isEmpty) {
-            return const Scaffold(
-              body: Center(
-                child: CupertinoActivityIndicator(
-                  radius: 25,
-                ),
-              ),
-            );
+            return const MyProgressIndicator();
           }
           return Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Picture Practice', colors: Colors.orange),
+                  title: 'API Picture Practice',
+                  colors: Colors.orange,
+                  actions: [
+                    appbarActionInfoForm(
+                      context: context,
+                      sourceText: "https://picsum.photos/",
+                      colors: Colors.orange,
+                    ),
+                  ]),
               body: Column(
                 children: [
                   SizedBox(
