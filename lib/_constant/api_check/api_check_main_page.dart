@@ -20,6 +20,14 @@ class ApiCheckMainPage extends StatelessWidget {
     }
   }
 
+  Future<void> getKakaoBooksData() async {
+    final uri = Uri.parse("https://dapi.kakao.com/v3/search/book?query='11'");
+    final response = await http.get(uri,
+        headers: {'Authorization': 'KakaoAK 598874a3fe386492d5b8ba65db9f1063'});
+    final decode = json.decode(utf8.decode(response.bodyBytes));
+    print(decode);
+  }
+
   Future<void> getNewsPagerData() async {
     final uri = Uri.parse(
         "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=1b05eb69dee54640bf5bcfcf1e730fc8");
@@ -80,7 +88,7 @@ class ApiCheckMainPage extends StatelessWidget {
               _apiCheckButtonForm(
                 title: 'PUT',
                 onTap: () {
-                  getNewsPagerData();
+                  getKakaoBooksData();
                 },
               ),
               _apiCheckButtonForm(
