@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class PracticeItem {
   List items = [
     'Member Practice',
+    'API Kakao Book Practice',
     'API Weather Practice',
     'API News Practice',
     'Community Practice',
@@ -17,10 +18,12 @@ class PracticeItem {
     [Colors.redAccent, Colors.green.shade400],
     [Colors.green.shade400, Colors.redAccent],
     [Colors.redAccent, Colors.green.shade400],
+    [Colors.green.shade400, Colors.redAccent],
   ];
 
   List router = [
     '/memberMainPage',
+    '/apiKakaoBookMainPage',
     '/apiWeatherMainPage',
     '/apiNewsMainPage',
     '/communityMainPage',

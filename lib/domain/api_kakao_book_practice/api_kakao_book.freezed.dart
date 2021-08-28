@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ApiKakaoBookTearOff {
   const _$ApiKakaoBookTearOff();
 
-  _ApiKakaoBook call({required String title}) {
+  _ApiKakaoBook call({required List<KakaoBookDocuments> documents}) {
     return _ApiKakaoBook(
-      title: title,
+      documents: documents,
     );
   }
 }
@@ -28,7 +28,7 @@ const $ApiKakaoBook = _$ApiKakaoBookTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoBook {
-  String get title => throw _privateConstructorUsedError;
+  List<KakaoBookDocuments> get documents => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoBookCopyWith<ApiKakaoBook> get copyWith =>
@@ -40,7 +40,7 @@ abstract class $ApiKakaoBookCopyWith<$Res> {
   factory $ApiKakaoBookCopyWith(
           ApiKakaoBook value, $Res Function(ApiKakaoBook) then) =
       _$ApiKakaoBookCopyWithImpl<$Res>;
-  $Res call({String title});
+  $Res call({List<KakaoBookDocuments> documents});
 }
 
 /// @nodoc
@@ -53,13 +53,13 @@ class _$ApiKakaoBookCopyWithImpl<$Res> implements $ApiKakaoBookCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? title = freezed,
+    Object? documents = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
+      documents: documents == freezed
+          ? _value.documents
+          : documents // ignore: cast_nullable_to_non_nullable
+              as List<KakaoBookDocuments>,
     ));
   }
 }
@@ -71,7 +71,7 @@ abstract class _$ApiKakaoBookCopyWith<$Res>
           _ApiKakaoBook value, $Res Function(_ApiKakaoBook) then) =
       __$ApiKakaoBookCopyWithImpl<$Res>;
   @override
-  $Res call({String title});
+  $Res call({List<KakaoBookDocuments> documents});
 }
 
 /// @nodoc
@@ -86,13 +86,13 @@ class __$ApiKakaoBookCopyWithImpl<$Res> extends _$ApiKakaoBookCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? title = freezed,
+    Object? documents = freezed,
   }) {
     return _then(_ApiKakaoBook(
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
+      documents: documents == freezed
+          ? _value.documents
+          : documents // ignore: cast_nullable_to_non_nullable
+              as List<KakaoBookDocuments>,
     ));
   }
 }
@@ -100,27 +100,28 @@ class __$ApiKakaoBookCopyWithImpl<$Res> extends _$ApiKakaoBookCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiKakaoBook implements _ApiKakaoBook {
-  const _$_ApiKakaoBook({required this.title});
+  const _$_ApiKakaoBook({required this.documents});
 
   @override
-  final String title;
+  final List<KakaoBookDocuments> documents;
 
   @override
   String toString() {
-    return 'ApiKakaoBook(title: $title)';
+    return 'ApiKakaoBook(documents: $documents)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiKakaoBook &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)));
+            (identical(other.documents, documents) ||
+                const DeepCollectionEquality()
+                    .equals(other.documents, documents)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(documents);
 
   @JsonKey(ignore: true)
   @override
@@ -129,12 +130,144 @@ class _$_ApiKakaoBook implements _ApiKakaoBook {
 }
 
 abstract class _ApiKakaoBook implements ApiKakaoBook {
-  const factory _ApiKakaoBook({required String title}) = _$_ApiKakaoBook;
+  const factory _ApiKakaoBook({required List<KakaoBookDocuments> documents}) =
+      _$_ApiKakaoBook;
 
   @override
-  String get title => throw _privateConstructorUsedError;
+  List<KakaoBookDocuments> get documents => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoBookCopyWith<_ApiKakaoBook> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$KakaoBookDocumentsTearOff {
+  const _$KakaoBookDocumentsTearOff();
+
+  _KakaoBookDocuments call({required String contents}) {
+    return _KakaoBookDocuments(
+      contents: contents,
+    );
+  }
+}
+
+/// @nodoc
+const $KakaoBookDocuments = _$KakaoBookDocumentsTearOff();
+
+/// @nodoc
+mixin _$KakaoBookDocuments {
+  String get contents => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $KakaoBookDocumentsCopyWith<KakaoBookDocuments> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KakaoBookDocumentsCopyWith<$Res> {
+  factory $KakaoBookDocumentsCopyWith(
+          KakaoBookDocuments value, $Res Function(KakaoBookDocuments) then) =
+      _$KakaoBookDocumentsCopyWithImpl<$Res>;
+  $Res call({String contents});
+}
+
+/// @nodoc
+class _$KakaoBookDocumentsCopyWithImpl<$Res>
+    implements $KakaoBookDocumentsCopyWith<$Res> {
+  _$KakaoBookDocumentsCopyWithImpl(this._value, this._then);
+
+  final KakaoBookDocuments _value;
+  // ignore: unused_field
+  final $Res Function(KakaoBookDocuments) _then;
+
+  @override
+  $Res call({
+    Object? contents = freezed,
+  }) {
+    return _then(_value.copyWith(
+      contents: contents == freezed
+          ? _value.contents
+          : contents // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$KakaoBookDocumentsCopyWith<$Res>
+    implements $KakaoBookDocumentsCopyWith<$Res> {
+  factory _$KakaoBookDocumentsCopyWith(
+          _KakaoBookDocuments value, $Res Function(_KakaoBookDocuments) then) =
+      __$KakaoBookDocumentsCopyWithImpl<$Res>;
+  @override
+  $Res call({String contents});
+}
+
+/// @nodoc
+class __$KakaoBookDocumentsCopyWithImpl<$Res>
+    extends _$KakaoBookDocumentsCopyWithImpl<$Res>
+    implements _$KakaoBookDocumentsCopyWith<$Res> {
+  __$KakaoBookDocumentsCopyWithImpl(
+      _KakaoBookDocuments _value, $Res Function(_KakaoBookDocuments) _then)
+      : super(_value, (v) => _then(v as _KakaoBookDocuments));
+
+  @override
+  _KakaoBookDocuments get _value => super._value as _KakaoBookDocuments;
+
+  @override
+  $Res call({
+    Object? contents = freezed,
+  }) {
+    return _then(_KakaoBookDocuments(
+      contents: contents == freezed
+          ? _value.contents
+          : contents // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_KakaoBookDocuments implements _KakaoBookDocuments {
+  const _$_KakaoBookDocuments({required this.contents});
+
+  @override
+  final String contents;
+
+  @override
+  String toString() {
+    return 'KakaoBookDocuments(contents: $contents)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KakaoBookDocuments &&
+            (identical(other.contents, contents) ||
+                const DeepCollectionEquality()
+                    .equals(other.contents, contents)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(contents);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KakaoBookDocumentsCopyWith<_KakaoBookDocuments> get copyWith =>
+      __$KakaoBookDocumentsCopyWithImpl<_KakaoBookDocuments>(this, _$identity);
+}
+
+abstract class _KakaoBookDocuments implements KakaoBookDocuments {
+  const factory _KakaoBookDocuments({required String contents}) =
+      _$_KakaoBookDocuments;
+
+  @override
+  String get contents => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KakaoBookDocumentsCopyWith<_KakaoBookDocuments> get copyWith =>
       throw _privateConstructorUsedError;
 }

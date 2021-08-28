@@ -1,6 +1,9 @@
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book.dart';
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book_failure.dart';
 
-abstract class IApiKakaoBookRepository{
-  Future<Either<ApiKakaobookFailure, ApiKakaobook>> getBooksResult();
+abstract class IApiKakaoBookRepository {
+  Future<Either<ApiKakaoBookFailure, ApiKakaoBook>> getBooksResult({
+    required String query,
+  });
 }
