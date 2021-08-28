@@ -15,13 +15,15 @@ class ApiExampleCubit extends Cubit<ApiExampleState> {
     this._apiExampleRepository,
   ) : super(ApiExampleState.initial());
 
-  Future<Unit> getApiData() async {
+  Future<Unit> getApiData(int pagenation) async {
     emit(state.copyWith(isLoading: true));
 
-    final result = await _apiExampleRepository.fetchExample(limit: 20, page: 3);
+    final result =
+        await _apiExampleRepository.fetchExample(limit: 20, page: pagenation);
     emit(state.copyWith(
       isLoading: false,
       apiExample: result,
+      page: pagenation,
     ));
     return unit;
   }
