@@ -20,6 +20,17 @@ class ApiCheckMainPage extends StatelessWidget {
     }
   }
 
+  Future<void> getPapagoData() async {
+    final uri = Uri.parse("https://openapi.naver.com/v1/papago/n2mt");
+    final response = await http.get(uri, headers: {
+      "X-Naver-Client-Id": "nAVqsljUVIW0hAL0qDBn",
+      "X-Naver-Client-Secret": "PAGwZGrF8w"
+    });
+    if (response.statusCode == 200) {
+      final decode = json.decode(utf8.decode(response.bodyBytes));
+    }
+  }
+
   Future<void> postAlbum() async {
     final result = jsonEncode(<String, String>{'title': 'TestData'});
     final uri = Uri.parse('https://jsonplaceholder.typicode.com/albums');
@@ -57,7 +68,9 @@ class ApiCheckMainPage extends StatelessWidget {
               ),
               _apiCheckButtonForm(
                 title: 'PUT',
-                onTap: () {},
+                onTap: () {
+                  getPapagoData();
+                },
               ),
               _apiCheckButtonForm(
                 title: 'DELETE',
