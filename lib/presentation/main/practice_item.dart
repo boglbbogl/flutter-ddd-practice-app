@@ -4,6 +4,7 @@ class PracticeItem {
   List items = [
     'Member Practice',
     'API Weather Practice',
+    'API News Practice',
     'Community Practice',
     'API Picture Practice',
     'API Check Form',
@@ -15,11 +16,13 @@ class PracticeItem {
     [Colors.green.shade400, Colors.redAccent],
     [Colors.redAccent, Colors.green.shade400],
     [Colors.green.shade400, Colors.redAccent],
+    [Colors.redAccent, Colors.green.shade400],
   ];
 
   List router = [
     '/memberMainPage',
     '/apiWeatherMainPage',
+    '/apiNewsMainPage',
     '/communityMainPage',
     '/apiPictureMainPage',
     '/apiCheckMainPage',
