@@ -20,6 +20,17 @@ class ApiCheckMainPage extends StatelessWidget {
     }
   }
 
+  Future<void> getNewsPagerData() async {
+    final uri = Uri.parse(
+        "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=1b05eb69dee54640bf5bcfcf1e730fc8");
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final decode = json.decode(utf8.decode(response.bodyBytes));
+      print(decode['articles']);
+      // print(decode['articles']);
+    }
+  }
+
   Future<void> getPapagoData() async {
     final uri = Uri.parse("https://openapi.naver.com/v1/papago/n2mt");
     final response = await http.get(uri, headers: {
@@ -69,7 +80,7 @@ class ApiCheckMainPage extends StatelessWidget {
               _apiCheckButtonForm(
                 title: 'PUT',
                 onTap: () {
-                  getPapagoData();
+                  getNewsPagerData();
                 },
               ),
               _apiCheckButtonForm(

@@ -1,25 +1,25 @@
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
-import 'package:ddd_practice_app/application/api_example_practice/api_example_cubit.dart';
+import 'package:ddd_practice_app/application/api_picture_practice/api_picture_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/api_example_practice/api_example_list_view.dart';
+import 'package:ddd_practice_app/presentation/api_picture_practice/api_picture_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class ApiExampleMainPage extends StatelessWidget {
+class ApiPictureMainPage extends StatelessWidget {
   final RefreshController controller = RefreshController();
-  ApiExampleMainPage({Key? key}) : super(key: key);
+  ApiPictureMainPage({Key? key}) : super(key: key);
 
   // final pagenation = List.generate(30, (index) => index);
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<ApiExampleCubit>(
-      create: (context) => getIt<ApiExampleCubit>()..getApiData(1),
-      child: BlocBuilder<ApiExampleCubit, ApiExampleState>(
+    return BlocProvider<ApiPictureCubit>(
+      create: (context) => getIt<ApiPictureCubit>()..getApiData(1),
+      child: BlocBuilder<ApiPictureCubit, ApiPictureState>(
         builder: (context, state) {
-          if (state.apiExample.isEmpty) {
+          if (state.apiPicture.isEmpty) {
             return const Scaffold(
               body: Center(
                 child: CupertinoActivityIndicator(
@@ -30,7 +30,7 @@ class ApiExampleMainPage extends StatelessWidget {
           }
           return Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Example Practice', colors: Colors.orange),
+                  title: 'API Picture Practice', colors: Colors.orange),
               body: Column(
                 children: [
                   SizedBox(
@@ -46,7 +46,7 @@ class ApiExampleMainPage extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               context
-                                  .read<ApiExampleCubit>()
+                                  .read<ApiPictureCubit>()
                                   .getApiData(index + 1);
                             },
                             child: Container(
@@ -90,15 +90,15 @@ class ApiExampleMainPage extends StatelessWidget {
                             footer: _itemLoadFooter(),
                             enablePullUp: true,
                             onLoading: () {
-                              context.read<ApiExampleCubit>().moreApiData();
+                              context.read<ApiPictureCubit>().moreApiData();
                               controller.loadComplete();
                             },
                             controller: controller,
                             child: ListView.builder(
-                                itemCount: state.apiExample.length,
+                                itemCount: state.apiPicture.length,
                                 itemBuilder: (context, index) {
-                                  return ApiExampleListView(
-                                      apiData: state.apiExample[index]);
+                                  return ApiPictureListView(
+                                      apiData: state.apiPicture[index]);
                                 }),
                           ),
                       ],

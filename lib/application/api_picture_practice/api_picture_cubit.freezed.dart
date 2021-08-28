@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_example_cubit.dart';
+part of 'api_picture_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,61 +13,61 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ApiExampleStateTearOff {
-  const _$ApiExampleStateTearOff();
+class _$ApiPictureStateTearOff {
+  const _$ApiPictureStateTearOff();
 
-  _ApiExampleState call(
+  _ApiPictureState call(
       {required bool isLoading,
       required int limit,
       required int page,
-      required List<ApiExample> apiExample}) {
-    return _ApiExampleState(
+      required List<ApiPicture> apiPicture}) {
+    return _ApiPictureState(
       isLoading: isLoading,
       limit: limit,
       page: page,
-      apiExample: apiExample,
+      apiPicture: apiPicture,
     );
   }
 }
 
 /// @nodoc
-const $ApiExampleState = _$ApiExampleStateTearOff();
+const $ApiPictureState = _$ApiPictureStateTearOff();
 
 /// @nodoc
-mixin _$ApiExampleState {
+mixin _$ApiPictureState {
   bool get isLoading => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
-  List<ApiExample> get apiExample => throw _privateConstructorUsedError;
+  List<ApiPicture> get apiPicture => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ApiExampleStateCopyWith<ApiExampleState> get copyWith =>
+  $ApiPictureStateCopyWith<ApiPictureState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiExampleStateCopyWith<$Res> {
-  factory $ApiExampleStateCopyWith(
-          ApiExampleState value, $Res Function(ApiExampleState) then) =
-      _$ApiExampleStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiExample});
+abstract class $ApiPictureStateCopyWith<$Res> {
+  factory $ApiPictureStateCopyWith(
+          ApiPictureState value, $Res Function(ApiPictureState) then) =
+      _$ApiPictureStateCopyWithImpl<$Res>;
+  $Res call({bool isLoading, int limit, int page, List<ApiPicture> apiPicture});
 }
 
 /// @nodoc
-class _$ApiExampleStateCopyWithImpl<$Res>
-    implements $ApiExampleStateCopyWith<$Res> {
-  _$ApiExampleStateCopyWithImpl(this._value, this._then);
+class _$ApiPictureStateCopyWithImpl<$Res>
+    implements $ApiPictureStateCopyWith<$Res> {
+  _$ApiPictureStateCopyWithImpl(this._value, this._then);
 
-  final ApiExampleState _value;
+  final ApiPictureState _value;
   // ignore: unused_field
-  final $Res Function(ApiExampleState) _then;
+  final $Res Function(ApiPictureState) _then;
 
   @override
   $Res call({
     Object? isLoading = freezed,
     Object? limit = freezed,
     Object? page = freezed,
-    Object? apiExample = freezed,
+    Object? apiPicture = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -82,43 +82,43 @@ class _$ApiExampleStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-      apiExample: apiExample == freezed
-          ? _value.apiExample
-          : apiExample // ignore: cast_nullable_to_non_nullable
-              as List<ApiExample>,
+      apiPicture: apiPicture == freezed
+          ? _value.apiPicture
+          : apiPicture // ignore: cast_nullable_to_non_nullable
+              as List<ApiPicture>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$ApiExampleStateCopyWith<$Res>
-    implements $ApiExampleStateCopyWith<$Res> {
-  factory _$ApiExampleStateCopyWith(
-          _ApiExampleState value, $Res Function(_ApiExampleState) then) =
-      __$ApiExampleStateCopyWithImpl<$Res>;
+abstract class _$ApiPictureStateCopyWith<$Res>
+    implements $ApiPictureStateCopyWith<$Res> {
+  factory _$ApiPictureStateCopyWith(
+          _ApiPictureState value, $Res Function(_ApiPictureState) then) =
+      __$ApiPictureStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, int limit, int page, List<ApiExample> apiExample});
+  $Res call({bool isLoading, int limit, int page, List<ApiPicture> apiPicture});
 }
 
 /// @nodoc
-class __$ApiExampleStateCopyWithImpl<$Res>
-    extends _$ApiExampleStateCopyWithImpl<$Res>
-    implements _$ApiExampleStateCopyWith<$Res> {
-  __$ApiExampleStateCopyWithImpl(
-      _ApiExampleState _value, $Res Function(_ApiExampleState) _then)
-      : super(_value, (v) => _then(v as _ApiExampleState));
+class __$ApiPictureStateCopyWithImpl<$Res>
+    extends _$ApiPictureStateCopyWithImpl<$Res>
+    implements _$ApiPictureStateCopyWith<$Res> {
+  __$ApiPictureStateCopyWithImpl(
+      _ApiPictureState _value, $Res Function(_ApiPictureState) _then)
+      : super(_value, (v) => _then(v as _ApiPictureState));
 
   @override
-  _ApiExampleState get _value => super._value as _ApiExampleState;
+  _ApiPictureState get _value => super._value as _ApiPictureState;
 
   @override
   $Res call({
     Object? isLoading = freezed,
     Object? limit = freezed,
     Object? page = freezed,
-    Object? apiExample = freezed,
+    Object? apiPicture = freezed,
   }) {
-    return _then(_ApiExampleState(
+    return _then(_ApiPictureState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -131,22 +131,22 @@ class __$ApiExampleStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-      apiExample: apiExample == freezed
-          ? _value.apiExample
-          : apiExample // ignore: cast_nullable_to_non_nullable
-              as List<ApiExample>,
+      apiPicture: apiPicture == freezed
+          ? _value.apiPicture
+          : apiPicture // ignore: cast_nullable_to_non_nullable
+              as List<ApiPicture>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ApiExampleState implements _ApiExampleState {
-  _$_ApiExampleState(
+class _$_ApiPictureState implements _ApiPictureState {
+  _$_ApiPictureState(
       {required this.isLoading,
       required this.limit,
       required this.page,
-      required this.apiExample});
+      required this.apiPicture});
 
   @override
   final bool isLoading;
@@ -155,17 +155,17 @@ class _$_ApiExampleState implements _ApiExampleState {
   @override
   final int page;
   @override
-  final List<ApiExample> apiExample;
+  final List<ApiPicture> apiPicture;
 
   @override
   String toString() {
-    return 'ApiExampleState(isLoading: $isLoading, limit: $limit, page: $page, apiExample: $apiExample)';
+    return 'ApiPictureState(isLoading: $isLoading, limit: $limit, page: $page, apiPicture: $apiPicture)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiExampleState &&
+        (other is _ApiPictureState &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
@@ -173,9 +173,9 @@ class _$_ApiExampleState implements _ApiExampleState {
                 const DeepCollectionEquality().equals(other.limit, limit)) &&
             (identical(other.page, page) ||
                 const DeepCollectionEquality().equals(other.page, page)) &&
-            (identical(other.apiExample, apiExample) ||
+            (identical(other.apiPicture, apiPicture) ||
                 const DeepCollectionEquality()
-                    .equals(other.apiExample, apiExample)));
+                    .equals(other.apiPicture, apiPicture)));
   }
 
   @override
@@ -184,20 +184,20 @@ class _$_ApiExampleState implements _ApiExampleState {
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(limit) ^
       const DeepCollectionEquality().hash(page) ^
-      const DeepCollectionEquality().hash(apiExample);
+      const DeepCollectionEquality().hash(apiPicture);
 
   @JsonKey(ignore: true)
   @override
-  _$ApiExampleStateCopyWith<_ApiExampleState> get copyWith =>
-      __$ApiExampleStateCopyWithImpl<_ApiExampleState>(this, _$identity);
+  _$ApiPictureStateCopyWith<_ApiPictureState> get copyWith =>
+      __$ApiPictureStateCopyWithImpl<_ApiPictureState>(this, _$identity);
 }
 
-abstract class _ApiExampleState implements ApiExampleState {
-  factory _ApiExampleState(
+abstract class _ApiPictureState implements ApiPictureState {
+  factory _ApiPictureState(
       {required bool isLoading,
       required int limit,
       required int page,
-      required List<ApiExample> apiExample}) = _$_ApiExampleState;
+      required List<ApiPicture> apiPicture}) = _$_ApiPictureState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -206,9 +206,9 @@ abstract class _ApiExampleState implements ApiExampleState {
   @override
   int get page => throw _privateConstructorUsedError;
   @override
-  List<ApiExample> get apiExample => throw _privateConstructorUsedError;
+  List<ApiPicture> get apiPicture => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiExampleStateCopyWith<_ApiExampleState> get copyWith =>
+  _$ApiPictureStateCopyWith<_ApiPictureState> get copyWith =>
       throw _privateConstructorUsedError;
 }

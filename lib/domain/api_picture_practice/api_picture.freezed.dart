@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_example.dart';
+part of 'api_picture.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,17 +13,17 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ApiExampleTearOff {
-  const _$ApiExampleTearOff();
+class _$ApiPictureTearOff {
+  const _$ApiPictureTearOff();
 
-  _ApiExample call(
+  _ApiPicture call(
       {required String id,
       required String author,
       required String url,
       required int width,
       required int height,
       required String downloadUrl}) {
-    return _ApiExample(
+    return _ApiPicture(
       id: id,
       author: author,
       url: url,
@@ -35,10 +35,10 @@ class _$ApiExampleTearOff {
 }
 
 /// @nodoc
-const $ApiExample = _$ApiExampleTearOff();
+const $ApiPicture = _$ApiPictureTearOff();
 
 /// @nodoc
-mixin _$ApiExample {
+mixin _$ApiPicture {
   String get id => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
@@ -47,15 +47,15 @@ mixin _$ApiExample {
   String get downloadUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ApiExampleCopyWith<ApiExample> get copyWith =>
+  $ApiPictureCopyWith<ApiPicture> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiExampleCopyWith<$Res> {
-  factory $ApiExampleCopyWith(
-          ApiExample value, $Res Function(ApiExample) then) =
-      _$ApiExampleCopyWithImpl<$Res>;
+abstract class $ApiPictureCopyWith<$Res> {
+  factory $ApiPictureCopyWith(
+          ApiPicture value, $Res Function(ApiPicture) then) =
+      _$ApiPictureCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String author,
@@ -66,12 +66,12 @@ abstract class $ApiExampleCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ApiExampleCopyWithImpl<$Res> implements $ApiExampleCopyWith<$Res> {
-  _$ApiExampleCopyWithImpl(this._value, this._then);
+class _$ApiPictureCopyWithImpl<$Res> implements $ApiPictureCopyWith<$Res> {
+  _$ApiPictureCopyWithImpl(this._value, this._then);
 
-  final ApiExample _value;
+  final ApiPicture _value;
   // ignore: unused_field
-  final $Res Function(ApiExample) _then;
+  final $Res Function(ApiPicture) _then;
 
   @override
   $Res call({
@@ -112,10 +112,10 @@ class _$ApiExampleCopyWithImpl<$Res> implements $ApiExampleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ApiExampleCopyWith<$Res> implements $ApiExampleCopyWith<$Res> {
-  factory _$ApiExampleCopyWith(
-          _ApiExample value, $Res Function(_ApiExample) then) =
-      __$ApiExampleCopyWithImpl<$Res>;
+abstract class _$ApiPictureCopyWith<$Res> implements $ApiPictureCopyWith<$Res> {
+  factory _$ApiPictureCopyWith(
+          _ApiPicture value, $Res Function(_ApiPicture) then) =
+      __$ApiPictureCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -127,14 +127,14 @@ abstract class _$ApiExampleCopyWith<$Res> implements $ApiExampleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
-    implements _$ApiExampleCopyWith<$Res> {
-  __$ApiExampleCopyWithImpl(
-      _ApiExample _value, $Res Function(_ApiExample) _then)
-      : super(_value, (v) => _then(v as _ApiExample));
+class __$ApiPictureCopyWithImpl<$Res> extends _$ApiPictureCopyWithImpl<$Res>
+    implements _$ApiPictureCopyWith<$Res> {
+  __$ApiPictureCopyWithImpl(
+      _ApiPicture _value, $Res Function(_ApiPicture) _then)
+      : super(_value, (v) => _then(v as _ApiPicture));
 
   @override
-  _ApiExample get _value => super._value as _ApiExample;
+  _ApiPicture get _value => super._value as _ApiPicture;
 
   @override
   $Res call({
@@ -145,7 +145,7 @@ class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
     Object? height = freezed,
     Object? downloadUrl = freezed,
   }) {
-    return _then(_ApiExample(
+    return _then(_ApiPicture(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -176,8 +176,8 @@ class __$ApiExampleCopyWithImpl<$Res> extends _$ApiExampleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ApiExample implements _ApiExample {
-  const _$_ApiExample(
+class _$_ApiPicture implements _ApiPicture {
+  const _$_ApiPicture(
       {required this.id,
       required this.author,
       required this.url,
@@ -200,13 +200,13 @@ class _$_ApiExample implements _ApiExample {
 
   @override
   String toString() {
-    return 'ApiExample(id: $id, author: $author, url: $url, width: $width, height: $height, downloadUrl: $downloadUrl)';
+    return 'ApiPicture(id: $id, author: $author, url: $url, width: $width, height: $height, downloadUrl: $downloadUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiExample &&
+        (other is _ApiPicture &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.author, author) ||
@@ -234,18 +234,18 @@ class _$_ApiExample implements _ApiExample {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiExampleCopyWith<_ApiExample> get copyWith =>
-      __$ApiExampleCopyWithImpl<_ApiExample>(this, _$identity);
+  _$ApiPictureCopyWith<_ApiPicture> get copyWith =>
+      __$ApiPictureCopyWithImpl<_ApiPicture>(this, _$identity);
 }
 
-abstract class _ApiExample implements ApiExample {
-  const factory _ApiExample(
+abstract class _ApiPicture implements ApiPicture {
+  const factory _ApiPicture(
       {required String id,
       required String author,
       required String url,
       required int width,
       required int height,
-      required String downloadUrl}) = _$_ApiExample;
+      required String downloadUrl}) = _$_ApiPicture;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -261,6 +261,6 @@ abstract class _ApiExample implements ApiExample {
   String get downloadUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiExampleCopyWith<_ApiExample> get copyWith =>
+  _$ApiPictureCopyWith<_ApiPicture> get copyWith =>
       throw _privateConstructorUsedError;
 }

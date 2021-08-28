@@ -11,7 +11,7 @@ import 'package:firebase_storage/firebase_storage.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/api_example_practice/api_example_cubit.dart' as _i18;
+import 'application/api_picture_practice/api_picture_cubit.dart' as _i18;
 import 'application/api_weather_practice/api_weather_main_cubit.dart' as _i19;
 import 'application/community_practice/community_delete_cubit/community_delete_cubit.dart'
     as _i20;
@@ -23,11 +23,11 @@ import 'application/main/main_cubit.dart' as _i14;
 import 'application/member_practice/member_create/member_create_bloc.dart'
     as _i15;
 import 'application/member_practice/member_main/member_main_bloc.dart' as _i16;
-import 'domain/api_example_practice/i_api_example_repository.dart' as _i6;
+import 'domain/api_picture_practice/i_api_picture_repository.dart' as _i6;
 import 'domain/api_weather_practice/i_api_weather_repository.dart' as _i8;
 import 'domain/community_practice/i_community_repository.dart' as _i10;
 import 'domain/member_practice/i_member_repository.dart' as _i12;
-import 'infrastructure/api_example_practice/api_example_repository.dart' as _i7;
+import 'infrastructure/api_picture_practice/api_picture_repository.dart' as _i7;
 import 'infrastructure/api_weather_practice/api_weather_repository.dart' as _i9;
 import 'infrastructure/community_practice/community_repository.dart' as _i11;
 import 'infrastructure/core/firebase_injectable_module.dart' as _i23;
@@ -45,7 +45,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.FirebaseFirestore>(
       () => firebaseInjectableMudule.firestore);
   gh.lazySingleton<_i5.FirebaseStorage>(() => firebaseInjectableMudule.storage);
-  gh.lazySingleton<_i6.IApiExampleRepository>(() => _i7.ApiExampleRepository());
+  gh.lazySingleton<_i6.IApiPictureRepository>(() => _i7.ApiExampleRepository());
   gh.lazySingleton<_i8.IApiWeatherRepository>(() => _i9.ApiWeatherRepository());
   gh.lazySingleton<_i10.ICommunityRepository>(
       () => _i11.CommunityRepository(get<_i4.FirebaseFirestore>()));
@@ -58,8 +58,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i16.MemberMainBloc(get<_i12.IMemberRepository>()));
   gh.lazySingleton<_i17.RemoteConfig>(
       () => firebaseInjectableMudule.remoteConfig);
-  gh.factory<_i18.ApiExampleCubit>(
-      () => _i18.ApiExampleCubit(get<_i6.IApiExampleRepository>()));
+  gh.factory<_i18.ApiPictureCubit>(
+      () => _i18.ApiPictureCubit(get<_i6.IApiPictureRepository>()));
   gh.factory<_i19.ApiWeatherMainCubit>(
       () => _i19.ApiWeatherMainCubit(get<_i8.IApiWeatherRepository>()));
   gh.factory<_i20.CommunityDeleteCubit>(

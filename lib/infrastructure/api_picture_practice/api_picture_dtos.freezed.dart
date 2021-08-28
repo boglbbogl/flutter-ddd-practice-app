@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_example_dtos.dart';
+part of 'api_picture_dtos.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,22 +12,22 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ApiExampleDto _$ApiExampleDtoFromJson(Map<String, dynamic> json) {
-  return _ApiExampleDto.fromJson(json);
+ApiPictureDto _$ApiPictureDtoFromJson(Map<String, dynamic> json) {
+  return _ApiPictureDto.fromJson(json);
 }
 
 /// @nodoc
-class _$ApiExampleDtoTearOff {
-  const _$ApiExampleDtoTearOff();
+class _$ApiPictureDtoTearOff {
+  const _$ApiPictureDtoTearOff();
 
-  _ApiExampleDto call(
+  _ApiPictureDto call(
       {required String id,
       required String author,
       required String url,
       required int width,
       required int height,
       required String? downloadUrl}) {
-    return _ApiExampleDto(
+    return _ApiPictureDto(
       id: id,
       author: author,
       url: url,
@@ -37,16 +37,16 @@ class _$ApiExampleDtoTearOff {
     );
   }
 
-  ApiExampleDto fromJson(Map<String, Object> json) {
-    return ApiExampleDto.fromJson(json);
+  ApiPictureDto fromJson(Map<String, Object> json) {
+    return ApiPictureDto.fromJson(json);
   }
 }
 
 /// @nodoc
-const $ApiExampleDto = _$ApiExampleDtoTearOff();
+const $ApiPictureDto = _$ApiPictureDtoTearOff();
 
 /// @nodoc
-mixin _$ApiExampleDto {
+mixin _$ApiPictureDto {
   String get id => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
@@ -56,15 +56,15 @@ mixin _$ApiExampleDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiExampleDtoCopyWith<ApiExampleDto> get copyWith =>
+  $ApiPictureDtoCopyWith<ApiPictureDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiExampleDtoCopyWith<$Res> {
-  factory $ApiExampleDtoCopyWith(
-          ApiExampleDto value, $Res Function(ApiExampleDto) then) =
-      _$ApiExampleDtoCopyWithImpl<$Res>;
+abstract class $ApiPictureDtoCopyWith<$Res> {
+  factory $ApiPictureDtoCopyWith(
+          ApiPictureDto value, $Res Function(ApiPictureDto) then) =
+      _$ApiPictureDtoCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String author,
@@ -75,13 +75,13 @@ abstract class $ApiExampleDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ApiExampleDtoCopyWithImpl<$Res>
-    implements $ApiExampleDtoCopyWith<$Res> {
-  _$ApiExampleDtoCopyWithImpl(this._value, this._then);
+class _$ApiPictureDtoCopyWithImpl<$Res>
+    implements $ApiPictureDtoCopyWith<$Res> {
+  _$ApiPictureDtoCopyWithImpl(this._value, this._then);
 
-  final ApiExampleDto _value;
+  final ApiPictureDto _value;
   // ignore: unused_field
-  final $Res Function(ApiExampleDto) _then;
+  final $Res Function(ApiPictureDto) _then;
 
   @override
   $Res call({
@@ -122,11 +122,11 @@ class _$ApiExampleDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ApiExampleDtoCopyWith<$Res>
-    implements $ApiExampleDtoCopyWith<$Res> {
-  factory _$ApiExampleDtoCopyWith(
-          _ApiExampleDto value, $Res Function(_ApiExampleDto) then) =
-      __$ApiExampleDtoCopyWithImpl<$Res>;
+abstract class _$ApiPictureDtoCopyWith<$Res>
+    implements $ApiPictureDtoCopyWith<$Res> {
+  factory _$ApiPictureDtoCopyWith(
+          _ApiPictureDto value, $Res Function(_ApiPictureDto) then) =
+      __$ApiPictureDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -138,15 +138,15 @@ abstract class _$ApiExampleDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ApiExampleDtoCopyWithImpl<$Res>
-    extends _$ApiExampleDtoCopyWithImpl<$Res>
-    implements _$ApiExampleDtoCopyWith<$Res> {
-  __$ApiExampleDtoCopyWithImpl(
-      _ApiExampleDto _value, $Res Function(_ApiExampleDto) _then)
-      : super(_value, (v) => _then(v as _ApiExampleDto));
+class __$ApiPictureDtoCopyWithImpl<$Res>
+    extends _$ApiPictureDtoCopyWithImpl<$Res>
+    implements _$ApiPictureDtoCopyWith<$Res> {
+  __$ApiPictureDtoCopyWithImpl(
+      _ApiPictureDto _value, $Res Function(_ApiPictureDto) _then)
+      : super(_value, (v) => _then(v as _ApiPictureDto));
 
   @override
-  _ApiExampleDto get _value => super._value as _ApiExampleDto;
+  _ApiPictureDto get _value => super._value as _ApiPictureDto;
 
   @override
   $Res call({
@@ -157,7 +157,7 @@ class __$ApiExampleDtoCopyWithImpl<$Res>
     Object? height = freezed,
     Object? downloadUrl = freezed,
   }) {
-    return _then(_ApiExampleDto(
+    return _then(_ApiPictureDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -188,8 +188,8 @@ class __$ApiExampleDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApiExampleDto extends _ApiExampleDto {
-  const _$_ApiExampleDto(
+class _$_ApiPictureDto extends _ApiPictureDto {
+  const _$_ApiPictureDto(
       {required this.id,
       required this.author,
       required this.url,
@@ -198,8 +198,8 @@ class _$_ApiExampleDto extends _ApiExampleDto {
       required this.downloadUrl})
       : super._();
 
-  factory _$_ApiExampleDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_ApiExampleDtoFromJson(json);
+  factory _$_ApiPictureDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApiPictureDtoFromJson(json);
 
   @override
   final String id;
@@ -216,13 +216,13 @@ class _$_ApiExampleDto extends _ApiExampleDto {
 
   @override
   String toString() {
-    return 'ApiExampleDto(id: $id, author: $author, url: $url, width: $width, height: $height, downloadUrl: $downloadUrl)';
+    return 'ApiPictureDto(id: $id, author: $author, url: $url, width: $width, height: $height, downloadUrl: $downloadUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiExampleDto &&
+        (other is _ApiPictureDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.author, author) ||
@@ -250,27 +250,27 @@ class _$_ApiExampleDto extends _ApiExampleDto {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiExampleDtoCopyWith<_ApiExampleDto> get copyWith =>
-      __$ApiExampleDtoCopyWithImpl<_ApiExampleDto>(this, _$identity);
+  _$ApiPictureDtoCopyWith<_ApiPictureDto> get copyWith =>
+      __$ApiPictureDtoCopyWithImpl<_ApiPictureDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ApiExampleDtoToJson(this);
+    return _$_$_ApiPictureDtoToJson(this);
   }
 }
 
-abstract class _ApiExampleDto extends ApiExampleDto {
-  const factory _ApiExampleDto(
+abstract class _ApiPictureDto extends ApiPictureDto {
+  const factory _ApiPictureDto(
       {required String id,
       required String author,
       required String url,
       required int width,
       required int height,
-      required String? downloadUrl}) = _$_ApiExampleDto;
-  const _ApiExampleDto._() : super._();
+      required String? downloadUrl}) = _$_ApiPictureDto;
+  const _ApiPictureDto._() : super._();
 
-  factory _ApiExampleDto.fromJson(Map<String, dynamic> json) =
-      _$_ApiExampleDto.fromJson;
+  factory _ApiPictureDto.fromJson(Map<String, dynamic> json) =
+      _$_ApiPictureDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -286,6 +286,6 @@ abstract class _ApiExampleDto extends ApiExampleDto {
   String? get downloadUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiExampleDtoCopyWith<_ApiExampleDto> get copyWith =>
+  _$ApiPictureDtoCopyWith<_ApiPictureDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

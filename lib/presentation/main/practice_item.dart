@@ -5,7 +5,7 @@ class PracticeItem {
     'Member Practice',
     'API Weather Practice',
     'Community Practice',
-    'API Example Practice',
+    'API Picture Practice',
     'API Check Form',
   ];
 
@@ -21,7 +21,7 @@ class PracticeItem {
     '/memberMainPage',
     '/apiWeatherMainPage',
     '/communityMainPage',
-    '/apiExampleMainPage',
+    '/apiPictureMainPage',
     '/apiCheckMainPage',
   ];
 }

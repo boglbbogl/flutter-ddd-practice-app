@@ -1,10 +1,10 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
-import 'package:ddd_practice_app/domain/api_example_practice/api_example.dart';
+import 'package:ddd_practice_app/domain/api_picture_practice/api_picture.dart';
 import 'package:flutter/material.dart';
 
-class ApiExampleListView extends StatelessWidget {
-  final ApiExample apiData;
-  const ApiExampleListView({
+class ApiPictureListView extends StatelessWidget {
+  final ApiPicture apiData;
+  const ApiPictureListView({
     Key? key,
     required this.apiData,
   }) : super(key: key);

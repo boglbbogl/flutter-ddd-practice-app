@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_example_dtos.dart';
+part of 'api_picture_dtos.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ApiExampleDto _$_$_ApiExampleDtoFromJson(Map<String, dynamic> json) {
-  return _$_ApiExampleDto(
+_$_ApiPictureDto _$_$_ApiPictureDtoFromJson(Map<String, dynamic> json) {
+  return _$_ApiPictureDto(
     id: json['id'] as String,
     author: json['author'] as String,
     url: json['url'] as String,
@@ -17,7 +17,7 @@ _$_ApiExampleDto _$_$_ApiExampleDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ApiExampleDtoToJson(_$_ApiExampleDto instance) =>
+Map<String, dynamic> _$_$_ApiPictureDtoToJson(_$_ApiPictureDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'author': instance.author,
