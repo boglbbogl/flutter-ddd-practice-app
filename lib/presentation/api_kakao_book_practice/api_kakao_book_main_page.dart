@@ -30,7 +30,9 @@ class ApiKakaoBookMainPage extends StatelessWidget {
                   colors: Colors.red,
                   actions: [
                     appbarActionInfoForm(
-                        context: context, sourceText: '', colors: Colors.red)
+                        context: context,
+                        sourceText: 'https://dapi.kakao.com/v3/search/book',
+                        colors: Colors.red)
                   ]),
               body: Column(
                 children: [

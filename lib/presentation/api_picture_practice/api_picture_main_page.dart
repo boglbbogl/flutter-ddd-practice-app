@@ -67,6 +67,9 @@ class ApiPictureMainPage extends StatelessWidget {
                                   "${index + 1}",
                                   style: theme.textTheme.bodyText2!.copyWith(
                                       fontSize: 14,
+                                      fontWeight: state.page == index + 1
+                                          ? FontWeight.bold
+                                          : FontWeight.w300,
                                       color: state.page == index + 1
                                           ? Colors.orange
                                           : const Color.fromRGBO(

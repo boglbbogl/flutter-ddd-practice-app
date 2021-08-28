@@ -20,24 +20,27 @@ Padding appbarActionInfoForm({
               return Container(
                 height: size.height * 0.2,
                 color: colors,
-                child: Center(
-                    child: RichText(
-                  text: TextSpan(
-                      text: 'Source    ',
-                      style: theme.textTheme.bodyText2!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                      children: [
-                        TextSpan(
-                            text: sourceText,
-                            style: theme.textTheme.bodyText2!.copyWith(
-                              color: Colors.white,
-                              fontSize: 15,
-                            )),
-                      ]),
-                )),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Center(
+                      child: RichText(
+                    text: TextSpan(
+                        text: 'Source    ',
+                        style: theme.textTheme.bodyText2!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: sourceText,
+                              style: theme.textTheme.bodyText2!.copyWith(
+                                color: Colors.white,
+                                fontSize: 15,
+                              )),
+                        ]),
+                  )),
+                ),
               );
             });
       },
