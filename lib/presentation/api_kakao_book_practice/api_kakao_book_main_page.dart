@@ -4,7 +4,7 @@ import 'package:ddd_practice_app/_constant/my_progress_indicator.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/api_kakao_book_practice/api_kakao_book_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_book_practice/api_kakao_book_list_view.dart';
+import 'package:ddd_practice_app/presentation/api_kakao_book_practice/widgets/api_kakao_book_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -54,7 +54,8 @@ class ApiKakaoBookMainPage extends StatelessWidget {
                               focusedBorder: UnderlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.orange, width: 3),
-                              )),
+                              ),
+                              hintText: 'Search...'),
                         ),
                       ),
                       Container(

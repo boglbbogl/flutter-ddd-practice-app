@@ -10,8 +10,9 @@ class MainPage extends StatelessWidget {
     size = MediaQuery.of(context).size;
     theme = Theme.of(context);
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         toolbarHeight: 80,
         elevation: 0,
         centerTitle: true,
@@ -20,6 +21,7 @@ class MainPage extends StatelessWidget {
           style: theme.textTheme.headline5!.copyWith(
             fontSize: 30,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
       ),

@@ -16,14 +16,16 @@ class ApiKakaoBook with _$ApiKakaoBook {
 class KakaoBookDocuments with _$KakaoBookDocuments {
   const factory KakaoBookDocuments({
     required String contents,
-    // required String dateTime,
-    // required String isbn,
-    // required int price,
-    // required String publisher,
-    // required int sale_price,
-    // required String status,
-    // required String thumbnail,
-    // required String url,
-    // required String title,
+    required DateTime dateTime,
+    required String isbn,
+    required int price,
+    required String publisher,
+    required int salePrice,
+    required String status,
+    required String thumbnail,
+    required String url,
+    required String title,
+    required List<String> authors,
+    required List<String> translators,
   }) = _KakaoBookDocuments;
 }

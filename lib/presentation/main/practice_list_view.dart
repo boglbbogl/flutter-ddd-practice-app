@@ -20,7 +20,7 @@ class PracticeListView extends StatelessWidget {
             },
             child: Container(
               width: size.width * 0.9,
-              height: size.height * 0.125,
+              height: size.height * 0.1,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   gradient: LinearGradient(

@@ -1,5 +1,6 @@
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 part 'api_kakao_book_dtos.freezed.dart';
 part 'api_kakao_book_dtos.g.dart';
@@ -23,15 +24,17 @@ class ApiKakaoBookDto with _$ApiKakaoBookDto {
 class KakaoBookDocumentsDto with _$KakaoBookDocumentsDto {
   const factory KakaoBookDocumentsDto({
     required String contents,
-    // required String datetime,
-    // required String isbn,
-    // required int price,
-    // required String publisher,
-    // @JsonKey(name: 'salePrice') required int sale_price,
-    // required String status,
-    // required String thumbnail,
-    // required String url,
-    // required String title,
+    required DateTime datetime,
+    required String isbn,
+    required int price,
+    required String publisher,
+    @JsonKey(name: 'sale_price') required int salePrice,
+    required String status,
+    required String thumbnail,
+    required String url,
+    required String title,
+    required List<String> authors,
+    required List<String> translators,
   }) = _KakaoBookDocumentsDto;
   const KakaoBookDocumentsDto._();
   factory KakaoBookDocumentsDto.fromJson(Map<String, dynamic> json) =>
@@ -39,14 +42,16 @@ class KakaoBookDocumentsDto with _$KakaoBookDocumentsDto {
 
   KakaoBookDocuments toDomain() => KakaoBookDocuments(
         contents: contents,
-        // dateTime: datetime,
-        // isbn: isbn,
-        // price: price,
-        // publisher: publisher,
-        // sale_price: sale_price,
-        // status: status,
-        // thumbnail: thumbnail,
-        // url: url,
-        // title: title,
+        dateTime: datetime,
+        isbn: isbn,
+        price: price,
+        publisher: publisher,
+        salePrice: salePrice,
+        status: status,
+        thumbnail: thumbnail,
+        url: url,
+        title: title,
+        authors: authors,
+        translators: translators,
       );
 }

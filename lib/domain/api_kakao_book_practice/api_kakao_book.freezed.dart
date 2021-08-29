@@ -145,9 +145,32 @@ abstract class _ApiKakaoBook implements ApiKakaoBook {
 class _$KakaoBookDocumentsTearOff {
   const _$KakaoBookDocumentsTearOff();
 
-  _KakaoBookDocuments call({required String contents}) {
+  _KakaoBookDocuments call(
+      {required String contents,
+      required DateTime dateTime,
+      required String isbn,
+      required int price,
+      required String publisher,
+      required int salePrice,
+      required String status,
+      required String thumbnail,
+      required String url,
+      required String title,
+      required List<String> authors,
+      required List<String> translators}) {
     return _KakaoBookDocuments(
       contents: contents,
+      dateTime: dateTime,
+      isbn: isbn,
+      price: price,
+      publisher: publisher,
+      salePrice: salePrice,
+      status: status,
+      thumbnail: thumbnail,
+      url: url,
+      title: title,
+      authors: authors,
+      translators: translators,
     );
   }
 }
@@ -158,6 +181,17 @@ const $KakaoBookDocuments = _$KakaoBookDocumentsTearOff();
 /// @nodoc
 mixin _$KakaoBookDocuments {
   String get contents => throw _privateConstructorUsedError;
+  DateTime get dateTime => throw _privateConstructorUsedError;
+  String get isbn => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
+  String get publisher => throw _privateConstructorUsedError;
+  int get salePrice => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  String get thumbnail => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  List<String> get authors => throw _privateConstructorUsedError;
+  List<String> get translators => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $KakaoBookDocumentsCopyWith<KakaoBookDocuments> get copyWith =>
@@ -169,7 +203,19 @@ abstract class $KakaoBookDocumentsCopyWith<$Res> {
   factory $KakaoBookDocumentsCopyWith(
           KakaoBookDocuments value, $Res Function(KakaoBookDocuments) then) =
       _$KakaoBookDocumentsCopyWithImpl<$Res>;
-  $Res call({String contents});
+  $Res call(
+      {String contents,
+      DateTime dateTime,
+      String isbn,
+      int price,
+      String publisher,
+      int salePrice,
+      String status,
+      String thumbnail,
+      String url,
+      String title,
+      List<String> authors,
+      List<String> translators});
 }
 
 /// @nodoc
@@ -184,12 +230,67 @@ class _$KakaoBookDocumentsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? contents = freezed,
+    Object? dateTime = freezed,
+    Object? isbn = freezed,
+    Object? price = freezed,
+    Object? publisher = freezed,
+    Object? salePrice = freezed,
+    Object? status = freezed,
+    Object? thumbnail = freezed,
+    Object? url = freezed,
+    Object? title = freezed,
+    Object? authors = freezed,
+    Object? translators = freezed,
   }) {
     return _then(_value.copyWith(
       contents: contents == freezed
           ? _value.contents
           : contents // ignore: cast_nullable_to_non_nullable
               as String,
+      dateTime: dateTime == freezed
+          ? _value.dateTime
+          : dateTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isbn: isbn == freezed
+          ? _value.isbn
+          : isbn // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: price == freezed
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+      publisher: publisher == freezed
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String,
+      salePrice: salePrice == freezed
+          ? _value.salePrice
+          : salePrice // ignore: cast_nullable_to_non_nullable
+              as int,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      thumbnail: thumbnail == freezed
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      authors: authors == freezed
+          ? _value.authors
+          : authors // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      translators: translators == freezed
+          ? _value.translators
+          : translators // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -201,7 +302,19 @@ abstract class _$KakaoBookDocumentsCopyWith<$Res>
           _KakaoBookDocuments value, $Res Function(_KakaoBookDocuments) then) =
       __$KakaoBookDocumentsCopyWithImpl<$Res>;
   @override
-  $Res call({String contents});
+  $Res call(
+      {String contents,
+      DateTime dateTime,
+      String isbn,
+      int price,
+      String publisher,
+      int salePrice,
+      String status,
+      String thumbnail,
+      String url,
+      String title,
+      List<String> authors,
+      List<String> translators});
 }
 
 /// @nodoc
@@ -218,12 +331,67 @@ class __$KakaoBookDocumentsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? contents = freezed,
+    Object? dateTime = freezed,
+    Object? isbn = freezed,
+    Object? price = freezed,
+    Object? publisher = freezed,
+    Object? salePrice = freezed,
+    Object? status = freezed,
+    Object? thumbnail = freezed,
+    Object? url = freezed,
+    Object? title = freezed,
+    Object? authors = freezed,
+    Object? translators = freezed,
   }) {
     return _then(_KakaoBookDocuments(
       contents: contents == freezed
           ? _value.contents
           : contents // ignore: cast_nullable_to_non_nullable
               as String,
+      dateTime: dateTime == freezed
+          ? _value.dateTime
+          : dateTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isbn: isbn == freezed
+          ? _value.isbn
+          : isbn // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: price == freezed
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+      publisher: publisher == freezed
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String,
+      salePrice: salePrice == freezed
+          ? _value.salePrice
+          : salePrice // ignore: cast_nullable_to_non_nullable
+              as int,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      thumbnail: thumbnail == freezed
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      authors: authors == freezed
+          ? _value.authors
+          : authors // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      translators: translators == freezed
+          ? _value.translators
+          : translators // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -231,14 +399,48 @@ class __$KakaoBookDocumentsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_KakaoBookDocuments implements _KakaoBookDocuments {
-  const _$_KakaoBookDocuments({required this.contents});
+  const _$_KakaoBookDocuments(
+      {required this.contents,
+      required this.dateTime,
+      required this.isbn,
+      required this.price,
+      required this.publisher,
+      required this.salePrice,
+      required this.status,
+      required this.thumbnail,
+      required this.url,
+      required this.title,
+      required this.authors,
+      required this.translators});
 
   @override
   final String contents;
+  @override
+  final DateTime dateTime;
+  @override
+  final String isbn;
+  @override
+  final int price;
+  @override
+  final String publisher;
+  @override
+  final int salePrice;
+  @override
+  final String status;
+  @override
+  final String thumbnail;
+  @override
+  final String url;
+  @override
+  final String title;
+  @override
+  final List<String> authors;
+  @override
+  final List<String> translators;
 
   @override
   String toString() {
-    return 'KakaoBookDocuments(contents: $contents)';
+    return 'KakaoBookDocuments(contents: $contents, dateTime: $dateTime, isbn: $isbn, price: $price, publisher: $publisher, salePrice: $salePrice, status: $status, thumbnail: $thumbnail, url: $url, title: $title, authors: $authors, translators: $translators)';
   }
 
   @override
@@ -247,12 +449,52 @@ class _$_KakaoBookDocuments implements _KakaoBookDocuments {
         (other is _KakaoBookDocuments &&
             (identical(other.contents, contents) ||
                 const DeepCollectionEquality()
-                    .equals(other.contents, contents)));
+                    .equals(other.contents, contents)) &&
+            (identical(other.dateTime, dateTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.dateTime, dateTime)) &&
+            (identical(other.isbn, isbn) ||
+                const DeepCollectionEquality().equals(other.isbn, isbn)) &&
+            (identical(other.price, price) ||
+                const DeepCollectionEquality().equals(other.price, price)) &&
+            (identical(other.publisher, publisher) ||
+                const DeepCollectionEquality()
+                    .equals(other.publisher, publisher)) &&
+            (identical(other.salePrice, salePrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.salePrice, salePrice)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.thumbnail, thumbnail) ||
+                const DeepCollectionEquality()
+                    .equals(other.thumbnail, thumbnail)) &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.authors, authors) ||
+                const DeepCollectionEquality()
+                    .equals(other.authors, authors)) &&
+            (identical(other.translators, translators) ||
+                const DeepCollectionEquality()
+                    .equals(other.translators, translators)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(contents);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(contents) ^
+      const DeepCollectionEquality().hash(dateTime) ^
+      const DeepCollectionEquality().hash(isbn) ^
+      const DeepCollectionEquality().hash(price) ^
+      const DeepCollectionEquality().hash(publisher) ^
+      const DeepCollectionEquality().hash(salePrice) ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(thumbnail) ^
+      const DeepCollectionEquality().hash(url) ^
+      const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(authors) ^
+      const DeepCollectionEquality().hash(translators);
 
   @JsonKey(ignore: true)
   @override
@@ -261,11 +503,44 @@ class _$_KakaoBookDocuments implements _KakaoBookDocuments {
 }
 
 abstract class _KakaoBookDocuments implements KakaoBookDocuments {
-  const factory _KakaoBookDocuments({required String contents}) =
-      _$_KakaoBookDocuments;
+  const factory _KakaoBookDocuments(
+      {required String contents,
+      required DateTime dateTime,
+      required String isbn,
+      required int price,
+      required String publisher,
+      required int salePrice,
+      required String status,
+      required String thumbnail,
+      required String url,
+      required String title,
+      required List<String> authors,
+      required List<String> translators}) = _$_KakaoBookDocuments;
 
   @override
   String get contents => throw _privateConstructorUsedError;
+  @override
+  DateTime get dateTime => throw _privateConstructorUsedError;
+  @override
+  String get isbn => throw _privateConstructorUsedError;
+  @override
+  int get price => throw _privateConstructorUsedError;
+  @override
+  String get publisher => throw _privateConstructorUsedError;
+  @override
+  int get salePrice => throw _privateConstructorUsedError;
+  @override
+  String get status => throw _privateConstructorUsedError;
+  @override
+  String get thumbnail => throw _privateConstructorUsedError;
+  @override
+  String get url => throw _privateConstructorUsedError;
+  @override
+  String get title => throw _privateConstructorUsedError;
+  @override
+  List<String> get authors => throw _privateConstructorUsedError;
+  @override
+  List<String> get translators => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$KakaoBookDocumentsCopyWith<_KakaoBookDocuments> get copyWith =>
