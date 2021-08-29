@@ -1,6 +1,5 @@
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 part 'api_kakao_book_dtos.freezed.dart';
 part 'api_kakao_book_dtos.g.dart';

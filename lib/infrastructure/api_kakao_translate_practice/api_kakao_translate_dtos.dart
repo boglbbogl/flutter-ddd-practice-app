@@ -1,14 +1,20 @@
+import 'package:ddd_practice_app/domain/api_kakao_translate_practice/api_kakao_translate.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'api_kakao_translate_dtos.freezed.dart';
+part 'api_kakao_translate_dtos.g.dart';
 
 @freezed
-class ApiKakaoTranslateDto with _$ApiKakaoTranslateDto{
+class ApiKakaoTranslateDto with _$ApiKakaoTranslateDto {
   const factory ApiKakaoTranslateDto({
-    required List<String> translatedText,
-  }) =_ApiKakaoTranslateDto;
+    @JsonKey(name: "translated_text") required List<dynamic> translatedText,
+  }) = _ApiKakaoTranslateDto;
   const ApiKakaoTranslateDto._();
 
-  factory ApiKakaoTranslateDto.fromJson(Map<String, dynamic> json) => _$ApiKakaoTranslateDtoFromJson(json);
+  factory ApiKakaoTranslateDto.fromJson(Map<String, dynamic> json) =>
+      _$ApiKakaoTranslateDtoFromJson(json);
 
   ApiKakaoTranslate toDomain() => ApiKakaoTranslate(
-    translatedText : translatedText,
-  );
+        translatedText: translatedText,
+      );
 }

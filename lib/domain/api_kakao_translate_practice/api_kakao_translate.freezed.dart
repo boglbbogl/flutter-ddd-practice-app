@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ApiKakaoTranslateTearOff {
   const _$ApiKakaoTranslateTearOff();
 
-  _ApiKakaoTranslate call({required List<String> translatedText}) {
+  _ApiKakaoTranslate call({required List<dynamic> translatedText}) {
     return _ApiKakaoTranslate(
       translatedText: translatedText,
     );
@@ -28,7 +28,7 @@ const $ApiKakaoTranslate = _$ApiKakaoTranslateTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoTranslate {
-  List<String> get translatedText => throw _privateConstructorUsedError;
+  List<dynamic> get translatedText => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoTranslateCopyWith<ApiKakaoTranslate> get copyWith =>
@@ -40,7 +40,7 @@ abstract class $ApiKakaoTranslateCopyWith<$Res> {
   factory $ApiKakaoTranslateCopyWith(
           ApiKakaoTranslate value, $Res Function(ApiKakaoTranslate) then) =
       _$ApiKakaoTranslateCopyWithImpl<$Res>;
-  $Res call({List<String> translatedText});
+  $Res call({List<dynamic> translatedText});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$ApiKakaoTranslateCopyWithImpl<$Res>
       translatedText: translatedText == freezed
           ? _value.translatedText
           : translatedText // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<dynamic>,
     ));
   }
 }
@@ -72,7 +72,7 @@ abstract class _$ApiKakaoTranslateCopyWith<$Res>
           _ApiKakaoTranslate value, $Res Function(_ApiKakaoTranslate) then) =
       __$ApiKakaoTranslateCopyWithImpl<$Res>;
   @override
-  $Res call({List<String> translatedText});
+  $Res call({List<dynamic> translatedText});
 }
 
 /// @nodoc
@@ -94,7 +94,7 @@ class __$ApiKakaoTranslateCopyWithImpl<$Res>
       translatedText: translatedText == freezed
           ? _value.translatedText
           : translatedText // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<dynamic>,
     ));
   }
 }
@@ -105,7 +105,7 @@ class _$_ApiKakaoTranslate implements _ApiKakaoTranslate {
   const _$_ApiKakaoTranslate({required this.translatedText});
 
   @override
-  final List<String> translatedText;
+  final List<dynamic> translatedText;
 
   @override
   String toString() {
@@ -133,11 +133,11 @@ class _$_ApiKakaoTranslate implements _ApiKakaoTranslate {
 }
 
 abstract class _ApiKakaoTranslate implements ApiKakaoTranslate {
-  const factory _ApiKakaoTranslate({required List<String> translatedText}) =
+  const factory _ApiKakaoTranslate({required List<dynamic> translatedText}) =
       _$_ApiKakaoTranslate;
 
   @override
-  List<String> get translatedText => throw _privateConstructorUsedError;
+  List<dynamic> get translatedText => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoTranslateCopyWith<_ApiKakaoTranslate> get copyWith =>
