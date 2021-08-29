@@ -16,8 +16,8 @@ class ApiKakaoRepository implements IApiKakaoBookRepository {
     required String query,
   }) async {
     try {
-      final uri =
-          Uri.parse("https://dapi.kakao.com/v3/search/book?query=$query");
+      final uri = Uri.parse(
+          "https://dapi.kakao.com/v3/search/book?query=$query&size=50");
       final response = await http.get(
         uri,
         headers: {'Authorization': 'KakaoAK $apiKey'},

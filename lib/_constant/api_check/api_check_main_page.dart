@@ -20,6 +20,28 @@ class ApiCheckMainPage extends StatelessWidget {
     }
   }
 
+  Future<void> postKakaoTranslations() async {
+    final uri = Uri.parse(
+        "https://dapi.kakao.com/v2/tran slation/translate?src_lang=kr&target_lang=en");
+    final response = await http.post(uri, headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      'Authorization': 'KakaoAK 598874a3fe386492d5b8ba65db9f1063'
+    }, body: {
+      "query=뭐야"
+    });
+    final decode = json.decode(utf8.decode(response.bodyBytes));
+    print(decode);
+  }
+
+  Future<void> getKakaoTranslations() async {
+    final uri = Uri.parse(
+        "https://dapi.kakao.com/v2/translation/translate?src_lang=kr&target_lang=en&query='테스트'");
+    final response = await http.get(uri,
+        headers: {'Authorization': 'KakaoAK 598874a3fe386492d5b8ba65db9f1063'});
+    final decode = json.decode(utf8.decode(response.bodyBytes));
+    print(decode);
+  }
+
   Future<void> getKakaoBooksData() async {
     final uri = Uri.parse("https://dapi.kakao.com/v3/search/book?query='11'");
     final response = await http.get(uri,
@@ -76,13 +98,13 @@ class ApiCheckMainPage extends StatelessWidget {
               _apiCheckButtonForm(
                 title: 'GET',
                 onTap: () {
-                  getWeatherData();
+                  getKakaoTranslations();
                 },
               ),
               _apiCheckButtonForm(
                 title: 'POST',
                 onTap: () {
-                  postAlbum();
+                  postKakaoTranslations();
                 },
               ),
               _apiCheckButtonForm(

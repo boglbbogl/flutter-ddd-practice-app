@@ -1,7 +1,9 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book.dart';
+import 'package:ddd_practice_app/presentation/api_kakao_book_practice/widgets/api_kakao_book_web_view.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_book_practice/widgets/api_kakao_books_text_form.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class ApiKakaoBookDetailPage extends StatelessWidget {
   final KakaoBookDocuments books;
@@ -101,14 +103,22 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
                   fontSize: 9,
                   fontColors: const Color.fromRGBO(135, 135, 135, 1),
                   maxLines: 2),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 2),
-                child: apiKakoBooksTextForm(
-                    title: books.url,
-                    textOverflow: TextOverflow.ellipsis,
-                    fontSize: 12,
-                    fontColors: Colors.blue,
-                    maxLines: 2),
+              InkWell(
+                onTap: () {
+                  pushNewScreen(context,
+                      screen: ApiKakaoBookWebView(
+                        url: books.url,
+                      ));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2),
+                  child: apiKakoBooksTextForm(
+                      title: books.url,
+                      textOverflow: TextOverflow.ellipsis,
+                      fontSize: 12,
+                      fontColors: Colors.blue,
+                      maxLines: 2),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 3),
