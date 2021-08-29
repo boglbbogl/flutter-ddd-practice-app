@@ -20,9 +20,9 @@ class ApiKakaoTranslateMainCubit extends Cubit<ApiKakaoTranslateMainState> {
     return unit;
   }
 
-  Future<Unit> getTranslate() async {
+  Future<Unit> getTranslate(String query) async {
     emit(state.copyWith(isLoading: true));
-    final result = await _translateRepository.getTranslate(query: "번역해라");
+    final result = await _translateRepository.getTranslate(query: query);
     emit(state.copyWith(
       isLoading: false,
       apiKakaoTranslate: result,
