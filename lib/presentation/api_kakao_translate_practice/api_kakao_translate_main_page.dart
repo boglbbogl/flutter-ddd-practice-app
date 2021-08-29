@@ -3,6 +3,8 @@ import 'package:ddd_practice_app/_constant/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,30 +39,99 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: InkWell(
+                            onTap: () {
+                              context
+                                  .read<ApiKakaoTranslateMainCubit>()
+                                  .changedLanguage();
+                            },
+                            child: Container(
+                                width: size.width * 0.9,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.amber),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      'Language',
+                                      style: theme.textTheme.bodyText2!
+                                          .copyWith(
+                                              color: const Color.fromRGBO(
+                                                  91, 91, 91, 1),
+                                              fontSize: 12),
+                                    ),
+                                    Text(
+                                      state.isLanguageChange ? 'ENG' : 'KOR',
+                                      style:
+                                          theme.textTheme.bodyText2!.copyWith(
+                                        color:
+                                            const Color.fromRGBO(91, 91, 91, 1),
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.arrow_forward_outlined,
+                                      size: 14,
+                                      color: Color.fromRGBO(91, 91, 91, 1),
+                                    ),
+                                    Text(
+                                      !state.isLanguageChange ? 'ENG' : 'KOR',
+                                      style:
+                                          theme.textTheme.bodyText2!.copyWith(
+                                        color:
+                                            const Color.fromRGBO(91, 91, 91, 1),
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.refresh_outlined,
+                                      size: 14,
+                                      color: Color.fromRGBO(91, 91, 91, 1),
+                                    ),
+                                  ],
+                                )),
+                          ),
+                        ),
+                        Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: TextButton(
                               onPressed: () {
-                                context
-                                    .read<ApiKakaoTranslateMainCubit>()
-                                    .getTranslate(controller.text);
-                                FocusScope.of(context).unfocus();
+                                if (controller.text.isNotEmpty) {
+                                  context
+                                      .read<ApiKakaoTranslateMainCubit>()
+                                      .getTranslate(
+                                        controller.text,
+                                      );
+                                  FocusScope.of(context).unfocus();
+                                }
                               },
                               child: Container(
                                 width: size.width * 0.9,
                                 height: 50,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: const Color.fromRGBO(91, 91, 91, 1),
+                                  color: state.isLoading
+                                      ? Colors.amber
+                                      : const Color.fromRGBO(91, 91, 91, 1),
                                 ),
-                                child: Center(
-                                    child: Text(
-                                  'TRANSLATE...',
-                                  style: theme.textTheme.bodyText2!.copyWith(
-                                    color: Colors.amber,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )),
+                                child: state.isLoading
+                                    ? const Center(
+                                        child: CupertinoActivityIndicator(),
+                                      )
+                                    : Center(
+                                        child: Text(
+                                        'TRANSLATE...',
+                                        style:
+                                            theme.textTheme.bodyText2!.copyWith(
+                                          color: Colors.amber,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )),
                               )),
                         ),
                         Padding(
@@ -96,13 +167,16 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                             ),
                             child: ListView(
                               shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
+                              physics: const NeverScrollableScrollPhysics(),
                               children: [
                                 ...state.apiKakaoTranslate!.translatedText
                                     .map((e) => Padding(
                                           padding: const EdgeInsets.all(15.0),
                                           child: Text(
-                                            e.toString(),
+                                            e
+                                                .toString()
+                                                .replaceAll('[', "")
+                                                .replaceAll(']', ""),
                                             style: theme.textTheme.bodyText2!
                                                 .copyWith(
                                               color: const Color.fromRGBO(

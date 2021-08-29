@@ -22,18 +22,36 @@ class PracticeListView extends StatelessWidget {
               width: size.width * 0.9,
               height: size.height * 0.1,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  gradient: LinearGradient(
-                    colors: [...PracticeItem().colors[index]],
-                  )),
+                image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("assets/images/gradient/gradient_1.gif")),
+                borderRadius: BorderRadius.circular(22),
+                // gradient: LinearGradient(
+                //   colors: [...PracticeItem().colors[index]],
+                // ),
+              ),
               child: Center(
-                  child: Text(
-                PracticeItem().items[index].toString(),
-                style: theme.textTheme.bodyText2!.copyWith(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    PracticeItem().items[index].toString(),
+                    style: theme.textTheme.bodyText2!.copyWith(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Text(''),
+                  Text(
+                    'DATA - ${PracticeItem().subTitle[index]}',
+                    style: theme.textTheme.bodyText2!.copyWith(
+                      color: const Color.fromRGBO(215, 215, 215, 1),
+                      fontSize: 9,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
               )),
             ),
           ),

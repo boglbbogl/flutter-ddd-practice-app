@@ -16,17 +16,38 @@ class ApiKakaoTranslateMainCubit extends Cubit<ApiKakaoTranslateMainState> {
       : super(ApiKakaoTranslateMainState.initial());
 
   Future<Unit> started() async {
-    emit(state.copyWith(apiKakaoTranslate: ApiKakaoTranslate.empty()));
+    emit(state.copyWith(
+        apiKakaoTranslate: ApiKakaoTranslate.empty(), isLanguageChange: false));
     return unit;
   }
 
   Future<Unit> getTranslate(String query) async {
     emit(state.copyWith(isLoading: true));
-    final result = await _translateRepository.getTranslate(query: query);
-    emit(state.copyWith(
-      isLoading: false,
-      apiKakaoTranslate: result,
-    ));
+    if (state.isLanguageChange == true) {
+      final result = await _translateRepository.getTranslate(
+          query: query, srcLang: 'en', targetLang: 'kr');
+      emit(state.copyWith(
+        isLoading: false,
+        apiKakaoTranslate: result,
+      ));
+    } else {
+      final result = await _translateRepository.getTranslate(
+          query: query, srcLang: 'kr', targetLang: 'en');
+      emit(state.copyWith(
+        isLoading: false,
+        apiKakaoTranslate: result,
+      ));
+    }
+
+    return unit;
+  }
+
+  Future<Unit> changedLanguage() async {
+    if (state.isLanguageChange == false) {
+      emit(state.copyWith(isLanguageChange: true));
+    } else {
+      emit(state.copyWith(isLanguageChange: false));
+    }
     return unit;
   }
 }

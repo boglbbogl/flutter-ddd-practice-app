@@ -11,16 +11,15 @@ class PracticeItem {
     'API Picture Practice',
     'API Check Form',
   ];
-
-  List colors = [
-    [Colors.green.shade400, Colors.redAccent],
-    [Colors.redAccent, Colors.green.shade400],
-    [Colors.green.shade400, Colors.redAccent],
-    [Colors.redAccent, Colors.green.shade400],
-    [Colors.green.shade400, Colors.redAccent],
-    [Colors.redAccent, Colors.green.shade400],
-    [Colors.green.shade400, Colors.redAccent],
-    [Colors.redAccent, Colors.green.shade400],
+  List subTitle = [
+    'FIRESTORE',
+    'REST API for KAKAO',
+    'REST API for KAKAO',
+    'REST API for OPENWEATHERMAP',
+    'REST API for NEWSAPI',
+    'FIRESTORE',
+    'REST API for PICSUM',
+    'NOT PROVIDER',
   ];
 
   List router = [

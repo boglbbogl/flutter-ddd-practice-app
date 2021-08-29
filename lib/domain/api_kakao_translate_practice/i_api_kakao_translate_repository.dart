@@ -3,5 +3,7 @@ import 'package:ddd_practice_app/domain/api_kakao_translate_practice/api_kakao_t
 abstract class IApiKakaoTranslateRepository {
   Future<ApiKakaoTranslate?> getTranslate({
     required String query,
+    required String srcLang,
+    required String targetLang,
   });
 }

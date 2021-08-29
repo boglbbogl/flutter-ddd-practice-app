@@ -18,10 +18,12 @@ class _$ApiKakaoTranslateMainStateTearOff {
 
   _ApiKakaoTranslateMainState call(
       {required bool isLoading,
-      required ApiKakaoTranslate? apiKakaoTranslate}) {
+      required ApiKakaoTranslate? apiKakaoTranslate,
+      required bool isLanguageChange}) {
     return _ApiKakaoTranslateMainState(
       isLoading: isLoading,
       apiKakaoTranslate: apiKakaoTranslate,
+      isLanguageChange: isLanguageChange,
     );
   }
 }
@@ -34,6 +36,7 @@ mixin _$ApiKakaoTranslateMainState {
   bool get isLoading => throw _privateConstructorUsedError;
   ApiKakaoTranslate? get apiKakaoTranslate =>
       throw _privateConstructorUsedError;
+  bool get isLanguageChange => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoTranslateMainStateCopyWith<ApiKakaoTranslateMainState>
@@ -45,7 +48,10 @@ abstract class $ApiKakaoTranslateMainStateCopyWith<$Res> {
   factory $ApiKakaoTranslateMainStateCopyWith(ApiKakaoTranslateMainState value,
           $Res Function(ApiKakaoTranslateMainState) then) =
       _$ApiKakaoTranslateMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, ApiKakaoTranslate? apiKakaoTranslate});
+  $Res call(
+      {bool isLoading,
+      ApiKakaoTranslate? apiKakaoTranslate,
+      bool isLanguageChange});
 
   $ApiKakaoTranslateCopyWith<$Res>? get apiKakaoTranslate;
 }
@@ -63,6 +69,7 @@ class _$ApiKakaoTranslateMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? apiKakaoTranslate = freezed,
+    Object? isLanguageChange = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -73,6 +80,10 @@ class _$ApiKakaoTranslateMainStateCopyWithImpl<$Res>
           ? _value.apiKakaoTranslate
           : apiKakaoTranslate // ignore: cast_nullable_to_non_nullable
               as ApiKakaoTranslate?,
+      isLanguageChange: isLanguageChange == freezed
+          ? _value.isLanguageChange
+          : isLanguageChange // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -96,7 +107,10 @@ abstract class _$ApiKakaoTranslateMainStateCopyWith<$Res>
           $Res Function(_ApiKakaoTranslateMainState) then) =
       __$ApiKakaoTranslateMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, ApiKakaoTranslate? apiKakaoTranslate});
+  $Res call(
+      {bool isLoading,
+      ApiKakaoTranslate? apiKakaoTranslate,
+      bool isLanguageChange});
 
   @override
   $ApiKakaoTranslateCopyWith<$Res>? get apiKakaoTranslate;
@@ -118,6 +132,7 @@ class __$ApiKakaoTranslateMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? apiKakaoTranslate = freezed,
+    Object? isLanguageChange = freezed,
   }) {
     return _then(_ApiKakaoTranslateMainState(
       isLoading: isLoading == freezed
@@ -128,6 +143,10 @@ class __$ApiKakaoTranslateMainStateCopyWithImpl<$Res>
           ? _value.apiKakaoTranslate
           : apiKakaoTranslate // ignore: cast_nullable_to_non_nullable
               as ApiKakaoTranslate?,
+      isLanguageChange: isLanguageChange == freezed
+          ? _value.isLanguageChange
+          : isLanguageChange // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -136,16 +155,20 @@ class __$ApiKakaoTranslateMainStateCopyWithImpl<$Res>
 
 class _$_ApiKakaoTranslateMainState implements _ApiKakaoTranslateMainState {
   _$_ApiKakaoTranslateMainState(
-      {required this.isLoading, required this.apiKakaoTranslate});
+      {required this.isLoading,
+      required this.apiKakaoTranslate,
+      required this.isLanguageChange});
 
   @override
   final bool isLoading;
   @override
   final ApiKakaoTranslate? apiKakaoTranslate;
+  @override
+  final bool isLanguageChange;
 
   @override
   String toString() {
-    return 'ApiKakaoTranslateMainState(isLoading: $isLoading, apiKakaoTranslate: $apiKakaoTranslate)';
+    return 'ApiKakaoTranslateMainState(isLoading: $isLoading, apiKakaoTranslate: $apiKakaoTranslate, isLanguageChange: $isLanguageChange)';
   }
 
   @override
@@ -157,14 +180,18 @@ class _$_ApiKakaoTranslateMainState implements _ApiKakaoTranslateMainState {
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.apiKakaoTranslate, apiKakaoTranslate) ||
                 const DeepCollectionEquality()
-                    .equals(other.apiKakaoTranslate, apiKakaoTranslate)));
+                    .equals(other.apiKakaoTranslate, apiKakaoTranslate)) &&
+            (identical(other.isLanguageChange, isLanguageChange) ||
+                const DeepCollectionEquality()
+                    .equals(other.isLanguageChange, isLanguageChange)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(apiKakaoTranslate);
+      const DeepCollectionEquality().hash(apiKakaoTranslate) ^
+      const DeepCollectionEquality().hash(isLanguageChange);
 
   @JsonKey(ignore: true)
   @override
@@ -176,15 +203,17 @@ class _$_ApiKakaoTranslateMainState implements _ApiKakaoTranslateMainState {
 abstract class _ApiKakaoTranslateMainState
     implements ApiKakaoTranslateMainState {
   factory _ApiKakaoTranslateMainState(
-          {required bool isLoading,
-          required ApiKakaoTranslate? apiKakaoTranslate}) =
-      _$_ApiKakaoTranslateMainState;
+      {required bool isLoading,
+      required ApiKakaoTranslate? apiKakaoTranslate,
+      required bool isLanguageChange}) = _$_ApiKakaoTranslateMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
   ApiKakaoTranslate? get apiKakaoTranslate =>
       throw _privateConstructorUsedError;
+  @override
+  bool get isLanguageChange => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoTranslateMainStateCopyWith<_ApiKakaoTranslateMainState>

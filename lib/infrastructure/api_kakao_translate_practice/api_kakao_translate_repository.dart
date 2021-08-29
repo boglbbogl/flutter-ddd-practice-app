@@ -14,10 +14,12 @@ class ApiKakaoTranslateRepository implements IApiKakaoTranslateRepository {
   @override
   Future<ApiKakaoTranslate?> getTranslate({
     required String query,
+    required String srcLang,
+    required String targetLang,
   }) async {
     try {
       final uri = Uri.parse(
-          "https://dapi.kakao.com/v2/translation/translate?src_lang=kr&target_lang=en&query=$query");
+          "https://dapi.kakao.com/v2/translation/translate?src_lang=$srcLang&target_lang=$targetLang&query=$query");
       final response = await http.get(
         uri,
         headers: {'Authorization': 'KakaoAK $apiKey'},
