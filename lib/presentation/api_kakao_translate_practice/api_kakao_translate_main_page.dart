@@ -32,85 +32,89 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                       )
                     ]),
                 body: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextButton(
-                            onPressed: () {
-                              context
-                                  .read<ApiKakaoTranslateMainCubit>()
-                                  .getTranslate(controller.text);
-                              FocusScope.of(context).unfocus();
-                            },
-                            child: Container(
-                              width: size.width * 0.9,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: const Color.fromRGBO(91, 91, 91, 1),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                'TRANSLATE...',
-                                style: theme.textTheme.bodyText2!.copyWith(
-                                  color: Colors.amber,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 30),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: TextButton(
+                              onPressed: () {
+                                context
+                                    .read<ApiKakaoTranslateMainCubit>()
+                                    .getTranslate(controller.text);
+                                FocusScope.of(context).unfocus();
+                              },
+                              child: Container(
+                                width: size.width * 0.9,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: const Color.fromRGBO(91, 91, 91, 1),
                                 ),
+                                child: Center(
+                                    child: Text(
+                                  'TRANSLATE...',
+                                  style: theme.textTheme.bodyText2!.copyWith(
+                                    color: Colors.amber,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
                               )),
-                            )),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 20),
-                        child: TextFormField(
-                          controller: controller,
-                          minLines: 8,
-                          maxLines: 8,
-                          maxLength: 4999,
-                          decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: Colors.amber, width: 3),
-                                  borderRadius: BorderRadius.circular(20)),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: Colors.amber, width: 3),
-                                  borderRadius: BorderRadius.circular(20)),
-                              hintText: 'Input Text...',
-                              hintStyle: theme.textTheme.bodyText2!.copyWith(
-                                  fontSize: 20,
-                                  color:
-                                      const Color.fromRGBO(155, 155, 155, 1))),
                         ),
-                      ),
-                      Container(
-                          width: size.width * 0.9,
-                          // height: size.height * 0.5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.amber,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: TextFormField(
+                            controller: controller,
+                            minLines: 8,
+                            maxLines: 8,
+                            maxLength: 4999,
+                            decoration: InputDecoration(
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Colors.amber, width: 3),
+                                    borderRadius: BorderRadius.circular(20)),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Colors.amber, width: 3),
+                                    borderRadius: BorderRadius.circular(20)),
+                                hintText: 'Input Text...',
+                                hintStyle: theme.textTheme.bodyText2!.copyWith(
+                                    fontSize: 20,
+                                    color: const Color.fromRGBO(
+                                        155, 155, 155, 1))),
                           ),
-                          child: ListView(
-                            shrinkWrap: true,
-                            children: [
-                              ...state.apiKakaoTranslate!.translatedText
-                                  .map((e) => Padding(
-                                        padding: const EdgeInsets.all(15.0),
-                                        child: Text(
-                                          e.toString(),
-                                          style: theme.textTheme.bodyText2!
-                                              .copyWith(
-                                            color: const Color.fromRGBO(
-                                                91, 91, 91, 1),
-                                            fontSize: 20,
+                        ),
+                        Container(
+                            width: size.width * 0.9,
+                            // height: size.height * 0.5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Colors.amber,
+                            ),
+                            child: ListView(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              children: [
+                                ...state.apiKakaoTranslate!.translatedText
+                                    .map((e) => Padding(
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Text(
+                                            e.toString(),
+                                            style: theme.textTheme.bodyText2!
+                                                .copyWith(
+                                              color: const Color.fromRGBO(
+                                                  91, 91, 91, 1),
+                                              fontSize: 20,
+                                            ),
                                           ),
-                                        ),
-                                      )),
-                            ],
-                          )),
-                    ],
+                                        )),
+                              ],
+                            )),
+                      ],
+                    ),
                   ),
                 )),
           );
