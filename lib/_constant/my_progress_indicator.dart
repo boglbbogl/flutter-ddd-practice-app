@@ -8,21 +8,27 @@ class MyProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width,
-      height: size.height,
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color.fromRGBO(10, 211, 111, 1),
-          Color.fromRGBO(40, 165, 111, 1),
-          Color.fromRGBO(60, 165, 111, 1),
-          Color.fromRGBO(111, 200, 111, 1),
-          Color.fromRGBO(111, 80, 111, 1),
-          Color.fromRGBO(111, 100, 111, 1),
-        ]),
-      ),
-      child: const CupertinoActivityIndicator(
-        radius: 30,
-      ),
-    );
+        width: size.width,
+        height: size.height,
+        decoration: const BoxDecoration(
+          color: Colors.black,
+          // gradient: LinearGradient(colors: [
+          //   Color.fromRGBO(10, 211, 111, 1),
+          //   Color.fromRGBO(40, 165, 111, 1),
+          //   Color.fromRGBO(60, 165, 111, 1),
+          //   Color.fromRGBO(111, 200, 111, 1),
+          //   Color.fromRGBO(111, 80, 111, 1),
+          //   Color.fromRGBO(111, 100, 111, 1),
+          // ]),
+        ),
+        child: const SizedBox(
+          width: 100,
+          height: 100,
+          child: Image(
+            image: AssetImage(
+              'assets/images/indicator/indicator_7.gif',
+            ),
+          ),
+        ));
   }
 }

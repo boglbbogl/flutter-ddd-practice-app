@@ -30,9 +30,10 @@ class PracticeListView extends StatelessWidget {
                   child: Text(
                 PracticeItem().items[index].toString(),
                 style: theme.textTheme.bodyText2!.copyWith(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               )),
             ),
           ),
