@@ -1,3 +1,4 @@
+import 'package:ddd_practice_app/_constant/colors.dart';
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/presentation/main/practice_list_view.dart';
 import 'package:flutter/material.dart';
@@ -10,18 +11,18 @@ class MainPage extends StatelessWidget {
     size = MediaQuery.of(context).size;
     theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromRGBO(71, 71, 71, 1),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromRGBO(71, 71, 71, 1),
         toolbarHeight: 80,
-        elevation: 0,
+        elevation: 10,
         centerTitle: true,
         title: Text(
           'Practice App',
           style: theme.textTheme.headline5!.copyWith(
             fontSize: 30,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            foreground: Paint()..shader = mainColor,
           ),
         ),
       ),
