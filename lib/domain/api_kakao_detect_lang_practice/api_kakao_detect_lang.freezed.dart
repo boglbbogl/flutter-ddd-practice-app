@@ -13,14 +13,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ApiKaKaoDetectLangTearOff {
-  const _$ApiKaKaoDetectLangTearOff();
+class _$ApiKakaoDetectLangTearOff {
+  const _$ApiKakaoDetectLangTearOff();
 
-  _ApiKaKaoDetectLang call(
+  _ApiKakaoDetectLang call(
       {required String code,
       required String name,
       required double confidence}) {
-    return _ApiKaKaoDetectLang(
+    return _ApiKakaoDetectLang(
       code: code,
       name: name,
       confidence: confidence,
@@ -29,35 +29,35 @@ class _$ApiKaKaoDetectLangTearOff {
 }
 
 /// @nodoc
-const $ApiKaKaoDetectLang = _$ApiKaKaoDetectLangTearOff();
+const $ApiKakaoDetectLang = _$ApiKakaoDetectLangTearOff();
 
 /// @nodoc
-mixin _$ApiKaKaoDetectLang {
+mixin _$ApiKakaoDetectLang {
   String get code => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   double get confidence => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ApiKaKaoDetectLangCopyWith<ApiKaKaoDetectLang> get copyWith =>
+  $ApiKakaoDetectLangCopyWith<ApiKakaoDetectLang> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiKaKaoDetectLangCopyWith<$Res> {
-  factory $ApiKaKaoDetectLangCopyWith(
-          ApiKaKaoDetectLang value, $Res Function(ApiKaKaoDetectLang) then) =
-      _$ApiKaKaoDetectLangCopyWithImpl<$Res>;
+abstract class $ApiKakaoDetectLangCopyWith<$Res> {
+  factory $ApiKakaoDetectLangCopyWith(
+          ApiKakaoDetectLang value, $Res Function(ApiKakaoDetectLang) then) =
+      _$ApiKakaoDetectLangCopyWithImpl<$Res>;
   $Res call({String code, String name, double confidence});
 }
 
 /// @nodoc
-class _$ApiKaKaoDetectLangCopyWithImpl<$Res>
-    implements $ApiKaKaoDetectLangCopyWith<$Res> {
-  _$ApiKaKaoDetectLangCopyWithImpl(this._value, this._then);
+class _$ApiKakaoDetectLangCopyWithImpl<$Res>
+    implements $ApiKakaoDetectLangCopyWith<$Res> {
+  _$ApiKakaoDetectLangCopyWithImpl(this._value, this._then);
 
-  final ApiKaKaoDetectLang _value;
+  final ApiKakaoDetectLang _value;
   // ignore: unused_field
-  final $Res Function(ApiKaKaoDetectLang) _then;
+  final $Res Function(ApiKakaoDetectLang) _then;
 
   @override
   $Res call({
@@ -83,25 +83,25 @@ class _$ApiKaKaoDetectLangCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ApiKaKaoDetectLangCopyWith<$Res>
-    implements $ApiKaKaoDetectLangCopyWith<$Res> {
-  factory _$ApiKaKaoDetectLangCopyWith(
-          _ApiKaKaoDetectLang value, $Res Function(_ApiKaKaoDetectLang) then) =
-      __$ApiKaKaoDetectLangCopyWithImpl<$Res>;
+abstract class _$ApiKakaoDetectLangCopyWith<$Res>
+    implements $ApiKakaoDetectLangCopyWith<$Res> {
+  factory _$ApiKakaoDetectLangCopyWith(
+          _ApiKakaoDetectLang value, $Res Function(_ApiKakaoDetectLang) then) =
+      __$ApiKakaoDetectLangCopyWithImpl<$Res>;
   @override
   $Res call({String code, String name, double confidence});
 }
 
 /// @nodoc
-class __$ApiKaKaoDetectLangCopyWithImpl<$Res>
-    extends _$ApiKaKaoDetectLangCopyWithImpl<$Res>
-    implements _$ApiKaKaoDetectLangCopyWith<$Res> {
-  __$ApiKaKaoDetectLangCopyWithImpl(
-      _ApiKaKaoDetectLang _value, $Res Function(_ApiKaKaoDetectLang) _then)
-      : super(_value, (v) => _then(v as _ApiKaKaoDetectLang));
+class __$ApiKakaoDetectLangCopyWithImpl<$Res>
+    extends _$ApiKakaoDetectLangCopyWithImpl<$Res>
+    implements _$ApiKakaoDetectLangCopyWith<$Res> {
+  __$ApiKakaoDetectLangCopyWithImpl(
+      _ApiKakaoDetectLang _value, $Res Function(_ApiKakaoDetectLang) _then)
+      : super(_value, (v) => _then(v as _ApiKakaoDetectLang));
 
   @override
-  _ApiKaKaoDetectLang get _value => super._value as _ApiKaKaoDetectLang;
+  _ApiKakaoDetectLang get _value => super._value as _ApiKakaoDetectLang;
 
   @override
   $Res call({
@@ -109,7 +109,7 @@ class __$ApiKaKaoDetectLangCopyWithImpl<$Res>
     Object? name = freezed,
     Object? confidence = freezed,
   }) {
-    return _then(_ApiKaKaoDetectLang(
+    return _then(_ApiKakaoDetectLang(
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -128,8 +128,8 @@ class __$ApiKaKaoDetectLangCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ApiKaKaoDetectLang implements _ApiKaKaoDetectLang {
-  const _$_ApiKaKaoDetectLang(
+class _$_ApiKakaoDetectLang implements _ApiKakaoDetectLang {
+  const _$_ApiKakaoDetectLang(
       {required this.code, required this.name, required this.confidence});
 
   @override
@@ -141,13 +141,13 @@ class _$_ApiKaKaoDetectLang implements _ApiKaKaoDetectLang {
 
   @override
   String toString() {
-    return 'ApiKaKaoDetectLang(code: $code, name: $name, confidence: $confidence)';
+    return 'ApiKakaoDetectLang(code: $code, name: $name, confidence: $confidence)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiKaKaoDetectLang &&
+        (other is _ApiKakaoDetectLang &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.name, name) ||
@@ -166,15 +166,15 @@ class _$_ApiKaKaoDetectLang implements _ApiKaKaoDetectLang {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiKaKaoDetectLangCopyWith<_ApiKaKaoDetectLang> get copyWith =>
-      __$ApiKaKaoDetectLangCopyWithImpl<_ApiKaKaoDetectLang>(this, _$identity);
+  _$ApiKakaoDetectLangCopyWith<_ApiKakaoDetectLang> get copyWith =>
+      __$ApiKakaoDetectLangCopyWithImpl<_ApiKakaoDetectLang>(this, _$identity);
 }
 
-abstract class _ApiKaKaoDetectLang implements ApiKaKaoDetectLang {
-  const factory _ApiKaKaoDetectLang(
+abstract class _ApiKakaoDetectLang implements ApiKakaoDetectLang {
+  const factory _ApiKakaoDetectLang(
       {required String code,
       required String name,
-      required double confidence}) = _$_ApiKaKaoDetectLang;
+      required double confidence}) = _$_ApiKakaoDetectLang;
 
   @override
   String get code => throw _privateConstructorUsedError;
@@ -184,6 +184,6 @@ abstract class _ApiKaKaoDetectLang implements ApiKaKaoDetectLang {
   double get confidence => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiKaKaoDetectLangCopyWith<_ApiKaKaoDetectLang> get copyWith =>
+  _$ApiKakaoDetectLangCopyWith<_ApiKakaoDetectLang> get copyWith =>
       throw _privateConstructorUsedError;
 }

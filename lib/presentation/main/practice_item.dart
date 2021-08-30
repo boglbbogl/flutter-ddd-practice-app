@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-
 class PracticeItem {
   List items = [
     'Member Practice',
     'API Kakao Book Practice',
+    'API Kakao Detect Language Pracitce',
     'API Kakao Translate Practice',
     'API Weather Practice',
     'API News Practice',
@@ -13,6 +12,7 @@ class PracticeItem {
   ];
   List subTitle = [
     'FIRESTORE',
+    'REST API for KAKAO',
     'REST API for KAKAO',
     'REST API for KAKAO',
     'REST API for OPENWEATHERMAP',
@@ -25,6 +25,7 @@ class PracticeItem {
   List router = [
     '/memberMainPage',
     '/apiKakaoBookMainPage',
+    '/apiKakaoDetectLanguageMainPage',
     '/apiKakaoTranslateMainPage',
     '/apiWeatherMainPage',
     '/apiNewsMainPage',
