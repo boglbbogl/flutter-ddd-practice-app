@@ -16,6 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ApiKakaoDetectLangMainEventTearOff {
   const _$ApiKakaoDetectLangMainEventTearOff();
 
+  _Started started() {
+    return const _Started();
+  }
+
   _GetDetectLanguage getDetectLanguage({required String detectText}) {
     return _GetDetectLanguage(
       detectText: detectText,
@@ -28,34 +32,32 @@ const $ApiKakaoDetectLangMainEvent = _$ApiKakaoDetectLangMainEventTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoDetectLangMainEvent {
-  String get detectText => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() started,
     required TResult Function(String detectText) getDetectLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(String detectText)? getDetectLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
     required TResult Function(_GetDetectLanguage value) getDetectLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_GetDetectLanguage value)? getDetectLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ApiKakaoDetectLangMainEventCopyWith<ApiKakaoDetectLangMainEvent>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -64,7 +66,6 @@ abstract class $ApiKakaoDetectLangMainEventCopyWith<$Res> {
           ApiKakaoDetectLangMainEvent value,
           $Res Function(ApiKakaoDetectLangMainEvent) then) =
       _$ApiKakaoDetectLangMainEventCopyWithImpl<$Res>;
-  $Res call({String detectText});
 }
 
 /// @nodoc
@@ -75,27 +76,97 @@ class _$ApiKakaoDetectLangMainEventCopyWithImpl<$Res>
   final ApiKakaoDetectLangMainEvent _value;
   // ignore: unused_field
   final $Res Function(ApiKakaoDetectLangMainEvent) _then;
-
-  @override
-  $Res call({
-    Object? detectText = freezed,
-  }) {
-    return _then(_value.copyWith(
-      detectText: detectText == freezed
-          ? _value.detectText
-          : detectText // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$GetDetectLanguageCopyWith<$Res>
-    implements $ApiKakaoDetectLangMainEventCopyWith<$Res> {
+abstract class _$StartedCopyWith<$Res> {
+  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
+      __$StartedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$StartedCopyWithImpl<$Res>
+    extends _$ApiKakaoDetectLangMainEventCopyWithImpl<$Res>
+    implements _$StartedCopyWith<$Res> {
+  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
+      : super(_value, (v) => _then(v as _Started));
+
+  @override
+  _Started get _value => super._value as _Started;
+}
+
+/// @nodoc
+
+class _$_Started implements _Started {
+  const _$_Started();
+
+  @override
+  String toString() {
+    return 'ApiKakaoDetectLangMainEvent.started()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Started);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String detectText) getDetectLanguage,
+  }) {
+    return started();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String detectText)? getDetectLanguage,
+    required TResult orElse(),
+  }) {
+    if (started != null) {
+      return started();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetDetectLanguage value) getDetectLanguage,
+  }) {
+    return started(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetDetectLanguage value)? getDetectLanguage,
+    required TResult orElse(),
+  }) {
+    if (started != null) {
+      return started(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Started implements ApiKakaoDetectLangMainEvent {
+  const factory _Started() = _$_Started;
+}
+
+/// @nodoc
+abstract class _$GetDetectLanguageCopyWith<$Res> {
   factory _$GetDetectLanguageCopyWith(
           _GetDetectLanguage value, $Res Function(_GetDetectLanguage) then) =
       __$GetDetectLanguageCopyWithImpl<$Res>;
-  @override
   $Res call({String detectText});
 }
 
@@ -157,6 +228,7 @@ class _$_GetDetectLanguage implements _GetDetectLanguage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() started,
     required TResult Function(String detectText) getDetectLanguage,
   }) {
     return getDetectLanguage(detectText);
@@ -165,6 +237,7 @@ class _$_GetDetectLanguage implements _GetDetectLanguage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(String detectText)? getDetectLanguage,
     required TResult orElse(),
   }) {
@@ -177,6 +250,7 @@ class _$_GetDetectLanguage implements _GetDetectLanguage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
     required TResult Function(_GetDetectLanguage value) getDetectLanguage,
   }) {
     return getDetectLanguage(this);
@@ -185,6 +259,7 @@ class _$_GetDetectLanguage implements _GetDetectLanguage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_GetDetectLanguage value)? getDetectLanguage,
     required TResult orElse(),
   }) {
@@ -199,9 +274,7 @@ abstract class _GetDetectLanguage implements ApiKakaoDetectLangMainEvent {
   const factory _GetDetectLanguage({required String detectText}) =
       _$_GetDetectLanguage;
 
-  @override
   String get detectText => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$GetDetectLanguageCopyWith<_GetDetectLanguage> get copyWith =>
       throw _privateConstructorUsedError;

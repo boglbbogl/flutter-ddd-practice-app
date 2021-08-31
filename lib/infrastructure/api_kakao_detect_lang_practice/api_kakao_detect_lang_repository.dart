@@ -25,6 +25,7 @@ class ApiKakaoDetectLangRaepository implements IApiKakaoDetectLangRepository {
         final decoded = json.decode(utf8.decode(response.bodyBytes))
             as Map<String, dynamic>;
         final data = decoded["language_info"] as List<dynamic>;
+
         final result = data.map((e) =>
             ApiKakaoDetectLangDto.fromJson(e as Map<String, dynamic>)
                 .toDomain());

@@ -40,7 +40,7 @@ class AppWidget extends StatelessWidget {
           '/memberMainPage': (context) => const MemberMainPage(),
           '/apiKakaoBookMainPage': (context) => ApiKakaoBookMainPage(),
           '/apiKakaoDetectLanguageMainPage': (context) =>
-              const ApiKakaoDetectLangMainPage(),
+              ApiKakaoDetectLangMainPage(),
           '/apiKakaoTranslateMainPage': (context) =>
               ApiKakaoTranslateMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),

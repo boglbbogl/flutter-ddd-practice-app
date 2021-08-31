@@ -22,13 +22,16 @@ class ApiKakaoDetectLangMainBloc
   Stream<ApiKakaoDetectLangMainState> mapEventToState(
     ApiKakaoDetectLangMainEvent event,
   ) async* {
-    yield* event.map(getDetectLanguage: (e) async* {
-      yield state.copyWith(isLoading: true);
-      final result = await _langRepository.getDetectLang(query: e.detectText);
-      yield state.copyWith(
-        isLoading: false,
-        detectLang: result,
-      );
-    });
+    yield* event.map(
+        started: (e) async* {},
+        getDetectLanguage: (e) async* {
+          yield state.copyWith(isLoading: true);
+          final result =
+              await _langRepository.getDetectLang(query: e.detectText);
+          yield state.copyWith(
+            isLoading: false,
+            detectLang: result,
+          );
+        });
   }
 }
