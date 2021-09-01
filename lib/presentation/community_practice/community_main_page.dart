@@ -1,6 +1,7 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
+import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/community_practice/widgets/community_create_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/widgets/community_list.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,60 +14,64 @@ class CommunityMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CommunityMainBloc, CommunityMainState>(
-      builder: (context, state) {
-        return Scaffold(
-            appBar: appBarForm(context, theme,
-                title: "Community Practice",
-                actions: [
-                  IconButton(
-                      onPressed: () {
-                        Get.to(() => CommunityCreatePage());
-                      },
-                      icon: const Icon(
-                        Icons.create_outlined,
-                        color: Colors.white,
-                      )),
-                ]),
-            body: Stack(
-              children: [
-                ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: state.listCommunity.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 12),
-                        child: Container(
-                          width: size.width * 0.9,
-                          height: size.height * 0.1,
-                          decoration: BoxDecoration(
-                              color: const Color.fromRGBO(235, 235, 235, 1),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: CommunityList(
-                              community: state.listCommunity[index]),
-                        ),
-                      );
-                    }),
-                if (state.isLoading) ...[
-                  Stack(
-                    children: [
-                      Container(
-                        width: size.width,
-                        height: size.height,
-                        color: Colors.white54,
-                        child: const Center(
-                          child: CupertinoActivityIndicator(
-                            radius: 25,
+    return BlocProvider<CommunityMainBloc>(
+      create: (context) =>
+          getIt<CommunityMainBloc>()..add(const CommunityMainEvent.started()),
+      child: BlocBuilder<CommunityMainBloc, CommunityMainState>(
+        builder: (context, state) {
+          return Scaffold(
+              appBar: appBarForm(context, theme,
+                  title: "Community Practice",
+                  actions: [
+                    IconButton(
+                        onPressed: () {
+                          Get.to(() => CommunityCreatePage());
+                        },
+                        icon: const Icon(
+                          Icons.create_outlined,
+                          color: Colors.white,
+                        )),
+                  ]),
+              body: Stack(
+                children: [
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: state.listCommunity.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 12),
+                          child: Container(
+                            width: size.width * 0.9,
+                            height: size.height * 0.1,
+                            decoration: BoxDecoration(
+                                color: const Color.fromRGBO(235, 235, 235, 1),
+                                borderRadius: BorderRadius.circular(30)),
+                            child: CommunityList(
+                                community: state.listCommunity[index]),
+                          ),
+                        );
+                      }),
+                  if (state.isLoading) ...[
+                    Stack(
+                      children: [
+                        Container(
+                          width: size.width,
+                          height: size.height,
+                          color: Colors.white54,
+                          child: const Center(
+                            child: CupertinoActivityIndicator(
+                              radius: 25,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  ],
                 ],
-              ],
-            ));
-      },
+              ));
+        },
+      ),
     );
   }
 }

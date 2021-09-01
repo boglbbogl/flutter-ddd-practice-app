@@ -8,6 +8,7 @@ class PracticeItem {
     'API News Practice',
     'Community Practice',
     'API Picture Practice',
+    'Widget Hero Animation Practice',
     'API Check Form',
   ];
   List subTitle = [
@@ -20,6 +21,7 @@ class PracticeItem {
     'FIRESTORE',
     'REST API for PICSUM',
     'NOT PROVIDER',
+    'NOT PROVIDER',
   ];
 
   List router = [
@@ -31,6 +33,7 @@ class PracticeItem {
     '/apiNewsMainPage',
     '/communityMainPage',
     '/apiPictureMainPage',
+    '/widgetHeroAnimationMainPage',
     '/apiCheckMainPage',
   ];
 }
