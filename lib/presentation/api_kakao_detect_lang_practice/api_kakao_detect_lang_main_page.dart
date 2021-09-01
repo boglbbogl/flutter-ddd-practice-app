@@ -1,7 +1,6 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/appbar_form.dart';
-
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:ddd_practice_app/application/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -46,7 +45,11 @@ class ApiKakaoDetectLangMainPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         child: TextButton(
                             onPressed: () {
-                              if (controller.text.isNotEmpty) {
+                              if (controller.text.isEmpty) {
+                                FlushbarHelper.createError(
+                                        message: "None.. Please Input Text !!")
+                                    .show(context);
+                              } else {
                                 context.read<ApiKakaoDetectLangMainBloc>().add(
                                     ApiKakaoDetectLangMainEvent
                                         .getDetectLanguage(

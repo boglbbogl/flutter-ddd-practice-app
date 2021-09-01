@@ -23,7 +23,7 @@ Map<String, dynamic> _$_$_ApiNewsDtoToJson(_$_ApiNewsDto instance) =>
 
 _$_AritclesDto _$_$_AritclesDtoFromJson(Map<String, dynamic> json) {
   return _$_AritclesDto(
-    author: json['author'] as String,
+    author: json['author'] as String?,
     title: json['title'] as String,
     description: json['description'] as String,
     url: json['url'] as String,

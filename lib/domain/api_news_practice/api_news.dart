@@ -12,7 +12,7 @@ class ApiNews with _$ApiNews {
 @freezed
 class Articles with _$Articles {
   const factory Articles({
-    required String author,
+    required String? author,
     required String title,
     required String description,
     required String url,

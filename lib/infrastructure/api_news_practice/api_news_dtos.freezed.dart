@@ -194,7 +194,7 @@ class _$ArticlesDtoTearOff {
   const _$ArticlesDtoTearOff();
 
   _AritclesDto call(
-      {required String author,
+      {required String? author,
       required String title,
       required String description,
       required String url,
@@ -222,7 +222,7 @@ const $ArticlesDto = _$ArticlesDtoTearOff();
 
 /// @nodoc
 mixin _$ArticlesDto {
-  String get author => throw _privateConstructorUsedError;
+  String? get author => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
@@ -242,7 +242,7 @@ abstract class $ArticlesDtoCopyWith<$Res> {
           ArticlesDto value, $Res Function(ArticlesDto) then) =
       _$ArticlesDtoCopyWithImpl<$Res>;
   $Res call(
-      {String author,
+      {String? author,
       String title,
       String description,
       String url,
@@ -273,7 +273,7 @@ class _$ArticlesDtoCopyWithImpl<$Res> implements $ArticlesDtoCopyWith<$Res> {
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -310,7 +310,7 @@ abstract class _$AritclesDtoCopyWith<$Res>
       __$AritclesDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String author,
+      {String? author,
       String title,
       String description,
       String url,
@@ -343,7 +343,7 @@ class __$AritclesDtoCopyWithImpl<$Res> extends _$ArticlesDtoCopyWithImpl<$Res>
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -389,7 +389,7 @@ class _$_AritclesDto extends _AritclesDto {
       _$_$_AritclesDtoFromJson(json);
 
   @override
-  final String author;
+  final String? author;
   @override
   final String title;
   @override
@@ -455,7 +455,7 @@ class _$_AritclesDto extends _AritclesDto {
 
 abstract class _AritclesDto extends ArticlesDto {
   const factory _AritclesDto(
-      {required String author,
+      {required String? author,
       required String title,
       required String description,
       required String url,
@@ -468,7 +468,7 @@ abstract class _AritclesDto extends ArticlesDto {
       _$_AritclesDto.fromJson;
 
   @override
-  String get author => throw _privateConstructorUsedError;
+  String? get author => throw _privateConstructorUsedError;
   @override
   String get title => throw _privateConstructorUsedError;
   @override

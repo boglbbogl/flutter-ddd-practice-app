@@ -163,7 +163,7 @@ class _$ArticlesTearOff {
   const _$ArticlesTearOff();
 
   _Articles call(
-      {required String author,
+      {required String? author,
       required String title,
       required String description,
       required String url,
@@ -187,7 +187,7 @@ const $Articles = _$ArticlesTearOff();
 
 /// @nodoc
 mixin _$Articles {
-  String get author => throw _privateConstructorUsedError;
+  String? get author => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
@@ -205,7 +205,7 @@ abstract class $ArticlesCopyWith<$Res> {
   factory $ArticlesCopyWith(Articles value, $Res Function(Articles) then) =
       _$ArticlesCopyWithImpl<$Res>;
   $Res call(
-      {String author,
+      {String? author,
       String title,
       String description,
       String url,
@@ -236,7 +236,7 @@ class _$ArticlesCopyWithImpl<$Res> implements $ArticlesCopyWith<$Res> {
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -271,7 +271,7 @@ abstract class _$ArticlesCopyWith<$Res> implements $ArticlesCopyWith<$Res> {
       __$ArticlesCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String author,
+      {String? author,
       String title,
       String description,
       String url,
@@ -303,7 +303,7 @@ class __$ArticlesCopyWithImpl<$Res> extends _$ArticlesCopyWithImpl<$Res>
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -345,7 +345,7 @@ class _$_Articles implements _Articles {
       required this.content});
 
   @override
-  final String author;
+  final String? author;
   @override
   final String title;
   @override
@@ -406,7 +406,7 @@ class _$_Articles implements _Articles {
 
 abstract class _Articles implements Articles {
   const factory _Articles(
-      {required String author,
+      {required String? author,
       required String title,
       required String description,
       required String url,
@@ -415,7 +415,7 @@ abstract class _Articles implements Articles {
       required String content}) = _$_Articles;
 
   @override
-  String get author => throw _privateConstructorUsedError;
+  String? get author => throw _privateConstructorUsedError;
   @override
   String get title => throw _privateConstructorUsedError;
   @override

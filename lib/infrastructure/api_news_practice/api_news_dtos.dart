@@ -25,7 +25,7 @@ class ApiNewsDto with _$ApiNewsDto {
 @freezed
 class ArticlesDto with _$ArticlesDto {
   const factory ArticlesDto({
-    required String author,
+    required String? author,
     required String title,
     required String description,
     required String url,
@@ -39,7 +39,7 @@ class ArticlesDto with _$ArticlesDto {
       _$ArticlesDtoFromJson(json);
 
   Articles toDomain() => Articles(
-        author: author,
+        author: author ?? "",
         title: title,
         description: description,
         url: url,
