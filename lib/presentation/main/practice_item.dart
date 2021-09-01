@@ -20,7 +20,7 @@ class PracticeItem {
     'REST API for NEWSAPI',
     'FIRESTORE',
     'REST API for PICSUM',
-    'NOT PROVIDER',
+    'REST API for PICSUM',
     'NOT PROVIDER',
   ];
 

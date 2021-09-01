@@ -11,14 +11,13 @@ class MyProgressIndicator extends StatelessWidget {
         width: size.width,
         height: size.height,
         decoration: const BoxDecoration(
-          color: Colors.black,
+          color: Color.fromRGBO(37, 37, 37, 1),
         ),
-        child: const SizedBox(
-          width: 100,
-          height: 100,
+        child: const Padding(
+          padding: EdgeInsets.all(2.0),
           child: Image(
             image: AssetImage(
-              'assets/images/indicator/indicator_7.gif',
+              'assets/images/indicator/indicator_2.gif',
             ),
           ),
         ));

@@ -18,7 +18,7 @@ class ApiPictureMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ApiPictureCubit>(
-      create: (context) => getIt<ApiPictureCubit>()..getApiData(1),
+      create: (context) => getIt<ApiPictureCubit>()..getApiData(1, 20),
       child: BlocBuilder<ApiPictureCubit, ApiPictureState>(
         builder: (context, state) {
           if (state.apiPicture.isEmpty) {
@@ -51,7 +51,7 @@ class ApiPictureMainPage extends StatelessWidget {
                             onTap: () {
                               context
                                   .read<ApiPictureCubit>()
-                                  .getApiData(index + 1);
+                                  .getApiData(index + 1, 20);
                             },
                             child: Container(
                               width: 30,

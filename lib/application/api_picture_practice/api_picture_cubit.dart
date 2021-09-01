@@ -15,11 +15,10 @@ class ApiPictureCubit extends Cubit<ApiPictureState> {
     this._apiPictureRepository,
   ) : super(ApiPictureState.initial());
 
-  Future<Unit> getApiData(int pagenation) async {
+  Future<Unit> getApiData(int pagenation, int limit) async {
     emit(state.copyWith(isLoading: true));
-
-    final result =
-        await _apiPictureRepository.fetchExample(limit: 20, page: pagenation);
+    final result = await _apiPictureRepository.fetchExample(
+        limit: limit, page: pagenation);
     emit(state.copyWith(
       isLoading: false,
       apiPicture: result,
