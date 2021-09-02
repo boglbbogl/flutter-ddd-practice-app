@@ -1,5 +1,5 @@
 {
-    "stageName": "dev",
+    "stageName": "production",
     "weatherApiBaseUrl": "http://api.openweathermap.org/data/2.5/weather",
     "weatherApiKey": "76fa3e54bce43b391f028213cd32ac63",
     "kakaoApiBaseUrl" : "",

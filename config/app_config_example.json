@@ -1,0 +1,9 @@
+{
+    "stageName": "production",
+    "weatherApiBaseUrl": "",
+    "weatherApiKey": "",
+    "kakaoApiBaseUrl" : "",
+    "kakaoApiKey":"",
+    "newsApiBaseUrl":"",
+    "newsApiKey":""
+}

@@ -15,7 +15,7 @@
        "type": "dart",
        "flutterMode": "debug",
        "program": "lib/main_production.dart",
-    //    "args": [
+    //    "args": [ 
     //     "--flavor",
     //     "qa"
     //   ]

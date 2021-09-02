@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:ddd_practice_app/_constant/config_reader.dart';
 import 'package:ddd_practice_app/domain/api_news_practice/api_news.dart';
 import 'package:ddd_practice_app/domain/api_news_practice/i_api_news_repository.dart';
 import 'package:ddd_practice_app/infrastructure/api_news_practice/api_news_dtos.dart';
@@ -9,8 +8,9 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IApiNewsRepository)
 class ApiNewsRepository implements IApiNewsRepository {
-  static String apiBase = ConfigReader.getNewsApiBase();
-  static String apiKey = ConfigReader.getNewsApiKey();
+  final String apiBase = 'https://newsapi.org/v2/everything';
+  final String apiKey = '1b05eb69dee54640bf5bcfcf1e730fc8';
+
   @override
   Future<ApiNews?> getNewsData() async {
     try {
