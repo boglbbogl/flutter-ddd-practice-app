@@ -1,7 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
 
+// ignore: avoid_classes_with_only_static_members
 abstract class ConfigReader {
   static Map<String, dynamic>? _config;
 
@@ -27,11 +27,19 @@ abstract class ConfigReader {
     return _readForKey("weatherApiKey");
   }
 
-  static String getGoogleApiKey() {
-    return _readForKey("googleApiKey");
+  static String getKakaoApiBase() {
+    return _readForKey("kakaoApiBaseUrl");
   }
 
-  static String getGiftApiBase() {
-    return _readForKey("giftApiBase");
+  static String getKakaoApiKey() {
+    return _readForKey("kakaoApiKey");
+  }
+
+  static String getNewsApiBase() {
+    return _readForKey("newsApiBaseUrl");
+  }
+
+  static String getNewsApiKey() {
+    return _readForKey("newsApiKey");
   }
 }

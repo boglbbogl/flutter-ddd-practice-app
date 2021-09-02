@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/_constant/config_reader.dart';
 import 'package:ddd_practice_app/domain/api_weather_practice/i_api_weather_repository.dart';
 import 'package:ddd_practice_app/domain/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/api_weather_practice/weather_failure.dart';
@@ -10,7 +11,8 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IApiWeatherRepository)
 class ApiWeatherRepository with IApiWeatherRepository {
-  static String apiBase = ConfigReader.getGiftApiBase();
+  static String apiBase = ConfigReader.getWeatherApiBaseUrl();
+  static String apiKey = ConfigReader.getWeatherApiKey();
 
   @override
   Future<Either<WeatherFailure, Weather>> getWeatherData({
@@ -19,7 +21,7 @@ class ApiWeatherRepository with IApiWeatherRepository {
   }) async {
     try {
       final uri =
-          Uri.parse("?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
+          Uri.parse("$apiBase?lat=$lat&lon=$lon&appid=$apiKey&units=metric");
       final response = await http.get(uri);
       if (response.statusCode == 200) {
         final decoded = json.decode(utf8.decode(response.bodyBytes))
@@ -59,8 +61,8 @@ class ApiWeatherRepository with IApiWeatherRepository {
     required double lat,
     required double lon,
   }) async {
-    final uri = Uri.parse(
-        "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
+    final uri =
+        Uri.parse("$apiBase?lat=$lat&lon=$lon&appid=$apiKey&units=metric");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final decoded = json.decode(utf8.decode(response.bodyBytes));
@@ -75,8 +77,8 @@ class ApiWeatherRepository with IApiWeatherRepository {
     required double lat,
     required double lon,
   }) async {
-    final uri = Uri.parse(
-        "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
+    final uri =
+        Uri.parse("$apiBase?lat=$lat&lon=$lon&appid=$apiKey&units=metric");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final decoded = json.decode(utf8.decode(response.bodyBytes));
