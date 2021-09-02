@@ -16,10 +16,13 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Kakao Books',
-          style: theme.textTheme.bodyText2!
-              .copyWith(fontWeight: FontWeight.bold, fontSize: 18),
+        title: Hero(
+          tag: 'KakaoBookTag${books.isbn}',
+          child: Text(
+            'Kakao Books',
+            style: theme.textTheme.bodyText2!
+                .copyWith(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
         ),
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
@@ -42,7 +45,8 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                child: apiKakoBooksTextForm(
+                child: heroApiKakaoBooksTextForm(
+                    tag: books.title + books.isbn,
                     title: books.title,
                     fontSize: 25,
                     fontColors: Colors.black,
@@ -53,11 +57,13 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
                 child: SizedBox(
                     width: size.width * 0.4,
                     height: size.height * 0.4,
-                    child: Image(image: NetworkImage(books.thumbnail))),
+                    child: Hero(
+                        tag: books.thumbnail,
+                        child: Image(image: NetworkImage(books.thumbnail)))),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 2),
-                child: apiKakoBooksTextForm(
+                child: apiKakaoBooksTextForm(
                   title: books.publisher,
                   maxLines: 1,
                   textOverflow: TextOverflow.ellipsis,
@@ -68,7 +74,7 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 2),
-                child: apiKakoBooksTextForm(
+                child: apiKakaoBooksTextForm(
                   title: 'Price  :  ${books.price}',
                   fontSize: 16,
                   fontColors: const Color.fromRGBO(155, 155, 155, 1),
@@ -79,7 +85,8 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 2),
-                child: apiKakoBooksTextForm(
+                child: heroApiKakaoBooksTextForm(
+                  tag: books.salePrice.toString() + books.isbn,
                   title: 'Sale Price  :  ${books.salePrice}',
                   fontSize: 20,
                   fontColors: Colors.red,
@@ -89,14 +96,14 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 2),
-                child: apiKakoBooksTextForm(
+                child: apiKakaoBooksTextForm(
                   title: books.status,
                   fontSize: 18,
                   fontColors: Colors.black,
                   maxLines: 1,
                 ),
               ),
-              apiKakoBooksTextForm(
+              apiKakaoBooksTextForm(
                   title:
                       'International Standart Book Number(ISBN) : ${books.isbn}',
                   fontSize: 9,
@@ -111,7 +118,7 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 2),
-                  child: apiKakoBooksTextForm(
+                  child: apiKakaoBooksTextForm(
                       title: books.url,
                       textOverflow: TextOverflow.ellipsis,
                       fontSize: 12,
@@ -121,7 +128,7 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 3),
-                child: apiKakoBooksTextForm(
+                child: apiKakaoBooksTextForm(
                     title: books.dateTime.toString().substring(0, 10),
                     fontSize: 13,
                     fontColors: const Color.fromRGBO(155, 155, 155, 1),

@@ -1,0 +1,23 @@
+class KakaoTranslateRegion {
+  final List<String> countryCode = [
+    "kr",
+    "en",
+    "jp",
+    "cn",
+    "vi",
+    "id",
+    "ar",
+    "bn",
+    "de",
+    "es",
+    "fr",
+    "hi",
+    "it",
+    "ms",
+    "nl",
+    "pt",
+    "ru",
+    "th",
+    "tr",
+  ];
+}

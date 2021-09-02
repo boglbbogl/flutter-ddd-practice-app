@@ -1,7 +1,35 @@
 import 'package:ddd_practice_app/_constant/theme_and_size.dart';
 import 'package:flutter/material.dart';
 
-Text apiKakoBooksTextForm({
+Hero heroApiKakaoBooksTextForm({
+  required String title,
+  required double fontSize,
+  required Color fontColors,
+  TextOverflow? textOverflow,
+  FontWeight? fontWeight,
+  required int maxLines,
+  TextDecoration? decoration,
+  required String tag,
+}) {
+  return Hero(
+    tag: tag,
+    child: Text(
+      title,
+      maxLines: maxLines,
+      overflow: textOverflow,
+      style: theme.textTheme.bodyText2!.copyWith(
+        decoration: decoration,
+        decorationColor: Colors.black,
+        decorationThickness: 3,
+        color: fontColors,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+      ),
+    ),
+  );
+}
+
+Text apiKakaoBooksTextForm({
   required String title,
   required double fontSize,
   required Color fontColors,
