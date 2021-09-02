@@ -1,0 +1,8 @@
+{
+    "stageName": "dev",
+    "weatherApiBaseUrl": "http://api.openweathermap.org/data/2.5/weather",
+    "weatherApiKey": "76fa3e54bce43b391f028213cd32ac63",
+    "kakaoApiBase" : "",
+    "kakaoApiKey":"598874a3fe386492d5b8ba65db9f1063",
+    "giftApiBase": "http://giftapi.justthankyou.com:3000"
+  }

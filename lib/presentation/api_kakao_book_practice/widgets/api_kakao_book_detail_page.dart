@@ -14,7 +14,6 @@ class ApiKakaoBookDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(books.translators);
     return Scaffold(
       appBar: AppBar(
         title: Text(

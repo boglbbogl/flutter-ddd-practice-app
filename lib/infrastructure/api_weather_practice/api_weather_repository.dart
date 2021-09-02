@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IApiWeatherRepository)
 class ApiWeatherRepository with IApiWeatherRepository {
-  final String _openWeatherKey = '76fa3e54bce43b391f028213cd32ac63';
+  static String apiBase = ConfigReader.getGiftApiBase();
 
   @override
   Future<Either<WeatherFailure, Weather>> getWeatherData({
@@ -18,8 +18,8 @@ class ApiWeatherRepository with IApiWeatherRepository {
     required double lat,
   }) async {
     try {
-      final uri = Uri.parse(
-          "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
+      final uri =
+          Uri.parse("?lat=$lat&lon=$lon&appid=$_openWeatherKey&units=metric");
       final response = await http.get(uri);
       if (response.statusCode == 200) {
         final decoded = json.decode(utf8.decode(response.bodyBytes))
