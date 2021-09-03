@@ -1,10 +1,12 @@
 import 'package:ddd_practice_app/_constant/api_check/api_check_main_page.dart';
+import 'package:ddd_practice_app/application/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_book_practice/api_kakao_book_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
+import 'package:ddd_practice_app/presentation/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_news_practice/api_news_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_picture_practice/api_picture_main_page.dart';
@@ -32,6 +34,9 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) => getIt<CommunityMainBloc>()
               ..add(const CommunityMainEvent.started())),
+        BlocProvider(
+            create: (context) =>
+                getIt<ApiKakaoTranslateMainCubit>()..started()),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',
@@ -43,6 +48,8 @@ class AppWidget extends StatelessWidget {
               ApiKakaoDetectLangMainPage(),
           '/apiKakaoTranslateMainPage': (context) =>
               ApiKakaoTranslateMainPage(),
+          '/apiKakaoTranslateMultipleMainPage': (context) =>
+              ApiKakaoTranslateMultipleMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/apiNewsMainPage': (context) => const ApiNewsMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),

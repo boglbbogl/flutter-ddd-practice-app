@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 AppBar appBarForm(
   BuildContext context,
@@ -6,6 +7,7 @@ AppBar appBarForm(
   List<Widget>? actions,
   required String title,
   Color? colors,
+  Function()? onTap,
 }) {
   return AppBar(
     toolbarHeight: 70,
@@ -18,9 +20,10 @@ AppBar appBarForm(
       ),
     ),
     leading: IconButton(
-      onPressed: () {
-        Navigator.of(context).pop();
-      },
+      onPressed: onTap ??
+          () {
+            Get.back();
+          },
       icon: const Icon(
         Icons.arrow_back_ios_outlined,
         color: Colors.white,

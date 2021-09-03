@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/domain/api_kakao_translate_practice/api_kakao_translate.dart';
 import 'package:ddd_practice_app/domain/api_kakao_translate_practice/i_api_kakao_translate_repository.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_book_practice/widgets/api_kakao_books_text_form.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,7 +16,47 @@ class ApiKakaoTranslateMainCubit extends Cubit<ApiKakaoTranslateMainState> {
 
   Future<Unit> started() async {
     emit(state.copyWith(
-        apiKakaoTranslate: ApiKakaoTranslate.empty(), isLanguageChange: false));
+        apiKakaoTranslate: ApiKakaoTranslate.empty(),
+        isLanguageChange: false,
+        srcLang: 'kr',
+        targetLang: 'en',
+        formatSrcLang: 'KOREAN',
+        formatTargetLang: 'ENGLISH'));
+    return unit;
+  }
+
+  Future<Unit> getMultepleTranslate(
+    String query,
+  ) async {
+    emit(state.copyWith(isLoading: true));
+    final result = await _translateRepository.getTranslate(
+        query: query, srcLang: state.srcLang, targetLang: state.targetLang);
+    emit(state.copyWith(isLoading: false, apiKakaoTranslate: result));
+    return unit;
+  }
+
+  Future<Unit> swapLanguage() async {
+    emit(state.copyWith(isSwap: true));
+
+    emit(state.copyWith(
+      isSwap: false,
+      srcLang: state.targetLang,
+      targetLang: state.srcLang,
+      formatSrcLang: state.formatTargetLang,
+      formatTargetLang: state.formatSrcLang,
+    ));
+    return unit;
+  }
+
+  Future<Unit> srcLangChanged(
+      {required String src, required String formatSrc}) async {
+    emit(state.copyWith(srcLang: src, formatSrcLang: formatSrc));
+    return unit;
+  }
+
+  Future<Unit> targetLangChanged(
+      {required String target, required String formatTarget}) async {
+    emit(state.copyWith(targetLang: target, formatTargetLang: formatTarget));
     return unit;
   }
 

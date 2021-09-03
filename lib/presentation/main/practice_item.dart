@@ -3,7 +3,8 @@ class PracticeItem {
     'Member Practice',
     'API Kakao Book Practice',
     'API Kakao Detect Language Pracitce',
-    'API Kakao Translate Practice',
+    'API Kakao Translate Practice _ Kr/En',
+    'API Kakao Translate Practice _ Mutiple',
     'API Weather Practice',
     'API News Practice',
     'Community Practice',
@@ -13,6 +14,7 @@ class PracticeItem {
   ];
   List subTitle = [
     'FIRESTORE',
+    'REST API for KAKAO',
     'REST API for KAKAO',
     'REST API for KAKAO',
     'REST API for KAKAO',
@@ -29,6 +31,7 @@ class PracticeItem {
     '/apiKakaoBookMainPage',
     '/apiKakaoDetectLanguageMainPage',
     '/apiKakaoTranslateMainPage',
+    '/apiKakaoTranslateMultipleMainPage',
     '/apiWeatherMainPage',
     '/apiNewsMainPage',
     '/communityMainPage',
