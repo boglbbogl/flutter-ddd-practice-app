@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book_failure.dart';
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book.dart';
 import 'package:dartz/dartz.dart';
@@ -10,14 +11,14 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IApiKakaoBookRepository)
 class ApiKakaoRepository implements IApiKakaoBookRepository {
-  final apiKey = '598874a3fe386492d5b8ba65db9f1063';
+  static String apiBase = ConfigReader.getKakaoApiBaseUrl();
+  static String apiKey = ConfigReader.getKakaoApiKey();
   @override
   Future<Either<ApiKakaoBookFailure, ApiKakaoBook>> getBooksResult({
     required String query,
   }) async {
     try {
-      final uri = Uri.parse(
-          "https://dapi.kakao.com/v3/search/book?query=$query&size=50");
+      final uri = Uri.parse("$apiBase/v3/search/book?query=$query&size=50");
       final response = await http.get(
         uri,
         headers: {'Authorization': 'KakaoAK $apiKey'},

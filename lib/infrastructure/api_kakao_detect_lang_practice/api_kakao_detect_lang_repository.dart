@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/api_kakao_detect_lang_practice/api_kakao_detect_lang.dart';
 import 'package:ddd_practice_app/domain/api_kakao_detect_lang_practice/i_api_kakao_detect_lang_repository.dart';
 import 'package:ddd_practice_app/infrastructure/api_kakao_detect_lang_practice/api_kakao_detect_lang_dtos.dart';
@@ -8,15 +9,15 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IApiKakaoDetectLangRepository)
 class ApiKakaoDetectLangRaepository implements IApiKakaoDetectLangRepository {
-  final apiKey = '598874a3fe386492d5b8ba65db9f1063';
-
+  static String apiBase = ConfigReader.getKakaoApiBaseUrl();
+  static String apiKey = ConfigReader.getKakaoApiKey();
   @override
   Future<List<ApiKakaoDetectLang>> getDetectLang({
     required String query,
   }) async {
     try {
-      final uri = Uri.parse(
-          "https://dapi.kakao.com/v3/translation/language/detect?&query=$query");
+      final uri =
+          Uri.parse("$apiBase/v3/translation/language/detect?&query=$query");
       final response = await http.get(
         uri,
         headers: {'Authorization': 'KakaoAK $apiKey'},

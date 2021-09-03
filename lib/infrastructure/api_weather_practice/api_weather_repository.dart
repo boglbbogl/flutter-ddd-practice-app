@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/api_weather_practice/i_api_weather_repository.dart';
 import 'package:ddd_practice_app/domain/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/api_weather_practice/weather_failure.dart';
@@ -10,8 +11,8 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IApiWeatherRepository)
 class ApiWeatherRepository with IApiWeatherRepository {
-  final String apiKey = '76fa3e54bce43b391f028213cd32ac63';
-  final String apiBase = 'http://api.openweathermap.org/data/2.5/weather';
+  static String apiBase = ConfigReader.getWeatherApiBaseUrl();
+  static String apiKey = ConfigReader.getWeatherApiKey();
 
   @override
   Future<Either<WeatherFailure, Weather>> getWeatherData({

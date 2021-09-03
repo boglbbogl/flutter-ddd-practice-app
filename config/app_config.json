@@ -1,8 +1,8 @@
 {
-    "stageName": "production",
+    "stageName": "dev",
     "weatherApiBaseUrl": "http://api.openweathermap.org/data/2.5/weather",
     "weatherApiKey": "76fa3e54bce43b391f028213cd32ac63",
-    "kakaoApiBaseUrl" : "",
+    "kakaoApiBaseUrl" : "https://dapi.kakao.com",
     "kakaoApiKey":"598874a3fe386492d5b8ba65db9f1063",
     "newsApiBaseUrl":"https://newsapi.org/v2/everything",
     "newsApiKey":"1b05eb69dee54640bf5bcfcf1e730fc8"
