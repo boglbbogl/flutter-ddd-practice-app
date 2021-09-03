@@ -29,6 +29,9 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 getIt<MemberMainBloc>()..add(const MemberMainEvent.started())),
+        BlocProvider(
+            create: (context) => getIt<CommunityMainBloc>()
+              ..add(const CommunityMainEvent.started())),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',

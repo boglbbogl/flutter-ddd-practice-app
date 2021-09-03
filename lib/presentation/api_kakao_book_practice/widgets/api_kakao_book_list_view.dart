@@ -1,4 +1,4 @@
-import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/domain/api_kakao_book_practice/api_kakao_book.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_book_practice/widgets/api_kakao_book_detail_page.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_book_practice/widgets/api_kakao_books_text_form.dart';

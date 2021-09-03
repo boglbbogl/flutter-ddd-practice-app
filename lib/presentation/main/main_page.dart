@@ -1,5 +1,5 @@
-import 'package:ddd_practice_app/_constant/colors.dart';
-import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/_constant/widget_const/colors.dart';
+import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/presentation/main/practice_list_view.dart';
 import 'package:flutter/material.dart';
 

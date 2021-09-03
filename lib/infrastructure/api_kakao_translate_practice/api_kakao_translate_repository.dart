@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:ddd_practice_app/domain/api_kakao_translate_practice/api_kakao_translate.dart';
 import 'package:ddd_practice_app/domain/api_kakao_translate_practice/i_api_kakao_translate_repository.dart';
-import 'package:ddd_practice_app/infrastructure/api_kakao_book_practice/api_kakao_book_dtos.dart';
 import 'package:ddd_practice_app/infrastructure/api_kakao_translate_practice/api_kakao_translate_dtos.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;

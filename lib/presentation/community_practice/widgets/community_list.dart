@@ -1,4 +1,4 @@
-import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/community_practice/community_delete_cubit/community_delete_cubit.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/injection.dart';

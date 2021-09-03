@@ -1,5 +1,5 @@
-import 'package:ddd_practice_app/_constant/appbar_form.dart';
-import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/presentation/member_practice/member_create_page.dart';
 import 'package:flutter/material.dart';

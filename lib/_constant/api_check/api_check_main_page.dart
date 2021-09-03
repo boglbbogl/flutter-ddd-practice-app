@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:ddd_practice_app/_constant/appbar_form.dart';
-import 'package:ddd_practice_app/_constant/theme_and_size.dart';
+import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
