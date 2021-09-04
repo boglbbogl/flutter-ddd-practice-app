@@ -26,7 +26,7 @@ class ApiNewsDto with _$ApiNewsDto {
 class ArticlesDto with _$ArticlesDto {
   const factory ArticlesDto({
     required String? author,
-    required String title,
+    required String? title,
     required String description,
     required String url,
     required String urlToImage,
@@ -40,7 +40,7 @@ class ArticlesDto with _$ArticlesDto {
 
   Articles toDomain() => Articles(
         author: author ?? "",
-        title: title,
+        title: title ?? "",
         description: description,
         url: url,
         urlToImage: urlToImage,
