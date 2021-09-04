@@ -1,6 +1,7 @@
 class PracticeItem {
   List items = [
     'Member Practice',
+    'API Kakao Web Practice',
     'API Kakao Book Practice',
     'API Kakao Detect Language Pracitce',
     'API Kakao Translate Practice _ Kr/En',
@@ -18,6 +19,7 @@ class PracticeItem {
     'REST API for KAKAO',
     'REST API for KAKAO',
     'REST API for KAKAO',
+    'REST API for KAKAO',
     'REST API for OPENWEATHERMAP',
     'REST API for NEWSAPI',
     'FIRESTORE',
@@ -28,6 +30,7 @@ class PracticeItem {
 
   List router = [
     '/memberMainPage',
+    '/apiKakaoWebMainPage',
     '/apiKakaoBookMainPage',
     '/apiKakaoDetectLanguageMainPage',
     '/apiKakaoTranslateMainPage',

@@ -8,6 +8,7 @@ import 'package:ddd_practice_app/presentation/api_kakao_book_practice/api_kakao_
 import 'package:ddd_practice_app/presentation/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
+import 'package:ddd_practice_app/presentation/api_kakao_web_practice/api_kakao_web_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_news_practice/api_news_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_picture_practice/api_picture_main_page.dart';
 import 'package:ddd_practice_app/presentation/api_weather_practice/api_weather_main_page.dart';
@@ -43,6 +44,7 @@ class AppWidget extends StatelessWidget {
         routes: {
           '/mainPage': (context) => const MainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
+          '/apiKakaoWebMainPage': (context) => ApiKakaoWebMainPage(),
           '/apiKakaoBookMainPage': (context) => ApiKakaoBookMainPage(),
           '/apiKakaoDetectLanguageMainPage': (context) =>
               ApiKakaoDetectLangMainPage(),
