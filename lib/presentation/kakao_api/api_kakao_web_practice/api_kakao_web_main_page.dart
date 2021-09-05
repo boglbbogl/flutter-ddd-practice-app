@@ -1,5 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_web_practice/api_kakao_web_main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -34,47 +35,17 @@ class ApiKakaoWebMainPage extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.8,
-                        child: TextFormField(
-                          controller: controller,
-                          decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Colors.amber.shade300, width: 3),
-                              ),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.orange, width: 3),
-                              ),
-                              hintText: 'Search...'),
-                        ),
-                      ),
-                      Container(
-                        width: size.width * 0.13,
-                        decoration: BoxDecoration(
-                            color: Colors.amber.shade300,
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                                width: 3, color: Colors.amber.shade300)),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.search_outlined,
-                            size: 30,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            context
-                                .read<ApiKakaoWebMainCubit>()
-                                .getKakaoWebData(query: controller.text);
-                            FocusScope.of(context).unfocus();
-                          },
-                        ),
-                      )
-                    ],
+                  searchTextForm(
+                    controller: controller,
+                    context: context,
+                    onPressed: () {
+                      context
+                          .read<ApiKakaoWebMainCubit>()
+                          .getKakaoWebData(query: controller.text);
+                      FocusScope.of(context).unfocus();
+                    },
+                    mainColor: Colors.amber.shade300,
+                    subColor: Colors.orange,
                   ),
                   Flexible(
                     child: ListView(

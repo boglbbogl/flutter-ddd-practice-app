@@ -1,0 +1,9 @@
+part of 'api_kakao_image_main_bloc.dart';
+
+@freezed
+class ApiKakaoImageMainEvent with _$ApiKakaoImageMainEvent {
+  const factory ApiKakaoImageMainEvent.started() = _Started;
+  const factory ApiKakaoImageMainEvent.searched({
+    required String query,
+  }) = _Searched;
+}

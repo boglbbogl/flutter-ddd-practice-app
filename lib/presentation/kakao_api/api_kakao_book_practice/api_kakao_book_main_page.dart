@@ -1,6 +1,7 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/my_progress_indicator.dart';
+import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_book_practice/api_kakao_book_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -39,46 +40,17 @@ class ApiKakaoBookMainPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.8,
-                        child: TextFormField(
-                          controller: controller,
-                          decoration: const InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.red, width: 3),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.orange, width: 3),
-                              ),
-                              hintText: 'Search...'),
-                        ),
-                      ),
-                      Container(
-                        width: size.width * 0.13,
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(width: 3, color: Colors.red)),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.search_outlined,
-                            size: 30,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            context.read<ApiKakaoBookMainBloc>().add(
-                                ApiKakaoBookMainEvent.searched(
-                                    queryText: controller.text));
-                            FocusScope.of(context).unfocus();
-                          },
-                        ),
-                      )
-                    ],
+                  searchTextForm(
+                    controller: controller,
+                    context: context,
+                    onPressed: () {
+                      context.read<ApiKakaoBookMainBloc>().add(
+                          ApiKakaoBookMainEvent.searched(
+                              queryText: controller.text));
+                      FocusScope.of(context).unfocus();
+                    },
+                    mainColor: Colors.red,
+                    subColor: Colors.orange,
                   ),
                   Expanded(
                       child: ApiKakaoBookListView(
