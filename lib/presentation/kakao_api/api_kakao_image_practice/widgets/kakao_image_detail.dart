@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_image_practice/api_kakao_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class KakaoImageDetail extends StatelessWidget {
   final ApiKakaoImage data;
@@ -11,26 +11,36 @@ class KakaoImageDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Center(
-            child: CupertinoActivityIndicator(
-          radius: 12,
-        )),
-        Center(
-          child: Column(
+    return SafeArea(
+      child: Stack(
+        children: [
+          Positioned(
+            top: 20,
+            right: 15,
+            child: IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.clear_outlined,
+                color: Colors.white,
+                size: 30,
+              ),
+            ),
+          ),
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image(
-                image: NetworkImage(
-                  data.thumbnail_url,
-                  scale: 2.0,
+              Hero(
+                tag: data.thumbnail_url,
+                child: Image(
+                  image: NetworkImage(data.image_url),
                 ),
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
