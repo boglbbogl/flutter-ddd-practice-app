@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/my_progress_indicator.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/api_picture_practice/api_picture_cubit.dart';
+import 'package:ddd_practice_app/application/example_api/api_picture_practice/api_picture_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/widget_hero_animation_practice/widget_hero_detail_page.dart';
 import 'package:flutter/cupertino.dart';

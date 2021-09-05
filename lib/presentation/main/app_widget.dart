@@ -1,18 +1,19 @@
 import 'package:ddd_practice_app/_constant/api_check/api_check_main_page.dart';
-import 'package:ddd_practice_app/application/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_book_practice/api_kakao_book_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_kakao_web_practice/api_kakao_web_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_news_practice/api_news_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_picture_practice/api_picture_main_page.dart';
-import 'package:ddd_practice_app/presentation/api_weather_practice/api_weather_main_page.dart';
 import 'package:ddd_practice_app/presentation/community_practice/community_main_page.dart';
+import 'package:ddd_practice_app/presentation/example_api/api_news_practice/api_news_main_page.dart';
+import 'package:ddd_practice_app/presentation/example_api/api_picture_practice/api_picture_main_page.dart';
+import 'package:ddd_practice_app/presentation/example_api/api_weather_practice/api_weather_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book_practice/api_kakao_book_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image_practice/api_kakao_image_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
 import 'package:ddd_practice_app/presentation/main/main_page.dart';
 import 'package:ddd_practice_app/presentation/member_practice/member_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_hero_animation_practice/widget_hero_animation_main_page.dart';
@@ -45,6 +46,7 @@ class AppWidget extends StatelessWidget {
           '/mainPage': (context) => const MainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/apiKakaoWebMainPage': (context) => ApiKakaoWebMainPage(),
+          '/apiKakaoImageMainPage': (context) => const ApiKakaoImageMainPage(),
           '/apiKakaoBookMainPage': (context) => ApiKakaoBookMainPage(),
           '/apiKakaoDetectLanguageMainPage': (context) =>
               ApiKakaoDetectLangMainPage(),
