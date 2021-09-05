@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_kakao_web.dart';
+part of 'api_kakao_web_dtos.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,54 +12,64 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-class _$ApiKakaoWebTearOff {
-  const _$ApiKakaoWebTearOff();
+ApiKakaoWebDto _$ApiKakaoWebDtoFromJson(Map<String, dynamic> json) {
+  return _ApiKakaoWebDto.fromJson(json);
+}
 
-  _ApiKakaoWeb call(
+/// @nodoc
+class _$ApiKakaoWebDtoTearOff {
+  const _$ApiKakaoWebDtoTearOff();
+
+  _ApiKakaoWebDto call(
       {required String title,
       required String contents,
       required String url,
       required DateTime datetime}) {
-    return _ApiKakaoWeb(
+    return _ApiKakaoWebDto(
       title: title,
       contents: contents,
       url: url,
       datetime: datetime,
     );
   }
+
+  ApiKakaoWebDto fromJson(Map<String, Object> json) {
+    return ApiKakaoWebDto.fromJson(json);
+  }
 }
 
 /// @nodoc
-const $ApiKakaoWeb = _$ApiKakaoWebTearOff();
+const $ApiKakaoWebDto = _$ApiKakaoWebDtoTearOff();
 
 /// @nodoc
-mixin _$ApiKakaoWeb {
+mixin _$ApiKakaoWebDto {
   String get title => throw _privateConstructorUsedError;
   String get contents => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   DateTime get datetime => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiKakaoWebCopyWith<ApiKakaoWeb> get copyWith =>
+  $ApiKakaoWebDtoCopyWith<ApiKakaoWebDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiKakaoWebCopyWith<$Res> {
-  factory $ApiKakaoWebCopyWith(
-          ApiKakaoWeb value, $Res Function(ApiKakaoWeb) then) =
-      _$ApiKakaoWebCopyWithImpl<$Res>;
+abstract class $ApiKakaoWebDtoCopyWith<$Res> {
+  factory $ApiKakaoWebDtoCopyWith(
+          ApiKakaoWebDto value, $Res Function(ApiKakaoWebDto) then) =
+      _$ApiKakaoWebDtoCopyWithImpl<$Res>;
   $Res call({String title, String contents, String url, DateTime datetime});
 }
 
 /// @nodoc
-class _$ApiKakaoWebCopyWithImpl<$Res> implements $ApiKakaoWebCopyWith<$Res> {
-  _$ApiKakaoWebCopyWithImpl(this._value, this._then);
+class _$ApiKakaoWebDtoCopyWithImpl<$Res>
+    implements $ApiKakaoWebDtoCopyWith<$Res> {
+  _$ApiKakaoWebDtoCopyWithImpl(this._value, this._then);
 
-  final ApiKakaoWeb _value;
+  final ApiKakaoWebDto _value;
   // ignore: unused_field
-  final $Res Function(ApiKakaoWeb) _then;
+  final $Res Function(ApiKakaoWebDto) _then;
 
   @override
   $Res call({
@@ -90,24 +100,25 @@ class _$ApiKakaoWebCopyWithImpl<$Res> implements $ApiKakaoWebCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ApiKakaoWebCopyWith<$Res>
-    implements $ApiKakaoWebCopyWith<$Res> {
-  factory _$ApiKakaoWebCopyWith(
-          _ApiKakaoWeb value, $Res Function(_ApiKakaoWeb) then) =
-      __$ApiKakaoWebCopyWithImpl<$Res>;
+abstract class _$ApiKakaoWebDtoCopyWith<$Res>
+    implements $ApiKakaoWebDtoCopyWith<$Res> {
+  factory _$ApiKakaoWebDtoCopyWith(
+          _ApiKakaoWebDto value, $Res Function(_ApiKakaoWebDto) then) =
+      __$ApiKakaoWebDtoCopyWithImpl<$Res>;
   @override
   $Res call({String title, String contents, String url, DateTime datetime});
 }
 
 /// @nodoc
-class __$ApiKakaoWebCopyWithImpl<$Res> extends _$ApiKakaoWebCopyWithImpl<$Res>
-    implements _$ApiKakaoWebCopyWith<$Res> {
-  __$ApiKakaoWebCopyWithImpl(
-      _ApiKakaoWeb _value, $Res Function(_ApiKakaoWeb) _then)
-      : super(_value, (v) => _then(v as _ApiKakaoWeb));
+class __$ApiKakaoWebDtoCopyWithImpl<$Res>
+    extends _$ApiKakaoWebDtoCopyWithImpl<$Res>
+    implements _$ApiKakaoWebDtoCopyWith<$Res> {
+  __$ApiKakaoWebDtoCopyWithImpl(
+      _ApiKakaoWebDto _value, $Res Function(_ApiKakaoWebDto) _then)
+      : super(_value, (v) => _then(v as _ApiKakaoWebDto));
 
   @override
-  _ApiKakaoWeb get _value => super._value as _ApiKakaoWeb;
+  _ApiKakaoWebDto get _value => super._value as _ApiKakaoWebDto;
 
   @override
   $Res call({
@@ -116,7 +127,7 @@ class __$ApiKakaoWebCopyWithImpl<$Res> extends _$ApiKakaoWebCopyWithImpl<$Res>
     Object? url = freezed,
     Object? datetime = freezed,
   }) {
-    return _then(_ApiKakaoWeb(
+    return _then(_ApiKakaoWebDto(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -138,13 +149,17 @@ class __$ApiKakaoWebCopyWithImpl<$Res> extends _$ApiKakaoWebCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-class _$_ApiKakaoWeb implements _ApiKakaoWeb {
-  const _$_ApiKakaoWeb(
+@JsonSerializable()
+class _$_ApiKakaoWebDto extends _ApiKakaoWebDto {
+  const _$_ApiKakaoWebDto(
       {required this.title,
       required this.contents,
       required this.url,
-      required this.datetime});
+      required this.datetime})
+      : super._();
+
+  factory _$_ApiKakaoWebDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApiKakaoWebDtoFromJson(json);
 
   @override
   final String title;
@@ -157,13 +172,13 @@ class _$_ApiKakaoWeb implements _ApiKakaoWeb {
 
   @override
   String toString() {
-    return 'ApiKakaoWeb(title: $title, contents: $contents, url: $url, datetime: $datetime)';
+    return 'ApiKakaoWebDto(title: $title, contents: $contents, url: $url, datetime: $datetime)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiKakaoWeb &&
+        (other is _ApiKakaoWebDto &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.contents, contents) ||
@@ -186,16 +201,25 @@ class _$_ApiKakaoWeb implements _ApiKakaoWeb {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiKakaoWebCopyWith<_ApiKakaoWeb> get copyWith =>
-      __$ApiKakaoWebCopyWithImpl<_ApiKakaoWeb>(this, _$identity);
+  _$ApiKakaoWebDtoCopyWith<_ApiKakaoWebDto> get copyWith =>
+      __$ApiKakaoWebDtoCopyWithImpl<_ApiKakaoWebDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ApiKakaoWebDtoToJson(this);
+  }
 }
 
-abstract class _ApiKakaoWeb implements ApiKakaoWeb {
-  const factory _ApiKakaoWeb(
+abstract class _ApiKakaoWebDto extends ApiKakaoWebDto {
+  const factory _ApiKakaoWebDto(
       {required String title,
       required String contents,
       required String url,
-      required DateTime datetime}) = _$_ApiKakaoWeb;
+      required DateTime datetime}) = _$_ApiKakaoWebDto;
+  const _ApiKakaoWebDto._() : super._();
+
+  factory _ApiKakaoWebDto.fromJson(Map<String, dynamic> json) =
+      _$_ApiKakaoWebDto.fromJson;
 
   @override
   String get title => throw _privateConstructorUsedError;
@@ -207,6 +231,6 @@ abstract class _ApiKakaoWeb implements ApiKakaoWeb {
   DateTime get datetime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiKakaoWebCopyWith<_ApiKakaoWeb> get copyWith =>
+  _$ApiKakaoWebDtoCopyWith<_ApiKakaoWebDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
