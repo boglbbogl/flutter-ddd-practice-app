@@ -28,6 +28,59 @@ class ApiKakaoImageMainPage extends StatelessWidget {
                       sourceText: 'https://dapi.kakao.com/v2/search/image',
                       colors: Colors.pink)
                 ]),
+            floatingActionButton: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  width: size.width * 0.4,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      30,
+                    ),
+                    color: Colors.white60,
+                  ),
+                  child: state.apiKakaoImage.isEmpty
+                      ? Container()
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                if (state.page > 1) {
+                                  context.read<ApiKakaoImageMainBloc>().add(
+                                      const ApiKakaoImageMainEvent.pageMinus());
+                                }
+                              },
+                              child: const Icon(
+                                Icons.keyboard_arrow_left_outlined,
+                                color: Colors.pink,
+                                size: 50,
+                              ),
+                            ),
+                            Text(
+                              state.page.toString(),
+                              style: theme.textTheme.bodyText2!.copyWith(
+                                color: Colors.pink,
+                                fontSize: 40,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                context.read<ApiKakaoImageMainBloc>().add(
+                                    const ApiKakaoImageMainEvent.pagePlus());
+                              },
+                              child: const Icon(
+                                Icons.keyboard_arrow_right_outlined,
+                                color: Colors.pink,
+                                size: 50,
+                              ),
+                            )
+                          ],
+                        ),
+                )
+              ],
+            ),
             body: Column(
               children: [
                 const SizedBox(

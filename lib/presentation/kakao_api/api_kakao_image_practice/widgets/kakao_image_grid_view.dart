@@ -36,14 +36,18 @@ class KakaoImageGridView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(
-                  child: Hero(
-                    tag: data.thumbnail_url,
-                    child: Image(
-                      image: NetworkImage(
-                        data.thumbnail_url,
-                        scale: 1.0,
+                  child: Stack(
+                    children: [
+                      Hero(
+                        tag: data.thumbnail_url,
+                        child: Image(
+                          image: NetworkImage(
+                            data.thumbnail_url,
+                            scale: 1.0,
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ],

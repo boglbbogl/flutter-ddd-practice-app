@@ -35,7 +35,36 @@ class ApiKakaoImageMainBloc
         yield state.copyWith(
           apiKakaoImage: result,
           page: state.page,
+          query: e.query,
           isLoading: false,
+        );
+      },
+      pagePlus: (e) async* {
+        yield state.copyWith(isLoading: true);
+        final result = await _imageRepository.getKakaoImage(
+          query: state.query,
+          sort: "accuracy",
+          page: state.page + 1,
+          size: 80,
+        );
+        yield state.copyWith(
+          apiKakaoImage: result,
+          isLoading: false,
+          page: state.page + 1,
+        );
+      },
+      pageMinus: (e) async* {
+        yield state.copyWith(isLoading: false);
+        final result = await _imageRepository.getKakaoImage(
+          query: state.query,
+          sort: 'accuracy',
+          page: state.page - 1,
+          size: 80,
+        );
+        yield state.copyWith(
+          apiKakaoImage: result,
+          isLoading: false,
+          page: state.page - 1,
         );
       },
     );

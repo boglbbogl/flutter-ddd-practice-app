@@ -6,10 +6,12 @@ class ApiKakaoImageMainState with _$ApiKakaoImageMainState {
     required bool isLoading,
     required List<ApiKakaoImage> apiKakaoImage,
     required int page,
+    required String query,
   }) = _ApiKakaoImageMainState;
   factory ApiKakaoImageMainState.initial() => _ApiKakaoImageMainState(
         isLoading: false,
         apiKakaoImage: [],
         page: 1,
+        query: "",
       );
 }
