@@ -15,3 +15,17 @@ class ApiKakaoImage with _$ApiKakaoImage {
     required DateTime datetime,
   }) = _ApiKakaoImage;
 }
+
+@freezed
+class ApiKakaoImageMeta with _$ApiKakaoImageMeta {
+  const factory ApiKakaoImageMeta({
+    required bool is_end,
+    required int pageable_count,
+    required int total_count,
+  }) = _ApiKakaoImageMeta;
+  factory ApiKakaoImageMeta.empty() => const ApiKakaoImageMeta(
+        is_end: false,
+        pageable_count: 0,
+        total_count: 0,
+      );
+}

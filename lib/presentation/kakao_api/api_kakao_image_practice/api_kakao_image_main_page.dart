@@ -28,59 +28,6 @@ class ApiKakaoImageMainPage extends StatelessWidget {
                       sourceText: 'https://dapi.kakao.com/v2/search/image',
                       colors: Colors.pink)
                 ]),
-            floatingActionButton: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  width: size.width * 0.4,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      30,
-                    ),
-                    color: Colors.white60,
-                  ),
-                  child: state.apiKakaoImage.isEmpty
-                      ? Container()
-                      : Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                if (state.page > 1) {
-                                  context.read<ApiKakaoImageMainBloc>().add(
-                                      const ApiKakaoImageMainEvent.pageMinus());
-                                }
-                              },
-                              child: const Icon(
-                                Icons.keyboard_arrow_left_outlined,
-                                color: Colors.pink,
-                                size: 50,
-                              ),
-                            ),
-                            Text(
-                              state.page.toString(),
-                              style: theme.textTheme.bodyText2!.copyWith(
-                                color: Colors.pink,
-                                fontSize: 40,
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                context.read<ApiKakaoImageMainBloc>().add(
-                                    const ApiKakaoImageMainEvent.pagePlus());
-                              },
-                              child: const Icon(
-                                Icons.keyboard_arrow_right_outlined,
-                                color: Colors.pink,
-                                size: 50,
-                              ),
-                            )
-                          ],
-                        ),
-                )
-              ],
-            ),
             body: Column(
               children: [
                 const SizedBox(
@@ -98,6 +45,37 @@ class ApiKakaoImageMainPage extends StatelessWidget {
                     FocusScope.of(context).unfocus();
                   },
                 ),
+                SizedBox(
+                  width: size.width * 0.48,
+                  height: size.height * 0.05,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: (state.totalPage / 80).ceil().toInt(),
+                      itemBuilder: (context, index) {
+                        return Center(
+                            child: InkWell(
+                          onTap: () {
+                            context.read<ApiKakaoImageMainBloc>().add(
+                                ApiKakaoImageMainEvent.pageChanged(
+                                    index: index + 1));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Text(
+                              (index + 1).toString(),
+                              style: theme.textTheme.bodyText2!.copyWith(
+                                  color: state.page == index + 1
+                                      ? Colors.pink
+                                      : const Color.fromRGBO(155, 155, 155, 1),
+                                  fontSize: 22,
+                                  fontWeight: state.page == index + 1
+                                      ? FontWeight.bold
+                                      : FontWeight.w400),
+                            ),
+                          ),
+                        ));
+                      }),
+                ),
                 Flexible(
                   child: GridView(
                     shrinkWrap: true,
@@ -106,7 +84,6 @@ class ApiKakaoImageMainPage extends StatelessWidget {
                       crossAxisCount: 3,
                       mainAxisSpacing: 1.0,
                       crossAxisSpacing: 1.0,
-                      // childAspectRatio: 1,
                     ),
                     children: [
                       ...state.apiKakaoImage.map((e) => KakaoImageGridView(

@@ -32,3 +32,22 @@ class ApiKakaoImageDto with _$ApiKakaoImageDto {
         datetime: datetime,
       );
 }
+
+@freezed
+class ApiKakaoImageMetaDto with _$ApiKakaoImageMetaDto {
+  const factory ApiKakaoImageMetaDto({
+    required bool is_end,
+    required int pageable_count,
+    required int total_count,
+  }) = _ApiKakaoImageMetaDto;
+
+  const ApiKakaoImageMetaDto._();
+  factory ApiKakaoImageMetaDto.fromJson(Map<String, dynamic> json) =>
+      _$ApiKakaoImageMetaDtoFromJson(json);
+
+  ApiKakaoImageMeta toDomain() => ApiKakaoImageMeta(
+        is_end: is_end,
+        pageable_count: pageable_count,
+        total_count: total_count,
+      );
+}

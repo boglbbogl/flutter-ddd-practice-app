@@ -7,4 +7,11 @@ abstract class IApiKakaoImageRepository {
     required int page,
     required int size,
   });
+
+  Future<ApiKakaoImageMeta?> getImagesMetaData({
+    required String query,
+    required String sort,
+    required int page,
+    required int size,
+  });
 }

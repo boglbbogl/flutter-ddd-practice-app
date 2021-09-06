@@ -320,3 +320,182 @@ abstract class _ApiKakaoImage implements ApiKakaoImage {
   _$ApiKakaoImageCopyWith<_ApiKakaoImage> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$ApiKakaoImageMetaTearOff {
+  const _$ApiKakaoImageMetaTearOff();
+
+  _ApiKakaoImageMeta call(
+      {required bool is_end,
+      required int pageable_count,
+      required int total_count}) {
+    return _ApiKakaoImageMeta(
+      is_end: is_end,
+      pageable_count: pageable_count,
+      total_count: total_count,
+    );
+  }
+}
+
+/// @nodoc
+const $ApiKakaoImageMeta = _$ApiKakaoImageMetaTearOff();
+
+/// @nodoc
+mixin _$ApiKakaoImageMeta {
+  bool get is_end => throw _privateConstructorUsedError;
+  int get pageable_count => throw _privateConstructorUsedError;
+  int get total_count => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ApiKakaoImageMetaCopyWith<ApiKakaoImageMeta> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiKakaoImageMetaCopyWith<$Res> {
+  factory $ApiKakaoImageMetaCopyWith(
+          ApiKakaoImageMeta value, $Res Function(ApiKakaoImageMeta) then) =
+      _$ApiKakaoImageMetaCopyWithImpl<$Res>;
+  $Res call({bool is_end, int pageable_count, int total_count});
+}
+
+/// @nodoc
+class _$ApiKakaoImageMetaCopyWithImpl<$Res>
+    implements $ApiKakaoImageMetaCopyWith<$Res> {
+  _$ApiKakaoImageMetaCopyWithImpl(this._value, this._then);
+
+  final ApiKakaoImageMeta _value;
+  // ignore: unused_field
+  final $Res Function(ApiKakaoImageMeta) _then;
+
+  @override
+  $Res call({
+    Object? is_end = freezed,
+    Object? pageable_count = freezed,
+    Object? total_count = freezed,
+  }) {
+    return _then(_value.copyWith(
+      is_end: is_end == freezed
+          ? _value.is_end
+          : is_end // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pageable_count: pageable_count == freezed
+          ? _value.pageable_count
+          : pageable_count // ignore: cast_nullable_to_non_nullable
+              as int,
+      total_count: total_count == freezed
+          ? _value.total_count
+          : total_count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ApiKakaoImageMetaCopyWith<$Res>
+    implements $ApiKakaoImageMetaCopyWith<$Res> {
+  factory _$ApiKakaoImageMetaCopyWith(
+          _ApiKakaoImageMeta value, $Res Function(_ApiKakaoImageMeta) then) =
+      __$ApiKakaoImageMetaCopyWithImpl<$Res>;
+  @override
+  $Res call({bool is_end, int pageable_count, int total_count});
+}
+
+/// @nodoc
+class __$ApiKakaoImageMetaCopyWithImpl<$Res>
+    extends _$ApiKakaoImageMetaCopyWithImpl<$Res>
+    implements _$ApiKakaoImageMetaCopyWith<$Res> {
+  __$ApiKakaoImageMetaCopyWithImpl(
+      _ApiKakaoImageMeta _value, $Res Function(_ApiKakaoImageMeta) _then)
+      : super(_value, (v) => _then(v as _ApiKakaoImageMeta));
+
+  @override
+  _ApiKakaoImageMeta get _value => super._value as _ApiKakaoImageMeta;
+
+  @override
+  $Res call({
+    Object? is_end = freezed,
+    Object? pageable_count = freezed,
+    Object? total_count = freezed,
+  }) {
+    return _then(_ApiKakaoImageMeta(
+      is_end: is_end == freezed
+          ? _value.is_end
+          : is_end // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pageable_count: pageable_count == freezed
+          ? _value.pageable_count
+          : pageable_count // ignore: cast_nullable_to_non_nullable
+              as int,
+      total_count: total_count == freezed
+          ? _value.total_count
+          : total_count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ApiKakaoImageMeta implements _ApiKakaoImageMeta {
+  const _$_ApiKakaoImageMeta(
+      {required this.is_end,
+      required this.pageable_count,
+      required this.total_count});
+
+  @override
+  final bool is_end;
+  @override
+  final int pageable_count;
+  @override
+  final int total_count;
+
+  @override
+  String toString() {
+    return 'ApiKakaoImageMeta(is_end: $is_end, pageable_count: $pageable_count, total_count: $total_count)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApiKakaoImageMeta &&
+            (identical(other.is_end, is_end) ||
+                const DeepCollectionEquality().equals(other.is_end, is_end)) &&
+            (identical(other.pageable_count, pageable_count) ||
+                const DeepCollectionEquality()
+                    .equals(other.pageable_count, pageable_count)) &&
+            (identical(other.total_count, total_count) ||
+                const DeepCollectionEquality()
+                    .equals(other.total_count, total_count)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(is_end) ^
+      const DeepCollectionEquality().hash(pageable_count) ^
+      const DeepCollectionEquality().hash(total_count);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApiKakaoImageMetaCopyWith<_ApiKakaoImageMeta> get copyWith =>
+      __$ApiKakaoImageMetaCopyWithImpl<_ApiKakaoImageMeta>(this, _$identity);
+}
+
+abstract class _ApiKakaoImageMeta implements ApiKakaoImageMeta {
+  const factory _ApiKakaoImageMeta(
+      {required bool is_end,
+      required int pageable_count,
+      required int total_count}) = _$_ApiKakaoImageMeta;
+
+  @override
+  bool get is_end => throw _privateConstructorUsedError;
+  @override
+  int get pageable_count => throw _privateConstructorUsedError;
+  @override
+  int get total_count => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApiKakaoImageMetaCopyWith<_ApiKakaoImageMeta> get copyWith =>
+      throw _privateConstructorUsedError;
+}

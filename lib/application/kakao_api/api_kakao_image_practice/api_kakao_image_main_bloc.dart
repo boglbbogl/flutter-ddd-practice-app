@@ -23,9 +23,17 @@ class ApiKakaoImageMainBloc
     ApiKakaoImageMainEvent event,
   ) async* {
     yield* event.map(
-      started: (e) async* {},
+      started: (e) async* {
+        yield state.copyWith(meta: ApiKakaoImageMeta.empty());
+      },
       searched: (e) async* {
         yield state.copyWith(isLoading: true);
+        final meta = await _imageRepository.getImagesMetaData(
+          query: e.query,
+          sort: 'accuracy',
+          page: 1,
+          size: 80,
+        );
         final result = await _imageRepository.getKakaoImage(
           query: e.query,
           sort: 'accuracy',
@@ -35,36 +43,24 @@ class ApiKakaoImageMainBloc
         yield state.copyWith(
           apiKakaoImage: result,
           page: state.page,
+          totalPage: meta!.pageable_count,
           query: e.query,
           isLoading: false,
         );
       },
-      pagePlus: (e) async* {
+      pageChanged: (e) async* {
         yield state.copyWith(isLoading: true);
+
         final result = await _imageRepository.getKakaoImage(
           query: state.query,
           sort: "accuracy",
-          page: state.page + 1,
+          page: e.index,
           size: 80,
         );
         yield state.copyWith(
           apiKakaoImage: result,
           isLoading: false,
-          page: state.page + 1,
-        );
-      },
-      pageMinus: (e) async* {
-        yield state.copyWith(isLoading: false);
-        final result = await _imageRepository.getKakaoImage(
-          query: state.query,
-          sort: 'accuracy',
-          page: state.page - 1,
-          size: 80,
-        );
-        yield state.copyWith(
-          apiKakaoImage: result,
-          isLoading: false,
-          page: state.page - 1,
+          page: e.index,
         );
       },
     );

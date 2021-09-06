@@ -31,3 +31,20 @@ Map<String, dynamic> _$_$_ApiKakaoImageDtoToJson(
       'doc_url': instance.doc_url,
       'datetime': instance.datetime.toIso8601String(),
     };
+
+_$_ApiKakaoImageMetaDto _$_$_ApiKakaoImageMetaDtoFromJson(
+    Map<String, dynamic> json) {
+  return _$_ApiKakaoImageMetaDto(
+    is_end: json['is_end'] as bool,
+    pageable_count: json['pageable_count'] as int,
+    total_count: json['total_count'] as int,
+  );
+}
+
+Map<String, dynamic> _$_$_ApiKakaoImageMetaDtoToJson(
+        _$_ApiKakaoImageMetaDto instance) =>
+    <String, dynamic>{
+      'is_end': instance.is_end,
+      'pageable_count': instance.pageable_count,
+      'total_count': instance.total_count,
+    };

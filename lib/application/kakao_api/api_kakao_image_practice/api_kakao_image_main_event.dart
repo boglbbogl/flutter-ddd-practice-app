@@ -6,6 +6,6 @@ class ApiKakaoImageMainEvent with _$ApiKakaoImageMainEvent {
   const factory ApiKakaoImageMainEvent.searched({
     required String query,
   }) = _Searched;
-  const factory ApiKakaoImageMainEvent.pagePlus() = _PagePlus;
-  const factory ApiKakaoImageMainEvent.pageMinus() = _PageMinus;
+  const factory ApiKakaoImageMainEvent.pageChanged({required int index}) =
+      _PagePlus;
 }

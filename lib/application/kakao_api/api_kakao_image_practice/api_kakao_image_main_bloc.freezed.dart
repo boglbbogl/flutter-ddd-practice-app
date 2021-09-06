@@ -26,12 +26,10 @@ class _$ApiKakaoImageMainEventTearOff {
     );
   }
 
-  _PagePlus pagePlus() {
-    return const _PagePlus();
-  }
-
-  _PageMinus pageMinus() {
-    return const _PageMinus();
+  _PagePlus pageChanged({required int index}) {
+    return _PagePlus(
+      index: index,
+    );
   }
 }
 
@@ -44,16 +42,14 @@ mixin _$ApiKakaoImageMainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() pagePlus,
-    required TResult Function() pageMinus,
+    required TResult Function(int index) pageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? pagePlus,
-    TResult Function()? pageMinus,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,16 +57,14 @@ mixin _$ApiKakaoImageMainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_PagePlus value) pagePlus,
-    required TResult Function(_PageMinus value) pageMinus,
+    required TResult Function(_PagePlus value) pageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_PagePlus value)? pagePlus,
-    TResult Function(_PageMinus value)? pageMinus,
+    TResult Function(_PagePlus value)? pageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,8 +127,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() pagePlus,
-    required TResult Function() pageMinus,
+    required TResult Function(int index) pageChanged,
   }) {
     return started();
   }
@@ -144,8 +137,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? pagePlus,
-    TResult Function()? pageMinus,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -159,8 +151,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_PagePlus value) pagePlus,
-    required TResult Function(_PageMinus value) pageMinus,
+    required TResult Function(_PagePlus value) pageChanged,
   }) {
     return started(this);
   }
@@ -170,8 +161,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_PagePlus value)? pagePlus,
-    TResult Function(_PageMinus value)? pageMinus,
+    TResult Function(_PagePlus value)? pageChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -250,8 +240,7 @@ class _$_Searched implements _Searched {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() pagePlus,
-    required TResult Function() pageMinus,
+    required TResult Function(int index) pageChanged,
   }) {
     return searched(query);
   }
@@ -261,8 +250,7 @@ class _$_Searched implements _Searched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? pagePlus,
-    TResult Function()? pageMinus,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -276,8 +264,7 @@ class _$_Searched implements _Searched {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_PagePlus value) pagePlus,
-    required TResult Function(_PageMinus value) pageMinus,
+    required TResult Function(_PagePlus value) pageChanged,
   }) {
     return searched(this);
   }
@@ -287,8 +274,7 @@ class _$_Searched implements _Searched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_PagePlus value)? pagePlus,
-    TResult Function(_PageMinus value)? pageMinus,
+    TResult Function(_PagePlus value)? pageChanged,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -311,6 +297,7 @@ abstract class _Searched implements ApiKakaoImageMainEvent {
 abstract class _$PagePlusCopyWith<$Res> {
   factory _$PagePlusCopyWith(_PagePlus value, $Res Function(_PagePlus) then) =
       __$PagePlusCopyWithImpl<$Res>;
+  $Res call({int index});
 }
 
 /// @nodoc
@@ -322,35 +309,58 @@ class __$PagePlusCopyWithImpl<$Res>
 
   @override
   _PagePlus get _value => super._value as _PagePlus;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_PagePlus(
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_PagePlus implements _PagePlus {
-  const _$_PagePlus();
+  const _$_PagePlus({required this.index});
+
+  @override
+  final int index;
 
   @override
   String toString() {
-    return 'ApiKakaoImageMainEvent.pagePlus()';
+    return 'ApiKakaoImageMainEvent.pageChanged(index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PagePlus);
+    return identical(this, other) ||
+        (other is _PagePlus &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PagePlusCopyWith<_PagePlus> get copyWith =>
+      __$PagePlusCopyWithImpl<_PagePlus>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() pagePlus,
-    required TResult Function() pageMinus,
+    required TResult Function(int index) pageChanged,
   }) {
-    return pagePlus();
+    return pageChanged(index);
   }
 
   @override
@@ -358,12 +368,11 @@ class _$_PagePlus implements _PagePlus {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? pagePlus,
-    TResult Function()? pageMinus,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) {
-    if (pagePlus != null) {
-      return pagePlus();
+    if (pageChanged != null) {
+      return pageChanged(index);
     }
     return orElse();
   }
@@ -373,10 +382,9 @@ class _$_PagePlus implements _PagePlus {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_PagePlus value) pagePlus,
-    required TResult Function(_PageMinus value) pageMinus,
+    required TResult Function(_PagePlus value) pageChanged,
   }) {
-    return pagePlus(this);
+    return pageChanged(this);
   }
 
   @override
@@ -384,112 +392,23 @@ class _$_PagePlus implements _PagePlus {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_PagePlus value)? pagePlus,
-    TResult Function(_PageMinus value)? pageMinus,
+    TResult Function(_PagePlus value)? pageChanged,
     required TResult orElse(),
   }) {
-    if (pagePlus != null) {
-      return pagePlus(this);
+    if (pageChanged != null) {
+      return pageChanged(this);
     }
     return orElse();
   }
 }
 
 abstract class _PagePlus implements ApiKakaoImageMainEvent {
-  const factory _PagePlus() = _$_PagePlus;
-}
+  const factory _PagePlus({required int index}) = _$_PagePlus;
 
-/// @nodoc
-abstract class _$PageMinusCopyWith<$Res> {
-  factory _$PageMinusCopyWith(
-          _PageMinus value, $Res Function(_PageMinus) then) =
-      __$PageMinusCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$PageMinusCopyWithImpl<$Res>
-    extends _$ApiKakaoImageMainEventCopyWithImpl<$Res>
-    implements _$PageMinusCopyWith<$Res> {
-  __$PageMinusCopyWithImpl(_PageMinus _value, $Res Function(_PageMinus) _then)
-      : super(_value, (v) => _then(v as _PageMinus));
-
-  @override
-  _PageMinus get _value => super._value as _PageMinus;
-}
-
-/// @nodoc
-
-class _$_PageMinus implements _PageMinus {
-  const _$_PageMinus();
-
-  @override
-  String toString() {
-    return 'ApiKakaoImageMainEvent.pageMinus()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PageMinus);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String query) searched,
-    required TResult Function() pagePlus,
-    required TResult Function() pageMinus,
-  }) {
-    return pageMinus();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String query)? searched,
-    TResult Function()? pagePlus,
-    TResult Function()? pageMinus,
-    required TResult orElse(),
-  }) {
-    if (pageMinus != null) {
-      return pageMinus();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Searched value) searched,
-    required TResult Function(_PagePlus value) pagePlus,
-    required TResult Function(_PageMinus value) pageMinus,
-  }) {
-    return pageMinus(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Searched value)? searched,
-    TResult Function(_PagePlus value)? pagePlus,
-    TResult Function(_PageMinus value)? pageMinus,
-    required TResult orElse(),
-  }) {
-    if (pageMinus != null) {
-      return pageMinus(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PageMinus implements ApiKakaoImageMainEvent {
-  const factory _PageMinus() = _$_PageMinus;
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PagePlusCopyWith<_PagePlus> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -498,13 +417,17 @@ class _$ApiKakaoImageMainStateTearOff {
 
   _ApiKakaoImageMainState call(
       {required bool isLoading,
+      required ApiKakaoImageMeta? meta,
       required List<ApiKakaoImage> apiKakaoImage,
       required int page,
+      required int totalPage,
       required String query}) {
     return _ApiKakaoImageMainState(
       isLoading: isLoading,
+      meta: meta,
       apiKakaoImage: apiKakaoImage,
       page: page,
+      totalPage: totalPage,
       query: query,
     );
   }
@@ -516,8 +439,10 @@ const $ApiKakaoImageMainState = _$ApiKakaoImageMainStateTearOff();
 /// @nodoc
 mixin _$ApiKakaoImageMainState {
   bool get isLoading => throw _privateConstructorUsedError;
+  ApiKakaoImageMeta? get meta => throw _privateConstructorUsedError;
   List<ApiKakaoImage> get apiKakaoImage => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
+  int get totalPage => throw _privateConstructorUsedError;
   String get query => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -532,9 +457,13 @@ abstract class $ApiKakaoImageMainStateCopyWith<$Res> {
       _$ApiKakaoImageMainStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoading,
+      ApiKakaoImageMeta? meta,
       List<ApiKakaoImage> apiKakaoImage,
       int page,
+      int totalPage,
       String query});
+
+  $ApiKakaoImageMetaCopyWith<$Res>? get meta;
 }
 
 /// @nodoc
@@ -549,8 +478,10 @@ class _$ApiKakaoImageMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? meta = freezed,
     Object? apiKakaoImage = freezed,
     Object? page = freezed,
+    Object? totalPage = freezed,
     Object? query = freezed,
   }) {
     return _then(_value.copyWith(
@@ -558,6 +489,10 @@ class _$ApiKakaoImageMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      meta: meta == freezed
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as ApiKakaoImageMeta?,
       apiKakaoImage: apiKakaoImage == freezed
           ? _value.apiKakaoImage
           : apiKakaoImage // ignore: cast_nullable_to_non_nullable
@@ -566,11 +501,26 @@ class _$ApiKakaoImageMainStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      totalPage: totalPage == freezed
+          ? _value.totalPage
+          : totalPage // ignore: cast_nullable_to_non_nullable
+              as int,
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+
+  @override
+  $ApiKakaoImageMetaCopyWith<$Res>? get meta {
+    if (_value.meta == null) {
+      return null;
+    }
+
+    return $ApiKakaoImageMetaCopyWith<$Res>(_value.meta!, (value) {
+      return _then(_value.copyWith(meta: value));
+    });
   }
 }
 
@@ -583,9 +533,14 @@ abstract class _$ApiKakaoImageMainStateCopyWith<$Res>
   @override
   $Res call(
       {bool isLoading,
+      ApiKakaoImageMeta? meta,
       List<ApiKakaoImage> apiKakaoImage,
       int page,
+      int totalPage,
       String query});
+
+  @override
+  $ApiKakaoImageMetaCopyWith<$Res>? get meta;
 }
 
 /// @nodoc
@@ -602,8 +557,10 @@ class __$ApiKakaoImageMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? meta = freezed,
     Object? apiKakaoImage = freezed,
     Object? page = freezed,
+    Object? totalPage = freezed,
     Object? query = freezed,
   }) {
     return _then(_ApiKakaoImageMainState(
@@ -611,6 +568,10 @@ class __$ApiKakaoImageMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      meta: meta == freezed
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as ApiKakaoImageMeta?,
       apiKakaoImage: apiKakaoImage == freezed
           ? _value.apiKakaoImage
           : apiKakaoImage // ignore: cast_nullable_to_non_nullable
@@ -618,6 +579,10 @@ class __$ApiKakaoImageMainStateCopyWithImpl<$Res>
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPage: totalPage == freezed
+          ? _value.totalPage
+          : totalPage // ignore: cast_nullable_to_non_nullable
               as int,
       query: query == freezed
           ? _value.query
@@ -632,22 +597,28 @@ class __$ApiKakaoImageMainStateCopyWithImpl<$Res>
 class _$_ApiKakaoImageMainState implements _ApiKakaoImageMainState {
   _$_ApiKakaoImageMainState(
       {required this.isLoading,
+      required this.meta,
       required this.apiKakaoImage,
       required this.page,
+      required this.totalPage,
       required this.query});
 
   @override
   final bool isLoading;
   @override
+  final ApiKakaoImageMeta? meta;
+  @override
   final List<ApiKakaoImage> apiKakaoImage;
   @override
   final int page;
+  @override
+  final int totalPage;
   @override
   final String query;
 
   @override
   String toString() {
-    return 'ApiKakaoImageMainState(isLoading: $isLoading, apiKakaoImage: $apiKakaoImage, page: $page, query: $query)';
+    return 'ApiKakaoImageMainState(isLoading: $isLoading, meta: $meta, apiKakaoImage: $apiKakaoImage, page: $page, totalPage: $totalPage, query: $query)';
   }
 
   @override
@@ -657,11 +628,16 @@ class _$_ApiKakaoImageMainState implements _ApiKakaoImageMainState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.meta, meta) ||
+                const DeepCollectionEquality().equals(other.meta, meta)) &&
             (identical(other.apiKakaoImage, apiKakaoImage) ||
                 const DeepCollectionEquality()
                     .equals(other.apiKakaoImage, apiKakaoImage)) &&
             (identical(other.page, page) ||
                 const DeepCollectionEquality().equals(other.page, page)) &&
+            (identical(other.totalPage, totalPage) ||
+                const DeepCollectionEquality()
+                    .equals(other.totalPage, totalPage)) &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)));
   }
@@ -670,8 +646,10 @@ class _$_ApiKakaoImageMainState implements _ApiKakaoImageMainState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(meta) ^
       const DeepCollectionEquality().hash(apiKakaoImage) ^
       const DeepCollectionEquality().hash(page) ^
+      const DeepCollectionEquality().hash(totalPage) ^
       const DeepCollectionEquality().hash(query);
 
   @JsonKey(ignore: true)
@@ -684,16 +662,22 @@ class _$_ApiKakaoImageMainState implements _ApiKakaoImageMainState {
 abstract class _ApiKakaoImageMainState implements ApiKakaoImageMainState {
   factory _ApiKakaoImageMainState(
       {required bool isLoading,
+      required ApiKakaoImageMeta? meta,
       required List<ApiKakaoImage> apiKakaoImage,
       required int page,
+      required int totalPage,
       required String query}) = _$_ApiKakaoImageMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
+  ApiKakaoImageMeta? get meta => throw _privateConstructorUsedError;
+  @override
   List<ApiKakaoImage> get apiKakaoImage => throw _privateConstructorUsedError;
   @override
   int get page => throw _privateConstructorUsedError;
+  @override
+  int get totalPage => throw _privateConstructorUsedError;
   @override
   String get query => throw _privateConstructorUsedError;
   @override

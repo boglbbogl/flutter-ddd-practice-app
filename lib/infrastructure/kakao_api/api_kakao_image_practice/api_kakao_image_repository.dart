@@ -39,4 +39,32 @@ class ApiKakaoImageRepository implements IApiKakaoImageRepository {
       return [];
     }
   }
+
+  @override
+  Future<ApiKakaoImageMeta?> getImagesMetaData({
+    required String query,
+    required String sort,
+    required int page,
+    required int size,
+  }) async {
+    try {
+      final uri = Uri.parse(
+          "$apiBase/v2/search/image?sort=$sort&page=$page&size=$size&query=$query");
+      final response = await http.get(
+        uri,
+        headers: {'Authorization': 'KakaoAK $apiKey'},
+      );
+      if (response.statusCode == 200) {
+        final decoded = json.decode(utf8.decode(response.bodyBytes))
+            as Map<String, dynamic>;
+        final result = ApiKakaoImageMetaDto.fromJson(
+                decoded["meta"] as Map<String, dynamic>)
+            .toDomain();
+        return result;
+      }
+      return null;
+    } catch (error) {
+      return null;
+    }
+  }
 }
