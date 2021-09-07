@@ -54,7 +54,7 @@ class AppWidget extends StatelessWidget {
               ApiKakaoTranslateMainPage(),
           '/apiKakaoTranslateMultipleMainPage': (context) =>
               ApiKakaoTranslateMultipleMainPage(),
-          '/apiNaverImageMainPage': (context) => const ApiNaverImageMainPage(),
+          '/apiNaverImageMainPage': (context) => ApiNaverImageMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>
               const WidgetHeroAnimationMainPage(),

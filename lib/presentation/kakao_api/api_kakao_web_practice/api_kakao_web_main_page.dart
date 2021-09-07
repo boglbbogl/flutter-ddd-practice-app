@@ -23,7 +23,7 @@ class ApiKakaoWebMainPage extends StatelessWidget {
             child: Scaffold(
               appBar: appBarForm(context, theme,
                   title: 'Kakao Web',
-                  colors: Colors.yellow.shade300,
+                  colors: Colors.yellow,
                   backColors: const Color.fromRGBO(135, 135, 135, 1),
                   actions: [
                     appbarActionInfoForm(

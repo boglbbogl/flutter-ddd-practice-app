@@ -5,7 +5,8 @@
     "kakaoApiBaseUrl" : "",
     "kakaoApiKey":"",
     "naverApiBaseUrl":"",
-    "naverApiKey":"",
+    "naverApiId":"",
+    "naverApiSecret":"",
     "newsApiBaseUrl":"",
     "newsApiKey":""
 }
