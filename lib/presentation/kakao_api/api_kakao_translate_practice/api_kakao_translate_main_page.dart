@@ -20,15 +20,18 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Kakao Translate Practice',
-                  colors: Colors.amber, onTap: () {
+                  title: 'KR-EN Kakao Translate',
+                  colors: Colors.yellow,
+                  backColors: const Color.fromRGBO(135, 135, 135, 1),
+                  onTap: () {
                 context.read<ApiKakaoTranslateMainCubit>().started();
                 Get.back();
               }, actions: [
                 appbarActionInfoForm(
                   context: context,
                   sourceText: 'https://dapi.kakao.com/v2/translation/translate',
-                  colors: Colors.amber,
+                  colors: Colors.yellow,
+                  textColors: const Color.fromRGBO(135, 135, 135, 1),
                 )
               ]),
               body: SingleChildScrollView(
@@ -49,7 +52,7 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                               height: 30,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: Colors.amber),
+                                  color: Colors.yellow),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -110,7 +113,7 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: state.isLoading
-                                    ? Colors.amber
+                                    ? Colors.yellow
                                     : const Color.fromRGBO(91, 91, 91, 1),
                               ),
                               child: state.isLoading
@@ -122,7 +125,7 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                                       'TRANSLATE...',
                                       style:
                                           theme.textTheme.bodyText2!.copyWith(
-                                        color: Colors.amber,
+                                        color: Colors.yellow,
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -140,11 +143,11 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                           decoration: InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
-                                      color: Colors.amber, width: 3),
+                                      color: Colors.yellow, width: 3),
                                   borderRadius: BorderRadius.circular(20)),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
-                                      color: Colors.amber, width: 3),
+                                      color: Colors.yellow, width: 3),
                                   borderRadius: BorderRadius.circular(20)),
                               hintText: 'Input Text...',
                               hintStyle: theme.textTheme.bodyText2!.copyWith(
@@ -158,7 +161,7 @@ class ApiKakaoTranslateMainPage extends StatelessWidget {
                           // height: size.height * 0.5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Colors.amber,
+                            color: Colors.yellow,
                           ),
                           child: ListView(
                             shrinkWrap: true,

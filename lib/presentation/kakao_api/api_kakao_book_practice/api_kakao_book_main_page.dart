@@ -27,13 +27,16 @@ class ApiKakaoBookMainPage extends StatelessWidget {
             onTap: () => FocusScope.of(context).unfocus(),
             child: Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Kakao Book Practice',
-                  colors: Colors.red,
+                  title: 'Kakao Book',
+                  colors: Colors.yellow,
+                  backColors: const Color.fromRGBO(135, 135, 135, 1),
                   actions: [
                     appbarActionInfoForm(
-                        context: context,
-                        sourceText: 'https://dapi.kakao.com/v3/search/book',
-                        colors: Colors.red)
+                      context: context,
+                      sourceText: 'https://dapi.kakao.com/v3/search/book',
+                      colors: Colors.yellow,
+                      textColors: const Color.fromRGBO(135, 135, 135, 1),
+                    ),
                   ]),
               body: Column(
                 children: [
@@ -49,8 +52,9 @@ class ApiKakaoBookMainPage extends StatelessWidget {
                               queryText: controller.text));
                       FocusScope.of(context).unfocus();
                     },
-                    mainColor: Colors.red,
+                    mainColor: Colors.yellow,
                     subColor: Colors.orange,
+                    btnColor: const Color.fromRGBO(135, 135, 135, 1),
                   ),
                   Expanded(
                       child: ApiKakaoBookListView(

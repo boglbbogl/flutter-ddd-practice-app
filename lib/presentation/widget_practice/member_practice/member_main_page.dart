@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/member_practice/member_main/member_main_bloc.dart';
-import 'package:ddd_practice_app/presentation/member_practice/member_create_page.dart';
+import 'package:ddd_practice_app/application/widget_practice/member_practice/member_main/member_main_bloc.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_create_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -15,8 +15,13 @@ class MemberMainPage extends StatelessWidget {
     return BlocBuilder<MemberMainBloc, MemberMainState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: appBarForm(context, theme,
-              title: 'Member Practice', colors: Colors.green),
+          appBar: appBarForm(
+            context,
+            theme,
+            title: 'Member Create',
+            colors: Colors.teal,
+            backColors: Colors.white,
+          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -31,7 +36,7 @@ class MemberMainPage extends StatelessWidget {
                   Text(
                     'Member List',
                     style: theme.textTheme.bodyText2!.copyWith(
-                        color: Colors.green,
+                        color: Colors.teal,
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                   ),

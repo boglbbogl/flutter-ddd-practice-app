@@ -86,8 +86,13 @@ class ApiCheckMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarForm(context, theme,
-          title: "API Check Form", colors: Colors.teal),
+      appBar: appBarForm(
+        context,
+        theme,
+        title: "API Check Form",
+        colors: Colors.deepPurple,
+        backColors: Colors.white,
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -135,12 +140,12 @@ class ApiCheckMainPage extends StatelessWidget {
         height: size.height * 0.08,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              primary: Colors.teal,
+              primary: Colors.deepPurple,
               elevation: 5,
               onPrimary: Colors.white,
-              shadowColor: Colors.tealAccent,
+              shadowColor: Colors.deepPurpleAccent,
               shape: const BeveledRectangleBorder(
-                  side: BorderSide(color: Colors.tealAccent, width: 2),
+                  side: BorderSide(color: Colors.deepPurpleAccent, width: 2),
                   borderRadius: BorderRadius.all(Radius.circular(15)))),
           onPressed: onTap,
           child: Text(

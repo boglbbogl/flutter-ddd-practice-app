@@ -1,8 +1,8 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/member_practice/member_create/member_create_bloc.dart';
+import 'package:ddd_practice_app/application/widget_practice/member_practice/member_create/member_create_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/member_practice/member_colors.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -19,7 +19,13 @@ class MemberCreatePage extends StatelessWidget {
       child: BlocBuilder<MemberCreateBloc, MemberCreateState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: appBarForm(context, theme, title: "", colors: Colors.green),
+            appBar: appBarForm(
+              context,
+              theme,
+              title: "",
+              colors: Colors.teal,
+              backColors: Colors.white,
+            ),
             bottomNavigationBar: Padding(
               padding: const EdgeInsets.all(22.0),
               child: InkWell(
@@ -33,7 +39,7 @@ class MemberCreatePage extends StatelessWidget {
                   height: size.height * 0.08,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Colors.green,
+                    color: Colors.teal,
                   ),
                   child: Center(
                     child: Text(

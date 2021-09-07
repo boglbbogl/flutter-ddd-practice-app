@@ -55,7 +55,7 @@ class ApiKakaoTranslateSelectWidget extends StatelessWidget {
                                 e.value,
                                 style: theme.textTheme.bodyText2!.copyWith(
                                     color: formatSrcLang == e.value
-                                        ? Colors.orange
+                                        ? Colors.yellow
                                         : Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 25),
@@ -72,7 +72,7 @@ class ApiKakaoTranslateSelectWidget extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.swap_horiz_outlined,
-                  color: Colors.orange,
+                  color: Colors.yellow,
                   size: 30,
                 )),
             regionSelectBottomForm(
@@ -100,7 +100,7 @@ class ApiKakaoTranslateSelectWidget extends StatelessWidget {
                                 e.value,
                                 style: theme.textTheme.bodyText2!.copyWith(
                                     color: formatTargetLang == e.value
-                                        ? Colors.orange
+                                        ? Colors.yellow
                                         : Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 25),
@@ -140,7 +140,7 @@ class ApiKakaoTranslateSelectWidget extends StatelessWidget {
         height: size.height * 0.04,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          color: Colors.orange,
+          color: Colors.yellow,
         ),
         child: Center(
           child: Row(

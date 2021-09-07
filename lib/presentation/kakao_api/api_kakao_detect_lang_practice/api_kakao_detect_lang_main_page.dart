@@ -27,14 +27,17 @@ class ApiKakaoDetectLangMainPage extends StatelessWidget {
               appBar: appBarForm(
                 context,
                 theme,
-                title: 'API Kakao Detect Language',
+                title: 'Kakao Detect Language',
                 colors: Colors.yellow,
+                backColors: const Color.fromRGBO(135, 135, 135, 1),
                 actions: [
                   appbarActionInfoForm(
-                      context: context,
-                      sourceText:
-                          'https://dapi.kakao.com/v3/translation/language/detect',
-                      colors: Colors.yellow),
+                    context: context,
+                    sourceText:
+                        'https://dapi.kakao.com/v3/translation/language/detect',
+                    colors: Colors.yellow,
+                    textColors: const Color.fromRGBO(135, 135, 135, 1),
+                  ),
                 ],
               ),
               body: SingleChildScrollView(
@@ -64,7 +67,7 @@ class ApiKakaoDetectLangMainPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: state.isLoading
-                                    ? Colors.amber
+                                    ? Colors.yellow
                                     : const Color.fromRGBO(91, 91, 91, 1),
                               ),
                               child: state.isLoading

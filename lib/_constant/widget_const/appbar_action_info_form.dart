@@ -5,13 +5,14 @@ Padding appbarActionInfoForm({
   required BuildContext context,
   required String sourceText,
   required Color colors,
+  required Color textColors,
 }) {
   return Padding(
     padding: const EdgeInsets.only(right: 6),
     child: IconButton(
-      icon: const Icon(
+      icon: Icon(
         Icons.info_outlined,
-        color: Colors.white,
+        color: textColors,
       ),
       onPressed: () {
         showModalBottomSheet(
@@ -29,13 +30,13 @@ Padding appbarActionInfoForm({
                         style: theme.textTheme.bodyText2!.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
-                          color: Colors.white,
+                          color: textColors,
                         ),
                         children: [
                           TextSpan(
                               text: sourceText,
                               style: theme.textTheme.bodyText2!.copyWith(
-                                color: Colors.white,
+                                color: textColors,
                                 fontSize: 15,
                               )),
                         ]),

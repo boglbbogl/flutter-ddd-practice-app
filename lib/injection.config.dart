@@ -11,12 +11,6 @@ import 'package:firebase_storage/firebase_storage.dart' as _i6;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/community_practice/community_delete_cubit/community_delete_cubit.dart'
-    as _i39;
-import 'application/community_practice/community_detail_bloc/community_detail_bloc.dart'
-    as _i40;
-import 'application/community_practice/community_main_bloc/community_main_bloc.dart'
-    as _i41;
 import 'application/example_api/api_news_practice/api_news_main_bloc.dart'
     as _i36;
 import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
@@ -36,9 +30,16 @@ import 'application/kakao_api/api_kakao_translate_practice/api_kakao_translate_m
 import 'application/kakao_api/api_kakao_web_practice/api_kakao_web_main_cubit.dart'
     as _i35;
 import 'application/main/main_cubit.dart' as _i27;
-import 'application/member_practice/member_create/member_create_bloc.dart'
+import 'application/widget_practice/community_practice/community_delete_cubit/community_delete_cubit.dart'
+    as _i39;
+import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
+    as _i40;
+import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+    as _i41;
+import 'application/widget_practice/member_practice/member_create/member_create_bloc.dart'
     as _i28;
-import 'application/member_practice/member_main/member_main_bloc.dart' as _i29;
+import 'application/widget_practice/member_practice/member_main/member_main_bloc.dart'
+    as _i29;
 import 'domain/community_practice/i_community_repository.dart' as _i23;
 import 'domain/example_api/api_news_practice/i_api_news_repository.dart'
     as _i17;
@@ -57,7 +58,6 @@ import 'domain/kakao_api/api_kakao_translate_practice/i_api_kakao_translate_repo
 import 'domain/kakao_api/api_kakao_web_practice/i_api_kakao_web_repository.dart'
     as _i15;
 import 'domain/member_practice/i_member_repository.dart' as _i25;
-import 'infrastructure/community_practice/community_repository.dart' as _i24;
 import 'infrastructure/core/firebase_injectable_module.dart' as _i42;
 import 'infrastructure/example_api/api_news_practice/api_news_repository.dart'
     as _i18;
@@ -75,7 +75,9 @@ import 'infrastructure/kakao_api/api_kakao_translate_practice/api_kakao_translat
     as _i14;
 import 'infrastructure/kakao_api/api_kakao_web_practice/api_kakao_web_repository.dart'
     as _i16;
-import 'infrastructure/member_practice/member_repository.dart'
+import 'infrastructure/widget_practice/community_practice/community_repository.dart'
+    as _i24;
+import 'infrastructure/widget_practice/member_practice/member_repository.dart'
     as _i26; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

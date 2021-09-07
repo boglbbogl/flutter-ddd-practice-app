@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/bottom_button_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -17,11 +17,12 @@ class CommunityCreatePage extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: appBarForm(context, theme, title: 'CREATE'),
+        appBar: appBarForm(context, theme,
+            title: 'CREATE', colors: Colors.teal, backColors: Colors.white),
         bottomNavigationBar: bottomButtonForm(
           buttonTitle: 'DONE',
           buttonTextColor: Colors.white,
-          buttonColors: Colors.cyan,
+          buttonColors: Colors.teal,
           onTap: () {
             context.read<CommunityMainBloc>().add(CommunityMainEvent.created(
                 titleController.text, bodyTextController.text));
@@ -90,7 +91,7 @@ class CommunityCreatePage extends StatelessWidget {
             maxLines: maxLines,
             decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.cyan, width: 2),
+                    borderSide: const BorderSide(color: Colors.teal, width: 2),
                     borderRadius: BorderRadius.circular(20)),
                 enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(

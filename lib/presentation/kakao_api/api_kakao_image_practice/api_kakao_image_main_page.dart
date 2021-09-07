@@ -20,13 +20,16 @@ class ApiKakaoImageMainPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: appBarForm(context, theme,
-                title: 'API Kakao Image Practice',
-                colors: Colors.pink,
+                title: 'Kakao Image',
+                backColors: const Color.fromRGBO(135, 135, 135, 1),
+                colors: Colors.yellow,
                 actions: [
                   appbarActionInfoForm(
-                      context: context,
-                      sourceText: 'https://dapi.kakao.com/v2/search/image',
-                      colors: Colors.pink)
+                    context: context,
+                    sourceText: 'https://dapi.kakao.com/v2/search/image',
+                    colors: Colors.yellow,
+                    textColors: const Color.fromRGBO(135, 135, 135, 1),
+                  )
                 ]),
             body: Column(
               children: [
@@ -36,8 +39,9 @@ class ApiKakaoImageMainPage extends StatelessWidget {
                 searchTextForm(
                   context: context,
                   controller: controller,
-                  mainColor: Colors.pink,
-                  subColor: Colors.green,
+                  mainColor: Colors.yellow,
+                  subColor: Colors.orange,
+                  btnColor: const Color.fromRGBO(135, 135, 135, 1),
                   onPressed: () {
                     context.read<ApiKakaoImageMainBloc>().add(
                         ApiKakaoImageMainEvent.searched(
@@ -65,7 +69,7 @@ class ApiKakaoImageMainPage extends StatelessWidget {
                               (index + 1).toString(),
                               style: theme.textTheme.bodyText2!.copyWith(
                                   color: state.page == index + 1
-                                      ? Colors.pink
+                                      ? Colors.yellow
                                       : const Color.fromRGBO(155, 155, 155, 1),
                                   fontSize: 22,
                                   fontWeight: state.page == index + 1

@@ -34,6 +34,14 @@ abstract class ConfigReader {
     return _readForKey("kakaoApiKey");
   }
 
+  static String getNaverApiBaseUrl() {
+    return _readForKey("naverApiBaseUrl");
+  }
+
+  static String getNaverApiKey() {
+    return _readForKey("naverApiKey");
+  }
+
   static String getNewsApiBaseUrl() {
     return _readForKey("newsApiBaseUrl");
   }

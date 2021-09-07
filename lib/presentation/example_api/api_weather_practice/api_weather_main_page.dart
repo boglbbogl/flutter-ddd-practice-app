@@ -24,18 +24,20 @@ class ApiWeatherMainPage extends StatelessWidget {
           }
           return Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Weather Practice',
-                  colors: Colors.lightBlue,
+                  title: 'API Weather_Open Weather',
+                  colors: Colors.deepPurple,
+                  backColors: Colors.white,
                   actions: [
                     appbarActionInfoForm(
                       context: context,
                       sourceText: "http://api.openweathermap.org/",
-                      colors: Colors.lightBlue,
+                      colors: Colors.deepPurple,
+                      textColors: Colors.white,
                     ),
                   ]),
               bottomNavigationBar: bottomButtonForm(
                   buttonTitle: 'UPDATE',
-                  buttonTextColor: Colors.lightBlue,
+                  buttonTextColor: Colors.deepPurple,
                   buttonColors: Colors.white,
                   onTap: () {
                     context.read<ApiWeatherMainCubit>().getWeatherData();

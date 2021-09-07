@@ -23,13 +23,15 @@ class ApiNewsMainPage extends StatelessWidget {
           }
           return Scaffold(
             appBar: appBarForm(context, theme,
-                title: 'API News Practice',
-                colors: const Color.fromRGBO(91, 91, 91, 1),
+                title: 'API News_WSJ',
+                colors: Colors.deepPurple,
+                backColors: Colors.white,
                 actions: [
                   appbarActionInfoForm(
                     context: context,
                     sourceText: "https://newsapi.org/",
-                    colors: const Color.fromRGBO(91, 91, 91, 1),
+                    colors: Colors.deepPurple,
+                    textColors: Colors.white,
                   ),
                 ]),
             body: ListView(

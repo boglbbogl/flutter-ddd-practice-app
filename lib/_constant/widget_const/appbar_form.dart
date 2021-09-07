@@ -6,7 +6,8 @@ AppBar appBarForm(
   ThemeData theme, {
   List<Widget>? actions,
   required String title,
-  Color? colors,
+  required Color colors,
+  required Color backColors,
   Function()? onTap,
 }) {
   return AppBar(
@@ -15,8 +16,9 @@ AppBar appBarForm(
     title: Text(
       title,
       style: theme.textTheme.headline5!.copyWith(
-        color: Colors.white,
+        color: backColors,
         fontWeight: FontWeight.bold,
+        fontSize: 18,
       ),
     ),
     leading: IconButton(
@@ -24,9 +26,9 @@ AppBar appBarForm(
           () {
             Get.back();
           },
-      icon: const Icon(
+      icon: Icon(
         Icons.arrow_back_ios_outlined,
-        color: Colors.white,
+        color: backColors,
       ),
     ),
     actions: actions,

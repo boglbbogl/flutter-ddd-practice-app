@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/domain/community_practice/i_community_repository.dart';
-import 'package:ddd_practice_app/infrastructure/community_practice/community_dto.dart';
+import 'package:ddd_practice_app/infrastructure/widget_practice/community_practice/community_dto.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: ICommunityRepository)

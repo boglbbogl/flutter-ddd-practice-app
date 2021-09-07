@@ -7,6 +7,7 @@ Row searchTextForm({
   required Function() onPressed,
   required Color mainColor,
   required Color subColor,
+  required Color btnColor,
 }) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -32,10 +33,10 @@ Row searchTextForm({
             borderRadius: BorderRadius.circular(6),
             border: Border.all(width: 3, color: mainColor)),
         child: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.search_outlined,
             size: 30,
-            color: Colors.white,
+            color: btnColor,
           ),
           onPressed: onPressed,
         ),

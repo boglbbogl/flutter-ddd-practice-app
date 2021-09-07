@@ -22,13 +22,16 @@ class ApiKakaoWebMainPage extends StatelessWidget {
             onTap: () => FocusScope.of(context).unfocus(),
             child: Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Kakao Web Practice',
-                  colors: Colors.amber.shade300,
+                  title: 'Kakao Web',
+                  colors: Colors.yellow.shade300,
+                  backColors: const Color.fromRGBO(135, 135, 135, 1),
                   actions: [
                     appbarActionInfoForm(
-                        context: context,
-                        sourceText: 'https://dapi.kakao.com/v2/search/web',
-                        colors: Colors.amber.shade300),
+                      context: context,
+                      sourceText: 'https://dapi.kakao.com/v2/search/web',
+                      colors: Colors.yellow,
+                      textColors: const Color.fromRGBO(135, 135, 135, 1),
+                    ),
                   ]),
               body: Column(
                 children: [
@@ -44,8 +47,9 @@ class ApiKakaoWebMainPage extends StatelessWidget {
                           .getKakaoWebData(query: controller.text);
                       FocusScope.of(context).unfocus();
                     },
-                    mainColor: Colors.amber.shade300,
+                    mainColor: Colors.yellow,
                     subColor: Colors.orange,
+                    btnColor: const Color.fromRGBO(135, 135, 135, 1),
                   ),
                   Flexible(
                     child: ListView(

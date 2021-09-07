@@ -25,13 +25,15 @@ class ApiPictureMainPage extends StatelessWidget {
           }
           return Scaffold(
               appBar: appBarForm(context, theme,
-                  title: 'API Picture Practice',
-                  colors: Colors.orange,
+                  title: 'API Picture_Picsum',
+                  colors: Colors.deepPurple,
+                  backColors: Colors.white,
                   actions: [
                     appbarActionInfoForm(
                       context: context,
                       sourceText: "https://picsum.photos/",
-                      colors: Colors.orange,
+                      colors: Colors.deepPurple,
+                      textColors: Colors.white,
                     ),
                   ]),
               body: Column(
@@ -59,7 +61,7 @@ class ApiPictureMainPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(12),
                                   border: state.page == index + 1
                                       ? Border.all(
-                                          width: 2, color: Colors.orange)
+                                          width: 2, color: Colors.deepPurple)
                                       : Border.all(color: Colors.white)),
                               child: Center(
                                 child: Text(
@@ -70,7 +72,7 @@ class ApiPictureMainPage extends StatelessWidget {
                                           ? FontWeight.bold
                                           : FontWeight.w300,
                                       color: state.page == index + 1
-                                          ? Colors.orange
+                                          ? Colors.deepPurple
                                           : const Color.fromRGBO(
                                               215, 215, 215, 1)),
                                 ),

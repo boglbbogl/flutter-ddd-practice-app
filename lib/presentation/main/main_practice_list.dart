@@ -12,13 +12,18 @@ class MainPracticeList extends StatelessWidget {
       children: [
         mainProductListItem(
           title: 'Kakao API',
-          colors: Colors.amber,
+          colors: Colors.yellow,
           gridView: _kakaoApiGridView(),
         ),
         mainProductListItem(
           title: 'Naver API',
           colors: Colors.green,
           gridView: _naverApiGridView(),
+        ),
+        mainProductListItem(
+          title: 'Google API',
+          colors: Colors.lightBlue,
+          gridView: _googleApiGridView(),
         ),
         mainProductListItem(
           title: 'WIDGET',
@@ -48,6 +53,8 @@ class MainPracticeList extends StatelessWidget {
         itemBuilder: (context, index) {
           return _itemForm(
             context,
+            colors: Colors.yellow,
+            textColors: const Color.fromRGBO(135, 135, 135, 1),
             router: KakaoApiPracticeItem().router[index].toString(),
             title: KakaoApiPracticeItem().title[index].toString(),
             sm: KakaoApiPracticeItem().stateManagement[index].toString(),
@@ -69,9 +76,34 @@ class MainPracticeList extends StatelessWidget {
         itemBuilder: (context, index) {
           return _itemForm(
             context,
+            colors: Colors.green,
+            textColors: Colors.white,
             router: NaverApiPracticeItem().router[index].toString(),
             title: NaverApiPracticeItem().title[index].toString(),
             sm: NaverApiPracticeItem().stateManagement[index].toString(),
+          );
+        });
+  }
+
+  GridView _googleApiGridView() {
+    return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+          childAspectRatio: 1.5,
+        ),
+        itemCount: GoogleApiPracticeItem().title.length,
+        itemBuilder: (context, index) {
+          return _itemForm(
+            context,
+            colors: Colors.lightBlue,
+            textColors: Colors.pink.shade300,
+            router: GoogleApiPracticeItem().router[index].toString(),
+            title: GoogleApiPracticeItem().title[index].toString(),
+            sm: GoogleApiPracticeItem().stateManagement[index].toString(),
           );
         });
   }
@@ -90,6 +122,8 @@ class MainPracticeList extends StatelessWidget {
         itemBuilder: (context, index) {
           return _itemForm(
             context,
+            colors: Colors.teal,
+            textColors: Colors.white,
             router: WidgetPracticeItem().router[index].toString(),
             title: WidgetPracticeItem().title[index].toString(),
             sm: WidgetPracticeItem().stateManagement[index].toString(),
@@ -111,6 +145,8 @@ class MainPracticeList extends StatelessWidget {
         itemBuilder: (context, index) {
           return _itemForm(
             context,
+            colors: Colors.deepPurple,
+            textColors: Colors.white,
             router: ExampleApiPracticeItem().router[index].toString(),
             title: ExampleApiPracticeItem().title[index].toString(),
             sm: ExampleApiPracticeItem().stateManagement[index].toString(),
@@ -123,6 +159,8 @@ class MainPracticeList extends StatelessWidget {
     required String router,
     required String title,
     required String sm,
+    required Color colors,
+    required Color textColors,
   }) {
     return InkWell(
       onTap: () {
@@ -131,7 +169,7 @@ class MainPracticeList extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.amber,
+          color: colors,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -139,9 +177,7 @@ class MainPracticeList extends StatelessWidget {
             Text(
               title,
               style: theme.textTheme.bodyText2!.copyWith(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromRGBO(135, 135, 135, 1)),
+                  fontSize: 18, fontWeight: FontWeight.bold, color: textColors),
             ),
             const SizedBox(
               height: 10,
@@ -149,9 +185,7 @@ class MainPracticeList extends StatelessWidget {
             Text(
               sm,
               style: theme.textTheme.bodyText2!.copyWith(
-                  fontSize: 8,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromRGBO(135, 135, 135, 1)),
+                  fontSize: 8, fontWeight: FontWeight.bold, color: textColors),
             ),
           ],
         ),

@@ -1,9 +1,8 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/community_practice/community_main_bloc/community_main_bloc.dart';
-import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/community_practice/widgets/community_create_page.dart';
-import 'package:ddd_practice_app/presentation/community_practice/widgets/community_list.dart';
+import 'package:ddd_practice_app/application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/community_practice/widgets/community_create_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/community_practice/widgets/community_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +17,9 @@ class CommunityMainPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
             appBar: appBarForm(context, theme,
-                title: "Community Practice",
+                title: "Community",
+                colors: Colors.teal,
+                backColors: Colors.white,
                 actions: [
                   IconButton(
                       onPressed: () {

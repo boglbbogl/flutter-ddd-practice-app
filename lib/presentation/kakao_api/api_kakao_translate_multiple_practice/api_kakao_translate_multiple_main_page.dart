@@ -21,15 +21,18 @@ class ApiKakaoTranslateMultipleMainPage extends StatelessWidget {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             appBar: appBarForm(context, theme,
-                colors: Colors.orange,
-                title: 'Multiple_API Kakao Translate Practice', onTap: () {
+                colors: Colors.yellow,
+                backColors: const Color.fromRGBO(135, 135, 135, 1),
+                title: 'Multiple Kakao Translate', onTap: () {
               context.read<ApiKakaoTranslateMainCubit>().started();
               Get.back();
             }, actions: [
               appbarActionInfoForm(
-                  context: context,
-                  sourceText: 'https://dapi.kakao.com/v2/translation/translate',
-                  colors: Colors.orange)
+                context: context,
+                sourceText: 'https://dapi.kakao.com/v2/translation/translate',
+                colors: Colors.yellow,
+                textColors: const Color.fromRGBO(135, 135, 135, 1),
+              )
             ]),
             body: SingleChildScrollView(
               child: Center(
@@ -66,13 +69,13 @@ class ApiKakaoTranslateMultipleMainPage extends StatelessWidget {
                                 ? const Center(
                                     child: CircularProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
-                                        Colors.orange),
+                                        Colors.yellow),
                                   ))
                                 : Center(
                                     child: Text(
                                     'TRANSLATE...',
                                     style: theme.textTheme.bodyText2!.copyWith(
-                                      color: Colors.orange,
+                                      color: Colors.yellow,
                                       fontSize: 30,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -90,11 +93,11 @@ class ApiKakaoTranslateMultipleMainPage extends StatelessWidget {
                         decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.orange, width: 3),
+                                    color: Colors.yellow, width: 3),
                                 borderRadius: BorderRadius.circular(20)),
                             enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.orange, width: 3),
+                                    color: Colors.yellow, width: 3),
                                 borderRadius: BorderRadius.circular(20)),
                             hintText: 'Input Text...',
                             hintStyle: theme.textTheme.bodyText2!.copyWith(
@@ -107,7 +110,7 @@ class ApiKakaoTranslateMultipleMainPage extends StatelessWidget {
                         // height: size.height * 0.5,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.orange,
+                          color: Colors.yellow,
                         ),
                         child: ListView(
                           shrinkWrap: true,

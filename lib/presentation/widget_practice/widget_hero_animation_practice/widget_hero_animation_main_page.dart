@@ -3,7 +3,7 @@ import 'package:ddd_practice_app/_constant/widget_const/my_progress_indicator.da
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/example_api/api_picture_practice/api_picture_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/widget_hero_animation_practice/widget_hero_detail_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/widget_hero_animation_practice/widget_hero_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,8 +24,9 @@ class WidgetHeroAnimationMainPage extends StatelessWidget {
               appBar: appBarForm(
                 context,
                 theme,
-                title: "Hero Animation Practice",
+                title: "Hero Animation",
                 colors: Colors.teal,
+                backColors: Colors.white,
               ),
               body: Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 20),

@@ -26,6 +26,18 @@ class KakaoApiPracticeItem {
 }
 
 class NaverApiPracticeItem {
+  List title = [
+    'Image',
+  ];
+  List router = [
+    '/apiNaverImageMainPage',
+  ];
+  List stateManagement = [
+    'BLoc',
+  ];
+}
+
+class GoogleApiPracticeItem {
   List title = [];
   List router = [];
   List stateManagement = [];
