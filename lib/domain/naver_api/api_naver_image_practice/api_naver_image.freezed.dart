@@ -13,6 +13,158 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+class _$ApiNaverImageTotalTearOff {
+  const _$ApiNaverImageTotalTearOff();
+
+  _ApiNaverImageTotal call(
+      {required int total, required List<ApiNaverImage> items}) {
+    return _ApiNaverImageTotal(
+      total: total,
+      items: items,
+    );
+  }
+}
+
+/// @nodoc
+const $ApiNaverImageTotal = _$ApiNaverImageTotalTearOff();
+
+/// @nodoc
+mixin _$ApiNaverImageTotal {
+  int get total => throw _privateConstructorUsedError;
+  List<ApiNaverImage> get items => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ApiNaverImageTotalCopyWith<ApiNaverImageTotal> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiNaverImageTotalCopyWith<$Res> {
+  factory $ApiNaverImageTotalCopyWith(
+          ApiNaverImageTotal value, $Res Function(ApiNaverImageTotal) then) =
+      _$ApiNaverImageTotalCopyWithImpl<$Res>;
+  $Res call({int total, List<ApiNaverImage> items});
+}
+
+/// @nodoc
+class _$ApiNaverImageTotalCopyWithImpl<$Res>
+    implements $ApiNaverImageTotalCopyWith<$Res> {
+  _$ApiNaverImageTotalCopyWithImpl(this._value, this._then);
+
+  final ApiNaverImageTotal _value;
+  // ignore: unused_field
+  final $Res Function(ApiNaverImageTotal) _then;
+
+  @override
+  $Res call({
+    Object? total = freezed,
+    Object? items = freezed,
+  }) {
+    return _then(_value.copyWith(
+      total: total == freezed
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ApiNaverImage>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ApiNaverImageTotalCopyWith<$Res>
+    implements $ApiNaverImageTotalCopyWith<$Res> {
+  factory _$ApiNaverImageTotalCopyWith(
+          _ApiNaverImageTotal value, $Res Function(_ApiNaverImageTotal) then) =
+      __$ApiNaverImageTotalCopyWithImpl<$Res>;
+  @override
+  $Res call({int total, List<ApiNaverImage> items});
+}
+
+/// @nodoc
+class __$ApiNaverImageTotalCopyWithImpl<$Res>
+    extends _$ApiNaverImageTotalCopyWithImpl<$Res>
+    implements _$ApiNaverImageTotalCopyWith<$Res> {
+  __$ApiNaverImageTotalCopyWithImpl(
+      _ApiNaverImageTotal _value, $Res Function(_ApiNaverImageTotal) _then)
+      : super(_value, (v) => _then(v as _ApiNaverImageTotal));
+
+  @override
+  _ApiNaverImageTotal get _value => super._value as _ApiNaverImageTotal;
+
+  @override
+  $Res call({
+    Object? total = freezed,
+    Object? items = freezed,
+  }) {
+    return _then(_ApiNaverImageTotal(
+      total: total == freezed
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ApiNaverImage>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ApiNaverImageTotal implements _ApiNaverImageTotal {
+  const _$_ApiNaverImageTotal({required this.total, required this.items});
+
+  @override
+  final int total;
+  @override
+  final List<ApiNaverImage> items;
+
+  @override
+  String toString() {
+    return 'ApiNaverImageTotal(total: $total, items: $items)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApiNaverImageTotal &&
+            (identical(other.total, total) ||
+                const DeepCollectionEquality().equals(other.total, total)) &&
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(total) ^
+      const DeepCollectionEquality().hash(items);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApiNaverImageTotalCopyWith<_ApiNaverImageTotal> get copyWith =>
+      __$ApiNaverImageTotalCopyWithImpl<_ApiNaverImageTotal>(this, _$identity);
+}
+
+abstract class _ApiNaverImageTotal implements ApiNaverImageTotal {
+  const factory _ApiNaverImageTotal(
+      {required int total,
+      required List<ApiNaverImage> items}) = _$_ApiNaverImageTotal;
+
+  @override
+  int get total => throw _privateConstructorUsedError;
+  @override
+  List<ApiNaverImage> get items => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApiNaverImageTotalCopyWith<_ApiNaverImageTotal> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$ApiNaverImageTearOff {
   const _$ApiNaverImageTearOff();
 

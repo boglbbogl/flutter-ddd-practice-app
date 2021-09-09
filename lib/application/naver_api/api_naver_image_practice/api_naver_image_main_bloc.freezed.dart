@@ -26,8 +26,10 @@ class _$ApiNaverImageMainEventTearOff {
     );
   }
 
-  _MoreItem moreItem() {
-    return const _MoreItem();
+  _PageChanged pageChanged(int index) {
+    return _PageChanged(
+      index,
+    );
   }
 }
 
@@ -40,14 +42,14 @@ mixin _$ApiNaverImageMainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() moreItem,
+    required TResult Function(int index) pageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? moreItem,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,14 +57,14 @@ mixin _$ApiNaverImageMainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_MoreItem value) moreItem,
+    required TResult Function(_PageChanged value) pageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_MoreItem value)? moreItem,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +127,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() moreItem,
+    required TResult Function(int index) pageChanged,
   }) {
     return started();
   }
@@ -135,7 +137,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? moreItem,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -149,7 +151,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_MoreItem value) moreItem,
+    required TResult Function(_PageChanged value) pageChanged,
   }) {
     return started(this);
   }
@@ -159,7 +161,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_MoreItem value)? moreItem,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -238,7 +240,7 @@ class _$_Searched implements _Searched {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() moreItem,
+    required TResult Function(int index) pageChanged,
   }) {
     return searched(query);
   }
@@ -248,7 +250,7 @@ class _$_Searched implements _Searched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? moreItem,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -262,7 +264,7 @@ class _$_Searched implements _Searched {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_MoreItem value) moreItem,
+    required TResult Function(_PageChanged value) pageChanged,
   }) {
     return searched(this);
   }
@@ -272,7 +274,7 @@ class _$_Searched implements _Searched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_MoreItem value)? moreItem,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -292,48 +294,75 @@ abstract class _Searched implements ApiNaverImageMainEvent {
 }
 
 /// @nodoc
-abstract class _$MoreItemCopyWith<$Res> {
-  factory _$MoreItemCopyWith(_MoreItem value, $Res Function(_MoreItem) then) =
-      __$MoreItemCopyWithImpl<$Res>;
+abstract class _$PageChangedCopyWith<$Res> {
+  factory _$PageChangedCopyWith(
+          _PageChanged value, $Res Function(_PageChanged) then) =
+      __$PageChangedCopyWithImpl<$Res>;
+  $Res call({int index});
 }
 
 /// @nodoc
-class __$MoreItemCopyWithImpl<$Res>
+class __$PageChangedCopyWithImpl<$Res>
     extends _$ApiNaverImageMainEventCopyWithImpl<$Res>
-    implements _$MoreItemCopyWith<$Res> {
-  __$MoreItemCopyWithImpl(_MoreItem _value, $Res Function(_MoreItem) _then)
-      : super(_value, (v) => _then(v as _MoreItem));
+    implements _$PageChangedCopyWith<$Res> {
+  __$PageChangedCopyWithImpl(
+      _PageChanged _value, $Res Function(_PageChanged) _then)
+      : super(_value, (v) => _then(v as _PageChanged));
 
   @override
-  _MoreItem get _value => super._value as _MoreItem;
+  _PageChanged get _value => super._value as _PageChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_PageChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_MoreItem implements _MoreItem {
-  const _$_MoreItem();
+class _$_PageChanged implements _PageChanged {
+  const _$_PageChanged(this.index);
+
+  @override
+  final int index;
 
   @override
   String toString() {
-    return 'ApiNaverImageMainEvent.moreItem()';
+    return 'ApiNaverImageMainEvent.pageChanged(index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MoreItem);
+    return identical(this, other) ||
+        (other is _PageChanged &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PageChangedCopyWith<_PageChanged> get copyWith =>
+      __$PageChangedCopyWithImpl<_PageChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searched,
-    required TResult Function() moreItem,
+    required TResult Function(int index) pageChanged,
   }) {
-    return moreItem();
+    return pageChanged(index);
   }
 
   @override
@@ -341,11 +370,11 @@ class _$_MoreItem implements _MoreItem {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searched,
-    TResult Function()? moreItem,
+    TResult Function(int index)? pageChanged,
     required TResult orElse(),
   }) {
-    if (moreItem != null) {
-      return moreItem();
+    if (pageChanged != null) {
+      return pageChanged(index);
     }
     return orElse();
   }
@@ -355,9 +384,9 @@ class _$_MoreItem implements _MoreItem {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
-    required TResult Function(_MoreItem value) moreItem,
+    required TResult Function(_PageChanged value) pageChanged,
   }) {
-    return moreItem(this);
+    return pageChanged(this);
   }
 
   @override
@@ -365,18 +394,23 @@ class _$_MoreItem implements _MoreItem {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
-    TResult Function(_MoreItem value)? moreItem,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) {
-    if (moreItem != null) {
-      return moreItem(this);
+    if (pageChanged != null) {
+      return pageChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _MoreItem implements ApiNaverImageMainEvent {
-  const factory _MoreItem() = _$_MoreItem;
+abstract class _PageChanged implements ApiNaverImageMainEvent {
+  const factory _PageChanged(int index) = _$_PageChanged;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PageChangedCopyWith<_PageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -385,7 +419,8 @@ class _$ApiNaverImageMainStateTearOff {
 
   _ApiNaverImageMainState call(
       {required bool isLoading,
-      required List<ApiNaverImage> images,
+      required bool searchLoading,
+      required ApiNaverImageTotal? total,
       required String sort,
       required String filter,
       required int display,
@@ -393,7 +428,8 @@ class _$ApiNaverImageMainStateTearOff {
       required String query}) {
     return _ApiNaverImageMainState(
       isLoading: isLoading,
-      images: images,
+      searchLoading: searchLoading,
+      total: total,
       sort: sort,
       filter: filter,
       display: display,
@@ -409,7 +445,8 @@ const $ApiNaverImageMainState = _$ApiNaverImageMainStateTearOff();
 /// @nodoc
 mixin _$ApiNaverImageMainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<ApiNaverImage> get images => throw _privateConstructorUsedError;
+  bool get searchLoading => throw _privateConstructorUsedError;
+  ApiNaverImageTotal? get total => throw _privateConstructorUsedError;
   String get sort => throw _privateConstructorUsedError;
   String get filter => throw _privateConstructorUsedError;
   int get display => throw _privateConstructorUsedError;
@@ -428,12 +465,15 @@ abstract class $ApiNaverImageMainStateCopyWith<$Res> {
       _$ApiNaverImageMainStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoading,
-      List<ApiNaverImage> images,
+      bool searchLoading,
+      ApiNaverImageTotal? total,
       String sort,
       String filter,
       int display,
       int start,
       String query});
+
+  $ApiNaverImageTotalCopyWith<$Res>? get total;
 }
 
 /// @nodoc
@@ -448,7 +488,8 @@ class _$ApiNaverImageMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? images = freezed,
+    Object? searchLoading = freezed,
+    Object? total = freezed,
     Object? sort = freezed,
     Object? filter = freezed,
     Object? display = freezed,
@@ -460,10 +501,14 @@ class _$ApiNaverImageMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      images: images == freezed
-          ? _value.images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ApiNaverImage>,
+      searchLoading: searchLoading == freezed
+          ? _value.searchLoading
+          : searchLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      total: total == freezed
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as ApiNaverImageTotal?,
       sort: sort == freezed
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
@@ -486,6 +531,17 @@ class _$ApiNaverImageMainStateCopyWithImpl<$Res>
               as String,
     ));
   }
+
+  @override
+  $ApiNaverImageTotalCopyWith<$Res>? get total {
+    if (_value.total == null) {
+      return null;
+    }
+
+    return $ApiNaverImageTotalCopyWith<$Res>(_value.total!, (value) {
+      return _then(_value.copyWith(total: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -497,12 +553,16 @@ abstract class _$ApiNaverImageMainStateCopyWith<$Res>
   @override
   $Res call(
       {bool isLoading,
-      List<ApiNaverImage> images,
+      bool searchLoading,
+      ApiNaverImageTotal? total,
       String sort,
       String filter,
       int display,
       int start,
       String query});
+
+  @override
+  $ApiNaverImageTotalCopyWith<$Res>? get total;
 }
 
 /// @nodoc
@@ -519,7 +579,8 @@ class __$ApiNaverImageMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? images = freezed,
+    Object? searchLoading = freezed,
+    Object? total = freezed,
     Object? sort = freezed,
     Object? filter = freezed,
     Object? display = freezed,
@@ -531,10 +592,14 @@ class __$ApiNaverImageMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      images: images == freezed
-          ? _value.images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ApiNaverImage>,
+      searchLoading: searchLoading == freezed
+          ? _value.searchLoading
+          : searchLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      total: total == freezed
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as ApiNaverImageTotal?,
       sort: sort == freezed
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
@@ -564,7 +629,8 @@ class __$ApiNaverImageMainStateCopyWithImpl<$Res>
 class _$_ApiNaverImageMainState implements _ApiNaverImageMainState {
   _$_ApiNaverImageMainState(
       {required this.isLoading,
-      required this.images,
+      required this.searchLoading,
+      required this.total,
       required this.sort,
       required this.filter,
       required this.display,
@@ -574,7 +640,9 @@ class _$_ApiNaverImageMainState implements _ApiNaverImageMainState {
   @override
   final bool isLoading;
   @override
-  final List<ApiNaverImage> images;
+  final bool searchLoading;
+  @override
+  final ApiNaverImageTotal? total;
   @override
   final String sort;
   @override
@@ -588,7 +656,7 @@ class _$_ApiNaverImageMainState implements _ApiNaverImageMainState {
 
   @override
   String toString() {
-    return 'ApiNaverImageMainState(isLoading: $isLoading, images: $images, sort: $sort, filter: $filter, display: $display, start: $start, query: $query)';
+    return 'ApiNaverImageMainState(isLoading: $isLoading, searchLoading: $searchLoading, total: $total, sort: $sort, filter: $filter, display: $display, start: $start, query: $query)';
   }
 
   @override
@@ -598,8 +666,11 @@ class _$_ApiNaverImageMainState implements _ApiNaverImageMainState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.images, images) ||
-                const DeepCollectionEquality().equals(other.images, images)) &&
+            (identical(other.searchLoading, searchLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.searchLoading, searchLoading)) &&
+            (identical(other.total, total) ||
+                const DeepCollectionEquality().equals(other.total, total)) &&
             (identical(other.sort, sort) ||
                 const DeepCollectionEquality().equals(other.sort, sort)) &&
             (identical(other.filter, filter) ||
@@ -617,7 +688,8 @@ class _$_ApiNaverImageMainState implements _ApiNaverImageMainState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(images) ^
+      const DeepCollectionEquality().hash(searchLoading) ^
+      const DeepCollectionEquality().hash(total) ^
       const DeepCollectionEquality().hash(sort) ^
       const DeepCollectionEquality().hash(filter) ^
       const DeepCollectionEquality().hash(display) ^
@@ -634,7 +706,8 @@ class _$_ApiNaverImageMainState implements _ApiNaverImageMainState {
 abstract class _ApiNaverImageMainState implements ApiNaverImageMainState {
   factory _ApiNaverImageMainState(
       {required bool isLoading,
-      required List<ApiNaverImage> images,
+      required bool searchLoading,
+      required ApiNaverImageTotal? total,
       required String sort,
       required String filter,
       required int display,
@@ -644,7 +717,9 @@ abstract class _ApiNaverImageMainState implements ApiNaverImageMainState {
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  List<ApiNaverImage> get images => throw _privateConstructorUsedError;
+  bool get searchLoading => throw _privateConstructorUsedError;
+  @override
+  ApiNaverImageTotal? get total => throw _privateConstructorUsedError;
   @override
   String get sort => throw _privateConstructorUsedError;
   @override

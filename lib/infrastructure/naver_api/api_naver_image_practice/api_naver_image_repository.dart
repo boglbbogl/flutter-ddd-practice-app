@@ -14,7 +14,7 @@ class ApiNaverImageRepository implements IApiNaverImageRepository {
   static String apiSecret = ConfigReader.getNaverApiSecret();
 
   @override
-  Future<List<ApiNaverImage>> getNaverImage({
+  Future<ApiNaverImageTotal?> getNaverImage({
     required String query,
     required int display,
     required int start,
@@ -29,16 +29,15 @@ class ApiNaverImageRepository implements IApiNaverImageRepository {
         "X-Naver-Client-Secret": apiSecret,
       });
       if (response.statusCode == 200) {
-        final decoded = json.decode(utf8.decode(response.bodyBytes))
-            as Map<String, dynamic>;
-        final data = decoded["items"] as List<dynamic>;
-        final result = data.map((e) =>
-            ApiNaverImageDto.fromJson(e as Map<String, dynamic>).toDomain());
-        return result.toList();
+        final decoded = json.decode(utf8.decode(response.bodyBytes));
+        final result =
+            ApiNaverImageTotalDto.fromJson(decoded as Map<String, dynamic>)
+                .toDomain();
+        return result;
       }
-      return [];
+      return null;
     } catch (error) {
-      return [];
+      return null;
     }
   }
 }

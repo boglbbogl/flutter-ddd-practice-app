@@ -5,6 +5,23 @@ part 'api_naver_image_dtos.freezed.dart';
 part 'api_naver_image_dtos.g.dart';
 
 @freezed
+@freezed
+class ApiNaverImageTotalDto with _$ApiNaverImageTotalDto {
+  const factory ApiNaverImageTotalDto({
+    required int total,
+    required List<ApiNaverImageDto> items,
+  }) = _ApiNaverImageTotalDto;
+  const ApiNaverImageTotalDto._();
+  factory ApiNaverImageTotalDto.fromJson(Map<String, dynamic> json) =>
+      _$ApiNaverImageTotalDtoFromJson(json);
+
+  ApiNaverImageTotal toDomain() => ApiNaverImageTotal(
+        total: total,
+        items: items.map((e) => e.toDomain()).toList(),
+      );
+}
+
+@freezed
 class ApiNaverImageDto with _$ApiNaverImageDto {
   const factory ApiNaverImageDto({
     required String title,

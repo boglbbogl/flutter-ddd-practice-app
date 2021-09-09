@@ -1,5 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/widget_const/my_progress_indicator.dart';
 import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_image_practice/api_naver_image_main_bloc.dart';
@@ -18,9 +19,13 @@ class ApiNaverImageMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ApiNaverImageMainBloc>(
-      create: (context) => getIt<ApiNaverImageMainBloc>(),
+      create: (context) => getIt<ApiNaverImageMainBloc>()
+        ..add(const ApiNaverImageMainEvent.started()),
       child: BlocBuilder<ApiNaverImageMainBloc, ApiNaverImageMainState>(
         builder: (context, state) {
+          if (state.total == null) {
+            return const MyProgressIndicator();
+          }
           return Scaffold(
             appBar: appBarForm(context, theme,
                 title: 'Naver Image',
@@ -34,71 +39,133 @@ class ApiNaverImageMainPage extends StatelessWidget {
                     textColors: Colors.white,
                   )
                 ]),
+            floatingActionButton: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (state.total!.items.isNotEmpty) ...[
+                  Container(
+                    width: size.width * 0.6,
+                    height: size.height * 0.05,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.green, width: 3)),
+                    child: state.isLoading
+                        ? const CupertinoActivityIndicator()
+                        : Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: (state.total!.total / 100)
+                                    .ceil()
+                                    .toInt()
+                                    .clamp(0, 100),
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: Center(
+                                      child: InkWell(
+                                        onTap: () {
+                                          context
+                                              .read<ApiNaverImageMainBloc>()
+                                              .add(ApiNaverImageMainEvent
+                                                  .pageChanged(index + 1));
+                                        },
+                                        child: Text(
+                                          (index + 1).toString(),
+                                          style: theme.textTheme.bodyText2!
+                                              .copyWith(
+                                                  color: state.start ==
+                                                          index + 1
+                                                      ? Colors.green
+                                                      : const Color.fromRGBO(
+                                                          155, 155, 155, 1),
+                                                  fontSize:
+                                                      state.start == index + 1
+                                                          ? 33
+                                                          : 28,
+                                                  fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }),
+                          ),
+                  )
+                ],
+              ],
+            ),
             body: Padding(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
               child: Center(
-                child: Column(
-                  children: [
-                    searchTextForm(
-                      controller: controller,
-                      context: context,
-                      onPressed: () {
-                        context.read<ApiNaverImageMainBloc>().add(
-                            ApiNaverImageMainEvent.searched(
-                                query: controller.text));
-                        FocusScope.of(context).unfocus();
-                      },
-                      mainColor: Colors.green,
-                      subColor: Colors.lightBlue,
-                      btnColor: Colors.white,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Flexible(
-                      child: SmartRefresher(
-                        enablePullDown: false,
-                        footer: _itemLoadFooter(),
-                        enablePullUp: true,
-                        controller: refreshController,
-                        onLoading: () {
-                          context
-                              .read<ApiNaverImageMainBloc>()
-                              .add(const ApiNaverImageMainEvent.moreItem());
-                          refreshController.loadComplete();
-                        },
-                        child: GridView(
-                          shrinkWrap: true,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            mainAxisSpacing: 1.0,
-                            crossAxisSpacing: 1.0,
+                child: state.searchLoading
+                    ? const CupertinoActivityIndicator(
+                        radius: 35,
+                      )
+                    : Column(
+                        children: [
+                          searchTextForm(
+                            controller: controller,
+                            context: context,
+                            onPressed: () {
+                              if (controller.text.isNotEmpty) {
+                                context.read<ApiNaverImageMainBloc>().add(
+                                    ApiNaverImageMainEvent.searched(
+                                        query: controller.text));
+                                FocusScope.of(context).unfocus();
+                              }
+                            },
+                            mainColor: Colors.green,
+                            subColor: Colors.lightBlue,
+                            btnColor: Colors.white,
                           ),
-                          children: [
-                            ...state.images.map(
-                              (image) => Stack(
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Flexible(
+                            child: SmartRefresher(
+                              enablePullDown: false,
+                              footer: _itemLoadFooter(),
+                              enablePullUp: true,
+                              controller: refreshController,
+                              onLoading: () {
+                                refreshController.loadComplete();
+                              },
+                              child: GridView(
+                                shrinkWrap: true,
+                                gridDelegate:
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                  mainAxisSpacing: 1.0,
+                                  crossAxisSpacing: 1.0,
+                                ),
                                 children: [
-                                  const Center(
-                                      child: CupertinoActivityIndicator()),
-                                  Center(
-                                    child: SizedBox(
-                                      width: size.width * 0.5,
-                                      child: Image(
-                                        image: NetworkImage(image.thumbnail,
-                                            scale: 1.0),
-                                      ),
+                                  ...state.total!.items.map(
+                                    (image) => Stack(
+                                      children: [
+                                        const Center(
+                                            child:
+                                                CupertinoActivityIndicator()),
+                                        Center(
+                                          child: SizedBox(
+                                            width: size.width * 0.5,
+                                            child: Image(
+                                              image: NetworkImage(
+                                                  image.thumbnail,
+                                                  scale: 1.0),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
               ),
             ),
           );

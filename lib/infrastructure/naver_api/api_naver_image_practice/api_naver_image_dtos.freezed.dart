@@ -12,6 +12,182 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ApiNaverImageTotalDto _$ApiNaverImageTotalDtoFromJson(
+    Map<String, dynamic> json) {
+  return _ApiNaverImageTotalDto.fromJson(json);
+}
+
+/// @nodoc
+class _$ApiNaverImageTotalDtoTearOff {
+  const _$ApiNaverImageTotalDtoTearOff();
+
+  _ApiNaverImageTotalDto call(
+      {required int total, required List<ApiNaverImageDto> items}) {
+    return _ApiNaverImageTotalDto(
+      total: total,
+      items: items,
+    );
+  }
+
+  ApiNaverImageTotalDto fromJson(Map<String, Object> json) {
+    return ApiNaverImageTotalDto.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ApiNaverImageTotalDto = _$ApiNaverImageTotalDtoTearOff();
+
+/// @nodoc
+mixin _$ApiNaverImageTotalDto {
+  int get total => throw _privateConstructorUsedError;
+  List<ApiNaverImageDto> get items => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ApiNaverImageTotalDtoCopyWith<ApiNaverImageTotalDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiNaverImageTotalDtoCopyWith<$Res> {
+  factory $ApiNaverImageTotalDtoCopyWith(ApiNaverImageTotalDto value,
+          $Res Function(ApiNaverImageTotalDto) then) =
+      _$ApiNaverImageTotalDtoCopyWithImpl<$Res>;
+  $Res call({int total, List<ApiNaverImageDto> items});
+}
+
+/// @nodoc
+class _$ApiNaverImageTotalDtoCopyWithImpl<$Res>
+    implements $ApiNaverImageTotalDtoCopyWith<$Res> {
+  _$ApiNaverImageTotalDtoCopyWithImpl(this._value, this._then);
+
+  final ApiNaverImageTotalDto _value;
+  // ignore: unused_field
+  final $Res Function(ApiNaverImageTotalDto) _then;
+
+  @override
+  $Res call({
+    Object? total = freezed,
+    Object? items = freezed,
+  }) {
+    return _then(_value.copyWith(
+      total: total == freezed
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ApiNaverImageDto>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ApiNaverImageTotalDtoCopyWith<$Res>
+    implements $ApiNaverImageTotalDtoCopyWith<$Res> {
+  factory _$ApiNaverImageTotalDtoCopyWith(_ApiNaverImageTotalDto value,
+          $Res Function(_ApiNaverImageTotalDto) then) =
+      __$ApiNaverImageTotalDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({int total, List<ApiNaverImageDto> items});
+}
+
+/// @nodoc
+class __$ApiNaverImageTotalDtoCopyWithImpl<$Res>
+    extends _$ApiNaverImageTotalDtoCopyWithImpl<$Res>
+    implements _$ApiNaverImageTotalDtoCopyWith<$Res> {
+  __$ApiNaverImageTotalDtoCopyWithImpl(_ApiNaverImageTotalDto _value,
+      $Res Function(_ApiNaverImageTotalDto) _then)
+      : super(_value, (v) => _then(v as _ApiNaverImageTotalDto));
+
+  @override
+  _ApiNaverImageTotalDto get _value => super._value as _ApiNaverImageTotalDto;
+
+  @override
+  $Res call({
+    Object? total = freezed,
+    Object? items = freezed,
+  }) {
+    return _then(_ApiNaverImageTotalDto(
+      total: total == freezed
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ApiNaverImageDto>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ApiNaverImageTotalDto extends _ApiNaverImageTotalDto {
+  const _$_ApiNaverImageTotalDto({required this.total, required this.items})
+      : super._();
+
+  factory _$_ApiNaverImageTotalDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApiNaverImageTotalDtoFromJson(json);
+
+  @override
+  final int total;
+  @override
+  final List<ApiNaverImageDto> items;
+
+  @override
+  String toString() {
+    return 'ApiNaverImageTotalDto(total: $total, items: $items)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApiNaverImageTotalDto &&
+            (identical(other.total, total) ||
+                const DeepCollectionEquality().equals(other.total, total)) &&
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(total) ^
+      const DeepCollectionEquality().hash(items);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApiNaverImageTotalDtoCopyWith<_ApiNaverImageTotalDto> get copyWith =>
+      __$ApiNaverImageTotalDtoCopyWithImpl<_ApiNaverImageTotalDto>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ApiNaverImageTotalDtoToJson(this);
+  }
+}
+
+abstract class _ApiNaverImageTotalDto extends ApiNaverImageTotalDto {
+  const factory _ApiNaverImageTotalDto(
+      {required int total,
+      required List<ApiNaverImageDto> items}) = _$_ApiNaverImageTotalDto;
+  const _ApiNaverImageTotalDto._() : super._();
+
+  factory _ApiNaverImageTotalDto.fromJson(Map<String, dynamic> json) =
+      _$_ApiNaverImageTotalDto.fromJson;
+
+  @override
+  int get total => throw _privateConstructorUsedError;
+  @override
+  List<ApiNaverImageDto> get items => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApiNaverImageTotalDtoCopyWith<_ApiNaverImageTotalDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 ApiNaverImageDto _$ApiNaverImageDtoFromJson(Map<String, dynamic> json) {
   return _ApiNaverImageDto.fromJson(json);
 }

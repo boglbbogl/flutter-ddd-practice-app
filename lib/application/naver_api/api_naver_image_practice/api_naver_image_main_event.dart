@@ -6,5 +6,5 @@ class ApiNaverImageMainEvent with _$ApiNaverImageMainEvent {
   const factory ApiNaverImageMainEvent.searched({
     required String query,
   }) = _Searched;
-  const factory ApiNaverImageMainEvent.moreItem() = _MoreItem;
+  const factory ApiNaverImageMainEvent.pageChanged(int index) = _PageChanged;
 }

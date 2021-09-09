@@ -4,7 +4,8 @@ part of 'api_naver_image_main_bloc.dart';
 class ApiNaverImageMainState with _$ApiNaverImageMainState {
   factory ApiNaverImageMainState({
     required bool isLoading,
-    required List<ApiNaverImage> images,
+    required bool searchLoading,
+    required ApiNaverImageTotal? total,
     required String sort,
     required String filter,
     required int display,
@@ -13,7 +14,8 @@ class ApiNaverImageMainState with _$ApiNaverImageMainState {
   }) = _ApiNaverImageMainState;
   factory ApiNaverImageMainState.initial() => _ApiNaverImageMainState(
         isLoading: false,
-        images: [],
+        searchLoading: false,
+        total: null,
         sort: "",
         filter: "",
         display: 30,

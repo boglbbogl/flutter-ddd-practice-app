@@ -6,6 +6,23 @@ part of 'api_naver_image_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$_ApiNaverImageTotalDto _$_$_ApiNaverImageTotalDtoFromJson(
+    Map<String, dynamic> json) {
+  return _$_ApiNaverImageTotalDto(
+    total: json['total'] as int,
+    items: (json['items'] as List<dynamic>)
+        .map((e) => ApiNaverImageDto.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_ApiNaverImageTotalDtoToJson(
+        _$_ApiNaverImageTotalDto instance) =>
+    <String, dynamic>{
+      'total': instance.total,
+      'items': instance.items,
+    };
+
 _$_ApiNaverImageDto _$_$_ApiNaverImageDtoFromJson(Map<String, dynamic> json) {
   return _$_ApiNaverImageDto(
     title: json['title'] as String,
