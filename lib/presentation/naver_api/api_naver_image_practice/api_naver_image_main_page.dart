@@ -5,9 +5,11 @@ import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_image_practice/api_naver_image_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/api_naver_image_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ApiNaverImageMainPage extends StatelessWidget {
@@ -34,7 +36,8 @@ class ApiNaverImageMainPage extends StatelessWidget {
                 actions: [
                   appbarActionInfoForm(
                     context: context,
-                    sourceText: 'sourceText',
+                    sourceText:
+                        'https://openapi.naver.com/v1/search/image.json?',
                     colors: Colors.green,
                     textColors: Colors.white,
                   )
@@ -147,13 +150,30 @@ class ApiNaverImageMainPage extends StatelessWidget {
                                         const Center(
                                             child:
                                                 CupertinoActivityIndicator()),
-                                        Center(
-                                          child: SizedBox(
-                                            width: size.width * 0.5,
-                                            child: Image(
-                                              image: NetworkImage(
-                                                  image.thumbnail,
-                                                  scale: 1.0),
+                                        InkWell(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              PageRouteBuilder(
+                                                pageBuilder: (_, __, ___) {
+                                                  return ApiNaverImageDetail(
+                                                    thumbnail: image.thumbnail,
+                                                  );
+                                                },
+                                                transitionDuration:
+                                                    const Duration(
+                                                        milliseconds: 500),
+                                              )),
+                                          child: Center(
+                                            child: SizedBox(
+                                              width: size.width * 0.5,
+                                              child: Hero(
+                                                tag: image.thumbnail,
+                                                child: Image(
+                                                  image: NetworkImage(
+                                                      image.thumbnail,
+                                                      scale: 1.0),
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ),

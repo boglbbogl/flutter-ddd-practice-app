@@ -47,8 +47,6 @@ class ApiNaverImageMainBloc
           total: result,
           display: 100,
           start: 1,
-          sort: "sim",
-          filter: "all",
         );
       },
       pageChanged: (e) async* {
