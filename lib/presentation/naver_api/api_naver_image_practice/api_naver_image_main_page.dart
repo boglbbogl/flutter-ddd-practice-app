@@ -5,7 +5,7 @@ import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_image_practice/api_naver_image_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/api_naver_image_detail.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/widgets/api_naver_image_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:ddd_practice_app/domain/naver_api/api_naver_shop_practice/api_naver_shop.dart';
+import 'package:ddd_practice_app/domain/naver_api/api_naver_shop_practice/i_api_naver_shop_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,7 +13,10 @@ part 'api_naver_shop_main_bloc.freezed.dart';
 @Injectable()
 class ApiNaverShopMainBloc
     extends Bloc<ApiNaverShopMainEvent, ApiNaverShopMainState> {
-  ApiNaverShopMainBloc() : super(ApiNaverShopMainState.initial());
+  final IApiNaverShopRepository _shopRepository;
+  ApiNaverShopMainBloc(
+    this._shopRepository,
+  ) : super(ApiNaverShopMainState.initial());
 
   @override
   Stream<ApiNaverShopMainState> mapEventToState(
@@ -19,7 +24,26 @@ class ApiNaverShopMainBloc
   ) async* {
     yield* event.map(
       started: (e) async* {},
-      searched: (e) async* {},
+      searched: (e) async* {
+        final result = await _shopRepository.getNaverShop(
+          query: e.query,
+          display: 100,
+          start: 1,
+          sort: 'sim',
+        );
+        yield state.copyWith(
+          shop: result,
+          sort: state.sort,
+          start: state.start,
+        );
+      },
+      appbarSearchBtn: (e) async* {
+        if (state.appbarBtn == true) {
+          yield state.copyWith(appbarBtn: false);
+        } else {
+          yield state.copyWith(appbarBtn: true);
+        }
+      },
     );
   }
 }

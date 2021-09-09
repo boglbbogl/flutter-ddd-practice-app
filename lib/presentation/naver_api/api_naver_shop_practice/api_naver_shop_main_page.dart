@@ -2,7 +2,9 @@ import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/widgets/api_naver_shop_item_page.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class ApiNaverShopMainPage extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
@@ -40,7 +42,14 @@ class ApiNaverShopMainPage extends StatelessWidget {
               searchTextSecondForm(
                 controller: controller,
                 context: context,
-                onPressed: () {},
+                onPressed: () {
+                  if (controller.text.isNotEmpty) {
+                    pushNewScreen(context,
+                        screen: ApiNaverShopItemPage(
+                          query: controller.text,
+                        ));
+                  }
+                },
                 colors: Colors.green,
               ),
             ],
