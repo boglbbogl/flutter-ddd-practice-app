@@ -85,6 +85,12 @@ class ApiCheckMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String date = '1989-11-25';
+    String year = date.substring(0, 4);
+    String month = date.substring(5, 7);
+    String day = date.substring(8, 10);
+    DateTime formatDate = DateTime.parse(year + month + day);
+    print(formatDate);
     return Scaffold(
       appBar: appBarForm(
         context,
@@ -120,7 +126,9 @@ class ApiCheckMainPage extends StatelessWidget {
               ),
               _apiCheckButtonForm(
                 title: 'DELETE',
-                onTap: () {},
+                onTap: () {
+                  print(DateTime.now());
+                },
               ),
             ],
           ),

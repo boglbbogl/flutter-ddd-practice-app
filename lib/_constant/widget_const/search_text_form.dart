@@ -40,7 +40,7 @@ Row searchTextForm({
           ),
           onPressed: onPressed,
         ),
-      )
+      ),
     ],
   );
 }

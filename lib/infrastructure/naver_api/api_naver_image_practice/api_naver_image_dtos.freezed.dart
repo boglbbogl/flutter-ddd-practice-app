@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_naver_image.dart';
+part of 'api_naver_image_dtos.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,17 +12,21 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-class _$ApiNaverImageTearOff {
-  const _$ApiNaverImageTearOff();
+ApiNaverImageDto _$ApiNaverImageDtoFromJson(Map<String, dynamic> json) {
+  return _ApiNaverImageDto.fromJson(json);
+}
 
-  _ApiNaverImage call(
+/// @nodoc
+class _$ApiNaverImageDtoTearOff {
+  const _$ApiNaverImageDtoTearOff();
+
+  _ApiNaverImageDto call(
       {required String title,
       required String link,
       required String thumbnail,
       required String sizeheight,
       required String sizewidth}) {
-    return _ApiNaverImage(
+    return _ApiNaverImageDto(
       title: title,
       link: link,
       thumbnail: thumbnail,
@@ -30,29 +34,34 @@ class _$ApiNaverImageTearOff {
       sizewidth: sizewidth,
     );
   }
+
+  ApiNaverImageDto fromJson(Map<String, Object> json) {
+    return ApiNaverImageDto.fromJson(json);
+  }
 }
 
 /// @nodoc
-const $ApiNaverImage = _$ApiNaverImageTearOff();
+const $ApiNaverImageDto = _$ApiNaverImageDtoTearOff();
 
 /// @nodoc
-mixin _$ApiNaverImage {
+mixin _$ApiNaverImageDto {
   String get title => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   String get sizeheight => throw _privateConstructorUsedError;
   String get sizewidth => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiNaverImageCopyWith<ApiNaverImage> get copyWith =>
+  $ApiNaverImageDtoCopyWith<ApiNaverImageDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiNaverImageCopyWith<$Res> {
-  factory $ApiNaverImageCopyWith(
-          ApiNaverImage value, $Res Function(ApiNaverImage) then) =
-      _$ApiNaverImageCopyWithImpl<$Res>;
+abstract class $ApiNaverImageDtoCopyWith<$Res> {
+  factory $ApiNaverImageDtoCopyWith(
+          ApiNaverImageDto value, $Res Function(ApiNaverImageDto) then) =
+      _$ApiNaverImageDtoCopyWithImpl<$Res>;
   $Res call(
       {String title,
       String link,
@@ -62,13 +71,13 @@ abstract class $ApiNaverImageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ApiNaverImageCopyWithImpl<$Res>
-    implements $ApiNaverImageCopyWith<$Res> {
-  _$ApiNaverImageCopyWithImpl(this._value, this._then);
+class _$ApiNaverImageDtoCopyWithImpl<$Res>
+    implements $ApiNaverImageDtoCopyWith<$Res> {
+  _$ApiNaverImageDtoCopyWithImpl(this._value, this._then);
 
-  final ApiNaverImage _value;
+  final ApiNaverImageDto _value;
   // ignore: unused_field
-  final $Res Function(ApiNaverImage) _then;
+  final $Res Function(ApiNaverImageDto) _then;
 
   @override
   $Res call({
@@ -104,11 +113,11 @@ class _$ApiNaverImageCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ApiNaverImageCopyWith<$Res>
-    implements $ApiNaverImageCopyWith<$Res> {
-  factory _$ApiNaverImageCopyWith(
-          _ApiNaverImage value, $Res Function(_ApiNaverImage) then) =
-      __$ApiNaverImageCopyWithImpl<$Res>;
+abstract class _$ApiNaverImageDtoCopyWith<$Res>
+    implements $ApiNaverImageDtoCopyWith<$Res> {
+  factory _$ApiNaverImageDtoCopyWith(
+          _ApiNaverImageDto value, $Res Function(_ApiNaverImageDto) then) =
+      __$ApiNaverImageDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String title,
@@ -119,15 +128,15 @@ abstract class _$ApiNaverImageCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ApiNaverImageCopyWithImpl<$Res>
-    extends _$ApiNaverImageCopyWithImpl<$Res>
-    implements _$ApiNaverImageCopyWith<$Res> {
-  __$ApiNaverImageCopyWithImpl(
-      _ApiNaverImage _value, $Res Function(_ApiNaverImage) _then)
-      : super(_value, (v) => _then(v as _ApiNaverImage));
+class __$ApiNaverImageDtoCopyWithImpl<$Res>
+    extends _$ApiNaverImageDtoCopyWithImpl<$Res>
+    implements _$ApiNaverImageDtoCopyWith<$Res> {
+  __$ApiNaverImageDtoCopyWithImpl(
+      _ApiNaverImageDto _value, $Res Function(_ApiNaverImageDto) _then)
+      : super(_value, (v) => _then(v as _ApiNaverImageDto));
 
   @override
-  _ApiNaverImage get _value => super._value as _ApiNaverImage;
+  _ApiNaverImageDto get _value => super._value as _ApiNaverImageDto;
 
   @override
   $Res call({
@@ -137,7 +146,7 @@ class __$ApiNaverImageCopyWithImpl<$Res>
     Object? sizeheight = freezed,
     Object? sizewidth = freezed,
   }) {
-    return _then(_ApiNaverImage(
+    return _then(_ApiNaverImageDto(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -163,14 +172,18 @@ class __$ApiNaverImageCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-class _$_ApiNaverImage implements _ApiNaverImage {
-  const _$_ApiNaverImage(
+@JsonSerializable()
+class _$_ApiNaverImageDto extends _ApiNaverImageDto {
+  const _$_ApiNaverImageDto(
       {required this.title,
       required this.link,
       required this.thumbnail,
       required this.sizeheight,
-      required this.sizewidth});
+      required this.sizewidth})
+      : super._();
+
+  factory _$_ApiNaverImageDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApiNaverImageDtoFromJson(json);
 
   @override
   final String title;
@@ -185,13 +198,13 @@ class _$_ApiNaverImage implements _ApiNaverImage {
 
   @override
   String toString() {
-    return 'ApiNaverImage(title: $title, link: $link, thumbnail: $thumbnail, sizeheight: $sizeheight, sizewidth: $sizewidth)';
+    return 'ApiNaverImageDto(title: $title, link: $link, thumbnail: $thumbnail, sizeheight: $sizeheight, sizewidth: $sizewidth)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiNaverImage &&
+        (other is _ApiNaverImageDto &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.link, link) ||
@@ -218,17 +231,26 @@ class _$_ApiNaverImage implements _ApiNaverImage {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiNaverImageCopyWith<_ApiNaverImage> get copyWith =>
-      __$ApiNaverImageCopyWithImpl<_ApiNaverImage>(this, _$identity);
+  _$ApiNaverImageDtoCopyWith<_ApiNaverImageDto> get copyWith =>
+      __$ApiNaverImageDtoCopyWithImpl<_ApiNaverImageDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ApiNaverImageDtoToJson(this);
+  }
 }
 
-abstract class _ApiNaverImage implements ApiNaverImage {
-  const factory _ApiNaverImage(
+abstract class _ApiNaverImageDto extends ApiNaverImageDto {
+  const factory _ApiNaverImageDto(
       {required String title,
       required String link,
       required String thumbnail,
       required String sizeheight,
-      required String sizewidth}) = _$_ApiNaverImage;
+      required String sizewidth}) = _$_ApiNaverImageDto;
+  const _ApiNaverImageDto._() : super._();
+
+  factory _ApiNaverImageDto.fromJson(Map<String, dynamic> json) =
+      _$_ApiNaverImageDto.fromJson;
 
   @override
   String get title => throw _privateConstructorUsedError;
@@ -242,6 +264,6 @@ abstract class _ApiNaverImage implements ApiNaverImage {
   String get sizewidth => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiNaverImageCopyWith<_ApiNaverImage> get copyWith =>
+  _$ApiNaverImageDtoCopyWith<_ApiNaverImageDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

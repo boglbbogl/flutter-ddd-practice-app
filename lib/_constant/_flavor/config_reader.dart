@@ -38,8 +38,12 @@ abstract class ConfigReader {
     return _readForKey("naverApiBaseUrl");
   }
 
-  static String getNaverApiKey() {
-    return _readForKey("naverApiKey");
+  static String getNaverApiId() {
+    return _readForKey("naverApiId");
+  }
+
+  static String getNaverApiSecret() {
+    return _readForKey("naverApiSecret");
   }
 
   static String getNewsApiBaseUrl() {
