@@ -8,15 +8,13 @@ import 'package:http/http.dart' as http;
 class ApiCheckMainPage extends StatelessWidget {
   const ApiCheckMainPage({Key? key}) : super(key: key);
   Future<void> getWeatherData() async {
-    double lat = 38;
-    double lon = 129;
+    const double lat = 38;
+    const double lon = 129;
     final uri = Uri.parse(
         'http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=76fa3e54bce43b391f028213cd32ac63&units=metric');
     final response = await http.get(uri);
     if (response.statusCode == 200) {
-      final decode = json.decode(utf8.decode(response.bodyBytes));
-      print(decode["weather"]);
-      print(decode["main"]["temp"]);
+      // final decode = json.decode(utf8.decode(response.bodyBytes));
     }
   }
 
@@ -29,8 +27,7 @@ class ApiCheckMainPage extends StatelessWidget {
     }, body: {
       "query=뭐야"
     });
-    final decode = json.decode(utf8.decode(response.bodyBytes));
-    print(decode);
+    // final decode = json.decode(utf8.decode(response.bodyBytes));
   }
 
   Future<void> getKakaoTranslations() async {
@@ -38,16 +35,14 @@ class ApiCheckMainPage extends StatelessWidget {
         "https://dapi.kakao.com/v2/translation/translate?src_lang=kr&target_lang=en&query='테스트'");
     final response = await http.get(uri,
         headers: {'Authorization': 'KakaoAK 598874a3fe386492d5b8ba65db9f1063'});
-    final decode = json.decode(utf8.decode(response.bodyBytes));
-    print(decode);
+    // final decode = json.decode(utf8.decode(response.bodyBytes));
   }
 
   Future<void> getKakaoBooksData() async {
     final uri = Uri.parse("https://dapi.kakao.com/v3/search/book?query='11'");
     final response = await http.get(uri,
         headers: {'Authorization': 'KakaoAK 598874a3fe386492d5b8ba65db9f1063'});
-    final decode = json.decode(utf8.decode(response.bodyBytes));
-    print(decode);
+    // final decode = json.decode(utf8.decode(response.bodyBytes));
   }
 
   Future<void> getNewsPagerData() async {
@@ -55,9 +50,8 @@ class ApiCheckMainPage extends StatelessWidget {
         "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=1b05eb69dee54640bf5bcfcf1e730fc8");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
-      final decode = json.decode(utf8.decode(response.bodyBytes));
-      print(decode['articles']);
-      // print(decode['articles']);
+      // final decode = json.decode(utf8.decode(response.bodyBytes));
+
     }
   }
 
@@ -68,7 +62,7 @@ class ApiCheckMainPage extends StatelessWidget {
       "X-Naver-Client-Secret": "PAGwZGrF8w"
     });
     if (response.statusCode == 200) {
-      final decode = json.decode(utf8.decode(response.bodyBytes));
+      // final decode = json.decode(utf8.decode(response.bodyBytes));
     }
   }
 
@@ -80,17 +74,15 @@ class ApiCheckMainPage extends StatelessWidget {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: result);
-    print(result);
   }
 
   @override
   Widget build(BuildContext context) {
-    String date = '1989-11-25';
-    String year = date.substring(0, 4);
-    String month = date.substring(5, 7);
-    String day = date.substring(8, 10);
-    DateTime formatDate = DateTime.parse(year + month + day);
-    print(formatDate);
+    // String date = '1989-11-25';
+    // String year = date.substring(0, 4);
+    // String month = date.substring(5, 7);
+    // String day = date.substring(8, 10);
+    // DateTime formatDate = DateTime.parse(year + month + day);
     return Scaffold(
       appBar: appBarForm(
         context,
@@ -126,9 +118,7 @@ class ApiCheckMainPage extends StatelessWidget {
               ),
               _apiCheckButtonForm(
                 title: 'DELETE',
-                onTap: () {
-                  print(DateTime.now());
-                },
+                onTap: () {},
               ),
             ],
           ),

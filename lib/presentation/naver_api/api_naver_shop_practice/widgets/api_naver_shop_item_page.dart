@@ -1,4 +1,3 @@
-import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_shop_practice/api_naver_shop_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -166,15 +165,19 @@ class ApiNaverShopItemPage extends StatelessWidget {
                 SliverList(
                   delegate: SliverChildListDelegate([
                     // Text(''),
-                    ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: state.shop!.items.length,
-                        itemBuilder: (context, index) {
-                          return NaverShopItemListView(
-                            naverShop: state.shop!.items[index],
-                          );
-                        }),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 12),
+                      child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: state.shop!.items.length,
+                          itemBuilder: (context, index) {
+                            return NaverShopItemListView(
+                              naverShop: state.shop!.items[index],
+                            );
+                          }),
+                    ),
                   ]),
                 )
               ],

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:ddd_practice_app/domain/community_practice/community.dart';
 import 'package:ddd_practice_app/domain/community_practice/i_community_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
