@@ -117,6 +117,9 @@ class ApiNaverShopItemPage extends StatelessWidget {
                                       context.read<ApiNaverShopMainBloc>().add(
                                           ApiNaverShopMainEvent.searched(
                                               query: itemController.text));
+                                      context.read<ApiNaverShopMainBloc>().add(
+                                          const ApiNaverShopMainEvent
+                                              .appbarSearchBtn());
                                     }
                                   },
                                   child: Text(
@@ -164,7 +167,6 @@ class ApiNaverShopItemPage extends StatelessWidget {
                 ),
                 SliverList(
                   delegate: SliverChildListDelegate([
-                    // Text(''),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 8, horizontal: 12),

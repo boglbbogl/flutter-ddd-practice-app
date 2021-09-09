@@ -11,12 +11,32 @@ class NaverShopItemListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size.width * 0.9,
-      height: size.height * 0.15,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.green),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: size.width * 0.9,
+        height: size.height * 0.15,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.green),
+        ),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image(
+                image: NetworkImage(naverShop.image, scale: 2.0),
+              ),
+            ),
+            Column(
+              children: [
+                Text(naverShop.brand),
+                Text(naverShop.hprice),
+                Text(naverShop.lprice),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
