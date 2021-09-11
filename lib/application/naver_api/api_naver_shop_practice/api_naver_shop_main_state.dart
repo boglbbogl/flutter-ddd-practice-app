@@ -8,6 +8,7 @@ class ApiNaverShopMainState with _$ApiNaverShopMainState {
     required String sort,
     required int start,
     required bool appbarBtn,
+    required String query,
   }) = _ApiNaverShopMainState;
   factory ApiNaverShopMainState.initial() => _ApiNaverShopMainState(
         isLoading: false,
@@ -15,5 +16,6 @@ class ApiNaverShopMainState with _$ApiNaverShopMainState {
         sort: '',
         start: 1,
         appbarBtn: false,
+        query: '',
       );
 }

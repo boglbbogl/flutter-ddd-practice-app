@@ -7,4 +7,7 @@ class ApiNaverShopMainEvent with _$ApiNaverShopMainEvent {
     required String query,
   }) = _Searched;
   const factory ApiNaverShopMainEvent.appbarSearchBtn() = _AppbarSearchBtn;
+  const factory ApiNaverShopMainEvent.pageChanged({
+    required int selectIndex,
+  }) = _PageChanged;
 }

@@ -1,3 +1,4 @@
+import 'package:ddd_practice_app/_constant/widget_const/number_format.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_shop_practice/api_naver_shop_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -26,7 +27,7 @@ class ApiNaverShopItemPage extends StatelessWidget {
             return Container(
               color: Colors.green,
               child: const CupertinoActivityIndicator(
-                radius: 35,
+                radius: 25,
               ),
             );
           }
@@ -36,13 +37,13 @@ class ApiNaverShopItemPage extends StatelessWidget {
                 SliverAppBar(
                   excludeHeaderSemantics: true,
                   centerTitle: true,
-                  titleSpacing: 110,
+                  titleSpacing: 10,
                   backgroundColor: Colors.white70,
                   floating: true,
                   snap: true,
-                  expandedHeight: 110.0,
+                  expandedHeight: 130.0,
                   title: Text(
-                    'NAVER SHOP',
+                    'SHOP',
                     style: theme.textTheme.bodyText2!.copyWith(
                         color: Colors.white,
                         fontSize: 22,
@@ -94,65 +95,150 @@ class ApiNaverShopItemPage extends StatelessWidget {
                                       color: Colors.white),
                                   child: Padding(
                                     padding: const EdgeInsets.all(2.0),
-                                    child: TextFormField(
-                                      controller: itemController,
-                                      decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.green, width: 2),
-                                            borderRadius:
-                                                BorderRadius.circular(12)),
-                                        focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.green, width: 2),
-                                            borderRadius:
-                                                BorderRadius.circular(12)),
-                                      ),
-                                    ),
+                                    child: state.isLoading
+                                        ? Container()
+                                        : TextFormField(
+                                            style: theme.textTheme.bodyText2!
+                                                .copyWith(
+                                                    fontSize: 12,
+                                                    color: const Color.fromRGBO(
+                                                        135, 135, 135, 1)),
+                                            controller: itemController,
+                                            decoration: InputDecoration(
+                                              enabledBorder: OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Colors.green,
+                                                      width: 2),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                              focusedBorder: OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Colors.green,
+                                                      width: 2),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                            ),
+                                          ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    if (itemController.text.isNotEmpty) {
-                                      context.read<ApiNaverShopMainBloc>().add(
-                                          ApiNaverShopMainEvent.searched(
-                                              query: itemController.text));
-                                      context.read<ApiNaverShopMainBloc>().add(
-                                          const ApiNaverShopMainEvent
-                                              .appbarSearchBtn());
-                                    }
-                                  },
-                                  child: Text(
-                                    'SEARCH',
-                                    style: theme.textTheme.bodyText2!.copyWith(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                )
+                                if (state.isLoading)
+                                  const CupertinoActivityIndicator(
+                                    radius: 7,
+                                  )
+                                else
+                                  InkWell(
+                                    onTap: () {
+                                      if (itemController.text.isNotEmpty) {
+                                        context
+                                            .read<ApiNaverShopMainBloc>()
+                                            .add(ApiNaverShopMainEvent.searched(
+                                                query: itemController.text));
+                                        context
+                                            .read<ApiNaverShopMainBloc>()
+                                            .add(const ApiNaverShopMainEvent
+                                                .appbarSearchBtn());
+                                      }
+                                    },
+                                    child: Text(
+                                      'SEARCH',
+                                      style: theme.textTheme.bodyText2!
+                                          .copyWith(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                    ),
+                                  )
                               ],
                             )
                           : Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 5),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                horizontal: 5,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Text(
-                                    query,
-                                    style: theme.textTheme.bodyText2!.copyWith(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        state.query,
+                                        style: theme.textTheme.bodyText2!
+                                            .copyWith(
+                                                color: Colors.white,
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        koFormatMoney.format(state.shop!.total),
+                                        style: theme.textTheme.bodyText2!
+                                            .copyWith(
+                                                color: Colors.white,
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    (state.shop!.total).toString(),
-                                    style: theme.textTheme.bodyText2!.copyWith(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
+                                  const SizedBox(
+                                    height: 5,
                                   ),
+                                  if (state.isLoading)
+                                    const CupertinoActivityIndicator(
+                                      radius: 8,
+                                    )
+                                  else
+                                    SizedBox(
+                                      height: 20,
+                                      width: size.width * 0.3,
+                                      child: ListView.builder(
+                                          scrollDirection: Axis.horizontal,
+                                          itemCount: (state.shop!.total / 100)
+                                              .ceil()
+                                              .toInt(),
+                                          itemBuilder: (context, index) {
+                                            return InkWell(
+                                              onTap: () => context
+                                                  .read<ApiNaverShopMainBloc>()
+                                                  .add(ApiNaverShopMainEvent
+                                                      .pageChanged(
+                                                          selectIndex:
+                                                              index + 1)),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 8, left: 8),
+                                                child: Container(
+                                                  width: 15,
+                                                  height: 15,
+                                                  decoration: state.start ==
+                                                          index + 1
+                                                      ? BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(4),
+                                                          color: Colors.white,
+                                                        )
+                                                      : const BoxDecoration(),
+                                                  child: Center(
+                                                    child: Text(
+                                                      (index + 1).toString(),
+                                                      style: theme
+                                                          .textTheme.bodyText2!
+                                                          .copyWith(
+                                                        color: state.start ==
+                                                                index + 1
+                                                            ? Colors.green
+                                                            : Colors.white,
+                                                        fontSize: 11,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }),
+                                    ),
                                 ],
                               ),
                             ),
@@ -170,18 +256,27 @@ class ApiNaverShopItemPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 8, horizontal: 12),
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: state.shop!.items.length,
-                          itemBuilder: (context, index) {
-                            return NaverShopItemListView(
-                              naverShop: state.shop!.items[index],
-                            );
-                          }),
+                      child: state.isLoading
+                          ? SizedBox(
+                              height: size.height * 0.6,
+                              child: const Center(
+                                  child: CupertinoActivityIndicator(
+                                radius: 20,
+                              )),
+                            )
+                          : ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: state.shop!.items.length,
+                              itemBuilder: (context, index) {
+                                return NaverShopItemListView(
+                                  isLoading: state.isLoading,
+                                  naverShop: state.shop!.items[index],
+                                );
+                              }),
                     ),
                   ]),
-                )
+                ),
               ],
             ),
           );

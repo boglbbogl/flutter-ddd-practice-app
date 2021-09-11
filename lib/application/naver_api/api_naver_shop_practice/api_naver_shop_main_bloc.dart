@@ -25,6 +25,7 @@ class ApiNaverShopMainBloc
     yield* event.map(
       started: (e) async* {},
       searched: (e) async* {
+        yield state.copyWith(isLoading: true);
         final result = await _shopRepository.getNaverShop(
           query: e.query,
           display: 100,
@@ -34,7 +35,25 @@ class ApiNaverShopMainBloc
         yield state.copyWith(
           shop: result,
           sort: state.sort,
-          start: state.start,
+          start: 1,
+          query: e.query,
+          isLoading: false,
+        );
+      },
+      pageChanged: (e) async* {
+        yield state.copyWith(isLoading: true);
+        final result = await _shopRepository.getNaverShop(
+          query: state.query,
+          display: 100,
+          start: e.selectIndex,
+          sort: 'sim',
+        );
+        yield state.copyWith(
+          shop: result,
+          isLoading: false,
+          start: e.selectIndex,
+          sort: state.sort,
+          query: state.query,
         );
       },
       appbarSearchBtn: (e) async* {

@@ -29,6 +29,12 @@ class _$ApiNaverShopMainEventTearOff {
   _AppbarSearchBtn appbarSearchBtn() {
     return const _AppbarSearchBtn();
   }
+
+  _PageChanged pageChanged({required int selectIndex}) {
+    return _PageChanged(
+      selectIndex: selectIndex,
+    );
+  }
 }
 
 /// @nodoc
@@ -41,6 +47,7 @@ mixin _$ApiNaverShopMainEvent {
     required TResult Function() started,
     required TResult Function(String query) searched,
     required TResult Function() appbarSearchBtn,
+    required TResult Function(int selectIndex) pageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +55,7 @@ mixin _$ApiNaverShopMainEvent {
     TResult Function()? started,
     TResult Function(String query)? searched,
     TResult Function()? appbarSearchBtn,
+    TResult Function(int selectIndex)? pageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +64,7 @@ mixin _$ApiNaverShopMainEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
     required TResult Function(_AppbarSearchBtn value) appbarSearchBtn,
+    required TResult Function(_PageChanged value) pageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +72,7 @@ mixin _$ApiNaverShopMainEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
     TResult Function(_AppbarSearchBtn value)? appbarSearchBtn,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +136,7 @@ class _$_Started implements _Started {
     required TResult Function() started,
     required TResult Function(String query) searched,
     required TResult Function() appbarSearchBtn,
+    required TResult Function(int selectIndex) pageChanged,
   }) {
     return started();
   }
@@ -136,6 +147,7 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function(String query)? searched,
     TResult Function()? appbarSearchBtn,
+    TResult Function(int selectIndex)? pageChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -150,6 +162,7 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
     required TResult Function(_AppbarSearchBtn value) appbarSearchBtn,
+    required TResult Function(_PageChanged value) pageChanged,
   }) {
     return started(this);
   }
@@ -160,6 +173,7 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
     TResult Function(_AppbarSearchBtn value)? appbarSearchBtn,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -239,6 +253,7 @@ class _$_Searched implements _Searched {
     required TResult Function() started,
     required TResult Function(String query) searched,
     required TResult Function() appbarSearchBtn,
+    required TResult Function(int selectIndex) pageChanged,
   }) {
     return searched(query);
   }
@@ -249,6 +264,7 @@ class _$_Searched implements _Searched {
     TResult Function()? started,
     TResult Function(String query)? searched,
     TResult Function()? appbarSearchBtn,
+    TResult Function(int selectIndex)? pageChanged,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -263,6 +279,7 @@ class _$_Searched implements _Searched {
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
     required TResult Function(_AppbarSearchBtn value) appbarSearchBtn,
+    required TResult Function(_PageChanged value) pageChanged,
   }) {
     return searched(this);
   }
@@ -273,6 +290,7 @@ class _$_Searched implements _Searched {
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
     TResult Function(_AppbarSearchBtn value)? appbarSearchBtn,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -334,6 +352,7 @@ class _$_AppbarSearchBtn implements _AppbarSearchBtn {
     required TResult Function() started,
     required TResult Function(String query) searched,
     required TResult Function() appbarSearchBtn,
+    required TResult Function(int selectIndex) pageChanged,
   }) {
     return appbarSearchBtn();
   }
@@ -344,6 +363,7 @@ class _$_AppbarSearchBtn implements _AppbarSearchBtn {
     TResult Function()? started,
     TResult Function(String query)? searched,
     TResult Function()? appbarSearchBtn,
+    TResult Function(int selectIndex)? pageChanged,
     required TResult orElse(),
   }) {
     if (appbarSearchBtn != null) {
@@ -358,6 +378,7 @@ class _$_AppbarSearchBtn implements _AppbarSearchBtn {
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
     required TResult Function(_AppbarSearchBtn value) appbarSearchBtn,
+    required TResult Function(_PageChanged value) pageChanged,
   }) {
     return appbarSearchBtn(this);
   }
@@ -368,6 +389,7 @@ class _$_AppbarSearchBtn implements _AppbarSearchBtn {
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
     TResult Function(_AppbarSearchBtn value)? appbarSearchBtn,
+    TResult Function(_PageChanged value)? pageChanged,
     required TResult orElse(),
   }) {
     if (appbarSearchBtn != null) {
@@ -382,6 +404,131 @@ abstract class _AppbarSearchBtn implements ApiNaverShopMainEvent {
 }
 
 /// @nodoc
+abstract class _$PageChangedCopyWith<$Res> {
+  factory _$PageChangedCopyWith(
+          _PageChanged value, $Res Function(_PageChanged) then) =
+      __$PageChangedCopyWithImpl<$Res>;
+  $Res call({int selectIndex});
+}
+
+/// @nodoc
+class __$PageChangedCopyWithImpl<$Res>
+    extends _$ApiNaverShopMainEventCopyWithImpl<$Res>
+    implements _$PageChangedCopyWith<$Res> {
+  __$PageChangedCopyWithImpl(
+      _PageChanged _value, $Res Function(_PageChanged) _then)
+      : super(_value, (v) => _then(v as _PageChanged));
+
+  @override
+  _PageChanged get _value => super._value as _PageChanged;
+
+  @override
+  $Res call({
+    Object? selectIndex = freezed,
+  }) {
+    return _then(_PageChanged(
+      selectIndex: selectIndex == freezed
+          ? _value.selectIndex
+          : selectIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PageChanged implements _PageChanged {
+  const _$_PageChanged({required this.selectIndex});
+
+  @override
+  final int selectIndex;
+
+  @override
+  String toString() {
+    return 'ApiNaverShopMainEvent.pageChanged(selectIndex: $selectIndex)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PageChanged &&
+            (identical(other.selectIndex, selectIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectIndex, selectIndex)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PageChangedCopyWith<_PageChanged> get copyWith =>
+      __$PageChangedCopyWithImpl<_PageChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String query) searched,
+    required TResult Function() appbarSearchBtn,
+    required TResult Function(int selectIndex) pageChanged,
+  }) {
+    return pageChanged(selectIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String query)? searched,
+    TResult Function()? appbarSearchBtn,
+    TResult Function(int selectIndex)? pageChanged,
+    required TResult orElse(),
+  }) {
+    if (pageChanged != null) {
+      return pageChanged(selectIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Searched value) searched,
+    required TResult Function(_AppbarSearchBtn value) appbarSearchBtn,
+    required TResult Function(_PageChanged value) pageChanged,
+  }) {
+    return pageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Searched value)? searched,
+    TResult Function(_AppbarSearchBtn value)? appbarSearchBtn,
+    TResult Function(_PageChanged value)? pageChanged,
+    required TResult orElse(),
+  }) {
+    if (pageChanged != null) {
+      return pageChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PageChanged implements ApiNaverShopMainEvent {
+  const factory _PageChanged({required int selectIndex}) = _$_PageChanged;
+
+  int get selectIndex => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PageChangedCopyWith<_PageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$ApiNaverShopMainStateTearOff {
   const _$ApiNaverShopMainStateTearOff();
 
@@ -390,13 +537,15 @@ class _$ApiNaverShopMainStateTearOff {
       required ApiNaverShopTotal? shop,
       required String sort,
       required int start,
-      required bool appbarBtn}) {
+      required bool appbarBtn,
+      required String query}) {
     return _ApiNaverShopMainState(
       isLoading: isLoading,
       shop: shop,
       sort: sort,
       start: start,
       appbarBtn: appbarBtn,
+      query: query,
     );
   }
 }
@@ -411,6 +560,7 @@ mixin _$ApiNaverShopMainState {
   String get sort => throw _privateConstructorUsedError;
   int get start => throw _privateConstructorUsedError;
   bool get appbarBtn => throw _privateConstructorUsedError;
+  String get query => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiNaverShopMainStateCopyWith<ApiNaverShopMainState> get copyWith =>
@@ -427,7 +577,8 @@ abstract class $ApiNaverShopMainStateCopyWith<$Res> {
       ApiNaverShopTotal? shop,
       String sort,
       int start,
-      bool appbarBtn});
+      bool appbarBtn,
+      String query});
 
   $ApiNaverShopTotalCopyWith<$Res>? get shop;
 }
@@ -448,6 +599,7 @@ class _$ApiNaverShopMainStateCopyWithImpl<$Res>
     Object? sort = freezed,
     Object? start = freezed,
     Object? appbarBtn = freezed,
+    Object? query = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -470,6 +622,10 @@ class _$ApiNaverShopMainStateCopyWithImpl<$Res>
           ? _value.appbarBtn
           : appbarBtn // ignore: cast_nullable_to_non_nullable
               as bool,
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -497,7 +653,8 @@ abstract class _$ApiNaverShopMainStateCopyWith<$Res>
       ApiNaverShopTotal? shop,
       String sort,
       int start,
-      bool appbarBtn});
+      bool appbarBtn,
+      String query});
 
   @override
   $ApiNaverShopTotalCopyWith<$Res>? get shop;
@@ -521,6 +678,7 @@ class __$ApiNaverShopMainStateCopyWithImpl<$Res>
     Object? sort = freezed,
     Object? start = freezed,
     Object? appbarBtn = freezed,
+    Object? query = freezed,
   }) {
     return _then(_ApiNaverShopMainState(
       isLoading: isLoading == freezed
@@ -543,6 +701,10 @@ class __$ApiNaverShopMainStateCopyWithImpl<$Res>
           ? _value.appbarBtn
           : appbarBtn // ignore: cast_nullable_to_non_nullable
               as bool,
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -555,7 +717,8 @@ class _$_ApiNaverShopMainState implements _ApiNaverShopMainState {
       required this.shop,
       required this.sort,
       required this.start,
-      required this.appbarBtn});
+      required this.appbarBtn,
+      required this.query});
 
   @override
   final bool isLoading;
@@ -567,10 +730,12 @@ class _$_ApiNaverShopMainState implements _ApiNaverShopMainState {
   final int start;
   @override
   final bool appbarBtn;
+  @override
+  final String query;
 
   @override
   String toString() {
-    return 'ApiNaverShopMainState(isLoading: $isLoading, shop: $shop, sort: $sort, start: $start, appbarBtn: $appbarBtn)';
+    return 'ApiNaverShopMainState(isLoading: $isLoading, shop: $shop, sort: $sort, start: $start, appbarBtn: $appbarBtn, query: $query)';
   }
 
   @override
@@ -588,7 +753,9 @@ class _$_ApiNaverShopMainState implements _ApiNaverShopMainState {
                 const DeepCollectionEquality().equals(other.start, start)) &&
             (identical(other.appbarBtn, appbarBtn) ||
                 const DeepCollectionEquality()
-                    .equals(other.appbarBtn, appbarBtn)));
+                    .equals(other.appbarBtn, appbarBtn)) &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
   }
 
   @override
@@ -598,7 +765,8 @@ class _$_ApiNaverShopMainState implements _ApiNaverShopMainState {
       const DeepCollectionEquality().hash(shop) ^
       const DeepCollectionEquality().hash(sort) ^
       const DeepCollectionEquality().hash(start) ^
-      const DeepCollectionEquality().hash(appbarBtn);
+      const DeepCollectionEquality().hash(appbarBtn) ^
+      const DeepCollectionEquality().hash(query);
 
   @JsonKey(ignore: true)
   @override
@@ -613,7 +781,8 @@ abstract class _ApiNaverShopMainState implements ApiNaverShopMainState {
       required ApiNaverShopTotal? shop,
       required String sort,
       required int start,
-      required bool appbarBtn}) = _$_ApiNaverShopMainState;
+      required bool appbarBtn,
+      required String query}) = _$_ApiNaverShopMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -625,6 +794,8 @@ abstract class _ApiNaverShopMainState implements ApiNaverShopMainState {
   int get start => throw _privateConstructorUsedError;
   @override
   bool get appbarBtn => throw _privateConstructorUsedError;
+  @override
+  String get query => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiNaverShopMainStateCopyWith<_ApiNaverShopMainState> get copyWith =>
