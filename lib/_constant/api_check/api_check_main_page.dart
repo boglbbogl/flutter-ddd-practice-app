@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
+import 'package:ddd_practice_app/infrastructure/naver_api/api_naver_papago_practice/api_naver_papago_dtos.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -15,6 +16,27 @@ class ApiCheckMainPage extends StatelessWidget {
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       // final decode = json.decode(utf8.decode(response.bodyBytes));
+    }
+  }
+
+  Future<void> postNaverPapago() async {
+    final uri = Uri.parse('https://openapi.naver.com/v1/papago/n2mt');
+    final body = {
+      "source": "ko",
+      "target": "en",
+      "text": "이제 좀 되라",
+    };
+    final response = await http.post(uri,
+        headers: {
+          "X-Naver-Client-Id": 'nAVqsljUVIW0hAL0qDBn',
+          "X-Naver-Client-Secret": 'PAGwZGrF8w',
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        },
+        body: body);
+    if (response.statusCode == 200) {
+      final decoded =
+          json.decode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
+      print(decoded["message"]["result"]);
     }
   }
 
@@ -101,7 +123,7 @@ class ApiCheckMainPage extends StatelessWidget {
               _apiCheckButtonForm(
                 title: 'GET',
                 onTap: () {
-                  getKakaoTranslations();
+                  postNaverPapago();
                 },
               ),
               _apiCheckButtonForm(

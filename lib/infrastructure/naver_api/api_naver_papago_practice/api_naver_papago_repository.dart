@@ -15,10 +15,16 @@ class ApiNaverPapagoRepository implements IApiNaverPapagoRepository {
 
   @override
   Future<ApiNaverPapago?> postPapago({
-    required ApiNaverPapago papago,
+    required String source,
+    required String target,
+    required String text,
   }) async {
     try {
-      final body = ApiNaverPapagoDto.fromDomain(papago).toJson();
+      final body = {
+        "source": source,
+        "target": target,
+        "text": text,
+      };
       final uri = Uri.parse('$apiBase/v1/papago/n2mt');
 
       final response = await http.post(uri,
@@ -30,10 +36,10 @@ class ApiNaverPapagoRepository implements IApiNaverPapagoRepository {
           body: body);
       if (response.statusCode == 200) {
         final decoded = json.decode(utf8.decode(response.bodyBytes));
-        final data = decoded["message"]["result"];
-        print(data);
-        final result =
-            ApiNaverPapagoDto.fromJson(data as Map<String, dynamic>).toDomain();
+
+        final result = ApiNaverPapagoDto.fromJson(
+                decoded["message"]["result"] as Map<String, dynamic>)
+            .toDomain();
 
         return result;
       }

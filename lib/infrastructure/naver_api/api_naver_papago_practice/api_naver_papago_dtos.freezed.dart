@@ -21,13 +21,13 @@ class _$ApiNaverPapagoDtoTearOff {
   const _$ApiNaverPapagoDtoTearOff();
 
   _ApiNaverPapagoDto call(
-      {@JsonKey(name: 'srcLangType') required String source,
-      @JsonKey(name: 'tarLangType') required String target,
-      @JsonKey(name: 'translatedText') required String text}) {
+      {required String srcLangType,
+      required String tarLangType,
+      required String translatedText}) {
     return _ApiNaverPapagoDto(
-      source: source,
-      target: target,
-      text: text,
+      srcLangType: srcLangType,
+      tarLangType: tarLangType,
+      translatedText: translatedText,
     );
   }
 
@@ -41,12 +41,9 @@ const $ApiNaverPapagoDto = _$ApiNaverPapagoDtoTearOff();
 
 /// @nodoc
 mixin _$ApiNaverPapagoDto {
-  @JsonKey(name: 'srcLangType')
-  String get source => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tarLangType')
-  String get target => throw _privateConstructorUsedError;
-  @JsonKey(name: 'translatedText')
-  String get text => throw _privateConstructorUsedError;
+  String get srcLangType => throw _privateConstructorUsedError;
+  String get tarLangType => throw _privateConstructorUsedError;
+  String get translatedText => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,10 +56,7 @@ abstract class $ApiNaverPapagoDtoCopyWith<$Res> {
   factory $ApiNaverPapagoDtoCopyWith(
           ApiNaverPapagoDto value, $Res Function(ApiNaverPapagoDto) then) =
       _$ApiNaverPapagoDtoCopyWithImpl<$Res>;
-  $Res call(
-      {@JsonKey(name: 'srcLangType') String source,
-      @JsonKey(name: 'tarLangType') String target,
-      @JsonKey(name: 'translatedText') String text});
+  $Res call({String srcLangType, String tarLangType, String translatedText});
 }
 
 /// @nodoc
@@ -76,22 +70,22 @@ class _$ApiNaverPapagoDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? source = freezed,
-    Object? target = freezed,
-    Object? text = freezed,
+    Object? srcLangType = freezed,
+    Object? tarLangType = freezed,
+    Object? translatedText = freezed,
   }) {
     return _then(_value.copyWith(
-      source: source == freezed
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
+      srcLangType: srcLangType == freezed
+          ? _value.srcLangType
+          : srcLangType // ignore: cast_nullable_to_non_nullable
               as String,
-      target: target == freezed
-          ? _value.target
-          : target // ignore: cast_nullable_to_non_nullable
+      tarLangType: tarLangType == freezed
+          ? _value.tarLangType
+          : tarLangType // ignore: cast_nullable_to_non_nullable
               as String,
-      text: text == freezed
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
+      translatedText: translatedText == freezed
+          ? _value.translatedText
+          : translatedText // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -104,10 +98,7 @@ abstract class _$ApiNaverPapagoDtoCopyWith<$Res>
           _ApiNaverPapagoDto value, $Res Function(_ApiNaverPapagoDto) then) =
       __$ApiNaverPapagoDtoCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {@JsonKey(name: 'srcLangType') String source,
-      @JsonKey(name: 'tarLangType') String target,
-      @JsonKey(name: 'translatedText') String text});
+  $Res call({String srcLangType, String tarLangType, String translatedText});
 }
 
 /// @nodoc
@@ -123,22 +114,22 @@ class __$ApiNaverPapagoDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? source = freezed,
-    Object? target = freezed,
-    Object? text = freezed,
+    Object? srcLangType = freezed,
+    Object? tarLangType = freezed,
+    Object? translatedText = freezed,
   }) {
     return _then(_ApiNaverPapagoDto(
-      source: source == freezed
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
+      srcLangType: srcLangType == freezed
+          ? _value.srcLangType
+          : srcLangType // ignore: cast_nullable_to_non_nullable
               as String,
-      target: target == freezed
-          ? _value.target
-          : target // ignore: cast_nullable_to_non_nullable
+      tarLangType: tarLangType == freezed
+          ? _value.tarLangType
+          : tarLangType // ignore: cast_nullable_to_non_nullable
               as String,
-      text: text == freezed
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
+      translatedText: translatedText == freezed
+          ? _value.translatedText
+          : translatedText // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -148,47 +139,47 @@ class __$ApiNaverPapagoDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ApiNaverPapagoDto extends _ApiNaverPapagoDto {
   const _$_ApiNaverPapagoDto(
-      {@JsonKey(name: 'srcLangType') required this.source,
-      @JsonKey(name: 'tarLangType') required this.target,
-      @JsonKey(name: 'translatedText') required this.text})
+      {required this.srcLangType,
+      required this.tarLangType,
+      required this.translatedText})
       : super._();
 
   factory _$_ApiNaverPapagoDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ApiNaverPapagoDtoFromJson(json);
 
   @override
-  @JsonKey(name: 'srcLangType')
-  final String source;
+  final String srcLangType;
   @override
-  @JsonKey(name: 'tarLangType')
-  final String target;
+  final String tarLangType;
   @override
-  @JsonKey(name: 'translatedText')
-  final String text;
+  final String translatedText;
 
   @override
   String toString() {
-    return 'ApiNaverPapagoDto(source: $source, target: $target, text: $text)';
+    return 'ApiNaverPapagoDto(srcLangType: $srcLangType, tarLangType: $tarLangType, translatedText: $translatedText)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiNaverPapagoDto &&
-            (identical(other.source, source) ||
-                const DeepCollectionEquality().equals(other.source, source)) &&
-            (identical(other.target, target) ||
-                const DeepCollectionEquality().equals(other.target, target)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)));
+            (identical(other.srcLangType, srcLangType) ||
+                const DeepCollectionEquality()
+                    .equals(other.srcLangType, srcLangType)) &&
+            (identical(other.tarLangType, tarLangType) ||
+                const DeepCollectionEquality()
+                    .equals(other.tarLangType, tarLangType)) &&
+            (identical(other.translatedText, translatedText) ||
+                const DeepCollectionEquality()
+                    .equals(other.translatedText, translatedText)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(source) ^
-      const DeepCollectionEquality().hash(target) ^
-      const DeepCollectionEquality().hash(text);
+      const DeepCollectionEquality().hash(srcLangType) ^
+      const DeepCollectionEquality().hash(tarLangType) ^
+      const DeepCollectionEquality().hash(translatedText);
 
   @JsonKey(ignore: true)
   @override
@@ -203,24 +194,20 @@ class _$_ApiNaverPapagoDto extends _ApiNaverPapagoDto {
 
 abstract class _ApiNaverPapagoDto extends ApiNaverPapagoDto {
   const factory _ApiNaverPapagoDto(
-          {@JsonKey(name: 'srcLangType') required String source,
-          @JsonKey(name: 'tarLangType') required String target,
-          @JsonKey(name: 'translatedText') required String text}) =
-      _$_ApiNaverPapagoDto;
+      {required String srcLangType,
+      required String tarLangType,
+      required String translatedText}) = _$_ApiNaverPapagoDto;
   const _ApiNaverPapagoDto._() : super._();
 
   factory _ApiNaverPapagoDto.fromJson(Map<String, dynamic> json) =
       _$_ApiNaverPapagoDto.fromJson;
 
   @override
-  @JsonKey(name: 'srcLangType')
-  String get source => throw _privateConstructorUsedError;
+  String get srcLangType => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'tarLangType')
-  String get target => throw _privateConstructorUsedError;
+  String get tarLangType => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'translatedText')
-  String get text => throw _privateConstructorUsedError;
+  String get translatedText => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiNaverPapagoDtoCopyWith<_ApiNaverPapagoDto> get copyWith =>

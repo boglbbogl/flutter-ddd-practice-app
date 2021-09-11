@@ -9,7 +9,6 @@ import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ApiNaverImageMainPage extends StatelessWidget {

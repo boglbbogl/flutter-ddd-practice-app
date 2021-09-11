@@ -9,10 +9,9 @@ class ApiNaverPapago with _$ApiNaverPapago {
     required String tarLangType,
     required String translatedText,
   }) = _ApiNaverPapago;
-
   factory ApiNaverPapago.empty() => const ApiNaverPapago(
-        srcLangType: "",
-        tarLangType: "",
-        translatedText: "",
+        srcLangType: 'ko',
+        tarLangType: 'en',
+        translatedText: '',
       );
 }

@@ -20,13 +20,30 @@ class _$ApiNaverPapagoMainEventTearOff {
     return const _Started();
   }
 
-  _Translate translate(
-      {required String src, required String tar, required String text}) {
+  _Translate translate({required String text}) {
     return _Translate(
-      src: src,
-      tar: tar,
       text: text,
     );
+  }
+
+  _SourceChanged sourceChanged(
+      {required String source, required String formatSource}) {
+    return _SourceChanged(
+      source: source,
+      formatSource: formatSource,
+    );
+  }
+
+  _TargetChanged targetChanged(
+      {required String target, required String formatTarget}) {
+    return _TargetChanged(
+      target: target,
+      formatTarget: formatTarget,
+    );
+  }
+
+  _SwapLanguage swapLanguage() {
+    return const _SwapLanguage();
   }
 }
 
@@ -38,13 +55,19 @@ mixin _$ApiNaverPapagoMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String src, String tar, String text) translate,
+    required TResult Function(String text) translate,
+    required TResult Function(String source, String formatSource) sourceChanged,
+    required TResult Function(String target, String formatTarget) targetChanged,
+    required TResult Function() swapLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String src, String tar, String text)? translate,
+    TResult Function(String text)? translate,
+    TResult Function(String source, String formatSource)? sourceChanged,
+    TResult Function(String target, String formatTarget)? targetChanged,
+    TResult Function()? swapLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,12 +75,18 @@ mixin _$ApiNaverPapagoMainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Translate value) translate,
+    required TResult Function(_SourceChanged value) sourceChanged,
+    required TResult Function(_TargetChanged value) targetChanged,
+    required TResult Function(_SwapLanguage value) swapLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Translate value)? translate,
+    TResult Function(_SourceChanged value)? sourceChanged,
+    TResult Function(_TargetChanged value)? targetChanged,
+    TResult Function(_SwapLanguage value)? swapLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,7 +148,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String src, String tar, String text) translate,
+    required TResult Function(String text) translate,
+    required TResult Function(String source, String formatSource) sourceChanged,
+    required TResult Function(String target, String formatTarget) targetChanged,
+    required TResult Function() swapLanguage,
   }) {
     return started();
   }
@@ -128,7 +160,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String src, String tar, String text)? translate,
+    TResult Function(String text)? translate,
+    TResult Function(String source, String formatSource)? sourceChanged,
+    TResult Function(String target, String formatTarget)? targetChanged,
+    TResult Function()? swapLanguage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -142,6 +177,9 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Translate value) translate,
+    required TResult Function(_SourceChanged value) sourceChanged,
+    required TResult Function(_TargetChanged value) targetChanged,
+    required TResult Function(_SwapLanguage value) swapLanguage,
   }) {
     return started(this);
   }
@@ -151,6 +189,9 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Translate value)? translate,
+    TResult Function(_SourceChanged value)? sourceChanged,
+    TResult Function(_TargetChanged value)? targetChanged,
+    TResult Function(_SwapLanguage value)? swapLanguage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -169,7 +210,7 @@ abstract class _$TranslateCopyWith<$Res> {
   factory _$TranslateCopyWith(
           _Translate value, $Res Function(_Translate) then) =
       __$TranslateCopyWithImpl<$Res>;
-  $Res call({String src, String tar, String text});
+  $Res call({String text});
 }
 
 /// @nodoc
@@ -184,19 +225,9 @@ class __$TranslateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? src = freezed,
-    Object? tar = freezed,
     Object? text = freezed,
   }) {
     return _then(_Translate(
-      src: src == freezed
-          ? _value.src
-          : src // ignore: cast_nullable_to_non_nullable
-              as String,
-      tar: tar == freezed
-          ? _value.tar
-          : tar // ignore: cast_nullable_to_non_nullable
-              as String,
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -208,39 +239,27 @@ class __$TranslateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Translate implements _Translate {
-  const _$_Translate(
-      {required this.src, required this.tar, required this.text});
+  const _$_Translate({required this.text});
 
-  @override
-  final String src;
-  @override
-  final String tar;
   @override
   final String text;
 
   @override
   String toString() {
-    return 'ApiNaverPapagoMainEvent.translate(src: $src, tar: $tar, text: $text)';
+    return 'ApiNaverPapagoMainEvent.translate(text: $text)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Translate &&
-            (identical(other.src, src) ||
-                const DeepCollectionEquality().equals(other.src, src)) &&
-            (identical(other.tar, tar) ||
-                const DeepCollectionEquality().equals(other.tar, tar)) &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(src) ^
-      const DeepCollectionEquality().hash(tar) ^
-      const DeepCollectionEquality().hash(text);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(text);
 
   @JsonKey(ignore: true)
   @override
@@ -251,20 +270,26 @@ class _$_Translate implements _Translate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String src, String tar, String text) translate,
+    required TResult Function(String text) translate,
+    required TResult Function(String source, String formatSource) sourceChanged,
+    required TResult Function(String target, String formatTarget) targetChanged,
+    required TResult Function() swapLanguage,
   }) {
-    return translate(src, tar, text);
+    return translate(text);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String src, String tar, String text)? translate,
+    TResult Function(String text)? translate,
+    TResult Function(String source, String formatSource)? sourceChanged,
+    TResult Function(String target, String formatTarget)? targetChanged,
+    TResult Function()? swapLanguage,
     required TResult orElse(),
   }) {
     if (translate != null) {
-      return translate(src, tar, text);
+      return translate(text);
     }
     return orElse();
   }
@@ -274,6 +299,9 @@ class _$_Translate implements _Translate {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Translate value) translate,
+    required TResult Function(_SourceChanged value) sourceChanged,
+    required TResult Function(_TargetChanged value) targetChanged,
+    required TResult Function(_SwapLanguage value) swapLanguage,
   }) {
     return translate(this);
   }
@@ -283,6 +311,9 @@ class _$_Translate implements _Translate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Translate value)? translate,
+    TResult Function(_SourceChanged value)? sourceChanged,
+    TResult Function(_TargetChanged value)? targetChanged,
+    TResult Function(_SwapLanguage value)? swapLanguage,
     required TResult orElse(),
   }) {
     if (translate != null) {
@@ -293,13 +324,8 @@ class _$_Translate implements _Translate {
 }
 
 abstract class _Translate implements ApiNaverPapagoMainEvent {
-  const factory _Translate(
-      {required String src,
-      required String tar,
-      required String text}) = _$_Translate;
+  const factory _Translate({required String text}) = _$_Translate;
 
-  String get src => throw _privateConstructorUsedError;
-  String get tar => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$TranslateCopyWith<_Translate> get copyWith =>
@@ -307,14 +333,407 @@ abstract class _Translate implements ApiNaverPapagoMainEvent {
 }
 
 /// @nodoc
+abstract class _$SourceChangedCopyWith<$Res> {
+  factory _$SourceChangedCopyWith(
+          _SourceChanged value, $Res Function(_SourceChanged) then) =
+      __$SourceChangedCopyWithImpl<$Res>;
+  $Res call({String source, String formatSource});
+}
+
+/// @nodoc
+class __$SourceChangedCopyWithImpl<$Res>
+    extends _$ApiNaverPapagoMainEventCopyWithImpl<$Res>
+    implements _$SourceChangedCopyWith<$Res> {
+  __$SourceChangedCopyWithImpl(
+      _SourceChanged _value, $Res Function(_SourceChanged) _then)
+      : super(_value, (v) => _then(v as _SourceChanged));
+
+  @override
+  _SourceChanged get _value => super._value as _SourceChanged;
+
+  @override
+  $Res call({
+    Object? source = freezed,
+    Object? formatSource = freezed,
+  }) {
+    return _then(_SourceChanged(
+      source: source == freezed
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      formatSource: formatSource == freezed
+          ? _value.formatSource
+          : formatSource // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SourceChanged implements _SourceChanged {
+  const _$_SourceChanged({required this.source, required this.formatSource});
+
+  @override
+  final String source;
+  @override
+  final String formatSource;
+
+  @override
+  String toString() {
+    return 'ApiNaverPapagoMainEvent.sourceChanged(source: $source, formatSource: $formatSource)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SourceChanged &&
+            (identical(other.source, source) ||
+                const DeepCollectionEquality().equals(other.source, source)) &&
+            (identical(other.formatSource, formatSource) ||
+                const DeepCollectionEquality()
+                    .equals(other.formatSource, formatSource)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(source) ^
+      const DeepCollectionEquality().hash(formatSource);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SourceChangedCopyWith<_SourceChanged> get copyWith =>
+      __$SourceChangedCopyWithImpl<_SourceChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String text) translate,
+    required TResult Function(String source, String formatSource) sourceChanged,
+    required TResult Function(String target, String formatTarget) targetChanged,
+    required TResult Function() swapLanguage,
+  }) {
+    return sourceChanged(source, formatSource);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String text)? translate,
+    TResult Function(String source, String formatSource)? sourceChanged,
+    TResult Function(String target, String formatTarget)? targetChanged,
+    TResult Function()? swapLanguage,
+    required TResult orElse(),
+  }) {
+    if (sourceChanged != null) {
+      return sourceChanged(source, formatSource);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Translate value) translate,
+    required TResult Function(_SourceChanged value) sourceChanged,
+    required TResult Function(_TargetChanged value) targetChanged,
+    required TResult Function(_SwapLanguage value) swapLanguage,
+  }) {
+    return sourceChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Translate value)? translate,
+    TResult Function(_SourceChanged value)? sourceChanged,
+    TResult Function(_TargetChanged value)? targetChanged,
+    TResult Function(_SwapLanguage value)? swapLanguage,
+    required TResult orElse(),
+  }) {
+    if (sourceChanged != null) {
+      return sourceChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SourceChanged implements ApiNaverPapagoMainEvent {
+  const factory _SourceChanged(
+      {required String source,
+      required String formatSource}) = _$_SourceChanged;
+
+  String get source => throw _privateConstructorUsedError;
+  String get formatSource => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SourceChangedCopyWith<_SourceChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$TargetChangedCopyWith<$Res> {
+  factory _$TargetChangedCopyWith(
+          _TargetChanged value, $Res Function(_TargetChanged) then) =
+      __$TargetChangedCopyWithImpl<$Res>;
+  $Res call({String target, String formatTarget});
+}
+
+/// @nodoc
+class __$TargetChangedCopyWithImpl<$Res>
+    extends _$ApiNaverPapagoMainEventCopyWithImpl<$Res>
+    implements _$TargetChangedCopyWith<$Res> {
+  __$TargetChangedCopyWithImpl(
+      _TargetChanged _value, $Res Function(_TargetChanged) _then)
+      : super(_value, (v) => _then(v as _TargetChanged));
+
+  @override
+  _TargetChanged get _value => super._value as _TargetChanged;
+
+  @override
+  $Res call({
+    Object? target = freezed,
+    Object? formatTarget = freezed,
+  }) {
+    return _then(_TargetChanged(
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as String,
+      formatTarget: formatTarget == freezed
+          ? _value.formatTarget
+          : formatTarget // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_TargetChanged implements _TargetChanged {
+  const _$_TargetChanged({required this.target, required this.formatTarget});
+
+  @override
+  final String target;
+  @override
+  final String formatTarget;
+
+  @override
+  String toString() {
+    return 'ApiNaverPapagoMainEvent.targetChanged(target: $target, formatTarget: $formatTarget)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TargetChanged &&
+            (identical(other.target, target) ||
+                const DeepCollectionEquality().equals(other.target, target)) &&
+            (identical(other.formatTarget, formatTarget) ||
+                const DeepCollectionEquality()
+                    .equals(other.formatTarget, formatTarget)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(target) ^
+      const DeepCollectionEquality().hash(formatTarget);
+
+  @JsonKey(ignore: true)
+  @override
+  _$TargetChangedCopyWith<_TargetChanged> get copyWith =>
+      __$TargetChangedCopyWithImpl<_TargetChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String text) translate,
+    required TResult Function(String source, String formatSource) sourceChanged,
+    required TResult Function(String target, String formatTarget) targetChanged,
+    required TResult Function() swapLanguage,
+  }) {
+    return targetChanged(target, formatTarget);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String text)? translate,
+    TResult Function(String source, String formatSource)? sourceChanged,
+    TResult Function(String target, String formatTarget)? targetChanged,
+    TResult Function()? swapLanguage,
+    required TResult orElse(),
+  }) {
+    if (targetChanged != null) {
+      return targetChanged(target, formatTarget);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Translate value) translate,
+    required TResult Function(_SourceChanged value) sourceChanged,
+    required TResult Function(_TargetChanged value) targetChanged,
+    required TResult Function(_SwapLanguage value) swapLanguage,
+  }) {
+    return targetChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Translate value)? translate,
+    TResult Function(_SourceChanged value)? sourceChanged,
+    TResult Function(_TargetChanged value)? targetChanged,
+    TResult Function(_SwapLanguage value)? swapLanguage,
+    required TResult orElse(),
+  }) {
+    if (targetChanged != null) {
+      return targetChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TargetChanged implements ApiNaverPapagoMainEvent {
+  const factory _TargetChanged(
+      {required String target,
+      required String formatTarget}) = _$_TargetChanged;
+
+  String get target => throw _privateConstructorUsedError;
+  String get formatTarget => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$TargetChangedCopyWith<_TargetChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SwapLanguageCopyWith<$Res> {
+  factory _$SwapLanguageCopyWith(
+          _SwapLanguage value, $Res Function(_SwapLanguage) then) =
+      __$SwapLanguageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SwapLanguageCopyWithImpl<$Res>
+    extends _$ApiNaverPapagoMainEventCopyWithImpl<$Res>
+    implements _$SwapLanguageCopyWith<$Res> {
+  __$SwapLanguageCopyWithImpl(
+      _SwapLanguage _value, $Res Function(_SwapLanguage) _then)
+      : super(_value, (v) => _then(v as _SwapLanguage));
+
+  @override
+  _SwapLanguage get _value => super._value as _SwapLanguage;
+}
+
+/// @nodoc
+
+class _$_SwapLanguage implements _SwapLanguage {
+  const _$_SwapLanguage();
+
+  @override
+  String toString() {
+    return 'ApiNaverPapagoMainEvent.swapLanguage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SwapLanguage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String text) translate,
+    required TResult Function(String source, String formatSource) sourceChanged,
+    required TResult Function(String target, String formatTarget) targetChanged,
+    required TResult Function() swapLanguage,
+  }) {
+    return swapLanguage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String text)? translate,
+    TResult Function(String source, String formatSource)? sourceChanged,
+    TResult Function(String target, String formatTarget)? targetChanged,
+    TResult Function()? swapLanguage,
+    required TResult orElse(),
+  }) {
+    if (swapLanguage != null) {
+      return swapLanguage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Translate value) translate,
+    required TResult Function(_SourceChanged value) sourceChanged,
+    required TResult Function(_TargetChanged value) targetChanged,
+    required TResult Function(_SwapLanguage value) swapLanguage,
+  }) {
+    return swapLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Translate value)? translate,
+    TResult Function(_SourceChanged value)? sourceChanged,
+    TResult Function(_TargetChanged value)? targetChanged,
+    TResult Function(_SwapLanguage value)? swapLanguage,
+    required TResult orElse(),
+  }) {
+    if (swapLanguage != null) {
+      return swapLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SwapLanguage implements ApiNaverPapagoMainEvent {
+  const factory _SwapLanguage() = _$_SwapLanguage;
+}
+
+/// @nodoc
 class _$ApiNaverPapagoMainStateTearOff {
   const _$ApiNaverPapagoMainStateTearOff();
 
   _ApiNaverPapagoMainState call(
-      {required bool isLoading, required ApiNaverPapago? papago}) {
+      {required bool isLoading,
+      required ApiNaverPapago? papago,
+      required String source,
+      required String target,
+      required String formatSource,
+      required String formatTarget}) {
     return _ApiNaverPapagoMainState(
       isLoading: isLoading,
       papago: papago,
+      source: source,
+      target: target,
+      formatSource: formatSource,
+      formatTarget: formatTarget,
     );
   }
 }
@@ -326,6 +745,10 @@ const $ApiNaverPapagoMainState = _$ApiNaverPapagoMainStateTearOff();
 mixin _$ApiNaverPapagoMainState {
   bool get isLoading => throw _privateConstructorUsedError;
   ApiNaverPapago? get papago => throw _privateConstructorUsedError;
+  String get source => throw _privateConstructorUsedError;
+  String get target => throw _privateConstructorUsedError;
+  String get formatSource => throw _privateConstructorUsedError;
+  String get formatTarget => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiNaverPapagoMainStateCopyWith<ApiNaverPapagoMainState> get copyWith =>
@@ -337,7 +760,13 @@ abstract class $ApiNaverPapagoMainStateCopyWith<$Res> {
   factory $ApiNaverPapagoMainStateCopyWith(ApiNaverPapagoMainState value,
           $Res Function(ApiNaverPapagoMainState) then) =
       _$ApiNaverPapagoMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, ApiNaverPapago? papago});
+  $Res call(
+      {bool isLoading,
+      ApiNaverPapago? papago,
+      String source,
+      String target,
+      String formatSource,
+      String formatTarget});
 
   $ApiNaverPapagoCopyWith<$Res>? get papago;
 }
@@ -355,6 +784,10 @@ class _$ApiNaverPapagoMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? papago = freezed,
+    Object? source = freezed,
+    Object? target = freezed,
+    Object? formatSource = freezed,
+    Object? formatTarget = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -365,6 +798,22 @@ class _$ApiNaverPapagoMainStateCopyWithImpl<$Res>
           ? _value.papago
           : papago // ignore: cast_nullable_to_non_nullable
               as ApiNaverPapago?,
+      source: source == freezed
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as String,
+      formatSource: formatSource == freezed
+          ? _value.formatSource
+          : formatSource // ignore: cast_nullable_to_non_nullable
+              as String,
+      formatTarget: formatTarget == freezed
+          ? _value.formatTarget
+          : formatTarget // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -387,7 +836,13 @@ abstract class _$ApiNaverPapagoMainStateCopyWith<$Res>
           $Res Function(_ApiNaverPapagoMainState) then) =
       __$ApiNaverPapagoMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, ApiNaverPapago? papago});
+  $Res call(
+      {bool isLoading,
+      ApiNaverPapago? papago,
+      String source,
+      String target,
+      String formatSource,
+      String formatTarget});
 
   @override
   $ApiNaverPapagoCopyWith<$Res>? get papago;
@@ -409,6 +864,10 @@ class __$ApiNaverPapagoMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? papago = freezed,
+    Object? source = freezed,
+    Object? target = freezed,
+    Object? formatSource = freezed,
+    Object? formatTarget = freezed,
   }) {
     return _then(_ApiNaverPapagoMainState(
       isLoading: isLoading == freezed
@@ -419,6 +878,22 @@ class __$ApiNaverPapagoMainStateCopyWithImpl<$Res>
           ? _value.papago
           : papago // ignore: cast_nullable_to_non_nullable
               as ApiNaverPapago?,
+      source: source == freezed
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as String,
+      formatSource: formatSource == freezed
+          ? _value.formatSource
+          : formatSource // ignore: cast_nullable_to_non_nullable
+              as String,
+      formatTarget: formatTarget == freezed
+          ? _value.formatTarget
+          : formatTarget // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -426,16 +901,30 @@ class __$ApiNaverPapagoMainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiNaverPapagoMainState implements _ApiNaverPapagoMainState {
-  _$_ApiNaverPapagoMainState({required this.isLoading, required this.papago});
+  _$_ApiNaverPapagoMainState(
+      {required this.isLoading,
+      required this.papago,
+      required this.source,
+      required this.target,
+      required this.formatSource,
+      required this.formatTarget});
 
   @override
   final bool isLoading;
   @override
   final ApiNaverPapago? papago;
+  @override
+  final String source;
+  @override
+  final String target;
+  @override
+  final String formatSource;
+  @override
+  final String formatTarget;
 
   @override
   String toString() {
-    return 'ApiNaverPapagoMainState(isLoading: $isLoading, papago: $papago)';
+    return 'ApiNaverPapagoMainState(isLoading: $isLoading, papago: $papago, source: $source, target: $target, formatSource: $formatSource, formatTarget: $formatTarget)';
   }
 
   @override
@@ -446,14 +935,28 @@ class _$_ApiNaverPapagoMainState implements _ApiNaverPapagoMainState {
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.papago, papago) ||
-                const DeepCollectionEquality().equals(other.papago, papago)));
+                const DeepCollectionEquality().equals(other.papago, papago)) &&
+            (identical(other.source, source) ||
+                const DeepCollectionEquality().equals(other.source, source)) &&
+            (identical(other.target, target) ||
+                const DeepCollectionEquality().equals(other.target, target)) &&
+            (identical(other.formatSource, formatSource) ||
+                const DeepCollectionEquality()
+                    .equals(other.formatSource, formatSource)) &&
+            (identical(other.formatTarget, formatTarget) ||
+                const DeepCollectionEquality()
+                    .equals(other.formatTarget, formatTarget)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(papago);
+      const DeepCollectionEquality().hash(papago) ^
+      const DeepCollectionEquality().hash(source) ^
+      const DeepCollectionEquality().hash(target) ^
+      const DeepCollectionEquality().hash(formatSource) ^
+      const DeepCollectionEquality().hash(formatTarget);
 
   @JsonKey(ignore: true)
   @override
@@ -465,12 +968,24 @@ class _$_ApiNaverPapagoMainState implements _ApiNaverPapagoMainState {
 abstract class _ApiNaverPapagoMainState implements ApiNaverPapagoMainState {
   factory _ApiNaverPapagoMainState(
       {required bool isLoading,
-      required ApiNaverPapago? papago}) = _$_ApiNaverPapagoMainState;
+      required ApiNaverPapago? papago,
+      required String source,
+      required String target,
+      required String formatSource,
+      required String formatTarget}) = _$_ApiNaverPapagoMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
   ApiNaverPapago? get papago => throw _privateConstructorUsedError;
+  @override
+  String get source => throw _privateConstructorUsedError;
+  @override
+  String get target => throw _privateConstructorUsedError;
+  @override
+  String get formatSource => throw _privateConstructorUsedError;
+  @override
+  String get formatTarget => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiNaverPapagoMainStateCopyWith<_ApiNaverPapagoMainState> get copyWith =>

@@ -4,7 +4,6 @@ import 'package:ddd_practice_app/domain/naver_api/api_naver_shop_practice/api_na
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/widgets/naver_shop_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class NaverShopItemListView extends StatelessWidget {
   final bool isLoading;
@@ -25,12 +24,12 @@ class NaverShopItemListView extends StatelessWidget {
                 pageBuilder: (_, __, ___) {
                   return NaverShopDetailPage(naverShop: naverShop);
                 },
-                transitionDuration: const Duration(milliseconds: 2000)));
+                transitionDuration: const Duration(milliseconds: 1000)));
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          width: size.width * 0.9,
+          width: size.width,
           height: size.height * 0.15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -59,7 +58,7 @@ class NaverShopItemListView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: size.width * 0.6,
+                    width: size.width * 0.55,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -8,16 +8,16 @@ part of 'api_naver_papago_dtos.dart';
 
 _$_ApiNaverPapagoDto _$_$_ApiNaverPapagoDtoFromJson(Map<String, dynamic> json) {
   return _$_ApiNaverPapagoDto(
-    source: json['srcLangType'] as String,
-    target: json['tarLangType'] as String,
-    text: json['translatedText'] as String,
+    srcLangType: json['srcLangType'] as String,
+    tarLangType: json['tarLangType'] as String,
+    translatedText: json['translatedText'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_ApiNaverPapagoDtoToJson(
         _$_ApiNaverPapagoDto instance) =>
     <String, dynamic>{
-      'srcLangType': instance.source,
-      'tarLangType': instance.target,
-      'translatedText': instance.text,
+      'srcLangType': instance.srcLangType,
+      'tarLangType': instance.tarLangType,
+      'translatedText': instance.translatedText,
     };
