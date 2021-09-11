@@ -7,6 +7,7 @@ import 'package:ddd_practice_app/injection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ApiKakaoWebMainPage extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
@@ -56,23 +57,86 @@ class ApiKakaoWebMainPage extends StatelessWidget {
                       // physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       children: [
-                        ...state.apiKakaoWeb.map((e) => Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 12, horizontal: 15),
-                              child: Container(
-                                  height: size.height * 0.1,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(18),
-                                      border: Border.all(
-                                          color: const Color.fromRGBO(
-                                              215, 215, 215, 1))),
-                                  child: Column(
-                                    children: [
-                                      Text(e.title),
-                                      // Text(e.contents),
-                                      // Text(e.url),
-                                    ],
-                                  )),
+                        ...state.apiKakaoWeb.map((e) => InkWell(
+                              onTap: () {
+                                showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    isDismissible: true,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return SizedBox(
+                                        height: size.height * 0.85,
+                                        child: WebView(
+                                          initialUrl: e.url,
+                                          javascriptMode:
+                                              JavascriptMode.unrestricted,
+                                        ),
+                                      );
+                                    });
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 12, horizontal: 15),
+                                child: Container(
+                                    height: size.height * 0.13,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(18),
+                                        border: Border.all(
+                                            color: const Color.fromRGBO(
+                                                215, 215, 215, 1))),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10, horizontal: 14),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            e.title
+                                                .replaceAll('<b>', '')
+                                                .replaceAll('</b>', ''),
+                                            overflow: TextOverflow.ellipsis,
+                                            style: theme.textTheme.bodyText2!
+                                                .copyWith(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 13),
+                                          ),
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            e.contents
+                                                .replaceAll('<b>', '')
+                                                .replaceAll('</b>', ''),
+                                            maxLines: 3,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: theme.textTheme.bodyText2!
+                                                .copyWith(
+                                                    color: Colors.black,
+                                                    fontSize: 11),
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          SizedBox(
+                                            width: size.width * 0.6,
+                                            child: Text(
+                                              e.url,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: theme.textTheme.bodyText2!
+                                                  .copyWith(
+                                                      color: Colors.amber,
+                                                      fontSize: 11),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                              ),
                             )),
                       ],
                     ),
