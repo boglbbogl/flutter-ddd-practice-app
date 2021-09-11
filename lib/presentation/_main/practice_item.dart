@@ -27,14 +27,17 @@ class KakaoApiPracticeItem {
 
 class NaverApiPracticeItem {
   List title = [
+    'Papago',
     'Image',
     'Shop',
   ];
   List router = [
+    '/apiNaverPapagoMainPage',
     '/apiNaverImageMainPage',
     '/apiNaverShopMainPage',
   ];
   List stateManagement = [
+    'BLoc',
     'BLoc',
     'BLoc',
   ];

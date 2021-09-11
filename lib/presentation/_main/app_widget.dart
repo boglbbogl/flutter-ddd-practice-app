@@ -1,9 +1,11 @@
 import 'package:ddd_practice_app/_constant/api_check/api_check_main_page.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
+import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
 import 'package:ddd_practice_app/application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/widget_practice/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:ddd_practice_app/presentation/_main/main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_news_practice/api_news_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_picture_practice/api_picture_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_weather_practice/api_weather_main_page.dart';
@@ -13,8 +15,8 @@ import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image_practice
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
-import 'package:ddd_practice_app/presentation/main/main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/api_naver_image_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/api_naver_papago_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/api_naver_shop_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_main_page.dart';
@@ -41,6 +43,9 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 getIt<ApiKakaoTranslateMainCubit>()..started()),
+        BlocProvider(
+            create: (context) => getIt<ApiNaverPapagoMainBloc>()
+              ..add(const ApiNaverPapagoMainEvent.started())),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',
@@ -55,6 +60,7 @@ class AppWidget extends StatelessWidget {
               ApiKakaoTranslateMainPage(),
           '/apiKakaoTranslateMultipleMainPage': (context) =>
               ApiKakaoTranslateMultipleMainPage(),
+          '/apiNaverPapagoMainPage': (context) => ApiNaverPapagoMainPage(),
           '/apiNaverImageMainPage': (context) => ApiNaverImageMainPage(),
           '/apiNaverShopMainPage': (context) => ApiNaverShopMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),

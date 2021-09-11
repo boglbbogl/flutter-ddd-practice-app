@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/presentation/main/main_practice_list_item.dart';
-import 'package:ddd_practice_app/presentation/main/practice_item.dart';
+import 'package:ddd_practice_app/presentation/_main/main_practice_list_item.dart';
+import 'package:ddd_practice_app/presentation/_main/practice_item.dart';
 import 'package:flutter/material.dart';
 
 class MainPracticeList extends StatelessWidget {
