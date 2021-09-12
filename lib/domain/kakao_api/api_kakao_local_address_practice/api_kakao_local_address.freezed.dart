@@ -17,11 +17,11 @@ class _$ApiKakaoLocalAddressTearOff {
   const _$ApiKakaoLocalAddressTearOff();
 
   _ApiKakaoLocalAddress call(
-      {required List<KakaoLocalResultRoadAddress> kakaoLocalResultRoadAddress,
-      required List<KakaoLocalResultAddress> kakaoLocalResultAddress}) {
+      {required KakaoLocalResultRoadAddress roadAddress,
+      required KakaoLocalResultAddress address}) {
     return _ApiKakaoLocalAddress(
-      kakaoLocalResultRoadAddress: kakaoLocalResultRoadAddress,
-      kakaoLocalResultAddress: kakaoLocalResultAddress,
+      roadAddress: roadAddress,
+      address: address,
     );
   }
 }
@@ -31,10 +31,9 @@ const $ApiKakaoLocalAddress = _$ApiKakaoLocalAddressTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoLocalAddress {
-  List<KakaoLocalResultRoadAddress> get kakaoLocalResultRoadAddress =>
+  KakaoLocalResultRoadAddress get roadAddress =>
       throw _privateConstructorUsedError;
-  List<KakaoLocalResultAddress> get kakaoLocalResultAddress =>
-      throw _privateConstructorUsedError;
+  KakaoLocalResultAddress get address => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoLocalAddressCopyWith<ApiKakaoLocalAddress> get copyWith =>
@@ -47,8 +46,11 @@ abstract class $ApiKakaoLocalAddressCopyWith<$Res> {
           $Res Function(ApiKakaoLocalAddress) then) =
       _$ApiKakaoLocalAddressCopyWithImpl<$Res>;
   $Res call(
-      {List<KakaoLocalResultRoadAddress> kakaoLocalResultRoadAddress,
-      List<KakaoLocalResultAddress> kakaoLocalResultAddress});
+      {KakaoLocalResultRoadAddress roadAddress,
+      KakaoLocalResultAddress address});
+
+  $KakaoLocalResultRoadAddressCopyWith<$Res> get roadAddress;
+  $KakaoLocalResultAddressCopyWith<$Res> get address;
 }
 
 /// @nodoc
@@ -62,19 +64,34 @@ class _$ApiKakaoLocalAddressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? kakaoLocalResultRoadAddress = freezed,
-    Object? kakaoLocalResultAddress = freezed,
+    Object? roadAddress = freezed,
+    Object? address = freezed,
   }) {
     return _then(_value.copyWith(
-      kakaoLocalResultRoadAddress: kakaoLocalResultRoadAddress == freezed
-          ? _value.kakaoLocalResultRoadAddress
-          : kakaoLocalResultRoadAddress // ignore: cast_nullable_to_non_nullable
-              as List<KakaoLocalResultRoadAddress>,
-      kakaoLocalResultAddress: kakaoLocalResultAddress == freezed
-          ? _value.kakaoLocalResultAddress
-          : kakaoLocalResultAddress // ignore: cast_nullable_to_non_nullable
-              as List<KakaoLocalResultAddress>,
+      roadAddress: roadAddress == freezed
+          ? _value.roadAddress
+          : roadAddress // ignore: cast_nullable_to_non_nullable
+              as KakaoLocalResultRoadAddress,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as KakaoLocalResultAddress,
     ));
+  }
+
+  @override
+  $KakaoLocalResultRoadAddressCopyWith<$Res> get roadAddress {
+    return $KakaoLocalResultRoadAddressCopyWith<$Res>(_value.roadAddress,
+        (value) {
+      return _then(_value.copyWith(roadAddress: value));
+    });
+  }
+
+  @override
+  $KakaoLocalResultAddressCopyWith<$Res> get address {
+    return $KakaoLocalResultAddressCopyWith<$Res>(_value.address, (value) {
+      return _then(_value.copyWith(address: value));
+    });
   }
 }
 
@@ -86,8 +103,13 @@ abstract class _$ApiKakaoLocalAddressCopyWith<$Res>
       __$ApiKakaoLocalAddressCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<KakaoLocalResultRoadAddress> kakaoLocalResultRoadAddress,
-      List<KakaoLocalResultAddress> kakaoLocalResultAddress});
+      {KakaoLocalResultRoadAddress roadAddress,
+      KakaoLocalResultAddress address});
+
+  @override
+  $KakaoLocalResultRoadAddressCopyWith<$Res> get roadAddress;
+  @override
+  $KakaoLocalResultAddressCopyWith<$Res> get address;
 }
 
 /// @nodoc
@@ -103,18 +125,18 @@ class __$ApiKakaoLocalAddressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? kakaoLocalResultRoadAddress = freezed,
-    Object? kakaoLocalResultAddress = freezed,
+    Object? roadAddress = freezed,
+    Object? address = freezed,
   }) {
     return _then(_ApiKakaoLocalAddress(
-      kakaoLocalResultRoadAddress: kakaoLocalResultRoadAddress == freezed
-          ? _value.kakaoLocalResultRoadAddress
-          : kakaoLocalResultRoadAddress // ignore: cast_nullable_to_non_nullable
-              as List<KakaoLocalResultRoadAddress>,
-      kakaoLocalResultAddress: kakaoLocalResultAddress == freezed
-          ? _value.kakaoLocalResultAddress
-          : kakaoLocalResultAddress // ignore: cast_nullable_to_non_nullable
-              as List<KakaoLocalResultAddress>,
+      roadAddress: roadAddress == freezed
+          ? _value.roadAddress
+          : roadAddress // ignore: cast_nullable_to_non_nullable
+              as KakaoLocalResultRoadAddress,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as KakaoLocalResultAddress,
     ));
   }
 }
@@ -123,39 +145,34 @@ class __$ApiKakaoLocalAddressCopyWithImpl<$Res>
 
 class _$_ApiKakaoLocalAddress implements _ApiKakaoLocalAddress {
   const _$_ApiKakaoLocalAddress(
-      {required this.kakaoLocalResultRoadAddress,
-      required this.kakaoLocalResultAddress});
+      {required this.roadAddress, required this.address});
 
   @override
-  final List<KakaoLocalResultRoadAddress> kakaoLocalResultRoadAddress;
+  final KakaoLocalResultRoadAddress roadAddress;
   @override
-  final List<KakaoLocalResultAddress> kakaoLocalResultAddress;
+  final KakaoLocalResultAddress address;
 
   @override
   String toString() {
-    return 'ApiKakaoLocalAddress(kakaoLocalResultRoadAddress: $kakaoLocalResultRoadAddress, kakaoLocalResultAddress: $kakaoLocalResultAddress)';
+    return 'ApiKakaoLocalAddress(roadAddress: $roadAddress, address: $address)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiKakaoLocalAddress &&
-            (identical(other.kakaoLocalResultRoadAddress,
-                    kakaoLocalResultRoadAddress) ||
-                const DeepCollectionEquality().equals(
-                    other.kakaoLocalResultRoadAddress,
-                    kakaoLocalResultRoadAddress)) &&
-            (identical(
-                    other.kakaoLocalResultAddress, kakaoLocalResultAddress) ||
-                const DeepCollectionEquality().equals(
-                    other.kakaoLocalResultAddress, kakaoLocalResultAddress)));
+            (identical(other.roadAddress, roadAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.roadAddress, roadAddress)) &&
+            (identical(other.address, address) ||
+                const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(kakaoLocalResultRoadAddress) ^
-      const DeepCollectionEquality().hash(kakaoLocalResultAddress);
+      const DeepCollectionEquality().hash(roadAddress) ^
+      const DeepCollectionEquality().hash(address);
 
   @JsonKey(ignore: true)
   @override
@@ -166,16 +183,14 @@ class _$_ApiKakaoLocalAddress implements _ApiKakaoLocalAddress {
 
 abstract class _ApiKakaoLocalAddress implements ApiKakaoLocalAddress {
   const factory _ApiKakaoLocalAddress(
-      {required List<KakaoLocalResultRoadAddress> kakaoLocalResultRoadAddress,
-      required List<KakaoLocalResultAddress>
-          kakaoLocalResultAddress}) = _$_ApiKakaoLocalAddress;
+      {required KakaoLocalResultRoadAddress roadAddress,
+      required KakaoLocalResultAddress address}) = _$_ApiKakaoLocalAddress;
 
   @override
-  List<KakaoLocalResultRoadAddress> get kakaoLocalResultRoadAddress =>
+  KakaoLocalResultRoadAddress get roadAddress =>
       throw _privateConstructorUsedError;
   @override
-  List<KakaoLocalResultAddress> get kakaoLocalResultAddress =>
-      throw _privateConstructorUsedError;
+  KakaoLocalResultAddress get address => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoLocalAddressCopyWith<_ApiKakaoLocalAddress> get copyWith =>
@@ -187,27 +202,27 @@ class _$KakaoLocalResultRoadAddressTearOff {
   const _$KakaoLocalResultRoadAddressTearOff();
 
   _KakaoLocalResultRoadAddress call(
-      {required String address_name,
-      required String region_1depth_name,
-      required String region_2depth_name,
-      required String region_3depth_name,
-      required String road_name,
-      required String underground_yn,
-      required String main_building_no,
-      required String sub_building_no,
-      required String building_name,
-      required String zone_no}) {
+      {required String addressName,
+      required String region1depthName,
+      required String region2depthName,
+      required String region3depthName,
+      required String roadName,
+      required String undergroundYn,
+      required String mainBuildingNo,
+      required String subBuildingNo,
+      required String buildingName,
+      required String zoneNo}) {
     return _KakaoLocalResultRoadAddress(
-      address_name: address_name,
-      region_1depth_name: region_1depth_name,
-      region_2depth_name: region_2depth_name,
-      region_3depth_name: region_3depth_name,
-      road_name: road_name,
-      underground_yn: underground_yn,
-      main_building_no: main_building_no,
-      sub_building_no: sub_building_no,
-      building_name: building_name,
-      zone_no: zone_no,
+      addressName: addressName,
+      region1depthName: region1depthName,
+      region2depthName: region2depthName,
+      region3depthName: region3depthName,
+      roadName: roadName,
+      undergroundYn: undergroundYn,
+      mainBuildingNo: mainBuildingNo,
+      subBuildingNo: subBuildingNo,
+      buildingName: buildingName,
+      zoneNo: zoneNo,
     );
   }
 }
@@ -217,16 +232,16 @@ const $KakaoLocalResultRoadAddress = _$KakaoLocalResultRoadAddressTearOff();
 
 /// @nodoc
 mixin _$KakaoLocalResultRoadAddress {
-  String get address_name => throw _privateConstructorUsedError;
-  String get region_1depth_name => throw _privateConstructorUsedError;
-  String get region_2depth_name => throw _privateConstructorUsedError;
-  String get region_3depth_name => throw _privateConstructorUsedError;
-  String get road_name => throw _privateConstructorUsedError;
-  String get underground_yn => throw _privateConstructorUsedError;
-  String get main_building_no => throw _privateConstructorUsedError;
-  String get sub_building_no => throw _privateConstructorUsedError;
-  String get building_name => throw _privateConstructorUsedError;
-  String get zone_no => throw _privateConstructorUsedError;
+  String get addressName => throw _privateConstructorUsedError;
+  String get region1depthName => throw _privateConstructorUsedError;
+  String get region2depthName => throw _privateConstructorUsedError;
+  String get region3depthName => throw _privateConstructorUsedError;
+  String get roadName => throw _privateConstructorUsedError;
+  String get undergroundYn => throw _privateConstructorUsedError;
+  String get mainBuildingNo => throw _privateConstructorUsedError;
+  String get subBuildingNo => throw _privateConstructorUsedError;
+  String get buildingName => throw _privateConstructorUsedError;
+  String get zoneNo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $KakaoLocalResultRoadAddressCopyWith<KakaoLocalResultRoadAddress>
@@ -240,16 +255,16 @@ abstract class $KakaoLocalResultRoadAddressCopyWith<$Res> {
           $Res Function(KakaoLocalResultRoadAddress) then) =
       _$KakaoLocalResultRoadAddressCopyWithImpl<$Res>;
   $Res call(
-      {String address_name,
-      String region_1depth_name,
-      String region_2depth_name,
-      String region_3depth_name,
-      String road_name,
-      String underground_yn,
-      String main_building_no,
-      String sub_building_no,
-      String building_name,
-      String zone_no});
+      {String addressName,
+      String region1depthName,
+      String region2depthName,
+      String region3depthName,
+      String roadName,
+      String undergroundYn,
+      String mainBuildingNo,
+      String subBuildingNo,
+      String buildingName,
+      String zoneNo});
 }
 
 /// @nodoc
@@ -263,57 +278,57 @@ class _$KakaoLocalResultRoadAddressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? address_name = freezed,
-    Object? region_1depth_name = freezed,
-    Object? region_2depth_name = freezed,
-    Object? region_3depth_name = freezed,
-    Object? road_name = freezed,
-    Object? underground_yn = freezed,
-    Object? main_building_no = freezed,
-    Object? sub_building_no = freezed,
-    Object? building_name = freezed,
-    Object? zone_no = freezed,
+    Object? addressName = freezed,
+    Object? region1depthName = freezed,
+    Object? region2depthName = freezed,
+    Object? region3depthName = freezed,
+    Object? roadName = freezed,
+    Object? undergroundYn = freezed,
+    Object? mainBuildingNo = freezed,
+    Object? subBuildingNo = freezed,
+    Object? buildingName = freezed,
+    Object? zoneNo = freezed,
   }) {
     return _then(_value.copyWith(
-      address_name: address_name == freezed
-          ? _value.address_name
-          : address_name // ignore: cast_nullable_to_non_nullable
+      addressName: addressName == freezed
+          ? _value.addressName
+          : addressName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_1depth_name: region_1depth_name == freezed
-          ? _value.region_1depth_name
-          : region_1depth_name // ignore: cast_nullable_to_non_nullable
+      region1depthName: region1depthName == freezed
+          ? _value.region1depthName
+          : region1depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_2depth_name: region_2depth_name == freezed
-          ? _value.region_2depth_name
-          : region_2depth_name // ignore: cast_nullable_to_non_nullable
+      region2depthName: region2depthName == freezed
+          ? _value.region2depthName
+          : region2depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_3depth_name: region_3depth_name == freezed
-          ? _value.region_3depth_name
-          : region_3depth_name // ignore: cast_nullable_to_non_nullable
+      region3depthName: region3depthName == freezed
+          ? _value.region3depthName
+          : region3depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      road_name: road_name == freezed
-          ? _value.road_name
-          : road_name // ignore: cast_nullable_to_non_nullable
+      roadName: roadName == freezed
+          ? _value.roadName
+          : roadName // ignore: cast_nullable_to_non_nullable
               as String,
-      underground_yn: underground_yn == freezed
-          ? _value.underground_yn
-          : underground_yn // ignore: cast_nullable_to_non_nullable
+      undergroundYn: undergroundYn == freezed
+          ? _value.undergroundYn
+          : undergroundYn // ignore: cast_nullable_to_non_nullable
               as String,
-      main_building_no: main_building_no == freezed
-          ? _value.main_building_no
-          : main_building_no // ignore: cast_nullable_to_non_nullable
+      mainBuildingNo: mainBuildingNo == freezed
+          ? _value.mainBuildingNo
+          : mainBuildingNo // ignore: cast_nullable_to_non_nullable
               as String,
-      sub_building_no: sub_building_no == freezed
-          ? _value.sub_building_no
-          : sub_building_no // ignore: cast_nullable_to_non_nullable
+      subBuildingNo: subBuildingNo == freezed
+          ? _value.subBuildingNo
+          : subBuildingNo // ignore: cast_nullable_to_non_nullable
               as String,
-      building_name: building_name == freezed
-          ? _value.building_name
-          : building_name // ignore: cast_nullable_to_non_nullable
+      buildingName: buildingName == freezed
+          ? _value.buildingName
+          : buildingName // ignore: cast_nullable_to_non_nullable
               as String,
-      zone_no: zone_no == freezed
-          ? _value.zone_no
-          : zone_no // ignore: cast_nullable_to_non_nullable
+      zoneNo: zoneNo == freezed
+          ? _value.zoneNo
+          : zoneNo // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -328,16 +343,16 @@ abstract class _$KakaoLocalResultRoadAddressCopyWith<$Res>
       __$KakaoLocalResultRoadAddressCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String address_name,
-      String region_1depth_name,
-      String region_2depth_name,
-      String region_3depth_name,
-      String road_name,
-      String underground_yn,
-      String main_building_no,
-      String sub_building_no,
-      String building_name,
-      String zone_no});
+      {String addressName,
+      String region1depthName,
+      String region2depthName,
+      String region3depthName,
+      String roadName,
+      String undergroundYn,
+      String mainBuildingNo,
+      String subBuildingNo,
+      String buildingName,
+      String zoneNo});
 }
 
 /// @nodoc
@@ -355,57 +370,57 @@ class __$KakaoLocalResultRoadAddressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? address_name = freezed,
-    Object? region_1depth_name = freezed,
-    Object? region_2depth_name = freezed,
-    Object? region_3depth_name = freezed,
-    Object? road_name = freezed,
-    Object? underground_yn = freezed,
-    Object? main_building_no = freezed,
-    Object? sub_building_no = freezed,
-    Object? building_name = freezed,
-    Object? zone_no = freezed,
+    Object? addressName = freezed,
+    Object? region1depthName = freezed,
+    Object? region2depthName = freezed,
+    Object? region3depthName = freezed,
+    Object? roadName = freezed,
+    Object? undergroundYn = freezed,
+    Object? mainBuildingNo = freezed,
+    Object? subBuildingNo = freezed,
+    Object? buildingName = freezed,
+    Object? zoneNo = freezed,
   }) {
     return _then(_KakaoLocalResultRoadAddress(
-      address_name: address_name == freezed
-          ? _value.address_name
-          : address_name // ignore: cast_nullable_to_non_nullable
+      addressName: addressName == freezed
+          ? _value.addressName
+          : addressName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_1depth_name: region_1depth_name == freezed
-          ? _value.region_1depth_name
-          : region_1depth_name // ignore: cast_nullable_to_non_nullable
+      region1depthName: region1depthName == freezed
+          ? _value.region1depthName
+          : region1depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_2depth_name: region_2depth_name == freezed
-          ? _value.region_2depth_name
-          : region_2depth_name // ignore: cast_nullable_to_non_nullable
+      region2depthName: region2depthName == freezed
+          ? _value.region2depthName
+          : region2depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_3depth_name: region_3depth_name == freezed
-          ? _value.region_3depth_name
-          : region_3depth_name // ignore: cast_nullable_to_non_nullable
+      region3depthName: region3depthName == freezed
+          ? _value.region3depthName
+          : region3depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      road_name: road_name == freezed
-          ? _value.road_name
-          : road_name // ignore: cast_nullable_to_non_nullable
+      roadName: roadName == freezed
+          ? _value.roadName
+          : roadName // ignore: cast_nullable_to_non_nullable
               as String,
-      underground_yn: underground_yn == freezed
-          ? _value.underground_yn
-          : underground_yn // ignore: cast_nullable_to_non_nullable
+      undergroundYn: undergroundYn == freezed
+          ? _value.undergroundYn
+          : undergroundYn // ignore: cast_nullable_to_non_nullable
               as String,
-      main_building_no: main_building_no == freezed
-          ? _value.main_building_no
-          : main_building_no // ignore: cast_nullable_to_non_nullable
+      mainBuildingNo: mainBuildingNo == freezed
+          ? _value.mainBuildingNo
+          : mainBuildingNo // ignore: cast_nullable_to_non_nullable
               as String,
-      sub_building_no: sub_building_no == freezed
-          ? _value.sub_building_no
-          : sub_building_no // ignore: cast_nullable_to_non_nullable
+      subBuildingNo: subBuildingNo == freezed
+          ? _value.subBuildingNo
+          : subBuildingNo // ignore: cast_nullable_to_non_nullable
               as String,
-      building_name: building_name == freezed
-          ? _value.building_name
-          : building_name // ignore: cast_nullable_to_non_nullable
+      buildingName: buildingName == freezed
+          ? _value.buildingName
+          : buildingName // ignore: cast_nullable_to_non_nullable
               as String,
-      zone_no: zone_no == freezed
-          ? _value.zone_no
-          : zone_no // ignore: cast_nullable_to_non_nullable
+      zoneNo: zoneNo == freezed
+          ? _value.zoneNo
+          : zoneNo // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -415,91 +430,91 @@ class __$KakaoLocalResultRoadAddressCopyWithImpl<$Res>
 
 class _$_KakaoLocalResultRoadAddress implements _KakaoLocalResultRoadAddress {
   const _$_KakaoLocalResultRoadAddress(
-      {required this.address_name,
-      required this.region_1depth_name,
-      required this.region_2depth_name,
-      required this.region_3depth_name,
-      required this.road_name,
-      required this.underground_yn,
-      required this.main_building_no,
-      required this.sub_building_no,
-      required this.building_name,
-      required this.zone_no});
+      {required this.addressName,
+      required this.region1depthName,
+      required this.region2depthName,
+      required this.region3depthName,
+      required this.roadName,
+      required this.undergroundYn,
+      required this.mainBuildingNo,
+      required this.subBuildingNo,
+      required this.buildingName,
+      required this.zoneNo});
 
   @override
-  final String address_name;
+  final String addressName;
   @override
-  final String region_1depth_name;
+  final String region1depthName;
   @override
-  final String region_2depth_name;
+  final String region2depthName;
   @override
-  final String region_3depth_name;
+  final String region3depthName;
   @override
-  final String road_name;
+  final String roadName;
   @override
-  final String underground_yn;
+  final String undergroundYn;
   @override
-  final String main_building_no;
+  final String mainBuildingNo;
   @override
-  final String sub_building_no;
+  final String subBuildingNo;
   @override
-  final String building_name;
+  final String buildingName;
   @override
-  final String zone_no;
+  final String zoneNo;
 
   @override
   String toString() {
-    return 'KakaoLocalResultRoadAddress(address_name: $address_name, region_1depth_name: $region_1depth_name, region_2depth_name: $region_2depth_name, region_3depth_name: $region_3depth_name, road_name: $road_name, underground_yn: $underground_yn, main_building_no: $main_building_no, sub_building_no: $sub_building_no, building_name: $building_name, zone_no: $zone_no)';
+    return 'KakaoLocalResultRoadAddress(addressName: $addressName, region1depthName: $region1depthName, region2depthName: $region2depthName, region3depthName: $region3depthName, roadName: $roadName, undergroundYn: $undergroundYn, mainBuildingNo: $mainBuildingNo, subBuildingNo: $subBuildingNo, buildingName: $buildingName, zoneNo: $zoneNo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _KakaoLocalResultRoadAddress &&
-            (identical(other.address_name, address_name) ||
+            (identical(other.addressName, addressName) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_name, address_name)) &&
-            (identical(other.region_1depth_name, region_1depth_name) ||
+                    .equals(other.addressName, addressName)) &&
+            (identical(other.region1depthName, region1depthName) ||
                 const DeepCollectionEquality()
-                    .equals(other.region_1depth_name, region_1depth_name)) &&
-            (identical(other.region_2depth_name, region_2depth_name) ||
+                    .equals(other.region1depthName, region1depthName)) &&
+            (identical(other.region2depthName, region2depthName) ||
                 const DeepCollectionEquality()
-                    .equals(other.region_2depth_name, region_2depth_name)) &&
-            (identical(other.region_3depth_name, region_3depth_name) ||
+                    .equals(other.region2depthName, region2depthName)) &&
+            (identical(other.region3depthName, region3depthName) ||
                 const DeepCollectionEquality()
-                    .equals(other.region_3depth_name, region_3depth_name)) &&
-            (identical(other.road_name, road_name) ||
+                    .equals(other.region3depthName, region3depthName)) &&
+            (identical(other.roadName, roadName) ||
                 const DeepCollectionEquality()
-                    .equals(other.road_name, road_name)) &&
-            (identical(other.underground_yn, underground_yn) ||
+                    .equals(other.roadName, roadName)) &&
+            (identical(other.undergroundYn, undergroundYn) ||
                 const DeepCollectionEquality()
-                    .equals(other.underground_yn, underground_yn)) &&
-            (identical(other.main_building_no, main_building_no) ||
+                    .equals(other.undergroundYn, undergroundYn)) &&
+            (identical(other.mainBuildingNo, mainBuildingNo) ||
                 const DeepCollectionEquality()
-                    .equals(other.main_building_no, main_building_no)) &&
-            (identical(other.sub_building_no, sub_building_no) ||
+                    .equals(other.mainBuildingNo, mainBuildingNo)) &&
+            (identical(other.subBuildingNo, subBuildingNo) ||
                 const DeepCollectionEquality()
-                    .equals(other.sub_building_no, sub_building_no)) &&
-            (identical(other.building_name, building_name) ||
+                    .equals(other.subBuildingNo, subBuildingNo)) &&
+            (identical(other.buildingName, buildingName) ||
                 const DeepCollectionEquality()
-                    .equals(other.building_name, building_name)) &&
-            (identical(other.zone_no, zone_no) ||
-                const DeepCollectionEquality().equals(other.zone_no, zone_no)));
+                    .equals(other.buildingName, buildingName)) &&
+            (identical(other.zoneNo, zoneNo) ||
+                const DeepCollectionEquality().equals(other.zoneNo, zoneNo)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(address_name) ^
-      const DeepCollectionEquality().hash(region_1depth_name) ^
-      const DeepCollectionEquality().hash(region_2depth_name) ^
-      const DeepCollectionEquality().hash(region_3depth_name) ^
-      const DeepCollectionEquality().hash(road_name) ^
-      const DeepCollectionEquality().hash(underground_yn) ^
-      const DeepCollectionEquality().hash(main_building_no) ^
-      const DeepCollectionEquality().hash(sub_building_no) ^
-      const DeepCollectionEquality().hash(building_name) ^
-      const DeepCollectionEquality().hash(zone_no);
+      const DeepCollectionEquality().hash(addressName) ^
+      const DeepCollectionEquality().hash(region1depthName) ^
+      const DeepCollectionEquality().hash(region2depthName) ^
+      const DeepCollectionEquality().hash(region3depthName) ^
+      const DeepCollectionEquality().hash(roadName) ^
+      const DeepCollectionEquality().hash(undergroundYn) ^
+      const DeepCollectionEquality().hash(mainBuildingNo) ^
+      const DeepCollectionEquality().hash(subBuildingNo) ^
+      const DeepCollectionEquality().hash(buildingName) ^
+      const DeepCollectionEquality().hash(zoneNo);
 
   @JsonKey(ignore: true)
   @override
@@ -511,37 +526,37 @@ class _$_KakaoLocalResultRoadAddress implements _KakaoLocalResultRoadAddress {
 abstract class _KakaoLocalResultRoadAddress
     implements KakaoLocalResultRoadAddress {
   const factory _KakaoLocalResultRoadAddress(
-      {required String address_name,
-      required String region_1depth_name,
-      required String region_2depth_name,
-      required String region_3depth_name,
-      required String road_name,
-      required String underground_yn,
-      required String main_building_no,
-      required String sub_building_no,
-      required String building_name,
-      required String zone_no}) = _$_KakaoLocalResultRoadAddress;
+      {required String addressName,
+      required String region1depthName,
+      required String region2depthName,
+      required String region3depthName,
+      required String roadName,
+      required String undergroundYn,
+      required String mainBuildingNo,
+      required String subBuildingNo,
+      required String buildingName,
+      required String zoneNo}) = _$_KakaoLocalResultRoadAddress;
 
   @override
-  String get address_name => throw _privateConstructorUsedError;
+  String get addressName => throw _privateConstructorUsedError;
   @override
-  String get region_1depth_name => throw _privateConstructorUsedError;
+  String get region1depthName => throw _privateConstructorUsedError;
   @override
-  String get region_2depth_name => throw _privateConstructorUsedError;
+  String get region2depthName => throw _privateConstructorUsedError;
   @override
-  String get region_3depth_name => throw _privateConstructorUsedError;
+  String get region3depthName => throw _privateConstructorUsedError;
   @override
-  String get road_name => throw _privateConstructorUsedError;
+  String get roadName => throw _privateConstructorUsedError;
   @override
-  String get underground_yn => throw _privateConstructorUsedError;
+  String get undergroundYn => throw _privateConstructorUsedError;
   @override
-  String get main_building_no => throw _privateConstructorUsedError;
+  String get mainBuildingNo => throw _privateConstructorUsedError;
   @override
-  String get sub_building_no => throw _privateConstructorUsedError;
+  String get subBuildingNo => throw _privateConstructorUsedError;
   @override
-  String get building_name => throw _privateConstructorUsedError;
+  String get buildingName => throw _privateConstructorUsedError;
   @override
-  String get zone_no => throw _privateConstructorUsedError;
+  String get zoneNo => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$KakaoLocalResultRoadAddressCopyWith<_KakaoLocalResultRoadAddress>
@@ -553,21 +568,21 @@ class _$KakaoLocalResultAddressTearOff {
   const _$KakaoLocalResultAddressTearOff();
 
   _KakaoLocalResultAddress call(
-      {required String address_name,
-      required String region_1depth_name,
-      required String region_2depth_name,
-      required String region_3depth_name,
-      required String mountain_yn,
-      required String main_address_no,
-      required String sub_address_no}) {
+      {required String addressName,
+      required String region1depthName,
+      required String region2depthName,
+      required String region3depthName,
+      required String mountainYn,
+      required String mainAddressNo,
+      required String subAddressNo}) {
     return _KakaoLocalResultAddress(
-      address_name: address_name,
-      region_1depth_name: region_1depth_name,
-      region_2depth_name: region_2depth_name,
-      region_3depth_name: region_3depth_name,
-      mountain_yn: mountain_yn,
-      main_address_no: main_address_no,
-      sub_address_no: sub_address_no,
+      addressName: addressName,
+      region1depthName: region1depthName,
+      region2depthName: region2depthName,
+      region3depthName: region3depthName,
+      mountainYn: mountainYn,
+      mainAddressNo: mainAddressNo,
+      subAddressNo: subAddressNo,
     );
   }
 }
@@ -577,13 +592,13 @@ const $KakaoLocalResultAddress = _$KakaoLocalResultAddressTearOff();
 
 /// @nodoc
 mixin _$KakaoLocalResultAddress {
-  String get address_name => throw _privateConstructorUsedError;
-  String get region_1depth_name => throw _privateConstructorUsedError;
-  String get region_2depth_name => throw _privateConstructorUsedError;
-  String get region_3depth_name => throw _privateConstructorUsedError;
-  String get mountain_yn => throw _privateConstructorUsedError;
-  String get main_address_no => throw _privateConstructorUsedError;
-  String get sub_address_no => throw _privateConstructorUsedError;
+  String get addressName => throw _privateConstructorUsedError;
+  String get region1depthName => throw _privateConstructorUsedError;
+  String get region2depthName => throw _privateConstructorUsedError;
+  String get region3depthName => throw _privateConstructorUsedError;
+  String get mountainYn => throw _privateConstructorUsedError;
+  String get mainAddressNo => throw _privateConstructorUsedError;
+  String get subAddressNo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $KakaoLocalResultAddressCopyWith<KakaoLocalResultAddress> get copyWith =>
@@ -596,13 +611,13 @@ abstract class $KakaoLocalResultAddressCopyWith<$Res> {
           $Res Function(KakaoLocalResultAddress) then) =
       _$KakaoLocalResultAddressCopyWithImpl<$Res>;
   $Res call(
-      {String address_name,
-      String region_1depth_name,
-      String region_2depth_name,
-      String region_3depth_name,
-      String mountain_yn,
-      String main_address_no,
-      String sub_address_no});
+      {String addressName,
+      String region1depthName,
+      String region2depthName,
+      String region3depthName,
+      String mountainYn,
+      String mainAddressNo,
+      String subAddressNo});
 }
 
 /// @nodoc
@@ -616,42 +631,42 @@ class _$KakaoLocalResultAddressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? address_name = freezed,
-    Object? region_1depth_name = freezed,
-    Object? region_2depth_name = freezed,
-    Object? region_3depth_name = freezed,
-    Object? mountain_yn = freezed,
-    Object? main_address_no = freezed,
-    Object? sub_address_no = freezed,
+    Object? addressName = freezed,
+    Object? region1depthName = freezed,
+    Object? region2depthName = freezed,
+    Object? region3depthName = freezed,
+    Object? mountainYn = freezed,
+    Object? mainAddressNo = freezed,
+    Object? subAddressNo = freezed,
   }) {
     return _then(_value.copyWith(
-      address_name: address_name == freezed
-          ? _value.address_name
-          : address_name // ignore: cast_nullable_to_non_nullable
+      addressName: addressName == freezed
+          ? _value.addressName
+          : addressName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_1depth_name: region_1depth_name == freezed
-          ? _value.region_1depth_name
-          : region_1depth_name // ignore: cast_nullable_to_non_nullable
+      region1depthName: region1depthName == freezed
+          ? _value.region1depthName
+          : region1depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_2depth_name: region_2depth_name == freezed
-          ? _value.region_2depth_name
-          : region_2depth_name // ignore: cast_nullable_to_non_nullable
+      region2depthName: region2depthName == freezed
+          ? _value.region2depthName
+          : region2depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_3depth_name: region_3depth_name == freezed
-          ? _value.region_3depth_name
-          : region_3depth_name // ignore: cast_nullable_to_non_nullable
+      region3depthName: region3depthName == freezed
+          ? _value.region3depthName
+          : region3depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      mountain_yn: mountain_yn == freezed
-          ? _value.mountain_yn
-          : mountain_yn // ignore: cast_nullable_to_non_nullable
+      mountainYn: mountainYn == freezed
+          ? _value.mountainYn
+          : mountainYn // ignore: cast_nullable_to_non_nullable
               as String,
-      main_address_no: main_address_no == freezed
-          ? _value.main_address_no
-          : main_address_no // ignore: cast_nullable_to_non_nullable
+      mainAddressNo: mainAddressNo == freezed
+          ? _value.mainAddressNo
+          : mainAddressNo // ignore: cast_nullable_to_non_nullable
               as String,
-      sub_address_no: sub_address_no == freezed
-          ? _value.sub_address_no
-          : sub_address_no // ignore: cast_nullable_to_non_nullable
+      subAddressNo: subAddressNo == freezed
+          ? _value.subAddressNo
+          : subAddressNo // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -665,13 +680,13 @@ abstract class _$KakaoLocalResultAddressCopyWith<$Res>
       __$KakaoLocalResultAddressCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String address_name,
-      String region_1depth_name,
-      String region_2depth_name,
-      String region_3depth_name,
-      String mountain_yn,
-      String main_address_no,
-      String sub_address_no});
+      {String addressName,
+      String region1depthName,
+      String region2depthName,
+      String region3depthName,
+      String mountainYn,
+      String mainAddressNo,
+      String subAddressNo});
 }
 
 /// @nodoc
@@ -688,42 +703,42 @@ class __$KakaoLocalResultAddressCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? address_name = freezed,
-    Object? region_1depth_name = freezed,
-    Object? region_2depth_name = freezed,
-    Object? region_3depth_name = freezed,
-    Object? mountain_yn = freezed,
-    Object? main_address_no = freezed,
-    Object? sub_address_no = freezed,
+    Object? addressName = freezed,
+    Object? region1depthName = freezed,
+    Object? region2depthName = freezed,
+    Object? region3depthName = freezed,
+    Object? mountainYn = freezed,
+    Object? mainAddressNo = freezed,
+    Object? subAddressNo = freezed,
   }) {
     return _then(_KakaoLocalResultAddress(
-      address_name: address_name == freezed
-          ? _value.address_name
-          : address_name // ignore: cast_nullable_to_non_nullable
+      addressName: addressName == freezed
+          ? _value.addressName
+          : addressName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_1depth_name: region_1depth_name == freezed
-          ? _value.region_1depth_name
-          : region_1depth_name // ignore: cast_nullable_to_non_nullable
+      region1depthName: region1depthName == freezed
+          ? _value.region1depthName
+          : region1depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_2depth_name: region_2depth_name == freezed
-          ? _value.region_2depth_name
-          : region_2depth_name // ignore: cast_nullable_to_non_nullable
+      region2depthName: region2depthName == freezed
+          ? _value.region2depthName
+          : region2depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      region_3depth_name: region_3depth_name == freezed
-          ? _value.region_3depth_name
-          : region_3depth_name // ignore: cast_nullable_to_non_nullable
+      region3depthName: region3depthName == freezed
+          ? _value.region3depthName
+          : region3depthName // ignore: cast_nullable_to_non_nullable
               as String,
-      mountain_yn: mountain_yn == freezed
-          ? _value.mountain_yn
-          : mountain_yn // ignore: cast_nullable_to_non_nullable
+      mountainYn: mountainYn == freezed
+          ? _value.mountainYn
+          : mountainYn // ignore: cast_nullable_to_non_nullable
               as String,
-      main_address_no: main_address_no == freezed
-          ? _value.main_address_no
-          : main_address_no // ignore: cast_nullable_to_non_nullable
+      mainAddressNo: mainAddressNo == freezed
+          ? _value.mainAddressNo
+          : mainAddressNo // ignore: cast_nullable_to_non_nullable
               as String,
-      sub_address_no: sub_address_no == freezed
-          ? _value.sub_address_no
-          : sub_address_no // ignore: cast_nullable_to_non_nullable
+      subAddressNo: subAddressNo == freezed
+          ? _value.subAddressNo
+          : subAddressNo // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -733,71 +748,71 @@ class __$KakaoLocalResultAddressCopyWithImpl<$Res>
 
 class _$_KakaoLocalResultAddress implements _KakaoLocalResultAddress {
   const _$_KakaoLocalResultAddress(
-      {required this.address_name,
-      required this.region_1depth_name,
-      required this.region_2depth_name,
-      required this.region_3depth_name,
-      required this.mountain_yn,
-      required this.main_address_no,
-      required this.sub_address_no});
+      {required this.addressName,
+      required this.region1depthName,
+      required this.region2depthName,
+      required this.region3depthName,
+      required this.mountainYn,
+      required this.mainAddressNo,
+      required this.subAddressNo});
 
   @override
-  final String address_name;
+  final String addressName;
   @override
-  final String region_1depth_name;
+  final String region1depthName;
   @override
-  final String region_2depth_name;
+  final String region2depthName;
   @override
-  final String region_3depth_name;
+  final String region3depthName;
   @override
-  final String mountain_yn;
+  final String mountainYn;
   @override
-  final String main_address_no;
+  final String mainAddressNo;
   @override
-  final String sub_address_no;
+  final String subAddressNo;
 
   @override
   String toString() {
-    return 'KakaoLocalResultAddress(address_name: $address_name, region_1depth_name: $region_1depth_name, region_2depth_name: $region_2depth_name, region_3depth_name: $region_3depth_name, mountain_yn: $mountain_yn, main_address_no: $main_address_no, sub_address_no: $sub_address_no)';
+    return 'KakaoLocalResultAddress(addressName: $addressName, region1depthName: $region1depthName, region2depthName: $region2depthName, region3depthName: $region3depthName, mountainYn: $mountainYn, mainAddressNo: $mainAddressNo, subAddressNo: $subAddressNo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _KakaoLocalResultAddress &&
-            (identical(other.address_name, address_name) ||
+            (identical(other.addressName, addressName) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_name, address_name)) &&
-            (identical(other.region_1depth_name, region_1depth_name) ||
+                    .equals(other.addressName, addressName)) &&
+            (identical(other.region1depthName, region1depthName) ||
                 const DeepCollectionEquality()
-                    .equals(other.region_1depth_name, region_1depth_name)) &&
-            (identical(other.region_2depth_name, region_2depth_name) ||
+                    .equals(other.region1depthName, region1depthName)) &&
+            (identical(other.region2depthName, region2depthName) ||
                 const DeepCollectionEquality()
-                    .equals(other.region_2depth_name, region_2depth_name)) &&
-            (identical(other.region_3depth_name, region_3depth_name) ||
+                    .equals(other.region2depthName, region2depthName)) &&
+            (identical(other.region3depthName, region3depthName) ||
                 const DeepCollectionEquality()
-                    .equals(other.region_3depth_name, region_3depth_name)) &&
-            (identical(other.mountain_yn, mountain_yn) ||
+                    .equals(other.region3depthName, region3depthName)) &&
+            (identical(other.mountainYn, mountainYn) ||
                 const DeepCollectionEquality()
-                    .equals(other.mountain_yn, mountain_yn)) &&
-            (identical(other.main_address_no, main_address_no) ||
+                    .equals(other.mountainYn, mountainYn)) &&
+            (identical(other.mainAddressNo, mainAddressNo) ||
                 const DeepCollectionEquality()
-                    .equals(other.main_address_no, main_address_no)) &&
-            (identical(other.sub_address_no, sub_address_no) ||
+                    .equals(other.mainAddressNo, mainAddressNo)) &&
+            (identical(other.subAddressNo, subAddressNo) ||
                 const DeepCollectionEquality()
-                    .equals(other.sub_address_no, sub_address_no)));
+                    .equals(other.subAddressNo, subAddressNo)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(address_name) ^
-      const DeepCollectionEquality().hash(region_1depth_name) ^
-      const DeepCollectionEquality().hash(region_2depth_name) ^
-      const DeepCollectionEquality().hash(region_3depth_name) ^
-      const DeepCollectionEquality().hash(mountain_yn) ^
-      const DeepCollectionEquality().hash(main_address_no) ^
-      const DeepCollectionEquality().hash(sub_address_no);
+      const DeepCollectionEquality().hash(addressName) ^
+      const DeepCollectionEquality().hash(region1depthName) ^
+      const DeepCollectionEquality().hash(region2depthName) ^
+      const DeepCollectionEquality().hash(region3depthName) ^
+      const DeepCollectionEquality().hash(mountainYn) ^
+      const DeepCollectionEquality().hash(mainAddressNo) ^
+      const DeepCollectionEquality().hash(subAddressNo);
 
   @JsonKey(ignore: true)
   @override
@@ -808,28 +823,28 @@ class _$_KakaoLocalResultAddress implements _KakaoLocalResultAddress {
 
 abstract class _KakaoLocalResultAddress implements KakaoLocalResultAddress {
   const factory _KakaoLocalResultAddress(
-      {required String address_name,
-      required String region_1depth_name,
-      required String region_2depth_name,
-      required String region_3depth_name,
-      required String mountain_yn,
-      required String main_address_no,
-      required String sub_address_no}) = _$_KakaoLocalResultAddress;
+      {required String addressName,
+      required String region1depthName,
+      required String region2depthName,
+      required String region3depthName,
+      required String mountainYn,
+      required String mainAddressNo,
+      required String subAddressNo}) = _$_KakaoLocalResultAddress;
 
   @override
-  String get address_name => throw _privateConstructorUsedError;
+  String get addressName => throw _privateConstructorUsedError;
   @override
-  String get region_1depth_name => throw _privateConstructorUsedError;
+  String get region1depthName => throw _privateConstructorUsedError;
   @override
-  String get region_2depth_name => throw _privateConstructorUsedError;
+  String get region2depthName => throw _privateConstructorUsedError;
   @override
-  String get region_3depth_name => throw _privateConstructorUsedError;
+  String get region3depthName => throw _privateConstructorUsedError;
   @override
-  String get mountain_yn => throw _privateConstructorUsedError;
+  String get mountainYn => throw _privateConstructorUsedError;
   @override
-  String get main_address_no => throw _privateConstructorUsedError;
+  String get mainAddressNo => throw _privateConstructorUsedError;
   @override
-  String get sub_address_no => throw _privateConstructorUsedError;
+  String get subAddressNo => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$KakaoLocalResultAddressCopyWith<_KakaoLocalResultAddress> get copyWith =>

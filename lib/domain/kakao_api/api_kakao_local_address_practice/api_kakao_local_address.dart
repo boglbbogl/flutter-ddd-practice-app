@@ -5,36 +5,36 @@ part 'api_kakao_local_address.freezed.dart';
 @freezed
 class ApiKakaoLocalAddress with _$ApiKakaoLocalAddress {
   const factory ApiKakaoLocalAddress({
-    required List<KakaoLocalResultRoadAddress> kakaoLocalResultRoadAddress,
-    required List<KakaoLocalResultAddress> kakaoLocalResultAddress,
+    required KakaoLocalResultRoadAddress roadAddress,
+    required KakaoLocalResultAddress address,
   }) = _ApiKakaoLocalAddress;
 }
 
 @freezed
 class KakaoLocalResultRoadAddress with _$KakaoLocalResultRoadAddress {
   const factory KakaoLocalResultRoadAddress({
-    required String address_name,
-    required String region_1depth_name,
-    required String region_2depth_name,
-    required String region_3depth_name,
-    required String road_name,
-    required String underground_yn,
-    required String main_building_no,
-    required String sub_building_no,
-    required String building_name,
-    required String zone_no,
+    required String addressName,
+    required String region1depthName,
+    required String region2depthName,
+    required String region3depthName,
+    required String roadName,
+    required String undergroundYn,
+    required String mainBuildingNo,
+    required String subBuildingNo,
+    required String buildingName,
+    required String zoneNo,
   }) = _KakaoLocalResultRoadAddress;
 }
 
 @freezed
 class KakaoLocalResultAddress with _$KakaoLocalResultAddress {
   const factory KakaoLocalResultAddress({
-    required String address_name,
-    required String region_1depth_name,
-    required String region_2depth_name,
-    required String region_3depth_name,
-    required String mountain_yn,
-    required String main_address_no,
-    required String sub_address_no,
+    required String addressName,
+    required String region1depthName,
+    required String region2depthName,
+    required String region3depthName,
+    required String mountainYn,
+    required String mainAddressNo,
+    required String subAddressNo,
   }) = _KakaoLocalResultAddress;
 }
