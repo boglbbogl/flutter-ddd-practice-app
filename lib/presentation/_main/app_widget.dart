@@ -11,6 +11,7 @@ import 'package:ddd_practice_app/presentation/example_api/api_weather_practice/a
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book_practice/api_kakao_book_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image_practice/api_kakao_image_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_address_practice/api_kakao_local_address_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
@@ -60,6 +61,8 @@ class AppWidget extends StatelessWidget {
               ApiKakaoTranslateMainPage(),
           '/apiKakaoTranslateMultipleMainPage': (context) =>
               ApiKakaoTranslateMultipleMainPage(),
+          '/apiKakaoLocalAddressMainPage': (context) =>
+              const ApiKakaoLocalAddressMainPage(),
           '/apiNaverPapagoMainPage': (context) => ApiNaverPapagoMainPage(),
           '/apiNaverRomanizationMainPage': (context) =>
               ApiNaverRomanizationMainPage(),
