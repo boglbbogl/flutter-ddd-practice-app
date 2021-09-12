@@ -175,7 +175,8 @@ abstract class _ApiNaverRomanization implements ApiNaverRomanization {
 class _$ApiNaverRomanizationItemsTearOff {
   const _$ApiNaverRomanizationItemsTearOff();
 
-  _ApiNaverRomanizationItems call({required String name, required int score}) {
+  _ApiNaverRomanizationItems call(
+      {required String name, required String score}) {
     return _ApiNaverRomanizationItems(
       name: name,
       score: score,
@@ -189,7 +190,7 @@ const $ApiNaverRomanizationItems = _$ApiNaverRomanizationItemsTearOff();
 /// @nodoc
 mixin _$ApiNaverRomanizationItems {
   String get name => throw _privateConstructorUsedError;
-  int get score => throw _privateConstructorUsedError;
+  String get score => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiNaverRomanizationItemsCopyWith<ApiNaverRomanizationItems> get copyWith =>
@@ -201,7 +202,7 @@ abstract class $ApiNaverRomanizationItemsCopyWith<$Res> {
   factory $ApiNaverRomanizationItemsCopyWith(ApiNaverRomanizationItems value,
           $Res Function(ApiNaverRomanizationItems) then) =
       _$ApiNaverRomanizationItemsCopyWithImpl<$Res>;
-  $Res call({String name, int score});
+  $Res call({String name, String score});
 }
 
 /// @nodoc
@@ -226,7 +227,7 @@ class _$ApiNaverRomanizationItemsCopyWithImpl<$Res>
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -238,7 +239,7 @@ abstract class _$ApiNaverRomanizationItemsCopyWith<$Res>
           $Res Function(_ApiNaverRomanizationItems) then) =
       __$ApiNaverRomanizationItemsCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int score});
+  $Res call({String name, String score});
 }
 
 /// @nodoc
@@ -266,7 +267,7 @@ class __$ApiNaverRomanizationItemsCopyWithImpl<$Res>
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -279,7 +280,7 @@ class _$_ApiNaverRomanizationItems implements _ApiNaverRomanizationItems {
   @override
   final String name;
   @override
-  final int score;
+  final String score;
 
   @override
   String toString() {
@@ -313,12 +314,12 @@ class _$_ApiNaverRomanizationItems implements _ApiNaverRomanizationItems {
 abstract class _ApiNaverRomanizationItems implements ApiNaverRomanizationItems {
   const factory _ApiNaverRomanizationItems(
       {required String name,
-      required int score}) = _$_ApiNaverRomanizationItems;
+      required String score}) = _$_ApiNaverRomanizationItems;
 
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  int get score => throw _privateConstructorUsedError;
+  String get score => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiNaverRomanizationItemsCopyWith<_ApiNaverRomanizationItems>

@@ -25,7 +25,7 @@ class ApiNaverRomanizationDto with _$ApiNaverRomanizationDto {
 class ApiNaverRomanizationItemsDto with _$ApiNaverRomanizationItemsDto {
   const factory ApiNaverRomanizationItemsDto({
     required String name,
-    required int score,
+    required String score,
   }) = _ApiNaverRomanizationItemsDto;
   const ApiNaverRomanizationItemsDto._();
   factory ApiNaverRomanizationItemsDto.fromJson(Map<String, dynamic> json) =>

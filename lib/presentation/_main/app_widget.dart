@@ -1,4 +1,3 @@
-import 'package:ddd_practice_app/_constant/api_check/api_check_main_page.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
@@ -69,7 +68,6 @@ class AppWidget extends StatelessWidget {
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>
               const WidgetHeroAnimationMainPage(),
-          '/apiCheckMainPage': (context) => const ApiCheckMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/apiNewsMainPage': (context) => const ApiNewsMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),

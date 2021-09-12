@@ -205,7 +205,7 @@ class _$ApiNaverRomanizationItemsDtoTearOff {
   const _$ApiNaverRomanizationItemsDtoTearOff();
 
   _ApiNaverRomanizationItemsDto call(
-      {required String name, required int score}) {
+      {required String name, required String score}) {
     return _ApiNaverRomanizationItemsDto(
       name: name,
       score: score,
@@ -223,7 +223,7 @@ const $ApiNaverRomanizationItemsDto = _$ApiNaverRomanizationItemsDtoTearOff();
 /// @nodoc
 mixin _$ApiNaverRomanizationItemsDto {
   String get name => throw _privateConstructorUsedError;
-  int get score => throw _privateConstructorUsedError;
+  String get score => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -237,7 +237,7 @@ abstract class $ApiNaverRomanizationItemsDtoCopyWith<$Res> {
           ApiNaverRomanizationItemsDto value,
           $Res Function(ApiNaverRomanizationItemsDto) then) =
       _$ApiNaverRomanizationItemsDtoCopyWithImpl<$Res>;
-  $Res call({String name, int score});
+  $Res call({String name, String score});
 }
 
 /// @nodoc
@@ -262,7 +262,7 @@ class _$ApiNaverRomanizationItemsDtoCopyWithImpl<$Res>
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -275,7 +275,7 @@ abstract class _$ApiNaverRomanizationItemsDtoCopyWith<$Res>
           $Res Function(_ApiNaverRomanizationItemsDto) then) =
       __$ApiNaverRomanizationItemsDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int score});
+  $Res call({String name, String score});
 }
 
 /// @nodoc
@@ -304,7 +304,7 @@ class __$ApiNaverRomanizationItemsDtoCopyWithImpl<$Res>
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -322,7 +322,7 @@ class _$_ApiNaverRomanizationItemsDto extends _ApiNaverRomanizationItemsDto {
   @override
   final String name;
   @override
-  final int score;
+  final String score;
 
   @override
   String toString() {
@@ -361,7 +361,7 @@ abstract class _ApiNaverRomanizationItemsDto
     extends ApiNaverRomanizationItemsDto {
   const factory _ApiNaverRomanizationItemsDto(
       {required String name,
-      required int score}) = _$_ApiNaverRomanizationItemsDto;
+      required String score}) = _$_ApiNaverRomanizationItemsDto;
   const _ApiNaverRomanizationItemsDto._() : super._();
 
   factory _ApiNaverRomanizationItemsDto.fromJson(Map<String, dynamic> json) =
@@ -370,7 +370,7 @@ abstract class _ApiNaverRomanizationItemsDto
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  int get score => throw _privateConstructorUsedError;
+  String get score => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiNaverRomanizationItemsDtoCopyWith<_ApiNaverRomanizationItemsDto>

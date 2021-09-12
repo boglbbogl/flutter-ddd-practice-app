@@ -75,18 +75,15 @@ class ExampleApiPracticeItem {
     'Open Weather',
     'WSJ News',
     'Picsum Picture',
-    'API Check Form',
   ];
   List router = [
     '/apiWeatherMainPage',
     '/apiNewsMainPage',
     '/apiPictureMainPage',
-    '/apiCheckMainPage',
   ];
   List stateManagement = [
     'Cubit',
     'BLoC',
     'Cubit',
-    'SetState',
   ];
 }

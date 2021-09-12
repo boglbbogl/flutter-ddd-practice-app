@@ -24,14 +24,13 @@ class ApiNaverRomanizationRepository
         "X-Naver-Client-Secret": apiSecret,
       });
       if (response.statusCode == 200) {
-        final decoded = json.decode(utf8.decode(response.bodyBytes));
+        final decoded = json.decode(utf8.decode(response.bodyBytes))
+            as Map<String, dynamic>;
         final data = decoded["aResult"] as List<dynamic>;
-        final result = data
-            .map((e) =>
-                ApiNaverRomanizationDto.fromJson(e as Map<String, dynamic>)
-                    .toDomain())
-            .toList();
-        return result;
+        final result = data.map((e) =>
+            ApiNaverRomanizationDto.fromJson(e as Map<String, dynamic>)
+                .toDomain());
+        return result.toList();
       }
       return [];
     } catch (error) {

@@ -12,11 +12,11 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/example_api/api_news_practice/api_news_main_bloc.dart'
-    as _i46;
-import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
     as _i47;
-import 'application/example_api/api_weather_practice/api_weather_main_cubit.dart'
+import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
     as _i48;
+import 'application/example_api/api_weather_practice/api_weather_main_cubit.dart'
+    as _i49;
 import 'application/kakao_api/api_kakao_book_practice/api_kakao_book_main_bloc.dart'
     as _i38;
 import 'application/kakao_api/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_bloc.dart'
@@ -32,14 +32,16 @@ import 'application/naver_api/api_naver_image_practice/api_naver_image_main_bloc
     as _i43;
 import 'application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart'
     as _i44;
-import 'application/naver_api/api_naver_shop_practice/api_naver_shop_main_bloc.dart'
+import 'application/naver_api/api_naver_romanization_practice/api_naver_romanization_main_cubit.dart'
     as _i45;
+import 'application/naver_api/api_naver_shop_practice/api_naver_shop_main_bloc.dart'
+    as _i46;
 import 'application/widget_practice/community_practice/community_delete_cubit/community_delete_cubit.dart'
-    as _i49;
-import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
     as _i50;
-import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
     as _i51;
+import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+    as _i52;
 import 'application/widget_practice/member_practice/member_create/member_create_bloc.dart'
     as _i35;
 import 'application/widget_practice/member_practice/member_main/member_main_bloc.dart'
@@ -70,7 +72,7 @@ import 'domain/naver_api/api_naver_romanization_practice/i_api_naver_romanizatio
     as _i20;
 import 'domain/naver_api/api_naver_shop_practice/i_api_naver_shop_repository.dart'
     as _i22;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i52;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i53;
 import 'infrastructure/example_api/api_news_practice/api_news_repository.dart'
     as _i25;
 import 'infrastructure/example_api/api_picture_practice/api_picture_repository.dart'
@@ -160,21 +162,24 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i43.ApiNaverImageMainBloc(get<_i16.IApiNaverImageRepository>()));
   gh.factory<_i44.ApiNaverPapagoMainBloc>(
       () => _i44.ApiNaverPapagoMainBloc(get<_i18.IApiNaverPapagoRepository>()));
-  gh.factory<_i45.ApiNaverShopMainBloc>(
-      () => _i45.ApiNaverShopMainBloc(get<_i22.IApiNaverShopRepository>()));
-  gh.factory<_i46.ApiNewsMainBloc>(
-      () => _i46.ApiNewsMainBloc(get<_i24.IApiNewsRepository>()));
-  gh.factory<_i47.ApiPictureCubit>(
-      () => _i47.ApiPictureCubit(get<_i26.IApiPictureRepository>()));
-  gh.factory<_i48.ApiWeatherMainCubit>(
-      () => _i48.ApiWeatherMainCubit(get<_i28.IApiWeatherRepository>()));
-  gh.factory<_i49.CommunityDeleteCubit>(
-      () => _i49.CommunityDeleteCubit(get<_i30.ICommunityRepository>()));
-  gh.factory<_i50.CommunityDetailBloc>(
-      () => _i50.CommunityDetailBloc(get<_i30.ICommunityRepository>()));
-  gh.factory<_i51.CommunityMainBloc>(
-      () => _i51.CommunityMainBloc(get<_i30.ICommunityRepository>()));
+  gh.factory<_i45.ApiNaverRomanizationMainCubit>(() =>
+      _i45.ApiNaverRomanizationMainCubit(
+          get<_i20.IApiNaverRomanizationRepository>()));
+  gh.factory<_i46.ApiNaverShopMainBloc>(
+      () => _i46.ApiNaverShopMainBloc(get<_i22.IApiNaverShopRepository>()));
+  gh.factory<_i47.ApiNewsMainBloc>(
+      () => _i47.ApiNewsMainBloc(get<_i24.IApiNewsRepository>()));
+  gh.factory<_i48.ApiPictureCubit>(
+      () => _i48.ApiPictureCubit(get<_i26.IApiPictureRepository>()));
+  gh.factory<_i49.ApiWeatherMainCubit>(
+      () => _i49.ApiWeatherMainCubit(get<_i28.IApiWeatherRepository>()));
+  gh.factory<_i50.CommunityDeleteCubit>(
+      () => _i50.CommunityDeleteCubit(get<_i30.ICommunityRepository>()));
+  gh.factory<_i51.CommunityDetailBloc>(
+      () => _i51.CommunityDetailBloc(get<_i30.ICommunityRepository>()));
+  gh.factory<_i52.CommunityMainBloc>(
+      () => _i52.CommunityMainBloc(get<_i30.ICommunityRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableMudule extends _i52.FirebaseInjectableMudule {}
+class _$FirebaseInjectableMudule extends _i53.FirebaseInjectableMudule {}

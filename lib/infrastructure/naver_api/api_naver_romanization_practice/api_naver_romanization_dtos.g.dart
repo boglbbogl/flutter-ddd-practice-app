@@ -28,7 +28,7 @@ _$_ApiNaverRomanizationItemsDto _$_$_ApiNaverRomanizationItemsDtoFromJson(
     Map<String, dynamic> json) {
   return _$_ApiNaverRomanizationItemsDto(
     name: json['name'] as String,
-    score: json['score'] as int,
+    score: json['score'] as String,
   );
 }
 

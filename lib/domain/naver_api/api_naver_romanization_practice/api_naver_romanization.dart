@@ -14,6 +14,6 @@ class ApiNaverRomanization with _$ApiNaverRomanization {
 class ApiNaverRomanizationItems with _$ApiNaverRomanizationItems {
   const factory ApiNaverRomanizationItems({
     required String name,
-    required int score,
+    required String score,
   }) = _ApiNaverRomanizationItems;
 }
