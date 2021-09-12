@@ -1,6 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/domain/example_api/api_weather_practice/i_api_weather_repository.dart';
+import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_address.dart';
+import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_region.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/i_api_kakao_local_address_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -12,21 +15,40 @@ part 'api_kakao_local_address_main_cubit.freezed.dart';
 class ApiKakaoLocalAddressMainCubit
     extends Cubit<ApiKakaoLocalAddressMainState> {
   final IApiKakaoLocalAddressRepository _addressRepository;
+  final IApiWeatherRepository _weatherRepository;
   ApiKakaoLocalAddressMainCubit(
     this._addressRepository,
+    this._weatherRepository,
   ) : super(ApiKakaoLocalAddressMainState.initial());
 
   Future<Unit> getLocalAddress() async {
-    emit(state.copyWith(isLoading: false));
-    final result = await _addressRepository.getLocalAddress(
-        lon: '127.123', lat: '37.92313');
-    final roadAddress = result.map((e) => e.roadAddress).first;
-    final address = result.map((e) => e.address).first;
-    emit(state.copyWith(
-      isLoading: false,
-      roadAddress: roadAddress,
-      address: address,
-    ));
+    emit(state.copyWith(isLoading: true));
+    final geoLocation = await _addressRepository.getGeoLocation();
+    if (geoLocation != null) {
+      final lat = geoLocation.latitude;
+      final lon = geoLocation.longitude;
+      final addressResult = await _addressRepository.getLocalAddress(
+          lon: lon.toString(), lat: lat.toString());
+      final regionResult = await _addressRepository.getLocalRegion(
+          lon: lon.toString(), lat: lat.toString());
+      final orFailure =
+          await _weatherRepository.getWeatherData(lon: lon, lat: lat);
+      final weatherResult = orFailure.fold((l) => null, (r) => r);
+      final roadAddress = addressResult.map((e) => e.roadAddress).first;
+      final address = addressResult.map((e) => e.address).first;
+
+      emit(state.copyWith(
+        isLoading: false,
+        roadAddress: roadAddress,
+        address: address,
+        apiKakaoLocalAddress: addressResult,
+        lat: lat.toString(),
+        lon: lon.toString(),
+        region: regionResult,
+        weather: weatherResult,
+      ));
+    }
+
     return unit;
   }
 }

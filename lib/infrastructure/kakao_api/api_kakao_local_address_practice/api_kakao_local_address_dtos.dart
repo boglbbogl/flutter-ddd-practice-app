@@ -8,7 +8,7 @@ part 'api_kakao_local_address_dtos.g.dart';
 class ApiKakaoLocalAddressDto with _$ApiKakaoLocalAddressDto {
   const factory ApiKakaoLocalAddressDto({
     @JsonKey(name: 'road_address')
-        required KakaoLocalResultRoadAddressDto roadAddress,
+        required KakaoLocalResultRoadAddressDto? roadAddress,
     required KakaoLocalResultAddressDto address,
   }) = _ApiKakaoLocalAddressDto;
   const ApiKakaoLocalAddressDto._();
@@ -16,7 +16,7 @@ class ApiKakaoLocalAddressDto with _$ApiKakaoLocalAddressDto {
       _$ApiKakaoLocalAddressDtoFromJson(json);
 
   ApiKakaoLocalAddress toDomain() => ApiKakaoLocalAddress(
-        roadAddress: roadAddress.toDomain(),
+        roadAddress: roadAddress?.toDomain(),
         address: address.toDomain(),
       );
 }

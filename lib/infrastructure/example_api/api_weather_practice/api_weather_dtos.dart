@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -27,11 +26,4 @@ class ApiWeatherDto with _$ApiWeatherDto {
         tempMax: tempMax,
         humidity: humidity,
       );
-}
-
-extension GeoPointX on GeoPoint {
-  static GeoPoint? fromJson(GeoPoint? geoPoint) => geoPoint;
-  static GeoPoint? toJson(GeoPoint? geoPoint) => geoPoint;
-  GeoLocation toDomain() =>
-      GeoLocation(latitude: latitude, longitude: longitude);
 }

@@ -9,8 +9,10 @@ part of 'api_kakao_local_address_dtos.dart';
 _$_ApiKakaoLocalAddressDto _$_$_ApiKakaoLocalAddressDtoFromJson(
     Map<String, dynamic> json) {
   return _$_ApiKakaoLocalAddressDto(
-    roadAddress: KakaoLocalResultRoadAddressDto.fromJson(
-        json['road_address'] as Map<String, dynamic>),
+    roadAddress: json['road_address'] == null
+        ? null
+        : KakaoLocalResultRoadAddressDto.fromJson(
+            json['road_address'] as Map<String, dynamic>),
     address: KakaoLocalResultAddressDto.fromJson(
         json['address'] as Map<String, dynamic>),
   );

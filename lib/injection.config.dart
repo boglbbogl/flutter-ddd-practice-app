@@ -163,7 +163,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i42.ApiKakaoImageMainBloc(get<_i10.IApiKakaoImageRepository>()));
   gh.factory<_i43.ApiKakaoLocalAddressMainCubit>(() =>
       _i43.ApiKakaoLocalAddressMainCubit(
-          get<_i12.IApiKakaoLocalAddressRepository>()));
+          get<_i12.IApiKakaoLocalAddressRepository>(),
+          get<_i30.IApiWeatherRepository>()));
   gh.factory<_i44.ApiKakaoTranslateMainCubit>(() =>
       _i44.ApiKakaoTranslateMainCubit(
           get<_i14.IApiKakaoTranslateRepository>()));

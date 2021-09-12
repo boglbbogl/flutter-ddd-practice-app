@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather_failure.dart';
+import 'package:ddd_practice_app/infrastructure/core/geo_location/geo_location.dart';
 
 abstract class IApiWeatherRepository {
   Future<Either<WeatherFailure, Weather>> getWeatherData({

@@ -25,11 +25,3 @@ class WeatherCity with _$WeatherCity {
     required String name,
   }) = _WeatherCity;
 }
-
-@freezed
-class GeoLocation with _$GeoLocation {
-  const factory GeoLocation({
-    required double latitude,
-    required double longitude,
-  }) = _GeoLocation;
-}

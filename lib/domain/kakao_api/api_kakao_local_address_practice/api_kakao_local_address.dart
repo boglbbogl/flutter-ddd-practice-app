@@ -5,7 +5,7 @@ part 'api_kakao_local_address.freezed.dart';
 @freezed
 class ApiKakaoLocalAddress with _$ApiKakaoLocalAddress {
   const factory ApiKakaoLocalAddress({
-    required KakaoLocalResultRoadAddress roadAddress,
+    required KakaoLocalResultRoadAddress? roadAddress,
     required KakaoLocalResultAddress address,
   }) = _ApiKakaoLocalAddress;
 }

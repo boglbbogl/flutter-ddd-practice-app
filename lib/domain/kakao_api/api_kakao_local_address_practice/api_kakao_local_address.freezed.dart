@@ -17,7 +17,7 @@ class _$ApiKakaoLocalAddressTearOff {
   const _$ApiKakaoLocalAddressTearOff();
 
   _ApiKakaoLocalAddress call(
-      {required KakaoLocalResultRoadAddress roadAddress,
+      {required KakaoLocalResultRoadAddress? roadAddress,
       required KakaoLocalResultAddress address}) {
     return _ApiKakaoLocalAddress(
       roadAddress: roadAddress,
@@ -31,7 +31,7 @@ const $ApiKakaoLocalAddress = _$ApiKakaoLocalAddressTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoLocalAddress {
-  KakaoLocalResultRoadAddress get roadAddress =>
+  KakaoLocalResultRoadAddress? get roadAddress =>
       throw _privateConstructorUsedError;
   KakaoLocalResultAddress get address => throw _privateConstructorUsedError;
 
@@ -46,10 +46,10 @@ abstract class $ApiKakaoLocalAddressCopyWith<$Res> {
           $Res Function(ApiKakaoLocalAddress) then) =
       _$ApiKakaoLocalAddressCopyWithImpl<$Res>;
   $Res call(
-      {KakaoLocalResultRoadAddress roadAddress,
+      {KakaoLocalResultRoadAddress? roadAddress,
       KakaoLocalResultAddress address});
 
-  $KakaoLocalResultRoadAddressCopyWith<$Res> get roadAddress;
+  $KakaoLocalResultRoadAddressCopyWith<$Res>? get roadAddress;
   $KakaoLocalResultAddressCopyWith<$Res> get address;
 }
 
@@ -71,7 +71,7 @@ class _$ApiKakaoLocalAddressCopyWithImpl<$Res>
       roadAddress: roadAddress == freezed
           ? _value.roadAddress
           : roadAddress // ignore: cast_nullable_to_non_nullable
-              as KakaoLocalResultRoadAddress,
+              as KakaoLocalResultRoadAddress?,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -80,8 +80,12 @@ class _$ApiKakaoLocalAddressCopyWithImpl<$Res>
   }
 
   @override
-  $KakaoLocalResultRoadAddressCopyWith<$Res> get roadAddress {
-    return $KakaoLocalResultRoadAddressCopyWith<$Res>(_value.roadAddress,
+  $KakaoLocalResultRoadAddressCopyWith<$Res>? get roadAddress {
+    if (_value.roadAddress == null) {
+      return null;
+    }
+
+    return $KakaoLocalResultRoadAddressCopyWith<$Res>(_value.roadAddress!,
         (value) {
       return _then(_value.copyWith(roadAddress: value));
     });
@@ -103,11 +107,11 @@ abstract class _$ApiKakaoLocalAddressCopyWith<$Res>
       __$ApiKakaoLocalAddressCopyWithImpl<$Res>;
   @override
   $Res call(
-      {KakaoLocalResultRoadAddress roadAddress,
+      {KakaoLocalResultRoadAddress? roadAddress,
       KakaoLocalResultAddress address});
 
   @override
-  $KakaoLocalResultRoadAddressCopyWith<$Res> get roadAddress;
+  $KakaoLocalResultRoadAddressCopyWith<$Res>? get roadAddress;
   @override
   $KakaoLocalResultAddressCopyWith<$Res> get address;
 }
@@ -132,7 +136,7 @@ class __$ApiKakaoLocalAddressCopyWithImpl<$Res>
       roadAddress: roadAddress == freezed
           ? _value.roadAddress
           : roadAddress // ignore: cast_nullable_to_non_nullable
-              as KakaoLocalResultRoadAddress,
+              as KakaoLocalResultRoadAddress?,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -148,7 +152,7 @@ class _$_ApiKakaoLocalAddress implements _ApiKakaoLocalAddress {
       {required this.roadAddress, required this.address});
 
   @override
-  final KakaoLocalResultRoadAddress roadAddress;
+  final KakaoLocalResultRoadAddress? roadAddress;
   @override
   final KakaoLocalResultAddress address;
 
@@ -183,11 +187,11 @@ class _$_ApiKakaoLocalAddress implements _ApiKakaoLocalAddress {
 
 abstract class _ApiKakaoLocalAddress implements ApiKakaoLocalAddress {
   const factory _ApiKakaoLocalAddress(
-      {required KakaoLocalResultRoadAddress roadAddress,
+      {required KakaoLocalResultRoadAddress? roadAddress,
       required KakaoLocalResultAddress address}) = _$_ApiKakaoLocalAddress;
 
   @override
-  KakaoLocalResultRoadAddress get roadAddress =>
+  KakaoLocalResultRoadAddress? get roadAddress =>
       throw _privateConstructorUsedError;
   @override
   KakaoLocalResultAddress get address => throw _privateConstructorUsedError;

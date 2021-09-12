@@ -23,7 +23,7 @@ class _$ApiKakaoLocalAddressDtoTearOff {
 
   _ApiKakaoLocalAddressDto call(
       {@JsonKey(name: 'road_address')
-          required KakaoLocalResultRoadAddressDto roadAddress,
+          required KakaoLocalResultRoadAddressDto? roadAddress,
       required KakaoLocalResultAddressDto address}) {
     return _ApiKakaoLocalAddressDto(
       roadAddress: roadAddress,
@@ -42,7 +42,7 @@ const $ApiKakaoLocalAddressDto = _$ApiKakaoLocalAddressDtoTearOff();
 /// @nodoc
 mixin _$ApiKakaoLocalAddressDto {
   @JsonKey(name: 'road_address')
-  KakaoLocalResultRoadAddressDto get roadAddress =>
+  KakaoLocalResultRoadAddressDto? get roadAddress =>
       throw _privateConstructorUsedError;
   KakaoLocalResultAddressDto get address => throw _privateConstructorUsedError;
 
@@ -59,10 +59,10 @@ abstract class $ApiKakaoLocalAddressDtoCopyWith<$Res> {
       _$ApiKakaoLocalAddressDtoCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'road_address')
-          KakaoLocalResultRoadAddressDto roadAddress,
+          KakaoLocalResultRoadAddressDto? roadAddress,
       KakaoLocalResultAddressDto address});
 
-  $KakaoLocalResultRoadAddressDtoCopyWith<$Res> get roadAddress;
+  $KakaoLocalResultRoadAddressDtoCopyWith<$Res>? get roadAddress;
   $KakaoLocalResultAddressDtoCopyWith<$Res> get address;
 }
 
@@ -84,7 +84,7 @@ class _$ApiKakaoLocalAddressDtoCopyWithImpl<$Res>
       roadAddress: roadAddress == freezed
           ? _value.roadAddress
           : roadAddress // ignore: cast_nullable_to_non_nullable
-              as KakaoLocalResultRoadAddressDto,
+              as KakaoLocalResultRoadAddressDto?,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -93,8 +93,12 @@ class _$ApiKakaoLocalAddressDtoCopyWithImpl<$Res>
   }
 
   @override
-  $KakaoLocalResultRoadAddressDtoCopyWith<$Res> get roadAddress {
-    return $KakaoLocalResultRoadAddressDtoCopyWith<$Res>(_value.roadAddress,
+  $KakaoLocalResultRoadAddressDtoCopyWith<$Res>? get roadAddress {
+    if (_value.roadAddress == null) {
+      return null;
+    }
+
+    return $KakaoLocalResultRoadAddressDtoCopyWith<$Res>(_value.roadAddress!,
         (value) {
       return _then(_value.copyWith(roadAddress: value));
     });
@@ -117,11 +121,11 @@ abstract class _$ApiKakaoLocalAddressDtoCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'road_address')
-          KakaoLocalResultRoadAddressDto roadAddress,
+          KakaoLocalResultRoadAddressDto? roadAddress,
       KakaoLocalResultAddressDto address});
 
   @override
-  $KakaoLocalResultRoadAddressDtoCopyWith<$Res> get roadAddress;
+  $KakaoLocalResultRoadAddressDtoCopyWith<$Res>? get roadAddress;
   @override
   $KakaoLocalResultAddressDtoCopyWith<$Res> get address;
 }
@@ -147,7 +151,7 @@ class __$ApiKakaoLocalAddressDtoCopyWithImpl<$Res>
       roadAddress: roadAddress == freezed
           ? _value.roadAddress
           : roadAddress // ignore: cast_nullable_to_non_nullable
-              as KakaoLocalResultRoadAddressDto,
+              as KakaoLocalResultRoadAddressDto?,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -169,7 +173,7 @@ class _$_ApiKakaoLocalAddressDto extends _ApiKakaoLocalAddressDto {
 
   @override
   @JsonKey(name: 'road_address')
-  final KakaoLocalResultRoadAddressDto roadAddress;
+  final KakaoLocalResultRoadAddressDto? roadAddress;
   @override
   final KakaoLocalResultAddressDto address;
 
@@ -210,7 +214,7 @@ class _$_ApiKakaoLocalAddressDto extends _ApiKakaoLocalAddressDto {
 abstract class _ApiKakaoLocalAddressDto extends ApiKakaoLocalAddressDto {
   const factory _ApiKakaoLocalAddressDto(
           {@JsonKey(name: 'road_address')
-              required KakaoLocalResultRoadAddressDto roadAddress,
+              required KakaoLocalResultRoadAddressDto? roadAddress,
           required KakaoLocalResultAddressDto address}) =
       _$_ApiKakaoLocalAddressDto;
   const _ApiKakaoLocalAddressDto._() : super._();
@@ -220,7 +224,7 @@ abstract class _ApiKakaoLocalAddressDto extends ApiKakaoLocalAddressDto {
 
   @override
   @JsonKey(name: 'road_address')
-  KakaoLocalResultRoadAddressDto get roadAddress =>
+  KakaoLocalResultRoadAddressDto? get roadAddress =>
       throw _privateConstructorUsedError;
   @override
   KakaoLocalResultAddressDto get address => throw _privateConstructorUsedError;

@@ -18,12 +18,22 @@ class _$ApiKakaoLocalAddressMainStateTearOff {
 
   _ApiKakaoLocalAddressMainState call(
       {required bool isLoading,
+      required List<ApiKakaoLocalAddress> apiKakaoLocalAddress,
       required KakaoLocalResultRoadAddress? roadAddress,
-      required KakaoLocalResultAddress? address}) {
+      required KakaoLocalResultAddress? address,
+      required List<ApiKakaoLocalRegion> region,
+      required Weather? weather,
+      required String lat,
+      required String lon}) {
     return _ApiKakaoLocalAddressMainState(
       isLoading: isLoading,
+      apiKakaoLocalAddress: apiKakaoLocalAddress,
       roadAddress: roadAddress,
       address: address,
+      region: region,
+      weather: weather,
+      lat: lat,
+      lon: lon,
     );
   }
 }
@@ -34,9 +44,15 @@ const $ApiKakaoLocalAddressMainState = _$ApiKakaoLocalAddressMainStateTearOff();
 /// @nodoc
 mixin _$ApiKakaoLocalAddressMainState {
   bool get isLoading => throw _privateConstructorUsedError;
+  List<ApiKakaoLocalAddress> get apiKakaoLocalAddress =>
+      throw _privateConstructorUsedError;
   KakaoLocalResultRoadAddress? get roadAddress =>
       throw _privateConstructorUsedError;
   KakaoLocalResultAddress? get address => throw _privateConstructorUsedError;
+  List<ApiKakaoLocalRegion> get region => throw _privateConstructorUsedError;
+  Weather? get weather => throw _privateConstructorUsedError;
+  String get lat => throw _privateConstructorUsedError;
+  String get lon => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoLocalAddressMainStateCopyWith<ApiKakaoLocalAddressMainState>
@@ -51,11 +67,17 @@ abstract class $ApiKakaoLocalAddressMainStateCopyWith<$Res> {
       _$ApiKakaoLocalAddressMainStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoading,
+      List<ApiKakaoLocalAddress> apiKakaoLocalAddress,
       KakaoLocalResultRoadAddress? roadAddress,
-      KakaoLocalResultAddress? address});
+      KakaoLocalResultAddress? address,
+      List<ApiKakaoLocalRegion> region,
+      Weather? weather,
+      String lat,
+      String lon});
 
   $KakaoLocalResultRoadAddressCopyWith<$Res>? get roadAddress;
   $KakaoLocalResultAddressCopyWith<$Res>? get address;
+  $WeatherCopyWith<$Res>? get weather;
 }
 
 /// @nodoc
@@ -70,14 +92,23 @@ class _$ApiKakaoLocalAddressMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? apiKakaoLocalAddress = freezed,
     Object? roadAddress = freezed,
     Object? address = freezed,
+    Object? region = freezed,
+    Object? weather = freezed,
+    Object? lat = freezed,
+    Object? lon = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      apiKakaoLocalAddress: apiKakaoLocalAddress == freezed
+          ? _value.apiKakaoLocalAddress
+          : apiKakaoLocalAddress // ignore: cast_nullable_to_non_nullable
+              as List<ApiKakaoLocalAddress>,
       roadAddress: roadAddress == freezed
           ? _value.roadAddress
           : roadAddress // ignore: cast_nullable_to_non_nullable
@@ -86,6 +117,22 @@ class _$ApiKakaoLocalAddressMainStateCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as KakaoLocalResultAddress?,
+      region: region == freezed
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as List<ApiKakaoLocalRegion>,
+      weather: weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      lat: lat == freezed
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as String,
+      lon: lon == freezed
+          ? _value.lon
+          : lon // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -111,6 +158,17 @@ class _$ApiKakaoLocalAddressMainStateCopyWithImpl<$Res>
       return _then(_value.copyWith(address: value));
     });
   }
+
+  @override
+  $WeatherCopyWith<$Res>? get weather {
+    if (_value.weather == null) {
+      return null;
+    }
+
+    return $WeatherCopyWith<$Res>(_value.weather!, (value) {
+      return _then(_value.copyWith(weather: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -123,13 +181,20 @@ abstract class _$ApiKakaoLocalAddressMainStateCopyWith<$Res>
   @override
   $Res call(
       {bool isLoading,
+      List<ApiKakaoLocalAddress> apiKakaoLocalAddress,
       KakaoLocalResultRoadAddress? roadAddress,
-      KakaoLocalResultAddress? address});
+      KakaoLocalResultAddress? address,
+      List<ApiKakaoLocalRegion> region,
+      Weather? weather,
+      String lat,
+      String lon});
 
   @override
   $KakaoLocalResultRoadAddressCopyWith<$Res>? get roadAddress;
   @override
   $KakaoLocalResultAddressCopyWith<$Res>? get address;
+  @override
+  $WeatherCopyWith<$Res>? get weather;
 }
 
 /// @nodoc
@@ -148,14 +213,23 @@ class __$ApiKakaoLocalAddressMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? apiKakaoLocalAddress = freezed,
     Object? roadAddress = freezed,
     Object? address = freezed,
+    Object? region = freezed,
+    Object? weather = freezed,
+    Object? lat = freezed,
+    Object? lon = freezed,
   }) {
     return _then(_ApiKakaoLocalAddressMainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      apiKakaoLocalAddress: apiKakaoLocalAddress == freezed
+          ? _value.apiKakaoLocalAddress
+          : apiKakaoLocalAddress // ignore: cast_nullable_to_non_nullable
+              as List<ApiKakaoLocalAddress>,
       roadAddress: roadAddress == freezed
           ? _value.roadAddress
           : roadAddress // ignore: cast_nullable_to_non_nullable
@@ -164,6 +238,22 @@ class __$ApiKakaoLocalAddressMainStateCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as KakaoLocalResultAddress?,
+      region: region == freezed
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as List<ApiKakaoLocalRegion>,
+      weather: weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      lat: lat == freezed
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as String,
+      lon: lon == freezed
+          ? _value.lon
+          : lon // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -174,19 +264,34 @@ class _$_ApiKakaoLocalAddressMainState
     implements _ApiKakaoLocalAddressMainState {
   _$_ApiKakaoLocalAddressMainState(
       {required this.isLoading,
+      required this.apiKakaoLocalAddress,
       required this.roadAddress,
-      required this.address});
+      required this.address,
+      required this.region,
+      required this.weather,
+      required this.lat,
+      required this.lon});
 
   @override
   final bool isLoading;
   @override
+  final List<ApiKakaoLocalAddress> apiKakaoLocalAddress;
+  @override
   final KakaoLocalResultRoadAddress? roadAddress;
   @override
   final KakaoLocalResultAddress? address;
+  @override
+  final List<ApiKakaoLocalRegion> region;
+  @override
+  final Weather? weather;
+  @override
+  final String lat;
+  @override
+  final String lon;
 
   @override
   String toString() {
-    return 'ApiKakaoLocalAddressMainState(isLoading: $isLoading, roadAddress: $roadAddress, address: $address)';
+    return 'ApiKakaoLocalAddressMainState(isLoading: $isLoading, apiKakaoLocalAddress: $apiKakaoLocalAddress, roadAddress: $roadAddress, address: $address, region: $region, weather: $weather, lat: $lat, lon: $lon)';
   }
 
   @override
@@ -196,19 +301,37 @@ class _$_ApiKakaoLocalAddressMainState
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.apiKakaoLocalAddress, apiKakaoLocalAddress) ||
+                const DeepCollectionEquality().equals(
+                    other.apiKakaoLocalAddress, apiKakaoLocalAddress)) &&
             (identical(other.roadAddress, roadAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.roadAddress, roadAddress)) &&
             (identical(other.address, address) ||
-                const DeepCollectionEquality().equals(other.address, address)));
+                const DeepCollectionEquality()
+                    .equals(other.address, address)) &&
+            (identical(other.region, region) ||
+                const DeepCollectionEquality().equals(other.region, region)) &&
+            (identical(other.weather, weather) ||
+                const DeepCollectionEquality()
+                    .equals(other.weather, weather)) &&
+            (identical(other.lat, lat) ||
+                const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.lon, lon) ||
+                const DeepCollectionEquality().equals(other.lon, lon)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(apiKakaoLocalAddress) ^
       const DeepCollectionEquality().hash(roadAddress) ^
-      const DeepCollectionEquality().hash(address);
+      const DeepCollectionEquality().hash(address) ^
+      const DeepCollectionEquality().hash(region) ^
+      const DeepCollectionEquality().hash(weather) ^
+      const DeepCollectionEquality().hash(lat) ^
+      const DeepCollectionEquality().hash(lon);
 
   @JsonKey(ignore: true)
   @override
@@ -220,18 +343,33 @@ class _$_ApiKakaoLocalAddressMainState
 abstract class _ApiKakaoLocalAddressMainState
     implements ApiKakaoLocalAddressMainState {
   factory _ApiKakaoLocalAddressMainState(
-          {required bool isLoading,
-          required KakaoLocalResultRoadAddress? roadAddress,
-          required KakaoLocalResultAddress? address}) =
-      _$_ApiKakaoLocalAddressMainState;
+      {required bool isLoading,
+      required List<ApiKakaoLocalAddress> apiKakaoLocalAddress,
+      required KakaoLocalResultRoadAddress? roadAddress,
+      required KakaoLocalResultAddress? address,
+      required List<ApiKakaoLocalRegion> region,
+      required Weather? weather,
+      required String lat,
+      required String lon}) = _$_ApiKakaoLocalAddressMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  List<ApiKakaoLocalAddress> get apiKakaoLocalAddress =>
+      throw _privateConstructorUsedError;
   @override
   KakaoLocalResultRoadAddress? get roadAddress =>
       throw _privateConstructorUsedError;
   @override
   KakaoLocalResultAddress? get address => throw _privateConstructorUsedError;
+  @override
+  List<ApiKakaoLocalRegion> get region => throw _privateConstructorUsedError;
+  @override
+  Weather? get weather => throw _privateConstructorUsedError;
+  @override
+  String get lat => throw _privateConstructorUsedError;
+  @override
+  String get lon => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoLocalAddressMainStateCopyWith<_ApiKakaoLocalAddressMainState>
