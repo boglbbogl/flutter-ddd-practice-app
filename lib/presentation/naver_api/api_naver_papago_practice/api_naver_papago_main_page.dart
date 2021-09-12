@@ -2,9 +2,12 @@ import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/api_naver_region_select_widget.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/widgets/api_naver_region_select_widget.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/widgets/papago_translate_region.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 class ApiNaverPapagoMainPage extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
@@ -20,15 +23,19 @@ class ApiNaverPapagoMainPage extends StatelessWidget {
             appBar: appBarForm(context, theme,
                 title: 'Naver Papago',
                 colors: Colors.green,
-                backColors: Colors.white,
-                actions: [
-                  appbarActionInfoForm(
-                    context: context,
-                    sourceText: 'https://openapi.naver.com/v1/papago/n2mt',
-                    colors: Colors.green,
-                    textColors: Colors.white,
-                  ),
-                ]),
+                backColors: Colors.white, onTap: () {
+              context
+                  .read<ApiNaverPapagoMainBloc>()
+                  .add(const ApiNaverPapagoMainEvent.started());
+              Get.back();
+            }, actions: [
+              appbarActionInfoForm(
+                context: context,
+                sourceText: 'https://openapi.naver.com/v1/papago/n2mt',
+                colors: Colors.green,
+                textColors: Colors.white,
+              ),
+            ]),
             body: SingleChildScrollView(
               child: Center(
                 child: Column(

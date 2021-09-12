@@ -24,6 +24,10 @@ class ApiNaverPapagoMainBloc
   ) async* {
     yield* event.map(started: (e) async* {
       yield state.copyWith(
+        papago: ApiNaverPapago.empty().copyWith(
+          srcLangType: 'ko',
+          tarLangType: 'en',
+        ),
         source: 'ko',
         target: 'en',
         formatSource: "KOREAN",

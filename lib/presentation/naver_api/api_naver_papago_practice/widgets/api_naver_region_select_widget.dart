@@ -1,6 +1,7 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/papago_translate_region.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/widgets/papago_translate_region.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -118,6 +119,31 @@ class ApiNaverRegionSelectWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void cupertinoRegionSelectBottomForm({
+    required BuildContext context,
+  }) {
+    showCupertinoModalPopup(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: size.height * 0.3,
+            width: size.width,
+            color: Colors.amber,
+            child: CupertinoPicker(
+              scrollController: FixedExtentScrollController(initialItem: 5),
+              itemExtent: 50,
+              onSelectedItemChanged: (v) {},
+              children: [
+                ...PapagoTranslateRegion()
+                    .countryCode
+                    .entries
+                    .map((e) => Text(e.value.toString())),
+              ],
+            ),
+          );
+        });
   }
 
   InkWell regionSelectBottomForm({
