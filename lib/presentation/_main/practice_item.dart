@@ -16,27 +16,30 @@ class KakaoApiPracticeItem {
     '/apiKakaoTranslateMultipleMainPage',
   ];
   List stateManagement = [
+    'Cubit',
     'BLoC',
     'BLoC',
     'BLoC',
-    'BLoC',
-    'BLoC',
-    'BLoC',
+    'Cubit',
+    'Cubit',
   ];
 }
 
 class NaverApiPracticeItem {
   List title = [
     'Papago',
+    'Romanization',
     'Image',
     'Shop',
   ];
   List router = [
     '/apiNaverPapagoMainPage',
+    '/apiNaverRomanizationMainPage',
     '/apiNaverImageMainPage',
     '/apiNaverShopMainPage',
   ];
   List stateManagement = [
+    'BLoc',
     'BLoc',
     'BLoc',
     'BLoc',
@@ -62,7 +65,7 @@ class WidgetPracticeItem {
   ];
   List stateManagement = [
     'BLoC',
-    'BLoC',
+    'Cubit',
     'BLoC',
   ];
 }
@@ -81,9 +84,9 @@ class ExampleApiPracticeItem {
     '/apiCheckMainPage',
   ];
   List stateManagement = [
+    'Cubit',
     'BLoC',
-    'BLoC',
-    'BLoC',
-    'BLoC',
+    'Cubit',
+    'SetState',
   ];
 }
