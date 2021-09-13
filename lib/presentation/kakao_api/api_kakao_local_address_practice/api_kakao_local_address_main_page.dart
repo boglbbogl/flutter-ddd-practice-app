@@ -1,4 +1,3 @@
-import 'package:another_flushbar/flushbar.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';

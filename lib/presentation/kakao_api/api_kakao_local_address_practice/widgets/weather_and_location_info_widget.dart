@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:flutter/material.dart';

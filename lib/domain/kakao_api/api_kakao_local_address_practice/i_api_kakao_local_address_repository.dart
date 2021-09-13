@@ -1,4 +1,3 @@
-import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_address.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_region.dart';
 import 'package:ddd_practice_app/infrastructure/core/geo_location/geo_location.dart';

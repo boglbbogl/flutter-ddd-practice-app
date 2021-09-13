@@ -39,7 +39,7 @@ class WidgetHeroDetailPage extends StatelessWidget {
           child: Center(
             child: Image(
               image: NetworkImage(
-                "http://picsum.photos/id/${id}/400/400",
+                "http://picsum.photos/id/$id/400/400",
               ),
             ),
           )),
