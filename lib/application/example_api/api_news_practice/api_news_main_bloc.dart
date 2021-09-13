@@ -5,6 +5,7 @@ import 'package:ddd_practice_app/domain/example_api/api_news_practice/api_news.d
 import 'package:ddd_practice_app/domain/example_api/api_news_practice/i_api_news_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'api_news_main_event.dart';
 part 'api_news_main_state.dart';
@@ -30,6 +31,15 @@ class ApiNewsMainBloc extends Bloc<ApiNewsMainEvent, ApiNewsMainState> {
         apiNews: result,
         isLoading: false,
       );
+    }, pageChangedToUrl: (e) async* {
+      if (await canLaunch(e.url)) {
+        await launch(
+          e.url,
+          forceSafariVC: true,
+        );
+      } else {
+        throw 'Error';
+      }
     });
   }
 }

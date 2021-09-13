@@ -37,77 +37,85 @@ class ApiNewsMainPage extends StatelessWidget {
             body: ListView(
               shrinkWrap: true,
               children: [
-                ...state.apiNews!.articles.map((news) => Padding(
-                      padding:
-                          const EdgeInsets.only(top: 10, left: 15, right: 15),
-                      child: Column(
-                        children: [
-                          Container(
-                            width: size.width * 0.95,
-                            height: 1,
-                            color: const Color.fromRGBO(235, 235, 235, 1),
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                news.title,
-                                style: theme.textTheme.bodyText2!.copyWith(
-                                    fontWeight: FontWeight.bold, fontSize: 16),
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(''),
-                                  Text(
-                                    news.publishedAt
-                                        .toString()
-                                        .substring(0, 10),
-                                    style: theme.textTheme.bodyText2!.copyWith(
-                                        color: const Color.fromRGBO(
-                                            135, 135, 135, 1),
-                                        fontSize: 8),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: size.width * 0.99,
-                            height: size.height * 0.15,
-                            child: Row(
+                ...state.apiNews!.articles.map((news) => InkWell(
+                      onTap: () {
+                        context.read<ApiNewsMainBloc>().add(
+                            ApiNewsMainEvent.pageChangedToUrl(url: news.url));
+                      },
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(top: 10, left: 15, right: 15),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: size.width * 0.95,
+                              height: 1,
+                              color: const Color.fromRGBO(235, 235, 235, 1),
+                            ),
+                            Column(
                               children: [
-                                SizedBox(
-                                  height: size.width * 0.3,
-                                  width: size.width * 0.3,
-                                  child: Image(
-                                      image: NetworkImage(news.urlToImage)),
+                                Text(
+                                  news.title,
+                                  style: theme.textTheme.bodyText2!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
                                 ),
-                                SizedBox(
-                                  width: size.width * 0.05,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(''),
+                                    Text(
+                                      news.publishedAt
+                                          .toString()
+                                          .substring(0, 10),
+                                      style: theme.textTheme.bodyText2!
+                                          .copyWith(
+                                              color: const Color.fromRGBO(
+                                                  135, 135, 135, 1),
+                                              fontSize: 8),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(
-                                    width: size.width * 0.55,
-                                    child: Text(
-                                      news.content,
-                                      maxLines: 4,
-                                      overflow: TextOverflow.ellipsis,
-                                      style:
-                                          theme.textTheme.bodyText2!.copyWith(
-                                        color:
-                                            const Color.fromRGBO(91, 91, 91, 1),
-                                        fontSize: 12,
-                                      ),
-                                    )),
                               ],
                             ),
-                          ),
-                          Container(
-                            width: size.width * 0.95,
-                            height: 1,
-                            color: const Color.fromRGBO(235, 235, 235, 1),
-                          ),
-                        ],
+                            SizedBox(
+                              width: size.width * 0.99,
+                              height: size.height * 0.15,
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    height: size.width * 0.3,
+                                    width: size.width * 0.3,
+                                    child: Image(
+                                        image: NetworkImage(news.urlToImage)),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
+                                  ),
+                                  SizedBox(
+                                      width: size.width * 0.55,
+                                      child: Text(
+                                        news.content,
+                                        maxLines: 4,
+                                        overflow: TextOverflow.ellipsis,
+                                        style:
+                                            theme.textTheme.bodyText2!.copyWith(
+                                          color: const Color.fromRGBO(
+                                              91, 91, 91, 1),
+                                          fontSize: 12,
+                                        ),
+                                      )),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: size.width * 0.95,
+                              height: 1,
+                              color: const Color.fromRGBO(235, 235, 235, 1),
+                            ),
+                          ],
+                        ),
                       ),
                     )),
               ],
