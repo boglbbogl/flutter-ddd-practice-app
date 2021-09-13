@@ -43,7 +43,7 @@ class ApiKakaoImageMainBloc
         yield state.copyWith(
           apiKakaoImage: result,
           page: state.page,
-          totalPage: meta!.pageable_count,
+          totalPage: meta!.pageableCount,
           query: e.query,
           isLoading: false,
         );

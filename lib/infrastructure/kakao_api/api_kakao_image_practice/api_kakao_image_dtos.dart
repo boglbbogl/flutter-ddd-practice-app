@@ -8,12 +8,12 @@ part 'api_kakao_image_dtos.g.dart';
 class ApiKakaoImageDto with _$ApiKakaoImageDto {
   const factory ApiKakaoImageDto({
     required String collection,
-    required String thumbnail_url,
-    required String image_url,
+    @JsonKey(name: 'thumbnail_url') required String thumbnailUrl,
+    @JsonKey(name: 'image_url') required String imageUrl,
     required int width,
     required int height,
-    required String display_sitename,
-    required String doc_url,
+    @JsonKey(name: 'display_sitename') required String displaySitename,
+    @JsonKey(name: 'doc_url') required String docUrl,
     required DateTime datetime,
   }) = _ApiKakaoImageDto;
   const ApiKakaoImageDto._();
@@ -23,12 +23,12 @@ class ApiKakaoImageDto with _$ApiKakaoImageDto {
 
   ApiKakaoImage toDomain() => ApiKakaoImage(
         collection: collection,
-        thumbnail_url: thumbnail_url,
-        image_url: image_url,
+        thumbnailUrl: thumbnailUrl,
+        imageUrl: imageUrl,
         width: width,
         height: height,
-        display_sitename: display_sitename,
-        doc_url: doc_url,
+        displaySitename: displaySitename,
+        docUrl: docUrl,
         datetime: datetime,
       );
 }
@@ -36,9 +36,9 @@ class ApiKakaoImageDto with _$ApiKakaoImageDto {
 @freezed
 class ApiKakaoImageMetaDto with _$ApiKakaoImageMetaDto {
   const factory ApiKakaoImageMetaDto({
-    required bool is_end,
-    required int pageable_count,
-    required int total_count,
+    @JsonKey(name: 'is_end') required bool isEnd,
+    @JsonKey(name: 'pageable_count') required int pageableCount,
+    @JsonKey(name: 'total_count') required int totalCount,
   }) = _ApiKakaoImageMetaDto;
 
   const ApiKakaoImageMetaDto._();
@@ -46,8 +46,8 @@ class ApiKakaoImageMetaDto with _$ApiKakaoImageMetaDto {
       _$ApiKakaoImageMetaDtoFromJson(json);
 
   ApiKakaoImageMeta toDomain() => ApiKakaoImageMeta(
-        is_end: is_end,
-        pageable_count: pageable_count,
-        total_count: total_count,
+        isEnd: isEnd,
+        pageableCount: pageableCount,
+        totalCount: totalCount,
       );
 }

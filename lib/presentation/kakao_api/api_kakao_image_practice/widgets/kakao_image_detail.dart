@@ -21,7 +21,7 @@ class KakaoImageDetail extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: GestureDetector(
             onTap: () => Get.to(() => KakaoImageWebView(
-                  url: data.doc_url,
+                  url: data.docUrl,
                 )),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -52,12 +52,12 @@ class KakaoImageDetail extends StatelessWidget {
               children: [
                 InkWell(
                   onLongPress: () => Get.to(() => KakaoImageWebView(
-                        url: data.doc_url,
+                        url: data.docUrl,
                       )),
                   child: Hero(
-                    tag: data.thumbnail_url,
+                    tag: data.thumbnailUrl,
                     child: Image(
-                      image: NetworkImage(data.image_url),
+                      image: NetworkImage(data.imageUrl),
                     ),
                   ),
                 ),

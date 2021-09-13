@@ -8,5 +8,6 @@ class CommunityDetailEvent with _$CommunityDetailEvent {
     String bodyText,
     String id,
   ) = _Updated;
-  const factory CommunityDetailEvent.screenChanged(bool value) = _ScreenChanged;
+  const factory CommunityDetailEvent.screenChanged({required bool value}) =
+      _ScreenChanged;
 }

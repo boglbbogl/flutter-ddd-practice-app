@@ -18,21 +18,21 @@ class _$ApiKakaoImageTearOff {
 
   _ApiKakaoImage call(
       {required String collection,
-      required String thumbnail_url,
-      required String image_url,
+      required String thumbnailUrl,
+      required String imageUrl,
       required int width,
       required int height,
-      required String display_sitename,
-      required String doc_url,
+      required String displaySitename,
+      required String docUrl,
       required DateTime datetime}) {
     return _ApiKakaoImage(
       collection: collection,
-      thumbnail_url: thumbnail_url,
-      image_url: image_url,
+      thumbnailUrl: thumbnailUrl,
+      imageUrl: imageUrl,
       width: width,
       height: height,
-      display_sitename: display_sitename,
-      doc_url: doc_url,
+      displaySitename: displaySitename,
+      docUrl: docUrl,
       datetime: datetime,
     );
   }
@@ -44,12 +44,12 @@ const $ApiKakaoImage = _$ApiKakaoImageTearOff();
 /// @nodoc
 mixin _$ApiKakaoImage {
   String get collection => throw _privateConstructorUsedError;
-  String get thumbnail_url => throw _privateConstructorUsedError;
-  String get image_url => throw _privateConstructorUsedError;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
   int get width => throw _privateConstructorUsedError;
   int get height => throw _privateConstructorUsedError;
-  String get display_sitename => throw _privateConstructorUsedError;
-  String get doc_url => throw _privateConstructorUsedError;
+  String get displaySitename => throw _privateConstructorUsedError;
+  String get docUrl => throw _privateConstructorUsedError;
   DateTime get datetime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -64,12 +64,12 @@ abstract class $ApiKakaoImageCopyWith<$Res> {
       _$ApiKakaoImageCopyWithImpl<$Res>;
   $Res call(
       {String collection,
-      String thumbnail_url,
-      String image_url,
+      String thumbnailUrl,
+      String imageUrl,
       int width,
       int height,
-      String display_sitename,
-      String doc_url,
+      String displaySitename,
+      String docUrl,
       DateTime datetime});
 }
 
@@ -85,12 +85,12 @@ class _$ApiKakaoImageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? collection = freezed,
-    Object? thumbnail_url = freezed,
-    Object? image_url = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? imageUrl = freezed,
     Object? width = freezed,
     Object? height = freezed,
-    Object? display_sitename = freezed,
-    Object? doc_url = freezed,
+    Object? displaySitename = freezed,
+    Object? docUrl = freezed,
     Object? datetime = freezed,
   }) {
     return _then(_value.copyWith(
@@ -98,13 +98,13 @@ class _$ApiKakaoImageCopyWithImpl<$Res>
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnail_url: thumbnail_url == freezed
-          ? _value.thumbnail_url
-          : thumbnail_url // ignore: cast_nullable_to_non_nullable
+      thumbnailUrl: thumbnailUrl == freezed
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      image_url: image_url == freezed
-          ? _value.image_url
-          : image_url // ignore: cast_nullable_to_non_nullable
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       width: width == freezed
           ? _value.width
@@ -114,13 +114,13 @@ class _$ApiKakaoImageCopyWithImpl<$Res>
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      display_sitename: display_sitename == freezed
-          ? _value.display_sitename
-          : display_sitename // ignore: cast_nullable_to_non_nullable
+      displaySitename: displaySitename == freezed
+          ? _value.displaySitename
+          : displaySitename // ignore: cast_nullable_to_non_nullable
               as String,
-      doc_url: doc_url == freezed
-          ? _value.doc_url
-          : doc_url // ignore: cast_nullable_to_non_nullable
+      docUrl: docUrl == freezed
+          ? _value.docUrl
+          : docUrl // ignore: cast_nullable_to_non_nullable
               as String,
       datetime: datetime == freezed
           ? _value.datetime
@@ -139,12 +139,12 @@ abstract class _$ApiKakaoImageCopyWith<$Res>
   @override
   $Res call(
       {String collection,
-      String thumbnail_url,
-      String image_url,
+      String thumbnailUrl,
+      String imageUrl,
       int width,
       int height,
-      String display_sitename,
-      String doc_url,
+      String displaySitename,
+      String docUrl,
       DateTime datetime});
 }
 
@@ -162,12 +162,12 @@ class __$ApiKakaoImageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? collection = freezed,
-    Object? thumbnail_url = freezed,
-    Object? image_url = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? imageUrl = freezed,
     Object? width = freezed,
     Object? height = freezed,
-    Object? display_sitename = freezed,
-    Object? doc_url = freezed,
+    Object? displaySitename = freezed,
+    Object? docUrl = freezed,
     Object? datetime = freezed,
   }) {
     return _then(_ApiKakaoImage(
@@ -175,13 +175,13 @@ class __$ApiKakaoImageCopyWithImpl<$Res>
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnail_url: thumbnail_url == freezed
-          ? _value.thumbnail_url
-          : thumbnail_url // ignore: cast_nullable_to_non_nullable
+      thumbnailUrl: thumbnailUrl == freezed
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      image_url: image_url == freezed
-          ? _value.image_url
-          : image_url // ignore: cast_nullable_to_non_nullable
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       width: width == freezed
           ? _value.width
@@ -191,13 +191,13 @@ class __$ApiKakaoImageCopyWithImpl<$Res>
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      display_sitename: display_sitename == freezed
-          ? _value.display_sitename
-          : display_sitename // ignore: cast_nullable_to_non_nullable
+      displaySitename: displaySitename == freezed
+          ? _value.displaySitename
+          : displaySitename // ignore: cast_nullable_to_non_nullable
               as String,
-      doc_url: doc_url == freezed
-          ? _value.doc_url
-          : doc_url // ignore: cast_nullable_to_non_nullable
+      docUrl: docUrl == freezed
+          ? _value.docUrl
+          : docUrl // ignore: cast_nullable_to_non_nullable
               as String,
       datetime: datetime == freezed
           ? _value.datetime
@@ -212,34 +212,34 @@ class __$ApiKakaoImageCopyWithImpl<$Res>
 class _$_ApiKakaoImage implements _ApiKakaoImage {
   const _$_ApiKakaoImage(
       {required this.collection,
-      required this.thumbnail_url,
-      required this.image_url,
+      required this.thumbnailUrl,
+      required this.imageUrl,
       required this.width,
       required this.height,
-      required this.display_sitename,
-      required this.doc_url,
+      required this.displaySitename,
+      required this.docUrl,
       required this.datetime});
 
   @override
   final String collection;
   @override
-  final String thumbnail_url;
+  final String thumbnailUrl;
   @override
-  final String image_url;
+  final String imageUrl;
   @override
   final int width;
   @override
   final int height;
   @override
-  final String display_sitename;
+  final String displaySitename;
   @override
-  final String doc_url;
+  final String docUrl;
   @override
   final DateTime datetime;
 
   @override
   String toString() {
-    return 'ApiKakaoImage(collection: $collection, thumbnail_url: $thumbnail_url, image_url: $image_url, width: $width, height: $height, display_sitename: $display_sitename, doc_url: $doc_url, datetime: $datetime)';
+    return 'ApiKakaoImage(collection: $collection, thumbnailUrl: $thumbnailUrl, imageUrl: $imageUrl, width: $width, height: $height, displaySitename: $displaySitename, docUrl: $docUrl, datetime: $datetime)';
   }
 
   @override
@@ -249,22 +249,21 @@ class _$_ApiKakaoImage implements _ApiKakaoImage {
             (identical(other.collection, collection) ||
                 const DeepCollectionEquality()
                     .equals(other.collection, collection)) &&
-            (identical(other.thumbnail_url, thumbnail_url) ||
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.thumbnail_url, thumbnail_url)) &&
-            (identical(other.image_url, image_url) ||
+                    .equals(other.thumbnailUrl, thumbnailUrl)) &&
+            (identical(other.imageUrl, imageUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.image_url, image_url)) &&
+                    .equals(other.imageUrl, imageUrl)) &&
             (identical(other.width, width) ||
                 const DeepCollectionEquality().equals(other.width, width)) &&
             (identical(other.height, height) ||
                 const DeepCollectionEquality().equals(other.height, height)) &&
-            (identical(other.display_sitename, display_sitename) ||
+            (identical(other.displaySitename, displaySitename) ||
                 const DeepCollectionEquality()
-                    .equals(other.display_sitename, display_sitename)) &&
-            (identical(other.doc_url, doc_url) ||
-                const DeepCollectionEquality()
-                    .equals(other.doc_url, doc_url)) &&
+                    .equals(other.displaySitename, displaySitename)) &&
+            (identical(other.docUrl, docUrl) ||
+                const DeepCollectionEquality().equals(other.docUrl, docUrl)) &&
             (identical(other.datetime, datetime) ||
                 const DeepCollectionEquality()
                     .equals(other.datetime, datetime)));
@@ -274,12 +273,12 @@ class _$_ApiKakaoImage implements _ApiKakaoImage {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(collection) ^
-      const DeepCollectionEquality().hash(thumbnail_url) ^
-      const DeepCollectionEquality().hash(image_url) ^
+      const DeepCollectionEquality().hash(thumbnailUrl) ^
+      const DeepCollectionEquality().hash(imageUrl) ^
       const DeepCollectionEquality().hash(width) ^
       const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(display_sitename) ^
-      const DeepCollectionEquality().hash(doc_url) ^
+      const DeepCollectionEquality().hash(displaySitename) ^
+      const DeepCollectionEquality().hash(docUrl) ^
       const DeepCollectionEquality().hash(datetime);
 
   @JsonKey(ignore: true)
@@ -291,28 +290,28 @@ class _$_ApiKakaoImage implements _ApiKakaoImage {
 abstract class _ApiKakaoImage implements ApiKakaoImage {
   const factory _ApiKakaoImage(
       {required String collection,
-      required String thumbnail_url,
-      required String image_url,
+      required String thumbnailUrl,
+      required String imageUrl,
       required int width,
       required int height,
-      required String display_sitename,
-      required String doc_url,
+      required String displaySitename,
+      required String docUrl,
       required DateTime datetime}) = _$_ApiKakaoImage;
 
   @override
   String get collection => throw _privateConstructorUsedError;
   @override
-  String get thumbnail_url => throw _privateConstructorUsedError;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   @override
-  String get image_url => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
   @override
   int get width => throw _privateConstructorUsedError;
   @override
   int get height => throw _privateConstructorUsedError;
   @override
-  String get display_sitename => throw _privateConstructorUsedError;
+  String get displaySitename => throw _privateConstructorUsedError;
   @override
-  String get doc_url => throw _privateConstructorUsedError;
+  String get docUrl => throw _privateConstructorUsedError;
   @override
   DateTime get datetime => throw _privateConstructorUsedError;
   @override
@@ -326,13 +325,13 @@ class _$ApiKakaoImageMetaTearOff {
   const _$ApiKakaoImageMetaTearOff();
 
   _ApiKakaoImageMeta call(
-      {required bool is_end,
-      required int pageable_count,
-      required int total_count}) {
+      {required bool isEnd,
+      required int pageableCount,
+      required int totalCount}) {
     return _ApiKakaoImageMeta(
-      is_end: is_end,
-      pageable_count: pageable_count,
-      total_count: total_count,
+      isEnd: isEnd,
+      pageableCount: pageableCount,
+      totalCount: totalCount,
     );
   }
 }
@@ -342,9 +341,9 @@ const $ApiKakaoImageMeta = _$ApiKakaoImageMetaTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoImageMeta {
-  bool get is_end => throw _privateConstructorUsedError;
-  int get pageable_count => throw _privateConstructorUsedError;
-  int get total_count => throw _privateConstructorUsedError;
+  bool get isEnd => throw _privateConstructorUsedError;
+  int get pageableCount => throw _privateConstructorUsedError;
+  int get totalCount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoImageMetaCopyWith<ApiKakaoImageMeta> get copyWith =>
@@ -356,7 +355,7 @@ abstract class $ApiKakaoImageMetaCopyWith<$Res> {
   factory $ApiKakaoImageMetaCopyWith(
           ApiKakaoImageMeta value, $Res Function(ApiKakaoImageMeta) then) =
       _$ApiKakaoImageMetaCopyWithImpl<$Res>;
-  $Res call({bool is_end, int pageable_count, int total_count});
+  $Res call({bool isEnd, int pageableCount, int totalCount});
 }
 
 /// @nodoc
@@ -370,22 +369,22 @@ class _$ApiKakaoImageMetaCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? is_end = freezed,
-    Object? pageable_count = freezed,
-    Object? total_count = freezed,
+    Object? isEnd = freezed,
+    Object? pageableCount = freezed,
+    Object? totalCount = freezed,
   }) {
     return _then(_value.copyWith(
-      is_end: is_end == freezed
-          ? _value.is_end
-          : is_end // ignore: cast_nullable_to_non_nullable
+      isEnd: isEnd == freezed
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
               as bool,
-      pageable_count: pageable_count == freezed
-          ? _value.pageable_count
-          : pageable_count // ignore: cast_nullable_to_non_nullable
+      pageableCount: pageableCount == freezed
+          ? _value.pageableCount
+          : pageableCount // ignore: cast_nullable_to_non_nullable
               as int,
-      total_count: total_count == freezed
-          ? _value.total_count
-          : total_count // ignore: cast_nullable_to_non_nullable
+      totalCount: totalCount == freezed
+          ? _value.totalCount
+          : totalCount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -398,7 +397,7 @@ abstract class _$ApiKakaoImageMetaCopyWith<$Res>
           _ApiKakaoImageMeta value, $Res Function(_ApiKakaoImageMeta) then) =
       __$ApiKakaoImageMetaCopyWithImpl<$Res>;
   @override
-  $Res call({bool is_end, int pageable_count, int total_count});
+  $Res call({bool isEnd, int pageableCount, int totalCount});
 }
 
 /// @nodoc
@@ -414,22 +413,22 @@ class __$ApiKakaoImageMetaCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? is_end = freezed,
-    Object? pageable_count = freezed,
-    Object? total_count = freezed,
+    Object? isEnd = freezed,
+    Object? pageableCount = freezed,
+    Object? totalCount = freezed,
   }) {
     return _then(_ApiKakaoImageMeta(
-      is_end: is_end == freezed
-          ? _value.is_end
-          : is_end // ignore: cast_nullable_to_non_nullable
+      isEnd: isEnd == freezed
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
               as bool,
-      pageable_count: pageable_count == freezed
-          ? _value.pageable_count
-          : pageable_count // ignore: cast_nullable_to_non_nullable
+      pageableCount: pageableCount == freezed
+          ? _value.pageableCount
+          : pageableCount // ignore: cast_nullable_to_non_nullable
               as int,
-      total_count: total_count == freezed
-          ? _value.total_count
-          : total_count // ignore: cast_nullable_to_non_nullable
+      totalCount: totalCount == freezed
+          ? _value.totalCount
+          : totalCount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -439,42 +438,42 @@ class __$ApiKakaoImageMetaCopyWithImpl<$Res>
 
 class _$_ApiKakaoImageMeta implements _ApiKakaoImageMeta {
   const _$_ApiKakaoImageMeta(
-      {required this.is_end,
-      required this.pageable_count,
-      required this.total_count});
+      {required this.isEnd,
+      required this.pageableCount,
+      required this.totalCount});
 
   @override
-  final bool is_end;
+  final bool isEnd;
   @override
-  final int pageable_count;
+  final int pageableCount;
   @override
-  final int total_count;
+  final int totalCount;
 
   @override
   String toString() {
-    return 'ApiKakaoImageMeta(is_end: $is_end, pageable_count: $pageable_count, total_count: $total_count)';
+    return 'ApiKakaoImageMeta(isEnd: $isEnd, pageableCount: $pageableCount, totalCount: $totalCount)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiKakaoImageMeta &&
-            (identical(other.is_end, is_end) ||
-                const DeepCollectionEquality().equals(other.is_end, is_end)) &&
-            (identical(other.pageable_count, pageable_count) ||
+            (identical(other.isEnd, isEnd) ||
+                const DeepCollectionEquality().equals(other.isEnd, isEnd)) &&
+            (identical(other.pageableCount, pageableCount) ||
                 const DeepCollectionEquality()
-                    .equals(other.pageable_count, pageable_count)) &&
-            (identical(other.total_count, total_count) ||
+                    .equals(other.pageableCount, pageableCount)) &&
+            (identical(other.totalCount, totalCount) ||
                 const DeepCollectionEquality()
-                    .equals(other.total_count, total_count)));
+                    .equals(other.totalCount, totalCount)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(is_end) ^
-      const DeepCollectionEquality().hash(pageable_count) ^
-      const DeepCollectionEquality().hash(total_count);
+      const DeepCollectionEquality().hash(isEnd) ^
+      const DeepCollectionEquality().hash(pageableCount) ^
+      const DeepCollectionEquality().hash(totalCount);
 
   @JsonKey(ignore: true)
   @override
@@ -484,16 +483,16 @@ class _$_ApiKakaoImageMeta implements _ApiKakaoImageMeta {
 
 abstract class _ApiKakaoImageMeta implements ApiKakaoImageMeta {
   const factory _ApiKakaoImageMeta(
-      {required bool is_end,
-      required int pageable_count,
-      required int total_count}) = _$_ApiKakaoImageMeta;
+      {required bool isEnd,
+      required int pageableCount,
+      required int totalCount}) = _$_ApiKakaoImageMeta;
 
   @override
-  bool get is_end => throw _privateConstructorUsedError;
+  bool get isEnd => throw _privateConstructorUsedError;
   @override
-  int get pageable_count => throw _privateConstructorUsedError;
+  int get pageableCount => throw _privateConstructorUsedError;
   @override
-  int get total_count => throw _privateConstructorUsedError;
+  int get totalCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoImageMetaCopyWith<_ApiKakaoImageMeta> get copyWith =>

@@ -39,10 +39,10 @@ class KakaoImageGridView extends StatelessWidget {
                   child: Stack(
                     children: [
                       Hero(
-                        tag: data.thumbnail_url,
+                        tag: data.thumbnailUrl,
                         child: Image(
                           image: NetworkImage(
-                            data.thumbnail_url,
+                            data.thumbnailUrl,
                             scale: 1.0,
                           ),
                         ),

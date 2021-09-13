@@ -53,9 +53,9 @@ class CommunityDetailUpdate extends StatelessWidget {
                       Get.back();
                     }
                   : () {
-                      context
-                          .read<CommunityDetailBloc>()
-                          .add(const CommunityDetailEvent.screenChanged(true));
+                      context.read<CommunityDetailBloc>().add(
+                          const CommunityDetailEvent.screenChanged(
+                              value: true));
                     },
             ),
             body: SingleChildScrollView(

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:ddd_practice_app/domain/naver_api/api_naver_papago_practice/api_naver_papago.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

@@ -28,9 +28,9 @@ class _$CommunityDetailEventTearOff {
     );
   }
 
-  _ScreenChanged screenChanged(bool value) {
+  _ScreenChanged screenChanged({required bool value}) {
     return _ScreenChanged(
-      value,
+      value: value,
     );
   }
 }
@@ -343,7 +343,7 @@ class __$ScreenChangedCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(_ScreenChanged(
-      value == freezed
+      value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -354,7 +354,7 @@ class __$ScreenChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ScreenChanged implements _ScreenChanged {
-  const _$_ScreenChanged(this.value);
+  const _$_ScreenChanged({required this.value});
 
   @override
   final bool value;
@@ -431,7 +431,7 @@ class _$_ScreenChanged implements _ScreenChanged {
 }
 
 abstract class _ScreenChanged implements CommunityDetailEvent {
-  const factory _ScreenChanged(bool value) = _$_ScreenChanged;
+  const factory _ScreenChanged({required bool value}) = _$_ScreenChanged;
 
   bool get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
