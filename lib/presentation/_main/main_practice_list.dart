@@ -55,6 +55,7 @@ class MainPracticeList extends StatelessWidget {
             context,
             colors: Colors.yellow,
             textColors: const Color.fromRGBO(135, 135, 135, 1),
+            secondTextColors: const Color.fromRGBO(135, 135, 135, 1),
             router: KakaoApiPracticeItem().router[index].toString(),
             title: KakaoApiPracticeItem().title[index].toString(),
             sm: KakaoApiPracticeItem().stateManagement[index].toString(),
@@ -78,6 +79,7 @@ class MainPracticeList extends StatelessWidget {
             context,
             colors: Colors.green,
             textColors: Colors.white,
+            secondTextColors: Colors.white,
             router: NaverApiPracticeItem().router[index].toString(),
             title: NaverApiPracticeItem().title[index].toString(),
             sm: NaverApiPracticeItem().stateManagement[index].toString(),
@@ -100,7 +102,8 @@ class MainPracticeList extends StatelessWidget {
           return _itemForm(
             context,
             colors: Colors.lightBlue,
-            textColors: Colors.pink.shade300,
+            textColors: Colors.red,
+            secondTextColors: Colors.yellow,
             router: GoogleApiPracticeItem().router[index].toString(),
             title: GoogleApiPracticeItem().title[index].toString(),
             sm: GoogleApiPracticeItem().stateManagement[index].toString(),
@@ -124,6 +127,7 @@ class MainPracticeList extends StatelessWidget {
             context,
             colors: Colors.teal,
             textColors: Colors.white,
+            secondTextColors: Colors.white,
             router: WidgetPracticeItem().router[index].toString(),
             title: WidgetPracticeItem().title[index].toString(),
             sm: WidgetPracticeItem().stateManagement[index].toString(),
@@ -147,6 +151,7 @@ class MainPracticeList extends StatelessWidget {
             context,
             colors: Colors.deepPurple,
             textColors: Colors.white,
+            secondTextColors: Colors.white,
             router: ExampleApiPracticeItem().router[index].toString(),
             title: ExampleApiPracticeItem().title[index].toString(),
             sm: ExampleApiPracticeItem().stateManagement[index].toString(),
@@ -161,6 +166,7 @@ class MainPracticeList extends StatelessWidget {
     required String sm,
     required Color colors,
     required Color textColors,
+    required Color secondTextColors,
   }) {
     return InkWell(
       onTap: () {
@@ -185,7 +191,9 @@ class MainPracticeList extends StatelessWidget {
             Text(
               sm,
               style: theme.textTheme.bodyText2!.copyWith(
-                  fontSize: 8, fontWeight: FontWeight.bold, color: textColors),
+                  fontSize: 8,
+                  fontWeight: FontWeight.bold,
+                  color: secondTextColors),
             ),
           ],
         ),

@@ -50,9 +50,15 @@ class NaverApiPracticeItem {
 }
 
 class GoogleApiPracticeItem {
-  List title = [];
-  List router = [];
-  List stateManagement = [];
+  List title = [
+    'Maps',
+  ];
+  List router = [
+    '/apiGoogleMapsMainPage',
+  ];
+  List stateManagement = [
+    'BLoc',
+  ];
 }
 
 class WidgetPracticeItem {

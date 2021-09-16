@@ -8,6 +8,7 @@ import 'package:ddd_practice_app/presentation/_main/main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_news_practice/api_news_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_picture_practice/api_picture_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_weather_practice/api_weather_main_page.dart';
+import 'package:ddd_practice_app/presentation/google_api/api_google_maps_practice/api_google_maps_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book_practice/api_kakao_book_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image_practice/api_kakao_image_main_page.dart';
@@ -67,6 +68,7 @@ class AppWidget extends StatelessWidget {
               ApiNaverRomanizationMainPage(),
           '/apiNaverImageMainPage': (context) => ApiNaverImageMainPage(),
           '/apiNaverShopMainPage': (context) => ApiNaverShopMainPage(),
+          '/apiGoogleMapsMainPage': (context) => const ApiGoogleMapsMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>
               const WidgetHeroAnimationMainPage(),
