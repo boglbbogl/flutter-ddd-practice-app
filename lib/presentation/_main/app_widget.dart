@@ -1,4 +1,5 @@
 import 'package:ddd_practice_app/application/google_api/api_google_maps_practice/api_google_maps_main_bloc.dart';
+import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_bloc.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
@@ -14,6 +15,7 @@ import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book_practice/
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image_practice/api_kakao_image_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_address_practice/api_kakao_local_address_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
@@ -46,6 +48,8 @@ class AppWidget extends StatelessWidget {
             create: (context) =>
                 getIt<ApiKakaoTranslateMainCubit>()..started()),
         BlocProvider(
+            create: (context) => getIt<ApiKakaoLocalKeywordMainBloc>()),
+        BlocProvider(
             create: (context) => getIt<ApiNaverPapagoMainBloc>()
               ..add(const ApiNaverPapagoMainEvent.started())),
         BlocProvider(create: (context) => getIt<ApiGoogleMapsMainBloc>()),
@@ -65,6 +69,8 @@ class AppWidget extends StatelessWidget {
               ApiKakaoTranslateMultipleMainPage(),
           '/apiKakaoLocalAddressMainPage': (context) =>
               const ApiKakaoLocalAddressMainPage(),
+          '/apiKakaoLocalKeywordMainPage': (context) =>
+              ApiKakaoLocalKeywordMainPage(),
           '/apiNaverPapagoMainPage': (context) => ApiNaverPapagoMainPage(),
           '/apiNaverRomanizationMainPage': (context) =>
               ApiNaverRomanizationMainPage(),

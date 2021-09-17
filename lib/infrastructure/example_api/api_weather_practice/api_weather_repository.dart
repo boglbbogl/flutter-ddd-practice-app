@@ -6,7 +6,6 @@ import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather_failure.dart';
 import 'package:ddd_practice_app/infrastructure/example_api/api_weather_practice/api_weather_dtos.dart';
 
-import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 

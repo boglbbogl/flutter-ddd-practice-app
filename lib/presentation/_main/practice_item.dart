@@ -7,6 +7,7 @@ class KakaoApiPracticeItem {
     'Translate..KR_EN',
     'Translate..Multiple',
     'Local Address',
+    'Local Keyword'
   ];
   List router = [
     '/apiKakaoWebMainPage',
@@ -16,6 +17,7 @@ class KakaoApiPracticeItem {
     '/apiKakaoTranslateMainPage',
     '/apiKakaoTranslateMultipleMainPage',
     '/apiKakaoLocalAddressMainPage',
+    '/apiKakaoLocalKeywordMainPage',
   ];
   List stateManagement = [
     'Cubit',
@@ -25,6 +27,7 @@ class KakaoApiPracticeItem {
     'Cubit',
     'Cubit',
     'Cubit',
+    'BLoC',
   ];
 }
 
