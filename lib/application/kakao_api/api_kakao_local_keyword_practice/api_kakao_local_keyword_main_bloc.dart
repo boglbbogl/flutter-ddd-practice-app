@@ -26,6 +26,7 @@ class ApiKakaoLocalKeywordMainBloc
     yield* event.map(
       started: (e) async* {},
       searchResult: (e) async* {
+        yield state.copyWith(isLoading: true);
         final result = await _keywordRepository.getLocalKeyword(
             query: e.query, page: 1, size: 15);
         yield state.copyWith(
@@ -33,19 +34,63 @@ class ApiKakaoLocalKeywordMainBloc
           query: e.query,
           page: 1,
           size: 15,
+          isLoading: false,
+          isEnd: result == null ? false : result.meta.isEnd,
         );
       },
-      itemLoadMore: (e) async* {
+      infinityUpDate: (e) async* {
+        yield state.copyWith(isLoading: true);
         final result = await _keywordRepository.getLocalKeyword(
           query: state.query,
-          page: state.page + 1,
+          page: state.isEnd ? 1 : state.page + 1,
           size: 15,
         );
+
         yield state.copyWith(
+          isLoading: false,
           apiKakaoLocalKeyword: result,
-          page: state.page + 1,
+          page: state.isEnd ? 1 : state.page + 1,
           size: state.size,
+          isEnd: result!.meta.isEnd,
         );
+      },
+      pageDown: (e) async* {
+        yield state.copyWith(isLoading: true);
+        if (state.page == 1) {
+          yield state.copyWith(isEnd: true);
+        } else {
+          final result = await _keywordRepository.getLocalKeyword(
+            query: state.query,
+            page: state.page - 1,
+            size: 15,
+          );
+          yield state.copyWith(
+            apiKakaoLocalKeyword: result,
+            page: state.page - 1,
+            size: state.size,
+            isLoading: false,
+            isEnd: result!.meta.isEnd,
+          );
+        }
+      },
+      pageUp: (e) async* {
+        yield state.copyWith(isLoading: true);
+        if (state.isEnd == true) {
+          yield state.copyWith(isEnd: true);
+        } else {
+          final result = await _keywordRepository.getLocalKeyword(
+            query: state.query,
+            page: state.page + 1,
+            size: 15,
+          );
+          yield state.copyWith(
+            apiKakaoLocalKeyword: result,
+            page: state.page + 1,
+            size: state.size,
+            isLoading: false,
+            isEnd: result!.meta.isEnd,
+          );
+        }
       },
       webClient: (e) async* {
         if (await canLaunch(e.url)) {

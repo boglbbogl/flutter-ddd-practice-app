@@ -6,7 +6,10 @@ class ApiKakaoLocalKeywordMainEvent with _$ApiKakaoLocalKeywordMainEvent {
   const factory ApiKakaoLocalKeywordMainEvent.searchResult({
     required String query,
   }) = _SearchResult;
-  const factory ApiKakaoLocalKeywordMainEvent.itemLoadMore() = _ItemLoadMore;
+  const factory ApiKakaoLocalKeywordMainEvent.pageUp() = _PageUp;
+  const factory ApiKakaoLocalKeywordMainEvent.pageDown() = _PageDown;
+  const factory ApiKakaoLocalKeywordMainEvent.infinityUpDate() =
+      _InfinityUpDate;
   const factory ApiKakaoLocalKeywordMainEvent.webClient({
     required String url,
   }) = _WebClient;

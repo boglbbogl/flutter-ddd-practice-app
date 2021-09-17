@@ -26,8 +26,16 @@ class _$ApiKakaoLocalKeywordMainEventTearOff {
     );
   }
 
-  _ItemLoadMore itemLoadMore() {
-    return const _ItemLoadMore();
+  _PageUp pageUp() {
+    return const _PageUp();
+  }
+
+  _PageDown pageDown() {
+    return const _PageDown();
+  }
+
+  _InfinityUpDate infinityUpDate() {
+    return const _InfinityUpDate();
   }
 
   _WebClient webClient({required String url}) {
@@ -52,7 +60,9 @@ mixin _$ApiKakaoLocalKeywordMainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searchResult,
-    required TResult Function() itemLoadMore,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
     required TResult Function(String url) webClient,
     required TResult Function(String phoneNum) phoneClient,
   }) =>
@@ -61,7 +71,9 @@ mixin _$ApiKakaoLocalKeywordMainEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searchResult,
-    TResult Function()? itemLoadMore,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
     TResult Function(String url)? webClient,
     TResult Function(String phoneNum)? phoneClient,
     required TResult orElse(),
@@ -71,7 +83,9 @@ mixin _$ApiKakaoLocalKeywordMainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SearchResult value) searchResult,
-    required TResult Function(_ItemLoadMore value) itemLoadMore,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
     required TResult Function(_WebClient value) webClient,
     required TResult Function(_PhoneClient value) phoneClient,
   }) =>
@@ -80,7 +94,9 @@ mixin _$ApiKakaoLocalKeywordMainEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SearchResult value)? searchResult,
-    TResult Function(_ItemLoadMore value)? itemLoadMore,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
     TResult Function(_WebClient value)? webClient,
     TResult Function(_PhoneClient value)? phoneClient,
     required TResult orElse(),
@@ -146,7 +162,9 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searchResult,
-    required TResult Function() itemLoadMore,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
     required TResult Function(String url) webClient,
     required TResult Function(String phoneNum) phoneClient,
   }) {
@@ -158,7 +176,9 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searchResult,
-    TResult Function()? itemLoadMore,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
     TResult Function(String url)? webClient,
     TResult Function(String phoneNum)? phoneClient,
     required TResult orElse(),
@@ -174,7 +194,9 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SearchResult value) searchResult,
-    required TResult Function(_ItemLoadMore value) itemLoadMore,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
     required TResult Function(_WebClient value) webClient,
     required TResult Function(_PhoneClient value) phoneClient,
   }) {
@@ -186,7 +208,9 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SearchResult value)? searchResult,
-    TResult Function(_ItemLoadMore value)? itemLoadMore,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
     TResult Function(_WebClient value)? webClient,
     TResult Function(_PhoneClient value)? phoneClient,
     required TResult orElse(),
@@ -269,7 +293,9 @@ class _$_SearchResult implements _SearchResult {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searchResult,
-    required TResult Function() itemLoadMore,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
     required TResult Function(String url) webClient,
     required TResult Function(String phoneNum) phoneClient,
   }) {
@@ -281,7 +307,9 @@ class _$_SearchResult implements _SearchResult {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searchResult,
-    TResult Function()? itemLoadMore,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
     TResult Function(String url)? webClient,
     TResult Function(String phoneNum)? phoneClient,
     required TResult orElse(),
@@ -297,7 +325,9 @@ class _$_SearchResult implements _SearchResult {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SearchResult value) searchResult,
-    required TResult Function(_ItemLoadMore value) itemLoadMore,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
     required TResult Function(_WebClient value) webClient,
     required TResult Function(_PhoneClient value) phoneClient,
   }) {
@@ -309,7 +339,9 @@ class _$_SearchResult implements _SearchResult {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SearchResult value)? searchResult,
-    TResult Function(_ItemLoadMore value)? itemLoadMore,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
     TResult Function(_WebClient value)? webClient,
     TResult Function(_PhoneClient value)? phoneClient,
     required TResult orElse(),
@@ -331,37 +363,35 @@ abstract class _SearchResult implements ApiKakaoLocalKeywordMainEvent {
 }
 
 /// @nodoc
-abstract class _$ItemLoadMoreCopyWith<$Res> {
-  factory _$ItemLoadMoreCopyWith(
-          _ItemLoadMore value, $Res Function(_ItemLoadMore) then) =
-      __$ItemLoadMoreCopyWithImpl<$Res>;
+abstract class _$PageUpCopyWith<$Res> {
+  factory _$PageUpCopyWith(_PageUp value, $Res Function(_PageUp) then) =
+      __$PageUpCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ItemLoadMoreCopyWithImpl<$Res>
+class __$PageUpCopyWithImpl<$Res>
     extends _$ApiKakaoLocalKeywordMainEventCopyWithImpl<$Res>
-    implements _$ItemLoadMoreCopyWith<$Res> {
-  __$ItemLoadMoreCopyWithImpl(
-      _ItemLoadMore _value, $Res Function(_ItemLoadMore) _then)
-      : super(_value, (v) => _then(v as _ItemLoadMore));
+    implements _$PageUpCopyWith<$Res> {
+  __$PageUpCopyWithImpl(_PageUp _value, $Res Function(_PageUp) _then)
+      : super(_value, (v) => _then(v as _PageUp));
 
   @override
-  _ItemLoadMore get _value => super._value as _ItemLoadMore;
+  _PageUp get _value => super._value as _PageUp;
 }
 
 /// @nodoc
 
-class _$_ItemLoadMore implements _ItemLoadMore {
-  const _$_ItemLoadMore();
+class _$_PageUp implements _PageUp {
+  const _$_PageUp();
 
   @override
   String toString() {
-    return 'ApiKakaoLocalKeywordMainEvent.itemLoadMore()';
+    return 'ApiKakaoLocalKeywordMainEvent.pageUp()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ItemLoadMore);
+    return identical(this, other) || (other is _PageUp);
   }
 
   @override
@@ -372,11 +402,13 @@ class _$_ItemLoadMore implements _ItemLoadMore {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searchResult,
-    required TResult Function() itemLoadMore,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
     required TResult Function(String url) webClient,
     required TResult Function(String phoneNum) phoneClient,
   }) {
-    return itemLoadMore();
+    return pageUp();
   }
 
   @override
@@ -384,13 +416,15 @@ class _$_ItemLoadMore implements _ItemLoadMore {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searchResult,
-    TResult Function()? itemLoadMore,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
     TResult Function(String url)? webClient,
     TResult Function(String phoneNum)? phoneClient,
     required TResult orElse(),
   }) {
-    if (itemLoadMore != null) {
-      return itemLoadMore();
+    if (pageUp != null) {
+      return pageUp();
     }
     return orElse();
   }
@@ -400,11 +434,13 @@ class _$_ItemLoadMore implements _ItemLoadMore {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SearchResult value) searchResult,
-    required TResult Function(_ItemLoadMore value) itemLoadMore,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
     required TResult Function(_WebClient value) webClient,
     required TResult Function(_PhoneClient value) phoneClient,
   }) {
-    return itemLoadMore(this);
+    return pageUp(this);
   }
 
   @override
@@ -412,20 +448,232 @@ class _$_ItemLoadMore implements _ItemLoadMore {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SearchResult value)? searchResult,
-    TResult Function(_ItemLoadMore value)? itemLoadMore,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
     TResult Function(_WebClient value)? webClient,
     TResult Function(_PhoneClient value)? phoneClient,
     required TResult orElse(),
   }) {
-    if (itemLoadMore != null) {
-      return itemLoadMore(this);
+    if (pageUp != null) {
+      return pageUp(this);
     }
     return orElse();
   }
 }
 
-abstract class _ItemLoadMore implements ApiKakaoLocalKeywordMainEvent {
-  const factory _ItemLoadMore() = _$_ItemLoadMore;
+abstract class _PageUp implements ApiKakaoLocalKeywordMainEvent {
+  const factory _PageUp() = _$_PageUp;
+}
+
+/// @nodoc
+abstract class _$PageDownCopyWith<$Res> {
+  factory _$PageDownCopyWith(_PageDown value, $Res Function(_PageDown) then) =
+      __$PageDownCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$PageDownCopyWithImpl<$Res>
+    extends _$ApiKakaoLocalKeywordMainEventCopyWithImpl<$Res>
+    implements _$PageDownCopyWith<$Res> {
+  __$PageDownCopyWithImpl(_PageDown _value, $Res Function(_PageDown) _then)
+      : super(_value, (v) => _then(v as _PageDown));
+
+  @override
+  _PageDown get _value => super._value as _PageDown;
+}
+
+/// @nodoc
+
+class _$_PageDown implements _PageDown {
+  const _$_PageDown();
+
+  @override
+  String toString() {
+    return 'ApiKakaoLocalKeywordMainEvent.pageDown()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _PageDown);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String query) searchResult,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
+    required TResult Function(String url) webClient,
+    required TResult Function(String phoneNum) phoneClient,
+  }) {
+    return pageDown();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String query)? searchResult,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
+    TResult Function(String url)? webClient,
+    TResult Function(String phoneNum)? phoneClient,
+    required TResult orElse(),
+  }) {
+    if (pageDown != null) {
+      return pageDown();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SearchResult value) searchResult,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
+    required TResult Function(_WebClient value) webClient,
+    required TResult Function(_PhoneClient value) phoneClient,
+  }) {
+    return pageDown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SearchResult value)? searchResult,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
+    TResult Function(_WebClient value)? webClient,
+    TResult Function(_PhoneClient value)? phoneClient,
+    required TResult orElse(),
+  }) {
+    if (pageDown != null) {
+      return pageDown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PageDown implements ApiKakaoLocalKeywordMainEvent {
+  const factory _PageDown() = _$_PageDown;
+}
+
+/// @nodoc
+abstract class _$InfinityUpDateCopyWith<$Res> {
+  factory _$InfinityUpDateCopyWith(
+          _InfinityUpDate value, $Res Function(_InfinityUpDate) then) =
+      __$InfinityUpDateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InfinityUpDateCopyWithImpl<$Res>
+    extends _$ApiKakaoLocalKeywordMainEventCopyWithImpl<$Res>
+    implements _$InfinityUpDateCopyWith<$Res> {
+  __$InfinityUpDateCopyWithImpl(
+      _InfinityUpDate _value, $Res Function(_InfinityUpDate) _then)
+      : super(_value, (v) => _then(v as _InfinityUpDate));
+
+  @override
+  _InfinityUpDate get _value => super._value as _InfinityUpDate;
+}
+
+/// @nodoc
+
+class _$_InfinityUpDate implements _InfinityUpDate {
+  const _$_InfinityUpDate();
+
+  @override
+  String toString() {
+    return 'ApiKakaoLocalKeywordMainEvent.infinityUpDate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InfinityUpDate);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String query) searchResult,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
+    required TResult Function(String url) webClient,
+    required TResult Function(String phoneNum) phoneClient,
+  }) {
+    return infinityUpDate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String query)? searchResult,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
+    TResult Function(String url)? webClient,
+    TResult Function(String phoneNum)? phoneClient,
+    required TResult orElse(),
+  }) {
+    if (infinityUpDate != null) {
+      return infinityUpDate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SearchResult value) searchResult,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
+    required TResult Function(_WebClient value) webClient,
+    required TResult Function(_PhoneClient value) phoneClient,
+  }) {
+    return infinityUpDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SearchResult value)? searchResult,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
+    TResult Function(_WebClient value)? webClient,
+    TResult Function(_PhoneClient value)? phoneClient,
+    required TResult orElse(),
+  }) {
+    if (infinityUpDate != null) {
+      return infinityUpDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InfinityUpDate implements ApiKakaoLocalKeywordMainEvent {
+  const factory _InfinityUpDate() = _$_InfinityUpDate;
 }
 
 /// @nodoc
@@ -494,7 +742,9 @@ class _$_WebClient implements _WebClient {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searchResult,
-    required TResult Function() itemLoadMore,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
     required TResult Function(String url) webClient,
     required TResult Function(String phoneNum) phoneClient,
   }) {
@@ -506,7 +756,9 @@ class _$_WebClient implements _WebClient {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searchResult,
-    TResult Function()? itemLoadMore,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
     TResult Function(String url)? webClient,
     TResult Function(String phoneNum)? phoneClient,
     required TResult orElse(),
@@ -522,7 +774,9 @@ class _$_WebClient implements _WebClient {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SearchResult value) searchResult,
-    required TResult Function(_ItemLoadMore value) itemLoadMore,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
     required TResult Function(_WebClient value) webClient,
     required TResult Function(_PhoneClient value) phoneClient,
   }) {
@@ -534,7 +788,9 @@ class _$_WebClient implements _WebClient {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SearchResult value)? searchResult,
-    TResult Function(_ItemLoadMore value)? itemLoadMore,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
     TResult Function(_WebClient value)? webClient,
     TResult Function(_PhoneClient value)? phoneClient,
     required TResult orElse(),
@@ -623,7 +879,9 @@ class _$_PhoneClient implements _PhoneClient {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String query) searchResult,
-    required TResult Function() itemLoadMore,
+    required TResult Function() pageUp,
+    required TResult Function() pageDown,
+    required TResult Function() infinityUpDate,
     required TResult Function(String url) webClient,
     required TResult Function(String phoneNum) phoneClient,
   }) {
@@ -635,7 +893,9 @@ class _$_PhoneClient implements _PhoneClient {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String query)? searchResult,
-    TResult Function()? itemLoadMore,
+    TResult Function()? pageUp,
+    TResult Function()? pageDown,
+    TResult Function()? infinityUpDate,
     TResult Function(String url)? webClient,
     TResult Function(String phoneNum)? phoneClient,
     required TResult orElse(),
@@ -651,7 +911,9 @@ class _$_PhoneClient implements _PhoneClient {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SearchResult value) searchResult,
-    required TResult Function(_ItemLoadMore value) itemLoadMore,
+    required TResult Function(_PageUp value) pageUp,
+    required TResult Function(_PageDown value) pageDown,
+    required TResult Function(_InfinityUpDate value) infinityUpDate,
     required TResult Function(_WebClient value) webClient,
     required TResult Function(_PhoneClient value) phoneClient,
   }) {
@@ -663,7 +925,9 @@ class _$_PhoneClient implements _PhoneClient {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SearchResult value)? searchResult,
-    TResult Function(_ItemLoadMore value)? itemLoadMore,
+    TResult Function(_PageUp value)? pageUp,
+    TResult Function(_PageDown value)? pageDown,
+    TResult Function(_InfinityUpDate value)? infinityUpDate,
     TResult Function(_WebClient value)? webClient,
     TResult Function(_PhoneClient value)? phoneClient,
     required TResult orElse(),
@@ -693,12 +957,14 @@ class _$ApiKakaoLocalKeywordMainStateTearOff {
       required String query,
       required int page,
       required int size,
+      required bool isEnd,
       required ApiKakaoLocalKeyword? apiKakaoLocalKeyword}) {
     return _ApiKakaoLocalKeywordMainState(
       isLoading: isLoading,
       query: query,
       page: page,
       size: size,
+      isEnd: isEnd,
       apiKakaoLocalKeyword: apiKakaoLocalKeyword,
     );
   }
@@ -713,6 +979,7 @@ mixin _$ApiKakaoLocalKeywordMainState {
   String get query => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   int get size => throw _privateConstructorUsedError;
+  bool get isEnd => throw _privateConstructorUsedError;
   ApiKakaoLocalKeyword? get apiKakaoLocalKeyword =>
       throw _privateConstructorUsedError;
 
@@ -732,6 +999,7 @@ abstract class $ApiKakaoLocalKeywordMainStateCopyWith<$Res> {
       String query,
       int page,
       int size,
+      bool isEnd,
       ApiKakaoLocalKeyword? apiKakaoLocalKeyword});
 
   $ApiKakaoLocalKeywordCopyWith<$Res>? get apiKakaoLocalKeyword;
@@ -752,6 +1020,7 @@ class _$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
     Object? query = freezed,
     Object? page = freezed,
     Object? size = freezed,
+    Object? isEnd = freezed,
     Object? apiKakaoLocalKeyword = freezed,
   }) {
     return _then(_value.copyWith(
@@ -771,6 +1040,10 @@ class _$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
+      isEnd: isEnd == freezed
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
       apiKakaoLocalKeyword: apiKakaoLocalKeyword == freezed
           ? _value.apiKakaoLocalKeyword
           : apiKakaoLocalKeyword // ignore: cast_nullable_to_non_nullable
@@ -804,6 +1077,7 @@ abstract class _$ApiKakaoLocalKeywordMainStateCopyWith<$Res>
       String query,
       int page,
       int size,
+      bool isEnd,
       ApiKakaoLocalKeyword? apiKakaoLocalKeyword});
 
   @override
@@ -829,6 +1103,7 @@ class __$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
     Object? query = freezed,
     Object? page = freezed,
     Object? size = freezed,
+    Object? isEnd = freezed,
     Object? apiKakaoLocalKeyword = freezed,
   }) {
     return _then(_ApiKakaoLocalKeywordMainState(
@@ -848,6 +1123,10 @@ class __$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
+      isEnd: isEnd == freezed
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
       apiKakaoLocalKeyword: apiKakaoLocalKeyword == freezed
           ? _value.apiKakaoLocalKeyword
           : apiKakaoLocalKeyword // ignore: cast_nullable_to_non_nullable
@@ -865,6 +1144,7 @@ class _$_ApiKakaoLocalKeywordMainState
       required this.query,
       required this.page,
       required this.size,
+      required this.isEnd,
       required this.apiKakaoLocalKeyword});
 
   @override
@@ -876,11 +1156,13 @@ class _$_ApiKakaoLocalKeywordMainState
   @override
   final int size;
   @override
+  final bool isEnd;
+  @override
   final ApiKakaoLocalKeyword? apiKakaoLocalKeyword;
 
   @override
   String toString() {
-    return 'ApiKakaoLocalKeywordMainState(isLoading: $isLoading, query: $query, page: $page, size: $size, apiKakaoLocalKeyword: $apiKakaoLocalKeyword)';
+    return 'ApiKakaoLocalKeywordMainState(isLoading: $isLoading, query: $query, page: $page, size: $size, isEnd: $isEnd, apiKakaoLocalKeyword: $apiKakaoLocalKeyword)';
   }
 
   @override
@@ -896,6 +1178,8 @@ class _$_ApiKakaoLocalKeywordMainState
                 const DeepCollectionEquality().equals(other.page, page)) &&
             (identical(other.size, size) ||
                 const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.isEnd, isEnd) ||
+                const DeepCollectionEquality().equals(other.isEnd, isEnd)) &&
             (identical(other.apiKakaoLocalKeyword, apiKakaoLocalKeyword) ||
                 const DeepCollectionEquality()
                     .equals(other.apiKakaoLocalKeyword, apiKakaoLocalKeyword)));
@@ -908,6 +1192,7 @@ class _$_ApiKakaoLocalKeywordMainState
       const DeepCollectionEquality().hash(query) ^
       const DeepCollectionEquality().hash(page) ^
       const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(isEnd) ^
       const DeepCollectionEquality().hash(apiKakaoLocalKeyword);
 
   @JsonKey(ignore: true)
@@ -924,6 +1209,7 @@ abstract class _ApiKakaoLocalKeywordMainState
           required String query,
           required int page,
           required int size,
+          required bool isEnd,
           required ApiKakaoLocalKeyword? apiKakaoLocalKeyword}) =
       _$_ApiKakaoLocalKeywordMainState;
 
@@ -935,6 +1221,8 @@ abstract class _ApiKakaoLocalKeywordMainState
   int get page => throw _privateConstructorUsedError;
   @override
   int get size => throw _privateConstructorUsedError;
+  @override
+  bool get isEnd => throw _privateConstructorUsedError;
   @override
   ApiKakaoLocalKeyword? get apiKakaoLocalKeyword =>
       throw _privateConstructorUsedError;
