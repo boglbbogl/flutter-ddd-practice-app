@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ddd_practice_app/infrastructure/core/geo_location/geo_location.dart';
+import 'package:ddd_practice_app/domain/core/geo_location/geo_location.dart';
 
 extension GeoPointX on GeoPoint {
   static GeoPoint? fromJson(GeoPoint? geoPoint) => geoPoint;

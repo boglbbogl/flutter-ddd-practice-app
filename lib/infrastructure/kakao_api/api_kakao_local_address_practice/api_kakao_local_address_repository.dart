@@ -4,10 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_address.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_region.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/i_api_kakao_local_address_repository.dart';
-import 'package:ddd_practice_app/infrastructure/core/geo_location/geo_location.dart';
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_local_address_practice/api_kakao_local_address_dtos.dart';
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_local_address_practice/api_kakao_local_region_dtos.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 
@@ -70,24 +68,6 @@ class ApiKakaoLocalAddressRepository
       return [];
     } catch (error) {
       return [];
-    }
-  }
-
-  @override
-  Future<GeoLocation?> getGeoLocation() async {
-    LocationPermission permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-    }
-    if (permission == LocationPermission.whileInUse ||
-        permission == LocationPermission.always) {
-      final position = await Geolocator.getCurrentPosition();
-      return GeoLocation(
-        latitude: position.latitude,
-        longitude: position.longitude,
-      );
-    } else {
-      return null;
     }
   }
 }

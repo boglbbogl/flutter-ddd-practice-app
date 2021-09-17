@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/domain/core/geo_location/i_geo_location_repository.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/i_api_weather_repository.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address_practice/api_kakao_local_address.dart';
@@ -16,14 +17,16 @@ class ApiKakaoLocalAddressMainCubit
     extends Cubit<ApiKakaoLocalAddressMainState> {
   final IApiKakaoLocalAddressRepository _addressRepository;
   final IApiWeatherRepository _weatherRepository;
+  final IGeoLocationRepository _geoLocationRepository;
   ApiKakaoLocalAddressMainCubit(
     this._addressRepository,
     this._weatherRepository,
+    this._geoLocationRepository,
   ) : super(ApiKakaoLocalAddressMainState.initial());
 
   Future<Unit> getLocalAddress() async {
     emit(state.copyWith(isLoading: true));
-    final geoLocation = await _addressRepository.getGeoLocation();
+    final geoLocation = await _geoLocationRepository.getGeoLocation();
     if (geoLocation != null) {
       final lat = geoLocation.latitude;
       final lon = geoLocation.longitude;

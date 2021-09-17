@@ -1,3 +1,4 @@
+import 'package:ddd_practice_app/application/google_api/api_google_maps_practice/api_google_maps_main_bloc.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
@@ -47,6 +48,7 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) => getIt<ApiNaverPapagoMainBloc>()
               ..add(const ApiNaverPapagoMainEvent.started())),
+        BlocProvider(create: (context) => getIt<ApiGoogleMapsMainBloc>()),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',

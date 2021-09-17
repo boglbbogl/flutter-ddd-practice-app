@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/domain/core/geo_location/i_geo_location_repository.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/i_api_weather_repository.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -11,13 +12,15 @@ part 'api_weather_main_cubit.freezed.dart';
 @Injectable()
 class ApiWeatherMainCubit extends Cubit<ApiWeatherMainState> {
   final IApiWeatherRepository _weatherRepository;
+  final IGeoLocationRepository _geoLocationRepository;
   ApiWeatherMainCubit(
     this._weatherRepository,
+    this._geoLocationRepository,
   ) : super(ApiWeatherMainState.initial());
 
   Future<Unit> getWeatherData() async {
     emit(state.copyWith(isLoading: true));
-    final geoLocation = await _weatherRepository.getGeolocation();
+    final geoLocation = await _geoLocationRepository.getGeoLocation();
     if (geoLocation != null) {
       final lat = geoLocation.latitude;
       final lon = geoLocation.longitude;
