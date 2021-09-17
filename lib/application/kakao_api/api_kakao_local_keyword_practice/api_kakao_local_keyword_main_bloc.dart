@@ -33,17 +33,20 @@ class ApiKakaoLocalKeywordMainBloc
           query: e.query,
           page: 1,
           size: 15,
+          indexSize: 15,
         );
       },
       itemLoadMore: (e) async* {
         final result = await _keywordRepository.getLocalKeyword(
           query: state.query,
           page: state.page + 1,
-          size: 15,
+          size: state.size,
         );
         yield state.copyWith(
           apiKakaoLocalKeyword: result,
           page: state.page + 1,
+          size: state.size,
+          indexSize: state.indexSize + state.size,
         );
       },
       webClient: (e) async* {
