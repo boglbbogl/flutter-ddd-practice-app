@@ -12,11 +12,11 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/example_api/api_news_practice/api_news_main_bloc.dart'
-    as _i55;
-import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
     as _i56;
-import 'application/example_api/api_weather_practice/api_weather_main_cubit.dart'
+import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
     as _i57;
+import 'application/example_api/api_weather_practice/api_weather_main_cubit.dart'
+    as _i58;
 import 'application/google_api/api_google_maps_practice/api_google_maps_main_bloc.dart'
     as _i44;
 import 'application/kakao_api/api_kakao_book_practice/api_kakao_book_main_bloc.dart'
@@ -27,25 +27,27 @@ import 'application/kakao_api/api_kakao_image_practice/api_kakao_image_main_bloc
     as _i47;
 import 'application/kakao_api/api_kakao_local_address_practice/api_kakao_local_address_main_cubit.dart'
     as _i48;
-import 'application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart'
+import 'application/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_bloc.dart'
     as _i49;
-import 'application/kakao_api/api_kakao_web_practice/api_kakao_web_main_cubit.dart'
+import 'application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart'
     as _i50;
+import 'application/kakao_api/api_kakao_web_practice/api_kakao_web_main_cubit.dart'
+    as _i51;
 import 'application/main/main_cubit.dart' as _i40;
 import 'application/naver_api/api_naver_image_practice/api_naver_image_main_bloc.dart'
-    as _i51;
-import 'application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart'
     as _i52;
-import 'application/naver_api/api_naver_romanization_practice/api_naver_romanization_main_cubit.dart'
+import 'application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart'
     as _i53;
-import 'application/naver_api/api_naver_shop_practice/api_naver_shop_main_bloc.dart'
+import 'application/naver_api/api_naver_romanization_practice/api_naver_romanization_main_cubit.dart'
     as _i54;
+import 'application/naver_api/api_naver_shop_practice/api_naver_shop_main_bloc.dart'
+    as _i55;
 import 'application/widget_practice/community_practice/community_delete_cubit/community_delete_cubit.dart'
-    as _i58;
-import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
     as _i59;
-import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
     as _i60;
+import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+    as _i61;
 import 'application/widget_practice/member_practice/member_create/member_create_bloc.dart'
     as _i41;
 import 'application/widget_practice/member_practice/member_main/member_main_bloc.dart'
@@ -81,7 +83,7 @@ import 'domain/naver_api/api_naver_romanization_practice/i_api_naver_romanizatio
     as _i24;
 import 'domain/naver_api/api_naver_shop_practice/i_api_naver_shop_repository.dart'
     as _i26;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i61;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i62;
 import 'infrastructure/core/geo_location/geo_location_repository.dart' as _i37;
 import 'infrastructure/example_api/api_news_practice/api_news_repository.dart'
     as _i29;
@@ -180,33 +182,36 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
           get<_i12.IApiKakaoLocalAddressRepository>(),
           get<_i32.IApiWeatherRepository>(),
           get<_i36.IGeoLocationRepository>()));
-  gh.factory<_i49.ApiKakaoTranslateMainCubit>(() =>
-      _i49.ApiKakaoTranslateMainCubit(
+  gh.factory<_i49.ApiKakaoLocalKeywordMainBloc>(() =>
+      _i49.ApiKakaoLocalKeywordMainBloc(
+          get<_i14.IApiKakaoLocalKeywordRepository>()));
+  gh.factory<_i50.ApiKakaoTranslateMainCubit>(() =>
+      _i50.ApiKakaoTranslateMainCubit(
           get<_i16.IApiKakaoTranslateRepository>()));
-  gh.factory<_i50.ApiKakaoWebMainCubit>(
-      () => _i50.ApiKakaoWebMainCubit(get<_i18.IApiKakaoWebRepository>()));
-  gh.factory<_i51.ApiNaverImageMainBloc>(
-      () => _i51.ApiNaverImageMainBloc(get<_i20.IApiNaverImageRepository>()));
-  gh.factory<_i52.ApiNaverPapagoMainBloc>(
-      () => _i52.ApiNaverPapagoMainBloc(get<_i22.IApiNaverPapagoRepository>()));
-  gh.factory<_i53.ApiNaverRomanizationMainCubit>(() =>
-      _i53.ApiNaverRomanizationMainCubit(
+  gh.factory<_i51.ApiKakaoWebMainCubit>(
+      () => _i51.ApiKakaoWebMainCubit(get<_i18.IApiKakaoWebRepository>()));
+  gh.factory<_i52.ApiNaverImageMainBloc>(
+      () => _i52.ApiNaverImageMainBloc(get<_i20.IApiNaverImageRepository>()));
+  gh.factory<_i53.ApiNaverPapagoMainBloc>(
+      () => _i53.ApiNaverPapagoMainBloc(get<_i22.IApiNaverPapagoRepository>()));
+  gh.factory<_i54.ApiNaverRomanizationMainCubit>(() =>
+      _i54.ApiNaverRomanizationMainCubit(
           get<_i24.IApiNaverRomanizationRepository>()));
-  gh.factory<_i54.ApiNaverShopMainBloc>(
-      () => _i54.ApiNaverShopMainBloc(get<_i26.IApiNaverShopRepository>()));
-  gh.factory<_i55.ApiNewsMainBloc>(
-      () => _i55.ApiNewsMainBloc(get<_i28.IApiNewsRepository>()));
-  gh.factory<_i56.ApiPictureCubit>(
-      () => _i56.ApiPictureCubit(get<_i30.IApiPictureRepository>()));
-  gh.factory<_i57.ApiWeatherMainCubit>(() => _i57.ApiWeatherMainCubit(
+  gh.factory<_i55.ApiNaverShopMainBloc>(
+      () => _i55.ApiNaverShopMainBloc(get<_i26.IApiNaverShopRepository>()));
+  gh.factory<_i56.ApiNewsMainBloc>(
+      () => _i56.ApiNewsMainBloc(get<_i28.IApiNewsRepository>()));
+  gh.factory<_i57.ApiPictureCubit>(
+      () => _i57.ApiPictureCubit(get<_i30.IApiPictureRepository>()));
+  gh.factory<_i58.ApiWeatherMainCubit>(() => _i58.ApiWeatherMainCubit(
       get<_i32.IApiWeatherRepository>(), get<_i36.IGeoLocationRepository>()));
-  gh.factory<_i58.CommunityDeleteCubit>(
-      () => _i58.CommunityDeleteCubit(get<_i34.ICommunityRepository>()));
-  gh.factory<_i59.CommunityDetailBloc>(
-      () => _i59.CommunityDetailBloc(get<_i34.ICommunityRepository>()));
-  gh.factory<_i60.CommunityMainBloc>(
-      () => _i60.CommunityMainBloc(get<_i34.ICommunityRepository>()));
+  gh.factory<_i59.CommunityDeleteCubit>(
+      () => _i59.CommunityDeleteCubit(get<_i34.ICommunityRepository>()));
+  gh.factory<_i60.CommunityDetailBloc>(
+      () => _i60.CommunityDetailBloc(get<_i34.ICommunityRepository>()));
+  gh.factory<_i61.CommunityMainBloc>(
+      () => _i61.CommunityMainBloc(get<_i34.ICommunityRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableMudule extends _i61.FirebaseInjectableMudule {}
+class _$FirebaseInjectableMudule extends _i62.FirebaseInjectableMudule {}

@@ -22,12 +22,11 @@ class _$ApiKakaoLocalKeywordDtoTearOff {
   const _$ApiKakaoLocalKeywordDtoTearOff();
 
   _ApiKakaoLocalKeywordDto call(
-      {required ApiKakaoLocalKeywordMetaDto apiKakaoLocalKeywordMeta,
-      required List<ApiKakaoLocalKeywordDocumentsDto>
-          apiKakaoLocalKeywordDocuments}) {
+      {required ApiKakaoLocalKeywordMetaDto meta,
+      required List<ApiKakaoLocalKeywordDocumentsDto> documents}) {
     return _ApiKakaoLocalKeywordDto(
-      apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta,
-      apiKakaoLocalKeywordDocuments: apiKakaoLocalKeywordDocuments,
+      meta: meta,
+      documents: documents,
     );
   }
 
@@ -41,9 +40,8 @@ const $ApiKakaoLocalKeywordDto = _$ApiKakaoLocalKeywordDtoTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoLocalKeywordDto {
-  ApiKakaoLocalKeywordMetaDto get apiKakaoLocalKeywordMeta =>
-      throw _privateConstructorUsedError;
-  List<ApiKakaoLocalKeywordDocumentsDto> get apiKakaoLocalKeywordDocuments =>
+  ApiKakaoLocalKeywordMetaDto get meta => throw _privateConstructorUsedError;
+  List<ApiKakaoLocalKeywordDocumentsDto> get documents =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -58,10 +56,10 @@ abstract class $ApiKakaoLocalKeywordDtoCopyWith<$Res> {
           $Res Function(ApiKakaoLocalKeywordDto) then) =
       _$ApiKakaoLocalKeywordDtoCopyWithImpl<$Res>;
   $Res call(
-      {ApiKakaoLocalKeywordMetaDto apiKakaoLocalKeywordMeta,
-      List<ApiKakaoLocalKeywordDocumentsDto> apiKakaoLocalKeywordDocuments});
+      {ApiKakaoLocalKeywordMetaDto meta,
+      List<ApiKakaoLocalKeywordDocumentsDto> documents});
 
-  $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> get apiKakaoLocalKeywordMeta;
+  $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> get meta;
 }
 
 /// @nodoc
@@ -75,26 +73,25 @@ class _$ApiKakaoLocalKeywordDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKakaoLocalKeywordMeta = freezed,
-    Object? apiKakaoLocalKeywordDocuments = freezed,
+    Object? meta = freezed,
+    Object? documents = freezed,
   }) {
     return _then(_value.copyWith(
-      apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta == freezed
-          ? _value.apiKakaoLocalKeywordMeta
-          : apiKakaoLocalKeywordMeta // ignore: cast_nullable_to_non_nullable
+      meta: meta == freezed
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
               as ApiKakaoLocalKeywordMetaDto,
-      apiKakaoLocalKeywordDocuments: apiKakaoLocalKeywordDocuments == freezed
-          ? _value.apiKakaoLocalKeywordDocuments
-          : apiKakaoLocalKeywordDocuments // ignore: cast_nullable_to_non_nullable
+      documents: documents == freezed
+          ? _value.documents
+          : documents // ignore: cast_nullable_to_non_nullable
               as List<ApiKakaoLocalKeywordDocumentsDto>,
     ));
   }
 
   @override
-  $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> get apiKakaoLocalKeywordMeta {
-    return $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res>(
-        _value.apiKakaoLocalKeywordMeta, (value) {
-      return _then(_value.copyWith(apiKakaoLocalKeywordMeta: value));
+  $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> get meta {
+    return $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res>(_value.meta, (value) {
+      return _then(_value.copyWith(meta: value));
     });
   }
 }
@@ -107,11 +104,11 @@ abstract class _$ApiKakaoLocalKeywordDtoCopyWith<$Res>
       __$ApiKakaoLocalKeywordDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ApiKakaoLocalKeywordMetaDto apiKakaoLocalKeywordMeta,
-      List<ApiKakaoLocalKeywordDocumentsDto> apiKakaoLocalKeywordDocuments});
+      {ApiKakaoLocalKeywordMetaDto meta,
+      List<ApiKakaoLocalKeywordDocumentsDto> documents});
 
   @override
-  $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> get apiKakaoLocalKeywordMeta;
+  $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> get meta;
 }
 
 /// @nodoc
@@ -128,17 +125,17 @@ class __$ApiKakaoLocalKeywordDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKakaoLocalKeywordMeta = freezed,
-    Object? apiKakaoLocalKeywordDocuments = freezed,
+    Object? meta = freezed,
+    Object? documents = freezed,
   }) {
     return _then(_ApiKakaoLocalKeywordDto(
-      apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta == freezed
-          ? _value.apiKakaoLocalKeywordMeta
-          : apiKakaoLocalKeywordMeta // ignore: cast_nullable_to_non_nullable
+      meta: meta == freezed
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
               as ApiKakaoLocalKeywordMetaDto,
-      apiKakaoLocalKeywordDocuments: apiKakaoLocalKeywordDocuments == freezed
-          ? _value.apiKakaoLocalKeywordDocuments
-          : apiKakaoLocalKeywordDocuments // ignore: cast_nullable_to_non_nullable
+      documents: documents == freezed
+          ? _value.documents
+          : documents // ignore: cast_nullable_to_non_nullable
               as List<ApiKakaoLocalKeywordDocumentsDto>,
     ));
   }
@@ -148,44 +145,38 @@ class __$ApiKakaoLocalKeywordDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ApiKakaoLocalKeywordDto extends _ApiKakaoLocalKeywordDto {
   const _$_ApiKakaoLocalKeywordDto(
-      {required this.apiKakaoLocalKeywordMeta,
-      required this.apiKakaoLocalKeywordDocuments})
+      {required this.meta, required this.documents})
       : super._();
 
   factory _$_ApiKakaoLocalKeywordDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ApiKakaoLocalKeywordDtoFromJson(json);
 
   @override
-  final ApiKakaoLocalKeywordMetaDto apiKakaoLocalKeywordMeta;
+  final ApiKakaoLocalKeywordMetaDto meta;
   @override
-  final List<ApiKakaoLocalKeywordDocumentsDto> apiKakaoLocalKeywordDocuments;
+  final List<ApiKakaoLocalKeywordDocumentsDto> documents;
 
   @override
   String toString() {
-    return 'ApiKakaoLocalKeywordDto(apiKakaoLocalKeywordMeta: $apiKakaoLocalKeywordMeta, apiKakaoLocalKeywordDocuments: $apiKakaoLocalKeywordDocuments)';
+    return 'ApiKakaoLocalKeywordDto(meta: $meta, documents: $documents)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiKakaoLocalKeywordDto &&
-            (identical(
-                    other.apiKakaoLocalKeywordMeta, apiKakaoLocalKeywordMeta) ||
-                const DeepCollectionEquality().equals(
-                    other.apiKakaoLocalKeywordMeta,
-                    apiKakaoLocalKeywordMeta)) &&
-            (identical(other.apiKakaoLocalKeywordDocuments,
-                    apiKakaoLocalKeywordDocuments) ||
-                const DeepCollectionEquality().equals(
-                    other.apiKakaoLocalKeywordDocuments,
-                    apiKakaoLocalKeywordDocuments)));
+            (identical(other.meta, meta) ||
+                const DeepCollectionEquality().equals(other.meta, meta)) &&
+            (identical(other.documents, documents) ||
+                const DeepCollectionEquality()
+                    .equals(other.documents, documents)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(apiKakaoLocalKeywordMeta) ^
-      const DeepCollectionEquality().hash(apiKakaoLocalKeywordDocuments);
+      const DeepCollectionEquality().hash(meta) ^
+      const DeepCollectionEquality().hash(documents);
 
   @JsonKey(ignore: true)
   @override
@@ -201,19 +192,18 @@ class _$_ApiKakaoLocalKeywordDto extends _ApiKakaoLocalKeywordDto {
 
 abstract class _ApiKakaoLocalKeywordDto extends ApiKakaoLocalKeywordDto {
   const factory _ApiKakaoLocalKeywordDto(
-      {required ApiKakaoLocalKeywordMetaDto apiKakaoLocalKeywordMeta,
-      required List<ApiKakaoLocalKeywordDocumentsDto>
-          apiKakaoLocalKeywordDocuments}) = _$_ApiKakaoLocalKeywordDto;
+          {required ApiKakaoLocalKeywordMetaDto meta,
+          required List<ApiKakaoLocalKeywordDocumentsDto> documents}) =
+      _$_ApiKakaoLocalKeywordDto;
   const _ApiKakaoLocalKeywordDto._() : super._();
 
   factory _ApiKakaoLocalKeywordDto.fromJson(Map<String, dynamic> json) =
       _$_ApiKakaoLocalKeywordDto.fromJson;
 
   @override
-  ApiKakaoLocalKeywordMetaDto get apiKakaoLocalKeywordMeta =>
-      throw _privateConstructorUsedError;
+  ApiKakaoLocalKeywordMetaDto get meta => throw _privateConstructorUsedError;
   @override
-  List<ApiKakaoLocalKeywordDocumentsDto> get apiKakaoLocalKeywordDocuments =>
+  List<ApiKakaoLocalKeywordDocumentsDto> get documents =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -231,18 +221,18 @@ class _$ApiKakaoLocalKeywordDocumentsDtoTearOff {
   const _$ApiKakaoLocalKeywordDocumentsDtoTearOff();
 
   _ApiKakaoLocalKeywordDocumentsDto call(
-      {required String placeName,
-      required String distance,
-      required String placeUrl,
-      required String categoryName,
-      required String addressName,
-      required String roadAddressName,
+      {@JsonKey(name: 'place_name') required String placeName,
+      required String? distance,
+      @JsonKey(name: 'place_url') required String placeUrl,
+      @JsonKey(name: 'category_name') required String categoryName,
+      @JsonKey(name: 'address_name') required String addressName,
+      @JsonKey(name: 'road_address_name') required String roadAddressName,
       required String id,
       required String phone,
-      required String categoryGroupCode,
-      required String categoryGroupName,
-      required String latitude,
-      required String longitude}) {
+      @JsonKey(name: 'category_group_code') required String categoryGroupCode,
+      @JsonKey(name: 'category_group_name') required String categoryGroupName,
+      @JsonKey(name: 'x') required String latitude,
+      @JsonKey(name: 'y') required String longitude}) {
     return _ApiKakaoLocalKeywordDocumentsDto(
       placeName: placeName,
       distance: distance,
@@ -270,17 +260,26 @@ const $ApiKakaoLocalKeywordDocumentsDto =
 
 /// @nodoc
 mixin _$ApiKakaoLocalKeywordDocumentsDto {
+  @JsonKey(name: 'place_name')
   String get placeName => throw _privateConstructorUsedError;
-  String get distance => throw _privateConstructorUsedError;
+  String? get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'place_url')
   String get placeUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'category_name')
   String get categoryName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'address_name')
   String get addressName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'road_address_name')
   String get roadAddressName => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'category_group_code')
   String get categoryGroupCode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'category_group_name')
   String get categoryGroupName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'x')
   String get latitude => throw _privateConstructorUsedError;
+  @JsonKey(name: 'y')
   String get longitude => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -296,18 +295,18 @@ abstract class $ApiKakaoLocalKeywordDocumentsDtoCopyWith<$Res> {
           $Res Function(ApiKakaoLocalKeywordDocumentsDto) then) =
       _$ApiKakaoLocalKeywordDocumentsDtoCopyWithImpl<$Res>;
   $Res call(
-      {String placeName,
-      String distance,
-      String placeUrl,
-      String categoryName,
-      String addressName,
-      String roadAddressName,
+      {@JsonKey(name: 'place_name') String placeName,
+      String? distance,
+      @JsonKey(name: 'place_url') String placeUrl,
+      @JsonKey(name: 'category_name') String categoryName,
+      @JsonKey(name: 'address_name') String addressName,
+      @JsonKey(name: 'road_address_name') String roadAddressName,
       String id,
       String phone,
-      String categoryGroupCode,
-      String categoryGroupName,
-      String latitude,
-      String longitude});
+      @JsonKey(name: 'category_group_code') String categoryGroupCode,
+      @JsonKey(name: 'category_group_name') String categoryGroupName,
+      @JsonKey(name: 'x') String latitude,
+      @JsonKey(name: 'y') String longitude});
 }
 
 /// @nodoc
@@ -342,7 +341,7 @@ class _$ApiKakaoLocalKeywordDocumentsDtoCopyWithImpl<$Res>
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       placeUrl: placeUrl == freezed
           ? _value.placeUrl
           : placeUrl // ignore: cast_nullable_to_non_nullable
@@ -396,18 +395,18 @@ abstract class _$ApiKakaoLocalKeywordDocumentsDtoCopyWith<$Res>
       __$ApiKakaoLocalKeywordDocumentsDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String placeName,
-      String distance,
-      String placeUrl,
-      String categoryName,
-      String addressName,
-      String roadAddressName,
+      {@JsonKey(name: 'place_name') String placeName,
+      String? distance,
+      @JsonKey(name: 'place_url') String placeUrl,
+      @JsonKey(name: 'category_name') String categoryName,
+      @JsonKey(name: 'address_name') String addressName,
+      @JsonKey(name: 'road_address_name') String roadAddressName,
       String id,
       String phone,
-      String categoryGroupCode,
-      String categoryGroupName,
-      String latitude,
-      String longitude});
+      @JsonKey(name: 'category_group_code') String categoryGroupCode,
+      @JsonKey(name: 'category_group_name') String categoryGroupName,
+      @JsonKey(name: 'x') String latitude,
+      @JsonKey(name: 'y') String longitude});
 }
 
 /// @nodoc
@@ -446,7 +445,7 @@ class __$ApiKakaoLocalKeywordDocumentsDtoCopyWithImpl<$Res>
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       placeUrl: placeUrl == freezed
           ? _value.placeUrl
           : placeUrl // ignore: cast_nullable_to_non_nullable
@@ -496,18 +495,18 @@ class __$ApiKakaoLocalKeywordDocumentsDtoCopyWithImpl<$Res>
 class _$_ApiKakaoLocalKeywordDocumentsDto
     extends _ApiKakaoLocalKeywordDocumentsDto {
   const _$_ApiKakaoLocalKeywordDocumentsDto(
-      {required this.placeName,
+      {@JsonKey(name: 'place_name') required this.placeName,
       required this.distance,
-      required this.placeUrl,
-      required this.categoryName,
-      required this.addressName,
-      required this.roadAddressName,
+      @JsonKey(name: 'place_url') required this.placeUrl,
+      @JsonKey(name: 'category_name') required this.categoryName,
+      @JsonKey(name: 'address_name') required this.addressName,
+      @JsonKey(name: 'road_address_name') required this.roadAddressName,
       required this.id,
       required this.phone,
-      required this.categoryGroupCode,
-      required this.categoryGroupName,
-      required this.latitude,
-      required this.longitude})
+      @JsonKey(name: 'category_group_code') required this.categoryGroupCode,
+      @JsonKey(name: 'category_group_name') required this.categoryGroupName,
+      @JsonKey(name: 'x') required this.latitude,
+      @JsonKey(name: 'y') required this.longitude})
       : super._();
 
   factory _$_ApiKakaoLocalKeywordDocumentsDto.fromJson(
@@ -515,28 +514,37 @@ class _$_ApiKakaoLocalKeywordDocumentsDto
       _$_$_ApiKakaoLocalKeywordDocumentsDtoFromJson(json);
 
   @override
+  @JsonKey(name: 'place_name')
   final String placeName;
   @override
-  final String distance;
+  final String? distance;
   @override
+  @JsonKey(name: 'place_url')
   final String placeUrl;
   @override
+  @JsonKey(name: 'category_name')
   final String categoryName;
   @override
+  @JsonKey(name: 'address_name')
   final String addressName;
   @override
+  @JsonKey(name: 'road_address_name')
   final String roadAddressName;
   @override
   final String id;
   @override
   final String phone;
   @override
+  @JsonKey(name: 'category_group_code')
   final String categoryGroupCode;
   @override
+  @JsonKey(name: 'category_group_name')
   final String categoryGroupName;
   @override
+  @JsonKey(name: 'x')
   final String latitude;
   @override
+  @JsonKey(name: 'y')
   final String longitude;
 
   @override
@@ -615,46 +623,64 @@ class _$_ApiKakaoLocalKeywordDocumentsDto
 abstract class _ApiKakaoLocalKeywordDocumentsDto
     extends ApiKakaoLocalKeywordDocumentsDto {
   const factory _ApiKakaoLocalKeywordDocumentsDto(
-      {required String placeName,
-      required String distance,
-      required String placeUrl,
-      required String categoryName,
-      required String addressName,
-      required String roadAddressName,
+      {@JsonKey(name: 'place_name')
+          required String placeName,
+      required String? distance,
+      @JsonKey(name: 'place_url')
+          required String placeUrl,
+      @JsonKey(name: 'category_name')
+          required String categoryName,
+      @JsonKey(name: 'address_name')
+          required String addressName,
+      @JsonKey(name: 'road_address_name')
+          required String roadAddressName,
       required String id,
       required String phone,
-      required String categoryGroupCode,
-      required String categoryGroupName,
-      required String latitude,
-      required String longitude}) = _$_ApiKakaoLocalKeywordDocumentsDto;
+      @JsonKey(name: 'category_group_code')
+          required String categoryGroupCode,
+      @JsonKey(name: 'category_group_name')
+          required String categoryGroupName,
+      @JsonKey(name: 'x')
+          required String latitude,
+      @JsonKey(name: 'y')
+          required String longitude}) = _$_ApiKakaoLocalKeywordDocumentsDto;
   const _ApiKakaoLocalKeywordDocumentsDto._() : super._();
 
   factory _ApiKakaoLocalKeywordDocumentsDto.fromJson(
       Map<String, dynamic> json) = _$_ApiKakaoLocalKeywordDocumentsDto.fromJson;
 
   @override
+  @JsonKey(name: 'place_name')
   String get placeName => throw _privateConstructorUsedError;
   @override
-  String get distance => throw _privateConstructorUsedError;
+  String? get distance => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'place_url')
   String get placeUrl => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'category_name')
   String get categoryName => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'address_name')
   String get addressName => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'road_address_name')
   String get roadAddressName => throw _privateConstructorUsedError;
   @override
   String get id => throw _privateConstructorUsedError;
   @override
   String get phone => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'category_group_code')
   String get categoryGroupCode => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'category_group_name')
   String get categoryGroupName => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'x')
   String get latitude => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'y')
   String get longitude => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -672,9 +698,9 @@ class _$ApiKakaoLocalKeywordMetaDtoTearOff {
   const _$ApiKakaoLocalKeywordMetaDtoTearOff();
 
   _ApiKakaoLocalKeywordMetaDto call(
-      {required int pageableCount,
-      required int totalCount,
-      required bool isEnd}) {
+      {@JsonKey(name: 'pageable_count') required int pageableCount,
+      @JsonKey(name: 'total_count') required int totalCount,
+      @JsonKey(name: 'is_end') required bool isEnd}) {
     return _ApiKakaoLocalKeywordMetaDto(
       pageableCount: pageableCount,
       totalCount: totalCount,
@@ -692,8 +718,11 @@ const $ApiKakaoLocalKeywordMetaDto = _$ApiKakaoLocalKeywordMetaDtoTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoLocalKeywordMetaDto {
+  @JsonKey(name: 'pageable_count')
   int get pageableCount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'total_count')
   int get totalCount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_end')
   bool get isEnd => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -708,7 +737,10 @@ abstract class $ApiKakaoLocalKeywordMetaDtoCopyWith<$Res> {
           ApiKakaoLocalKeywordMetaDto value,
           $Res Function(ApiKakaoLocalKeywordMetaDto) then) =
       _$ApiKakaoLocalKeywordMetaDtoCopyWithImpl<$Res>;
-  $Res call({int pageableCount, int totalCount, bool isEnd});
+  $Res call(
+      {@JsonKey(name: 'pageable_count') int pageableCount,
+      @JsonKey(name: 'total_count') int totalCount,
+      @JsonKey(name: 'is_end') bool isEnd});
 }
 
 /// @nodoc
@@ -751,7 +783,10 @@ abstract class _$ApiKakaoLocalKeywordMetaDtoCopyWith<$Res>
           $Res Function(_ApiKakaoLocalKeywordMetaDto) then) =
       __$ApiKakaoLocalKeywordMetaDtoCopyWithImpl<$Res>;
   @override
-  $Res call({int pageableCount, int totalCount, bool isEnd});
+  $Res call(
+      {@JsonKey(name: 'pageable_count') int pageableCount,
+      @JsonKey(name: 'total_count') int totalCount,
+      @JsonKey(name: 'is_end') bool isEnd});
 }
 
 /// @nodoc
@@ -794,19 +829,22 @@ class __$ApiKakaoLocalKeywordMetaDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ApiKakaoLocalKeywordMetaDto extends _ApiKakaoLocalKeywordMetaDto {
   const _$_ApiKakaoLocalKeywordMetaDto(
-      {required this.pageableCount,
-      required this.totalCount,
-      required this.isEnd})
+      {@JsonKey(name: 'pageable_count') required this.pageableCount,
+      @JsonKey(name: 'total_count') required this.totalCount,
+      @JsonKey(name: 'is_end') required this.isEnd})
       : super._();
 
   factory _$_ApiKakaoLocalKeywordMetaDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ApiKakaoLocalKeywordMetaDtoFromJson(json);
 
   @override
+  @JsonKey(name: 'pageable_count')
   final int pageableCount;
   @override
+  @JsonKey(name: 'total_count')
   final int totalCount;
   @override
+  @JsonKey(name: 'is_end')
   final bool isEnd;
 
   @override
@@ -850,19 +888,23 @@ class _$_ApiKakaoLocalKeywordMetaDto extends _ApiKakaoLocalKeywordMetaDto {
 abstract class _ApiKakaoLocalKeywordMetaDto
     extends ApiKakaoLocalKeywordMetaDto {
   const factory _ApiKakaoLocalKeywordMetaDto(
-      {required int pageableCount,
-      required int totalCount,
-      required bool isEnd}) = _$_ApiKakaoLocalKeywordMetaDto;
+          {@JsonKey(name: 'pageable_count') required int pageableCount,
+          @JsonKey(name: 'total_count') required int totalCount,
+          @JsonKey(name: 'is_end') required bool isEnd}) =
+      _$_ApiKakaoLocalKeywordMetaDto;
   const _ApiKakaoLocalKeywordMetaDto._() : super._();
 
   factory _ApiKakaoLocalKeywordMetaDto.fromJson(Map<String, dynamic> json) =
       _$_ApiKakaoLocalKeywordMetaDto.fromJson;
 
   @override
+  @JsonKey(name: 'pageable_count')
   int get pageableCount => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'total_count')
   int get totalCount => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'is_end')
   bool get isEnd => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

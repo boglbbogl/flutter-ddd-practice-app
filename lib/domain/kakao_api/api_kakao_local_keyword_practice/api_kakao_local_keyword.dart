@@ -5,8 +5,8 @@ part 'api_kakao_local_keyword.freezed.dart';
 @freezed
 class ApiKakaoLocalKeyword with _$ApiKakaoLocalKeyword {
   const factory ApiKakaoLocalKeyword({
-    required ApiKakaoLocalKeywordMeta apiKakaoLocalKeywordMeta,
-    required List<ApiKakaoLocalKeywordDocuments> apiKakaoLocalKeywordDocuments,
+    required ApiKakaoLocalKeywordMeta meta,
+    required List<ApiKakaoLocalKeywordDocuments> documents,
   }) = _ApiKakaoLocalKeyword;
 }
 
@@ -14,7 +14,7 @@ class ApiKakaoLocalKeyword with _$ApiKakaoLocalKeyword {
 class ApiKakaoLocalKeywordDocuments with _$ApiKakaoLocalKeywordDocuments {
   const factory ApiKakaoLocalKeywordDocuments({
     required String placeName,
-    required String distance,
+    required String? distance,
     required String placeUrl,
     required String categoryName,
     required String addressName,

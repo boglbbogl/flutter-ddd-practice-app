@@ -7,9 +7,8 @@ part 'api_kakao_local_keyword_dtos.g.dart';
 @freezed
 class ApiKakaoLocalKeywordDto with _$ApiKakaoLocalKeywordDto {
   const factory ApiKakaoLocalKeywordDto({
-    required ApiKakaoLocalKeywordMetaDto apiKakaoLocalKeywordMeta,
-    required List<ApiKakaoLocalKeywordDocumentsDto>
-        apiKakaoLocalKeywordDocuments,
+    required ApiKakaoLocalKeywordMetaDto meta,
+    required List<ApiKakaoLocalKeywordDocumentsDto> documents,
   }) = _ApiKakaoLocalKeywordDto;
   const ApiKakaoLocalKeywordDto._();
 
@@ -17,27 +16,26 @@ class ApiKakaoLocalKeywordDto with _$ApiKakaoLocalKeywordDto {
       _$ApiKakaoLocalKeywordDtoFromJson(json);
 
   ApiKakaoLocalKeyword toDomain() => ApiKakaoLocalKeyword(
-        apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta.toDomain(),
-        apiKakaoLocalKeywordDocuments:
-            apiKakaoLocalKeywordDocuments.map((e) => e.toDomain()).toList(),
+        meta: meta.toDomain(),
+        documents: documents.map((e) => e.toDomain()).toList(),
       );
 }
 
 @freezed
 class ApiKakaoLocalKeywordDocumentsDto with _$ApiKakaoLocalKeywordDocumentsDto {
   const factory ApiKakaoLocalKeywordDocumentsDto({
-    required String placeName,
-    required String distance,
-    required String placeUrl,
-    required String categoryName,
-    required String addressName,
-    required String roadAddressName,
+    @JsonKey(name: 'place_name') required String placeName,
+    required String? distance,
+    @JsonKey(name: 'place_url') required String placeUrl,
+    @JsonKey(name: 'category_name') required String categoryName,
+    @JsonKey(name: 'address_name') required String addressName,
+    @JsonKey(name: 'road_address_name') required String roadAddressName,
     required String id,
     required String phone,
-    required String categoryGroupCode,
-    required String categoryGroupName,
-    required String latitude,
-    required String longitude,
+    @JsonKey(name: 'category_group_code') required String categoryGroupCode,
+    @JsonKey(name: 'category_group_name') required String categoryGroupName,
+    @JsonKey(name: 'x') required String latitude,
+    @JsonKey(name: 'y') required String longitude,
   }) = _ApiKakaoLocalKeywordDocumentsDto;
   const ApiKakaoLocalKeywordDocumentsDto._();
 
@@ -47,7 +45,7 @@ class ApiKakaoLocalKeywordDocumentsDto with _$ApiKakaoLocalKeywordDocumentsDto {
 
   ApiKakaoLocalKeywordDocuments toDomain() => ApiKakaoLocalKeywordDocuments(
         placeName: placeName,
-        distance: distance,
+        distance: distance ?? "",
         placeUrl: placeUrl,
         categoryName: categoryName,
         addressName: addressName,
@@ -64,9 +62,9 @@ class ApiKakaoLocalKeywordDocumentsDto with _$ApiKakaoLocalKeywordDocumentsDto {
 @freezed
 class ApiKakaoLocalKeywordMetaDto with _$ApiKakaoLocalKeywordMetaDto {
   const factory ApiKakaoLocalKeywordMetaDto({
-    required int pageableCount,
-    required int totalCount,
-    required bool isEnd,
+    @JsonKey(name: 'pageable_count') required int pageableCount,
+    @JsonKey(name: 'total_count') required int totalCount,
+    @JsonKey(name: 'is_end') required bool isEnd,
   }) = _ApiKakaoLocalKeywordMetaDto;
   const ApiKakaoLocalKeywordMetaDto._();
 

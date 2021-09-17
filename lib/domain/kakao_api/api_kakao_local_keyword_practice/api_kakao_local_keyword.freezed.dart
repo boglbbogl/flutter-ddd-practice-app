@@ -17,12 +17,11 @@ class _$ApiKakaoLocalKeywordTearOff {
   const _$ApiKakaoLocalKeywordTearOff();
 
   _ApiKakaoLocalKeyword call(
-      {required ApiKakaoLocalKeywordMeta apiKakaoLocalKeywordMeta,
-      required List<ApiKakaoLocalKeywordDocuments>
-          apiKakaoLocalKeywordDocuments}) {
+      {required ApiKakaoLocalKeywordMeta meta,
+      required List<ApiKakaoLocalKeywordDocuments> documents}) {
     return _ApiKakaoLocalKeyword(
-      apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta,
-      apiKakaoLocalKeywordDocuments: apiKakaoLocalKeywordDocuments,
+      meta: meta,
+      documents: documents,
     );
   }
 }
@@ -32,9 +31,8 @@ const $ApiKakaoLocalKeyword = _$ApiKakaoLocalKeywordTearOff();
 
 /// @nodoc
 mixin _$ApiKakaoLocalKeyword {
-  ApiKakaoLocalKeywordMeta get apiKakaoLocalKeywordMeta =>
-      throw _privateConstructorUsedError;
-  List<ApiKakaoLocalKeywordDocuments> get apiKakaoLocalKeywordDocuments =>
+  ApiKakaoLocalKeywordMeta get meta => throw _privateConstructorUsedError;
+  List<ApiKakaoLocalKeywordDocuments> get documents =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -48,10 +46,10 @@ abstract class $ApiKakaoLocalKeywordCopyWith<$Res> {
           $Res Function(ApiKakaoLocalKeyword) then) =
       _$ApiKakaoLocalKeywordCopyWithImpl<$Res>;
   $Res call(
-      {ApiKakaoLocalKeywordMeta apiKakaoLocalKeywordMeta,
-      List<ApiKakaoLocalKeywordDocuments> apiKakaoLocalKeywordDocuments});
+      {ApiKakaoLocalKeywordMeta meta,
+      List<ApiKakaoLocalKeywordDocuments> documents});
 
-  $ApiKakaoLocalKeywordMetaCopyWith<$Res> get apiKakaoLocalKeywordMeta;
+  $ApiKakaoLocalKeywordMetaCopyWith<$Res> get meta;
 }
 
 /// @nodoc
@@ -65,26 +63,25 @@ class _$ApiKakaoLocalKeywordCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKakaoLocalKeywordMeta = freezed,
-    Object? apiKakaoLocalKeywordDocuments = freezed,
+    Object? meta = freezed,
+    Object? documents = freezed,
   }) {
     return _then(_value.copyWith(
-      apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta == freezed
-          ? _value.apiKakaoLocalKeywordMeta
-          : apiKakaoLocalKeywordMeta // ignore: cast_nullable_to_non_nullable
+      meta: meta == freezed
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
               as ApiKakaoLocalKeywordMeta,
-      apiKakaoLocalKeywordDocuments: apiKakaoLocalKeywordDocuments == freezed
-          ? _value.apiKakaoLocalKeywordDocuments
-          : apiKakaoLocalKeywordDocuments // ignore: cast_nullable_to_non_nullable
+      documents: documents == freezed
+          ? _value.documents
+          : documents // ignore: cast_nullable_to_non_nullable
               as List<ApiKakaoLocalKeywordDocuments>,
     ));
   }
 
   @override
-  $ApiKakaoLocalKeywordMetaCopyWith<$Res> get apiKakaoLocalKeywordMeta {
-    return $ApiKakaoLocalKeywordMetaCopyWith<$Res>(
-        _value.apiKakaoLocalKeywordMeta, (value) {
-      return _then(_value.copyWith(apiKakaoLocalKeywordMeta: value));
+  $ApiKakaoLocalKeywordMetaCopyWith<$Res> get meta {
+    return $ApiKakaoLocalKeywordMetaCopyWith<$Res>(_value.meta, (value) {
+      return _then(_value.copyWith(meta: value));
     });
   }
 }
@@ -97,11 +94,11 @@ abstract class _$ApiKakaoLocalKeywordCopyWith<$Res>
       __$ApiKakaoLocalKeywordCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ApiKakaoLocalKeywordMeta apiKakaoLocalKeywordMeta,
-      List<ApiKakaoLocalKeywordDocuments> apiKakaoLocalKeywordDocuments});
+      {ApiKakaoLocalKeywordMeta meta,
+      List<ApiKakaoLocalKeywordDocuments> documents});
 
   @override
-  $ApiKakaoLocalKeywordMetaCopyWith<$Res> get apiKakaoLocalKeywordMeta;
+  $ApiKakaoLocalKeywordMetaCopyWith<$Res> get meta;
 }
 
 /// @nodoc
@@ -117,17 +114,17 @@ class __$ApiKakaoLocalKeywordCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKakaoLocalKeywordMeta = freezed,
-    Object? apiKakaoLocalKeywordDocuments = freezed,
+    Object? meta = freezed,
+    Object? documents = freezed,
   }) {
     return _then(_ApiKakaoLocalKeyword(
-      apiKakaoLocalKeywordMeta: apiKakaoLocalKeywordMeta == freezed
-          ? _value.apiKakaoLocalKeywordMeta
-          : apiKakaoLocalKeywordMeta // ignore: cast_nullable_to_non_nullable
+      meta: meta == freezed
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
               as ApiKakaoLocalKeywordMeta,
-      apiKakaoLocalKeywordDocuments: apiKakaoLocalKeywordDocuments == freezed
-          ? _value.apiKakaoLocalKeywordDocuments
-          : apiKakaoLocalKeywordDocuments // ignore: cast_nullable_to_non_nullable
+      documents: documents == freezed
+          ? _value.documents
+          : documents // ignore: cast_nullable_to_non_nullable
               as List<ApiKakaoLocalKeywordDocuments>,
     ));
   }
@@ -136,41 +133,34 @@ class __$ApiKakaoLocalKeywordCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiKakaoLocalKeyword implements _ApiKakaoLocalKeyword {
-  const _$_ApiKakaoLocalKeyword(
-      {required this.apiKakaoLocalKeywordMeta,
-      required this.apiKakaoLocalKeywordDocuments});
+  const _$_ApiKakaoLocalKeyword({required this.meta, required this.documents});
 
   @override
-  final ApiKakaoLocalKeywordMeta apiKakaoLocalKeywordMeta;
+  final ApiKakaoLocalKeywordMeta meta;
   @override
-  final List<ApiKakaoLocalKeywordDocuments> apiKakaoLocalKeywordDocuments;
+  final List<ApiKakaoLocalKeywordDocuments> documents;
 
   @override
   String toString() {
-    return 'ApiKakaoLocalKeyword(apiKakaoLocalKeywordMeta: $apiKakaoLocalKeywordMeta, apiKakaoLocalKeywordDocuments: $apiKakaoLocalKeywordDocuments)';
+    return 'ApiKakaoLocalKeyword(meta: $meta, documents: $documents)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiKakaoLocalKeyword &&
-            (identical(
-                    other.apiKakaoLocalKeywordMeta, apiKakaoLocalKeywordMeta) ||
-                const DeepCollectionEquality().equals(
-                    other.apiKakaoLocalKeywordMeta,
-                    apiKakaoLocalKeywordMeta)) &&
-            (identical(other.apiKakaoLocalKeywordDocuments,
-                    apiKakaoLocalKeywordDocuments) ||
-                const DeepCollectionEquality().equals(
-                    other.apiKakaoLocalKeywordDocuments,
-                    apiKakaoLocalKeywordDocuments)));
+            (identical(other.meta, meta) ||
+                const DeepCollectionEquality().equals(other.meta, meta)) &&
+            (identical(other.documents, documents) ||
+                const DeepCollectionEquality()
+                    .equals(other.documents, documents)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(apiKakaoLocalKeywordMeta) ^
-      const DeepCollectionEquality().hash(apiKakaoLocalKeywordDocuments);
+      const DeepCollectionEquality().hash(meta) ^
+      const DeepCollectionEquality().hash(documents);
 
   @JsonKey(ignore: true)
   @override
@@ -181,15 +171,14 @@ class _$_ApiKakaoLocalKeyword implements _ApiKakaoLocalKeyword {
 
 abstract class _ApiKakaoLocalKeyword implements ApiKakaoLocalKeyword {
   const factory _ApiKakaoLocalKeyword(
-      {required ApiKakaoLocalKeywordMeta apiKakaoLocalKeywordMeta,
-      required List<ApiKakaoLocalKeywordDocuments>
-          apiKakaoLocalKeywordDocuments}) = _$_ApiKakaoLocalKeyword;
+          {required ApiKakaoLocalKeywordMeta meta,
+          required List<ApiKakaoLocalKeywordDocuments> documents}) =
+      _$_ApiKakaoLocalKeyword;
 
   @override
-  ApiKakaoLocalKeywordMeta get apiKakaoLocalKeywordMeta =>
-      throw _privateConstructorUsedError;
+  ApiKakaoLocalKeywordMeta get meta => throw _privateConstructorUsedError;
   @override
-  List<ApiKakaoLocalKeywordDocuments> get apiKakaoLocalKeywordDocuments =>
+  List<ApiKakaoLocalKeywordDocuments> get documents =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -203,7 +192,7 @@ class _$ApiKakaoLocalKeywordDocumentsTearOff {
 
   _ApiKakaoLocalKeywordDocuments call(
       {required String placeName,
-      required String distance,
+      required String? distance,
       required String placeUrl,
       required String categoryName,
       required String addressName,
@@ -237,7 +226,7 @@ const $ApiKakaoLocalKeywordDocuments = _$ApiKakaoLocalKeywordDocumentsTearOff();
 /// @nodoc
 mixin _$ApiKakaoLocalKeywordDocuments {
   String get placeName => throw _privateConstructorUsedError;
-  String get distance => throw _privateConstructorUsedError;
+  String? get distance => throw _privateConstructorUsedError;
   String get placeUrl => throw _privateConstructorUsedError;
   String get categoryName => throw _privateConstructorUsedError;
   String get addressName => throw _privateConstructorUsedError;
@@ -262,7 +251,7 @@ abstract class $ApiKakaoLocalKeywordDocumentsCopyWith<$Res> {
       _$ApiKakaoLocalKeywordDocumentsCopyWithImpl<$Res>;
   $Res call(
       {String placeName,
-      String distance,
+      String? distance,
       String placeUrl,
       String categoryName,
       String addressName,
@@ -307,7 +296,7 @@ class _$ApiKakaoLocalKeywordDocumentsCopyWithImpl<$Res>
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       placeUrl: placeUrl == freezed
           ? _value.placeUrl
           : placeUrl // ignore: cast_nullable_to_non_nullable
@@ -362,7 +351,7 @@ abstract class _$ApiKakaoLocalKeywordDocumentsCopyWith<$Res>
   @override
   $Res call(
       {String placeName,
-      String distance,
+      String? distance,
       String placeUrl,
       String categoryName,
       String addressName,
@@ -411,7 +400,7 @@ class __$ApiKakaoLocalKeywordDocumentsCopyWithImpl<$Res>
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       placeUrl: placeUrl == freezed
           ? _value.placeUrl
           : placeUrl // ignore: cast_nullable_to_non_nullable
@@ -477,7 +466,7 @@ class _$_ApiKakaoLocalKeywordDocuments
   @override
   final String placeName;
   @override
-  final String distance;
+  final String? distance;
   @override
   final String placeUrl;
   @override
@@ -571,7 +560,7 @@ abstract class _ApiKakaoLocalKeywordDocuments
     implements ApiKakaoLocalKeywordDocuments {
   const factory _ApiKakaoLocalKeywordDocuments(
       {required String placeName,
-      required String distance,
+      required String? distance,
       required String placeUrl,
       required String categoryName,
       required String addressName,
@@ -586,7 +575,7 @@ abstract class _ApiKakaoLocalKeywordDocuments
   @override
   String get placeName => throw _privateConstructorUsedError;
   @override
-  String get distance => throw _privateConstructorUsedError;
+  String? get distance => throw _privateConstructorUsedError;
   @override
   String get placeUrl => throw _privateConstructorUsedError;
   @override

@@ -19,7 +19,7 @@ class ApiKakaoLocalKeywordRepository
     required int size,
   }) async {
     final uri = Uri.parse(
-        "$apiBase/v2/local/search/keyword.json?page=$page&size=$size&queyr=$query");
+        "$apiBase/v2/local/search/keyword.json?page=$page&size=$size&query=$query");
     final response =
         await http.get(uri, headers: {'Authorization': 'KakaoAK $apiKey'});
     if (response.statusCode == 200) {

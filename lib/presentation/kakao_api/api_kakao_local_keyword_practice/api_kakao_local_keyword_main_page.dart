@@ -1,12 +1,18 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_bloc.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_keyword_practice/widgets/api_kakao_local_keyword_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class ApiKakaoLocalKeywordMainPage extends StatelessWidget {
-  const ApiKakaoLocalKeywordMainPage({Key? key}) : super(key: key);
+  final TextEditingController controller = TextEditingController();
+  ApiKakaoLocalKeywordMainPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +34,18 @@ class ApiKakaoLocalKeywordMainPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(
-            child: InkWell(
-                onTap: () {
-                  context
-                      .read<ApiKakaoLocalKeywordMainBloc>()
-                      .add(const ApiKakaoLocalKeywordMainEvent.searchResult());
-                },
-                child: Text('data')),
-          ),
+          searchTextForm(
+              controller: controller,
+              context: context,
+              onPressed: () {
+                context.read<ApiKakaoLocalKeywordMainBloc>().add(
+                    ApiKakaoLocalKeywordMainEvent.searchResult(
+                        query: controller.text));
+                pushNewScreen(context, screen: ApiKakaoLocalKeywordListView());
+              },
+              mainColor: Colors.yellow,
+              subColor: Colors.pink,
+              btnColor: const Color.fromRGBO(135, 135, 135, 1))
         ],
       ),
     );

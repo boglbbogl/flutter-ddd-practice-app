@@ -1,13 +1,17 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_keyword_practice/i_api_kakao_local_keyword_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'api_kakao_local_keyword_main_event.dart';
 part 'api_kakao_local_keyword_main_state.dart';
 part 'api_kakao_local_keyword_main_bloc.freezed.dart';
 
+@Injectable()
 class ApiKakaoLocalKeywordMainBloc
     extends Bloc<ApiKakaoLocalKeywordMainEvent, ApiKakaoLocalKeywordMainState> {
   final IApiKakaoLocalKeywordRepository _keywordRepository;
@@ -23,7 +27,43 @@ class ApiKakaoLocalKeywordMainBloc
       started: (e) async* {},
       searchResult: (e) async* {
         final result = await _keywordRepository.getLocalKeyword(
-            query: '카카오', page: 1, size: 15);
+            query: e.query, page: 1, size: 15);
+        yield state.copyWith(
+          apiKakaoLocalKeyword: result,
+          query: e.query,
+          page: 1,
+          size: 15,
+        );
+      },
+      itemLoadMore: (e) async* {
+        final result = await _keywordRepository.getLocalKeyword(
+          query: state.query,
+          page: state.page + 1,
+          size: 15,
+        );
+        yield state.copyWith(
+          apiKakaoLocalKeyword: result,
+          page: state.page + 1,
+        );
+      },
+      webClient: (e) async* {
+        if (await canLaunch(e.url)) {
+          await launch(
+            e.url,
+            forceSafariVC: true,
+          );
+        } else {
+          throw 'Error';
+        }
+      },
+      phoneClient: (e) async* {
+        if (await canLaunch(e.phoneNum)) {
+          await launch(
+            e.phoneNum,
+          );
+        } else {
+          throw 'Error';
+        }
       },
     );
   }

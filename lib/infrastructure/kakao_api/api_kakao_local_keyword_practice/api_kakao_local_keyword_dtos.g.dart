@@ -9,71 +9,70 @@ part of 'api_kakao_local_keyword_dtos.dart';
 _$_ApiKakaoLocalKeywordDto _$_$_ApiKakaoLocalKeywordDtoFromJson(
     Map<String, dynamic> json) {
   return _$_ApiKakaoLocalKeywordDto(
-    apiKakaoLocalKeywordMeta: ApiKakaoLocalKeywordMetaDto.fromJson(
-        json['apiKakaoLocalKeywordMeta'] as Map<String, dynamic>),
-    apiKakaoLocalKeywordDocuments:
-        (json['apiKakaoLocalKeywordDocuments'] as List<dynamic>)
-            .map((e) => ApiKakaoLocalKeywordDocumentsDto.fromJson(
-                e as Map<String, dynamic>))
-            .toList(),
+    meta: ApiKakaoLocalKeywordMetaDto.fromJson(
+        json['meta'] as Map<String, dynamic>),
+    documents: (json['documents'] as List<dynamic>)
+        .map((e) => ApiKakaoLocalKeywordDocumentsDto.fromJson(
+            e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
 Map<String, dynamic> _$_$_ApiKakaoLocalKeywordDtoToJson(
         _$_ApiKakaoLocalKeywordDto instance) =>
     <String, dynamic>{
-      'apiKakaoLocalKeywordMeta': instance.apiKakaoLocalKeywordMeta,
-      'apiKakaoLocalKeywordDocuments': instance.apiKakaoLocalKeywordDocuments,
+      'meta': instance.meta,
+      'documents': instance.documents,
     };
 
 _$_ApiKakaoLocalKeywordDocumentsDto
     _$_$_ApiKakaoLocalKeywordDocumentsDtoFromJson(Map<String, dynamic> json) {
   return _$_ApiKakaoLocalKeywordDocumentsDto(
-    placeName: json['placeName'] as String,
-    distance: json['distance'] as String,
-    placeUrl: json['placeUrl'] as String,
-    categoryName: json['categoryName'] as String,
-    addressName: json['addressName'] as String,
-    roadAddressName: json['roadAddressName'] as String,
+    placeName: json['place_name'] as String,
+    distance: json['distance'] as String?,
+    placeUrl: json['place_url'] as String,
+    categoryName: json['category_name'] as String,
+    addressName: json['address_name'] as String,
+    roadAddressName: json['road_address_name'] as String,
     id: json['id'] as String,
     phone: json['phone'] as String,
-    categoryGroupCode: json['categoryGroupCode'] as String,
-    categoryGroupName: json['categoryGroupName'] as String,
-    latitude: json['latitude'] as String,
-    longitude: json['longitude'] as String,
+    categoryGroupCode: json['category_group_code'] as String,
+    categoryGroupName: json['category_group_name'] as String,
+    latitude: json['x'] as String,
+    longitude: json['y'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_ApiKakaoLocalKeywordDocumentsDtoToJson(
         _$_ApiKakaoLocalKeywordDocumentsDto instance) =>
     <String, dynamic>{
-      'placeName': instance.placeName,
+      'place_name': instance.placeName,
       'distance': instance.distance,
-      'placeUrl': instance.placeUrl,
-      'categoryName': instance.categoryName,
-      'addressName': instance.addressName,
-      'roadAddressName': instance.roadAddressName,
+      'place_url': instance.placeUrl,
+      'category_name': instance.categoryName,
+      'address_name': instance.addressName,
+      'road_address_name': instance.roadAddressName,
       'id': instance.id,
       'phone': instance.phone,
-      'categoryGroupCode': instance.categoryGroupCode,
-      'categoryGroupName': instance.categoryGroupName,
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
+      'category_group_code': instance.categoryGroupCode,
+      'category_group_name': instance.categoryGroupName,
+      'x': instance.latitude,
+      'y': instance.longitude,
     };
 
 _$_ApiKakaoLocalKeywordMetaDto _$_$_ApiKakaoLocalKeywordMetaDtoFromJson(
     Map<String, dynamic> json) {
   return _$_ApiKakaoLocalKeywordMetaDto(
-    pageableCount: json['pageableCount'] as int,
-    totalCount: json['totalCount'] as int,
-    isEnd: json['isEnd'] as bool,
+    pageableCount: json['pageable_count'] as int,
+    totalCount: json['total_count'] as int,
+    isEnd: json['is_end'] as bool,
   );
 }
 
 Map<String, dynamic> _$_$_ApiKakaoLocalKeywordMetaDtoToJson(
         _$_ApiKakaoLocalKeywordMetaDto instance) =>
     <String, dynamic>{
-      'pageableCount': instance.pageableCount,
-      'totalCount': instance.totalCount,
-      'isEnd': instance.isEnd,
+      'pageable_count': instance.pageableCount,
+      'total_count': instance.totalCount,
+      'is_end': instance.isEnd,
     };
