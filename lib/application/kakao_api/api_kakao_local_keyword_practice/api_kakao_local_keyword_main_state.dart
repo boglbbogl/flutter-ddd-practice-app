@@ -7,7 +7,6 @@ class ApiKakaoLocalKeywordMainState with _$ApiKakaoLocalKeywordMainState {
     required String query,
     required int page,
     required int size,
-    required int indexSize,
     required ApiKakaoLocalKeyword? apiKakaoLocalKeyword,
   }) = _ApiKakaoLocalKeywordMainState;
   factory ApiKakaoLocalKeywordMainState.initial() =>
@@ -17,6 +16,5 @@ class ApiKakaoLocalKeywordMainState with _$ApiKakaoLocalKeywordMainState {
         apiKakaoLocalKeyword: null,
         page: 1,
         size: 15,
-        indexSize: 15,
       );
 }

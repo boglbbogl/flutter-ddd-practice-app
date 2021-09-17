@@ -693,14 +693,12 @@ class _$ApiKakaoLocalKeywordMainStateTearOff {
       required String query,
       required int page,
       required int size,
-      required int indexSize,
       required ApiKakaoLocalKeyword? apiKakaoLocalKeyword}) {
     return _ApiKakaoLocalKeywordMainState(
       isLoading: isLoading,
       query: query,
       page: page,
       size: size,
-      indexSize: indexSize,
       apiKakaoLocalKeyword: apiKakaoLocalKeyword,
     );
   }
@@ -715,7 +713,6 @@ mixin _$ApiKakaoLocalKeywordMainState {
   String get query => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   int get size => throw _privateConstructorUsedError;
-  int get indexSize => throw _privateConstructorUsedError;
   ApiKakaoLocalKeyword? get apiKakaoLocalKeyword =>
       throw _privateConstructorUsedError;
 
@@ -735,7 +732,6 @@ abstract class $ApiKakaoLocalKeywordMainStateCopyWith<$Res> {
       String query,
       int page,
       int size,
-      int indexSize,
       ApiKakaoLocalKeyword? apiKakaoLocalKeyword});
 
   $ApiKakaoLocalKeywordCopyWith<$Res>? get apiKakaoLocalKeyword;
@@ -756,7 +752,6 @@ class _$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
     Object? query = freezed,
     Object? page = freezed,
     Object? size = freezed,
-    Object? indexSize = freezed,
     Object? apiKakaoLocalKeyword = freezed,
   }) {
     return _then(_value.copyWith(
@@ -775,10 +770,6 @@ class _$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as int,
-      indexSize: indexSize == freezed
-          ? _value.indexSize
-          : indexSize // ignore: cast_nullable_to_non_nullable
               as int,
       apiKakaoLocalKeyword: apiKakaoLocalKeyword == freezed
           ? _value.apiKakaoLocalKeyword
@@ -813,7 +804,6 @@ abstract class _$ApiKakaoLocalKeywordMainStateCopyWith<$Res>
       String query,
       int page,
       int size,
-      int indexSize,
       ApiKakaoLocalKeyword? apiKakaoLocalKeyword});
 
   @override
@@ -839,7 +829,6 @@ class __$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
     Object? query = freezed,
     Object? page = freezed,
     Object? size = freezed,
-    Object? indexSize = freezed,
     Object? apiKakaoLocalKeyword = freezed,
   }) {
     return _then(_ApiKakaoLocalKeywordMainState(
@@ -859,10 +848,6 @@ class __$ApiKakaoLocalKeywordMainStateCopyWithImpl<$Res>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      indexSize: indexSize == freezed
-          ? _value.indexSize
-          : indexSize // ignore: cast_nullable_to_non_nullable
-              as int,
       apiKakaoLocalKeyword: apiKakaoLocalKeyword == freezed
           ? _value.apiKakaoLocalKeyword
           : apiKakaoLocalKeyword // ignore: cast_nullable_to_non_nullable
@@ -880,7 +865,6 @@ class _$_ApiKakaoLocalKeywordMainState
       required this.query,
       required this.page,
       required this.size,
-      required this.indexSize,
       required this.apiKakaoLocalKeyword});
 
   @override
@@ -892,13 +876,11 @@ class _$_ApiKakaoLocalKeywordMainState
   @override
   final int size;
   @override
-  final int indexSize;
-  @override
   final ApiKakaoLocalKeyword? apiKakaoLocalKeyword;
 
   @override
   String toString() {
-    return 'ApiKakaoLocalKeywordMainState(isLoading: $isLoading, query: $query, page: $page, size: $size, indexSize: $indexSize, apiKakaoLocalKeyword: $apiKakaoLocalKeyword)';
+    return 'ApiKakaoLocalKeywordMainState(isLoading: $isLoading, query: $query, page: $page, size: $size, apiKakaoLocalKeyword: $apiKakaoLocalKeyword)';
   }
 
   @override
@@ -914,9 +896,6 @@ class _$_ApiKakaoLocalKeywordMainState
                 const DeepCollectionEquality().equals(other.page, page)) &&
             (identical(other.size, size) ||
                 const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.indexSize, indexSize) ||
-                const DeepCollectionEquality()
-                    .equals(other.indexSize, indexSize)) &&
             (identical(other.apiKakaoLocalKeyword, apiKakaoLocalKeyword) ||
                 const DeepCollectionEquality()
                     .equals(other.apiKakaoLocalKeyword, apiKakaoLocalKeyword)));
@@ -929,7 +908,6 @@ class _$_ApiKakaoLocalKeywordMainState
       const DeepCollectionEquality().hash(query) ^
       const DeepCollectionEquality().hash(page) ^
       const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(indexSize) ^
       const DeepCollectionEquality().hash(apiKakaoLocalKeyword);
 
   @JsonKey(ignore: true)
@@ -946,7 +924,6 @@ abstract class _ApiKakaoLocalKeywordMainState
           required String query,
           required int page,
           required int size,
-          required int indexSize,
           required ApiKakaoLocalKeyword? apiKakaoLocalKeyword}) =
       _$_ApiKakaoLocalKeywordMainState;
 
@@ -958,8 +935,6 @@ abstract class _ApiKakaoLocalKeywordMainState
   int get page => throw _privateConstructorUsedError;
   @override
   int get size => throw _privateConstructorUsedError;
-  @override
-  int get indexSize => throw _privateConstructorUsedError;
   @override
   ApiKakaoLocalKeyword? get apiKakaoLocalKeyword =>
       throw _privateConstructorUsedError;
