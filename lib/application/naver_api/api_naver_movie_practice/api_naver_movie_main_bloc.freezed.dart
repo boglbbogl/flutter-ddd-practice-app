@@ -20,8 +20,10 @@ class _$ApiNaverMovieMainEventTearOff {
     return const _Started();
   }
 
-  _SearchMovie searchMovie() {
-    return const _SearchMovie();
+  _SearchMovie searchMovie({required String query}) {
+    return _SearchMovie(
+      query: query,
+    );
   }
 }
 
@@ -33,13 +35,13 @@ mixin _$ApiNaverMovieMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() searchMovie,
+    required TResult Function(String query) searchMovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? searchMovie,
+    TResult Function(String query)? searchMovie,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,7 +116,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() searchMovie,
+    required TResult Function(String query) searchMovie,
   }) {
     return started();
   }
@@ -123,7 +125,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? searchMovie,
+    TResult Function(String query)? searchMovie,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -164,6 +166,7 @@ abstract class _$SearchMovieCopyWith<$Res> {
   factory _$SearchMovieCopyWith(
           _SearchMovie value, $Res Function(_SearchMovie) then) =
       __$SearchMovieCopyWithImpl<$Res>;
+  $Res call({String query});
 }
 
 /// @nodoc
@@ -176,44 +179,68 @@ class __$SearchMovieCopyWithImpl<$Res>
 
   @override
   _SearchMovie get _value => super._value as _SearchMovie;
+
+  @override
+  $Res call({
+    Object? query = freezed,
+  }) {
+    return _then(_SearchMovie(
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_SearchMovie implements _SearchMovie {
-  const _$_SearchMovie();
+  const _$_SearchMovie({required this.query});
+
+  @override
+  final String query;
 
   @override
   String toString() {
-    return 'ApiNaverMovieMainEvent.searchMovie()';
+    return 'ApiNaverMovieMainEvent.searchMovie(query: $query)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchMovie);
+    return identical(this, other) ||
+        (other is _SearchMovie &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SearchMovieCopyWith<_SearchMovie> get copyWith =>
+      __$SearchMovieCopyWithImpl<_SearchMovie>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() searchMovie,
+    required TResult Function(String query) searchMovie,
   }) {
-    return searchMovie();
+    return searchMovie(query);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? searchMovie,
+    TResult Function(String query)? searchMovie,
     required TResult orElse(),
   }) {
     if (searchMovie != null) {
-      return searchMovie();
+      return searchMovie(query);
     }
     return orElse();
   }
@@ -242,7 +269,12 @@ class _$_SearchMovie implements _SearchMovie {
 }
 
 abstract class _SearchMovie implements ApiNaverMovieMainEvent {
-  const factory _SearchMovie() = _$_SearchMovie;
+  const factory _SearchMovie({required String query}) = _$_SearchMovie;
+
+  String get query => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchMovieCopyWith<_SearchMovie> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -250,10 +282,13 @@ class _$ApiNaverMovieMainStateTearOff {
   const _$ApiNaverMovieMainStateTearOff();
 
   _ApiNaverMovieMainState call(
-      {required bool isLoading, required List<dynamic> itemList}) {
+      {required bool isLoading,
+      required List<ApiNaverMovieItems> items,
+      required int totalResult}) {
     return _ApiNaverMovieMainState(
       isLoading: isLoading,
-      itemList: itemList,
+      items: items,
+      totalResult: totalResult,
     );
   }
 }
@@ -264,7 +299,8 @@ const $ApiNaverMovieMainState = _$ApiNaverMovieMainStateTearOff();
 /// @nodoc
 mixin _$ApiNaverMovieMainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<dynamic> get itemList => throw _privateConstructorUsedError;
+  List<ApiNaverMovieItems> get items => throw _privateConstructorUsedError;
+  int get totalResult => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiNaverMovieMainStateCopyWith<ApiNaverMovieMainState> get copyWith =>
@@ -276,7 +312,7 @@ abstract class $ApiNaverMovieMainStateCopyWith<$Res> {
   factory $ApiNaverMovieMainStateCopyWith(ApiNaverMovieMainState value,
           $Res Function(ApiNaverMovieMainState) then) =
       _$ApiNaverMovieMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, List<dynamic> itemList});
+  $Res call({bool isLoading, List<ApiNaverMovieItems> items, int totalResult});
 }
 
 /// @nodoc
@@ -291,17 +327,22 @@ class _$ApiNaverMovieMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? itemList = freezed,
+    Object? items = freezed,
+    Object? totalResult = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      itemList: itemList == freezed
-          ? _value.itemList
-          : itemList // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ApiNaverMovieItems>,
+      totalResult: totalResult == freezed
+          ? _value.totalResult
+          : totalResult // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -313,7 +354,7 @@ abstract class _$ApiNaverMovieMainStateCopyWith<$Res>
           $Res Function(_ApiNaverMovieMainState) then) =
       __$ApiNaverMovieMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, List<dynamic> itemList});
+  $Res call({bool isLoading, List<ApiNaverMovieItems> items, int totalResult});
 }
 
 /// @nodoc
@@ -330,17 +371,22 @@ class __$ApiNaverMovieMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? itemList = freezed,
+    Object? items = freezed,
+    Object? totalResult = freezed,
   }) {
     return _then(_ApiNaverMovieMainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      itemList: itemList == freezed
-          ? _value.itemList
-          : itemList // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ApiNaverMovieItems>,
+      totalResult: totalResult == freezed
+          ? _value.totalResult
+          : totalResult // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -348,16 +394,21 @@ class __$ApiNaverMovieMainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiNaverMovieMainState implements _ApiNaverMovieMainState {
-  _$_ApiNaverMovieMainState({required this.isLoading, required this.itemList});
+  _$_ApiNaverMovieMainState(
+      {required this.isLoading,
+      required this.items,
+      required this.totalResult});
 
   @override
   final bool isLoading;
   @override
-  final List<dynamic> itemList;
+  final List<ApiNaverMovieItems> items;
+  @override
+  final int totalResult;
 
   @override
   String toString() {
-    return 'ApiNaverMovieMainState(isLoading: $isLoading, itemList: $itemList)';
+    return 'ApiNaverMovieMainState(isLoading: $isLoading, items: $items, totalResult: $totalResult)';
   }
 
   @override
@@ -367,16 +418,19 @@ class _$_ApiNaverMovieMainState implements _ApiNaverMovieMainState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.itemList, itemList) ||
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)) &&
+            (identical(other.totalResult, totalResult) ||
                 const DeepCollectionEquality()
-                    .equals(other.itemList, itemList)));
+                    .equals(other.totalResult, totalResult)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(itemList);
+      const DeepCollectionEquality().hash(items) ^
+      const DeepCollectionEquality().hash(totalResult);
 
   @JsonKey(ignore: true)
   @override
@@ -388,12 +442,15 @@ class _$_ApiNaverMovieMainState implements _ApiNaverMovieMainState {
 abstract class _ApiNaverMovieMainState implements ApiNaverMovieMainState {
   factory _ApiNaverMovieMainState(
       {required bool isLoading,
-      required List<dynamic> itemList}) = _$_ApiNaverMovieMainState;
+      required List<ApiNaverMovieItems> items,
+      required int totalResult}) = _$_ApiNaverMovieMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  List<dynamic> get itemList => throw _privateConstructorUsedError;
+  List<ApiNaverMovieItems> get items => throw _privateConstructorUsedError;
+  @override
+  int get totalResult => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiNaverMovieMainStateCopyWith<_ApiNaverMovieMainState> get copyWith =>

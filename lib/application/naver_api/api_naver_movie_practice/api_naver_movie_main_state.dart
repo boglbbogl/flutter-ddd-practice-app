@@ -4,10 +4,12 @@ part of 'api_naver_movie_main_bloc.dart';
 class ApiNaverMovieMainState with _$ApiNaverMovieMainState {
   factory ApiNaverMovieMainState({
     required bool isLoading,
-    required List itemList,
+    required List<ApiNaverMovieItems> items,
+    required int totalResult,
   }) = _ApiNaverMovieMainState;
   factory ApiNaverMovieMainState.initial() => ApiNaverMovieMainState(
         isLoading: false,
-        itemList: [],
+        items: [],
+        totalResult: 0,
       );
 }
