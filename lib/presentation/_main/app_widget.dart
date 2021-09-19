@@ -20,6 +20,7 @@ import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_mult
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/api_naver_image_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie_practice/api_naver_movie_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/api_naver_papago_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization_practice/api_naver_romanization_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/api_naver_shop_main_page.dart';
@@ -76,6 +77,7 @@ class AppWidget extends StatelessWidget {
               ApiNaverRomanizationMainPage(),
           '/apiNaverImageMainPage': (context) => ApiNaverImageMainPage(),
           '/apiNaverShopMainPage': (context) => ApiNaverShopMainPage(),
+          '/apiNaverMovieMainPage': (context) => ApiNaverMovieMainPage(),
           '/apiGoogleMapsMainPage': (context) => const ApiGoogleMapsMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>

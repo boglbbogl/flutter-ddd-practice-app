@@ -37,14 +37,17 @@ class NaverApiPracticeItem {
     'Romanization',
     'Image',
     'Shop',
+    'Movie',
   ];
   List router = [
     '/apiNaverPapagoMainPage',
     '/apiNaverRomanizationMainPage',
     '/apiNaverImageMainPage',
     '/apiNaverShopMainPage',
+    '/apiNaverMovieMainPage',
   ];
   List stateManagement = [
+    'BLoc',
     'BLoc',
     'BLoc',
     'BLoc',
