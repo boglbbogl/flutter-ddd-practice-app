@@ -6,6 +6,7 @@ import 'package:ddd_practice_app/application/naver_api/api_naver_movie_practice/
 import 'package:ddd_practice_app/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ApiNaverMovieMainPage extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
@@ -60,7 +61,23 @@ class ApiNaverMovieMainPage extends StatelessWidget {
                     ),
                     children: [
                       ...state.items.map((e) => InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  isDismissible: true,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return SizedBox(
+                                      height: size.height * 0.95,
+                                      child: WebView(
+                                        initialUrl: e.link,
+                                        javascriptMode:
+                                            JavascriptMode.unrestricted,
+                                      ),
+                                    );
+                                  });
+                            },
                             child: Container(
                               width: size.width * 0.4,
                               height: size.height * 0.4,
