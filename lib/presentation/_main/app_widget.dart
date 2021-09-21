@@ -18,6 +18,7 @@ import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_address_
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_video_practice/api_kakao_video_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/api_naver_image_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie_practice/api_naver_movie_main_page.dart';
@@ -72,6 +73,7 @@ class AppWidget extends StatelessWidget {
               const ApiKakaoLocalAddressMainPage(),
           '/apiKakaoLocalKeywordMainPage': (context) =>
               ApiKakaoLocalKeywordMainPage(),
+          '/apiKakaoVideoMainPage': (context) => ApiKakaoVideoMainPage(),
           '/apiNaverPapagoMainPage': (context) => ApiNaverPapagoMainPage(),
           '/apiNaverRomanizationMainPage': (context) =>
               ApiNaverRomanizationMainPage(),
