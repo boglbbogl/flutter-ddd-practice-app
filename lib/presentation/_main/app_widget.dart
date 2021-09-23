@@ -3,6 +3,7 @@ import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword_p
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
+import 'package:ddd_practice_app/application/project_app/working_title_travel_app/create/working_title_travel_create_bloc.dart';
 import 'package:ddd_practice_app/application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/widget_practice/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -25,6 +26,7 @@ import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie_practice
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/api_naver_papago_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization_practice/api_naver_romanization_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/api_naver_shop_main_page.dart';
+import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/working_title_travel_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/widget_hero_animation_practice/widget_hero_animation_main_page.dart';
@@ -55,6 +57,9 @@ class AppWidget extends StatelessWidget {
             create: (context) => getIt<ApiNaverPapagoMainBloc>()
               ..add(const ApiNaverPapagoMainEvent.started())),
         BlocProvider(create: (context) => getIt<ApiGoogleMapsMainBloc>()),
+        BlocProvider(
+            create: (context) => getIt<WorkingTitleTravelCreateBloc>()
+              ..add(const WorkingTitleTravelCreateEvent.started())),
       ],
       child: GetMaterialApp(
         initialRoute: '/mainPage',
@@ -88,6 +93,8 @@ class AppWidget extends StatelessWidget {
           '/apiNewsMainPage': (context) => const ApiNewsMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
           '/apiPictureMainPage': (context) => ApiPictureMainPage(),
+          '/workingTitleTravelMainPage': (context) =>
+              const WorkingTitleTravelMainPage(),
         },
         // localizationsDelegates: [
         //   GlobalMaterialLocalizations.delegate,

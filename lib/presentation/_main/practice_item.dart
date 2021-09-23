@@ -105,3 +105,9 @@ class ExampleApiPracticeItem {
     'Cubit',
   ];
 }
+
+class ProjectAppItem {
+  List title = ['Working Title Travel'];
+  List router = ['/workingTitleTravelMainPage'];
+  List stateManagement = ['BLoC'];
+}

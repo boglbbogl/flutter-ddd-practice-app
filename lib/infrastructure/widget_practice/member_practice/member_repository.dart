@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ddd_practice_app/domain/widget_practice/member_practice/i_member_repository.dart';
+import 'package:ddd_practice_app/domain/widget_practice/member_practice/member.dart';
 
-import 'package:ddd_practice_app/domain/member_practice/i_member_repository.dart';
-import 'package:ddd_practice_app/domain/member_practice/member.dart';
 import 'package:ddd_practice_app/infrastructure/widget_practice/member_practice/member_dto.dart';
 import 'package:injectable/injectable.dart';
 

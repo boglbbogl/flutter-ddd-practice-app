@@ -35,6 +35,11 @@ class MainPracticeList extends StatelessWidget {
           colors: Colors.deepPurple,
           gridView: _exampleApiGridView(),
         ),
+        mainProductListItem(
+          title: 'Project APP',
+          colors: Colors.black,
+          gridView: _projectAppGridView(),
+        ),
       ],
     );
   }
@@ -155,6 +160,30 @@ class MainPracticeList extends StatelessWidget {
             router: ExampleApiPracticeItem().router[index].toString(),
             title: ExampleApiPracticeItem().title[index].toString(),
             sm: ExampleApiPracticeItem().stateManagement[index].toString(),
+          );
+        });
+  }
+
+  GridView _projectAppGridView() {
+    return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+          childAspectRatio: 1.5,
+        ),
+        itemCount: ProjectAppItem().title.length,
+        itemBuilder: (context, index) {
+          return _itemForm(
+            context,
+            colors: Colors.black,
+            textColors: Colors.white,
+            secondTextColors: Colors.white,
+            router: ProjectAppItem().router[index].toString(),
+            title: ProjectAppItem().title[index].toString(),
+            sm: ProjectAppItem().stateManagement[index].toString(),
           );
         });
   }

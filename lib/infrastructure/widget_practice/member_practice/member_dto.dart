@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ddd_practice_app/domain/member_practice/member.dart';
+import 'package:ddd_practice_app/domain/widget_practice/member_practice/member.dart';
 import 'package:ddd_practice_app/infrastructure/core/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:ddd_practice_app/domain/member_practice/member.dart';
+import 'package:ddd_practice_app/domain/widget_practice/member_practice/member.dart';
 
 abstract class IMemberRepository {
   Future<Unit> setMemberList({

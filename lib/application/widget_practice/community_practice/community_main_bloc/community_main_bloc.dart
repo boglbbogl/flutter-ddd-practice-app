@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:ddd_practice_app/domain/community_practice/community.dart';
-import 'package:ddd_practice_app/domain/community_practice/i_community_repository.dart';
+import 'package:ddd_practice_app/domain/widget_practice/community_practice/community.dart';
+import 'package:ddd_practice_app/domain/widget_practice/community_practice/i_community_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 

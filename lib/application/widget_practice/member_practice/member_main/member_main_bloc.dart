@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 
-import 'package:ddd_practice_app/domain/member_practice/i_member_repository.dart';
-import 'package:ddd_practice_app/domain/member_practice/member.dart';
+import 'package:ddd_practice_app/domain/widget_practice/member_practice/i_member_repository.dart';
+import 'package:ddd_practice_app/domain/widget_practice/member_practice/member.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
