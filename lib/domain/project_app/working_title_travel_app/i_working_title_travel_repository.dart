@@ -5,4 +5,6 @@ abstract class IWorkingTitleTravelRepository {
   Future<Unit> createPlan({
     required WorkingTitleTravelPlan workingTitleTravelPlan,
   });
+
+  Stream<List<WorkingTitleTravelPlan>> readTravelPlan();
 }
