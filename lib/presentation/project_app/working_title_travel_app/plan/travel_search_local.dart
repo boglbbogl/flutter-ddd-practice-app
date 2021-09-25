@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 Future travelSearchLocal({
   required BuildContext context,
   required TextEditingController controller,
+  required String isClicked,
 }) {
   return showModalBottomSheet(
       context: context,
@@ -24,6 +25,7 @@ Future travelSearchLocal({
                   SizedBox(
                     width: size.width * 0.7,
                     child: TextFormField(
+                      controller: controller,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -57,7 +59,7 @@ Future travelSearchLocal({
                     return const Padding(
                       padding: EdgeInsets.only(top: 30),
                       child: Center(
-                        child: Text('Not Search Result...'),
+                        child: Text('검색을 해주세요...'),
                       ),
                     );
                   } else {
@@ -68,12 +70,23 @@ Future travelSearchLocal({
                           ...state.apiKakaoLocalKeyword!.documents.map(
                             (e) => InkWell(
                               onTap: () {
-                                context
-                                    .read<WorkingTitleTravelCreateBloc>()
-                                    .add(WorkingTitleTravelCreateEvent
-                                        .travelStart(
-                                            start: [e.latitude, e.longitude],
-                                            startPlaceName: e.placeName));
+                                if (isClicked == '출발') {
+                                  context
+                                      .read<WorkingTitleTravelCreateBloc>()
+                                      .add(WorkingTitleTravelCreateEvent
+                                          .travelStart(
+                                              start: [e.longitude, e.latitude],
+                                              startPlaceName: e.placeName));
+                                } else if (isClicked == '도착') {
+                                  context
+                                      .read<WorkingTitleTravelCreateBloc>()
+                                      .add(WorkingTitleTravelCreateEvent
+                                          .travelEnd(
+                                              end: [e.longitude, e.latitude],
+                                              endPlaceName: e.placeName));
+                                } else if (isClicked == '경유') {
+                                } else {}
+
                                 Get.back();
                               },
                               child: Padding(

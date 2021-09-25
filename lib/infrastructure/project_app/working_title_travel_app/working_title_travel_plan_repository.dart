@@ -25,6 +25,7 @@ class WorkingTitleTravelPlanRepository
       'endPlaceName': workingTitleTravelPlan.endPlaceName,
       'startDate': workingTitleTravelPlan.startDate,
       'endDate': workingTitleTravelPlan.endDate,
+      'layoverPlaceName': workingTitleTravelPlan.layover,
       'id': travelPlanId,
     });
     return unit;

@@ -20,38 +20,41 @@ class WorkingTitleTravelCreateBloc
   Stream<WorkingTitleTravelCreateState> mapEventToState(
     WorkingTitleTravelCreateEvent event,
   ) async* {
-    yield* event.map(
-      started: (e) async* {
-        final WorkingTitleTravelPlan initialTravelPlan =
-            WorkingTitleTravelPlan.empty();
-        WorkingTitleTravelCreateState _state;
-        _state = state.copyWith(
-          travelPlan: initialTravelPlan,
-        );
-        yield _state;
-      },
-      travelStart: (e) async* {
-        yield state.copyWith(
-            travelPlan: state.travelPlan!.copyWith(
-                startGeoLocation: e.start, startPlaceName: e.startPlaceName));
-      },
-      travelEnd: (e) async* {
-        yield state.copyWith(
-            travelPlan: state.travelPlan!
-                .copyWith(endGeoLocation: e.end, endPlaceName: e.endPlaceName));
-      },
-      submitted: (e) async* {
-        final plan = state.travelPlan!.copyWith();
-        final result =
-            _travelRepository.createPlan(workingTitleTravelPlan: plan);
-      },
-      planDate: (e) async* {
-        yield state.copyWith(
-            travelPlan: state.travelPlan!.copyWith(
-          startDate: e.startDate,
-          endDate: e.endDate,
-        ));
-      },
-    );
+    yield* event.map(started: (e) async* {
+      final WorkingTitleTravelPlan initialTravelPlan =
+          WorkingTitleTravelPlan.empty();
+      WorkingTitleTravelCreateState _state;
+      _state = state.copyWith(
+        travelPlan: initialTravelPlan,
+      );
+      yield _state;
+    }, travelStart: (e) async* {
+      yield state.copyWith(
+          travelPlan: state.travelPlan!.copyWith(
+              startGeoLocation: e.start, startPlaceName: e.startPlaceName));
+    }, travelEnd: (e) async* {
+      yield state.copyWith(
+          travelPlan: state.travelPlan!
+              .copyWith(endGeoLocation: e.end, endPlaceName: e.endPlaceName));
+    }, submitted: (e) async* {
+      final plan = state.travelPlan!.copyWith();
+      await _travelRepository.createPlan(workingTitleTravelPlan: plan);
+    }, planStartDate: (e) async* {
+      yield state.copyWith(
+          travelPlan: state.travelPlan!.copyWith(
+        startDate: e.startDate,
+      ));
+    }, planEndDate: (e) async* {
+      yield state.copyWith(
+          travelPlan: state.travelPlan!.copyWith(
+        endDate: e.endDate,
+      ));
+    }, travelLayover: (e) async* {
+      yield state.copyWith(
+          isChanged: state.isChanged == true ? false : true,
+          travelPlan: state.travelPlan!.copyWith(
+            layover: e.layover,
+          ));
+    });
   }
 }

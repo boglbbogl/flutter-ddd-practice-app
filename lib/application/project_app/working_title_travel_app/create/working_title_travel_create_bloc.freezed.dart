@@ -36,10 +36,21 @@ class _$WorkingTitleTravelCreateEventTearOff {
     );
   }
 
-  _PlanDate planDate({required String startDate, required String endDate}) {
-    return _PlanDate(
+  PlanStartDate planStartDate({required String startDate}) {
+    return PlanStartDate(
       startDate: startDate,
+    );
+  }
+
+  PlanEndDate planEndDate({required String endDate}) {
+    return PlanEndDate(
       endDate: endDate,
+    );
+  }
+
+  TravelLayover travelLayover({required List<String> layover}) {
+    return TravelLayover(
+      layover: layover,
     );
   }
 
@@ -59,7 +70,9 @@ mixin _$WorkingTitleTravelCreateEvent {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
-    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +81,9 @@ mixin _$WorkingTitleTravelCreateEvent {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
-    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
     TResult Function()? submitted,
     required TResult orElse(),
   }) =>
@@ -78,7 +93,9 @@ mixin _$WorkingTitleTravelCreateEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
-    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -87,7 +104,9 @@ mixin _$WorkingTitleTravelCreateEvent {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
-    TResult Function(_PlanDate value)? planDate,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) =>
@@ -154,7 +173,9 @@ class _$_Started implements _Started {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
-    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
     required TResult Function() submitted,
   }) {
     return started();
@@ -166,7 +187,9 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
-    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -182,7 +205,9 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
-    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
     required TResult Function(_Submitted value) submitted,
   }) {
     return started(this);
@@ -194,7 +219,9 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
-    TResult Function(_PlanDate value)? planDate,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -290,7 +317,9 @@ class _$_TravelStart implements _TravelStart {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
-    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
     required TResult Function() submitted,
   }) {
     return travelStart(start, startPlaceName);
@@ -302,7 +331,9 @@ class _$_TravelStart implements _TravelStart {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
-    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -318,7 +349,9 @@ class _$_TravelStart implements _TravelStart {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
-    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
     required TResult Function(_Submitted value) submitted,
   }) {
     return travelStart(this);
@@ -330,7 +363,9 @@ class _$_TravelStart implements _TravelStart {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
-    TResult Function(_PlanDate value)? planDate,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -433,7 +468,9 @@ class _$_TravelEnd implements _TravelEnd {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
-    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
     required TResult Function() submitted,
   }) {
     return travelEnd(end, endPlaceName);
@@ -445,7 +482,9 @@ class _$_TravelEnd implements _TravelEnd {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
-    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -461,7 +500,9 @@ class _$_TravelEnd implements _TravelEnd {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
-    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
     required TResult Function(_Submitted value) submitted,
   }) {
     return travelEnd(this);
@@ -473,7 +514,9 @@ class _$_TravelEnd implements _TravelEnd {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
-    TResult Function(_PlanDate value)? planDate,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -496,35 +539,32 @@ abstract class _TravelEnd implements WorkingTitleTravelCreateEvent {
 }
 
 /// @nodoc
-abstract class _$PlanDateCopyWith<$Res> {
-  factory _$PlanDateCopyWith(_PlanDate value, $Res Function(_PlanDate) then) =
-      __$PlanDateCopyWithImpl<$Res>;
-  $Res call({String startDate, String endDate});
+abstract class $PlanStartDateCopyWith<$Res> {
+  factory $PlanStartDateCopyWith(
+          PlanStartDate value, $Res Function(PlanStartDate) then) =
+      _$PlanStartDateCopyWithImpl<$Res>;
+  $Res call({String startDate});
 }
 
 /// @nodoc
-class __$PlanDateCopyWithImpl<$Res>
+class _$PlanStartDateCopyWithImpl<$Res>
     extends _$WorkingTitleTravelCreateEventCopyWithImpl<$Res>
-    implements _$PlanDateCopyWith<$Res> {
-  __$PlanDateCopyWithImpl(_PlanDate _value, $Res Function(_PlanDate) _then)
-      : super(_value, (v) => _then(v as _PlanDate));
+    implements $PlanStartDateCopyWith<$Res> {
+  _$PlanStartDateCopyWithImpl(
+      PlanStartDate _value, $Res Function(PlanStartDate) _then)
+      : super(_value, (v) => _then(v as PlanStartDate));
 
   @override
-  _PlanDate get _value => super._value as _PlanDate;
+  PlanStartDate get _value => super._value as PlanStartDate;
 
   @override
   $Res call({
     Object? startDate = freezed,
-    Object? endDate = freezed,
   }) {
-    return _then(_PlanDate(
+    return _then(PlanStartDate(
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      endDate: endDate == freezed
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -532,40 +572,34 @@ class __$PlanDateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PlanDate implements _PlanDate {
-  const _$_PlanDate({required this.startDate, required this.endDate});
+class _$PlanStartDate implements PlanStartDate {
+  const _$PlanStartDate({required this.startDate});
 
   @override
   final String startDate;
-  @override
-  final String endDate;
 
   @override
   String toString() {
-    return 'WorkingTitleTravelCreateEvent.planDate(startDate: $startDate, endDate: $endDate)';
+    return 'WorkingTitleTravelCreateEvent.planStartDate(startDate: $startDate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PlanDate &&
+        (other is PlanStartDate &&
             (identical(other.startDate, startDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.startDate, startDate)) &&
-            (identical(other.endDate, endDate) ||
-                const DeepCollectionEquality().equals(other.endDate, endDate)));
+                    .equals(other.startDate, startDate)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(startDate) ^
-      const DeepCollectionEquality().hash(endDate);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(startDate);
 
   @JsonKey(ignore: true)
   @override
-  _$PlanDateCopyWith<_PlanDate> get copyWith =>
-      __$PlanDateCopyWithImpl<_PlanDate>(this, _$identity);
+  $PlanStartDateCopyWith<PlanStartDate> get copyWith =>
+      _$PlanStartDateCopyWithImpl<PlanStartDate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -574,10 +608,12 @@ class _$_PlanDate implements _PlanDate {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
-    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
     required TResult Function() submitted,
   }) {
-    return planDate(startDate, endDate);
+    return planStartDate(startDate);
   }
 
   @override
@@ -586,12 +622,14 @@ class _$_PlanDate implements _PlanDate {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
-    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
-    if (planDate != null) {
-      return planDate(startDate, endDate);
+    if (planStartDate != null) {
+      return planStartDate(startDate);
     }
     return orElse();
   }
@@ -602,10 +640,12 @@ class _$_PlanDate implements _PlanDate {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
-    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
     required TResult Function(_Submitted value) submitted,
   }) {
-    return planDate(this);
+    return planStartDate(this);
   }
 
   @override
@@ -614,25 +654,300 @@ class _$_PlanDate implements _PlanDate {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
-    TResult Function(_PlanDate value)? planDate,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
-    if (planDate != null) {
-      return planDate(this);
+    if (planStartDate != null) {
+      return planStartDate(this);
     }
     return orElse();
   }
 }
 
-abstract class _PlanDate implements WorkingTitleTravelCreateEvent {
-  const factory _PlanDate(
-      {required String startDate, required String endDate}) = _$_PlanDate;
+abstract class PlanStartDate implements WorkingTitleTravelCreateEvent {
+  const factory PlanStartDate({required String startDate}) = _$PlanStartDate;
 
   String get startDate => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PlanStartDateCopyWith<PlanStartDate> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PlanEndDateCopyWith<$Res> {
+  factory $PlanEndDateCopyWith(
+          PlanEndDate value, $Res Function(PlanEndDate) then) =
+      _$PlanEndDateCopyWithImpl<$Res>;
+  $Res call({String endDate});
+}
+
+/// @nodoc
+class _$PlanEndDateCopyWithImpl<$Res>
+    extends _$WorkingTitleTravelCreateEventCopyWithImpl<$Res>
+    implements $PlanEndDateCopyWith<$Res> {
+  _$PlanEndDateCopyWithImpl(
+      PlanEndDate _value, $Res Function(PlanEndDate) _then)
+      : super(_value, (v) => _then(v as PlanEndDate));
+
+  @override
+  PlanEndDate get _value => super._value as PlanEndDate;
+
+  @override
+  $Res call({
+    Object? endDate = freezed,
+  }) {
+    return _then(PlanEndDate(
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PlanEndDate implements PlanEndDate {
+  const _$PlanEndDate({required this.endDate});
+
+  @override
+  final String endDate;
+
+  @override
+  String toString() {
+    return 'WorkingTitleTravelCreateEvent.planEndDate(endDate: $endDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is PlanEndDate &&
+            (identical(other.endDate, endDate) ||
+                const DeepCollectionEquality().equals(other.endDate, endDate)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(endDate);
+
+  @JsonKey(ignore: true)
+  @override
+  $PlanEndDateCopyWith<PlanEndDate> get copyWith =>
+      _$PlanEndDateCopyWithImpl<PlanEndDate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<String> start, String startPlaceName)
+        travelStart,
+    required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
+    required TResult Function() submitted,
+  }) {
+    return planEndDate(endDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<String> start, String startPlaceName)? travelStart,
+    TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) {
+    if (planEndDate != null) {
+      return planEndDate(endDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TravelStart value) travelStart,
+    required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
+    required TResult Function(_Submitted value) submitted,
+  }) {
+    return planEndDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TravelStart value)? travelStart,
+    TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) {
+    if (planEndDate != null) {
+      return planEndDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PlanEndDate implements WorkingTitleTravelCreateEvent {
+  const factory PlanEndDate({required String endDate}) = _$PlanEndDate;
+
   String get endDate => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$PlanDateCopyWith<_PlanDate> get copyWith =>
+  $PlanEndDateCopyWith<PlanEndDate> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TravelLayoverCopyWith<$Res> {
+  factory $TravelLayoverCopyWith(
+          TravelLayover value, $Res Function(TravelLayover) then) =
+      _$TravelLayoverCopyWithImpl<$Res>;
+  $Res call({List<String> layover});
+}
+
+/// @nodoc
+class _$TravelLayoverCopyWithImpl<$Res>
+    extends _$WorkingTitleTravelCreateEventCopyWithImpl<$Res>
+    implements $TravelLayoverCopyWith<$Res> {
+  _$TravelLayoverCopyWithImpl(
+      TravelLayover _value, $Res Function(TravelLayover) _then)
+      : super(_value, (v) => _then(v as TravelLayover));
+
+  @override
+  TravelLayover get _value => super._value as TravelLayover;
+
+  @override
+  $Res call({
+    Object? layover = freezed,
+  }) {
+    return _then(TravelLayover(
+      layover: layover == freezed
+          ? _value.layover
+          : layover // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TravelLayover implements TravelLayover {
+  const _$TravelLayover({required this.layover});
+
+  @override
+  final List<String> layover;
+
+  @override
+  String toString() {
+    return 'WorkingTitleTravelCreateEvent.travelLayover(layover: $layover)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is TravelLayover &&
+            (identical(other.layover, layover) ||
+                const DeepCollectionEquality().equals(other.layover, layover)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(layover);
+
+  @JsonKey(ignore: true)
+  @override
+  $TravelLayoverCopyWith<TravelLayover> get copyWith =>
+      _$TravelLayoverCopyWithImpl<TravelLayover>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<String> start, String startPlaceName)
+        travelStart,
+    required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
+    required TResult Function() submitted,
+  }) {
+    return travelLayover(layover);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<String> start, String startPlaceName)? travelStart,
+    TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) {
+    if (travelLayover != null) {
+      return travelLayover(layover);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TravelStart value) travelStart,
+    required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
+    required TResult Function(_Submitted value) submitted,
+  }) {
+    return travelLayover(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TravelStart value)? travelStart,
+    TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) {
+    if (travelLayover != null) {
+      return travelLayover(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TravelLayover implements WorkingTitleTravelCreateEvent {
+  const factory TravelLayover({required List<String> layover}) =
+      _$TravelLayover;
+
+  List<String> get layover => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TravelLayoverCopyWith<TravelLayover> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -679,7 +994,9 @@ class _$_Submitted implements _Submitted {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
-    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function(String startDate) planStartDate,
+    required TResult Function(String endDate) planEndDate,
+    required TResult Function(List<String> layover) travelLayover,
     required TResult Function() submitted,
   }) {
     return submitted();
@@ -691,7 +1008,9 @@ class _$_Submitted implements _Submitted {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
-    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function(String startDate)? planStartDate,
+    TResult Function(String endDate)? planEndDate,
+    TResult Function(List<String> layover)? travelLayover,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -707,7 +1026,9 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
-    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(PlanStartDate value) planStartDate,
+    required TResult Function(PlanEndDate value) planEndDate,
+    required TResult Function(TravelLayover value) travelLayover,
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
@@ -719,7 +1040,9 @@ class _$_Submitted implements _Submitted {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
-    TResult Function(_PlanDate value)? planDate,
+    TResult Function(PlanStartDate value)? planStartDate,
+    TResult Function(PlanEndDate value)? planEndDate,
+    TResult Function(TravelLayover value)? travelLayover,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -739,9 +1062,12 @@ class _$WorkingTitleTravelCreateStateTearOff {
   const _$WorkingTitleTravelCreateStateTearOff();
 
   _WorkingTitleTravelCreateState call(
-      {required bool isLoading, required WorkingTitleTravelPlan? travelPlan}) {
+      {required bool isLoading,
+      required bool isChanged,
+      required WorkingTitleTravelPlan? travelPlan}) {
     return _WorkingTitleTravelCreateState(
       isLoading: isLoading,
+      isChanged: isChanged,
       travelPlan: travelPlan,
     );
   }
@@ -753,6 +1079,7 @@ const $WorkingTitleTravelCreateState = _$WorkingTitleTravelCreateStateTearOff();
 /// @nodoc
 mixin _$WorkingTitleTravelCreateState {
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isChanged => throw _privateConstructorUsedError;
   WorkingTitleTravelPlan? get travelPlan => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -766,7 +1093,8 @@ abstract class $WorkingTitleTravelCreateStateCopyWith<$Res> {
           WorkingTitleTravelCreateState value,
           $Res Function(WorkingTitleTravelCreateState) then) =
       _$WorkingTitleTravelCreateStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, WorkingTitleTravelPlan? travelPlan});
+  $Res call(
+      {bool isLoading, bool isChanged, WorkingTitleTravelPlan? travelPlan});
 
   $WorkingTitleTravelPlanCopyWith<$Res>? get travelPlan;
 }
@@ -783,12 +1111,17 @@ class _$WorkingTitleTravelCreateStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? isChanged = freezed,
     Object? travelPlan = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isChanged: isChanged == freezed
+          ? _value.isChanged
+          : isChanged // ignore: cast_nullable_to_non_nullable
               as bool,
       travelPlan: travelPlan == freezed
           ? _value.travelPlan
@@ -817,7 +1150,8 @@ abstract class _$WorkingTitleTravelCreateStateCopyWith<$Res>
           $Res Function(_WorkingTitleTravelCreateState) then) =
       __$WorkingTitleTravelCreateStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, WorkingTitleTravelPlan? travelPlan});
+  $Res call(
+      {bool isLoading, bool isChanged, WorkingTitleTravelPlan? travelPlan});
 
   @override
   $WorkingTitleTravelPlanCopyWith<$Res>? get travelPlan;
@@ -839,12 +1173,17 @@ class __$WorkingTitleTravelCreateStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? isChanged = freezed,
     Object? travelPlan = freezed,
   }) {
     return _then(_WorkingTitleTravelCreateState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isChanged: isChanged == freezed
+          ? _value.isChanged
+          : isChanged // ignore: cast_nullable_to_non_nullable
               as bool,
       travelPlan: travelPlan == freezed
           ? _value.travelPlan
@@ -859,16 +1198,20 @@ class __$WorkingTitleTravelCreateStateCopyWithImpl<$Res>
 class _$_WorkingTitleTravelCreateState
     implements _WorkingTitleTravelCreateState {
   const _$_WorkingTitleTravelCreateState(
-      {required this.isLoading, required this.travelPlan});
+      {required this.isLoading,
+      required this.isChanged,
+      required this.travelPlan});
 
   @override
   final bool isLoading;
+  @override
+  final bool isChanged;
   @override
   final WorkingTitleTravelPlan? travelPlan;
 
   @override
   String toString() {
-    return 'WorkingTitleTravelCreateState(isLoading: $isLoading, travelPlan: $travelPlan)';
+    return 'WorkingTitleTravelCreateState(isLoading: $isLoading, isChanged: $isChanged, travelPlan: $travelPlan)';
   }
 
   @override
@@ -878,6 +1221,9 @@ class _$_WorkingTitleTravelCreateState
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.isChanged, isChanged) ||
+                const DeepCollectionEquality()
+                    .equals(other.isChanged, isChanged)) &&
             (identical(other.travelPlan, travelPlan) ||
                 const DeepCollectionEquality()
                     .equals(other.travelPlan, travelPlan)));
@@ -887,6 +1233,7 @@ class _$_WorkingTitleTravelCreateState
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(isChanged) ^
       const DeepCollectionEquality().hash(travelPlan);
 
   @JsonKey(ignore: true)
@@ -900,11 +1247,14 @@ abstract class _WorkingTitleTravelCreateState
     implements WorkingTitleTravelCreateState {
   const factory _WorkingTitleTravelCreateState(
           {required bool isLoading,
+          required bool isChanged,
           required WorkingTitleTravelPlan? travelPlan}) =
       _$_WorkingTitleTravelCreateState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  bool get isChanged => throw _privateConstructorUsedError;
   @override
   WorkingTitleTravelPlan? get travelPlan => throw _privateConstructorUsedError;
   @override

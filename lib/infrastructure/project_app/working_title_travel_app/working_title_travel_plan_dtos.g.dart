@@ -15,6 +15,8 @@ _$_WorkingTitleTravelPlanDto _$_$_WorkingTitleTravelPlanDtoFromJson(
     endGeoLocation: (json['endGeoLocation'] as List<dynamic>)
         .map((e) => e as String)
         .toList(),
+    layover:
+        (json['layover'] as List<dynamic>).map((e) => e as String).toList(),
     startPlaceName: json['startPlaceName'] as String,
     endPlaceName: json['endPlaceName'] as String,
     startDate: json['startDate'] as String,
@@ -28,6 +30,7 @@ Map<String, dynamic> _$_$_WorkingTitleTravelPlanDtoToJson(
     <String, dynamic>{
       'startGeoLocation': instance.startGeoLocation,
       'endGeoLocation': instance.endGeoLocation,
+      'layover': instance.layover,
       'startPlaceName': instance.startPlaceName,
       'endPlaceName': instance.endPlaceName,
       'startDate': instance.startDate,

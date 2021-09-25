@@ -19,6 +19,7 @@ class _$WorkingTitleTravelPlanTearOff {
   _WorkingTitleTravelPlan call(
       {required List<String> startGeoLocation,
       required List<String> endGeoLocation,
+      required List<String> layover,
       required String startPlaceName,
       required String endPlaceName,
       required String startDate,
@@ -27,6 +28,7 @@ class _$WorkingTitleTravelPlanTearOff {
     return _WorkingTitleTravelPlan(
       startGeoLocation: startGeoLocation,
       endGeoLocation: endGeoLocation,
+      layover: layover,
       startPlaceName: startPlaceName,
       endPlaceName: endPlaceName,
       startDate: startDate,
@@ -43,6 +45,7 @@ const $WorkingTitleTravelPlan = _$WorkingTitleTravelPlanTearOff();
 mixin _$WorkingTitleTravelPlan {
   List<String> get startGeoLocation => throw _privateConstructorUsedError;
   List<String> get endGeoLocation => throw _privateConstructorUsedError;
+  List<String> get layover => throw _privateConstructorUsedError;
   String get startPlaceName => throw _privateConstructorUsedError;
   String get endPlaceName => throw _privateConstructorUsedError;
   String get startDate => throw _privateConstructorUsedError;
@@ -62,6 +65,7 @@ abstract class $WorkingTitleTravelPlanCopyWith<$Res> {
   $Res call(
       {List<String> startGeoLocation,
       List<String> endGeoLocation,
+      List<String> layover,
       String startPlaceName,
       String endPlaceName,
       String startDate,
@@ -82,6 +86,7 @@ class _$WorkingTitleTravelPlanCopyWithImpl<$Res>
   $Res call({
     Object? startGeoLocation = freezed,
     Object? endGeoLocation = freezed,
+    Object? layover = freezed,
     Object? startPlaceName = freezed,
     Object? endPlaceName = freezed,
     Object? startDate = freezed,
@@ -96,6 +101,10 @@ class _$WorkingTitleTravelPlanCopyWithImpl<$Res>
       endGeoLocation: endGeoLocation == freezed
           ? _value.endGeoLocation
           : endGeoLocation // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      layover: layover == freezed
+          ? _value.layover
+          : layover // ignore: cast_nullable_to_non_nullable
               as List<String>,
       startPlaceName: startPlaceName == freezed
           ? _value.startPlaceName
@@ -131,6 +140,7 @@ abstract class _$WorkingTitleTravelPlanCopyWith<$Res>
   $Res call(
       {List<String> startGeoLocation,
       List<String> endGeoLocation,
+      List<String> layover,
       String startPlaceName,
       String endPlaceName,
       String startDate,
@@ -153,6 +163,7 @@ class __$WorkingTitleTravelPlanCopyWithImpl<$Res>
   $Res call({
     Object? startGeoLocation = freezed,
     Object? endGeoLocation = freezed,
+    Object? layover = freezed,
     Object? startPlaceName = freezed,
     Object? endPlaceName = freezed,
     Object? startDate = freezed,
@@ -167,6 +178,10 @@ class __$WorkingTitleTravelPlanCopyWithImpl<$Res>
       endGeoLocation: endGeoLocation == freezed
           ? _value.endGeoLocation
           : endGeoLocation // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      layover: layover == freezed
+          ? _value.layover
+          : layover // ignore: cast_nullable_to_non_nullable
               as List<String>,
       startPlaceName: startPlaceName == freezed
           ? _value.startPlaceName
@@ -198,6 +213,7 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
   const _$_WorkingTitleTravelPlan(
       {required this.startGeoLocation,
       required this.endGeoLocation,
+      required this.layover,
       required this.startPlaceName,
       required this.endPlaceName,
       required this.startDate,
@@ -208,6 +224,8 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
   final List<String> startGeoLocation;
   @override
   final List<String> endGeoLocation;
+  @override
+  final List<String> layover;
   @override
   final String startPlaceName;
   @override
@@ -221,7 +239,7 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
 
   @override
   String toString() {
-    return 'WorkingTitleTravelPlan(startGeoLocation: $startGeoLocation, endGeoLocation: $endGeoLocation, startPlaceName: $startPlaceName, endPlaceName: $endPlaceName, startDate: $startDate, endDate: $endDate, id: $id)';
+    return 'WorkingTitleTravelPlan(startGeoLocation: $startGeoLocation, endGeoLocation: $endGeoLocation, layover: $layover, startPlaceName: $startPlaceName, endPlaceName: $endPlaceName, startDate: $startDate, endDate: $endDate, id: $id)';
   }
 
   @override
@@ -234,6 +252,9 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
             (identical(other.endGeoLocation, endGeoLocation) ||
                 const DeepCollectionEquality()
                     .equals(other.endGeoLocation, endGeoLocation)) &&
+            (identical(other.layover, layover) ||
+                const DeepCollectionEquality()
+                    .equals(other.layover, layover)) &&
             (identical(other.startPlaceName, startPlaceName) ||
                 const DeepCollectionEquality()
                     .equals(other.startPlaceName, startPlaceName)) &&
@@ -255,6 +276,7 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(startGeoLocation) ^
       const DeepCollectionEquality().hash(endGeoLocation) ^
+      const DeepCollectionEquality().hash(layover) ^
       const DeepCollectionEquality().hash(startPlaceName) ^
       const DeepCollectionEquality().hash(endPlaceName) ^
       const DeepCollectionEquality().hash(startDate) ^
@@ -272,6 +294,7 @@ abstract class _WorkingTitleTravelPlan implements WorkingTitleTravelPlan {
   const factory _WorkingTitleTravelPlan(
       {required List<String> startGeoLocation,
       required List<String> endGeoLocation,
+      required List<String> layover,
       required String startPlaceName,
       required String endPlaceName,
       required String startDate,
@@ -282,6 +305,8 @@ abstract class _WorkingTitleTravelPlan implements WorkingTitleTravelPlan {
   List<String> get startGeoLocation => throw _privateConstructorUsedError;
   @override
   List<String> get endGeoLocation => throw _privateConstructorUsedError;
+  @override
+  List<String> get layover => throw _privateConstructorUsedError;
   @override
   String get startPlaceName => throw _privateConstructorUsedError;
   @override

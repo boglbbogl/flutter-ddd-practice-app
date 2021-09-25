@@ -7,6 +7,7 @@ class WorkingTitleTravelPlan with _$WorkingTitleTravelPlan {
   const factory WorkingTitleTravelPlan({
     required List<String> startGeoLocation,
     required List<String> endGeoLocation,
+    required List<String> layover,
     required String startPlaceName,
     required String endPlaceName,
     required String startDate,
@@ -17,6 +18,7 @@ class WorkingTitleTravelPlan with _$WorkingTitleTravelPlan {
   factory WorkingTitleTravelPlan.empty() => const WorkingTitleTravelPlan(
         startGeoLocation: [],
         endGeoLocation: [],
+        layover: [],
         startPlaceName: "",
         endPlaceName: "",
         startDate: "",

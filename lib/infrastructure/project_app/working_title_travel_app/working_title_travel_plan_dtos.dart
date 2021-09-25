@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ddd_practice_app/domain/project_app/working_title_travel_app/working_title_travel_plan.dart';
+import 'package:ddd_practice_app/infrastructure/core/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'working_title_travel_plan_dtos.freezed.dart';
@@ -10,6 +11,7 @@ class WorkingTitleTravelPlanDto with _$WorkingTitleTravelPlanDto {
   const factory WorkingTitleTravelPlanDto({
     required List<String> startGeoLocation,
     required List<String> endGeoLocation,
+    required List<String> layover,
     required String startPlaceName,
     required String endPlaceName,
     required String startDate,
@@ -28,6 +30,7 @@ class WorkingTitleTravelPlanDto with _$WorkingTitleTravelPlanDto {
       WorkingTitleTravelPlanDto(
         startGeoLocation: p.startGeoLocation,
         endGeoLocation: p.endGeoLocation,
+        layover: p.layover,
         startPlaceName: p.startPlaceName,
         endPlaceName: p.endPlaceName,
         startDate: p.startDate,
@@ -38,6 +41,7 @@ class WorkingTitleTravelPlanDto with _$WorkingTitleTravelPlanDto {
   WorkingTitleTravelPlan toDomain() => WorkingTitleTravelPlan(
         startGeoLocation: startGeoLocation,
         endGeoLocation: endGeoLocation,
+        layover: layover,
         startPlaceName: startPlaceName,
         endPlaceName: endPlaceName,
         startDate: startDate,

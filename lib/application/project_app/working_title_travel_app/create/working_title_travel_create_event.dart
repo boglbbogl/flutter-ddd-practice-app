@@ -11,9 +11,14 @@ class WorkingTitleTravelCreateEvent with _$WorkingTitleTravelCreateEvent {
     required List<String> end,
     required String endPlaceName,
   }) = _TravelEnd;
-  const factory WorkingTitleTravelCreateEvent.planDate({
+  const factory WorkingTitleTravelCreateEvent.planStartDate({
     required String startDate,
+  }) = PlanStartDate;
+  const factory WorkingTitleTravelCreateEvent.planEndDate({
     required String endDate,
-  }) = _PlanDate;
+  }) = PlanEndDate;
+  const factory WorkingTitleTravelCreateEvent.travelLayover({
+    required List<String> layover,
+  }) = TravelLayover;
   const factory WorkingTitleTravelCreateEvent.submitted() = _Submitted;
 }
