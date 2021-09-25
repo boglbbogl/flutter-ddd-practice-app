@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/project_app/working_title_travel_app/create/working_title_travel_create_bloc.dart';
-import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/widgets/working_title_travel_search_form.dart';
+import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/widgets/working_title_travel_start_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,8 +37,14 @@ class WorkingTitleTravelPlanPage extends StatelessWidget {
               onTap: () {
                 context
                     .read<WorkingTitleTravelCreateBloc>()
-                    .add(const WorkingTitleTravelCreateEvent.submitted());
-                Get.back();
+                    .add(const WorkingTitleTravelCreateEvent.started());
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) =>
+                            WorkingTitleTravelStartPage(),
+                        transitionDuration:
+                            const Duration(milliseconds: 2000)));
               },
               child: Container(
                 width: size.width * 0.9,
@@ -49,7 +55,7 @@ class WorkingTitleTravelPlanPage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    'CREATE',
+                    '시작하기',
                     style: theme.textTheme.bodyText2!.copyWith(
                         color: Colors.deepPurple,
                         fontSize: 28,
@@ -59,94 +65,60 @@ class WorkingTitleTravelPlanPage extends StatelessWidget {
               ),
             ),
           ),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 12),
-                if (state.travelPlan!.startPlaceName.isEmpty)
-                  _startTraverAddForm(context,
-                      title: 'START',
-                      startPlace: state.travelPlan!.startPlaceName)
-                else
-                  _startTraverAddForm(context,
-                      title: 'END',
-                      startPlace: state.travelPlan!.startPlaceName),
-                const SizedBox(
-                  height: 100,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 70, left: 30),
+                child: Text(
+                  '나만의 여정을 시작하세요',
+                  style: theme.textTheme.bodyText2!
+                      .copyWith(color: Colors.amber, fontSize: 40),
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: size.width * 0.6,
-                      child: Center(
-                          child: Text(
-                        'START',
-                        style: theme.textTheme.bodyText2!
-                            .copyWith(color: Colors.white, fontSize: 22),
-                      )),
+              ),
+              Stack(
+                children: [
+                  Hero(
+                    tag: 'start',
+                    child: Text(
+                      '출발지를 입력해주세요',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                        color: Colors.deepPurple,
+                        fontSize: 1,
+                      ),
                     ),
-                    Text(
-                      state.travelPlan!.startPlaceName,
-                      style: theme.textTheme.bodyText2!
-                          .copyWith(color: Colors.amber, fontSize: 20),
+                  ),
+                  Hero(
+                    tag: 'date',
+                    child: Text(
+                      '일정을 알려주세요',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                        color: Colors.deepPurple,
+                        fontSize: 1,
+                      ),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 15),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: size.width * 0.6,
-                      child: Center(
-                          child: Text(
-                        'END',
-                        style: theme.textTheme.bodyText2!
-                            .copyWith(color: Colors.white, fontSize: 22),
-                      )),
-                    ),
-                    Text(
-                      state.travelPlan!.endPlaceName,
-                      style: theme.textTheme.bodyText2!
-                          .copyWith(color: Colors.amber, fontSize: 20),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  const Hero(
+                    tag: 'dateIcon',
+                    child: Icon(Icons.calendar_today_rounded,
+                        size: 1, color: Colors.deepPurple),
+                  ),
+                  const Hero(
+                    tag: 'startIcon',
+                    child: Icon(Icons.add_circle_outlined,
+                        size: 1, color: Colors.deepPurple),
+                  ),
+                  const Hero(
+                    tag: 'clear',
+                    child: Icon(Icons.clear_outlined,
+                        size: 1, color: Colors.deepPurple),
+                  ),
+                ],
+              ),
+            ],
           ),
         );
       },
-    );
-  }
-
-  Row _startTraverAddForm(BuildContext context,
-      {required String title, required String startPlace}) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Text(
-          title,
-          style: theme.textTheme.bodyText2!.copyWith(
-            color: Colors.amber,
-            fontSize: 39,
-          ),
-        ),
-        InkWell(
-          onTap: () => showModalBottomSheet(
-              isScrollControlled: true,
-              context: context,
-              builder: (context) {
-                return WorkingTitleTravelSearchForm(startPlace: startPlace);
-              }),
-          child: const Icon(
-            Icons.add_circle_outlined,
-            color: Colors.amber,
-            size: 45,
-          ),
-        )
-      ],
     );
   }
 }

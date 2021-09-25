@@ -23,16 +23,13 @@ class WorkingTitleTravelMainPage extends StatelessWidget {
                 context,
                 theme,
                 title: 'Working Title Travel',
-                colors: Colors.black,
-                backColors: Colors.white,
+                colors: Colors.white,
+                backColors: Colors.deepPurple,
               ),
               bottomNavigationBar: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: InkWell(
                   onTap: () {
-                    context
-                        .read<WorkingTitleTravelCreateBloc>()
-                        .add(const WorkingTitleTravelCreateEvent.started());
                     Get.to(() => const WorkingTitleTravelPlanPage());
                   },
                   child: Container(
@@ -40,7 +37,7 @@ class WorkingTitleTravelMainPage extends StatelessWidget {
                     height: size.height * 0.08,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.black),
+                        color: Colors.deepPurple),
                     child: Center(
                       child: Text(
                         'CREATE',
@@ -72,7 +69,7 @@ class WorkingTitleTravelMainPage extends StatelessWidget {
                                   height: size.width * 0.4,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
-                                      color: Colors.black),
+                                      color: Colors.deepPurple),
                                   child: Column(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
@@ -84,12 +81,12 @@ class WorkingTitleTravelMainPage extends StatelessWidget {
                                           Text(
                                             'START',
                                             style: theme.textTheme.bodyText2!
-                                                .copyWith(color: Colors.white),
+                                                .copyWith(color: Colors.amber),
                                           ),
                                           Text(
                                             e.startPlaceName,
                                             style: theme.textTheme.bodyText2!
-                                                .copyWith(color: Colors.white),
+                                                .copyWith(color: Colors.amber),
                                           ),
                                         ],
                                       ),
@@ -100,12 +97,12 @@ class WorkingTitleTravelMainPage extends StatelessWidget {
                                           Text(
                                             'END',
                                             style: theme.textTheme.bodyText2!
-                                                .copyWith(color: Colors.white),
+                                                .copyWith(color: Colors.amber),
                                           ),
                                           Text(
                                             e.endPlaceName,
                                             style: theme.textTheme.bodyText2!
-                                                .copyWith(color: Colors.white),
+                                                .copyWith(color: Colors.amber),
                                           ),
                                         ],
                                       )
