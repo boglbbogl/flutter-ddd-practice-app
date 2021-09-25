@@ -17,6 +17,8 @@ _$_WorkingTitleTravelPlanDto _$_$_WorkingTitleTravelPlanDtoFromJson(
         .toList(),
     startPlaceName: json['startPlaceName'] as String,
     endPlaceName: json['endPlaceName'] as String,
+    startDate: json['startDate'] as String,
+    endDate: json['endDate'] as String,
     id: json['id'] as String,
   );
 }
@@ -28,5 +30,7 @@ Map<String, dynamic> _$_$_WorkingTitleTravelPlanDtoToJson(
       'endGeoLocation': instance.endGeoLocation,
       'startPlaceName': instance.startPlaceName,
       'endPlaceName': instance.endPlaceName,
+      'startDate': instance.startDate,
+      'endDate': instance.endDate,
       'id': instance.id,
     };

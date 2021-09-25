@@ -9,6 +9,8 @@ class WorkingTitleTravelPlan with _$WorkingTitleTravelPlan {
     required List<String> endGeoLocation,
     required String startPlaceName,
     required String endPlaceName,
+    required String startDate,
+    required String endDate,
     required String id,
   }) = _WorkingTitleTravelPlan;
 
@@ -17,6 +19,8 @@ class WorkingTitleTravelPlan with _$WorkingTitleTravelPlan {
         endGeoLocation: [],
         startPlaceName: "",
         endPlaceName: "",
+        startDate: "",
+        endDate: "",
         id: "",
       );
 }

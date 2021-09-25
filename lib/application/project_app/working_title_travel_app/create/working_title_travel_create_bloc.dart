@@ -45,6 +45,13 @@ class WorkingTitleTravelCreateBloc
         final result =
             _travelRepository.createPlan(workingTitleTravelPlan: plan);
       },
+      planDate: (e) async* {
+        yield state.copyWith(
+            travelPlan: state.travelPlan!.copyWith(
+          startDate: e.startDate,
+          endDate: e.endDate,
+        ));
+      },
     );
   }
 }

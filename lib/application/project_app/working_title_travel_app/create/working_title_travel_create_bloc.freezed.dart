@@ -36,6 +36,13 @@ class _$WorkingTitleTravelCreateEventTearOff {
     );
   }
 
+  _PlanDate planDate({required String startDate, required String endDate}) {
+    return _PlanDate(
+      startDate: startDate,
+      endDate: endDate,
+    );
+  }
+
   _Submitted submitted() {
     return const _Submitted();
   }
@@ -52,6 +59,7 @@ mixin _$WorkingTitleTravelCreateEvent {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate, String endDate) planDate,
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +68,7 @@ mixin _$WorkingTitleTravelCreateEvent {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate, String endDate)? planDate,
     TResult Function()? submitted,
     required TResult orElse(),
   }) =>
@@ -69,6 +78,7 @@ mixin _$WorkingTitleTravelCreateEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(_PlanDate value) planDate,
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +87,7 @@ mixin _$WorkingTitleTravelCreateEvent {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(_PlanDate value)? planDate,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) =>
@@ -143,6 +154,7 @@ class _$_Started implements _Started {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate, String endDate) planDate,
     required TResult Function() submitted,
   }) {
     return started();
@@ -154,6 +166,7 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate, String endDate)? planDate,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -169,6 +182,7 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(_PlanDate value) planDate,
     required TResult Function(_Submitted value) submitted,
   }) {
     return started(this);
@@ -180,6 +194,7 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(_PlanDate value)? planDate,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -275,6 +290,7 @@ class _$_TravelStart implements _TravelStart {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate, String endDate) planDate,
     required TResult Function() submitted,
   }) {
     return travelStart(start, startPlaceName);
@@ -286,6 +302,7 @@ class _$_TravelStart implements _TravelStart {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate, String endDate)? planDate,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -301,6 +318,7 @@ class _$_TravelStart implements _TravelStart {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(_PlanDate value) planDate,
     required TResult Function(_Submitted value) submitted,
   }) {
     return travelStart(this);
@@ -312,6 +330,7 @@ class _$_TravelStart implements _TravelStart {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(_PlanDate value)? planDate,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -414,6 +433,7 @@ class _$_TravelEnd implements _TravelEnd {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate, String endDate) planDate,
     required TResult Function() submitted,
   }) {
     return travelEnd(end, endPlaceName);
@@ -425,6 +445,7 @@ class _$_TravelEnd implements _TravelEnd {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate, String endDate)? planDate,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -440,6 +461,7 @@ class _$_TravelEnd implements _TravelEnd {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(_PlanDate value) planDate,
     required TResult Function(_Submitted value) submitted,
   }) {
     return travelEnd(this);
@@ -451,6 +473,7 @@ class _$_TravelEnd implements _TravelEnd {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(_PlanDate value)? planDate,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
@@ -469,6 +492,147 @@ abstract class _TravelEnd implements WorkingTitleTravelCreateEvent {
   String get endPlaceName => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$TravelEndCopyWith<_TravelEnd> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PlanDateCopyWith<$Res> {
+  factory _$PlanDateCopyWith(_PlanDate value, $Res Function(_PlanDate) then) =
+      __$PlanDateCopyWithImpl<$Res>;
+  $Res call({String startDate, String endDate});
+}
+
+/// @nodoc
+class __$PlanDateCopyWithImpl<$Res>
+    extends _$WorkingTitleTravelCreateEventCopyWithImpl<$Res>
+    implements _$PlanDateCopyWith<$Res> {
+  __$PlanDateCopyWithImpl(_PlanDate _value, $Res Function(_PlanDate) _then)
+      : super(_value, (v) => _then(v as _PlanDate));
+
+  @override
+  _PlanDate get _value => super._value as _PlanDate;
+
+  @override
+  $Res call({
+    Object? startDate = freezed,
+    Object? endDate = freezed,
+  }) {
+    return _then(_PlanDate(
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PlanDate implements _PlanDate {
+  const _$_PlanDate({required this.startDate, required this.endDate});
+
+  @override
+  final String startDate;
+  @override
+  final String endDate;
+
+  @override
+  String toString() {
+    return 'WorkingTitleTravelCreateEvent.planDate(startDate: $startDate, endDate: $endDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PlanDate &&
+            (identical(other.startDate, startDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.startDate, startDate)) &&
+            (identical(other.endDate, endDate) ||
+                const DeepCollectionEquality().equals(other.endDate, endDate)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(startDate) ^
+      const DeepCollectionEquality().hash(endDate);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PlanDateCopyWith<_PlanDate> get copyWith =>
+      __$PlanDateCopyWithImpl<_PlanDate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<String> start, String startPlaceName)
+        travelStart,
+    required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate, String endDate) planDate,
+    required TResult Function() submitted,
+  }) {
+    return planDate(startDate, endDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<String> start, String startPlaceName)? travelStart,
+    TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate, String endDate)? planDate,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) {
+    if (planDate != null) {
+      return planDate(startDate, endDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TravelStart value) travelStart,
+    required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(_PlanDate value) planDate,
+    required TResult Function(_Submitted value) submitted,
+  }) {
+    return planDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TravelStart value)? travelStart,
+    TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(_PlanDate value)? planDate,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) {
+    if (planDate != null) {
+      return planDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PlanDate implements WorkingTitleTravelCreateEvent {
+  const factory _PlanDate(
+      {required String startDate, required String endDate}) = _$_PlanDate;
+
+  String get startDate => throw _privateConstructorUsedError;
+  String get endDate => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PlanDateCopyWith<_PlanDate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -515,6 +679,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(List<String> start, String startPlaceName)
         travelStart,
     required TResult Function(List<String> end, String endPlaceName) travelEnd,
+    required TResult Function(String startDate, String endDate) planDate,
     required TResult Function() submitted,
   }) {
     return submitted();
@@ -526,6 +691,7 @@ class _$_Submitted implements _Submitted {
     TResult Function()? started,
     TResult Function(List<String> start, String startPlaceName)? travelStart,
     TResult Function(List<String> end, String endPlaceName)? travelEnd,
+    TResult Function(String startDate, String endDate)? planDate,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -541,6 +707,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Started value) started,
     required TResult Function(_TravelStart value) travelStart,
     required TResult Function(_TravelEnd value) travelEnd,
+    required TResult Function(_PlanDate value) planDate,
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
@@ -552,6 +719,7 @@ class _$_Submitted implements _Submitted {
     TResult Function(_Started value)? started,
     TResult Function(_TravelStart value)? travelStart,
     TResult Function(_TravelEnd value)? travelEnd,
+    TResult Function(_PlanDate value)? planDate,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {

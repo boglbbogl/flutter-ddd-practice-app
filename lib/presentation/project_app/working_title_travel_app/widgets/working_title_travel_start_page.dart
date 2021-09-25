@@ -73,9 +73,49 @@ class WorkingTitleTravelStartPage extends StatelessWidget {
                 icon: Icons.calendar_today_rounded,
                 iconTag: 'dateIcon',
                 onTap: () {
-                  travelPlanPicker(context: context);
+                  travelPlanPicker(
+                    context: context,
+                    onDateTimeChanged: (v) {
+                      context.read<WorkingTitleTravelCreateBloc>().add(
+                          WorkingTitleTravelCreateEvent.planDate(
+                              startDate: v.toString().substring(0, 10),
+                              endDate: v.toString().substring(0, 10)));
+                    },
+                  );
                 },
               ),
+              if (state.travelPlan!.startDate.isNotEmpty) ...[
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: DefaultTextStyle(
+                    style: theme.textTheme.bodyText2!
+                        .copyWith(color: Colors.white),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          children: [
+                            Text('출발'),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(state.travelPlan!.startDate),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text('도착'),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(state.travelPlan!.endDate),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
               travelStartForm(
                 title: '출발지를 선택하세요',
                 titleTag: 'start',

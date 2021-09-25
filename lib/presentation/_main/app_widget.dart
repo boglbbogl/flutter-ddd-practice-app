@@ -32,6 +32,7 @@ import 'package:ddd_practice_app/presentation/widget_practice/member_practice/me
 import 'package:ddd_practice_app/presentation/widget_practice/widget_hero_animation_practice/widget_hero_animation_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 class AppWidget extends StatelessWidget {
@@ -96,14 +97,14 @@ class AppWidget extends StatelessWidget {
           '/workingTitleTravelMainPage': (context) =>
               const WorkingTitleTravelMainPage(),
         },
-        // localizationsDelegates: [
-        //   GlobalMaterialLocalizations.delegate,
-        //   GlobalCupertinoLocalizations.delegate,
-        // ],
-        // supportedLocales: [
-        //   Locale('ko', 'KR'),
-        //   Locale('en', 'US'),
-        // ],
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('ko', 'KR'),
+          Locale('en', 'US'),
+        ],
         theme: ThemeData(
           fontFamily: 'Yanolja',
           primarySwatch: Colors.green,

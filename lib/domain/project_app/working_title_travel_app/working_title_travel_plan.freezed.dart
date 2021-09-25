@@ -21,12 +21,16 @@ class _$WorkingTitleTravelPlanTearOff {
       required List<String> endGeoLocation,
       required String startPlaceName,
       required String endPlaceName,
+      required String startDate,
+      required String endDate,
       required String id}) {
     return _WorkingTitleTravelPlan(
       startGeoLocation: startGeoLocation,
       endGeoLocation: endGeoLocation,
       startPlaceName: startPlaceName,
       endPlaceName: endPlaceName,
+      startDate: startDate,
+      endDate: endDate,
       id: id,
     );
   }
@@ -41,6 +45,8 @@ mixin _$WorkingTitleTravelPlan {
   List<String> get endGeoLocation => throw _privateConstructorUsedError;
   String get startPlaceName => throw _privateConstructorUsedError;
   String get endPlaceName => throw _privateConstructorUsedError;
+  String get startDate => throw _privateConstructorUsedError;
+  String get endDate => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -58,6 +64,8 @@ abstract class $WorkingTitleTravelPlanCopyWith<$Res> {
       List<String> endGeoLocation,
       String startPlaceName,
       String endPlaceName,
+      String startDate,
+      String endDate,
       String id});
 }
 
@@ -76,6 +84,8 @@ class _$WorkingTitleTravelPlanCopyWithImpl<$Res>
     Object? endGeoLocation = freezed,
     Object? startPlaceName = freezed,
     Object? endPlaceName = freezed,
+    Object? startDate = freezed,
+    Object? endDate = freezed,
     Object? id = freezed,
   }) {
     return _then(_value.copyWith(
@@ -94,6 +104,14 @@ class _$WorkingTitleTravelPlanCopyWithImpl<$Res>
       endPlaceName: endPlaceName == freezed
           ? _value.endPlaceName
           : endPlaceName // ignore: cast_nullable_to_non_nullable
+              as String,
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as String,
       id: id == freezed
           ? _value.id
@@ -115,6 +133,8 @@ abstract class _$WorkingTitleTravelPlanCopyWith<$Res>
       List<String> endGeoLocation,
       String startPlaceName,
       String endPlaceName,
+      String startDate,
+      String endDate,
       String id});
 }
 
@@ -135,6 +155,8 @@ class __$WorkingTitleTravelPlanCopyWithImpl<$Res>
     Object? endGeoLocation = freezed,
     Object? startPlaceName = freezed,
     Object? endPlaceName = freezed,
+    Object? startDate = freezed,
+    Object? endDate = freezed,
     Object? id = freezed,
   }) {
     return _then(_WorkingTitleTravelPlan(
@@ -154,6 +176,14 @@ class __$WorkingTitleTravelPlanCopyWithImpl<$Res>
           ? _value.endPlaceName
           : endPlaceName // ignore: cast_nullable_to_non_nullable
               as String,
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as String,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -170,6 +200,8 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
       required this.endGeoLocation,
       required this.startPlaceName,
       required this.endPlaceName,
+      required this.startDate,
+      required this.endDate,
       required this.id});
 
   @override
@@ -181,11 +213,15 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
   @override
   final String endPlaceName;
   @override
+  final String startDate;
+  @override
+  final String endDate;
+  @override
   final String id;
 
   @override
   String toString() {
-    return 'WorkingTitleTravelPlan(startGeoLocation: $startGeoLocation, endGeoLocation: $endGeoLocation, startPlaceName: $startPlaceName, endPlaceName: $endPlaceName, id: $id)';
+    return 'WorkingTitleTravelPlan(startGeoLocation: $startGeoLocation, endGeoLocation: $endGeoLocation, startPlaceName: $startPlaceName, endPlaceName: $endPlaceName, startDate: $startDate, endDate: $endDate, id: $id)';
   }
 
   @override
@@ -204,6 +240,12 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
             (identical(other.endPlaceName, endPlaceName) ||
                 const DeepCollectionEquality()
                     .equals(other.endPlaceName, endPlaceName)) &&
+            (identical(other.startDate, startDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.startDate, startDate)) &&
+            (identical(other.endDate, endDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.endDate, endDate)) &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)));
   }
@@ -215,6 +257,8 @@ class _$_WorkingTitleTravelPlan implements _WorkingTitleTravelPlan {
       const DeepCollectionEquality().hash(endGeoLocation) ^
       const DeepCollectionEquality().hash(startPlaceName) ^
       const DeepCollectionEquality().hash(endPlaceName) ^
+      const DeepCollectionEquality().hash(startDate) ^
+      const DeepCollectionEquality().hash(endDate) ^
       const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
@@ -230,6 +274,8 @@ abstract class _WorkingTitleTravelPlan implements WorkingTitleTravelPlan {
       required List<String> endGeoLocation,
       required String startPlaceName,
       required String endPlaceName,
+      required String startDate,
+      required String endDate,
       required String id}) = _$_WorkingTitleTravelPlan;
 
   @override
@@ -240,6 +286,10 @@ abstract class _WorkingTitleTravelPlan implements WorkingTitleTravelPlan {
   String get startPlaceName => throw _privateConstructorUsedError;
   @override
   String get endPlaceName => throw _privateConstructorUsedError;
+  @override
+  String get startDate => throw _privateConstructorUsedError;
+  @override
+  String get endDate => throw _privateConstructorUsedError;
   @override
   String get id => throw _privateConstructorUsedError;
   @override

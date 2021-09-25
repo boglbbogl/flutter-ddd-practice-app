@@ -12,6 +12,8 @@ class WorkingTitleTravelPlanDto with _$WorkingTitleTravelPlanDto {
     required List<String> endGeoLocation,
     required String startPlaceName,
     required String endPlaceName,
+    required String startDate,
+    required String endDate,
     required String id,
   }) = _WorkingTitleTravelPlanDto;
   const WorkingTitleTravelPlanDto._();
@@ -28,6 +30,8 @@ class WorkingTitleTravelPlanDto with _$WorkingTitleTravelPlanDto {
         endGeoLocation: p.endGeoLocation,
         startPlaceName: p.startPlaceName,
         endPlaceName: p.endPlaceName,
+        startDate: p.startDate,
+        endDate: p.endDate,
         id: p.id,
       );
 
@@ -36,6 +40,8 @@ class WorkingTitleTravelPlanDto with _$WorkingTitleTravelPlanDto {
         endGeoLocation: endGeoLocation,
         startPlaceName: startPlaceName,
         endPlaceName: endPlaceName,
+        startDate: startDate,
+        endDate: endDate,
         id: id,
       );
 }

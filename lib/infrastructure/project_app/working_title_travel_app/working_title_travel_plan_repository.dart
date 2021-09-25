@@ -23,6 +23,8 @@ class WorkingTitleTravelPlanRepository
       'endGeoLocation': workingTitleTravelPlan.endGeoLocation,
       'startPlaceName': workingTitleTravelPlan.startPlaceName,
       'endPlaceName': workingTitleTravelPlan.endPlaceName,
+      'startDate': workingTitleTravelPlan.startDate,
+      'endDate': workingTitleTravelPlan.endDate,
       'id': travelPlanId,
     });
     return unit;
