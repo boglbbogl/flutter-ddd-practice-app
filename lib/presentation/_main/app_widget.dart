@@ -4,6 +4,7 @@ import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_pract
 import 'package:ddd_practice_app/application/main/main_cubit.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
 import 'package:ddd_practice_app/application/project_app/working_title_travel_app/create/working_title_travel_create_bloc.dart';
+import 'package:ddd_practice_app/application/project_app/working_title_travel_app/main/working_title_travel_main_cubit.dart';
 import 'package:ddd_practice_app/application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/widget_practice/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';

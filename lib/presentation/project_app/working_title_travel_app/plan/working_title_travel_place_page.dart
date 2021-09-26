@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/project_app/working_title_travel_app/create/working_title_travel_create_bloc.dart';
-import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/plan/travel_layover_search_page.dart';
-import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/plan/travel_search_local.dart';
+import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/plan/widgets/travel_layover_search_page.dart';
+import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/plan/widgets/travel_search_local.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -107,7 +107,7 @@ class WorkingTitleTravelPlacePage extends StatelessWidget {
                     onTap: () {
                       pushNewScreen(context,
                           screen: TravelLayoverSearchPage(
-                            layover: state.travelPlan!.layover,
+                            layover: state.travelPlan!.layoverPlaceName!,
                           ));
                     },
                     child: Padding(
@@ -131,7 +131,7 @@ class WorkingTitleTravelPlacePage extends StatelessWidget {
                         style: theme.textTheme.bodyText2!.copyWith(
                             color: const Color.fromRGBO(115, 115, 115, 1)),
                       ),
-                      if (state.travelPlan!.layover.isNotEmpty) ...[
+                      if (state.travelPlan!.layoverPlaceName!.isNotEmpty) ...[
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 20),
                           child: Icon(
@@ -141,9 +141,10 @@ class WorkingTitleTravelPlacePage extends StatelessWidget {
                           ),
                         ),
                         ListView(
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           children: [
-                            ...state.travelPlan!.layover.map(
+                            ...state.travelPlan!.layoverPlaceName!.map(
                               (e) => Center(
                                 child: Text(
                                   e.toString(),

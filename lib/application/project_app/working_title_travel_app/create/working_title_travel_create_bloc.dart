@@ -53,7 +53,7 @@ class WorkingTitleTravelCreateBloc
       yield state.copyWith(
           isChanged: state.isChanged == true ? false : true,
           travelPlan: state.travelPlan!.copyWith(
-            layover: e.layover,
+            layoverPlaceName: e.layover,
           ));
     });
   }

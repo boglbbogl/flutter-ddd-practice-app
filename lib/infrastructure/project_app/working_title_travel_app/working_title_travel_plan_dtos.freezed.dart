@@ -24,7 +24,7 @@ class _$WorkingTitleTravelPlanDtoTearOff {
   _WorkingTitleTravelPlanDto call(
       {required List<String> startGeoLocation,
       required List<String> endGeoLocation,
-      required List<String> layover,
+      required List<String>? layoverPlaceName,
       required String startPlaceName,
       required String endPlaceName,
       required String startDate,
@@ -33,7 +33,7 @@ class _$WorkingTitleTravelPlanDtoTearOff {
     return _WorkingTitleTravelPlanDto(
       startGeoLocation: startGeoLocation,
       endGeoLocation: endGeoLocation,
-      layover: layover,
+      layoverPlaceName: layoverPlaceName,
       startPlaceName: startPlaceName,
       endPlaceName: endPlaceName,
       startDate: startDate,
@@ -54,7 +54,7 @@ const $WorkingTitleTravelPlanDto = _$WorkingTitleTravelPlanDtoTearOff();
 mixin _$WorkingTitleTravelPlanDto {
   List<String> get startGeoLocation => throw _privateConstructorUsedError;
   List<String> get endGeoLocation => throw _privateConstructorUsedError;
-  List<String> get layover => throw _privateConstructorUsedError;
+  List<String>? get layoverPlaceName => throw _privateConstructorUsedError;
   String get startPlaceName => throw _privateConstructorUsedError;
   String get endPlaceName => throw _privateConstructorUsedError;
   String get startDate => throw _privateConstructorUsedError;
@@ -75,7 +75,7 @@ abstract class $WorkingTitleTravelPlanDtoCopyWith<$Res> {
   $Res call(
       {List<String> startGeoLocation,
       List<String> endGeoLocation,
-      List<String> layover,
+      List<String>? layoverPlaceName,
       String startPlaceName,
       String endPlaceName,
       String startDate,
@@ -96,7 +96,7 @@ class _$WorkingTitleTravelPlanDtoCopyWithImpl<$Res>
   $Res call({
     Object? startGeoLocation = freezed,
     Object? endGeoLocation = freezed,
-    Object? layover = freezed,
+    Object? layoverPlaceName = freezed,
     Object? startPlaceName = freezed,
     Object? endPlaceName = freezed,
     Object? startDate = freezed,
@@ -112,10 +112,10 @@ class _$WorkingTitleTravelPlanDtoCopyWithImpl<$Res>
           ? _value.endGeoLocation
           : endGeoLocation // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      layover: layover == freezed
-          ? _value.layover
-          : layover // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      layoverPlaceName: layoverPlaceName == freezed
+          ? _value.layoverPlaceName
+          : layoverPlaceName // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       startPlaceName: startPlaceName == freezed
           ? _value.startPlaceName
           : startPlaceName // ignore: cast_nullable_to_non_nullable
@@ -150,7 +150,7 @@ abstract class _$WorkingTitleTravelPlanDtoCopyWith<$Res>
   $Res call(
       {List<String> startGeoLocation,
       List<String> endGeoLocation,
-      List<String> layover,
+      List<String>? layoverPlaceName,
       String startPlaceName,
       String endPlaceName,
       String startDate,
@@ -174,7 +174,7 @@ class __$WorkingTitleTravelPlanDtoCopyWithImpl<$Res>
   $Res call({
     Object? startGeoLocation = freezed,
     Object? endGeoLocation = freezed,
-    Object? layover = freezed,
+    Object? layoverPlaceName = freezed,
     Object? startPlaceName = freezed,
     Object? endPlaceName = freezed,
     Object? startDate = freezed,
@@ -190,10 +190,10 @@ class __$WorkingTitleTravelPlanDtoCopyWithImpl<$Res>
           ? _value.endGeoLocation
           : endGeoLocation // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      layover: layover == freezed
-          ? _value.layover
-          : layover // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      layoverPlaceName: layoverPlaceName == freezed
+          ? _value.layoverPlaceName
+          : layoverPlaceName // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       startPlaceName: startPlaceName == freezed
           ? _value.startPlaceName
           : startPlaceName // ignore: cast_nullable_to_non_nullable
@@ -224,7 +224,7 @@ class _$_WorkingTitleTravelPlanDto extends _WorkingTitleTravelPlanDto {
   const _$_WorkingTitleTravelPlanDto(
       {required this.startGeoLocation,
       required this.endGeoLocation,
-      required this.layover,
+      required this.layoverPlaceName,
       required this.startPlaceName,
       required this.endPlaceName,
       required this.startDate,
@@ -240,7 +240,7 @@ class _$_WorkingTitleTravelPlanDto extends _WorkingTitleTravelPlanDto {
   @override
   final List<String> endGeoLocation;
   @override
-  final List<String> layover;
+  final List<String>? layoverPlaceName;
   @override
   final String startPlaceName;
   @override
@@ -254,7 +254,7 @@ class _$_WorkingTitleTravelPlanDto extends _WorkingTitleTravelPlanDto {
 
   @override
   String toString() {
-    return 'WorkingTitleTravelPlanDto(startGeoLocation: $startGeoLocation, endGeoLocation: $endGeoLocation, layover: $layover, startPlaceName: $startPlaceName, endPlaceName: $endPlaceName, startDate: $startDate, endDate: $endDate, id: $id)';
+    return 'WorkingTitleTravelPlanDto(startGeoLocation: $startGeoLocation, endGeoLocation: $endGeoLocation, layoverPlaceName: $layoverPlaceName, startPlaceName: $startPlaceName, endPlaceName: $endPlaceName, startDate: $startDate, endDate: $endDate, id: $id)';
   }
 
   @override
@@ -267,9 +267,9 @@ class _$_WorkingTitleTravelPlanDto extends _WorkingTitleTravelPlanDto {
             (identical(other.endGeoLocation, endGeoLocation) ||
                 const DeepCollectionEquality()
                     .equals(other.endGeoLocation, endGeoLocation)) &&
-            (identical(other.layover, layover) ||
+            (identical(other.layoverPlaceName, layoverPlaceName) ||
                 const DeepCollectionEquality()
-                    .equals(other.layover, layover)) &&
+                    .equals(other.layoverPlaceName, layoverPlaceName)) &&
             (identical(other.startPlaceName, startPlaceName) ||
                 const DeepCollectionEquality()
                     .equals(other.startPlaceName, startPlaceName)) &&
@@ -291,7 +291,7 @@ class _$_WorkingTitleTravelPlanDto extends _WorkingTitleTravelPlanDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(startGeoLocation) ^
       const DeepCollectionEquality().hash(endGeoLocation) ^
-      const DeepCollectionEquality().hash(layover) ^
+      const DeepCollectionEquality().hash(layoverPlaceName) ^
       const DeepCollectionEquality().hash(startPlaceName) ^
       const DeepCollectionEquality().hash(endPlaceName) ^
       const DeepCollectionEquality().hash(startDate) ^
@@ -315,7 +315,7 @@ abstract class _WorkingTitleTravelPlanDto extends WorkingTitleTravelPlanDto {
   const factory _WorkingTitleTravelPlanDto(
       {required List<String> startGeoLocation,
       required List<String> endGeoLocation,
-      required List<String> layover,
+      required List<String>? layoverPlaceName,
       required String startPlaceName,
       required String endPlaceName,
       required String startDate,
@@ -331,7 +331,7 @@ abstract class _WorkingTitleTravelPlanDto extends WorkingTitleTravelPlanDto {
   @override
   List<String> get endGeoLocation => throw _privateConstructorUsedError;
   @override
-  List<String> get layover => throw _privateConstructorUsedError;
+  List<String>? get layoverPlaceName => throw _privateConstructorUsedError;
   @override
   String get startPlaceName => throw _privateConstructorUsedError;
   @override

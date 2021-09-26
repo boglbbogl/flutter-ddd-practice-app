@@ -25,7 +25,7 @@ class WorkingTitleTravelPlanRepository
       'endPlaceName': workingTitleTravelPlan.endPlaceName,
       'startDate': workingTitleTravelPlan.startDate,
       'endDate': workingTitleTravelPlan.endDate,
-      'layoverPlaceName': workingTitleTravelPlan.layover,
+      'layoverPlaceName': workingTitleTravelPlan.layoverPlaceName,
       'id': travelPlanId,
     });
     return unit;
@@ -34,7 +34,7 @@ class WorkingTitleTravelPlanRepository
   @override
   Stream<List<WorkingTitleTravelPlan>> readTravelPlan() async* {
     try {
-      final ref = _firestore.collection('travel');
+      final ref = _firestore.collection("travel");
       yield* ref.snapshots().map((sn) {
         return sn.docs.map((doc) {
           return WorkingTitleTravelPlanDto.fromFireStore(doc).toDomain();
