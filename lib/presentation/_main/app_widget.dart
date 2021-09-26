@@ -29,6 +29,7 @@ import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization_p
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/api_naver_shop_main_page.dart';
 import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/working_title_travel_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/community_practice/community_main_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/firestore_practice/firestore_practice_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/widget_hero_animation_practice/widget_hero_animation_main_page.dart';
 import 'package:flutter/material.dart';
@@ -91,6 +92,8 @@ class AppWidget extends StatelessWidget {
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>
               const WidgetHeroAnimationMainPage(),
+          '/firestorePracticeMainPage': (context) =>
+              FirestorePracticeMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/apiNewsMainPage': (context) => const ApiNewsMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
