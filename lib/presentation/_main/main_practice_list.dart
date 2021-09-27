@@ -26,6 +26,16 @@ class MainPracticeList extends StatelessWidget {
           gridView: _googleApiGridView(),
         ),
         mainProductListItem(
+          title: 'Public APP',
+          colors: Colors.pink,
+          gridView: _publicApiGridView(),
+        ),
+        mainProductListItem(
+          title: 'Project APP',
+          colors: Colors.black,
+          gridView: _projectAppGridView(),
+        ),
+        mainProductListItem(
           title: 'WIDGET',
           colors: Colors.teal,
           gridView: _widgetGridView(),
@@ -34,11 +44,6 @@ class MainPracticeList extends StatelessWidget {
           title: 'Example API',
           colors: Colors.deepPurple,
           gridView: _exampleApiGridView(),
-        ),
-        mainProductListItem(
-          title: 'Project APP',
-          colors: Colors.black,
-          gridView: _projectAppGridView(),
         ),
       ],
     );
@@ -116,6 +121,54 @@ class MainPracticeList extends StatelessWidget {
         });
   }
 
+  GridView _publicApiGridView() {
+    return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+          childAspectRatio: 1.5,
+        ),
+        itemCount: GoogleApiPracticeItem().title.length,
+        itemBuilder: (context, index) {
+          return _itemForm(
+            context,
+            colors: Colors.pink,
+            textColors: Colors.white,
+            secondTextColors: Colors.white,
+            router: PublicApiPracticeItem().router[index].toString(),
+            title: PublicApiPracticeItem().title[index].toString(),
+            sm: PublicApiPracticeItem().stateManagement[index].toString(),
+          );
+        });
+  }
+
+  GridView _projectAppGridView() {
+    return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+          childAspectRatio: 1.5,
+        ),
+        itemCount: ProjectAppItem().title.length,
+        itemBuilder: (context, index) {
+          return _itemForm(
+            context,
+            colors: Colors.black,
+            textColors: Colors.white,
+            secondTextColors: Colors.white,
+            router: ProjectAppItem().router[index].toString(),
+            title: ProjectAppItem().title[index].toString(),
+            sm: ProjectAppItem().stateManagement[index].toString(),
+          );
+        });
+  }
+
   GridView _widgetGridView() {
     return GridView.builder(
         shrinkWrap: true,
@@ -160,30 +213,6 @@ class MainPracticeList extends StatelessWidget {
             router: ExampleApiPracticeItem().router[index].toString(),
             title: ExampleApiPracticeItem().title[index].toString(),
             sm: ExampleApiPracticeItem().stateManagement[index].toString(),
-          );
-        });
-  }
-
-  GridView _projectAppGridView() {
-    return GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 10.0,
-          crossAxisSpacing: 10.0,
-          childAspectRatio: 1.5,
-        ),
-        itemCount: ProjectAppItem().title.length,
-        itemBuilder: (context, index) {
-          return _itemForm(
-            context,
-            colors: Colors.black,
-            textColors: Colors.white,
-            secondTextColors: Colors.white,
-            router: ProjectAppItem().router[index].toString(),
-            title: ProjectAppItem().title[index].toString(),
-            sm: ProjectAppItem().stateManagement[index].toString(),
           );
         });
   }

@@ -50,11 +50,11 @@ class NaverApiPracticeItem {
     '/apiNaverMovieMainPage',
   ];
   List stateManagement = [
-    'BLoc',
-    'BLoc',
-    'BLoc',
-    'BLoc',
-    'BLoc',
+    'BLoC',
+    'BLoC',
+    'BLoC',
+    'BLoC',
+    'BLoC',
   ];
 }
 
@@ -66,8 +66,20 @@ class GoogleApiPracticeItem {
     '/apiGoogleMapsMainPage',
   ];
   List stateManagement = [
-    'BLoc',
+    'BLoC',
   ];
+}
+
+class PublicApiPracticeItem {
+  List title = ['Electric Station'];
+  List router = ['/apiPublicElectricStationMainPage'];
+  List stateManagement = ['BLoC'];
+}
+
+class ProjectAppItem {
+  List title = ['Working Title Travel'];
+  List router = ['/workingTitleTravelMainPage'];
+  List stateManagement = ['BLoC'];
 }
 
 class WidgetPracticeItem {
@@ -107,10 +119,4 @@ class ExampleApiPracticeItem {
     'BLoC',
     'Cubit',
   ];
-}
-
-class ProjectAppItem {
-  List title = ['Working Title Travel'];
-  List router = ['/workingTitleTravelMainPage'];
-  List stateManagement = ['BLoC'];
 }

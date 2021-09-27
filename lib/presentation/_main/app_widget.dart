@@ -1,10 +1,9 @@
-import 'package:ddd_practice_app/application/google_api/api_google_maps_practice/api_google_maps_main_bloc.dart';
-import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_bloc.dart';
-import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_cubit.dart';
-import 'package:ddd_practice_app/application/main/main_cubit.dart';
-import 'package:ddd_practice_app/application/naver_api/api_naver_papago_practice/api_naver_papago_main_bloc.dart';
+import 'package:ddd_practice_app/application/_main/main_cubit.dart';
+import 'package:ddd_practice_app/application/google_api/api_google_maps/api_google_maps_main_bloc.dart';
+import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_bloc.dart';
+import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate/api_kakao_translate_main_cubit.dart';
+import 'package:ddd_practice_app/application/naver_api/api_naver_papago/api_naver_papago_main_bloc.dart';
 import 'package:ddd_practice_app/application/project_app/working_title_travel_app/create/working_title_travel_create_bloc.dart';
-import 'package:ddd_practice_app/application/project_app/working_title_travel_app/main/working_title_travel_main_cubit.dart';
 import 'package:ddd_practice_app/application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart';
 import 'package:ddd_practice_app/application/widget_practice/member_practice/member_main/member_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
@@ -13,21 +12,23 @@ import 'package:ddd_practice_app/presentation/example_api/api_news_practice/api_
 import 'package:ddd_practice_app/presentation/example_api/api_picture_practice/api_picture_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_weather_practice/api_weather_main_page.dart';
 import 'package:ddd_practice_app/presentation/google_api/api_google_maps_practice/api_google_maps_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book_practice/api_kakao_book_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang_practice/api_kakao_detect_lang_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image_practice/api_kakao_image_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_address_practice/api_kakao_local_address_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple_practice/api_kakao_translate_multiple_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_practice/api_kakao_translate_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_video_practice/api_kakao_video_main_page.dart';
-import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web_practice/api_kakao_web_main_page.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_image_practice/api_naver_image_main_page.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie_practice/api_naver_movie_main_page.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago_practice/api_naver_papago_main_page.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization_practice/api_naver_romanization_main_page.dart';
-import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop_practice/api_naver_shop_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book/api_kakao_book_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang/api_kakao_detect_lang_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image/api_kakao_image_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_address/api_kakao_local_address_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate/api_kakao_translate_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_translate_multiple/api_kakao_translate_multiple_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_video/api_kakao_video_main_page.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_web/api_kakao_web_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_image/api_naver_image_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie/api_naver_movie_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago/api_naver_papago_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization/api_naver_romanization_main_page.dart';
+import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop/api_naver_shop_main_page.dart';
+
 import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/working_title_travel_main_page.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/api_public_electric_station_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/firestore_practice/firestore_practice_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_main_page.dart';
@@ -89,11 +90,13 @@ class AppWidget extends StatelessWidget {
           '/apiNaverShopMainPage': (context) => ApiNaverShopMainPage(),
           '/apiNaverMovieMainPage': (context) => ApiNaverMovieMainPage(),
           '/apiGoogleMapsMainPage': (context) => const ApiGoogleMapsMainPage(),
+          '/apiPublicElectricStationMainPage': (context) =>
+              const ApiPublicElectricStationMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>
               const WidgetHeroAnimationMainPage(),
           '/firestorePracticeMainPage': (context) =>
-              FirestorePracticeMainPage(),
+              const FirestorePracticeMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/apiNewsMainPage': (context) => const ApiNewsMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),

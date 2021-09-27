@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword_practice/api_kakao_local_keyword_main_bloc.dart';
+import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_bloc.dart';
 import 'package:ddd_practice_app/application/project_app/working_title_travel_app/create/working_title_travel_create_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +16,7 @@ class TravelLayoverSearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> layoverAddList = layover.isEmpty ? [] : layover;
+    final List<String> layoverAddList = layover.isEmpty ? [] : layover;
     return BlocBuilder<WorkingTitleTravelCreateBloc,
         WorkingTitleTravelCreateState>(
       builder: (context, state) {
