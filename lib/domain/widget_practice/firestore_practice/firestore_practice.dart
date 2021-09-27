@@ -8,6 +8,10 @@ class FirestorePractice with _$FirestorePractice {
     required List<FirestoreMap> map,
     required String id,
   }) = _FirestorePractice;
+  factory FirestorePractice.empty() => const FirestorePractice(
+        map: [],
+        id: '',
+      );
 }
 
 @freezed

@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:ddd_practice_app/domain/widget_practice/firestore_practice/firestore_practice.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:injectable/injectable.dart';
 
 part 'firestore_create_main_event.dart';
@@ -16,7 +18,15 @@ class FirestoreCreateMainBloc
     FirestoreCreateMainEvent event,
   ) async* {
     yield* event.map(
-      started: (e) async* {},
+      started: (e) async* {
+        FirestorePractice initialFirestorePractice = FirestorePractice.empty();
+        FirestoreCreateMainState _state;
+        _state = state.copyWith(firestorePractice: initialFirestorePractice);
+        yield _state;
+      },
+      submitted: (e) async* {
+        final data = state.firestorePractice!.copyWith();
+      },
     );
   }
 }
