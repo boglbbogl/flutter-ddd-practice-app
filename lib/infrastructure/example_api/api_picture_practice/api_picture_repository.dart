@@ -19,8 +19,6 @@ class ApiExampleRepository implements IApiPictureRepository {
       if (response.statusCode == 200) {
         final decoded =
             json.decode(utf8.decode(response.bodyBytes)) as List<dynamic>;
-
-        // final data = decoded["data"] as List<dynamic>;
         final apiExampleData = decoded.map((e) =>
             ApiPictureDto.fromJson(e as Map<String, dynamic>).toDomain());
         return apiExampleData.toList();

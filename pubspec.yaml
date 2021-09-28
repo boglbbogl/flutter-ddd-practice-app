@@ -62,6 +62,7 @@ dependencies:
   shared_preferences: ^2.0.5
   url_launcher: ^6.0.10
   webview_flutter: ^2.0.12
+  xml2json: ^5.3.1
 
 dev_dependencies:
   build_runner: ^2.0.1
