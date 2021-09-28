@@ -9,10 +9,12 @@ class ApiPublicElectricStation with _$ApiPublicElectricStation {
     required String chargeTp,
     required String cpId,
     required String cpNm,
+    required String cpTp,
     required String cpStat,
     required String csId,
     required String csNm,
     required String lat,
     required String longi,
+    required String statUpdateDatetime,
   }) = _ApiPublicElectricStation;
 }

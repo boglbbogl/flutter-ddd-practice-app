@@ -25,7 +25,18 @@ class ApiPublicElectricStationMainBloc extends Bloc<
         yield state.copyWith(isLoading: true);
         final result = await _electricStationRepository.getElectricStation(
             page: 1, query: e.query);
-        yield state.copyWith(ev: result, isLoading: false);
+        yield state.copyWith(
+            ev: result, isLoading: false, page: 1, query: e.query);
+      },
+      moreItem: (e) async* {
+        final List<ApiPublicElectricStation> moreItem = state.ev;
+        final result = await _electricStationRepository.getElectricStation(
+            page: state.page + 1, query: state.query);
+        moreItem.addAll(result);
+        yield state.copyWith(
+          ev: moreItem,
+          page: state.page + 1,
+        );
       },
     );
   }

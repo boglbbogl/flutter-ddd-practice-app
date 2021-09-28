@@ -6,4 +6,5 @@ class ApiPublicElectricStationMainEvent
   const factory ApiPublicElectricStationMainEvent.address({
     required String query,
   }) = _Address;
+  const factory ApiPublicElectricStationMainEvent.moreItem() = _MoreItem;
 }

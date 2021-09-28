@@ -1,4 +1,5 @@
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/api_public_electric_station.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'api_public_electric_station_dtos.freezed.dart';
@@ -12,10 +13,12 @@ class ApiPublicElectricStationDto with _$ApiPublicElectricStationDto {
     required String cpId,
     required String cpNm,
     required String cpStat,
+    required String cpTp,
     required String csId,
     required String csNm,
     required String lat,
     required String longi,
+    required String? statUpdateDatetime,
   }) = _ApiPublicElectricStationDto;
   const ApiPublicElectricStationDto._();
   factory ApiPublicElectricStationDto.fromJson(Map<String, dynamic> json) =>
@@ -26,10 +29,12 @@ class ApiPublicElectricStationDto with _$ApiPublicElectricStationDto {
         chargeTp: chargeTp,
         cpId: cpId,
         cpNm: cpNm,
+        cpTp: cpTp,
         cpStat: cpStat,
         csId: csId,
         csNm: csNm,
         lat: lat,
         longi: longi,
+        statUpdateDatetime: statUpdateDatetime ?? "",
       );
 }

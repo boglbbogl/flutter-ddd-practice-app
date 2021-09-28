@@ -14,10 +14,12 @@ _$_ApiPublicElectricStationDto _$_$_ApiPublicElectricStationDtoFromJson(
     cpId: json['cpId'] as String,
     cpNm: json['cpNm'] as String,
     cpStat: json['cpStat'] as String,
+    cpTp: json['cpTp'] as String,
     csId: json['csId'] as String,
     csNm: json['csNm'] as String,
     lat: json['lat'] as String,
     longi: json['longi'] as String,
+    statUpdateDatetime: json['statUpdateDatetime'] as String?,
   );
 }
 
@@ -29,8 +31,10 @@ Map<String, dynamic> _$_$_ApiPublicElectricStationDtoToJson(
       'cpId': instance.cpId,
       'cpNm': instance.cpNm,
       'cpStat': instance.cpStat,
+      'cpTp': instance.cpTp,
       'csId': instance.csId,
       'csNm': instance.csNm,
       'lat': instance.lat,
       'longi': instance.longi,
+      'statUpdateDatetime': instance.statUpdateDatetime,
     };

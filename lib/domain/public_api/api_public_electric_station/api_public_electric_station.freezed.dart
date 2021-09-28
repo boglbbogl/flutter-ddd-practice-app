@@ -21,21 +21,25 @@ class _$ApiPublicElectricStationTearOff {
       required String chargeTp,
       required String cpId,
       required String cpNm,
+      required String cpTp,
       required String cpStat,
       required String csId,
       required String csNm,
       required String lat,
-      required String longi}) {
+      required String longi,
+      required String statUpdateDatetime}) {
     return _ApiPublicElectricStation(
       addr: addr,
       chargeTp: chargeTp,
       cpId: cpId,
       cpNm: cpNm,
+      cpTp: cpTp,
       cpStat: cpStat,
       csId: csId,
       csNm: csNm,
       lat: lat,
       longi: longi,
+      statUpdateDatetime: statUpdateDatetime,
     );
   }
 }
@@ -49,11 +53,13 @@ mixin _$ApiPublicElectricStation {
   String get chargeTp => throw _privateConstructorUsedError;
   String get cpId => throw _privateConstructorUsedError;
   String get cpNm => throw _privateConstructorUsedError;
+  String get cpTp => throw _privateConstructorUsedError;
   String get cpStat => throw _privateConstructorUsedError;
   String get csId => throw _privateConstructorUsedError;
   String get csNm => throw _privateConstructorUsedError;
   String get lat => throw _privateConstructorUsedError;
   String get longi => throw _privateConstructorUsedError;
+  String get statUpdateDatetime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiPublicElectricStationCopyWith<ApiPublicElectricStation> get copyWith =>
@@ -70,11 +76,13 @@ abstract class $ApiPublicElectricStationCopyWith<$Res> {
       String chargeTp,
       String cpId,
       String cpNm,
+      String cpTp,
       String cpStat,
       String csId,
       String csNm,
       String lat,
-      String longi});
+      String longi,
+      String statUpdateDatetime});
 }
 
 /// @nodoc
@@ -92,11 +100,13 @@ class _$ApiPublicElectricStationCopyWithImpl<$Res>
     Object? chargeTp = freezed,
     Object? cpId = freezed,
     Object? cpNm = freezed,
+    Object? cpTp = freezed,
     Object? cpStat = freezed,
     Object? csId = freezed,
     Object? csNm = freezed,
     Object? lat = freezed,
     Object? longi = freezed,
+    Object? statUpdateDatetime = freezed,
   }) {
     return _then(_value.copyWith(
       addr: addr == freezed
@@ -114,6 +124,10 @@ class _$ApiPublicElectricStationCopyWithImpl<$Res>
       cpNm: cpNm == freezed
           ? _value.cpNm
           : cpNm // ignore: cast_nullable_to_non_nullable
+              as String,
+      cpTp: cpTp == freezed
+          ? _value.cpTp
+          : cpTp // ignore: cast_nullable_to_non_nullable
               as String,
       cpStat: cpStat == freezed
           ? _value.cpStat
@@ -135,6 +149,10 @@ class _$ApiPublicElectricStationCopyWithImpl<$Res>
           ? _value.longi
           : longi // ignore: cast_nullable_to_non_nullable
               as String,
+      statUpdateDatetime: statUpdateDatetime == freezed
+          ? _value.statUpdateDatetime
+          : statUpdateDatetime // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -151,11 +169,13 @@ abstract class _$ApiPublicElectricStationCopyWith<$Res>
       String chargeTp,
       String cpId,
       String cpNm,
+      String cpTp,
       String cpStat,
       String csId,
       String csNm,
       String lat,
-      String longi});
+      String longi,
+      String statUpdateDatetime});
 }
 
 /// @nodoc
@@ -176,11 +196,13 @@ class __$ApiPublicElectricStationCopyWithImpl<$Res>
     Object? chargeTp = freezed,
     Object? cpId = freezed,
     Object? cpNm = freezed,
+    Object? cpTp = freezed,
     Object? cpStat = freezed,
     Object? csId = freezed,
     Object? csNm = freezed,
     Object? lat = freezed,
     Object? longi = freezed,
+    Object? statUpdateDatetime = freezed,
   }) {
     return _then(_ApiPublicElectricStation(
       addr: addr == freezed
@@ -198,6 +220,10 @@ class __$ApiPublicElectricStationCopyWithImpl<$Res>
       cpNm: cpNm == freezed
           ? _value.cpNm
           : cpNm // ignore: cast_nullable_to_non_nullable
+              as String,
+      cpTp: cpTp == freezed
+          ? _value.cpTp
+          : cpTp // ignore: cast_nullable_to_non_nullable
               as String,
       cpStat: cpStat == freezed
           ? _value.cpStat
@@ -219,6 +245,10 @@ class __$ApiPublicElectricStationCopyWithImpl<$Res>
           ? _value.longi
           : longi // ignore: cast_nullable_to_non_nullable
               as String,
+      statUpdateDatetime: statUpdateDatetime == freezed
+          ? _value.statUpdateDatetime
+          : statUpdateDatetime // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -231,11 +261,13 @@ class _$_ApiPublicElectricStation implements _ApiPublicElectricStation {
       required this.chargeTp,
       required this.cpId,
       required this.cpNm,
+      required this.cpTp,
       required this.cpStat,
       required this.csId,
       required this.csNm,
       required this.lat,
-      required this.longi});
+      required this.longi,
+      required this.statUpdateDatetime});
 
   @override
   final String addr;
@@ -246,6 +278,8 @@ class _$_ApiPublicElectricStation implements _ApiPublicElectricStation {
   @override
   final String cpNm;
   @override
+  final String cpTp;
+  @override
   final String cpStat;
   @override
   final String csId;
@@ -255,10 +289,12 @@ class _$_ApiPublicElectricStation implements _ApiPublicElectricStation {
   final String lat;
   @override
   final String longi;
+  @override
+  final String statUpdateDatetime;
 
   @override
   String toString() {
-    return 'ApiPublicElectricStation(addr: $addr, chargeTp: $chargeTp, cpId: $cpId, cpNm: $cpNm, cpStat: $cpStat, csId: $csId, csNm: $csNm, lat: $lat, longi: $longi)';
+    return 'ApiPublicElectricStation(addr: $addr, chargeTp: $chargeTp, cpId: $cpId, cpNm: $cpNm, cpTp: $cpTp, cpStat: $cpStat, csId: $csId, csNm: $csNm, lat: $lat, longi: $longi, statUpdateDatetime: $statUpdateDatetime)';
   }
 
   @override
@@ -274,6 +310,8 @@ class _$_ApiPublicElectricStation implements _ApiPublicElectricStation {
                 const DeepCollectionEquality().equals(other.cpId, cpId)) &&
             (identical(other.cpNm, cpNm) ||
                 const DeepCollectionEquality().equals(other.cpNm, cpNm)) &&
+            (identical(other.cpTp, cpTp) ||
+                const DeepCollectionEquality().equals(other.cpTp, cpTp)) &&
             (identical(other.cpStat, cpStat) ||
                 const DeepCollectionEquality().equals(other.cpStat, cpStat)) &&
             (identical(other.csId, csId) ||
@@ -283,7 +321,10 @@ class _$_ApiPublicElectricStation implements _ApiPublicElectricStation {
             (identical(other.lat, lat) ||
                 const DeepCollectionEquality().equals(other.lat, lat)) &&
             (identical(other.longi, longi) ||
-                const DeepCollectionEquality().equals(other.longi, longi)));
+                const DeepCollectionEquality().equals(other.longi, longi)) &&
+            (identical(other.statUpdateDatetime, statUpdateDatetime) ||
+                const DeepCollectionEquality()
+                    .equals(other.statUpdateDatetime, statUpdateDatetime)));
   }
 
   @override
@@ -293,11 +334,13 @@ class _$_ApiPublicElectricStation implements _ApiPublicElectricStation {
       const DeepCollectionEquality().hash(chargeTp) ^
       const DeepCollectionEquality().hash(cpId) ^
       const DeepCollectionEquality().hash(cpNm) ^
+      const DeepCollectionEquality().hash(cpTp) ^
       const DeepCollectionEquality().hash(cpStat) ^
       const DeepCollectionEquality().hash(csId) ^
       const DeepCollectionEquality().hash(csNm) ^
       const DeepCollectionEquality().hash(lat) ^
-      const DeepCollectionEquality().hash(longi);
+      const DeepCollectionEquality().hash(longi) ^
+      const DeepCollectionEquality().hash(statUpdateDatetime);
 
   @JsonKey(ignore: true)
   @override
@@ -312,11 +355,13 @@ abstract class _ApiPublicElectricStation implements ApiPublicElectricStation {
       required String chargeTp,
       required String cpId,
       required String cpNm,
+      required String cpTp,
       required String cpStat,
       required String csId,
       required String csNm,
       required String lat,
-      required String longi}) = _$_ApiPublicElectricStation;
+      required String longi,
+      required String statUpdateDatetime}) = _$_ApiPublicElectricStation;
 
   @override
   String get addr => throw _privateConstructorUsedError;
@@ -327,6 +372,8 @@ abstract class _ApiPublicElectricStation implements ApiPublicElectricStation {
   @override
   String get cpNm => throw _privateConstructorUsedError;
   @override
+  String get cpTp => throw _privateConstructorUsedError;
+  @override
   String get cpStat => throw _privateConstructorUsedError;
   @override
   String get csId => throw _privateConstructorUsedError;
@@ -336,6 +383,8 @@ abstract class _ApiPublicElectricStation implements ApiPublicElectricStation {
   String get lat => throw _privateConstructorUsedError;
   @override
   String get longi => throw _privateConstructorUsedError;
+  @override
+  String get statUpdateDatetime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiPublicElectricStationCopyWith<_ApiPublicElectricStation> get copyWith =>

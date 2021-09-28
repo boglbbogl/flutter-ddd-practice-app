@@ -6,10 +6,14 @@ class ApiPublicElectricStationMainState
   factory ApiPublicElectricStationMainState({
     required List<ApiPublicElectricStation> ev,
     required bool isLoading,
+    required String query,
+    required int page,
   }) = _ApiPublicElectricStationMainState;
   factory ApiPublicElectricStationMainState.initial() =>
       ApiPublicElectricStationMainState(
         ev: [],
+        query: "",
+        page: 1,
         isLoading: false,
       );
 }

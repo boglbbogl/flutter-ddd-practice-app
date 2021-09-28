@@ -2,6 +2,7 @@ import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_electric_station/api_public_electric_station_main_bloc.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/electric_station_address_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,18 +37,22 @@ class ElectricStationAddress extends StatelessWidget {
                     subColor: Colors.amber,
                     btnColor: Colors.white),
               ),
-              SingleChildScrollView(
+              Flexible(
                 child: ListView(
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    ...state.ev.map((e) => Column(
-                          children: [
-                            Text(e.addr),
-                          ],
-                        )),
+                    ...state.ev.map((e) => ElectricStationAddressDetail(ev: e)),
                   ],
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: InkWell(
+                    onTap: () {
+                      context.read<ApiPublicElectricStationMainBloc>().add(
+                          const ApiPublicElectricStationMainEvent.moreItem());
+                    },
+                    child: const Text('more')),
               ),
             ],
           ),
