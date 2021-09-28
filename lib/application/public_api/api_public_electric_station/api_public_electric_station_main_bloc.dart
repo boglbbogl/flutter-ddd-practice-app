@@ -30,6 +30,7 @@ class ApiPublicElectricStationMainBloc extends Bloc<
           isLoading: false,
           page: 1,
           query: e.query,
+          isEnd: false,
         );
       },
       moreItem: (e) async* {
