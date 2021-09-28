@@ -6,8 +6,10 @@ class ApiPublicElectricStationMainState
   factory ApiPublicElectricStationMainState({
     required List<ApiPublicElectricStation> ev,
     required bool isLoading,
+    required bool moreLoading,
     required String query,
     required int page,
+    required bool isEnd,
   }) = _ApiPublicElectricStationMainState;
   factory ApiPublicElectricStationMainState.initial() =>
       ApiPublicElectricStationMainState(
@@ -15,5 +17,7 @@ class ApiPublicElectricStationMainState
         query: "",
         page: 1,
         isLoading: false,
+        moreLoading: false,
+        isEnd: false,
       );
 }

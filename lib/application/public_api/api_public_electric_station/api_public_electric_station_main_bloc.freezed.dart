@@ -284,13 +284,17 @@ class _$ApiPublicElectricStationMainStateTearOff {
   _ApiPublicElectricStationMainState call(
       {required List<ApiPublicElectricStation> ev,
       required bool isLoading,
+      required bool moreLoading,
       required String query,
-      required int page}) {
+      required int page,
+      required bool isEnd}) {
     return _ApiPublicElectricStationMainState(
       ev: ev,
       isLoading: isLoading,
+      moreLoading: moreLoading,
       query: query,
       page: page,
+      isEnd: isEnd,
     );
   }
 }
@@ -303,8 +307,10 @@ const $ApiPublicElectricStationMainState =
 mixin _$ApiPublicElectricStationMainState {
   List<ApiPublicElectricStation> get ev => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get moreLoading => throw _privateConstructorUsedError;
   String get query => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
+  bool get isEnd => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiPublicElectricStationMainStateCopyWith<ApiPublicElectricStationMainState>
@@ -320,8 +326,10 @@ abstract class $ApiPublicElectricStationMainStateCopyWith<$Res> {
   $Res call(
       {List<ApiPublicElectricStation> ev,
       bool isLoading,
+      bool moreLoading,
       String query,
-      int page});
+      int page,
+      bool isEnd});
 }
 
 /// @nodoc
@@ -337,8 +345,10 @@ class _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
   $Res call({
     Object? ev = freezed,
     Object? isLoading = freezed,
+    Object? moreLoading = freezed,
     Object? query = freezed,
     Object? page = freezed,
+    Object? isEnd = freezed,
   }) {
     return _then(_value.copyWith(
       ev: ev == freezed
@@ -349,6 +359,10 @@ class _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      moreLoading: moreLoading == freezed
+          ? _value.moreLoading
+          : moreLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -357,6 +371,10 @@ class _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      isEnd: isEnd == freezed
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -372,8 +390,10 @@ abstract class _$ApiPublicElectricStationMainStateCopyWith<$Res>
   $Res call(
       {List<ApiPublicElectricStation> ev,
       bool isLoading,
+      bool moreLoading,
       String query,
-      int page});
+      int page,
+      bool isEnd});
 }
 
 /// @nodoc
@@ -393,8 +413,10 @@ class __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
   $Res call({
     Object? ev = freezed,
     Object? isLoading = freezed,
+    Object? moreLoading = freezed,
     Object? query = freezed,
     Object? page = freezed,
+    Object? isEnd = freezed,
   }) {
     return _then(_ApiPublicElectricStationMainState(
       ev: ev == freezed
@@ -405,6 +427,10 @@ class __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      moreLoading: moreLoading == freezed
+          ? _value.moreLoading
+          : moreLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -413,6 +439,10 @@ class __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      isEnd: isEnd == freezed
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -424,21 +454,27 @@ class _$_ApiPublicElectricStationMainState
   _$_ApiPublicElectricStationMainState(
       {required this.ev,
       required this.isLoading,
+      required this.moreLoading,
       required this.query,
-      required this.page});
+      required this.page,
+      required this.isEnd});
 
   @override
   final List<ApiPublicElectricStation> ev;
   @override
   final bool isLoading;
   @override
+  final bool moreLoading;
+  @override
   final String query;
   @override
   final int page;
+  @override
+  final bool isEnd;
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationMainState(ev: $ev, isLoading: $isLoading, query: $query, page: $page)';
+    return 'ApiPublicElectricStationMainState(ev: $ev, isLoading: $isLoading, moreLoading: $moreLoading, query: $query, page: $page, isEnd: $isEnd)';
   }
 
   @override
@@ -450,10 +486,15 @@ class _$_ApiPublicElectricStationMainState
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.moreLoading, moreLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.moreLoading, moreLoading)) &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)) &&
             (identical(other.page, page) ||
-                const DeepCollectionEquality().equals(other.page, page)));
+                const DeepCollectionEquality().equals(other.page, page)) &&
+            (identical(other.isEnd, isEnd) ||
+                const DeepCollectionEquality().equals(other.isEnd, isEnd)));
   }
 
   @override
@@ -461,8 +502,10 @@ class _$_ApiPublicElectricStationMainState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(ev) ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(moreLoading) ^
       const DeepCollectionEquality().hash(query) ^
-      const DeepCollectionEquality().hash(page);
+      const DeepCollectionEquality().hash(page) ^
+      const DeepCollectionEquality().hash(isEnd);
 
   @JsonKey(ignore: true)
   @override
@@ -477,17 +520,23 @@ abstract class _ApiPublicElectricStationMainState
   factory _ApiPublicElectricStationMainState(
       {required List<ApiPublicElectricStation> ev,
       required bool isLoading,
+      required bool moreLoading,
       required String query,
-      required int page}) = _$_ApiPublicElectricStationMainState;
+      required int page,
+      required bool isEnd}) = _$_ApiPublicElectricStationMainState;
 
   @override
   List<ApiPublicElectricStation> get ev => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
+  bool get moreLoading => throw _privateConstructorUsedError;
+  @override
   String get query => throw _privateConstructorUsedError;
   @override
   int get page => throw _privateConstructorUsedError;
+  @override
+  bool get isEnd => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiPublicElectricStationMainStateCopyWith<

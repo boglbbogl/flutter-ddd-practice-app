@@ -1,5 +1,4 @@
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/api_public_electric_station.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'api_public_electric_station_dtos.freezed.dart';

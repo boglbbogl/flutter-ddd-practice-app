@@ -97,6 +97,7 @@ class ElectricStationAddressDetail extends StatelessWidget {
                 ),
               ],
             ),
+            Positioned(right: 10, top: 2, child: Text(ev.cpId)),
             Positioned(
                 bottom: 5,
                 right: 10,
