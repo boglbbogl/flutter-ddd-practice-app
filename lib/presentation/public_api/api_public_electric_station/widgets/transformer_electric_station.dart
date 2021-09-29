@@ -71,7 +71,6 @@ class TransformerElectricStation {
       case "2":
         transString = "급속";
         break;
-
       default:
         transString = "정보없음";
     }

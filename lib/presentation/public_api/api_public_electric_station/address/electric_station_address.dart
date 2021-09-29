@@ -2,11 +2,13 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/application/public_api/api_public_electric_station/api_public_electric_station_main_bloc.dart';
-import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/electric_station_address_detail.dart';
+import 'package:ddd_practice_app/application/public_api/api_public_electric_station/address/api_public_electric_station_address_bloc.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/address/electric_station_address_detail.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/widgets/electric_station_all_google_maps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class ElectricStationAddress extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
@@ -14,14 +16,32 @@ class ElectricStationAddress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ApiPublicElectricStationMainBloc,
-        ApiPublicElectricStationMainState>(
+    return BlocBuilder<ApiPublicElectricStationAddressBloc,
+        ApiPublicElectricStationAddressState>(
       builder: (context, state) {
         return Scaffold(
           appBar: appBarForm(context, theme,
               title: 'Address Search',
               colors: Colors.pink,
-              backColors: Colors.white),
+              backColors: Colors.white,
+              actions: [
+                InkWell(
+                    onTap: () {
+                      pushNewScreen(context,
+                          screen: ElectricStationAllGoogleMaps(
+                            geoLocation: state.geoLocation!,
+                            evList: state.ev,
+                          ));
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Icon(
+                        Icons.map_rounded,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                    )),
+              ]),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -31,8 +51,8 @@ class ElectricStationAddress extends StatelessWidget {
                       controller: controller,
                       context: context,
                       onPressed: () {
-                        context.read<ApiPublicElectricStationMainBloc>().add(
-                            ApiPublicElectricStationMainEvent.address(
+                        context.read<ApiPublicElectricStationAddressBloc>().add(
+                            ApiPublicElectricStationAddressEvent.address(
                                 query: controller.text));
                         FocusScope.of(context).unfocus();
                       },
@@ -61,8 +81,8 @@ class ElectricStationAddress extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     children: [
-                      ...state.ev
-                          .map((e) => ElectricStationAddressDetail(ev: e)),
+                      ...state.ev.map((e) => ElectricStationAddressDetail(
+                          ev: e, myGeo: state.geoLocation!)),
                     ],
                   ),
                 if (state.ev.isNotEmpty) ...[
@@ -76,8 +96,8 @@ class ElectricStationAddress extends StatelessWidget {
                                 .show(context);
                           } else {
                             context
-                                .read<ApiPublicElectricStationMainBloc>()
-                                .add(const ApiPublicElectricStationMainEvent
+                                .read<ApiPublicElectricStationAddressBloc>()
+                                .add(const ApiPublicElectricStationAddressEvent
                                     .moreItem());
                           }
                         },

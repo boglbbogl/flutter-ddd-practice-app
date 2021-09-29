@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'api_public_electric_station_main_bloc.dart';
+part of 'api_public_electric_station_address_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ApiPublicElectricStationMainEventTearOff {
-  const _$ApiPublicElectricStationMainEventTearOff();
+class _$ApiPublicElectricStationAddressEventTearOff {
+  const _$ApiPublicElectricStationAddressEventTearOff();
 
   _Address address({required String query}) {
     return _Address(
@@ -28,11 +28,11 @@ class _$ApiPublicElectricStationMainEventTearOff {
 }
 
 /// @nodoc
-const $ApiPublicElectricStationMainEvent =
-    _$ApiPublicElectricStationMainEventTearOff();
+const $ApiPublicElectricStationAddressEvent =
+    _$ApiPublicElectricStationAddressEventTearOff();
 
 /// @nodoc
-mixin _$ApiPublicElectricStationMainEvent {
+mixin _$ApiPublicElectricStationAddressEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String query) address,
@@ -62,21 +62,21 @@ mixin _$ApiPublicElectricStationMainEvent {
 }
 
 /// @nodoc
-abstract class $ApiPublicElectricStationMainEventCopyWith<$Res> {
-  factory $ApiPublicElectricStationMainEventCopyWith(
-          ApiPublicElectricStationMainEvent value,
-          $Res Function(ApiPublicElectricStationMainEvent) then) =
-      _$ApiPublicElectricStationMainEventCopyWithImpl<$Res>;
+abstract class $ApiPublicElectricStationAddressEventCopyWith<$Res> {
+  factory $ApiPublicElectricStationAddressEventCopyWith(
+          ApiPublicElectricStationAddressEvent value,
+          $Res Function(ApiPublicElectricStationAddressEvent) then) =
+      _$ApiPublicElectricStationAddressEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ApiPublicElectricStationMainEventCopyWithImpl<$Res>
-    implements $ApiPublicElectricStationMainEventCopyWith<$Res> {
-  _$ApiPublicElectricStationMainEventCopyWithImpl(this._value, this._then);
+class _$ApiPublicElectricStationAddressEventCopyWithImpl<$Res>
+    implements $ApiPublicElectricStationAddressEventCopyWith<$Res> {
+  _$ApiPublicElectricStationAddressEventCopyWithImpl(this._value, this._then);
 
-  final ApiPublicElectricStationMainEvent _value;
+  final ApiPublicElectricStationAddressEvent _value;
   // ignore: unused_field
-  final $Res Function(ApiPublicElectricStationMainEvent) _then;
+  final $Res Function(ApiPublicElectricStationAddressEvent) _then;
 }
 
 /// @nodoc
@@ -88,7 +88,7 @@ abstract class _$AddressCopyWith<$Res> {
 
 /// @nodoc
 class __$AddressCopyWithImpl<$Res>
-    extends _$ApiPublicElectricStationMainEventCopyWithImpl<$Res>
+    extends _$ApiPublicElectricStationAddressEventCopyWithImpl<$Res>
     implements _$AddressCopyWith<$Res> {
   __$AddressCopyWithImpl(_Address _value, $Res Function(_Address) _then)
       : super(_value, (v) => _then(v as _Address));
@@ -119,7 +119,7 @@ class _$_Address implements _Address {
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationMainEvent.address(query: $query)';
+    return 'ApiPublicElectricStationAddressEvent.address(query: $query)';
   }
 
   @override
@@ -184,7 +184,7 @@ class _$_Address implements _Address {
   }
 }
 
-abstract class _Address implements ApiPublicElectricStationMainEvent {
+abstract class _Address implements ApiPublicElectricStationAddressEvent {
   const factory _Address({required String query}) = _$_Address;
 
   String get query => throw _privateConstructorUsedError;
@@ -201,7 +201,7 @@ abstract class _$MoreItemCopyWith<$Res> {
 
 /// @nodoc
 class __$MoreItemCopyWithImpl<$Res>
-    extends _$ApiPublicElectricStationMainEventCopyWithImpl<$Res>
+    extends _$ApiPublicElectricStationAddressEventCopyWithImpl<$Res>
     implements _$MoreItemCopyWith<$Res> {
   __$MoreItemCopyWithImpl(_MoreItem _value, $Res Function(_MoreItem) _then)
       : super(_value, (v) => _then(v as _MoreItem));
@@ -217,7 +217,7 @@ class _$_MoreItem implements _MoreItem {
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationMainEvent.moreItem()';
+    return 'ApiPublicElectricStationAddressEvent.moreItem()';
   }
 
   @override
@@ -273,73 +273,80 @@ class _$_MoreItem implements _MoreItem {
   }
 }
 
-abstract class _MoreItem implements ApiPublicElectricStationMainEvent {
+abstract class _MoreItem implements ApiPublicElectricStationAddressEvent {
   const factory _MoreItem() = _$_MoreItem;
 }
 
 /// @nodoc
-class _$ApiPublicElectricStationMainStateTearOff {
-  const _$ApiPublicElectricStationMainStateTearOff();
+class _$ApiPublicElectricStationAddressStateTearOff {
+  const _$ApiPublicElectricStationAddressStateTearOff();
 
-  _ApiPublicElectricStationMainState call(
+  _ApiPublicElectricStationAddressState call(
       {required List<ApiPublicElectricStation> ev,
       required bool isLoading,
       required bool moreLoading,
       required String query,
       required int page,
-      required bool isEnd}) {
-    return _ApiPublicElectricStationMainState(
+      required bool isEnd,
+      required GeoLocation? geoLocation}) {
+    return _ApiPublicElectricStationAddressState(
       ev: ev,
       isLoading: isLoading,
       moreLoading: moreLoading,
       query: query,
       page: page,
       isEnd: isEnd,
+      geoLocation: geoLocation,
     );
   }
 }
 
 /// @nodoc
-const $ApiPublicElectricStationMainState =
-    _$ApiPublicElectricStationMainStateTearOff();
+const $ApiPublicElectricStationAddressState =
+    _$ApiPublicElectricStationAddressStateTearOff();
 
 /// @nodoc
-mixin _$ApiPublicElectricStationMainState {
+mixin _$ApiPublicElectricStationAddressState {
   List<ApiPublicElectricStation> get ev => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get moreLoading => throw _privateConstructorUsedError;
   String get query => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   bool get isEnd => throw _privateConstructorUsedError;
+  GeoLocation? get geoLocation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ApiPublicElectricStationMainStateCopyWith<ApiPublicElectricStationMainState>
+  $ApiPublicElectricStationAddressStateCopyWith<
+          ApiPublicElectricStationAddressState>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiPublicElectricStationMainStateCopyWith<$Res> {
-  factory $ApiPublicElectricStationMainStateCopyWith(
-          ApiPublicElectricStationMainState value,
-          $Res Function(ApiPublicElectricStationMainState) then) =
-      _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>;
+abstract class $ApiPublicElectricStationAddressStateCopyWith<$Res> {
+  factory $ApiPublicElectricStationAddressStateCopyWith(
+          ApiPublicElectricStationAddressState value,
+          $Res Function(ApiPublicElectricStationAddressState) then) =
+      _$ApiPublicElectricStationAddressStateCopyWithImpl<$Res>;
   $Res call(
       {List<ApiPublicElectricStation> ev,
       bool isLoading,
       bool moreLoading,
       String query,
       int page,
-      bool isEnd});
+      bool isEnd,
+      GeoLocation? geoLocation});
+
+  $GeoLocationCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
-class _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
-    implements $ApiPublicElectricStationMainStateCopyWith<$Res> {
-  _$ApiPublicElectricStationMainStateCopyWithImpl(this._value, this._then);
+class _$ApiPublicElectricStationAddressStateCopyWithImpl<$Res>
+    implements $ApiPublicElectricStationAddressStateCopyWith<$Res> {
+  _$ApiPublicElectricStationAddressStateCopyWithImpl(this._value, this._then);
 
-  final ApiPublicElectricStationMainState _value;
+  final ApiPublicElectricStationAddressState _value;
   // ignore: unused_field
-  final $Res Function(ApiPublicElectricStationMainState) _then;
+  final $Res Function(ApiPublicElectricStationAddressState) _then;
 
   @override
   $Res call({
@@ -349,6 +356,7 @@ class _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
     Object? query = freezed,
     Object? page = freezed,
     Object? isEnd = freezed,
+    Object? geoLocation = freezed,
   }) {
     return _then(_value.copyWith(
       ev: ev == freezed
@@ -375,17 +383,32 @@ class _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
           ? _value.isEnd
           : isEnd // ignore: cast_nullable_to_non_nullable
               as bool,
+      geoLocation: geoLocation == freezed
+          ? _value.geoLocation
+          : geoLocation // ignore: cast_nullable_to_non_nullable
+              as GeoLocation?,
     ));
+  }
+
+  @override
+  $GeoLocationCopyWith<$Res>? get geoLocation {
+    if (_value.geoLocation == null) {
+      return null;
+    }
+
+    return $GeoLocationCopyWith<$Res>(_value.geoLocation!, (value) {
+      return _then(_value.copyWith(geoLocation: value));
+    });
   }
 }
 
 /// @nodoc
-abstract class _$ApiPublicElectricStationMainStateCopyWith<$Res>
-    implements $ApiPublicElectricStationMainStateCopyWith<$Res> {
-  factory _$ApiPublicElectricStationMainStateCopyWith(
-          _ApiPublicElectricStationMainState value,
-          $Res Function(_ApiPublicElectricStationMainState) then) =
-      __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>;
+abstract class _$ApiPublicElectricStationAddressStateCopyWith<$Res>
+    implements $ApiPublicElectricStationAddressStateCopyWith<$Res> {
+  factory _$ApiPublicElectricStationAddressStateCopyWith(
+          _ApiPublicElectricStationAddressState value,
+          $Res Function(_ApiPublicElectricStationAddressState) then) =
+      __$ApiPublicElectricStationAddressStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<ApiPublicElectricStation> ev,
@@ -393,21 +416,25 @@ abstract class _$ApiPublicElectricStationMainStateCopyWith<$Res>
       bool moreLoading,
       String query,
       int page,
-      bool isEnd});
+      bool isEnd,
+      GeoLocation? geoLocation});
+
+  @override
+  $GeoLocationCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
-class __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
-    extends _$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
-    implements _$ApiPublicElectricStationMainStateCopyWith<$Res> {
-  __$ApiPublicElectricStationMainStateCopyWithImpl(
-      _ApiPublicElectricStationMainState _value,
-      $Res Function(_ApiPublicElectricStationMainState) _then)
-      : super(_value, (v) => _then(v as _ApiPublicElectricStationMainState));
+class __$ApiPublicElectricStationAddressStateCopyWithImpl<$Res>
+    extends _$ApiPublicElectricStationAddressStateCopyWithImpl<$Res>
+    implements _$ApiPublicElectricStationAddressStateCopyWith<$Res> {
+  __$ApiPublicElectricStationAddressStateCopyWithImpl(
+      _ApiPublicElectricStationAddressState _value,
+      $Res Function(_ApiPublicElectricStationAddressState) _then)
+      : super(_value, (v) => _then(v as _ApiPublicElectricStationAddressState));
 
   @override
-  _ApiPublicElectricStationMainState get _value =>
-      super._value as _ApiPublicElectricStationMainState;
+  _ApiPublicElectricStationAddressState get _value =>
+      super._value as _ApiPublicElectricStationAddressState;
 
   @override
   $Res call({
@@ -417,8 +444,9 @@ class __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
     Object? query = freezed,
     Object? page = freezed,
     Object? isEnd = freezed,
+    Object? geoLocation = freezed,
   }) {
-    return _then(_ApiPublicElectricStationMainState(
+    return _then(_ApiPublicElectricStationAddressState(
       ev: ev == freezed
           ? _value.ev
           : ev // ignore: cast_nullable_to_non_nullable
@@ -443,21 +471,26 @@ class __$ApiPublicElectricStationMainStateCopyWithImpl<$Res>
           ? _value.isEnd
           : isEnd // ignore: cast_nullable_to_non_nullable
               as bool,
+      geoLocation: geoLocation == freezed
+          ? _value.geoLocation
+          : geoLocation // ignore: cast_nullable_to_non_nullable
+              as GeoLocation?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ApiPublicElectricStationMainState
-    implements _ApiPublicElectricStationMainState {
-  _$_ApiPublicElectricStationMainState(
+class _$_ApiPublicElectricStationAddressState
+    implements _ApiPublicElectricStationAddressState {
+  _$_ApiPublicElectricStationAddressState(
       {required this.ev,
       required this.isLoading,
       required this.moreLoading,
       required this.query,
       required this.page,
-      required this.isEnd});
+      required this.isEnd,
+      required this.geoLocation});
 
   @override
   final List<ApiPublicElectricStation> ev;
@@ -471,16 +504,18 @@ class _$_ApiPublicElectricStationMainState
   final int page;
   @override
   final bool isEnd;
+  @override
+  final GeoLocation? geoLocation;
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationMainState(ev: $ev, isLoading: $isLoading, moreLoading: $moreLoading, query: $query, page: $page, isEnd: $isEnd)';
+    return 'ApiPublicElectricStationAddressState(ev: $ev, isLoading: $isLoading, moreLoading: $moreLoading, query: $query, page: $page, isEnd: $isEnd, geoLocation: $geoLocation)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApiPublicElectricStationMainState &&
+        (other is _ApiPublicElectricStationAddressState &&
             (identical(other.ev, ev) ||
                 const DeepCollectionEquality().equals(other.ev, ev)) &&
             (identical(other.isLoading, isLoading) ||
@@ -494,7 +529,10 @@ class _$_ApiPublicElectricStationMainState
             (identical(other.page, page) ||
                 const DeepCollectionEquality().equals(other.page, page)) &&
             (identical(other.isEnd, isEnd) ||
-                const DeepCollectionEquality().equals(other.isEnd, isEnd)));
+                const DeepCollectionEquality().equals(other.isEnd, isEnd)) &&
+            (identical(other.geoLocation, geoLocation) ||
+                const DeepCollectionEquality()
+                    .equals(other.geoLocation, geoLocation)));
   }
 
   @override
@@ -505,25 +543,28 @@ class _$_ApiPublicElectricStationMainState
       const DeepCollectionEquality().hash(moreLoading) ^
       const DeepCollectionEquality().hash(query) ^
       const DeepCollectionEquality().hash(page) ^
-      const DeepCollectionEquality().hash(isEnd);
+      const DeepCollectionEquality().hash(isEnd) ^
+      const DeepCollectionEquality().hash(geoLocation);
 
   @JsonKey(ignore: true)
   @override
-  _$ApiPublicElectricStationMainStateCopyWith<
-          _ApiPublicElectricStationMainState>
-      get copyWith => __$ApiPublicElectricStationMainStateCopyWithImpl<
-          _ApiPublicElectricStationMainState>(this, _$identity);
+  _$ApiPublicElectricStationAddressStateCopyWith<
+          _ApiPublicElectricStationAddressState>
+      get copyWith => __$ApiPublicElectricStationAddressStateCopyWithImpl<
+          _ApiPublicElectricStationAddressState>(this, _$identity);
 }
 
-abstract class _ApiPublicElectricStationMainState
-    implements ApiPublicElectricStationMainState {
-  factory _ApiPublicElectricStationMainState(
-      {required List<ApiPublicElectricStation> ev,
-      required bool isLoading,
-      required bool moreLoading,
-      required String query,
-      required int page,
-      required bool isEnd}) = _$_ApiPublicElectricStationMainState;
+abstract class _ApiPublicElectricStationAddressState
+    implements ApiPublicElectricStationAddressState {
+  factory _ApiPublicElectricStationAddressState(
+          {required List<ApiPublicElectricStation> ev,
+          required bool isLoading,
+          required bool moreLoading,
+          required String query,
+          required int page,
+          required bool isEnd,
+          required GeoLocation? geoLocation}) =
+      _$_ApiPublicElectricStationAddressState;
 
   @override
   List<ApiPublicElectricStation> get ev => throw _privateConstructorUsedError;
@@ -538,8 +579,10 @@ abstract class _ApiPublicElectricStationMainState
   @override
   bool get isEnd => throw _privateConstructorUsedError;
   @override
+  GeoLocation? get geoLocation => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
-  _$ApiPublicElectricStationMainStateCopyWith<
-          _ApiPublicElectricStationMainState>
+  _$ApiPublicElectricStationAddressStateCopyWith<
+          _ApiPublicElectricStationAddressState>
       get copyWith => throw _privateConstructorUsedError;
 }
