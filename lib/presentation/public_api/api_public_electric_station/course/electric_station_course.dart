@@ -1,14 +1,14 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_electric_station/course/api_public_electric_station_course_bloc.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/course/course_search_bar_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ElectricStationCourse extends StatelessWidget {
-  final TextEditingController controller = TextEditingController();
-  ElectricStationCourse({Key? key}) : super(key: key);
+  const ElectricStationCourse({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,85 +73,56 @@ class ElectricStationCourse extends StatelessWidget {
                 children: [
                   GoogleMap(
                       onMapCreated: (_mapController) {
-                        _mapController
-                            .animateCamera(CameraUpdate.newLatLngBounds(
-                                LatLngBounds(
-                                  southwest: LatLng(state.geoLocation!.latitude,
-                                      state.geoLocation!.longitude),
-                                  northeast: LatLng(
-                                      double.parse(
-                                          state.publicElectricStation!.lat),
-                                      double.parse(
-                                          state.publicElectricStation!.longi)),
-                                ),
-                                100));
-                        // if (state.publicElectricStation != null) {
-                        //   if (state.geoLocation!.latitude <=
-                        //           double.parse(
-                        //               state.publicElectricStation!.lat) &&
-                        //       state.geoLocation!.longitude <=
-                        //           double.parse(
-                        //               state.publicElectricStation!.longi)) {
-                        //     _mapController
-                        //         .animateCamera(CameraUpdate.newLatLngBounds(
-                        //             LatLngBounds(
-                        //               southwest: LatLng(
-                        //                   state.geoLocation!.latitude,
-                        //                   state.geoLocation!.longitude),
-                        //               northeast: LatLng(
-                        //                   double.parse(
-                        //                       state.publicElectricStation!.lat),
-                        //                   double.parse(state
-                        //                       .publicElectricStation!.longi)),
-                        //             ),
-                        //             100));
-                        //   } else if (state.geoLocation!.longitude >=
-                        //           double.parse(
-                        //               state.publicElectricStation!.longi) &&
-                        //       state.geoLocation!.latitude >=
-                        //           double.parse(
-                        //               state.publicElectricStation!.lat)) {
-                        //     print('2');
-                        //   } else {
-                        //     print('3');
-                        //   }
-                        // }
-
-                        // if (state.publicElectricStation != null) {
-                        //   if (state.geoLocation!.latitude <=
-                        //       double.parse(state.publicElectricStation!.lat)) {
-                        //     _mapController
-                        //         .animateCamera(CameraUpdate.newLatLngBounds(
-                        //             LatLngBounds(
-                        //               southwest: LatLng(
-                        //                   state.geoLocation!.latitude,
-                        //                   state.geoLocation!.longitude),
-                        //               northeast: LatLng(
-                        //                   double.parse(
-                        //                       state.publicElectricStation!.lat),
-                        //                   double.parse(state
-                        //                       .publicElectricStation!.longi)),
-                        //             ),
-                        //             100));
-                        //   } else if (state.geoLocation!.latitude >=
-                        //       double.parse(state.publicElectricStation!.lat)) {
-                        //     _mapController
-                        //         .animateCamera(CameraUpdate.newLatLngBounds(
-                        //             LatLngBounds(
-                        //               southwest: LatLng(
-                        //                 double.parse(
-                        //                     state.publicElectricStation!.lat),
-                        //                 double.parse(
-                        //                     state.publicElectricStation!.longi),
-                        //               ),
-                        //               northeast: LatLng(
-                        //                 state.geoLocation!.latitude,
-                        //                 state.geoLocation!.longitude,
-                        //               ),
-                        //             ),
-                        //             100));
-                        //   }
-                        // }
+                        if (state.publicElectricStation != null) {
+                          if (double.parse(state.publicElectricStation!.lat) >
+                                  state.geoLocation!.latitude &&
+                              double.parse(state.publicElectricStation!.longi) >
+                                  state.geoLocation!.longitude) {
+                            markerControl(
+                              mapController: _mapController,
+                              southLat: state.geoLocation!.latitude,
+                              southLon: state.geoLocation!.longitude,
+                              northLat: double.parse(
+                                  state.publicElectricStation!.lat),
+                              northLon: double.parse(
+                                  state.publicElectricStation!.longi),
+                            );
+                          } else if (double.parse(
+                                  state.publicElectricStation!.longi) >
+                              state.geoLocation!.longitude) {
+                            markerControl(
+                              mapController: _mapController,
+                              southLat: double.parse(
+                                  state.publicElectricStation!.lat),
+                              southLon: state.geoLocation!.longitude,
+                              northLat: state.geoLocation!.latitude,
+                              northLon: double.parse(
+                                  state.publicElectricStation!.longi),
+                            );
+                          } else if (double.parse(
+                                  state.publicElectricStation!.lat) >
+                              state.geoLocation!.latitude) {
+                            markerControl(
+                              mapController: _mapController,
+                              southLat: state.geoLocation!.latitude,
+                              southLon: double.parse(
+                                  state.publicElectricStation!.longi),
+                              northLat: double.parse(
+                                  state.publicElectricStation!.lat),
+                              northLon: state.geoLocation!.longitude,
+                            );
+                          } else {
+                            markerControl(
+                              mapController: _mapController,
+                              southLat: double.parse(
+                                  state.publicElectricStation!.lat),
+                              southLon: double.parse(
+                                  state.publicElectricStation!.longi),
+                              northLat: state.geoLocation!.latitude,
+                              northLon: state.geoLocation!.longitude,
+                            );
+                          }
+                        }
                       },
                       markers: createMarker(),
                       zoomControlsEnabled: false,
@@ -165,107 +136,7 @@ class ElectricStationCourse extends StatelessWidget {
                                       state.publicElectricStation!.lat),
                                   double.parse(
                                       state.publicElectricStation!.longi)))),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 12),
-                    child: Container(
-                      height: size.height * 0.16,
-                      color: Colors.white10,
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: size.width * 0.8,
-                              height: size.height * 0.07,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Colors.white54,
-                                  border:
-                                      Border.all(color: Colors.pink, width: 2)),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    if (state.myAddress.isEmpty)
-                                      const Padding(
-                                        padding: EdgeInsets.only(left: 100),
-                                        child: CupertinoActivityIndicator(),
-                                      )
-                                    else
-                                      Text(
-                                        state.myAddress,
-                                        style: theme.textTheme.bodyText2!
-                                            .copyWith(color: Colors.pink),
-                                      ),
-                                    const Icon(
-                                      Icons.location_on_outlined,
-                                      size: 30,
-                                      color: Colors.pink,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: size.width * 0.8,
-                              height: size.height * 0.07,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Colors.white54,
-                                  border:
-                                      Border.all(color: Colors.pink, width: 2)),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    SizedBox(
-                                      width: size.width * 0.6,
-                                      child: TextFormField(
-                                        style: theme.textTheme.bodyText2!
-                                            .copyWith(color: Colors.pink),
-                                        controller: controller,
-                                        decoration: const InputDecoration(
-                                            enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: Colors.white10)),
-                                            focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: Colors.white10))),
-                                      ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        context
-                                            .read<
-                                                ApiPublicElectricStationCourseBloc>()
-                                            .add(
-                                                ApiPublicElectricStationCourseEvent
-                                                    .searched(
-                                                        query:
-                                                            controller.text));
-                                        FocusScope.of(context).unfocus();
-                                      },
-                                      child: const Icon(
-                                        Icons.search_outlined,
-                                        size: 30,
-                                        color: Colors.pink,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  CourseSearchBarWidget(myAddress: state.myAddress),
                 ],
               ),
             ),
@@ -273,6 +144,21 @@ class ElectricStationCourse extends StatelessWidget {
         );
       },
     );
+  }
+
+  void markerControl({
+    required GoogleMapController mapController,
+    required double southLat,
+    required double southLon,
+    required double northLat,
+    required double northLon,
+  }) {
+    mapController.animateCamera(CameraUpdate.newLatLngBounds(
+        LatLngBounds(
+          southwest: LatLng(southLat, southLon),
+          northeast: LatLng(northLat, northLon),
+        ),
+        130));
   }
 
   Scaffold _loadingForm({

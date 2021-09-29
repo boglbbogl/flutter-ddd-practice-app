@@ -49,7 +49,7 @@ class ApiPublicElectricStationMainPage extends StatelessWidget {
                   create: (context) => getIt<
                       ApiPublicElectricStationCourseBloc>()
                     ..add(const ApiPublicElectricStationCourseEvent.started()),
-                  child: ElectricStationCourse(),
+                  child: const ElectricStationCourse(),
                 ),
               ),
             ),
