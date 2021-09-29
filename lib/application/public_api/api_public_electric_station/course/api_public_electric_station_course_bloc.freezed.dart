@@ -285,12 +285,16 @@ class _$ApiPublicElectricStationCourseStateTearOff {
       {required bool isLoading,
       required GeoLocation? geoLocation,
       required String myAddress,
-      required ApiPublicElectricStation? publicElectricStation}) {
+      required ApiPublicElectricStation? publicElectricStation,
+      required Either<ApiPublicElectricStationFailure,
+              List<ApiPublicElectricStation>>?
+          orFailure}) {
     return _ApiPublicElectricStationCourseState(
       isLoading: isLoading,
       geoLocation: geoLocation,
       myAddress: myAddress,
       publicElectricStation: publicElectricStation,
+      orFailure: orFailure,
     );
   }
 }
@@ -306,6 +310,8 @@ mixin _$ApiPublicElectricStationCourseState {
   String get myAddress => throw _privateConstructorUsedError;
   ApiPublicElectricStation? get publicElectricStation =>
       throw _privateConstructorUsedError;
+  Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
+      get orFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiPublicElectricStationCourseStateCopyWith<
@@ -323,7 +329,9 @@ abstract class $ApiPublicElectricStationCourseStateCopyWith<$Res> {
       {bool isLoading,
       GeoLocation? geoLocation,
       String myAddress,
-      ApiPublicElectricStation? publicElectricStation});
+      ApiPublicElectricStation? publicElectricStation,
+      Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
+          orFailure});
 
   $GeoLocationCopyWith<$Res>? get geoLocation;
   $ApiPublicElectricStationCopyWith<$Res>? get publicElectricStation;
@@ -344,6 +352,7 @@ class _$ApiPublicElectricStationCourseStateCopyWithImpl<$Res>
     Object? geoLocation = freezed,
     Object? myAddress = freezed,
     Object? publicElectricStation = freezed,
+    Object? orFailure = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -362,6 +371,11 @@ class _$ApiPublicElectricStationCourseStateCopyWithImpl<$Res>
           ? _value.publicElectricStation
           : publicElectricStation // ignore: cast_nullable_to_non_nullable
               as ApiPublicElectricStation?,
+      orFailure: orFailure == freezed
+          ? _value.orFailure
+          : orFailure // ignore: cast_nullable_to_non_nullable
+              as Either<ApiPublicElectricStationFailure,
+                  List<ApiPublicElectricStation>>?,
     ));
   }
 
@@ -401,7 +415,9 @@ abstract class _$ApiPublicElectricStationCourseStateCopyWith<$Res>
       {bool isLoading,
       GeoLocation? geoLocation,
       String myAddress,
-      ApiPublicElectricStation? publicElectricStation});
+      ApiPublicElectricStation? publicElectricStation,
+      Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
+          orFailure});
 
   @override
   $GeoLocationCopyWith<$Res>? get geoLocation;
@@ -428,6 +444,7 @@ class __$ApiPublicElectricStationCourseStateCopyWithImpl<$Res>
     Object? geoLocation = freezed,
     Object? myAddress = freezed,
     Object? publicElectricStation = freezed,
+    Object? orFailure = freezed,
   }) {
     return _then(_ApiPublicElectricStationCourseState(
       isLoading: isLoading == freezed
@@ -446,6 +463,11 @@ class __$ApiPublicElectricStationCourseStateCopyWithImpl<$Res>
           ? _value.publicElectricStation
           : publicElectricStation // ignore: cast_nullable_to_non_nullable
               as ApiPublicElectricStation?,
+      orFailure: orFailure == freezed
+          ? _value.orFailure
+          : orFailure // ignore: cast_nullable_to_non_nullable
+              as Either<ApiPublicElectricStationFailure,
+                  List<ApiPublicElectricStation>>?,
     ));
   }
 }
@@ -458,7 +480,8 @@ class _$_ApiPublicElectricStationCourseState
       {required this.isLoading,
       required this.geoLocation,
       required this.myAddress,
-      required this.publicElectricStation});
+      required this.publicElectricStation,
+      required this.orFailure});
 
   @override
   final bool isLoading;
@@ -468,10 +491,13 @@ class _$_ApiPublicElectricStationCourseState
   final String myAddress;
   @override
   final ApiPublicElectricStation? publicElectricStation;
+  @override
+  final Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
+      orFailure;
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationCourseState(isLoading: $isLoading, geoLocation: $geoLocation, myAddress: $myAddress, publicElectricStation: $publicElectricStation)';
+    return 'ApiPublicElectricStationCourseState(isLoading: $isLoading, geoLocation: $geoLocation, myAddress: $myAddress, publicElectricStation: $publicElectricStation, orFailure: $orFailure)';
   }
 
   @override
@@ -489,7 +515,10 @@ class _$_ApiPublicElectricStationCourseState
                     .equals(other.myAddress, myAddress)) &&
             (identical(other.publicElectricStation, publicElectricStation) ||
                 const DeepCollectionEquality().equals(
-                    other.publicElectricStation, publicElectricStation)));
+                    other.publicElectricStation, publicElectricStation)) &&
+            (identical(other.orFailure, orFailure) ||
+                const DeepCollectionEquality()
+                    .equals(other.orFailure, orFailure)));
   }
 
   @override
@@ -498,7 +527,8 @@ class _$_ApiPublicElectricStationCourseState
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(geoLocation) ^
       const DeepCollectionEquality().hash(myAddress) ^
-      const DeepCollectionEquality().hash(publicElectricStation);
+      const DeepCollectionEquality().hash(publicElectricStation) ^
+      const DeepCollectionEquality().hash(orFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -511,11 +541,13 @@ class _$_ApiPublicElectricStationCourseState
 abstract class _ApiPublicElectricStationCourseState
     implements ApiPublicElectricStationCourseState {
   const factory _ApiPublicElectricStationCourseState(
-          {required bool isLoading,
-          required GeoLocation? geoLocation,
-          required String myAddress,
-          required ApiPublicElectricStation? publicElectricStation}) =
-      _$_ApiPublicElectricStationCourseState;
+      {required bool isLoading,
+      required GeoLocation? geoLocation,
+      required String myAddress,
+      required ApiPublicElectricStation? publicElectricStation,
+      required Either<ApiPublicElectricStationFailure,
+              List<ApiPublicElectricStation>>?
+          orFailure}) = _$_ApiPublicElectricStationCourseState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -526,6 +558,9 @@ abstract class _ApiPublicElectricStationCourseState
   @override
   ApiPublicElectricStation? get publicElectricStation =>
       throw _privateConstructorUsedError;
+  @override
+  Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
+      get orFailure => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiPublicElectricStationCourseStateCopyWith<

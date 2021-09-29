@@ -126,18 +126,18 @@ class ApiGoogleMapsMainPage extends StatelessWidget {
                         color: Colors.blue),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
+                      children: const [
+                        Icon(
                           Icons.keyboard_arrow_right_outlined,
                           size: 50,
                           color: Colors.red,
                         ),
-                        const Icon(
+                        Icon(
                           Icons.keyboard_arrow_right_outlined,
                           size: 50,
                           color: Colors.amber,
                         ),
-                        const Icon(
+                        Icon(
                           Icons.keyboard_arrow_right_outlined,
                           size: 50,
                           color: Colors.green,

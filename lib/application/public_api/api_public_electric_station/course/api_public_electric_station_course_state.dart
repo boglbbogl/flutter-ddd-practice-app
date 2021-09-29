@@ -8,6 +8,9 @@ class ApiPublicElectricStationCourseState
     required GeoLocation? geoLocation,
     required String myAddress,
     required ApiPublicElectricStation? publicElectricStation,
+    required Either<ApiPublicElectricStationFailure,
+            List<ApiPublicElectricStation>>?
+        orFailure,
   }) = _ApiPublicElectricStationCourseState;
   factory ApiPublicElectricStationCourseState.initial() =>
       const ApiPublicElectricStationCourseState(
@@ -15,5 +18,6 @@ class ApiPublicElectricStationCourseState
         geoLocation: null,
         myAddress: "",
         publicElectricStation: null,
+        orFailure: null,
       );
 }

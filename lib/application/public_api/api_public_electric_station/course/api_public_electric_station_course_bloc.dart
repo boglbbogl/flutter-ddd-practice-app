@@ -1,8 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/domain/core/geo_location/geo_location.dart';
 import 'package:ddd_practice_app/domain/core/geo_location/i_geo_location_repository.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address/i_api_kakao_local_address_repository.dart';
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/api_public_electric_station.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/api_public_electric_station_failure.dart';
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/i_api_public_electric_station_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -37,18 +39,22 @@ class ApiPublicElectricStationCourseBloc extends Bloc<
         yield state.copyWith(
             isLoading: false,
             geoLocation: geoLocation,
-            myAddress: myAddress.first.roadAddress!.addressName.isEmpty
+            myAddress: myAddress.first.roadAddress == null
                 ? myAddress.first.address.addressName
                 : myAddress.first.roadAddress!.addressName);
       },
       searched: (e) async* {
         yield state.copyWith(isLoading: true);
-        final result = await _electricStationRepository.getElectricStation(
-            page: 1, query: e.query);
+        final data = await _electricStationRepository
+            .getSucessOrFailureElectricStation(page: 1, query: e.query);
+        final result =
+            data.fold((l) => null, (r) => r.isEmpty ? null : r.first);
+
         yield state.copyWith(
             isLoading: false,
-            publicElectricStation: result.first,
-            geoLocation: state.geoLocation);
+            publicElectricStation: result,
+            geoLocation: state.geoLocation,
+            orFailure: data);
       },
     );
   }

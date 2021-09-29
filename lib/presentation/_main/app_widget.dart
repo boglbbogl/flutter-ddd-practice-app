@@ -104,11 +104,11 @@ class AppWidget extends StatelessWidget {
           '/workingTitleTravelMainPage': (context) =>
               const WorkingTitleTravelMainPage(),
         },
-        localizationsDelegates: [
+        localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
+        supportedLocales: const [
           Locale('ko', 'KR'),
           Locale('en', 'US'),
         ],

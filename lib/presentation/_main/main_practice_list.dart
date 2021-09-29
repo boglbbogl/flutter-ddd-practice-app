@@ -26,7 +26,7 @@ class MainPracticeList extends StatelessWidget {
           gridView: _googleApiGridView(),
         ),
         mainProductListItem(
-          title: 'Public APP',
+          title: 'Public API',
           colors: Colors.pink,
           gridView: _publicApiGridView(),
         ),
