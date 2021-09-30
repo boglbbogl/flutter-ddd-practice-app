@@ -131,7 +131,7 @@ class MainPracticeList extends StatelessWidget {
           crossAxisSpacing: 10.0,
           childAspectRatio: 1.5,
         ),
-        itemCount: GoogleApiPracticeItem().title.length,
+        itemCount: PublicApiPracticeItem().title.length,
         itemBuilder: (context, index) {
           return _itemForm(
             context,

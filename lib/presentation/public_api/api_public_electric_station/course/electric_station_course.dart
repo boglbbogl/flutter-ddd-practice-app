@@ -32,7 +32,30 @@ class ElectricStationCourse extends StatelessWidget {
           return _loadingForm(title: '현재 위치를 불러오고 있습니다\n잠시만 기다려 주세요');
         }
         if (state.isLoading) {
-          return _loadingForm(title: '경로를 만들고 있습니다');
+          return _loadingForm(title: '잠시만 기다려주세요');
+        }
+
+        Set<Polyline> createPolyline() {
+          return {
+            Polyline(
+              polylineId: const PolylineId('Poly Line'),
+              patterns: [PatternItem.dash(40), PatternItem.gap(3)],
+              color: Colors.green,
+              points: [
+                LatLng(
+                    state.geoLocation!.latitude, state.geoLocation!.longitude),
+                if (state.publicElectricStation == null)
+                  LatLng(
+                      state.geoLocation!.latitude, state.geoLocation!.longitude)
+                else
+                  LatLng(double.parse(state.publicElectricStation!.lat),
+                      double.parse(state.publicElectricStation!.longi))
+              ],
+              startCap: Cap.roundCap,
+              endCap: Cap.roundCap,
+              width: 6,
+            ),
+          };
         }
 
         Set<Marker> createMarker() {
@@ -72,6 +95,7 @@ class ElectricStationCourse extends StatelessWidget {
               child: Stack(
                 children: [
                   GoogleMap(
+                      polylines: createPolyline(),
                       onMapCreated: (_mapController) {
                         if (state.publicElectricStation != null) {
                           if (double.parse(state.publicElectricStation!.lat) >

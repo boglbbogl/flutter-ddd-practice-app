@@ -61,11 +61,14 @@ class NaverApiPracticeItem {
 class GoogleApiPracticeItem {
   List title = [
     'Maps',
+    'Youtube',
   ];
   List router = [
     '/apiGoogleMapsMainPage',
+    '/apiGoogleYoutubeMainPage',
   ];
   List stateManagement = [
+    'BLoC',
     'BLoC',
   ];
 }

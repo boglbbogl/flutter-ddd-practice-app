@@ -11,7 +11,8 @@ import 'package:ddd_practice_app/presentation/_main/main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_news_practice/api_news_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_picture_practice/api_picture_main_page.dart';
 import 'package:ddd_practice_app/presentation/example_api/api_weather_practice/api_weather_main_page.dart';
-import 'package:ddd_practice_app/presentation/google_api/api_google_maps_practice/api_google_maps_main_page.dart';
+import 'package:ddd_practice_app/presentation/google_api/api_google_maps/api_google_maps_main_page.dart';
+import 'package:ddd_practice_app/presentation/google_api/api_google_youtube/api_google_youtube_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_book/api_kakao_book_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_detect_lang/api_kakao_detect_lang_main_page.dart';
 import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_image/api_kakao_image_main_page.dart';
@@ -26,7 +27,6 @@ import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie/api_nave
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago/api_naver_papago_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization/api_naver_romanization_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop/api_naver_shop_main_page.dart';
-
 import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/working_title_travel_main_page.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/api_public_electric_station_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/community_practice/community_main_page.dart';
@@ -60,7 +60,6 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) => getIt<ApiNaverPapagoMainBloc>()
               ..add(const ApiNaverPapagoMainEvent.started())),
-        BlocProvider(create: (context) => getIt<ApiGoogleMapsMainBloc>()),
         BlocProvider(
             create: (context) => getIt<WorkingTitleTravelCreateBloc>()
               ..add(const WorkingTitleTravelCreateEvent.started())),
@@ -90,6 +89,8 @@ class AppWidget extends StatelessWidget {
           '/apiNaverShopMainPage': (context) => ApiNaverShopMainPage(),
           '/apiNaverMovieMainPage': (context) => ApiNaverMovieMainPage(),
           '/apiGoogleMapsMainPage': (context) => const ApiGoogleMapsMainPage(),
+          '/apiGoogleYoutubeMainPage': (context) =>
+              const ApiGoogleYoutubeMainPage(),
           '/apiPublicElectricStationMainPage': (context) =>
               const ApiPublicElectricStationMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),

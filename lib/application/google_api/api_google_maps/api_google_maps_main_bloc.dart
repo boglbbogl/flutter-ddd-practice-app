@@ -25,7 +25,6 @@ class ApiGoogleMapsMainBloc
         started: (e) async* {},
         getLocation: (e) async* {
           final geoLoaction = await _geoLocationRepository.getGeoLocation();
-
           yield state.copyWith(
             lat: geoLoaction!.latitude,
             lon: geoLoaction.longitude,
