@@ -6,6 +6,7 @@ import 'package:ddd_practice_app/application/public_api/api_public_electric_stat
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/address/electric_station_address.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/course/electric_station_course.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/electric_station_search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -51,6 +52,12 @@ class ApiPublicElectricStationMainPage extends StatelessWidget {
                     ..add(const ApiPublicElectricStationCourseEvent.started()),
                   child: const ElectricStationCourse(),
                 ),
+              ),
+            ),
+            _buttonForm(
+              title: 'Search',
+              onTap: () => Get.to(
+                () => const ElectricStationSearchPage(),
               ),
             ),
           ],
