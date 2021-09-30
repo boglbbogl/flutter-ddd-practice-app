@@ -29,6 +29,7 @@ class ApiGoogleMapsMainBloc
             lat: geoLoaction!.latitude,
             lon: geoLoaction.longitude,
           );
+          print(state.lat);
         });
   }
 }
