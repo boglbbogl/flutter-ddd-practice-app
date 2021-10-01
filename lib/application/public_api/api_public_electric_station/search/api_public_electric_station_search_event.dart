@@ -1,0 +1,16 @@
+part of 'api_public_electric_station_search_bloc.dart';
+
+@freezed
+class ApiPublicElectricStationSearchEvent
+    with _$ApiPublicElectricStationSearchEvent {
+  const factory ApiPublicElectricStationSearchEvent.started() = _Started;
+  const factory ApiPublicElectricStationSearchEvent.myLocation() = _MyLocation;
+  const factory ApiPublicElectricStationSearchEvent.queryResult({
+    required String query,
+  }) = _QueryResult;
+  const factory ApiPublicElectricStationSearchEvent.moreItem() = _MoreItem;
+  const factory ApiPublicElectricStationSearchEvent.searchBarExpandable() =
+      _SearchBarExpandable;
+  const factory ApiPublicElectricStationSearchEvent.showQueryBar(
+      {required bool value}) = _ShowQueryBar;
+}

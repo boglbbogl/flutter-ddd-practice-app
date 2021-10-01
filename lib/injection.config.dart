@@ -17,7 +17,7 @@ import 'application/example_api/api_news_practice/api_news_main_bloc.dart'
 import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
     as _i72;
 import 'application/example_api/api_weather_practice/api_weather_main_cubit.dart'
-    as _i75;
+    as _i76;
 import 'application/google_api/api_google_maps/api_google_maps_main_bloc.dart'
     as _i57;
 import 'application/kakao_api/api_kakao_book/api_kakao_book_main_bloc.dart'
@@ -54,12 +54,14 @@ import 'application/public_api/api_public_electric_station/address/api_public_el
     as _i73;
 import 'application/public_api/api_public_electric_station/course/api_public_electric_station_course_bloc.dart'
     as _i74;
+import 'application/public_api/api_public_electric_station/search/api_public_electric_station_search_bloc.dart'
+    as _i75;
 import 'application/widget_practice/community_practice/community_delete_cubit/community_delete_cubit.dart'
-    as _i76;
-import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
     as _i77;
-import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
     as _i78;
+import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
+    as _i79;
 import 'application/widget_practice/firestore_practice/firestore_create_main_bloc.dart'
     as _i6;
 import 'application/widget_practice/member_practice/member_create/member_create_bloc.dart'
@@ -108,7 +110,7 @@ import 'domain/widget_practice/firestore_practice/i_firestore_practice_repositor
     as _i43;
 import 'domain/widget_practice/member_practice/i_member_repository.dart'
     as _i47;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i79;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i80;
 import 'infrastructure/core/geo_location/geo_location_repository.dart' as _i46;
 import 'infrastructure/example_api/api_news_practice/api_news_repository.dart'
     as _i34;
@@ -268,15 +270,20 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
           get<_i45.IGeoLocationRepository>(),
           get<_i13.IApiKakaoLocalAddressRepository>(),
           get<_i37.IApiPublicElectricStationRepository>()));
-  gh.factory<_i75.ApiWeatherMainCubit>(() => _i75.ApiWeatherMainCubit(
+  gh.factory<_i75.ApiPublicElectricStationSearchBloc>(() =>
+      _i75.ApiPublicElectricStationSearchBloc(
+          get<_i45.IGeoLocationRepository>(),
+          get<_i13.IApiKakaoLocalAddressRepository>(),
+          get<_i37.IApiPublicElectricStationRepository>()));
+  gh.factory<_i76.ApiWeatherMainCubit>(() => _i76.ApiWeatherMainCubit(
       get<_i39.IApiWeatherRepository>(), get<_i45.IGeoLocationRepository>()));
-  gh.factory<_i76.CommunityDeleteCubit>(
-      () => _i76.CommunityDeleteCubit(get<_i41.ICommunityRepository>()));
-  gh.factory<_i77.CommunityDetailBloc>(
-      () => _i77.CommunityDetailBloc(get<_i41.ICommunityRepository>()));
-  gh.factory<_i78.CommunityMainBloc>(
-      () => _i78.CommunityMainBloc(get<_i41.ICommunityRepository>()));
+  gh.factory<_i77.CommunityDeleteCubit>(
+      () => _i77.CommunityDeleteCubit(get<_i41.ICommunityRepository>()));
+  gh.factory<_i78.CommunityDetailBloc>(
+      () => _i78.CommunityDetailBloc(get<_i41.ICommunityRepository>()));
+  gh.factory<_i79.CommunityMainBloc>(
+      () => _i79.CommunityMainBloc(get<_i41.ICommunityRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableMudule extends _i79.FirebaseInjectableMudule {}
+class _$FirebaseInjectableMudule extends _i80.FirebaseInjectableMudule {}

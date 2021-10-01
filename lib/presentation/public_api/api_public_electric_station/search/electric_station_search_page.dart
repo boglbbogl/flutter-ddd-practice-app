@@ -1,5 +1,10 @@
-import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
+import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:ddd_practice_app/application/public_api/api_public_electric_station/search/api_public_electric_station_search_bloc.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/electric_station_search_bar.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/widgets/electric_station_bottom_search.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ElectricStationSearchPage extends StatelessWidget {
@@ -7,95 +12,56 @@ class ElectricStationSearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: Container(
-        width: size.width * 0.9,
-        height: size.height * 0.2,
-        // color: Colors.pink,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              width: size.width * 0.9,
-              height: size.height * 0.06,
-              decoration: BoxDecoration(
-                border: Border.all(width: 2, color: Colors.pink),
-                borderRadius: BorderRadius.circular(18),
-                color: Colors.white60,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        showModalBottomSheet(
-                            isScrollControlled: true,
-                            context: context,
-                            builder: (context) {
-                              return SizedBox(
-                                height: size.height * 0.8,
-                                child: Column(
-                                  children: [],
-                                ),
-                              );
-                            });
-                      },
-                      child: SizedBox(
-                        width: size.width * 0.7,
-                        child: Row(
-                          children: [
-                            Text(
-                              'Start..',
-                              style: theme.textTheme.bodyText2!.copyWith(
-                                color: Colors.pink,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 9),
-                              child: Text(
-                                '경기도 화성시 반월동 394 반월자이에뜨',
-                                style: theme.textTheme.bodyText2!.copyWith(
-                                  color: const Color.fromRGBO(135, 135, 135, 1),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                        width: size.width * 0.1,
-                        child: const Icon(
-                          Icons.location_on,
-                          color: Colors.pink,
-                        )),
-                  ],
-                ),
+    return BlocConsumer<ApiPublicElectricStationSearchBloc,
+        ApiPublicElectricStationSearchState>(
+      listenWhen: (c, p) => c.orFailure != p.orFailure,
+      listener: (context, state) {
+        if (state.orFailure != null) {
+          state.orFailure!.fold(
+              (l) => FlushbarHelper.createError(
+                      message: l.map(
+                    serverError: (e) => "서버 에러가 발생했습니다. 잠시 후 다시 시도해 주세요",
+                    queryError: (e) => "주소를 입력해 주세요",
+                    resultFailure: (e) => "데이터를 불러오지 못했습니다",
+                  )).show(context),
+              (r) => null);
+        }
+      },
+      builder: (context, state) {
+        if (state.myAddress.isEmpty) {
+          return const Scaffold(
+            body: Center(
+              child: CupertinoActivityIndicator(
+                radius: 25,
               ),
             ),
-            Container(
-              width: size.width * 0.9,
-              height: size.height * 0.06,
-              decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.pink),
-                  borderRadius: BorderRadius.circular(18),
-                  color: Colors.white60),
+          );
+        }
+        return GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            floatingActionButton: ElectricStationSearchBar(
+              isMyLocation: state.isMyLocation,
+              isSearchBar: state.isSearchBar,
+              myAddress: state.myAddress,
             ),
-            InkWell(
-                onTap: () {},
-                child:
-                    Icon(Icons.keyboard_arrow_up_rounded, color: Colors.pink))
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-      body: Stack(children: [
-        GoogleMap(
-            initialCameraPosition:
-                CameraPosition(target: LatLng(37.000, 127.000))),
-      ]),
+            floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+            body: Stack(
+              children: [
+                GoogleMap(
+                    initialCameraPosition:
+                        CameraPosition(target: LatLng(37.000, 127.000))),
+                if (state.showQueryBar) ...[
+                  ElectricStationBottomSearch(
+                    ev: state.items,
+                  ),
+                ],
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

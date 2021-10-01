@@ -3,6 +3,7 @@ import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_electric_station/address/api_public_electric_station_address_bloc.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_electric_station/course/api_public_electric_station_course_bloc.dart';
+import 'package:ddd_practice_app/application/public_api/api_public_electric_station/search/api_public_electric_station_search_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/address/electric_station_address.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/course/electric_station_course.dart';
@@ -57,7 +58,12 @@ class ApiPublicElectricStationMainPage extends StatelessWidget {
             _buttonForm(
               title: 'Search',
               onTap: () => Get.to(
-                () => const ElectricStationSearchPage(),
+                () => BlocProvider<ApiPublicElectricStationSearchBloc>(
+                  create: (context) => getIt<
+                      ApiPublicElectricStationSearchBloc>()
+                    ..add(const ApiPublicElectricStationSearchEvent.started()),
+                  child: const ElectricStationSearchPage(),
+                ),
               ),
             ),
           ],
