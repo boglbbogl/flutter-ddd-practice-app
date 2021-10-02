@@ -74,15 +74,33 @@ class GoogleApiPracticeItem {
 }
 
 class PublicApiPracticeItem {
-  List title = ['Electric Station'];
-  List router = ['/apiPublicElectricStationMainPage'];
-  List stateManagement = ['BLoC'];
+  List title = [
+    'Electric Station',
+    'Corona',
+  ];
+  List router = [
+    '/apiPublicElectricStationMainPage',
+    '/apiPublicCoronaMainPage',
+  ];
+  List stateManagement = [
+    'BLoC',
+    'BLoC',
+  ];
 }
 
 class ProjectAppItem {
-  List title = ['Working Title Travel'];
-  List router = ['/workingTitleTravelMainPage'];
-  List stateManagement = ['BLoC'];
+  List title = [
+    'Working Title Travel',
+    'Working Title EV',
+  ];
+  List router = [
+    '/workingTitleTravelMainPage',
+    '/workingTitleEVMainPage',
+  ];
+  List stateManagement = [
+    'BLoC',
+    'BLoC',
+  ];
 }
 
 class WidgetPracticeItem {

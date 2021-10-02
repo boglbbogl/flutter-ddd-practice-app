@@ -11,6 +11,14 @@ class ApiPublicElectricStationSearchEvent
   const factory ApiPublicElectricStationSearchEvent.moreItem() = _MoreItem;
   const factory ApiPublicElectricStationSearchEvent.searchBarExpandable() =
       _SearchBarExpandable;
-  const factory ApiPublicElectricStationSearchEvent.showQueryBar(
-      {required bool value}) = _ShowQueryBar;
+  const factory ApiPublicElectricStationSearchEvent.showQueryBar({
+    required bool value,
+    required String tab,
+  }) = _ShowQueryBar;
+  const factory ApiPublicElectricStationSearchEvent.startResult({
+    required Map<String, dynamic> result,
+  }) = _StartResult;
+  const factory ApiPublicElectricStationSearchEvent.endResult({
+    required Map<String, dynamic> result,
+  }) = _EndResult;
 }

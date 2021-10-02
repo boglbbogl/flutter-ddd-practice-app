@@ -3,22 +3,22 @@ import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:flutter/material.dart';
 
-class ApiGoogleYoutubeMainPage extends StatelessWidget {
-  const ApiGoogleYoutubeMainPage({Key? key}) : super(key: key);
+class ApiPublicCoronaMainPage extends StatelessWidget {
+  const ApiPublicCoronaMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarForm(context, theme,
-          title: 'Youtube',
-          colors: Colors.lightBlue,
-          backColors: Colors.yellow,
+          title: 'Corona',
+          colors: Colors.pink,
+          backColors: Colors.white,
           actions: [
             appbarActionInfoForm(
                 context: context,
                 sourceText: 'sourceText',
-                colors: Colors.lightBlue,
-                textColors: Colors.yellow)
+                colors: Colors.pink,
+                textColors: Colors.white)
           ]),
     );
   }

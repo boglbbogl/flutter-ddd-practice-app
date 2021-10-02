@@ -38,9 +38,22 @@ class _$ApiPublicElectricStationSearchEventTearOff {
     return const _SearchBarExpandable();
   }
 
-  _ShowQueryBar showQueryBar({required bool value}) {
+  _ShowQueryBar showQueryBar({required bool value, required String tab}) {
     return _ShowQueryBar(
       value: value,
+      tab: tab,
+    );
+  }
+
+  _StartResult startResult({required Map<String, dynamic> result}) {
+    return _StartResult(
+      result: result,
+    );
+  }
+
+  _EndResult endResult({required Map<String, dynamic> result}) {
+    return _EndResult(
+      result: result,
     );
   }
 }
@@ -58,7 +71,9 @@ mixin _$ApiPublicElectricStationSearchEvent {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,7 +83,9 @@ mixin _$ApiPublicElectricStationSearchEvent {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,6 +97,8 @@ mixin _$ApiPublicElectricStationSearchEvent {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +109,8 @@ mixin _$ApiPublicElectricStationSearchEvent {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -156,7 +177,9 @@ class _$_Started implements _Started {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) {
     return started();
   }
@@ -169,7 +192,9 @@ class _$_Started implements _Started {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -187,6 +212,8 @@ class _$_Started implements _Started {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) {
     return started(this);
   }
@@ -200,6 +227,8 @@ class _$_Started implements _Started {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -258,7 +287,9 @@ class _$_MyLocation implements _MyLocation {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) {
     return myLocation();
   }
@@ -271,7 +302,9 @@ class _$_MyLocation implements _MyLocation {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) {
     if (myLocation != null) {
@@ -289,6 +322,8 @@ class _$_MyLocation implements _MyLocation {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) {
     return myLocation(this);
   }
@@ -302,6 +337,8 @@ class _$_MyLocation implements _MyLocation {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) {
     if (myLocation != null) {
@@ -385,7 +422,9 @@ class _$_QueryResult implements _QueryResult {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) {
     return queryResult(query);
   }
@@ -398,7 +437,9 @@ class _$_QueryResult implements _QueryResult {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) {
     if (queryResult != null) {
@@ -416,6 +457,8 @@ class _$_QueryResult implements _QueryResult {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) {
     return queryResult(this);
   }
@@ -429,6 +472,8 @@ class _$_QueryResult implements _QueryResult {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) {
     if (queryResult != null) {
@@ -490,7 +535,9 @@ class _$_MoreItem implements _MoreItem {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) {
     return moreItem();
   }
@@ -503,7 +550,9 @@ class _$_MoreItem implements _MoreItem {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) {
     if (moreItem != null) {
@@ -521,6 +570,8 @@ class _$_MoreItem implements _MoreItem {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) {
     return moreItem(this);
   }
@@ -534,6 +585,8 @@ class _$_MoreItem implements _MoreItem {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) {
     if (moreItem != null) {
@@ -592,7 +645,9 @@ class _$_SearchBarExpandable implements _SearchBarExpandable {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) {
     return searchBarExpandable();
   }
@@ -605,7 +660,9 @@ class _$_SearchBarExpandable implements _SearchBarExpandable {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) {
     if (searchBarExpandable != null) {
@@ -623,6 +680,8 @@ class _$_SearchBarExpandable implements _SearchBarExpandable {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) {
     return searchBarExpandable(this);
   }
@@ -636,6 +695,8 @@ class _$_SearchBarExpandable implements _SearchBarExpandable {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) {
     if (searchBarExpandable != null) {
@@ -655,7 +716,7 @@ abstract class _$ShowQueryBarCopyWith<$Res> {
   factory _$ShowQueryBarCopyWith(
           _ShowQueryBar value, $Res Function(_ShowQueryBar) then) =
       __$ShowQueryBarCopyWithImpl<$Res>;
-  $Res call({bool value});
+  $Res call({bool value, String tab});
 }
 
 /// @nodoc
@@ -672,12 +733,17 @@ class __$ShowQueryBarCopyWithImpl<$Res>
   @override
   $Res call({
     Object? value = freezed,
+    Object? tab = freezed,
   }) {
     return _then(_ShowQueryBar(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as bool,
+      tab: tab == freezed
+          ? _value.tab
+          : tab // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -685,14 +751,16 @@ class __$ShowQueryBarCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ShowQueryBar implements _ShowQueryBar {
-  const _$_ShowQueryBar({required this.value});
+  const _$_ShowQueryBar({required this.value, required this.tab});
 
   @override
   final bool value;
+  @override
+  final String tab;
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationSearchEvent.showQueryBar(value: $value)';
+    return 'ApiPublicElectricStationSearchEvent.showQueryBar(value: $value, tab: $tab)';
   }
 
   @override
@@ -700,12 +768,16 @@ class _$_ShowQueryBar implements _ShowQueryBar {
     return identical(this, other) ||
         (other is _ShowQueryBar &&
             (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+                const DeepCollectionEquality().equals(other.value, value)) &&
+            (identical(other.tab, tab) ||
+                const DeepCollectionEquality().equals(other.tab, tab)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(value) ^
+      const DeepCollectionEquality().hash(tab);
 
   @JsonKey(ignore: true)
   @override
@@ -720,9 +792,11 @@ class _$_ShowQueryBar implements _ShowQueryBar {
     required TResult Function(String query) queryResult,
     required TResult Function() moreItem,
     required TResult Function() searchBarExpandable,
-    required TResult Function(bool value) showQueryBar,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
   }) {
-    return showQueryBar(value);
+    return showQueryBar(value, tab);
   }
 
   @override
@@ -733,11 +807,13 @@ class _$_ShowQueryBar implements _ShowQueryBar {
     TResult Function(String query)? queryResult,
     TResult Function()? moreItem,
     TResult Function()? searchBarExpandable,
-    TResult Function(bool value)? showQueryBar,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
     required TResult orElse(),
   }) {
     if (showQueryBar != null) {
-      return showQueryBar(value);
+      return showQueryBar(value, tab);
     }
     return orElse();
   }
@@ -751,6 +827,8 @@ class _$_ShowQueryBar implements _ShowQueryBar {
     required TResult Function(_MoreItem value) moreItem,
     required TResult Function(_SearchBarExpandable value) searchBarExpandable,
     required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
   }) {
     return showQueryBar(this);
   }
@@ -764,6 +842,8 @@ class _$_ShowQueryBar implements _ShowQueryBar {
     TResult Function(_MoreItem value)? moreItem,
     TResult Function(_SearchBarExpandable value)? searchBarExpandable,
     TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
     required TResult orElse(),
   }) {
     if (showQueryBar != null) {
@@ -774,11 +854,294 @@ class _$_ShowQueryBar implements _ShowQueryBar {
 }
 
 abstract class _ShowQueryBar implements ApiPublicElectricStationSearchEvent {
-  const factory _ShowQueryBar({required bool value}) = _$_ShowQueryBar;
+  const factory _ShowQueryBar({required bool value, required String tab}) =
+      _$_ShowQueryBar;
 
   bool get value => throw _privateConstructorUsedError;
+  String get tab => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$ShowQueryBarCopyWith<_ShowQueryBar> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$StartResultCopyWith<$Res> {
+  factory _$StartResultCopyWith(
+          _StartResult value, $Res Function(_StartResult) then) =
+      __$StartResultCopyWithImpl<$Res>;
+  $Res call({Map<String, dynamic> result});
+}
+
+/// @nodoc
+class __$StartResultCopyWithImpl<$Res>
+    extends _$ApiPublicElectricStationSearchEventCopyWithImpl<$Res>
+    implements _$StartResultCopyWith<$Res> {
+  __$StartResultCopyWithImpl(
+      _StartResult _value, $Res Function(_StartResult) _then)
+      : super(_value, (v) => _then(v as _StartResult));
+
+  @override
+  _StartResult get _value => super._value as _StartResult;
+
+  @override
+  $Res call({
+    Object? result = freezed,
+  }) {
+    return _then(_StartResult(
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_StartResult implements _StartResult {
+  const _$_StartResult({required this.result});
+
+  @override
+  final Map<String, dynamic> result;
+
+  @override
+  String toString() {
+    return 'ApiPublicElectricStationSearchEvent.startResult(result: $result)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StartResult &&
+            (identical(other.result, result) ||
+                const DeepCollectionEquality().equals(other.result, result)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StartResultCopyWith<_StartResult> get copyWith =>
+      __$StartResultCopyWithImpl<_StartResult>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() myLocation,
+    required TResult Function(String query) queryResult,
+    required TResult Function() moreItem,
+    required TResult Function() searchBarExpandable,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
+  }) {
+    return startResult(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? myLocation,
+    TResult Function(String query)? queryResult,
+    TResult Function()? moreItem,
+    TResult Function()? searchBarExpandable,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
+    required TResult orElse(),
+  }) {
+    if (startResult != null) {
+      return startResult(result);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_MyLocation value) myLocation,
+    required TResult Function(_QueryResult value) queryResult,
+    required TResult Function(_MoreItem value) moreItem,
+    required TResult Function(_SearchBarExpandable value) searchBarExpandable,
+    required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
+  }) {
+    return startResult(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_MyLocation value)? myLocation,
+    TResult Function(_QueryResult value)? queryResult,
+    TResult Function(_MoreItem value)? moreItem,
+    TResult Function(_SearchBarExpandable value)? searchBarExpandable,
+    TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
+    required TResult orElse(),
+  }) {
+    if (startResult != null) {
+      return startResult(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartResult implements ApiPublicElectricStationSearchEvent {
+  const factory _StartResult({required Map<String, dynamic> result}) =
+      _$_StartResult;
+
+  Map<String, dynamic> get result => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$StartResultCopyWith<_StartResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$EndResultCopyWith<$Res> {
+  factory _$EndResultCopyWith(
+          _EndResult value, $Res Function(_EndResult) then) =
+      __$EndResultCopyWithImpl<$Res>;
+  $Res call({Map<String, dynamic> result});
+}
+
+/// @nodoc
+class __$EndResultCopyWithImpl<$Res>
+    extends _$ApiPublicElectricStationSearchEventCopyWithImpl<$Res>
+    implements _$EndResultCopyWith<$Res> {
+  __$EndResultCopyWithImpl(_EndResult _value, $Res Function(_EndResult) _then)
+      : super(_value, (v) => _then(v as _EndResult));
+
+  @override
+  _EndResult get _value => super._value as _EndResult;
+
+  @override
+  $Res call({
+    Object? result = freezed,
+  }) {
+    return _then(_EndResult(
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_EndResult implements _EndResult {
+  const _$_EndResult({required this.result});
+
+  @override
+  final Map<String, dynamic> result;
+
+  @override
+  String toString() {
+    return 'ApiPublicElectricStationSearchEvent.endResult(result: $result)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EndResult &&
+            (identical(other.result, result) ||
+                const DeepCollectionEquality().equals(other.result, result)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+
+  @JsonKey(ignore: true)
+  @override
+  _$EndResultCopyWith<_EndResult> get copyWith =>
+      __$EndResultCopyWithImpl<_EndResult>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() myLocation,
+    required TResult Function(String query) queryResult,
+    required TResult Function() moreItem,
+    required TResult Function() searchBarExpandable,
+    required TResult Function(bool value, String tab) showQueryBar,
+    required TResult Function(Map<String, dynamic> result) startResult,
+    required TResult Function(Map<String, dynamic> result) endResult,
+  }) {
+    return endResult(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? myLocation,
+    TResult Function(String query)? queryResult,
+    TResult Function()? moreItem,
+    TResult Function()? searchBarExpandable,
+    TResult Function(bool value, String tab)? showQueryBar,
+    TResult Function(Map<String, dynamic> result)? startResult,
+    TResult Function(Map<String, dynamic> result)? endResult,
+    required TResult orElse(),
+  }) {
+    if (endResult != null) {
+      return endResult(result);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_MyLocation value) myLocation,
+    required TResult Function(_QueryResult value) queryResult,
+    required TResult Function(_MoreItem value) moreItem,
+    required TResult Function(_SearchBarExpandable value) searchBarExpandable,
+    required TResult Function(_ShowQueryBar value) showQueryBar,
+    required TResult Function(_StartResult value) startResult,
+    required TResult Function(_EndResult value) endResult,
+  }) {
+    return endResult(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_MyLocation value)? myLocation,
+    TResult Function(_QueryResult value)? queryResult,
+    TResult Function(_MoreItem value)? moreItem,
+    TResult Function(_SearchBarExpandable value)? searchBarExpandable,
+    TResult Function(_ShowQueryBar value)? showQueryBar,
+    TResult Function(_StartResult value)? startResult,
+    TResult Function(_EndResult value)? endResult,
+    required TResult orElse(),
+  }) {
+    if (endResult != null) {
+      return endResult(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EndResult implements ApiPublicElectricStationSearchEvent {
+  const factory _EndResult({required Map<String, dynamic> result}) =
+      _$_EndResult;
+
+  Map<String, dynamic> get result => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EndResultCopyWith<_EndResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -792,12 +1155,13 @@ class _$ApiPublicElectricStationSearchStateTearOff {
       required bool isSearchBar,
       required bool showQueryBar,
       required bool isMoreLoading,
+      required String tabString,
       required bool isEnd,
       required int page,
       required String query,
-      required GeoLocation? geoLocation,
-      required String myAddress,
       required List<ApiPublicElectricStation> items,
+      required Map<String, dynamic> startResult,
+      required Map<String, dynamic> endResult,
       required Either<ApiPublicElectricStationFailure,
               List<ApiPublicElectricStation>>?
           orFailure}) {
@@ -807,12 +1171,13 @@ class _$ApiPublicElectricStationSearchStateTearOff {
       isSearchBar: isSearchBar,
       showQueryBar: showQueryBar,
       isMoreLoading: isMoreLoading,
+      tabString: tabString,
       isEnd: isEnd,
       page: page,
       query: query,
-      geoLocation: geoLocation,
-      myAddress: myAddress,
       items: items,
+      startResult: startResult,
+      endResult: endResult,
       orFailure: orFailure,
     );
   }
@@ -829,13 +1194,14 @@ mixin _$ApiPublicElectricStationSearchState {
   bool get isSearchBar => throw _privateConstructorUsedError;
   bool get showQueryBar => throw _privateConstructorUsedError;
   bool get isMoreLoading => throw _privateConstructorUsedError;
+  String get tabString => throw _privateConstructorUsedError;
   bool get isEnd => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   String get query => throw _privateConstructorUsedError;
-  GeoLocation? get geoLocation => throw _privateConstructorUsedError;
-  String get myAddress => throw _privateConstructorUsedError;
   List<ApiPublicElectricStation> get items =>
       throw _privateConstructorUsedError;
+  Map<String, dynamic> get startResult => throw _privateConstructorUsedError;
+  Map<String, dynamic> get endResult => throw _privateConstructorUsedError;
   Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
       get orFailure => throw _privateConstructorUsedError;
 
@@ -857,16 +1223,15 @@ abstract class $ApiPublicElectricStationSearchStateCopyWith<$Res> {
       bool isSearchBar,
       bool showQueryBar,
       bool isMoreLoading,
+      String tabString,
       bool isEnd,
       int page,
       String query,
-      GeoLocation? geoLocation,
-      String myAddress,
       List<ApiPublicElectricStation> items,
+      Map<String, dynamic> startResult,
+      Map<String, dynamic> endResult,
       Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
           orFailure});
-
-  $GeoLocationCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -885,12 +1250,13 @@ class _$ApiPublicElectricStationSearchStateCopyWithImpl<$Res>
     Object? isSearchBar = freezed,
     Object? showQueryBar = freezed,
     Object? isMoreLoading = freezed,
+    Object? tabString = freezed,
     Object? isEnd = freezed,
     Object? page = freezed,
     Object? query = freezed,
-    Object? geoLocation = freezed,
-    Object? myAddress = freezed,
     Object? items = freezed,
+    Object? startResult = freezed,
+    Object? endResult = freezed,
     Object? orFailure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -914,6 +1280,10 @@ class _$ApiPublicElectricStationSearchStateCopyWithImpl<$Res>
           ? _value.isMoreLoading
           : isMoreLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      tabString: tabString == freezed
+          ? _value.tabString
+          : tabString // ignore: cast_nullable_to_non_nullable
+              as String,
       isEnd: isEnd == freezed
           ? _value.isEnd
           : isEnd // ignore: cast_nullable_to_non_nullable
@@ -926,35 +1296,24 @@ class _$ApiPublicElectricStationSearchStateCopyWithImpl<$Res>
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-      geoLocation: geoLocation == freezed
-          ? _value.geoLocation
-          : geoLocation // ignore: cast_nullable_to_non_nullable
-              as GeoLocation?,
-      myAddress: myAddress == freezed
-          ? _value.myAddress
-          : myAddress // ignore: cast_nullable_to_non_nullable
-              as String,
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<ApiPublicElectricStation>,
+      startResult: startResult == freezed
+          ? _value.startResult
+          : startResult // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      endResult: endResult == freezed
+          ? _value.endResult
+          : endResult // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       orFailure: orFailure == freezed
           ? _value.orFailure
           : orFailure // ignore: cast_nullable_to_non_nullable
               as Either<ApiPublicElectricStationFailure,
                   List<ApiPublicElectricStation>>?,
     ));
-  }
-
-  @override
-  $GeoLocationCopyWith<$Res>? get geoLocation {
-    if (_value.geoLocation == null) {
-      return null;
-    }
-
-    return $GeoLocationCopyWith<$Res>(_value.geoLocation!, (value) {
-      return _then(_value.copyWith(geoLocation: value));
-    });
   }
 }
 
@@ -972,17 +1331,15 @@ abstract class _$ApiPublicElectricStationSearchStateCopyWith<$Res>
       bool isSearchBar,
       bool showQueryBar,
       bool isMoreLoading,
+      String tabString,
       bool isEnd,
       int page,
       String query,
-      GeoLocation? geoLocation,
-      String myAddress,
       List<ApiPublicElectricStation> items,
+      Map<String, dynamic> startResult,
+      Map<String, dynamic> endResult,
       Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
           orFailure});
-
-  @override
-  $GeoLocationCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -1005,12 +1362,13 @@ class __$ApiPublicElectricStationSearchStateCopyWithImpl<$Res>
     Object? isSearchBar = freezed,
     Object? showQueryBar = freezed,
     Object? isMoreLoading = freezed,
+    Object? tabString = freezed,
     Object? isEnd = freezed,
     Object? page = freezed,
     Object? query = freezed,
-    Object? geoLocation = freezed,
-    Object? myAddress = freezed,
     Object? items = freezed,
+    Object? startResult = freezed,
+    Object? endResult = freezed,
     Object? orFailure = freezed,
   }) {
     return _then(_ApiPublicElectricStationSearchState(
@@ -1034,6 +1392,10 @@ class __$ApiPublicElectricStationSearchStateCopyWithImpl<$Res>
           ? _value.isMoreLoading
           : isMoreLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      tabString: tabString == freezed
+          ? _value.tabString
+          : tabString // ignore: cast_nullable_to_non_nullable
+              as String,
       isEnd: isEnd == freezed
           ? _value.isEnd
           : isEnd // ignore: cast_nullable_to_non_nullable
@@ -1046,18 +1408,18 @@ class __$ApiPublicElectricStationSearchStateCopyWithImpl<$Res>
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-      geoLocation: geoLocation == freezed
-          ? _value.geoLocation
-          : geoLocation // ignore: cast_nullable_to_non_nullable
-              as GeoLocation?,
-      myAddress: myAddress == freezed
-          ? _value.myAddress
-          : myAddress // ignore: cast_nullable_to_non_nullable
-              as String,
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<ApiPublicElectricStation>,
+      startResult: startResult == freezed
+          ? _value.startResult
+          : startResult // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      endResult: endResult == freezed
+          ? _value.endResult
+          : endResult // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       orFailure: orFailure == freezed
           ? _value.orFailure
           : orFailure // ignore: cast_nullable_to_non_nullable
@@ -1077,12 +1439,13 @@ class _$_ApiPublicElectricStationSearchState
       required this.isSearchBar,
       required this.showQueryBar,
       required this.isMoreLoading,
+      required this.tabString,
       required this.isEnd,
       required this.page,
       required this.query,
-      required this.geoLocation,
-      required this.myAddress,
       required this.items,
+      required this.startResult,
+      required this.endResult,
       required this.orFailure});
 
   @override
@@ -1096,24 +1459,26 @@ class _$_ApiPublicElectricStationSearchState
   @override
   final bool isMoreLoading;
   @override
+  final String tabString;
+  @override
   final bool isEnd;
   @override
   final int page;
   @override
   final String query;
   @override
-  final GeoLocation? geoLocation;
-  @override
-  final String myAddress;
-  @override
   final List<ApiPublicElectricStation> items;
+  @override
+  final Map<String, dynamic> startResult;
+  @override
+  final Map<String, dynamic> endResult;
   @override
   final Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
       orFailure;
 
   @override
   String toString() {
-    return 'ApiPublicElectricStationSearchState(isLoading: $isLoading, isMyLocation: $isMyLocation, isSearchBar: $isSearchBar, showQueryBar: $showQueryBar, isMoreLoading: $isMoreLoading, isEnd: $isEnd, page: $page, query: $query, geoLocation: $geoLocation, myAddress: $myAddress, items: $items, orFailure: $orFailure)';
+    return 'ApiPublicElectricStationSearchState(isLoading: $isLoading, isMyLocation: $isMyLocation, isSearchBar: $isSearchBar, showQueryBar: $showQueryBar, isMoreLoading: $isMoreLoading, tabString: $tabString, isEnd: $isEnd, page: $page, query: $query, items: $items, startResult: $startResult, endResult: $endResult, orFailure: $orFailure)';
   }
 
   @override
@@ -1135,20 +1500,23 @@ class _$_ApiPublicElectricStationSearchState
             (identical(other.isMoreLoading, isMoreLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isMoreLoading, isMoreLoading)) &&
+            (identical(other.tabString, tabString) ||
+                const DeepCollectionEquality()
+                    .equals(other.tabString, tabString)) &&
             (identical(other.isEnd, isEnd) ||
                 const DeepCollectionEquality().equals(other.isEnd, isEnd)) &&
             (identical(other.page, page) ||
                 const DeepCollectionEquality().equals(other.page, page)) &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)) &&
-            (identical(other.geoLocation, geoLocation) ||
-                const DeepCollectionEquality()
-                    .equals(other.geoLocation, geoLocation)) &&
-            (identical(other.myAddress, myAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.myAddress, myAddress)) &&
             (identical(other.items, items) ||
                 const DeepCollectionEquality().equals(other.items, items)) &&
+            (identical(other.startResult, startResult) ||
+                const DeepCollectionEquality()
+                    .equals(other.startResult, startResult)) &&
+            (identical(other.endResult, endResult) ||
+                const DeepCollectionEquality()
+                    .equals(other.endResult, endResult)) &&
             (identical(other.orFailure, orFailure) ||
                 const DeepCollectionEquality()
                     .equals(other.orFailure, orFailure)));
@@ -1162,12 +1530,13 @@ class _$_ApiPublicElectricStationSearchState
       const DeepCollectionEquality().hash(isSearchBar) ^
       const DeepCollectionEquality().hash(showQueryBar) ^
       const DeepCollectionEquality().hash(isMoreLoading) ^
+      const DeepCollectionEquality().hash(tabString) ^
       const DeepCollectionEquality().hash(isEnd) ^
       const DeepCollectionEquality().hash(page) ^
       const DeepCollectionEquality().hash(query) ^
-      const DeepCollectionEquality().hash(geoLocation) ^
-      const DeepCollectionEquality().hash(myAddress) ^
       const DeepCollectionEquality().hash(items) ^
+      const DeepCollectionEquality().hash(startResult) ^
+      const DeepCollectionEquality().hash(endResult) ^
       const DeepCollectionEquality().hash(orFailure);
 
   @JsonKey(ignore: true)
@@ -1186,12 +1555,13 @@ abstract class _ApiPublicElectricStationSearchState
       required bool isSearchBar,
       required bool showQueryBar,
       required bool isMoreLoading,
+      required String tabString,
       required bool isEnd,
       required int page,
       required String query,
-      required GeoLocation? geoLocation,
-      required String myAddress,
       required List<ApiPublicElectricStation> items,
+      required Map<String, dynamic> startResult,
+      required Map<String, dynamic> endResult,
       required Either<ApiPublicElectricStationFailure,
               List<ApiPublicElectricStation>>?
           orFailure}) = _$_ApiPublicElectricStationSearchState;
@@ -1207,18 +1577,20 @@ abstract class _ApiPublicElectricStationSearchState
   @override
   bool get isMoreLoading => throw _privateConstructorUsedError;
   @override
+  String get tabString => throw _privateConstructorUsedError;
+  @override
   bool get isEnd => throw _privateConstructorUsedError;
   @override
   int get page => throw _privateConstructorUsedError;
   @override
   String get query => throw _privateConstructorUsedError;
   @override
-  GeoLocation? get geoLocation => throw _privateConstructorUsedError;
-  @override
-  String get myAddress => throw _privateConstructorUsedError;
-  @override
   List<ApiPublicElectricStation> get items =>
       throw _privateConstructorUsedError;
+  @override
+  Map<String, dynamic> get startResult => throw _privateConstructorUsedError;
+  @override
+  Map<String, dynamic> get endResult => throw _privateConstructorUsedError;
   @override
   Either<ApiPublicElectricStationFailure, List<ApiPublicElectricStation>>?
       get orFailure => throw _privateConstructorUsedError;

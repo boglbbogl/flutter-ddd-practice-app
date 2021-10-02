@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:ddd_practice_app/domain/core/geo_location/geo_location.dart';
 import 'package:ddd_practice_app/domain/core/geo_location/i_geo_location_repository.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address/i_api_kakao_local_address_repository.dart';
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/api_public_electric_station.dart';
@@ -37,22 +36,32 @@ class ApiPublicElectricStationSearchBloc extends Bloc<
             lon: myLocation!.longitude.toString(),
             lat: myLocation.latitude.toString());
         yield state.copyWith(
-            isLoading: false,
-            isSearchBar: false,
-            geoLocation: myLocation,
-            myAddress: myAddress.first.roadAddress == null
+          isLoading: false,
+          isSearchBar: false,
+          endResult: {
+            "name": myAddress.first.roadAddress == null
                 ? myAddress.first.address.addressName
-                : myAddress.first.roadAddress!.addressName);
+                : myAddress.first.roadAddress!.addressName,
+            "lat": myLocation.latitude,
+            "lon": myLocation.longitude,
+          },
+          startResult: {
+            "name": myAddress.first.roadAddress == null
+                ? myAddress.first.address.addressName
+                : myAddress.first.roadAddress!.addressName,
+            "lat": myLocation.latitude,
+            "lon": myLocation.longitude,
+          },
+        );
       },
       queryResult: (e) async* {
         yield state.copyWith(isLoading: true);
         final data = await _electricStationRepository
             .getSucessOrFailureElectricStation(page: 1, query: e.query);
-        final result = data.fold((l) => null, (r) => r.isEmpty ? null : r);
-
+        final result = data.fold((l) => null,
+            (r) => r.isEmpty ? [ApiPublicElectricStation.empty()] : r);
         yield state.copyWith(
           isLoading: false,
-          geoLocation: state.geoLocation,
           orFailure: data,
           items: result!,
         );
@@ -74,6 +83,16 @@ class ApiPublicElectricStationSearchBloc extends Bloc<
           );
         }
       },
+      startResult: (e) async* {
+        yield state.copyWith(
+          startResult: e.result,
+        );
+      },
+      endResult: (e) async* {
+        yield state.copyWith(
+          endResult: e.result,
+        );
+      },
       myLocation: (e) async* {
         yield state.copyWith(isMyLocation: true);
         final myLocation = await _geoLocationRepository.getGeoLocation();
@@ -81,11 +100,15 @@ class ApiPublicElectricStationSearchBloc extends Bloc<
             lon: myLocation!.longitude.toString(),
             lat: myLocation.latitude.toString());
         yield state.copyWith(
-            isMyLocation: false,
-            geoLocation: myLocation,
-            myAddress: myAddress.first.roadAddress == null
+          isMyLocation: false,
+          startResult: {
+            "name": myAddress.first.roadAddress == null
                 ? myAddress.first.address.addressName
-                : myAddress.first.roadAddress!.addressName);
+                : myAddress.first.roadAddress!.addressName,
+            "lat": myLocation.latitude,
+            "lon": myLocation.longitude,
+          },
+        );
       },
       searchBarExpandable: (e) async* {
         if (state.isSearchBar) {
@@ -95,7 +118,10 @@ class ApiPublicElectricStationSearchBloc extends Bloc<
         }
       },
       showQueryBar: (e) async* {
-        yield state.copyWith(showQueryBar: e.value);
+        yield state.copyWith(
+          showQueryBar: e.value,
+          tabString: e.tab,
+        );
       },
     );
   }

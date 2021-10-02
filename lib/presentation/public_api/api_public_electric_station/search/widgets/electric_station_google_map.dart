@@ -1,75 +1,35 @@
-import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:ddd_practice_app/application/public_api/api_public_electric_station/search/api_public_electric_station_search_bloc.dart';
-import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/widgets/electric_station_google_map.dart';
-import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/electric_station_search_bar.dart';
-import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/widgets/electric_station_bottom_search.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class ElectricStationSearchPage extends StatelessWidget {
-  const ElectricStationSearchPage({Key? key}) : super(key: key);
+class ElectricStationGoogleMap extends StatelessWidget {
+  final Map<String, dynamic> startResult;
+  final Map<String, dynamic> endResult;
+  const ElectricStationGoogleMap({
+    Key? key,
+    required this.endResult,
+    required this.startResult,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ApiPublicElectricStationSearchBloc,
-        ApiPublicElectricStationSearchState>(
-      listenWhen: (c, p) => c.orFailure != p.orFailure,
-      listener: (context, state) {
-        if (state.orFailure != null) {
-          state.orFailure!.fold(
-              (l) => FlushbarHelper.createError(
-                      message: l.map(
-                    serverError: (e) => "서버 에러가 발생했습니다. 잠시 후 다시 시도해 주세요",
-                    queryError: (e) => "주소를 입력해 주세요",
-                    resultFailure: (e) => "데이터를 불러오지 못했습니다",
-                  )).show(context),
-              (r) => null);
-        }
-      },
-      builder: (context, state) {
-        if (state.startResult.isEmpty || state.isMyLocation) {
-          return const Scaffold(
-            body: Center(
-              child: CupertinoActivityIndicator(
-                radius: 25,
-              ),
-            ),
+    return GoogleMap(
+        myLocationEnabled: true,
+        zoomControlsEnabled: false,
+        onMapCreated: (mapController) async {
+          onMapCreated(
+            mapController: mapController,
+            startLat: double.parse(startResult["lat"].toString()),
+            startLon: double.parse(startResult["lon"].toString()),
+            endLat: double.parse(endResult["lat"].toString()),
+            endLon: double.parse(endResult["lon"].toString()),
           );
-        }
-
-        return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            floatingActionButton: ElectricStationSearchBar(
-              isMyLocation: state.isMyLocation,
-              isSearchBar: state.isSearchBar,
-              startAddress: state.startResult["name"].toString(),
-              endAddress: state.endResult["name"].toString(),
-            ),
-            floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-            body: Stack(
-              children: [
-                if (!state.showQueryBar) ...[
-                  ElectricStationGoogleMap(
-                    startResult: state.startResult,
-                    endResult: state.endResult,
-                  ),
-                ],
-                if (state.showQueryBar) ...[
-                  ElectricStationBottomSearch(
-                    ev: state.items,
-                    tabString: state.tabString,
-                  ),
-                ],
-              ],
-            ),
-          ),
-        );
-      },
-    );
+        },
+        polylines: createPolyline(start: startResult, end: endResult),
+        markers: createMarker(start: startResult, end: endResult),
+        initialCameraPosition: CameraPosition(
+            zoom: 16,
+            target: LatLng(double.parse(startResult["lat"].toString()),
+                double.parse(startResult["lon"].toString()))));
   }
 
   void onMapCreated({
@@ -96,7 +56,7 @@ class ElectricStationSearchPage extends StatelessWidget {
           northLat: startLat,
           northLon: endLon,
         );
-      } else if (endLat > startLon) {
+      } else if (endLat > startLat) {
         markerControl(
           mapController: mapController,
           southLat: startLat,

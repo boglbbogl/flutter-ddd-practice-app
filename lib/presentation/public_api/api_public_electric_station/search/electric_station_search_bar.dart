@@ -1,6 +1,5 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_electric_station/search/api_public_electric_station_search_bloc.dart';
-import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/search/widgets/electric_station_bottom_search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,12 +8,14 @@ class ElectricStationSearchBar extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
   final bool isSearchBar;
   final bool isMyLocation;
-  final String myAddress;
+  final String startAddress;
+  final String endAddress;
   ElectricStationSearchBar({
     Key? key,
     required this.isMyLocation,
     required this.isSearchBar,
-    required this.myAddress,
+    required this.startAddress,
+    required this.endAddress,
   }) : super(key: key);
 
   @override
@@ -27,26 +28,54 @@ class ElectricStationSearchBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _searchBarForm(
-              context: context,
-              title: 'Start...',
-              address: myAddress,
-              animatedSize: isSearchBar ? 0 : size.height * 0.05,
-              icon: isMyLocation
-                  ? const CupertinoActivityIndicator()
-                  : Icon(
-                      Icons.location_on,
-                      color: Colors.pink,
-                      size: isSearchBar ? 0 : 25,
-                    )),
+            onTap: () {
+              context
+                  .read<ApiPublicElectricStationSearchBloc>()
+                  .add(const ApiPublicElectricStationSearchEvent.showQueryBar(
+                    value: true,
+                    tab: "start",
+                  ));
+            },
+            context: context,
+            title: 'Start...',
+            address: startAddress,
+            animatedSize: isSearchBar ? 0 : size.height * 0.05,
+            icon: InkWell(
+              onTap: () {
+                context.read<ApiPublicElectricStationSearchBloc>().add(
+                    const ApiPublicElectricStationSearchEvent.myLocation());
+              },
+              child: SizedBox(
+                width: size.width * 0.1,
+                child: isMyLocation
+                    ? const CupertinoActivityIndicator()
+                    : Icon(
+                        Icons.location_on,
+                        color: Colors.pink,
+                        size: isSearchBar ? 0 : 25,
+                      ),
+              ),
+            ),
+          ),
           _searchBarForm(
-              context: context,
-              title: 'End...',
-              address: myAddress,
-              animatedSize: size.height * 0.05,
-              icon: const Icon(
+            onTap: () {
+              context.read<ApiPublicElectricStationSearchBloc>().add(
+                  const ApiPublicElectricStationSearchEvent.showQueryBar(
+                      value: true, tab: "end"));
+            },
+            context: context,
+            title: 'End...',
+            address: endAddress,
+            animatedSize: size.height * 0.05,
+            icon: SizedBox(
+              width: size.width * 0.1,
+              child: const Icon(
                 Icons.search_outlined,
                 color: Colors.pink,
-              )),
+                size: 25,
+              ),
+            ),
+          ),
           InkWell(
               onTap: () {
                 context.read<ApiPublicElectricStationSearchBloc>().add(
@@ -69,6 +98,7 @@ class ElectricStationSearchBar extends StatelessWidget {
     required String address,
     required Widget icon,
     required double animatedSize,
+    required Function() onTap,
   }) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
@@ -85,11 +115,7 @@ class ElectricStationSearchBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             InkWell(
-              onTap: () {
-                context.read<ApiPublicElectricStationSearchBloc>().add(
-                    const ApiPublicElectricStationSearchEvent.showQueryBar(
-                        value: true));
-              },
+              onTap: onTap,
               child: SizedBox(
                 width: size.width * 0.7,
                 child: Row(
@@ -116,13 +142,7 @@ class ElectricStationSearchBar extends StatelessWidget {
                 ),
               ),
             ),
-            InkWell(
-              onTap: () {
-                context.read<ApiPublicElectricStationSearchBloc>().add(
-                    const ApiPublicElectricStationSearchEvent.myLocation());
-              },
-              child: SizedBox(width: size.width * 0.1, child: icon),
-            ),
+            icon,
           ],
         ),
       ),

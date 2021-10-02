@@ -1,5 +1,4 @@
 import 'package:ddd_practice_app/application/_main/main_cubit.dart';
-import 'package:ddd_practice_app/application/google_api/api_google_maps/api_google_maps_main_bloc.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_bloc.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate/api_kakao_translate_main_cubit.dart';
 import 'package:ddd_practice_app/application/naver_api/api_naver_papago/api_naver_papago_main_bloc.dart';
@@ -27,7 +26,9 @@ import 'package:ddd_practice_app/presentation/naver_api/api_naver_movie/api_nave
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago/api_naver_papago_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_romanization/api_naver_romanization_main_page.dart';
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_shop/api_naver_shop_main_page.dart';
+import 'package:ddd_practice_app/presentation/project_app/working_title_e_v_app/working_title_e_v_main_page.dart';
 import 'package:ddd_practice_app/presentation/project_app/working_title_travel_app/working_title_travel_main_page.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_corona/api_public_corona_main_page.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_electric_station/api_public_electric_station_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/community_practice/community_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/firestore_practice/firestore_practice_main_page.dart';
@@ -93,6 +94,8 @@ class AppWidget extends StatelessWidget {
               const ApiGoogleYoutubeMainPage(),
           '/apiPublicElectricStationMainPage': (context) =>
               const ApiPublicElectricStationMainPage(),
+          '/apiPublicCoronaMainPage': (context) =>
+              const ApiPublicCoronaMainPage(),
           '/memberMainPage': (context) => const MemberMainPage(),
           '/widgetHeroAnimationMainPage': (context) =>
               const WidgetHeroAnimationMainPage(),
@@ -104,6 +107,8 @@ class AppWidget extends StatelessWidget {
           '/apiPictureMainPage': (context) => ApiPictureMainPage(),
           '/workingTitleTravelMainPage': (context) =>
               const WorkingTitleTravelMainPage(),
+          '/workingTitleEVMainPage': (context) =>
+              const WorkingTitleEVMainPage(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

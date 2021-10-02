@@ -17,4 +17,16 @@ class ApiPublicElectricStation with _$ApiPublicElectricStation {
     required String longi,
     required String statUpdateDatetime,
   }) = _ApiPublicElectricStation;
+  factory ApiPublicElectricStation.empty() => const ApiPublicElectricStation(
+      addr: "",
+      chargeTp: "",
+      cpId: "",
+      cpNm: "",
+      cpTp: "",
+      cpStat: "",
+      csId: "",
+      csNm: "",
+      lat: "",
+      longi: "",
+      statUpdateDatetime: "");
 }
