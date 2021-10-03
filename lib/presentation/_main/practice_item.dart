@@ -109,18 +109,21 @@ class WidgetPracticeItem {
     'Community',
     'Hero Animation',
     'Firestore',
+    'Slide Matrix'
   ];
   List router = [
     '/memberMainPage',
     '/communityMainPage',
     '/widgetHeroAnimationMainPage',
     '/firestorePracticeMainPage',
+    '/slideMatrixPracticeMainPage',
   ];
   List stateManagement = [
     'BLoC',
     'Cubit',
     'BLoC',
     'BLoC',
+    'Cubit',
   ];
 }
 
