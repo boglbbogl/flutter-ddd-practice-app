@@ -16,5 +16,6 @@ class ApiPublicCorona with _$ApiPublicCorona {
     required String reusltNegCnt,
     required String seq,
     required String stateDt,
+    required DateTime createDt,
   }) = _ApiPublicCorona;
 }

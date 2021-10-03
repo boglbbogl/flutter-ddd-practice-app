@@ -27,7 +27,8 @@ class _$ApiPublicCoronaTearOff {
       required String examCnt,
       required String reusltNegCnt,
       required String seq,
-      required String stateDt}) {
+      required String stateDt,
+      required DateTime createDt}) {
     return _ApiPublicCorona(
       accDefRate: accDefRate,
       accExamCnt: accExamCnt,
@@ -40,6 +41,7 @@ class _$ApiPublicCoronaTearOff {
       reusltNegCnt: reusltNegCnt,
       seq: seq,
       stateDt: stateDt,
+      createDt: createDt,
     );
   }
 }
@@ -60,6 +62,7 @@ mixin _$ApiPublicCorona {
   String get reusltNegCnt => throw _privateConstructorUsedError;
   String get seq => throw _privateConstructorUsedError;
   String get stateDt => throw _privateConstructorUsedError;
+  DateTime get createDt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiPublicCoronaCopyWith<ApiPublicCorona> get copyWith =>
@@ -82,7 +85,8 @@ abstract class $ApiPublicCoronaCopyWith<$Res> {
       String examCnt,
       String reusltNegCnt,
       String seq,
-      String stateDt});
+      String stateDt,
+      DateTime createDt});
 }
 
 /// @nodoc
@@ -107,6 +111,7 @@ class _$ApiPublicCoronaCopyWithImpl<$Res>
     Object? reusltNegCnt = freezed,
     Object? seq = freezed,
     Object? stateDt = freezed,
+    Object? createDt = freezed,
   }) {
     return _then(_value.copyWith(
       accDefRate: accDefRate == freezed
@@ -153,6 +158,10 @@ class _$ApiPublicCoronaCopyWithImpl<$Res>
           ? _value.stateDt
           : stateDt // ignore: cast_nullable_to_non_nullable
               as String,
+      createDt: createDt == freezed
+          ? _value.createDt
+          : createDt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -175,7 +184,8 @@ abstract class _$ApiPublicCoronaCopyWith<$Res>
       String examCnt,
       String reusltNegCnt,
       String seq,
-      String stateDt});
+      String stateDt,
+      DateTime createDt});
 }
 
 /// @nodoc
@@ -202,6 +212,7 @@ class __$ApiPublicCoronaCopyWithImpl<$Res>
     Object? reusltNegCnt = freezed,
     Object? seq = freezed,
     Object? stateDt = freezed,
+    Object? createDt = freezed,
   }) {
     return _then(_ApiPublicCorona(
       accDefRate: accDefRate == freezed
@@ -248,6 +259,10 @@ class __$ApiPublicCoronaCopyWithImpl<$Res>
           ? _value.stateDt
           : stateDt // ignore: cast_nullable_to_non_nullable
               as String,
+      createDt: createDt == freezed
+          ? _value.createDt
+          : createDt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -266,7 +281,8 @@ class _$_ApiPublicCorona implements _ApiPublicCorona {
       required this.examCnt,
       required this.reusltNegCnt,
       required this.seq,
-      required this.stateDt});
+      required this.stateDt,
+      required this.createDt});
 
   @override
   final String accDefRate;
@@ -290,10 +306,12 @@ class _$_ApiPublicCorona implements _ApiPublicCorona {
   final String seq;
   @override
   final String stateDt;
+  @override
+  final DateTime createDt;
 
   @override
   String toString() {
-    return 'ApiPublicCorona(accDefRate: $accDefRate, accExamCnt: $accExamCnt, accExamCompCnt: $accExamCompCnt, careCnt: $careCnt, clearCnt: $clearCnt, deathCnt: $deathCnt, decideCnt: $decideCnt, examCnt: $examCnt, reusltNegCnt: $reusltNegCnt, seq: $seq, stateDt: $stateDt)';
+    return 'ApiPublicCorona(accDefRate: $accDefRate, accExamCnt: $accExamCnt, accExamCompCnt: $accExamCompCnt, careCnt: $careCnt, clearCnt: $clearCnt, deathCnt: $deathCnt, decideCnt: $decideCnt, examCnt: $examCnt, reusltNegCnt: $reusltNegCnt, seq: $seq, stateDt: $stateDt, createDt: $createDt)';
   }
 
   @override
@@ -330,7 +348,11 @@ class _$_ApiPublicCorona implements _ApiPublicCorona {
             (identical(other.seq, seq) ||
                 const DeepCollectionEquality().equals(other.seq, seq)) &&
             (identical(other.stateDt, stateDt) ||
-                const DeepCollectionEquality().equals(other.stateDt, stateDt)));
+                const DeepCollectionEquality()
+                    .equals(other.stateDt, stateDt)) &&
+            (identical(other.createDt, createDt) ||
+                const DeepCollectionEquality()
+                    .equals(other.createDt, createDt)));
   }
 
   @override
@@ -346,7 +368,8 @@ class _$_ApiPublicCorona implements _ApiPublicCorona {
       const DeepCollectionEquality().hash(examCnt) ^
       const DeepCollectionEquality().hash(reusltNegCnt) ^
       const DeepCollectionEquality().hash(seq) ^
-      const DeepCollectionEquality().hash(stateDt);
+      const DeepCollectionEquality().hash(stateDt) ^
+      const DeepCollectionEquality().hash(createDt);
 
   @JsonKey(ignore: true)
   @override
@@ -366,7 +389,8 @@ abstract class _ApiPublicCorona implements ApiPublicCorona {
       required String examCnt,
       required String reusltNegCnt,
       required String seq,
-      required String stateDt}) = _$_ApiPublicCorona;
+      required String stateDt,
+      required DateTime createDt}) = _$_ApiPublicCorona;
 
   @override
   String get accDefRate => throw _privateConstructorUsedError;
@@ -390,6 +414,8 @@ abstract class _ApiPublicCorona implements ApiPublicCorona {
   String get seq => throw _privateConstructorUsedError;
   @override
   String get stateDt => throw _privateConstructorUsedError;
+  @override
+  DateTime get createDt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiPublicCoronaCopyWith<_ApiPublicCorona> get copyWith =>

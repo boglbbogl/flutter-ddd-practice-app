@@ -6,12 +6,14 @@ abstract class ApiPublicCoronaMainState with _$ApiPublicCoronaMainState {
     required bool isLoading,
     required List<ApiPublicCorona> corona,
     required ApiPublicCorona? yesterdayData,
+    required Map<String, int> dayDecide,
     required Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure,
   }) = _ApiPublicCoronaMainState;
   factory ApiPublicCoronaMainState.initial() => ApiPublicCoronaMainState(
         isLoading: false,
         orFailure: null,
         corona: [],
+        dayDecide: {},
         yesterdayData: null,
       );
 }

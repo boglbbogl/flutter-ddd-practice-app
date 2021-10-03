@@ -18,6 +18,7 @@ class ApiPublicCoronaDto with _$ApiPublicCoronaDto {
     required String? reusltNegCnt,
     required String seq,
     required String stateDt,
+    required DateTime createDt,
   }) = _ApiPublicCoronaDto;
   const ApiPublicCoronaDto._();
   factory ApiPublicCoronaDto.fromJson(Map<String, dynamic> json) =>
@@ -35,5 +36,6 @@ class ApiPublicCoronaDto with _$ApiPublicCoronaDto {
         reusltNegCnt: reusltNegCnt ?? "",
         seq: seq,
         stateDt: stateDt,
+        createDt: createDt,
       );
 }

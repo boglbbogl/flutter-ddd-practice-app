@@ -30,6 +30,7 @@ dependencies:
   firebase_core: ^1.1.0
   firebase_remote_config: ^0.10.0+3
   firebase_storage: ^8.1.0
+  fl_chart: ^0.40.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.0.0

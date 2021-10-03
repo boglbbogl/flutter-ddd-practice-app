@@ -31,7 +31,8 @@ class _$ApiPublicCoronaDtoTearOff {
       required String examCnt,
       required String? reusltNegCnt,
       required String seq,
-      required String stateDt}) {
+      required String stateDt,
+      required DateTime createDt}) {
     return _ApiPublicCoronaDto(
       accDefRate: accDefRate,
       accExamCnt: accExamCnt,
@@ -44,6 +45,7 @@ class _$ApiPublicCoronaDtoTearOff {
       reusltNegCnt: reusltNegCnt,
       seq: seq,
       stateDt: stateDt,
+      createDt: createDt,
     );
   }
 
@@ -68,6 +70,7 @@ mixin _$ApiPublicCoronaDto {
   String? get reusltNegCnt => throw _privateConstructorUsedError;
   String get seq => throw _privateConstructorUsedError;
   String get stateDt => throw _privateConstructorUsedError;
+  DateTime get createDt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -91,7 +94,8 @@ abstract class $ApiPublicCoronaDtoCopyWith<$Res> {
       String examCnt,
       String? reusltNegCnt,
       String seq,
-      String stateDt});
+      String stateDt,
+      DateTime createDt});
 }
 
 /// @nodoc
@@ -116,6 +120,7 @@ class _$ApiPublicCoronaDtoCopyWithImpl<$Res>
     Object? reusltNegCnt = freezed,
     Object? seq = freezed,
     Object? stateDt = freezed,
+    Object? createDt = freezed,
   }) {
     return _then(_value.copyWith(
       accDefRate: accDefRate == freezed
@@ -162,6 +167,10 @@ class _$ApiPublicCoronaDtoCopyWithImpl<$Res>
           ? _value.stateDt
           : stateDt // ignore: cast_nullable_to_non_nullable
               as String,
+      createDt: createDt == freezed
+          ? _value.createDt
+          : createDt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -184,7 +193,8 @@ abstract class _$ApiPublicCoronaDtoCopyWith<$Res>
       String examCnt,
       String? reusltNegCnt,
       String seq,
-      String stateDt});
+      String stateDt,
+      DateTime createDt});
 }
 
 /// @nodoc
@@ -211,6 +221,7 @@ class __$ApiPublicCoronaDtoCopyWithImpl<$Res>
     Object? reusltNegCnt = freezed,
     Object? seq = freezed,
     Object? stateDt = freezed,
+    Object? createDt = freezed,
   }) {
     return _then(_ApiPublicCoronaDto(
       accDefRate: accDefRate == freezed
@@ -257,6 +268,10 @@ class __$ApiPublicCoronaDtoCopyWithImpl<$Res>
           ? _value.stateDt
           : stateDt // ignore: cast_nullable_to_non_nullable
               as String,
+      createDt: createDt == freezed
+          ? _value.createDt
+          : createDt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -275,7 +290,8 @@ class _$_ApiPublicCoronaDto extends _ApiPublicCoronaDto {
       required this.examCnt,
       required this.reusltNegCnt,
       required this.seq,
-      required this.stateDt})
+      required this.stateDt,
+      required this.createDt})
       : super._();
 
   factory _$_ApiPublicCoronaDto.fromJson(Map<String, dynamic> json) =>
@@ -303,10 +319,12 @@ class _$_ApiPublicCoronaDto extends _ApiPublicCoronaDto {
   final String seq;
   @override
   final String stateDt;
+  @override
+  final DateTime createDt;
 
   @override
   String toString() {
-    return 'ApiPublicCoronaDto(accDefRate: $accDefRate, accExamCnt: $accExamCnt, accExamCompCnt: $accExamCompCnt, careCnt: $careCnt, clearCnt: $clearCnt, deathCnt: $deathCnt, decideCnt: $decideCnt, examCnt: $examCnt, reusltNegCnt: $reusltNegCnt, seq: $seq, stateDt: $stateDt)';
+    return 'ApiPublicCoronaDto(accDefRate: $accDefRate, accExamCnt: $accExamCnt, accExamCompCnt: $accExamCompCnt, careCnt: $careCnt, clearCnt: $clearCnt, deathCnt: $deathCnt, decideCnt: $decideCnt, examCnt: $examCnt, reusltNegCnt: $reusltNegCnt, seq: $seq, stateDt: $stateDt, createDt: $createDt)';
   }
 
   @override
@@ -343,7 +361,11 @@ class _$_ApiPublicCoronaDto extends _ApiPublicCoronaDto {
             (identical(other.seq, seq) ||
                 const DeepCollectionEquality().equals(other.seq, seq)) &&
             (identical(other.stateDt, stateDt) ||
-                const DeepCollectionEquality().equals(other.stateDt, stateDt)));
+                const DeepCollectionEquality()
+                    .equals(other.stateDt, stateDt)) &&
+            (identical(other.createDt, createDt) ||
+                const DeepCollectionEquality()
+                    .equals(other.createDt, createDt)));
   }
 
   @override
@@ -359,7 +381,8 @@ class _$_ApiPublicCoronaDto extends _ApiPublicCoronaDto {
       const DeepCollectionEquality().hash(examCnt) ^
       const DeepCollectionEquality().hash(reusltNegCnt) ^
       const DeepCollectionEquality().hash(seq) ^
-      const DeepCollectionEquality().hash(stateDt);
+      const DeepCollectionEquality().hash(stateDt) ^
+      const DeepCollectionEquality().hash(createDt);
 
   @JsonKey(ignore: true)
   @override
@@ -384,7 +407,8 @@ abstract class _ApiPublicCoronaDto extends ApiPublicCoronaDto {
       required String examCnt,
       required String? reusltNegCnt,
       required String seq,
-      required String stateDt}) = _$_ApiPublicCoronaDto;
+      required String stateDt,
+      required DateTime createDt}) = _$_ApiPublicCoronaDto;
   const _ApiPublicCoronaDto._() : super._();
 
   factory _ApiPublicCoronaDto.fromJson(Map<String, dynamic> json) =
@@ -412,6 +436,8 @@ abstract class _ApiPublicCoronaDto extends ApiPublicCoronaDto {
   String get seq => throw _privateConstructorUsedError;
   @override
   String get stateDt => throw _privateConstructorUsedError;
+  @override
+  DateTime get createDt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiPublicCoronaDtoCopyWith<_ApiPublicCoronaDto> get copyWith =>

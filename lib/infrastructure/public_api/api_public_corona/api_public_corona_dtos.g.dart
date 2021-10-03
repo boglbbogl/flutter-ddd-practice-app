@@ -20,6 +20,7 @@ _$_ApiPublicCoronaDto _$_$_ApiPublicCoronaDtoFromJson(
     reusltNegCnt: json['reusltNegCnt'] as String?,
     seq: json['seq'] as String,
     stateDt: json['stateDt'] as String,
+    createDt: DateTime.parse(json['createDt'] as String),
   );
 }
 
@@ -37,4 +38,5 @@ Map<String, dynamic> _$_$_ApiPublicCoronaDtoToJson(
       'reusltNegCnt': instance.reusltNegCnt,
       'seq': instance.seq,
       'stateDt': instance.stateDt,
+      'createDt': instance.createDt.toIso8601String(),
     };

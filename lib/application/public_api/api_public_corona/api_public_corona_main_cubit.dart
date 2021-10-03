@@ -29,14 +29,18 @@ class ApiPublicCoronaMainCubit extends Cubit<ApiPublicCoronaMainState> {
     orFailure.fold(
         (l) => null, (r) => emit(state.copyWith(corona: r, isLoading: false)));
     final yesterDay = state.corona.elementAt(1);
-    for (int i = 0; i <dsfds> state.corona.length; i++) {
-      print(int.parse(state.corona[i].decideCnt) -
-          int.parse(state.corona[i + 1].decideCnt));
+    final Map<String, int> decideList = {};
+    for (int i = 0; i < state.corona.length - 1; i++) {
+      decideList.addAll({
+        state.corona[i].stateDt: int.parse(state.corona[i].decideCnt) -
+            int.parse(state.corona[i + 1].decideCnt),
+      });
     }
     emit(state.copyWith(
       orFailure: orFailure,
       isLoading: false,
       yesterdayData: yesterDay,
+      dayDecide: decideList,
     ));
     return unit;
   }

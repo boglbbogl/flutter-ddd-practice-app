@@ -1,15 +1,16 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
-import 'package:ddd_practice_app/_constant/widget_const/number_format.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_corona/api_public_corona_main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_bar_graph.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_day_item_form.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_list_view_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class ApiPublicCoronaMainPage extends StatelessWidget {
   const ApiPublicCoronaMainPage({Key? key}) : super(key: key);
@@ -61,12 +62,29 @@ class ApiPublicCoronaMainPage extends StatelessWidget {
                       corona: state.corona,
                       yesterdayItem: state.yesterdayData!),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 12),
-                    child: Text(
-                      'COVID-19',
-                      style: theme.textTheme.bodyText2!.copyWith(
-                          color: Colors.pink, fontWeight: FontWeight.bold),
+                    padding: const EdgeInsets.only(top: 8, left: 12, right: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'COVID-19',
+                          style: theme.textTheme.bodyText2!.copyWith(
+                              color: Colors.pink, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          state.corona.first.createDt
+                              .toString()
+                              .substring(10, 19),
+                          style: theme.textTheme.bodyText2!.copyWith(
+                              color: const Color.fromRGBO(155, 155, 155, 1),
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
+                  ),
+                  ApiPublicCoronaBarGraph(
+                    dayDecide: state.dayDecide,
                   ),
                   SizedBox(
                     height: size.height * 0.2,
