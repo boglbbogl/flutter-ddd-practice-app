@@ -9,6 +9,8 @@
     "naverApiSecret":"",
     "newsApiBaseUrl":"",
     "newsApiKey":"",
-    "publicApiBaseUrlElectricStation":"",
-    "publicApiKeyElectricStation":""
+    "publicApiBaseUrlEV":"",
+    "publicApiBaseUrlCorona":"",
+    "publicApiKeyDe":"",
+    "publicApiKeyEn":""
 }

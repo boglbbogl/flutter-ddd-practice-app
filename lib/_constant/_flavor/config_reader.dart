@@ -54,11 +54,19 @@ abstract class ConfigReader {
     return _readForKey("newsApiKey");
   }
 
-  static String getPublicApiBaseUrlElectricStation() {
-    return _readForKey("publicApiBaseUrlElectricStation");
+  static String getPublicApiBaseUrlEV() {
+    return _readForKey("publicApiBaseUrlEV");
   }
 
-  static String getPublicApiKeyElectricStation() {
-    return _readForKey("publicApiKeyElectricStation");
+  static String getPublicApiBaseUrlCorona() {
+    return _readForKey("publicApiBaseUrlCorona");
+  }
+
+  static String getPublicApiKeyDe() {
+    return _readForKey("publicApiKeyDe");
+  }
+
+  static String getPublicApiKeyEn() {
+    return _readForKey("publicApiKeyEn");
   }
 }

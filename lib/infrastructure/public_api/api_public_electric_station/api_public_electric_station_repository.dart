@@ -13,15 +13,17 @@ import 'package:xml2json/xml2json.dart';
 @LazySingleton(as: IApiPublicElectricStationRepository)
 class ApiPublicStationRepository
     implements IApiPublicElectricStationRepository {
-  static String apiBase = ConfigReader.getPublicApiBaseUrlElectricStation();
-  static String apiKey = ConfigReader.getPublicApiKeyElectricStation();
+  static String apiBase = ConfigReader.getPublicApiBaseUrlEV();
+  static String apiKey = ConfigReader.getPublicApiKeyDe();
   @override
   Future<List<ApiPublicElectricStation>> getElectricStation({
     required int page,
     required String query,
   }) async {
     try {
-      final uri = Uri.parse("$apiBase?pageNo=$page&numOfRows=10&addr=$query");
+      final uri = Uri.parse(
+        "$apiBase?pageNo=$page&numOfRows=10&addr=$query",
+      );
       final response = await http.get(uri, headers: {"ServiceKey": apiKey});
       if (response.statusCode == 200) {
         final xml = utf8.decode(response.bodyBytes);
@@ -55,7 +57,9 @@ class ApiPublicStationRepository
       if (query.isEmpty) {
         return left(const ApiPublicElectricStationFailure.queryError());
       }
-      final uri = Uri.parse("$apiBase?pageNo=$page&numOfRows=10&addr=$query");
+      final uri = Uri.parse(
+        "$apiBase?pageNo=$page&numOfRows=10&addr=$query",
+      );
       final response = await http.get(uri, headers: {"ServiceKey": apiKey});
       if (response.statusCode == 200) {
         final xml = utf8.decode(response.bodyBytes);
