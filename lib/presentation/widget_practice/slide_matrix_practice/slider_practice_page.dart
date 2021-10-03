@@ -30,16 +30,22 @@ class SliderPracticePage extends StatelessWidget {
                         secondSize: -size.width,
                         thirdSize: 0,
                       );
+                } else {
+                  context.read<SlideMatrixPracticeMainCubit>().started(
+                        firstSize: 0,
+                        secondSize: size.width,
+                        thirdSize: size.width,
+                      );
                 }
               },
               child: Container(
                   width: 70,
-                  height: 70,
+                  height: 50,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(70),
-                      color: Colors.red),
-                  child:
-                      const Icon(Icons.keyboard_arrow_right_rounded, size: 30)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.teal),
+                  child: const Icon(Icons.keyboard_arrow_right_rounded,
+                      size: 30, color: Colors.white)),
             ),
             body: Stack(
               children: [
@@ -84,14 +90,14 @@ class SliderPracticePage extends StatelessWidget {
             child: SizedBox(
               width: size.width,
               height: size.height,
-              child: const Image(
-                image: AssetImage('assets/images/travel/cappadocia_first.jpg'),
+              child: Image(
+                image: AssetImage(image),
                 fit: BoxFit.fill,
               ),
             ),
           ),
           Center(
-            child: Text('First Page',
+            child: Text(title,
                 style: theme.textTheme.bodyText2!.copyWith(
                   color: Colors.teal,
                   fontSize: 40,
