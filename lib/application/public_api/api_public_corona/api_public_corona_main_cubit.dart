@@ -18,12 +18,19 @@ class ApiPublicCoronaMainCubit extends Cubit<ApiPublicCoronaMainState> {
 
   Future<Unit> started() async {
     emit(state.copyWith(isLoading: true));
-    final orFailure = await _coronaRepository.getCoronaData();
-    final result = orFailure.fold((l) => null, (r) => r.toList());
+    final DateTime startDate = DateTime(
+        DateTime.now().subtract(const Duration(days: 7)).year,
+        DateTime.now().subtract(const Duration(days: 7)).month,
+        DateTime.now().subtract(const Duration(days: 7)).day);
+    final orFailure = await _coronaRepository.getCoronaData(
+      startDate: startDate.toString().substring(0, 10).replaceAll("-", ""),
+      endDate: DateTime.now().toString().substring(0, 10).replaceAll("-", ""),
+    );
+    orFailure.fold(
+        (l) => null, (r) => emit(state.copyWith(corona: r, isLoading: false)));
     emit(state.copyWith(
       orFailure: orFailure,
       isLoading: false,
-      corona: result!.isEmpty ? [] : result,
     ));
     return unit;
   }

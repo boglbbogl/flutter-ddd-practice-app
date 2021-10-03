@@ -15,13 +15,13 @@ class ApiPublicCoronaRepository implements IApiPublicCoronaRepository {
   static String apiBase = ConfigReader.getPublicApiBaseUrlCorona();
   static String apiKey = ConfigReader.getPublicApiKeyEn();
   @override
-  Future<Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>>
-      getCoronaData() async {
+  Future<Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>> getCoronaData({
+    required String startDate,
+    required String endDate,
+  }) async {
     try {
-      final testUri = Uri.parse(
-          "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=q1XlD3XpDet3Zl1OQlX8%2BJeas07eCQrKq0IT0snYZz5i%2Brvz2v%2BFD%2FafW42wBfouWm9oMOjUCh5V%2B7883HupkQ%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20210910&endCreateDt=20210915");
       final uri = Uri.parse(
-          "$apiBase?serviceKey=$apiKey&numOfRows=10&pageNo=1&startCreateDt=20210910&endCreateDt=20210915");
+          "$apiBase?serviceKey=$apiKey&numOfRows=10&pageNo=1&startCreateDt=$startDate&endCreateDt=$endDate");
       final response = await http.get(uri);
       if (response.statusCode == 200) {
         final xml = utf8.decode(response.bodyBytes);
@@ -36,7 +36,7 @@ class ApiPublicCoronaRepository implements IApiPublicCoronaRepository {
             .toList();
         return right(result);
       }
-      return left(const ApiPublicCoronaFailure.serverError());
+      return left(const ApiPublicCoronaFailure.noneResult());
     } catch (error) {
       return left(const ApiPublicCoronaFailure.serverError());
     }
