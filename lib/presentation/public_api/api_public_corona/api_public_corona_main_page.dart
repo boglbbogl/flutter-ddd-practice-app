@@ -5,6 +5,8 @@ import 'package:ddd_practice_app/_constant/widget_const/number_format.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_corona/api_public_corona_main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_day_item_form.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_list_view_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,92 +53,40 @@ class ApiPublicCoronaMainPage extends StatelessWidget {
                       colors: Colors.pink,
                       textColors: Colors.white)
                 ]),
-            body: Column(
-              children: [
-                SizedBox(
-                  height: size.height * 0.2,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    children: [
-                      ...state.corona.map((e) => Padding(
-                            padding: const EdgeInsets.only(
-                                top: 20, left: 10, right: 10),
-                            child: SizedBox(
-                              width: size.width * 0.35,
-                              height: size.height * 0.2,
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      color: Colors.white, width: 2),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                elevation: 5,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text(
-                                      e.stateDt,
-                                      style: theme.textTheme.bodyText2!
-                                          .copyWith(
-                                              color: Colors.pink,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
-                                    ),
-                                    _listviewItemForm(
-                                        left: '확진자',
-                                        right: koFormatMoney
-                                            .format(int.parse(e.decideCnt))),
-                                    _listviewItemForm(
-                                        left: '격리해제',
-                                        right: koFormatMoney
-                                            .format(int.parse(e.clearCnt))),
-                                    _listviewItemForm(
-                                        left: '사망자',
-                                        right: koFormatMoney
-                                            .format(int.parse(e.deathCnt))),
-                                    _listviewItemForm(
-                                        left: '누적확진률',
-                                        right: e.accDefRate.substring(0, 4)),
-                                    _listviewItemForm(
-                                        left: '누적검사수',
-                                        right: koFormatMoney
-                                            .format(int.parse(e.accExamCnt))),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )),
-                    ],
+            body: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ApiPublicCoronaDayItemForm(
+                      corona: state.corona,
+                      yesterdayItem: state.yesterdayData!),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, left: 12),
+                    child: Text(
+                      'COVID-19',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                          color: Colors.pink, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: size.height * 0.2,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      children: [
+                        ...state.corona
+                            .where((now) => state.corona.first != now)
+                            .map((e) => ApiPublicCoronaListViewItem(
+                                  corona: e,
+                                )),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },
-      ),
-    );
-  }
-
-  Padding _listviewItemForm({
-    required String left,
-    required String right,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            left,
-            style: theme.textTheme.bodyText2!.copyWith(
-                color: const Color.fromRGBO(135, 135, 135, 1), fontSize: 12),
-          ),
-          Text(right,
-              style: theme.textTheme.bodyText2!.copyWith(
-                  color: const Color.fromRGBO(135, 135, 135, 1), fontSize: 12)),
-        ],
       ),
     );
   }

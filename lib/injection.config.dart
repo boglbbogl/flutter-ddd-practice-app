@@ -17,7 +17,7 @@ import 'application/example_api/api_news_practice/api_news_main_bloc.dart'
 import 'application/example_api/api_picture_practice/api_picture_cubit.dart'
     as _i75;
 import 'application/example_api/api_weather_practice/api_weather_main_cubit.dart'
-    as _i80;
+    as _i79;
 import 'application/google_api/api_google_maps/api_google_maps_main_bloc.dart'
     as _i60;
 import 'application/kakao_api/api_kakao_book/api_kakao_book_main_bloc.dart'
@@ -50,20 +50,18 @@ import 'application/project_app/working_title_travel_app/create/working_title_tr
     as _i58;
 import 'application/project_app/working_title_travel_app/main/working_title_travel_main_cubit.dart'
     as _i59;
-import 'application/public_api/api_public_corona/api_public_corona_main_cubit.dart'
-    as _i76;
 import 'application/public_api/api_public_electric_station/address/api_public_electric_station_address_bloc.dart'
-    as _i77;
+    as _i76;
 import 'application/public_api/api_public_electric_station/course/api_public_electric_station_course_bloc.dart'
-    as _i78;
+    as _i77;
 import 'application/public_api/api_public_electric_station/search/api_public_electric_station_search_bloc.dart'
-    as _i79;
+    as _i78;
 import 'application/widget_practice/community_practice/community_delete_cubit/community_delete_cubit.dart'
-    as _i81;
+    as _i80;
 import 'application/widget_practice/community_practice/community_detail_bloc/community_detail_bloc.dart'
-    as _i82;
+    as _i81;
 import 'application/widget_practice/community_practice/community_main_bloc/community_main_bloc.dart'
-    as _i83;
+    as _i82;
 import 'application/widget_practice/firestore_practice/firestore_create_main_bloc.dart'
     as _i6;
 import 'application/widget_practice/member_practice/member_create/member_create_bloc.dart'
@@ -116,7 +114,7 @@ import 'domain/widget_practice/firestore_practice/i_firestore_practice_repositor
     as _i45;
 import 'domain/widget_practice/member_practice/i_member_repository.dart'
     as _i49;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i84;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i83;
 import 'infrastructure/core/geo_location/geo_location_repository.dart' as _i48;
 import 'infrastructure/example_api/api_news_practice/api_news_repository.dart'
     as _i34;
@@ -273,31 +271,29 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i74.ApiNewsMainBloc(get<_i33.IApiNewsRepository>()));
   gh.factory<_i75.ApiPictureCubit>(
       () => _i75.ApiPictureCubit(get<_i35.IApiPictureRepository>()));
-  gh.factory<_i76.ApiPublicCoronaMainCubit>(() =>
-      _i76.ApiPublicCoronaMainCubit(get<_i37.IApiPublicCoronaRepository>()));
-  gh.factory<_i77.ApiPublicElectricStationAddressBloc>(() =>
-      _i77.ApiPublicElectricStationAddressBloc(
+  gh.factory<_i76.ApiPublicElectricStationAddressBloc>(() =>
+      _i76.ApiPublicElectricStationAddressBloc(
           get<_i39.IApiPublicElectricStationRepository>(),
           get<_i47.IGeoLocationRepository>()));
-  gh.factory<_i78.ApiPublicElectricStationCourseBloc>(() =>
-      _i78.ApiPublicElectricStationCourseBloc(
+  gh.factory<_i77.ApiPublicElectricStationCourseBloc>(() =>
+      _i77.ApiPublicElectricStationCourseBloc(
           get<_i47.IGeoLocationRepository>(),
           get<_i13.IApiKakaoLocalAddressRepository>(),
           get<_i39.IApiPublicElectricStationRepository>()));
-  gh.factory<_i79.ApiPublicElectricStationSearchBloc>(() =>
-      _i79.ApiPublicElectricStationSearchBloc(
+  gh.factory<_i78.ApiPublicElectricStationSearchBloc>(() =>
+      _i78.ApiPublicElectricStationSearchBloc(
           get<_i47.IGeoLocationRepository>(),
           get<_i13.IApiKakaoLocalAddressRepository>(),
           get<_i39.IApiPublicElectricStationRepository>()));
-  gh.factory<_i80.ApiWeatherMainCubit>(() => _i80.ApiWeatherMainCubit(
+  gh.factory<_i79.ApiWeatherMainCubit>(() => _i79.ApiWeatherMainCubit(
       get<_i41.IApiWeatherRepository>(), get<_i47.IGeoLocationRepository>()));
-  gh.factory<_i81.CommunityDeleteCubit>(
-      () => _i81.CommunityDeleteCubit(get<_i43.ICommunityRepository>()));
-  gh.factory<_i82.CommunityDetailBloc>(
-      () => _i82.CommunityDetailBloc(get<_i43.ICommunityRepository>()));
-  gh.factory<_i83.CommunityMainBloc>(
-      () => _i83.CommunityMainBloc(get<_i43.ICommunityRepository>()));
+  gh.factory<_i80.CommunityDeleteCubit>(
+      () => _i80.CommunityDeleteCubit(get<_i43.ICommunityRepository>()));
+  gh.factory<_i81.CommunityDetailBloc>(
+      () => _i81.CommunityDetailBloc(get<_i43.ICommunityRepository>()));
+  gh.factory<_i82.CommunityMainBloc>(
+      () => _i82.CommunityMainBloc(get<_i43.ICommunityRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableMudule extends _i84.FirebaseInjectableMudule {}
+class _$FirebaseInjectableMudule extends _i83.FirebaseInjectableMudule {}
