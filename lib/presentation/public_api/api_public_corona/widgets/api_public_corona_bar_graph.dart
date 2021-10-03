@@ -23,7 +23,7 @@ class ApiPublicCoronaBarGraph extends StatelessWidget {
               titlesData: FlTitlesData(show: false),
               borderData: FlBorderData(show: false),
               barGroups: [
-                BarChartGroupData(barsSpace: 8, x: dayDecide.length, barRods: [
+                BarChartGroupData(barsSpace: 6, x: dayDecide.length, barRods: [
                   ...dayDecide.values.map((e) => BarChartRodData(
                       y: e.toDouble(), width: 20, colors: [Colors.green])),
                 ]),
