@@ -32,7 +32,9 @@ class ApiPublicCoronaMainPage extends StatelessWidget {
               (r) => null);
         },
         builder: (context, state) {
-          if (state.corona.isEmpty) {
+          if (state.corona.isEmpty ||
+              state.vacine.isEmpty ||
+              state.sidoVacine.isEmpty) {
             return const Scaffold(
               body: Center(
                   child: CupertinoActivityIndicator(
@@ -59,6 +61,8 @@ class ApiPublicCoronaMainPage extends StatelessWidget {
                 children: [
                   ApiPublicCoronaDayItemForm(
                       corona: state.corona,
+                      vacineDate: state.vacineDate,
+                      vacine: state.vacine,
                       yesterdayItem: state.yesterdayData!),
                   Padding(
                     padding: const EdgeInsets.only(top: 8, left: 12, right: 30),
@@ -99,6 +103,24 @@ class ApiPublicCoronaMainPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12, top: 20),
+                    child: Text(
+                      'VACINE',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                          color: Colors.pink, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  // SizedBox(
+                  //   height: size.height * 0.2,
+                  //   child: ListView(
+                  //     shrinkWrap: true,
+                  //     scrollDirection: Axis.horizontal,
+                  //     children: [
+                  //       ...state.sidoVacine.map((e) => ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),

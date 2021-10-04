@@ -21,14 +21,19 @@ class _$ApiPublicCoronaMainStateTearOff {
       required List<ApiPublicCorona> corona,
       required ApiPublicCorona? yesterdayData,
       required Map<String, int> dayDecide,
-      required Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>?
-          orFailure}) {
+      required Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure,
+      required List<ApiPublicCoronaVacine> vacine,
+      required List<ApiPublicCoronaVacine> sidoVacine,
+      required String vacineDate}) {
     return _ApiPublicCoronaMainState(
       isLoading: isLoading,
       corona: corona,
       yesterdayData: yesterdayData,
       dayDecide: dayDecide,
       orFailure: orFailure,
+      vacine: vacine,
+      sidoVacine: sidoVacine,
+      vacineDate: vacineDate,
     );
   }
 }
@@ -44,6 +49,10 @@ mixin _$ApiPublicCoronaMainState {
   Map<String, int> get dayDecide => throw _privateConstructorUsedError;
   Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? get orFailure =>
       throw _privateConstructorUsedError;
+  List<ApiPublicCoronaVacine> get vacine => throw _privateConstructorUsedError;
+  List<ApiPublicCoronaVacine> get sidoVacine =>
+      throw _privateConstructorUsedError;
+  String get vacineDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiPublicCoronaMainStateCopyWith<ApiPublicCoronaMainState> get copyWith =>
@@ -60,7 +69,10 @@ abstract class $ApiPublicCoronaMainStateCopyWith<$Res> {
       List<ApiPublicCorona> corona,
       ApiPublicCorona? yesterdayData,
       Map<String, int> dayDecide,
-      Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure});
+      Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure,
+      List<ApiPublicCoronaVacine> vacine,
+      List<ApiPublicCoronaVacine> sidoVacine,
+      String vacineDate});
 
   $ApiPublicCoronaCopyWith<$Res>? get yesterdayData;
 }
@@ -81,6 +93,9 @@ class _$ApiPublicCoronaMainStateCopyWithImpl<$Res>
     Object? yesterdayData = freezed,
     Object? dayDecide = freezed,
     Object? orFailure = freezed,
+    Object? vacine = freezed,
+    Object? sidoVacine = freezed,
+    Object? vacineDate = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -103,6 +118,18 @@ class _$ApiPublicCoronaMainStateCopyWithImpl<$Res>
           ? _value.orFailure
           : orFailure // ignore: cast_nullable_to_non_nullable
               as Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>?,
+      vacine: vacine == freezed
+          ? _value.vacine
+          : vacine // ignore: cast_nullable_to_non_nullable
+              as List<ApiPublicCoronaVacine>,
+      sidoVacine: sidoVacine == freezed
+          ? _value.sidoVacine
+          : sidoVacine // ignore: cast_nullable_to_non_nullable
+              as List<ApiPublicCoronaVacine>,
+      vacineDate: vacineDate == freezed
+          ? _value.vacineDate
+          : vacineDate // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -130,7 +157,10 @@ abstract class _$ApiPublicCoronaMainStateCopyWith<$Res>
       List<ApiPublicCorona> corona,
       ApiPublicCorona? yesterdayData,
       Map<String, int> dayDecide,
-      Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure});
+      Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure,
+      List<ApiPublicCoronaVacine> vacine,
+      List<ApiPublicCoronaVacine> sidoVacine,
+      String vacineDate});
 
   @override
   $ApiPublicCoronaCopyWith<$Res>? get yesterdayData;
@@ -155,6 +185,9 @@ class __$ApiPublicCoronaMainStateCopyWithImpl<$Res>
     Object? yesterdayData = freezed,
     Object? dayDecide = freezed,
     Object? orFailure = freezed,
+    Object? vacine = freezed,
+    Object? sidoVacine = freezed,
+    Object? vacineDate = freezed,
   }) {
     return _then(_ApiPublicCoronaMainState(
       isLoading: isLoading == freezed
@@ -177,6 +210,18 @@ class __$ApiPublicCoronaMainStateCopyWithImpl<$Res>
           ? _value.orFailure
           : orFailure // ignore: cast_nullable_to_non_nullable
               as Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>?,
+      vacine: vacine == freezed
+          ? _value.vacine
+          : vacine // ignore: cast_nullable_to_non_nullable
+              as List<ApiPublicCoronaVacine>,
+      sidoVacine: sidoVacine == freezed
+          ? _value.sidoVacine
+          : sidoVacine // ignore: cast_nullable_to_non_nullable
+              as List<ApiPublicCoronaVacine>,
+      vacineDate: vacineDate == freezed
+          ? _value.vacineDate
+          : vacineDate // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -189,7 +234,10 @@ class _$_ApiPublicCoronaMainState implements _ApiPublicCoronaMainState {
       required this.corona,
       required this.yesterdayData,
       required this.dayDecide,
-      required this.orFailure});
+      required this.orFailure,
+      required this.vacine,
+      required this.sidoVacine,
+      required this.vacineDate});
 
   @override
   final bool isLoading;
@@ -201,10 +249,16 @@ class _$_ApiPublicCoronaMainState implements _ApiPublicCoronaMainState {
   final Map<String, int> dayDecide;
   @override
   final Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure;
+  @override
+  final List<ApiPublicCoronaVacine> vacine;
+  @override
+  final List<ApiPublicCoronaVacine> sidoVacine;
+  @override
+  final String vacineDate;
 
   @override
   String toString() {
-    return 'ApiPublicCoronaMainState(isLoading: $isLoading, corona: $corona, yesterdayData: $yesterdayData, dayDecide: $dayDecide, orFailure: $orFailure)';
+    return 'ApiPublicCoronaMainState(isLoading: $isLoading, corona: $corona, yesterdayData: $yesterdayData, dayDecide: $dayDecide, orFailure: $orFailure, vacine: $vacine, sidoVacine: $sidoVacine, vacineDate: $vacineDate)';
   }
 
   @override
@@ -224,7 +278,15 @@ class _$_ApiPublicCoronaMainState implements _ApiPublicCoronaMainState {
                     .equals(other.dayDecide, dayDecide)) &&
             (identical(other.orFailure, orFailure) ||
                 const DeepCollectionEquality()
-                    .equals(other.orFailure, orFailure)));
+                    .equals(other.orFailure, orFailure)) &&
+            (identical(other.vacine, vacine) ||
+                const DeepCollectionEquality().equals(other.vacine, vacine)) &&
+            (identical(other.sidoVacine, sidoVacine) ||
+                const DeepCollectionEquality()
+                    .equals(other.sidoVacine, sidoVacine)) &&
+            (identical(other.vacineDate, vacineDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.vacineDate, vacineDate)));
   }
 
   @override
@@ -234,7 +296,10 @@ class _$_ApiPublicCoronaMainState implements _ApiPublicCoronaMainState {
       const DeepCollectionEquality().hash(corona) ^
       const DeepCollectionEquality().hash(yesterdayData) ^
       const DeepCollectionEquality().hash(dayDecide) ^
-      const DeepCollectionEquality().hash(orFailure);
+      const DeepCollectionEquality().hash(orFailure) ^
+      const DeepCollectionEquality().hash(vacine) ^
+      const DeepCollectionEquality().hash(sidoVacine) ^
+      const DeepCollectionEquality().hash(vacineDate);
 
   @JsonKey(ignore: true)
   @override
@@ -249,8 +314,10 @@ abstract class _ApiPublicCoronaMainState implements ApiPublicCoronaMainState {
       required List<ApiPublicCorona> corona,
       required ApiPublicCorona? yesterdayData,
       required Map<String, int> dayDecide,
-      required Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>?
-          orFailure}) = _$_ApiPublicCoronaMainState;
+      required Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure,
+      required List<ApiPublicCoronaVacine> vacine,
+      required List<ApiPublicCoronaVacine> sidoVacine,
+      required String vacineDate}) = _$_ApiPublicCoronaMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -263,6 +330,13 @@ abstract class _ApiPublicCoronaMainState implements ApiPublicCoronaMainState {
   @override
   Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? get orFailure =>
       throw _privateConstructorUsedError;
+  @override
+  List<ApiPublicCoronaVacine> get vacine => throw _privateConstructorUsedError;
+  @override
+  List<ApiPublicCoronaVacine> get sidoVacine =>
+      throw _privateConstructorUsedError;
+  @override
+  String get vacineDate => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiPublicCoronaMainStateCopyWith<_ApiPublicCoronaMainState> get copyWith =>

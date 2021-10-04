@@ -10,3 +10,14 @@ class ApiPublicCoronaVacine with _$ApiPublicCoronaVacine {
     required String secondCnt,
   }) = _ApiPublicCoronaVacine;
 }
+
+@freezed
+class ApiPublicCoronaVacineSido with _$ApiPublicCoronaVacineSido {
+  const factory ApiPublicCoronaVacineSido({
+    required String sidoNm,
+    required String firstCnt,
+    required String firstTot,
+    required String secondCnt,
+    required String secondTot,
+  }) = _ApiPublicCoronaVacineSido;
+}

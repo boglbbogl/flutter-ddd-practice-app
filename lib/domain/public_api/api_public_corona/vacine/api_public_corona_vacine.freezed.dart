@@ -189,3 +189,241 @@ abstract class _ApiPublicCoronaVacine implements ApiPublicCoronaVacine {
   _$ApiPublicCoronaVacineCopyWith<_ApiPublicCoronaVacine> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$ApiPublicCoronaVacineSidoTearOff {
+  const _$ApiPublicCoronaVacineSidoTearOff();
+
+  _ApiPublicCoronaVacineSido call(
+      {required String sidoNm,
+      required String firstCnt,
+      required String firstTot,
+      required String secondCnt,
+      required String secondTot}) {
+    return _ApiPublicCoronaVacineSido(
+      sidoNm: sidoNm,
+      firstCnt: firstCnt,
+      firstTot: firstTot,
+      secondCnt: secondCnt,
+      secondTot: secondTot,
+    );
+  }
+}
+
+/// @nodoc
+const $ApiPublicCoronaVacineSido = _$ApiPublicCoronaVacineSidoTearOff();
+
+/// @nodoc
+mixin _$ApiPublicCoronaVacineSido {
+  String get sidoNm => throw _privateConstructorUsedError;
+  String get firstCnt => throw _privateConstructorUsedError;
+  String get firstTot => throw _privateConstructorUsedError;
+  String get secondCnt => throw _privateConstructorUsedError;
+  String get secondTot => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ApiPublicCoronaVacineSidoCopyWith<ApiPublicCoronaVacineSido> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiPublicCoronaVacineSidoCopyWith<$Res> {
+  factory $ApiPublicCoronaVacineSidoCopyWith(ApiPublicCoronaVacineSido value,
+          $Res Function(ApiPublicCoronaVacineSido) then) =
+      _$ApiPublicCoronaVacineSidoCopyWithImpl<$Res>;
+  $Res call(
+      {String sidoNm,
+      String firstCnt,
+      String firstTot,
+      String secondCnt,
+      String secondTot});
+}
+
+/// @nodoc
+class _$ApiPublicCoronaVacineSidoCopyWithImpl<$Res>
+    implements $ApiPublicCoronaVacineSidoCopyWith<$Res> {
+  _$ApiPublicCoronaVacineSidoCopyWithImpl(this._value, this._then);
+
+  final ApiPublicCoronaVacineSido _value;
+  // ignore: unused_field
+  final $Res Function(ApiPublicCoronaVacineSido) _then;
+
+  @override
+  $Res call({
+    Object? sidoNm = freezed,
+    Object? firstCnt = freezed,
+    Object? firstTot = freezed,
+    Object? secondCnt = freezed,
+    Object? secondTot = freezed,
+  }) {
+    return _then(_value.copyWith(
+      sidoNm: sidoNm == freezed
+          ? _value.sidoNm
+          : sidoNm // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstCnt: firstCnt == freezed
+          ? _value.firstCnt
+          : firstCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstTot: firstTot == freezed
+          ? _value.firstTot
+          : firstTot // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondCnt: secondCnt == freezed
+          ? _value.secondCnt
+          : secondCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondTot: secondTot == freezed
+          ? _value.secondTot
+          : secondTot // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ApiPublicCoronaVacineSidoCopyWith<$Res>
+    implements $ApiPublicCoronaVacineSidoCopyWith<$Res> {
+  factory _$ApiPublicCoronaVacineSidoCopyWith(_ApiPublicCoronaVacineSido value,
+          $Res Function(_ApiPublicCoronaVacineSido) then) =
+      __$ApiPublicCoronaVacineSidoCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String sidoNm,
+      String firstCnt,
+      String firstTot,
+      String secondCnt,
+      String secondTot});
+}
+
+/// @nodoc
+class __$ApiPublicCoronaVacineSidoCopyWithImpl<$Res>
+    extends _$ApiPublicCoronaVacineSidoCopyWithImpl<$Res>
+    implements _$ApiPublicCoronaVacineSidoCopyWith<$Res> {
+  __$ApiPublicCoronaVacineSidoCopyWithImpl(_ApiPublicCoronaVacineSido _value,
+      $Res Function(_ApiPublicCoronaVacineSido) _then)
+      : super(_value, (v) => _then(v as _ApiPublicCoronaVacineSido));
+
+  @override
+  _ApiPublicCoronaVacineSido get _value =>
+      super._value as _ApiPublicCoronaVacineSido;
+
+  @override
+  $Res call({
+    Object? sidoNm = freezed,
+    Object? firstCnt = freezed,
+    Object? firstTot = freezed,
+    Object? secondCnt = freezed,
+    Object? secondTot = freezed,
+  }) {
+    return _then(_ApiPublicCoronaVacineSido(
+      sidoNm: sidoNm == freezed
+          ? _value.sidoNm
+          : sidoNm // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstCnt: firstCnt == freezed
+          ? _value.firstCnt
+          : firstCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstTot: firstTot == freezed
+          ? _value.firstTot
+          : firstTot // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondCnt: secondCnt == freezed
+          ? _value.secondCnt
+          : secondCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondTot: secondTot == freezed
+          ? _value.secondTot
+          : secondTot // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ApiPublicCoronaVacineSido implements _ApiPublicCoronaVacineSido {
+  const _$_ApiPublicCoronaVacineSido(
+      {required this.sidoNm,
+      required this.firstCnt,
+      required this.firstTot,
+      required this.secondCnt,
+      required this.secondTot});
+
+  @override
+  final String sidoNm;
+  @override
+  final String firstCnt;
+  @override
+  final String firstTot;
+  @override
+  final String secondCnt;
+  @override
+  final String secondTot;
+
+  @override
+  String toString() {
+    return 'ApiPublicCoronaVacineSido(sidoNm: $sidoNm, firstCnt: $firstCnt, firstTot: $firstTot, secondCnt: $secondCnt, secondTot: $secondTot)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApiPublicCoronaVacineSido &&
+            (identical(other.sidoNm, sidoNm) ||
+                const DeepCollectionEquality().equals(other.sidoNm, sidoNm)) &&
+            (identical(other.firstCnt, firstCnt) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstCnt, firstCnt)) &&
+            (identical(other.firstTot, firstTot) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstTot, firstTot)) &&
+            (identical(other.secondCnt, secondCnt) ||
+                const DeepCollectionEquality()
+                    .equals(other.secondCnt, secondCnt)) &&
+            (identical(other.secondTot, secondTot) ||
+                const DeepCollectionEquality()
+                    .equals(other.secondTot, secondTot)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(sidoNm) ^
+      const DeepCollectionEquality().hash(firstCnt) ^
+      const DeepCollectionEquality().hash(firstTot) ^
+      const DeepCollectionEquality().hash(secondCnt) ^
+      const DeepCollectionEquality().hash(secondTot);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApiPublicCoronaVacineSidoCopyWith<_ApiPublicCoronaVacineSido>
+      get copyWith =>
+          __$ApiPublicCoronaVacineSidoCopyWithImpl<_ApiPublicCoronaVacineSido>(
+              this, _$identity);
+}
+
+abstract class _ApiPublicCoronaVacineSido implements ApiPublicCoronaVacineSido {
+  const factory _ApiPublicCoronaVacineSido(
+      {required String sidoNm,
+      required String firstCnt,
+      required String firstTot,
+      required String secondCnt,
+      required String secondTot}) = _$_ApiPublicCoronaVacineSido;
+
+  @override
+  String get sidoNm => throw _privateConstructorUsedError;
+  @override
+  String get firstCnt => throw _privateConstructorUsedError;
+  @override
+  String get firstTot => throw _privateConstructorUsedError;
+  @override
+  String get secondCnt => throw _privateConstructorUsedError;
+  @override
+  String get secondTot => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApiPublicCoronaVacineSidoCopyWith<_ApiPublicCoronaVacineSido>
+      get copyWith => throw _privateConstructorUsedError;
+}

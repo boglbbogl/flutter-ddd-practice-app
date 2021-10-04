@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/api_public_corona.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/api_public_corona_failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/i_api_public_corona_repository.dart';
-import 'package:ddd_practice_app/infrastructure/public_api/api_public_corona/api_public_corona_dtos.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/api_public_corona.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/api_public_corona_failure.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/i_api_public_corona_repository.dart';
+import 'package:ddd_practice_app/infrastructure/public_api/api_public_corona/corona/api_public_corona_dtos.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
