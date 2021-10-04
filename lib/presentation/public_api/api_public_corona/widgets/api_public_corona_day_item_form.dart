@@ -121,9 +121,9 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
       width: size.width * 0.48,
       height: size.height * 0.25,
       child: Card(
-        elevation: 5,
+        elevation: 1,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.white, width: 2),
+          side: const BorderSide(color: Colors.pink, width: 1),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(
