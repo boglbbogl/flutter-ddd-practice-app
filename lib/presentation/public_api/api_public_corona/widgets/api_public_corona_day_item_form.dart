@@ -29,7 +29,7 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
             date: corona.first.stateDt,
             widget: Column(
               children: [
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     size: 14,
                     title: '확진자',
                     item:
@@ -37,7 +37,7 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
                     subItem: koFormatMoney.format(
                         int.parse(corona.first.decideCnt) -
                             int.parse(yesterdayItem.decideCnt))),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                   size: 14,
                   title: '격리해제',
                   item: koFormatMoney.format(int.parse(corona.first.clearCnt)),
@@ -45,7 +45,7 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
                       int.parse(corona.first.clearCnt) -
                           int.parse(yesterdayItem.clearCnt)),
                 ),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     size: 14,
                     title: '사망자',
                     item:
@@ -53,12 +53,12 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
                     subItem: koFormatMoney.format(
                         int.parse(corona.first.deathCnt) -
                             int.parse(yesterdayItem.deathCnt))),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     size: 0,
                     title: '누적확진률',
                     item: corona.first.accDefRate.substring(0, 4),
                     subItem: ''),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     size: 0,
                     title: '누적검사수',
                     item: koFormatMoney
@@ -72,13 +72,13 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
             date: vacineDate,
             widget: Column(
               children: [
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     title: '1차 접종',
                     item:
                         koFormatMoney.format(int.parse(vacine.first.firstCnt)),
                     subItem: '',
                     size: 0),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     title: '2차 접종',
                     item:
                         koFormatMoney.format(int.parse(vacine.first.secondCnt)),
@@ -93,12 +93,12 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       )),
                 ),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     title: '1차 접종',
                     item: koFormatMoney.format(int.parse(vacine.last.firstCnt)),
                     subItem: '',
                     size: 0),
-                nowDateResultMainForm(
+                _nowDateResultMainForm(
                     title: '2차 접종',
                     item:
                         koFormatMoney.format(int.parse(vacine.last.secondCnt)),
@@ -160,7 +160,7 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
     );
   }
 
-  Padding nowDateResultMainForm({
+  Padding _nowDateResultMainForm({
     required String title,
     required String item,
     required String subItem,
