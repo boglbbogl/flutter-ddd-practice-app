@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/api_public_corona.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/api_public_corona_failure.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/i_api_public_corona_repository.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/api_public_corona.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/api_public_corona_failure.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/i_api_public_corona_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 

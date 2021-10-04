@@ -1,6 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/number_format.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
-import 'package:ddd_practice_app/domain/public_api/api_public_corona/api_public_corona.dart';
+import 'package:ddd_practice_app/domain/public_api/api_public_corona/corona/api_public_corona.dart';
 import 'package:flutter/material.dart';
 
 class ApiPublicCoronaListViewItem extends StatelessWidget {

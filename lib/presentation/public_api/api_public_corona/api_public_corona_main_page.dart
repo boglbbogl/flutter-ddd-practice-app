@@ -10,7 +10,6 @@ import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widge
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fl_chart/fl_chart.dart';
 
 class ApiPublicCoronaMainPage extends StatelessWidget {
   const ApiPublicCoronaMainPage({Key? key}) : super(key: key);
