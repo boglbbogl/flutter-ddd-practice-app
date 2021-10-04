@@ -21,3 +21,25 @@ class ApiPublicCoronaVacineDto with _$ApiPublicCoronaVacineDto {
         secondCnt: secondCnt,
       );
 }
+
+@freezed
+class ApiPublicCoronaVacineSidoDto with _$ApiPublicCoronaVacineSidoDto {
+  const factory ApiPublicCoronaVacineSidoDto({
+    required String sidoNm,
+    required String firstCnt,
+    required String firstTot,
+    required String secondCnt,
+    required String secondTot,
+  }) = _ApiPublicCoronaVacineSidoDto;
+  const ApiPublicCoronaVacineSidoDto._();
+  factory ApiPublicCoronaVacineSidoDto.fromJson(Map<String, dynamic> json) =>
+      _$ApiPublicCoronaVacineSidoDtoFromJson(json);
+
+  ApiPublicCoronaVacineSido toDomain() => ApiPublicCoronaVacineSido(
+        sidoNm: sidoNm,
+        firstCnt: firstCnt,
+        firstTot: firstTot,
+        secondCnt: secondCnt,
+        secondTot: secondTot,
+      );
+}

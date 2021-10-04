@@ -1,12 +1,14 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
+import 'package:ddd_practice_app/_constant/widget_const/number_format.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_corona/api_public_corona_main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_bar_graph.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_day_item_form.dart';
 import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_list_view_item.dart';
+import 'package:ddd_practice_app/presentation/public_api/api_public_corona/widgets/api_public_corona_vacine_list_view_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -111,16 +113,20 @@ class ApiPublicCoronaMainPage extends StatelessWidget {
                           color: Colors.pink, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  // SizedBox(
-                  //   height: size.height * 0.2,
-                  //   child: ListView(
-                  //     shrinkWrap: true,
-                  //     scrollDirection: Axis.horizontal,
-                  //     children: [
-                  //       ...state.sidoVacine.map((e) => ),
-                  //     ],
-                  //   ),
-                  // ),
+                  SizedBox(
+                    height: size.height * 0.16,
+                    child: ListView(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        ...state.sidoVacine.map(
+                          (e) => ApiPublicCoronaVacineListViewItem(
+                            vacine: e,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

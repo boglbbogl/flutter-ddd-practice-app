@@ -35,4 +35,30 @@ class ApiPublicCoronaVacineRepository
       return [];
     }
   }
+
+  @override
+  Future<List<ApiPublicCoronaVacineSido>> getVacineSidoResutl() async {
+    try {
+      final uri =
+          Uri.parse("https://nip.kdca.go.kr/irgd/cov19stats.do?list=sido");
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        final xml = utf8.decode(response.bodyBytes);
+        final xml2json = Xml2Json()..parse(xml);
+        final jsonData = xml2json.toParker();
+        final decoded = jsonDecode(jsonData) as Map<String, dynamic>;
+        final data =
+            decoded["response"]["body"]["items"]["item"] as List<dynamic>;
+        final result = data
+            .map((e) =>
+                ApiPublicCoronaVacineSidoDto.fromJson(e as Map<String, dynamic>)
+                    .toDomain())
+            .toList();
+        return result;
+      }
+      return [];
+    } catch (error) {
+      return [];
+    }
+  }
 }

@@ -22,3 +22,24 @@ Map<String, dynamic> _$_$_ApiPublicCoronaVacineDtoToJson(
       'firstCnt': instance.firstCnt,
       'secondCnt': instance.secondCnt,
     };
+
+_$_ApiPublicCoronaVacineSidoDto _$_$_ApiPublicCoronaVacineSidoDtoFromJson(
+    Map<String, dynamic> json) {
+  return _$_ApiPublicCoronaVacineSidoDto(
+    sidoNm: json['sidoNm'] as String,
+    firstCnt: json['firstCnt'] as String,
+    firstTot: json['firstTot'] as String,
+    secondCnt: json['secondCnt'] as String,
+    secondTot: json['secondTot'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_ApiPublicCoronaVacineSidoDtoToJson(
+        _$_ApiPublicCoronaVacineSidoDto instance) =>
+    <String, dynamic>{
+      'sidoNm': instance.sidoNm,
+      'firstCnt': instance.firstCnt,
+      'firstTot': instance.firstTot,
+      'secondCnt': instance.secondCnt,
+      'secondTot': instance.secondTot,
+    };

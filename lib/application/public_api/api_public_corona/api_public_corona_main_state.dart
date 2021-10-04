@@ -9,7 +9,7 @@ abstract class ApiPublicCoronaMainState with _$ApiPublicCoronaMainState {
     required Map<String, int> dayDecide,
     required Either<ApiPublicCoronaFailure, List<ApiPublicCorona>>? orFailure,
     required List<ApiPublicCoronaVacine> vacine,
-    required List<ApiPublicCoronaVacine> sidoVacine,
+    required List<ApiPublicCoronaVacineSido> sidoVacine,
     required String vacineDate,
   }) = _ApiPublicCoronaMainState;
   factory ApiPublicCoronaMainState.initial() => ApiPublicCoronaMainState(

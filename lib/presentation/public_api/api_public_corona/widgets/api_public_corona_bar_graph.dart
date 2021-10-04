@@ -25,7 +25,9 @@ class ApiPublicCoronaBarGraph extends StatelessWidget {
               barGroups: [
                 BarChartGroupData(barsSpace: 6, x: dayDecide.length, barRods: [
                   ...dayDecide.values.map((e) => BarChartRodData(
-                      y: e.toDouble(), width: 20, colors: [Colors.green])),
+                      y: e.toDouble(),
+                      width: 16,
+                      colors: [const Color.fromRGBO(195, 195, 195, 1)])),
                 ]),
               ],
             ),

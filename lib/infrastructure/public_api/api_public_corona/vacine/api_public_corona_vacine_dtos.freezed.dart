@@ -213,3 +213,267 @@ abstract class _ApiPublicCoronaVacineDto extends ApiPublicCoronaVacineDto {
   _$ApiPublicCoronaVacineDtoCopyWith<_ApiPublicCoronaVacineDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+ApiPublicCoronaVacineSidoDto _$ApiPublicCoronaVacineSidoDtoFromJson(
+    Map<String, dynamic> json) {
+  return _ApiPublicCoronaVacineSidoDto.fromJson(json);
+}
+
+/// @nodoc
+class _$ApiPublicCoronaVacineSidoDtoTearOff {
+  const _$ApiPublicCoronaVacineSidoDtoTearOff();
+
+  _ApiPublicCoronaVacineSidoDto call(
+      {required String sidoNm,
+      required String firstCnt,
+      required String firstTot,
+      required String secondCnt,
+      required String secondTot}) {
+    return _ApiPublicCoronaVacineSidoDto(
+      sidoNm: sidoNm,
+      firstCnt: firstCnt,
+      firstTot: firstTot,
+      secondCnt: secondCnt,
+      secondTot: secondTot,
+    );
+  }
+
+  ApiPublicCoronaVacineSidoDto fromJson(Map<String, Object> json) {
+    return ApiPublicCoronaVacineSidoDto.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ApiPublicCoronaVacineSidoDto = _$ApiPublicCoronaVacineSidoDtoTearOff();
+
+/// @nodoc
+mixin _$ApiPublicCoronaVacineSidoDto {
+  String get sidoNm => throw _privateConstructorUsedError;
+  String get firstCnt => throw _privateConstructorUsedError;
+  String get firstTot => throw _privateConstructorUsedError;
+  String get secondCnt => throw _privateConstructorUsedError;
+  String get secondTot => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ApiPublicCoronaVacineSidoDtoCopyWith<ApiPublicCoronaVacineSidoDto>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiPublicCoronaVacineSidoDtoCopyWith<$Res> {
+  factory $ApiPublicCoronaVacineSidoDtoCopyWith(
+          ApiPublicCoronaVacineSidoDto value,
+          $Res Function(ApiPublicCoronaVacineSidoDto) then) =
+      _$ApiPublicCoronaVacineSidoDtoCopyWithImpl<$Res>;
+  $Res call(
+      {String sidoNm,
+      String firstCnt,
+      String firstTot,
+      String secondCnt,
+      String secondTot});
+}
+
+/// @nodoc
+class _$ApiPublicCoronaVacineSidoDtoCopyWithImpl<$Res>
+    implements $ApiPublicCoronaVacineSidoDtoCopyWith<$Res> {
+  _$ApiPublicCoronaVacineSidoDtoCopyWithImpl(this._value, this._then);
+
+  final ApiPublicCoronaVacineSidoDto _value;
+  // ignore: unused_field
+  final $Res Function(ApiPublicCoronaVacineSidoDto) _then;
+
+  @override
+  $Res call({
+    Object? sidoNm = freezed,
+    Object? firstCnt = freezed,
+    Object? firstTot = freezed,
+    Object? secondCnt = freezed,
+    Object? secondTot = freezed,
+  }) {
+    return _then(_value.copyWith(
+      sidoNm: sidoNm == freezed
+          ? _value.sidoNm
+          : sidoNm // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstCnt: firstCnt == freezed
+          ? _value.firstCnt
+          : firstCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstTot: firstTot == freezed
+          ? _value.firstTot
+          : firstTot // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondCnt: secondCnt == freezed
+          ? _value.secondCnt
+          : secondCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondTot: secondTot == freezed
+          ? _value.secondTot
+          : secondTot // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ApiPublicCoronaVacineSidoDtoCopyWith<$Res>
+    implements $ApiPublicCoronaVacineSidoDtoCopyWith<$Res> {
+  factory _$ApiPublicCoronaVacineSidoDtoCopyWith(
+          _ApiPublicCoronaVacineSidoDto value,
+          $Res Function(_ApiPublicCoronaVacineSidoDto) then) =
+      __$ApiPublicCoronaVacineSidoDtoCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String sidoNm,
+      String firstCnt,
+      String firstTot,
+      String secondCnt,
+      String secondTot});
+}
+
+/// @nodoc
+class __$ApiPublicCoronaVacineSidoDtoCopyWithImpl<$Res>
+    extends _$ApiPublicCoronaVacineSidoDtoCopyWithImpl<$Res>
+    implements _$ApiPublicCoronaVacineSidoDtoCopyWith<$Res> {
+  __$ApiPublicCoronaVacineSidoDtoCopyWithImpl(
+      _ApiPublicCoronaVacineSidoDto _value,
+      $Res Function(_ApiPublicCoronaVacineSidoDto) _then)
+      : super(_value, (v) => _then(v as _ApiPublicCoronaVacineSidoDto));
+
+  @override
+  _ApiPublicCoronaVacineSidoDto get _value =>
+      super._value as _ApiPublicCoronaVacineSidoDto;
+
+  @override
+  $Res call({
+    Object? sidoNm = freezed,
+    Object? firstCnt = freezed,
+    Object? firstTot = freezed,
+    Object? secondCnt = freezed,
+    Object? secondTot = freezed,
+  }) {
+    return _then(_ApiPublicCoronaVacineSidoDto(
+      sidoNm: sidoNm == freezed
+          ? _value.sidoNm
+          : sidoNm // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstCnt: firstCnt == freezed
+          ? _value.firstCnt
+          : firstCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstTot: firstTot == freezed
+          ? _value.firstTot
+          : firstTot // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondCnt: secondCnt == freezed
+          ? _value.secondCnt
+          : secondCnt // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondTot: secondTot == freezed
+          ? _value.secondTot
+          : secondTot // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ApiPublicCoronaVacineSidoDto extends _ApiPublicCoronaVacineSidoDto {
+  const _$_ApiPublicCoronaVacineSidoDto(
+      {required this.sidoNm,
+      required this.firstCnt,
+      required this.firstTot,
+      required this.secondCnt,
+      required this.secondTot})
+      : super._();
+
+  factory _$_ApiPublicCoronaVacineSidoDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApiPublicCoronaVacineSidoDtoFromJson(json);
+
+  @override
+  final String sidoNm;
+  @override
+  final String firstCnt;
+  @override
+  final String firstTot;
+  @override
+  final String secondCnt;
+  @override
+  final String secondTot;
+
+  @override
+  String toString() {
+    return 'ApiPublicCoronaVacineSidoDto(sidoNm: $sidoNm, firstCnt: $firstCnt, firstTot: $firstTot, secondCnt: $secondCnt, secondTot: $secondTot)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApiPublicCoronaVacineSidoDto &&
+            (identical(other.sidoNm, sidoNm) ||
+                const DeepCollectionEquality().equals(other.sidoNm, sidoNm)) &&
+            (identical(other.firstCnt, firstCnt) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstCnt, firstCnt)) &&
+            (identical(other.firstTot, firstTot) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstTot, firstTot)) &&
+            (identical(other.secondCnt, secondCnt) ||
+                const DeepCollectionEquality()
+                    .equals(other.secondCnt, secondCnt)) &&
+            (identical(other.secondTot, secondTot) ||
+                const DeepCollectionEquality()
+                    .equals(other.secondTot, secondTot)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(sidoNm) ^
+      const DeepCollectionEquality().hash(firstCnt) ^
+      const DeepCollectionEquality().hash(firstTot) ^
+      const DeepCollectionEquality().hash(secondCnt) ^
+      const DeepCollectionEquality().hash(secondTot);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApiPublicCoronaVacineSidoDtoCopyWith<_ApiPublicCoronaVacineSidoDto>
+      get copyWith => __$ApiPublicCoronaVacineSidoDtoCopyWithImpl<
+          _ApiPublicCoronaVacineSidoDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ApiPublicCoronaVacineSidoDtoToJson(this);
+  }
+}
+
+abstract class _ApiPublicCoronaVacineSidoDto
+    extends ApiPublicCoronaVacineSidoDto {
+  const factory _ApiPublicCoronaVacineSidoDto(
+      {required String sidoNm,
+      required String firstCnt,
+      required String firstTot,
+      required String secondCnt,
+      required String secondTot}) = _$_ApiPublicCoronaVacineSidoDto;
+  const _ApiPublicCoronaVacineSidoDto._() : super._();
+
+  factory _ApiPublicCoronaVacineSidoDto.fromJson(Map<String, dynamic> json) =
+      _$_ApiPublicCoronaVacineSidoDto.fromJson;
+
+  @override
+  String get sidoNm => throw _privateConstructorUsedError;
+  @override
+  String get firstCnt => throw _privateConstructorUsedError;
+  @override
+  String get firstTot => throw _privateConstructorUsedError;
+  @override
+  String get secondCnt => throw _privateConstructorUsedError;
+  @override
+  String get secondTot => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApiPublicCoronaVacineSidoDtoCopyWith<_ApiPublicCoronaVacineSidoDto>
+      get copyWith => throw _privateConstructorUsedError;
+}

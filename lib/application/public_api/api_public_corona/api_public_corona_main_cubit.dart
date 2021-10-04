@@ -37,7 +37,7 @@ class ApiPublicCoronaMainCubit extends Cubit<ApiPublicCoronaMainState> {
     orFailure.fold(
         (l) => null, (r) => emit(state.copyWith(corona: r, isLoading: false)));
     final vacine = await _vacineRepository.getVacineAllResult();
-
+    final vacineSido = await _vacineRepository.getVacineSidoResutl();
     final yesterDay = state.corona.elementAt(1);
     final Map<String, int> decideList = {};
     for (int i = 0; i < state.corona.length - 1; i++) {
@@ -51,6 +51,7 @@ class ApiPublicCoronaMainCubit extends Cubit<ApiPublicCoronaMainState> {
       isLoading: false,
       yesterdayData: yesterDay,
       dayDecide: decideList,
+      sidoVacine: vacineSido,
       vacine: vacine,
       vacineDate: vacineDate.toString().substring(0, 10).replaceAll("-", ""),
     ));
