@@ -14,7 +14,7 @@ abstract class ConfigReader {
     return _config![key] as String;
   }
 
-  static String getStageName() {
+  static Future<String> getStageName() async {
     return _readForKey("stageName");
   }
 

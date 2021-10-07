@@ -1,7 +1,6 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
-import 'package:ddd_practice_app/_constant/widget_const/number_format.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/public_api/api_public_corona/api_public_corona_main_cubit.dart';
 import 'package:ddd_practice_app/injection.dart';
