@@ -8,7 +8,7 @@ part 'api_kakao_video_dtos.g.dart';
 class ApiKakaoVideoDto with _$ApiKakaoVideoDto {
   const factory ApiKakaoVideoDto({
     required String title,
-    required int playTime,
+    @JsonKey(name: 'play_time') required double playTime,
     required String thumbnail,
     required String url,
     required String datetime,

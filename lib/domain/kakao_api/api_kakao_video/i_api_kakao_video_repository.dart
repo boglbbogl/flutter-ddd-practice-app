@@ -3,5 +3,7 @@ import 'package:ddd_practice_app/domain/kakao_api/api_kakao_video/api_kakao_vide
 abstract class IApiKakaoVideoRepository {
   Future<List<ApiKakaoVideo>> getKakaoVideo({
     required String query,
+    required int page,
+    required int size,
   });
 }

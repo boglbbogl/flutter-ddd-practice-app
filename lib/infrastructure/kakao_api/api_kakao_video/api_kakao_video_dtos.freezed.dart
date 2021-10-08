@@ -22,7 +22,7 @@ class _$ApiKakaoVideoDtoTearOff {
 
   _ApiKakaoVideoDto call(
       {required String title,
-      required int playTime,
+      @JsonKey(name: 'play_time') required double playTime,
       required String thumbnail,
       required String url,
       required String datetime,
@@ -48,7 +48,8 @@ const $ApiKakaoVideoDto = _$ApiKakaoVideoDtoTearOff();
 /// @nodoc
 mixin _$ApiKakaoVideoDto {
   String get title => throw _privateConstructorUsedError;
-  int get playTime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'play_time')
+  double get playTime => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   String get datetime => throw _privateConstructorUsedError;
@@ -67,7 +68,7 @@ abstract class $ApiKakaoVideoDtoCopyWith<$Res> {
       _$ApiKakaoVideoDtoCopyWithImpl<$Res>;
   $Res call(
       {String title,
-      int playTime,
+      @JsonKey(name: 'play_time') double playTime,
       String thumbnail,
       String url,
       String datetime,
@@ -100,7 +101,7 @@ class _$ApiKakaoVideoDtoCopyWithImpl<$Res>
       playTime: playTime == freezed
           ? _value.playTime
           : playTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
@@ -130,7 +131,7 @@ abstract class _$ApiKakaoVideoDtoCopyWith<$Res>
   @override
   $Res call(
       {String title,
-      int playTime,
+      @JsonKey(name: 'play_time') double playTime,
       String thumbnail,
       String url,
       String datetime,
@@ -165,7 +166,7 @@ class __$ApiKakaoVideoDtoCopyWithImpl<$Res>
       playTime: playTime == freezed
           ? _value.playTime
           : playTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
@@ -191,7 +192,7 @@ class __$ApiKakaoVideoDtoCopyWithImpl<$Res>
 class _$_ApiKakaoVideoDto extends _ApiKakaoVideoDto {
   const _$_ApiKakaoVideoDto(
       {required this.title,
-      required this.playTime,
+      @JsonKey(name: 'play_time') required this.playTime,
       required this.thumbnail,
       required this.url,
       required this.datetime,
@@ -204,7 +205,8 @@ class _$_ApiKakaoVideoDto extends _ApiKakaoVideoDto {
   @override
   final String title;
   @override
-  final int playTime;
+  @JsonKey(name: 'play_time')
+  final double playTime;
   @override
   final String thumbnail;
   @override
@@ -264,7 +266,7 @@ class _$_ApiKakaoVideoDto extends _ApiKakaoVideoDto {
 abstract class _ApiKakaoVideoDto extends ApiKakaoVideoDto {
   const factory _ApiKakaoVideoDto(
       {required String title,
-      required int playTime,
+      @JsonKey(name: 'play_time') required double playTime,
       required String thumbnail,
       required String url,
       required String datetime,
@@ -277,7 +279,8 @@ abstract class _ApiKakaoVideoDto extends ApiKakaoVideoDto {
   @override
   String get title => throw _privateConstructorUsedError;
   @override
-  int get playTime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'play_time')
+  double get playTime => throw _privateConstructorUsedError;
   @override
   String get thumbnail => throw _privateConstructorUsedError;
   @override

@@ -9,7 +9,7 @@ part of 'api_kakao_video_dtos.dart';
 _$_ApiKakaoVideoDto _$_$_ApiKakaoVideoDtoFromJson(Map<String, dynamic> json) {
   return _$_ApiKakaoVideoDto(
     title: json['title'] as String,
-    playTime: json['playTime'] as int,
+    playTime: (json['play_time'] as num).toDouble(),
     thumbnail: json['thumbnail'] as String,
     url: json['url'] as String,
     datetime: json['datetime'] as String,
@@ -21,7 +21,7 @@ Map<String, dynamic> _$_$_ApiKakaoVideoDtoToJson(
         _$_ApiKakaoVideoDto instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'playTime': instance.playTime,
+      'play_time': instance.playTime,
       'thumbnail': instance.thumbnail,
       'url': instance.url,
       'datetime': instance.datetime,

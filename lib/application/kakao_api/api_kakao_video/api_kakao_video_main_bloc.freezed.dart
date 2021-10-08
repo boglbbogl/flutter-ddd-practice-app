@@ -16,8 +16,14 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ApiKakaoVideoMainEventTearOff {
   const _$ApiKakaoVideoMainEventTearOff();
 
-  _Started started() {
-    return const _Started();
+  _Searched searched({required String query}) {
+    return _Searched(
+      query: query,
+    );
+  }
+
+  _MoreItem moreItem() {
+    return const _MoreItem();
   }
 }
 
@@ -28,23 +34,27 @@ const $ApiKakaoVideoMainEvent = _$ApiKakaoVideoMainEventTearOff();
 mixin _$ApiKakaoVideoMainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String query) searched,
+    required TResult Function() moreItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String query)? searched,
+    TResult Function()? moreItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Searched value) searched,
+    required TResult Function(_MoreItem value) moreItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Searched value)? searched,
+    TResult Function(_MoreItem value)? moreItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,35 +78,149 @@ class _$ApiKakaoVideoMainEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$SearchedCopyWith<$Res> {
+  factory _$SearchedCopyWith(_Searched value, $Res Function(_Searched) then) =
+      __$SearchedCopyWithImpl<$Res>;
+  $Res call({String query});
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res>
+class __$SearchedCopyWithImpl<$Res>
     extends _$ApiKakaoVideoMainEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
+    implements _$SearchedCopyWith<$Res> {
+  __$SearchedCopyWithImpl(_Searched _value, $Res Function(_Searched) _then)
+      : super(_value, (v) => _then(v as _Searched));
 
   @override
-  _Started get _value => super._value as _Started;
+  _Searched get _value => super._value as _Searched;
+
+  @override
+  $Res call({
+    Object? query = freezed,
+  }) {
+    return _then(_Searched(
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_Searched implements _Searched {
+  const _$_Searched({required this.query});
+
+  @override
+  final String query;
 
   @override
   String toString() {
-    return 'ApiKakaoVideoMainEvent.started()';
+    return 'ApiKakaoVideoMainEvent.searched(query: $query)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) ||
+        (other is _Searched &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SearchedCopyWith<_Searched> get copyWith =>
+      __$SearchedCopyWithImpl<_Searched>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String query) searched,
+    required TResult Function() moreItem,
+  }) {
+    return searched(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String query)? searched,
+    TResult Function()? moreItem,
+    required TResult orElse(),
+  }) {
+    if (searched != null) {
+      return searched(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Searched value) searched,
+    required TResult Function(_MoreItem value) moreItem,
+  }) {
+    return searched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Searched value)? searched,
+    TResult Function(_MoreItem value)? moreItem,
+    required TResult orElse(),
+  }) {
+    if (searched != null) {
+      return searched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Searched implements ApiKakaoVideoMainEvent {
+  const factory _Searched({required String query}) = _$_Searched;
+
+  String get query => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchedCopyWith<_Searched> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$MoreItemCopyWith<$Res> {
+  factory _$MoreItemCopyWith(_MoreItem value, $Res Function(_MoreItem) then) =
+      __$MoreItemCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$MoreItemCopyWithImpl<$Res>
+    extends _$ApiKakaoVideoMainEventCopyWithImpl<$Res>
+    implements _$MoreItemCopyWith<$Res> {
+  __$MoreItemCopyWithImpl(_MoreItem _value, $Res Function(_MoreItem) _then)
+      : super(_value, (v) => _then(v as _MoreItem));
+
+  @override
+  _MoreItem get _value => super._value as _MoreItem;
+}
+
+/// @nodoc
+
+class _$_MoreItem implements _MoreItem {
+  const _$_MoreItem();
+
+  @override
+  String toString() {
+    return 'ApiKakaoVideoMainEvent.moreItem()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _MoreItem);
   }
 
   @override
@@ -105,19 +229,21 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String query) searched,
+    required TResult Function() moreItem,
   }) {
-    return started();
+    return moreItem();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String query)? searched,
+    TResult Function()? moreItem,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (moreItem != null) {
+      return moreItem();
     }
     return orElse();
   }
@@ -125,35 +251,46 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Searched value) searched,
+    required TResult Function(_MoreItem value) moreItem,
   }) {
-    return started(this);
+    return moreItem(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Searched value)? searched,
+    TResult Function(_MoreItem value)? moreItem,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (moreItem != null) {
+      return moreItem(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements ApiKakaoVideoMainEvent {
-  const factory _Started() = _$_Started;
+abstract class _MoreItem implements ApiKakaoVideoMainEvent {
+  const factory _MoreItem() = _$_MoreItem;
 }
 
 /// @nodoc
 class _$ApiKakaoVideoMainStateTearOff {
   const _$ApiKakaoVideoMainStateTearOff();
 
-  _ApiKakaoVideoMainState call({required bool isLoading}) {
+  _ApiKakaoVideoMainState call(
+      {required bool isLoading,
+      required bool moreLoading,
+      required List<ApiKakaoVideo> video,
+      required int page,
+      required String query}) {
     return _ApiKakaoVideoMainState(
       isLoading: isLoading,
+      moreLoading: moreLoading,
+      video: video,
+      page: page,
+      query: query,
     );
   }
 }
@@ -164,6 +301,10 @@ const $ApiKakaoVideoMainState = _$ApiKakaoVideoMainStateTearOff();
 /// @nodoc
 mixin _$ApiKakaoVideoMainState {
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get moreLoading => throw _privateConstructorUsedError;
+  List<ApiKakaoVideo> get video => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+  String get query => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoVideoMainStateCopyWith<ApiKakaoVideoMainState> get copyWith =>
@@ -175,7 +316,12 @@ abstract class $ApiKakaoVideoMainStateCopyWith<$Res> {
   factory $ApiKakaoVideoMainStateCopyWith(ApiKakaoVideoMainState value,
           $Res Function(ApiKakaoVideoMainState) then) =
       _$ApiKakaoVideoMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading});
+  $Res call(
+      {bool isLoading,
+      bool moreLoading,
+      List<ApiKakaoVideo> video,
+      int page,
+      String query});
 }
 
 /// @nodoc
@@ -190,12 +336,32 @@ class _$ApiKakaoVideoMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? moreLoading = freezed,
+    Object? video = freezed,
+    Object? page = freezed,
+    Object? query = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      moreLoading: moreLoading == freezed
+          ? _value.moreLoading
+          : moreLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      video: video == freezed
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as List<ApiKakaoVideo>,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -207,7 +373,12 @@ abstract class _$ApiKakaoVideoMainStateCopyWith<$Res>
           $Res Function(_ApiKakaoVideoMainState) then) =
       __$ApiKakaoVideoMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading});
+  $Res call(
+      {bool isLoading,
+      bool moreLoading,
+      List<ApiKakaoVideo> video,
+      int page,
+      String query});
 }
 
 /// @nodoc
@@ -224,12 +395,32 @@ class __$ApiKakaoVideoMainStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? moreLoading = freezed,
+    Object? video = freezed,
+    Object? page = freezed,
+    Object? query = freezed,
   }) {
     return _then(_ApiKakaoVideoMainState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      moreLoading: moreLoading == freezed
+          ? _value.moreLoading
+          : moreLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      video: video == freezed
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as List<ApiKakaoVideo>,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -237,14 +428,27 @@ class __$ApiKakaoVideoMainStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiKakaoVideoMainState implements _ApiKakaoVideoMainState {
-  _$_ApiKakaoVideoMainState({required this.isLoading});
+  _$_ApiKakaoVideoMainState(
+      {required this.isLoading,
+      required this.moreLoading,
+      required this.video,
+      required this.page,
+      required this.query});
 
   @override
   final bool isLoading;
+  @override
+  final bool moreLoading;
+  @override
+  final List<ApiKakaoVideo> video;
+  @override
+  final int page;
+  @override
+  final String query;
 
   @override
   String toString() {
-    return 'ApiKakaoVideoMainState(isLoading: $isLoading)';
+    return 'ApiKakaoVideoMainState(isLoading: $isLoading, moreLoading: $moreLoading, video: $video, page: $page, query: $query)';
   }
 
   @override
@@ -253,12 +457,26 @@ class _$_ApiKakaoVideoMainState implements _ApiKakaoVideoMainState {
         (other is _ApiKakaoVideoMainState &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)));
+                    .equals(other.isLoading, isLoading)) &&
+            (identical(other.moreLoading, moreLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.moreLoading, moreLoading)) &&
+            (identical(other.video, video) ||
+                const DeepCollectionEquality().equals(other.video, video)) &&
+            (identical(other.page, page) ||
+                const DeepCollectionEquality().equals(other.page, page)) &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isLoading);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(moreLoading) ^
+      const DeepCollectionEquality().hash(video) ^
+      const DeepCollectionEquality().hash(page) ^
+      const DeepCollectionEquality().hash(query);
 
   @JsonKey(ignore: true)
   @override
@@ -268,11 +486,23 @@ class _$_ApiKakaoVideoMainState implements _ApiKakaoVideoMainState {
 }
 
 abstract class _ApiKakaoVideoMainState implements ApiKakaoVideoMainState {
-  factory _ApiKakaoVideoMainState({required bool isLoading}) =
-      _$_ApiKakaoVideoMainState;
+  factory _ApiKakaoVideoMainState(
+      {required bool isLoading,
+      required bool moreLoading,
+      required List<ApiKakaoVideo> video,
+      required int page,
+      required String query}) = _$_ApiKakaoVideoMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  bool get moreLoading => throw _privateConstructorUsedError;
+  @override
+  List<ApiKakaoVideo> get video => throw _privateConstructorUsedError;
+  @override
+  int get page => throw _privateConstructorUsedError;
+  @override
+  String get query => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoVideoMainStateCopyWith<_ApiKakaoVideoMainState> get copyWith =>

@@ -6,7 +6,7 @@ part 'api_kakao_video.freezed.dart';
 class ApiKakaoVideo with _$ApiKakaoVideo {
   const factory ApiKakaoVideo({
     required String title,
-    required int playTime,
+    required double playTime,
     required String thumbnail,
     required String url,
     required String datetime,

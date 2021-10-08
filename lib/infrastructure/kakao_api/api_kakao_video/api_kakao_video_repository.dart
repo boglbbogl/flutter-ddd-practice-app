@@ -14,9 +14,12 @@ class ApiKakaoVideoRepository implements IApiKakaoVideoRepository {
   @override
   Future<List<ApiKakaoVideo>> getKakaoVideo({
     required String query,
+    required int page,
+    required int size,
   }) async {
     try {
-      final uri = Uri.parse("$apiBase/v2/search/vclip?query=$query");
+      final uri = Uri.parse(
+          "$apiBase/v2/search/vclip?query=$query&size=$size&page=$page");
       final response =
           await http.get(uri, headers: {'Authorization': 'KakaoAK $apiKey'});
       if (response.statusCode == 200) {

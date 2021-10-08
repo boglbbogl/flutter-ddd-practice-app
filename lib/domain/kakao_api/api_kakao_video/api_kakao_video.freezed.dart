@@ -18,7 +18,7 @@ class _$ApiKakaoVideoTearOff {
 
   _ApiKakaoVideo call(
       {required String title,
-      required int playTime,
+      required double playTime,
       required String thumbnail,
       required String url,
       required String datetime,
@@ -40,7 +40,7 @@ const $ApiKakaoVideo = _$ApiKakaoVideoTearOff();
 /// @nodoc
 mixin _$ApiKakaoVideo {
   String get title => throw _privateConstructorUsedError;
-  int get playTime => throw _privateConstructorUsedError;
+  double get playTime => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   String get datetime => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $ApiKakaoVideoCopyWith<$Res> {
       _$ApiKakaoVideoCopyWithImpl<$Res>;
   $Res call(
       {String title,
-      int playTime,
+      double playTime,
       String thumbnail,
       String url,
       String datetime,
@@ -91,7 +91,7 @@ class _$ApiKakaoVideoCopyWithImpl<$Res>
       playTime: playTime == freezed
           ? _value.playTime
           : playTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
@@ -121,7 +121,7 @@ abstract class _$ApiKakaoVideoCopyWith<$Res>
   @override
   $Res call(
       {String title,
-      int playTime,
+      double playTime,
       String thumbnail,
       String url,
       String datetime,
@@ -156,7 +156,7 @@ class __$ApiKakaoVideoCopyWithImpl<$Res>
       playTime: playTime == freezed
           ? _value.playTime
           : playTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
@@ -191,7 +191,7 @@ class _$_ApiKakaoVideo implements _ApiKakaoVideo {
   @override
   final String title;
   @override
-  final int playTime;
+  final double playTime;
   @override
   final String thumbnail;
   @override
@@ -246,7 +246,7 @@ class _$_ApiKakaoVideo implements _ApiKakaoVideo {
 abstract class _ApiKakaoVideo implements ApiKakaoVideo {
   const factory _ApiKakaoVideo(
       {required String title,
-      required int playTime,
+      required double playTime,
       required String thumbnail,
       required String url,
       required String datetime,
@@ -255,7 +255,7 @@ abstract class _ApiKakaoVideo implements ApiKakaoVideo {
   @override
   String get title => throw _privateConstructorUsedError;
   @override
-  int get playTime => throw _privateConstructorUsedError;
+  double get playTime => throw _privateConstructorUsedError;
   @override
   String get thumbnail => throw _privateConstructorUsedError;
   @override
