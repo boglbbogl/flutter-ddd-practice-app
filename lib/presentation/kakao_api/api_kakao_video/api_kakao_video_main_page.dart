@@ -1,9 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_video/api_kakao_video_main_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
+import 'package:ddd_practice_app/presentation/kakao_api/api_kakao_video/widgets/kakao_video_list_view_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -61,7 +63,9 @@ class ApiKakaoVideoMainPage extends StatelessWidget {
                     child: ListView(
                       shrinkWrap: true,
                       children: [
-                        ...state.video.map((e) => Text(e.author)),
+                        ...state.video.map((e) => KakaoVideoListViewItem(
+                              video: e,
+                            )),
                         if (state.video.isEmpty)
                           Container()
                         else
