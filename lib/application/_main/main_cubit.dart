@@ -10,6 +10,7 @@ class MainCubit extends Cubit<MainState> {
   MainCubit() : super(MainState.initial());
 
   Future<int> btnChanged(int value) async {
+    emit(state.copyWith(index: value));
     return value;
   }
 }

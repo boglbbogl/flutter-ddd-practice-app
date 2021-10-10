@@ -1,7 +1,11 @@
 import 'package:ddd_practice_app/_constant/widget_const/colors.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
+import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
+import 'package:ddd_practice_app/application/_main/main_cubit.dart';
 import 'package:ddd_practice_app/presentation/_main/main_practice_list.dart';
+import 'package:ddd_practice_app/presentation/_main/main_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -26,7 +30,25 @@ class MainPage extends StatelessWidget {
           ),
         ),
       ),
-      body: const MainPracticeList(),
+      body: BlocBuilder<MainCubit, MainState>(
+        builder: (context, state) {
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                MainTabbar(index: state.index),
+                Stack(
+                  children: [
+                    if (state.index == 1)
+                      const MainPracticeList()
+                    else
+                      const VelogMainPage(),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
