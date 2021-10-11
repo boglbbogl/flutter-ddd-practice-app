@@ -1,6 +1,8 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
-import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic_main_page.dart';
-import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container_main_page.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sizedbox.dart';
 import 'package:ddd_practice_app/application/_main/main_cubit.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_bloc.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate/api_kakao_translate_main_cubit.dart';
@@ -116,10 +118,11 @@ class AppWidget extends StatelessWidget {
               const WorkingTitleTravelMainPage(),
           '/workingTitleEVMainPage': (context) =>
               const WorkingTitleEVMainPage(),
-          '/velogWidgetContainerMainPage': (context) =>
-              const VelogWidgetContainerMainPage(),
-          '/velogWidgetBasicMainPage': (context) =>
-              const VelogWidgetBasicMainPage(),
+          '/velogWidgetBasic': (context) => const VelogWidgetBasic(),
+          '/velogWidgetContainer': (context) => const VelogWidgetContainer(),
+          '/velogWidgetSizedBox': (context) => const VelogWidgetSizedBox(),
+          '/velogWidgetAnimatedContainer': (context) =>
+              const VelogWidgetAnimatedContainer(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

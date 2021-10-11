@@ -1,10 +1,9 @@
 class VelogItem {
-  List title = [
-    'Basic',
-    'Container',
-  ];
+  List title = ['Basic', 'Container', 'SizedBox', 'Animated\nContainer'];
   List router = [
-    '/velogWidgetBasicMainPage',
-    '/velogWidgetContainerMainPage',
+    '/velogWidgetBasic',
+    '/velogWidgetContainer',
+    '/velogWidgetSizedBox',
+    '/velogWidgetAnimatedContainer',
   ];
 }
