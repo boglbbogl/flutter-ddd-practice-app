@@ -1,7 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/_velog/presentation/velog_item.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class VelogMainPage extends StatelessWidget {
   const VelogMainPage({Key? key}) : super(key: key);

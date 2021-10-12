@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_action_info_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/search_text_form.dart';

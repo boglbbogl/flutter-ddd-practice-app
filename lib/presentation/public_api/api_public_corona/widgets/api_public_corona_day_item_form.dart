@@ -123,7 +123,7 @@ class ApiPublicCoronaDayItemForm extends StatelessWidget {
       child: Card(
         elevation: 1,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.pink, width: 1),
+          side: const BorderSide(color: Colors.pink),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(

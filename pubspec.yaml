@@ -101,6 +101,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Yanolja-Regular.ttf
         - asset: assets/fonts/Yanolja-Bold.ttf
+    - family: CustomIcon
+      fonts:
+        - asset: assets/fonts/CustomIcon.ttf
   # - family: Trajan Pro
   #   fonts:
   #     - asset: fonts/TrajanPro.ttf
