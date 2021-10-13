@@ -3,6 +3,8 @@ import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animate
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_icon.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_refactor.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sizedbox.dart';
 import 'package:ddd_practice_app/application/_main/main_cubit.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_bloc.dart';
@@ -125,6 +127,8 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetAnimatedContainer': (context) =>
               const VelogWidgetAnimatedContainer(),
           '/velogWidgetCustomIcon': (context) => const VelogWidgetCustomIcon(),
+          '/velogWidgetListview': (context) => const VelogWidgetListview(),
+          '/velogWidgetRefactor': (context) => const VelogWidgetRefactor(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

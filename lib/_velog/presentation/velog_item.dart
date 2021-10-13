@@ -5,6 +5,8 @@ class VelogItem {
     'SizedBox',
     'Animated\nContainer',
     'Custom Icon',
+    'List View',
+    'Refactor',
   ];
   List router = [
     '/velogWidgetBasic',
@@ -12,5 +14,7 @@ class VelogItem {
     '/velogWidgetSizedBox',
     '/velogWidgetAnimatedContainer',
     '/velogWidgetCustomIcon',
+    '/velogWidgetListview',
+    '/velogWidgetRefactor'
   ];
 }
