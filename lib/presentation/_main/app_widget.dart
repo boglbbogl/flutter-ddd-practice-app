@@ -1,11 +1,13 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_switcher.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_icon.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_refactor.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sizedbox.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_text.dart';
 import 'package:ddd_practice_app/application/_main/main_cubit.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_main_bloc.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate/api_kakao_translate_main_cubit.dart';
@@ -129,6 +131,9 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetCustomIcon': (context) => const VelogWidgetCustomIcon(),
           '/velogWidgetListview': (context) => const VelogWidgetListview(),
           '/velogWidgetRefactor': (context) => const VelogWidgetRefactor(),
+          '/velogWidgetText': (context) => const VelogWidgetText(),
+          '/velogWidgetAnimatedSwitcher': (context) =>
+              const VelogWidgetAnimatedSwitcher(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
