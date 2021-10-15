@@ -8,7 +8,8 @@ class VelogItem {
     'List View',
     'Refactor',
     'Text',
-    'Animated\nSwitcher'
+    'Animated\nSwitcher',
+    'Column'
   ];
   List router = [
     '/velogWidgetBasic',
@@ -19,6 +20,7 @@ class VelogItem {
     '/velogWidgetListview',
     '/velogWidgetRefactor',
     '/velogWidgetText',
-    '/velogWidgetAnimatedSwitcher'
+    '/velogWidgetAnimatedSwitcher',
+    '/velogWidgetColumn'
   ];
 }

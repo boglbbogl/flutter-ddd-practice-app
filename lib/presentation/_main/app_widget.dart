@@ -2,6 +2,7 @@ import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_switcher.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_column.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_icon.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
@@ -134,6 +135,7 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetText': (context) => const VelogWidgetText(),
           '/velogWidgetAnimatedSwitcher': (context) =>
               const VelogWidgetAnimatedSwitcher(),
+          '/velogWidgetColumn': (context) => const VelogWidgetColumn(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
