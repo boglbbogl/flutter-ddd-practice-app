@@ -9,7 +9,11 @@ class VelogItem {
     'Refactor',
     'Text',
     'Animated\nSwitcher',
-    'Column'
+    'Column',
+    'Row',
+    'Stateful',
+    'Stateless',
+    'Stateless_bloc'
   ];
   List router = [
     '/velogWidgetBasic',
@@ -21,6 +25,10 @@ class VelogItem {
     '/velogWidgetRefactor',
     '/velogWidgetText',
     '/velogWidgetAnimatedSwitcher',
-    '/velogWidgetColumn'
+    '/velogWidgetColumn',
+    '/velogWidgetRow',
+    '/velogWidgetStateful',
+    '/velogWidgetStateless',
+    '/velogWidgetStatelesswithbloc',
   ];
 }
