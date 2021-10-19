@@ -5,6 +5,7 @@ import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.d
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_column.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_icon.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_hero.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_refactor.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_row.dart';
@@ -145,6 +146,7 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetStateless': (context) => const VelogWidgetStateless(),
           '/velogWidgetStatelesswithbloc': (context) =>
               const VelogWidgetStatelessWithBloc(),
+          '/velogWidgetHero': (context) => const VelogWidgetHero(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

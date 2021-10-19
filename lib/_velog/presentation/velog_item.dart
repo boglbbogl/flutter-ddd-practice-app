@@ -13,7 +13,8 @@ class VelogItem {
     'Row',
     'Stateful',
     'Stateless',
-    'Stateless_bloc'
+    'Stateless_bloc',
+    'Hero Animation',
   ];
   List router = [
     '/velogWidgetBasic',
@@ -30,5 +31,6 @@ class VelogItem {
     '/velogWidgetStateful',
     '/velogWidgetStateless',
     '/velogWidgetStatelesswithbloc',
+    '/velogWidgetHero',
   ];
 }
