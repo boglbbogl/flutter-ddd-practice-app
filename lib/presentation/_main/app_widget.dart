@@ -1,4 +1,8 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_bloc_pattern.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_cubit.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_get_x.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_provider.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_switcher.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.dart';
@@ -10,6 +14,7 @@ import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listvie
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_refactor.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_row.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sizedbox.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sliver_appbar.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_stateful.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_stateless.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_stateless_with_bloc.dart';
@@ -55,6 +60,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -147,6 +153,12 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetStatelesswithbloc': (context) =>
               const VelogWidgetStatelessWithBloc(),
           '/velogWidgetHero': (context) => const VelogWidgetHero(),
+          '/velogWidgetSliverAppbar': (context) =>
+              const VelogWidgetSliverAppbar(),
+          '/velogStateBlocPattern': (context) => const VelogStateBlocPattern(),
+          '/velogStateCubit': (context) => const VelogStateCubit(),
+          '/velogStateProvider': (context) => const VelogStateProvider(),
+          '/velogStateGetX': (context) => const VelogStateGetX(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

@@ -11,7 +11,7 @@ import 'package:firebase_storage/firebase_storage.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '_velog/application/velog_bloc_stateless_bloc.dart' as _i60;
+import '_velog/application/widget/velog_bloc_stateless_bloc.dart' as _i60;
 import 'application/_main/main_cubit.dart' as _i55;
 import 'application/example_api/api_news_practice/api_news_main_bloc.dart'
     as _i77;

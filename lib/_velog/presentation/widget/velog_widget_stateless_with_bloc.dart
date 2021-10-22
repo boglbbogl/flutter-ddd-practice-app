@@ -1,4 +1,4 @@
-import 'package:ddd_practice_app/_velog/application/velog_bloc_stateless_bloc.dart';
+import 'package:ddd_practice_app/_velog/application/widget/velog_bloc_stateless_bloc.dart';
 import 'package:ddd_practice_app/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
