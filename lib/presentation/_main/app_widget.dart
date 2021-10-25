@@ -155,7 +155,7 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetHero': (context) => const VelogWidgetHero(),
           '/velogWidgetSliverAppbar': (context) =>
               const VelogWidgetSliverAppbar(),
-          '/velogStateBlocPattern': (context) => const VelogStateBlocPattern(),
+          '/velogStateBlocPattern': (context) => VelogStateBlocPattern(),
           '/velogStateCubit': (context) => const VelogStateCubit(),
           '/velogStateProvider': (context) => const VelogStateProvider(),
           '/velogStateGetX': (context) => const VelogStateGetX(),
