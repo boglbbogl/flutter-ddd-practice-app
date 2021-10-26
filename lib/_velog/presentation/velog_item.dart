@@ -19,7 +19,8 @@ class VelogItem {
     'BLoC Pattern',
     'Cubit',
     'Provider',
-    'Get X'
+    'Get X',
+    'Date Picker',
   ];
   List router = [
     '/velogWidgetBasic',
@@ -42,5 +43,6 @@ class VelogItem {
     '/velogStateCubit',
     '/velogStateProvider',
     '/velogStateGetX',
+    '/velogStateDatePicker'
   ];
 }

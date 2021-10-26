@@ -1,6 +1,7 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_bloc_pattern.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_cubit.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_date_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_get_x.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_provider.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
@@ -162,6 +163,7 @@ class AppWidget extends StatelessWidget {
           '/velogStateCubit': (context) => const VelogStateCubit(),
           '/velogStateProvider': (context) => const VelogStateProvider(),
           '/velogStateGetX': (context) => const VelogStateGetX(),
+          '/velogStateDatePicker': (context) => const VelogStateDatePicker(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
