@@ -55,6 +55,7 @@ import 'package:ddd_practice_app/presentation/widget_practice/community_practice
 import 'package:ddd_practice_app/presentation/widget_practice/firestore_practice/firestore_practice_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/member_practice/member_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/slide_matrix_practice/slide_matrix_practice_main_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/webview_practice_main_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/widget_hero_animation_practice/widget_hero_animation_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -125,6 +126,8 @@ class AppWidget extends StatelessWidget {
               const WidgetHeroAnimationMainPage(),
           '/firestorePracticeMainPage': (context) =>
               const FirestorePracticeMainPage(),
+          '/webviewPracticeMainPage': (context) =>
+              const WebviewPracticeMainPage(),
           '/apiWeatherMainPage': (context) => const ApiWeatherMainPage(),
           '/apiNewsMainPage': (context) => const ApiNewsMainPage(),
           '/communityMainPage': (context) => const CommunityMainPage(),
