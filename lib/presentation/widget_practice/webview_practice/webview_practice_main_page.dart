@@ -1,9 +1,12 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_inappwebview_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_url_launcher_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_webview_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_webview_plugin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WebviewPracticeMainPage extends StatelessWidget {
   const WebviewPracticeMainPage({Key? key}) : super(key: key);
@@ -30,6 +33,22 @@ class WebviewPracticeMainPage extends StatelessWidget {
                 onTap: () => pushNewScreen(context,
                     screen: const FlutterInapwebviewPage()),
                 title: 'flutter_inappwebview'),
+            _textButtonForm(
+                onTap: () =>
+                    pushNewScreen(context, screen: const FlutterWebviewPage()),
+                title: 'flutter_webview'),
+            _textButtonForm(
+                onTap: () async {
+                  if (await canLaunch('http://justthankyoushop.com/')) {
+                    await launch(
+                      'http://justthankyoushop.com/',
+                      forceSafariVC: true,
+                      forceWebView: true,
+                      enableJavaScript: true,
+                    );
+                  }
+                },
+                title: 'url_launcher'),
           ],
         ),
       ),

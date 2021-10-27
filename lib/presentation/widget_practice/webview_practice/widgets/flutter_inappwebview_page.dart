@@ -18,24 +18,22 @@ class _FlutterInapwebviewPageState extends State<FlutterInapwebviewPage> {
         title: const Text('flutter_inappwebview'),
       ),
       body: InAppWebView(
-        initialUrlRequest:
-            URLRequest(url: Uri.parse('http://justthankyoushop.com/')),
+        initialUrlRequest: URLRequest(url: Uri.parse('http://google.com/')),
         onWebViewCreated: (controller) {
           webViewController = controller;
         },
         initialOptions: InAppWebViewGroupOptions(
           android: AndroidInAppWebViewOptions(
-              // supportMultipleWindows: true,
-              // useHybridComposition: true,
-              // blockNetworkLoads: true,
-              ),
+            supportMultipleWindows: true,
+            useHybridComposition: true,
+          ),
           crossPlatform: InAppWebViewOptions(
             // supportZoom: false,
             // disableHorizontalScroll: true,
             // useShouldOverrideUrlLoading: true,
             // horizontalScrollBarEnabled: false,
-            allowFileAccessFromFileURLs: true,
-            allowUniversalAccessFromFileURLs: true,
+            // allowFileAccessFromFileURLs: true,
+            // allowUniversalAccessFromFileURLs: true,
             javaScriptCanOpenWindowsAutomatically: true,
             incognito: true,
           ),

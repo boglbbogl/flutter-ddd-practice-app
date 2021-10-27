@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_bloc_pattern.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_cubit.dart';
-import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_date_picker.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_date_range_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_get_x.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_provider.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
@@ -62,7 +62,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -163,7 +162,8 @@ class AppWidget extends StatelessWidget {
           '/velogStateCubit': (context) => const VelogStateCubit(),
           '/velogStateProvider': (context) => const VelogStateProvider(),
           '/velogStateGetX': (context) => const VelogStateGetX(),
-          '/velogStateDatePicker': (context) => const VelogStateDatePicker(),
+          '/velogStateDateRangePicker': (context) =>
+              const VelogStateDateRangePicker(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

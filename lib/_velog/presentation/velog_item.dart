@@ -20,7 +20,7 @@ class VelogItem {
     'Cubit',
     'Provider',
     'Get X',
-    'Date Picker',
+    'Date Range Picker',
   ];
   List router = [
     '/velogWidgetBasic',
@@ -43,6 +43,6 @@ class VelogItem {
     '/velogStateCubit',
     '/velogStateProvider',
     '/velogStateGetX',
-    '/velogStateDatePicker'
+    '/velogStateDateRangePicker'
   ];
 }
