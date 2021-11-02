@@ -4,8 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_image/api_kakao_image.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_image/i_api_kakao_image_repository.dart';
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_image/api_kakao_image_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiKakaoImageRepository)
 class ApiKakaoImageRepository implements IApiKakaoImageRepository {

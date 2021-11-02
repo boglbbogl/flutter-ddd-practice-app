@@ -4,8 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/naver_api/api_naver_image/api_naver_image.dart';
 import 'package:ddd_practice_app/domain/naver_api/api_naver_image/i_api_naver_image_repository.dart';
 import 'package:ddd_practice_app/infrastructure/naver_api/api_naver_image/api_naver_image_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiNaverImageRepository)
 class ApiNaverImageRepository implements IApiNaverImageRepository {

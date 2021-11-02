@@ -6,8 +6,8 @@ import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/a
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/api_public_electric_station_failure.dart';
 import 'package:ddd_practice_app/domain/public_api/api_public_electric_station/i_api_public_electric_station_repository.dart';
 import 'package:ddd_practice_app/infrastructure/public_api/api_public_electric_station/api_public_electric_station_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:xml2json/xml2json.dart';
 
 @LazySingleton(as: IApiPublicElectricStationRepository)

@@ -1,7 +1,6 @@
 import 'package:ddd_practice_app/_constant/widget_const/appbar_form.dart';
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_inappwebview_page.dart';
-import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_url_launcher_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_webview_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_webview_plugin_page.dart';
 import 'package:flutter/material.dart';

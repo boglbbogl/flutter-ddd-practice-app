@@ -5,10 +5,9 @@ import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address/api_ka
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address/api_kakao_local_region.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_address/i_api_kakao_local_address_repository.dart';
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_local_address/api_kakao_local_address_dtos.dart';
-
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_local_address/api_kakao_local_region_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiKakaoLocalAddressRepository)
 class ApiKakaoLocalAddressRepository

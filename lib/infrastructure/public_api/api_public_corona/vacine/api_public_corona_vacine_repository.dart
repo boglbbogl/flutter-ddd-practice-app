@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:ddd_practice_app/domain/public_api/api_public_corona/vacine/api_public_corona_vacine.dart';
 import 'package:ddd_practice_app/domain/public_api/api_public_corona/vacine/i_api_public_corona_vacine_repository.dart';
 import 'package:ddd_practice_app/infrastructure/public_api/api_public_corona/vacine/api_public_corona_vacine_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:xml2json/xml2json.dart';
 
 @LazySingleton(as: IApiPublicCoronaVacineRepository)

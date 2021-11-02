@@ -1,8 +1,9 @@
 import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/application/kakao_api/api_kakao_translate/api_kakao_translate_main_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+
 import 'kakao_translate_region.dart';
 
 class ApiKakaoTranslateSelectWidget extends StatelessWidget {

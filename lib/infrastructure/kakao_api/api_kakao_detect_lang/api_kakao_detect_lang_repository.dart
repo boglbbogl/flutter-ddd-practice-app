@@ -4,9 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_detect_lang/api_kakao_detect_lang.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_detect_lang/i_api_kakao_detect_lang_repository.dart';
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_detect_lang/api_kakao_detect_lang_dtos.dart';
-
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiKakaoDetectLangRepository)
 class ApiKakaoDetectLangRaepository implements IApiKakaoDetectLangRepository {

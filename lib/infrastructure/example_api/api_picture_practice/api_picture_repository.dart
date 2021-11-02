@@ -1,9 +1,10 @@
 import 'dart:convert';
+
 import 'package:ddd_practice_app/domain/example_api/api_picture_practice/api_picture.dart';
 import 'package:ddd_practice_app/domain/example_api/api_picture_practice/i_api_picture_repository.dart';
 import 'package:ddd_practice_app/infrastructure/example_api/api_picture_practice/api_picture_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiPictureRepository)
 class ApiExampleRepository implements IApiPictureRepository {

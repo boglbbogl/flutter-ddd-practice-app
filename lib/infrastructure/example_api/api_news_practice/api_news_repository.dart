@@ -4,8 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/example_api/api_news_practice/api_news.dart';
 import 'package:ddd_practice_app/domain/example_api/api_news_practice/i_api_news_repository.dart';
 import 'package:ddd_practice_app/infrastructure/example_api/api_news_practice/api_news_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiNewsRepository)
 class ApiNewsRepository implements IApiNewsRepository {

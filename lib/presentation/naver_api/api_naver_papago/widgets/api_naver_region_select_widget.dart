@@ -3,8 +3,8 @@ import 'package:ddd_practice_app/application/naver_api/api_naver_papago/api_nave
 import 'package:ddd_practice_app/presentation/naver_api/api_naver_papago/widgets/papago_translate_region.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 class ApiNaverRegionSelectWidget extends StatelessWidget {
   final String formatSource;

@@ -4,8 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/naver_api/api_naver_movie/api_naver_movie.dart';
 import 'package:ddd_practice_app/domain/naver_api/api_naver_movie/i_api_naver_movie_repository.dart';
 import 'package:ddd_practice_app/infrastructure/naver_api/api_naver_movie/api_naver_movie_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiNaverMovieRepository)
 class ApiNaverMovieRepository implements IApiNaverMovieRepository {

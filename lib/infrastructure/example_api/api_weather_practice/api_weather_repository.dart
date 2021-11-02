@@ -1,13 +1,13 @@
 import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/i_api_weather_repository.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather.dart';
 import 'package:ddd_practice_app/domain/example_api/api_weather_practice/weather_failure.dart';
 import 'package:ddd_practice_app/infrastructure/example_api/api_weather_practice/api_weather_dtos.dart';
-
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiWeatherRepository)
 class ApiWeatherRepository with IApiWeatherRepository {

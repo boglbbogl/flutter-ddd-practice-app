@@ -4,8 +4,8 @@ import 'package:ddd_practice_app/_constant/_flavor/config_reader.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword.dart';
 import 'package:ddd_practice_app/domain/kakao_api/api_kakao_local_keyword/i_api_kakao_local_keyword_repository.dart';
 import 'package:ddd_practice_app/infrastructure/kakao_api/api_kakao_local_keyword/api_kakao_local_keyword_dtos.dart';
-import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IApiKakaoLocalKeywordRepository)
 class ApiKakaoLocalKeywordRepository
