@@ -3,6 +3,7 @@ import 'package:ddd_practice_app/_constant/widget_const/theme_and_size.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_inappwebview_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_webview_page.dart';
 import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/flutter_webview_plugin_page.dart';
+import 'package:ddd_practice_app/presentation/widget_practice/webview_practice/widgets/jty_ceoplus_webview_test.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -48,6 +49,10 @@ class WebviewPracticeMainPage extends StatelessWidget {
                   }
                 },
                 title: 'url_launcher'),
+            _textButtonForm(
+                onTap: () => pushNewScreen(context,
+                    screen: const JtyCeoplusWebviewTest()),
+                title: 'CeoPlus-JTY'),
           ],
         ),
       ),

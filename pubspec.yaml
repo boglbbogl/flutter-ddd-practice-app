@@ -58,7 +58,7 @@ dependencies:
   shared_preferences: ^2.0.5
   syncfusion_flutter_datepicker: ^19.3.46
   url_launcher: ^6.0.10
-  webview_flutter: ^2.0.12
+  webview_flutter: ^2.1.2
   xml2json: ^5.3.1
 
 dev_dependencies:
