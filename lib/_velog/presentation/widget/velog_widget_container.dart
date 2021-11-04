@@ -12,7 +12,7 @@ class _VelogWidgetContainerState extends State<VelogWidgetContainer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Container'),
       ),
       body: Column(

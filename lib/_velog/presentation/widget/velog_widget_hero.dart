@@ -16,7 +16,7 @@ class VelogWidgetHero extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.teal,
               title: const Text('Hero Animation'),
             ),
             body: Padding(

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-class VelogStateDateRangePicker extends StatefulWidget {
-  const VelogStateDateRangePicker({Key? key}) : super(key: key);
+class VelogWidgetDateRangePicker extends StatefulWidget {
+  const VelogWidgetDateRangePicker({Key? key}) : super(key: key);
 
   @override
-  _VelogStateDateRangePickerState createState() =>
-      _VelogStateDateRangePickerState();
+  _VelogWidgetDateRangePickerState createState() =>
+      _VelogWidgetDateRangePickerState();
 }
 
-class _VelogStateDateRangePickerState extends State<VelogStateDateRangePicker> {
+class _VelogWidgetDateRangePickerState
+    extends State<VelogWidgetDateRangePicker> {
   bool isExpandable = false;
   String start = DateTime.now().toString().substring(0, 10);
   String end = DateTime.now().toString().substring(0, 10);
@@ -17,7 +18,7 @@ class _VelogStateDateRangePickerState extends State<VelogStateDateRangePicker> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.teal,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text('Date Range Picker'),

@@ -1,7 +1,7 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_bloc_pattern.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_cubit.dart';
-import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_date_range_picker.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_date_range_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_get_x.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_provider.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
@@ -9,6 +9,7 @@ import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animate
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_column.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_cupertino_time_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_icon.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_hero.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
@@ -162,8 +163,10 @@ class AppWidget extends StatelessWidget {
           '/velogStateCubit': (context) => const VelogStateCubit(),
           '/velogStateProvider': (context) => const VelogStateProvider(),
           '/velogStateGetX': (context) => const VelogStateGetX(),
-          '/velogStateDateRangePicker': (context) =>
-              const VelogStateDateRangePicker(),
+          '/velogWidgetDateRangePicker': (context) =>
+              const VelogWidgetDateRangePicker(),
+          '/velogWidgetCupertinoTimePicker': (context) =>
+              const VelogWidgetCupertinoTimePicker(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

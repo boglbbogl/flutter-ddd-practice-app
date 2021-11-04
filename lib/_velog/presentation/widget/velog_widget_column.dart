@@ -13,7 +13,7 @@ class _VelogWidgetColumnState extends State<VelogWidgetColumn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Column'),
       ),
       floatingActionButton: FloatingActionButton(

@@ -15,7 +15,7 @@ class _VelogWidgetAnimatedSwitcherState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Animated Switcher'),
       ),
       bottomNavigationBar: InkWell(

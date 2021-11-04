@@ -21,6 +21,7 @@ class VelogItem {
     'Provider',
     'Get X',
     'Date Range Picker',
+    'Cupertino Time Picker'
   ];
   List router = [
     '/velogWidgetBasic',
@@ -43,6 +44,7 @@ class VelogItem {
     '/velogStateCubit',
     '/velogStateProvider',
     '/velogStateGetX',
-    '/velogStateDateRangePicker'
+    '/velogWidgetDateRangePicker',
+    '/velogWidgetCupertinoTimePicker',
   ];
 }

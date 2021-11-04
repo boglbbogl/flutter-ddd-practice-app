@@ -13,7 +13,7 @@ class VelogStateProvider extends StatelessWidget {
         builder: (context, value, child) {
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.teal,
               title: const Text('Provider'),
             ),
             body: Column(

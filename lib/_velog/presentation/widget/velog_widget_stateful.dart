@@ -18,7 +18,7 @@ class _VelogWidgetStatefulState extends State<VelogWidgetStateful> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Stateful'),
         actions: [
           InkWell(

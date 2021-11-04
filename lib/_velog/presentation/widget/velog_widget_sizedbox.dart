@@ -12,7 +12,7 @@ class _VelogWidgetSizedBoxState extends State<VelogWidgetSizedBox> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('SizedBox'),
       ),
       body: Column(

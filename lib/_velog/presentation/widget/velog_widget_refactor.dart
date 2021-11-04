@@ -8,7 +8,7 @@ class VelogWidgetRefactor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Refactor'),
       ),
       body: Center(

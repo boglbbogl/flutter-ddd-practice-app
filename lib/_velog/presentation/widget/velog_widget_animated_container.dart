@@ -17,7 +17,7 @@ class _VelogWidgetAnimatedContainerState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Animated Container'),
         actions: [
           InkWell(

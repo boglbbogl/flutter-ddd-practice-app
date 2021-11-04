@@ -7,7 +7,7 @@ class VelogWidgetText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         title: const Text('Text'),
       ),
       body: Column(
