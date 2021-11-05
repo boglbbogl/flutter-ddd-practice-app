@@ -1,6 +1,7 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_bloc_pattern.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_cubit.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_bottom_sheet.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_date_range_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_get_x.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_provider.dart';
@@ -167,6 +168,8 @@ class AppWidget extends StatelessWidget {
               const VelogWidgetDateRangePicker(),
           '/velogWidgetCupertinoTimePicker': (context) =>
               const VelogWidgetCupertinoTimePicker(),
+          '/velogWidgetCustomBottomSheet': (context) =>
+              const VelogWidgetCustomBottomSheet()
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
