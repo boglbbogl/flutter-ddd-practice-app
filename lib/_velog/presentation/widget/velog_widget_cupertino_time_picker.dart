@@ -44,7 +44,7 @@ class _VelogWidgetCupertinoTimePickerState
   String colorString = '';
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(

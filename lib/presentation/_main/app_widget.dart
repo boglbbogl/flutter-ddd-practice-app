@@ -1,8 +1,6 @@
 import 'package:ddd_practice_app/_velog/presentation/velog_main_page.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_bloc_pattern.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_cubit.dart';
-import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_bottom_sheet.dart';
-import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_date_range_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_get_x.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_state_provider.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_animated_container.dart';
@@ -11,7 +9,10 @@ import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_basic.d
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_column.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_container.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_cupertino_time_picker.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_bottom_sheet.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_icon.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_custom_slide_screen.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_date_range_picker.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_hero.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_refactor.dart';
@@ -169,7 +170,9 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetCupertinoTimePicker': (context) =>
               const VelogWidgetCupertinoTimePicker(),
           '/velogWidgetCustomBottomSheet': (context) =>
-              const VelogWidgetCustomBottomSheet()
+              const VelogWidgetCustomBottomSheet(),
+          '/velogWidgetCustomSlideScreen': (context) =>
+              const VelogWidgetCustomSlideScreen(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
