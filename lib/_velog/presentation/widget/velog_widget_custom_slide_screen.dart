@@ -25,56 +25,59 @@ class _VelogWidgetCustomSlideScreenState
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Stack(
-        children: [
-          _backgroundForm(
-              title: 'First Screen',
-              image: 'assets/images/travel/cappadocia_first.jpg',
-              context: context,
-              xPosition: first),
-          _backgroundForm(
-              title: 'Second Screen',
-              image: 'assets/images/travel/cappadocia_second.jpg',
-              context: context,
-              xPosition: second),
-          _backgroundForm(
-              title: 'Third Screen',
-              image: 'assets/images/travel/cappadocia_third.jpg',
-              context: context,
-              xPosition: third),
-          Positioned(
-            bottom: 10,
-            left: 20,
-            right: 20,
-            child: InkWell(
-              onTap: () {
-                setState(() {
-                  if (first == 0) {
-                    first = -size.width;
-                    second = 0;
-                    third = size.width;
-                  } else if (second == 0) {
-                    first = -size.width;
-                    second = -size.width;
-                    third = 0;
-                  } else {
-                    first = 0;
-                    second = size.width;
-                    third = size.width;
-                  }
-                });
-              },
-              child: Container(
-                height: size.height * 0.07,
-                width: size.width * 0.8,
-                color: Colors.white38,
-                child: const Center(
-                  child: Text('Slide'),
+      body: SizedBox(
+        width: size.width,
+        child: Stack(
+          children: [
+            _backgroundForm(
+                title: 'First Screen',
+                image: 'assets/images/travel/cappadocia_first.jpg',
+                context: context,
+                xPosition: first),
+            _backgroundForm(
+                title: 'Second Screen',
+                image: 'assets/images/travel/cappadocia_second.jpg',
+                context: context,
+                xPosition: second),
+            _backgroundForm(
+                title: 'Third Screen',
+                image: 'assets/images/travel/cappadocia_third.jpg',
+                context: context,
+                xPosition: third),
+            Positioned(
+              bottom: 10,
+              left: 20,
+              right: 20,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    if (first == 0) {
+                      first = -size.width;
+                      second = 0;
+                      third = size.width;
+                    } else if (second == 0) {
+                      first = -size.width;
+                      second = -size.width;
+                      third = 0;
+                    } else {
+                      first = 0;
+                      second = size.width;
+                      third = size.width;
+                    }
+                  });
+                },
+                child: Container(
+                  height: size.height * 0.07,
+                  width: size.width,
+                  color: Colors.white38,
+                  child: const Center(
+                    child: Text('Slide'),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -98,9 +101,12 @@ class _VelogWidgetCustomSlideScreenState
             style: const TextStyle(
                 fontSize: 50, fontWeight: FontWeight.bold, color: Colors.white),
           )),
-          Image.asset(
-            image,
-            fit: BoxFit.cover,
+          SizedBox(
+            width: size.width,
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),

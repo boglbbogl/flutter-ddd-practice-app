@@ -23,7 +23,8 @@ class VelogItem {
     'Date Range Picker',
     'Cupertino Time Picker',
     'Custom Bottom Sheet',
-    'Custom Slide Screen'
+    'Custom Slide Screen',
+    'Shimmer'
   ];
   List router = [
     '/velogWidgetBasic',
@@ -49,6 +50,7 @@ class VelogItem {
     '/velogWidgetDateRangePicker',
     '/velogWidgetCupertinoTimePicker',
     '/velogWidgetCustomBottomSheet',
-    '/velogWidgetCustomSlideScreen'
+    '/velogWidgetCustomSlideScreen',
+    '/velogWidgetShimmer'
   ];
 }

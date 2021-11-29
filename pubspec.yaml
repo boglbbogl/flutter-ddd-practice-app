@@ -37,7 +37,6 @@ dependencies:
   flutter_inappwebview: ^5.3.2
   flutter_localizations:
    sdk: flutter
-  flutter_webview_plugin: ^0.4.0
   freezed_annotation: ^0.14.1
   geolocator: ^7.0.3
   get: ^4.1.4
@@ -56,6 +55,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   rxdart: ^0.26.0
   shared_preferences: ^2.0.5
+  shimmer: ^2.0.0
   syncfusion_flutter_datepicker: ^19.3.46
   url_launcher: ^6.0.10
   webview_flutter: ^2.1.2
