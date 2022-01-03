@@ -24,7 +24,8 @@ class VelogItem {
     'Cupertino Time Picker',
     'Custom Bottom Sheet',
     'Custom Slide Screen',
-    'Shimmer'
+    'Shimmer',
+    'Scroll To Index'
   ];
   List router = [
     '/velogWidgetBasic',
@@ -51,6 +52,7 @@ class VelogItem {
     '/velogWidgetCupertinoTimePicker',
     '/velogWidgetCustomBottomSheet',
     '/velogWidgetCustomSlideScreen',
-    '/velogWidgetShimmer'
+    '/velogWidgetShimmer',
+    '/velogWidgetScrollToIndex'
   ];
 }

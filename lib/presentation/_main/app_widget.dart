@@ -17,6 +17,7 @@ import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_hero.da
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_listview.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_refactor.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_row.dart';
+import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_scroll_to_index.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_shimmer.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sizedbox.dart';
 import 'package:ddd_practice_app/_velog/presentation/widget/velog_widget_sliver_appbar.dart';
@@ -175,6 +176,7 @@ class AppWidget extends StatelessWidget {
           '/velogWidgetCustomSlideScreen': (context) =>
               const VelogWidgetCustomSlideScreen(),
           '/velogWidgetShimmer': (context) => const VelogWidgetShimmer(),
+          '/velogWidgetScrollToIndex': (context) => VelogWidgetScrollToIndex()
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
