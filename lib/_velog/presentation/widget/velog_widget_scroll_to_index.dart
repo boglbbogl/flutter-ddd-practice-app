@@ -48,11 +48,11 @@ class _VelogWidgetScrollToIndex extends State<VelogWidgetScrollToIndex> {
           }),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _scrollToIndex,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _scrollToIndex,
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.add),
+      // ),
     );
   }
 
