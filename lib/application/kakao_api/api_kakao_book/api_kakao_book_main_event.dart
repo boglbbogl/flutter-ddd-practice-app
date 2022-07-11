@@ -6,4 +6,7 @@ class ApiKakaoBookMainEvent with _$ApiKakaoBookMainEvent {
   const factory ApiKakaoBookMainEvent.searched({
     required String queryText,
   }) = _Searched;
+  const factory ApiKakaoBookMainEvent.deleted({
+    required String bookName,
+  }) = _Deleted;
 }

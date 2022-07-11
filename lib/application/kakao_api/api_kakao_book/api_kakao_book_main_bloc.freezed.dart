@@ -25,6 +25,12 @@ class _$ApiKakaoBookMainEventTearOff {
       queryText: queryText,
     );
   }
+
+  _Deleted deleted({required String bookName}) {
+    return _Deleted(
+      bookName: bookName,
+    );
+  }
 }
 
 /// @nodoc
@@ -36,12 +42,14 @@ mixin _$ApiKakaoBookMainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String queryText) searched,
+    required TResult Function(String bookName) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String queryText)? searched,
+    TResult Function(String bookName)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,12 +57,14 @@ mixin _$ApiKakaoBookMainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
+    required TResult Function(_Deleted value) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +127,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String queryText) searched,
+    required TResult Function(String bookName) deleted,
   }) {
     return started();
   }
@@ -126,6 +137,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String queryText)? searched,
+    TResult Function(String bookName)? deleted,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -139,6 +151,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return started(this);
   }
@@ -148,6 +161,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -227,6 +241,7 @@ class _$_Searched implements _Searched {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String queryText) searched,
+    required TResult Function(String bookName) deleted,
   }) {
     return searched(queryText);
   }
@@ -236,6 +251,7 @@ class _$_Searched implements _Searched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String queryText)? searched,
+    TResult Function(String bookName)? deleted,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -249,6 +265,7 @@ class _$_Searched implements _Searched {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Searched value) searched,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return searched(this);
   }
@@ -258,6 +275,7 @@ class _$_Searched implements _Searched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Searched value)? searched,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -277,14 +295,136 @@ abstract class _Searched implements ApiKakaoBookMainEvent {
 }
 
 /// @nodoc
+abstract class _$DeletedCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+      __$DeletedCopyWithImpl<$Res>;
+  $Res call({String bookName});
+}
+
+/// @nodoc
+class __$DeletedCopyWithImpl<$Res>
+    extends _$ApiKakaoBookMainEventCopyWithImpl<$Res>
+    implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
+      : super(_value, (v) => _then(v as _Deleted));
+
+  @override
+  _Deleted get _value => super._value as _Deleted;
+
+  @override
+  $Res call({
+    Object? bookName = freezed,
+  }) {
+    return _then(_Deleted(
+      bookName: bookName == freezed
+          ? _value.bookName
+          : bookName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Deleted implements _Deleted {
+  const _$_Deleted({required this.bookName});
+
+  @override
+  final String bookName;
+
+  @override
+  String toString() {
+    return 'ApiKakaoBookMainEvent.deleted(bookName: $bookName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Deleted &&
+            (identical(other.bookName, bookName) ||
+                const DeepCollectionEquality()
+                    .equals(other.bookName, bookName)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(bookName);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String queryText) searched,
+    required TResult Function(String bookName) deleted,
+  }) {
+    return deleted(bookName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String queryText)? searched,
+    TResult Function(String bookName)? deleted,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(bookName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Searched value) searched,
+    required TResult Function(_Deleted value) deleted,
+  }) {
+    return deleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Searched value)? searched,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Deleted implements ApiKakaoBookMainEvent {
+  const factory _Deleted({required String bookName}) = _$_Deleted;
+
+  String get bookName => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$ApiKakaoBookMainStateTearOff {
   const _$ApiKakaoBookMainStateTearOff();
 
   _ApiKakaoBookMainState call(
-      {required bool isLoading, required ApiKakaoBook? apiKakaoBook}) {
+      {required bool isLoading,
+      required ApiKakaoBook? apiKakaoBook,
+      required bool isDeleted}) {
     return _ApiKakaoBookMainState(
       isLoading: isLoading,
       apiKakaoBook: apiKakaoBook,
+      isDeleted: isDeleted,
     );
   }
 }
@@ -296,6 +436,7 @@ const $ApiKakaoBookMainState = _$ApiKakaoBookMainStateTearOff();
 mixin _$ApiKakaoBookMainState {
   bool get isLoading => throw _privateConstructorUsedError;
   ApiKakaoBook? get apiKakaoBook => throw _privateConstructorUsedError;
+  bool get isDeleted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiKakaoBookMainStateCopyWith<ApiKakaoBookMainState> get copyWith =>
@@ -307,7 +448,7 @@ abstract class $ApiKakaoBookMainStateCopyWith<$Res> {
   factory $ApiKakaoBookMainStateCopyWith(ApiKakaoBookMainState value,
           $Res Function(ApiKakaoBookMainState) then) =
       _$ApiKakaoBookMainStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, ApiKakaoBook? apiKakaoBook});
+  $Res call({bool isLoading, ApiKakaoBook? apiKakaoBook, bool isDeleted});
 
   $ApiKakaoBookCopyWith<$Res>? get apiKakaoBook;
 }
@@ -325,6 +466,7 @@ class _$ApiKakaoBookMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? apiKakaoBook = freezed,
+    Object? isDeleted = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -335,6 +477,10 @@ class _$ApiKakaoBookMainStateCopyWithImpl<$Res>
           ? _value.apiKakaoBook
           : apiKakaoBook // ignore: cast_nullable_to_non_nullable
               as ApiKakaoBook?,
+      isDeleted: isDeleted == freezed
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -357,7 +503,7 @@ abstract class _$ApiKakaoBookMainStateCopyWith<$Res>
           $Res Function(_ApiKakaoBookMainState) then) =
       __$ApiKakaoBookMainStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, ApiKakaoBook? apiKakaoBook});
+  $Res call({bool isLoading, ApiKakaoBook? apiKakaoBook, bool isDeleted});
 
   @override
   $ApiKakaoBookCopyWith<$Res>? get apiKakaoBook;
@@ -378,6 +524,7 @@ class __$ApiKakaoBookMainStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? apiKakaoBook = freezed,
+    Object? isDeleted = freezed,
   }) {
     return _then(_ApiKakaoBookMainState(
       isLoading: isLoading == freezed
@@ -388,6 +535,10 @@ class __$ApiKakaoBookMainStateCopyWithImpl<$Res>
           ? _value.apiKakaoBook
           : apiKakaoBook // ignore: cast_nullable_to_non_nullable
               as ApiKakaoBook?,
+      isDeleted: isDeleted == freezed
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -396,16 +547,20 @@ class __$ApiKakaoBookMainStateCopyWithImpl<$Res>
 
 class _$_ApiKakaoBookMainState implements _ApiKakaoBookMainState {
   _$_ApiKakaoBookMainState(
-      {required this.isLoading, required this.apiKakaoBook});
+      {required this.isLoading,
+      required this.apiKakaoBook,
+      required this.isDeleted});
 
   @override
   final bool isLoading;
   @override
   final ApiKakaoBook? apiKakaoBook;
+  @override
+  final bool isDeleted;
 
   @override
   String toString() {
-    return 'ApiKakaoBookMainState(isLoading: $isLoading, apiKakaoBook: $apiKakaoBook)';
+    return 'ApiKakaoBookMainState(isLoading: $isLoading, apiKakaoBook: $apiKakaoBook, isDeleted: $isDeleted)';
   }
 
   @override
@@ -417,14 +572,18 @@ class _$_ApiKakaoBookMainState implements _ApiKakaoBookMainState {
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.apiKakaoBook, apiKakaoBook) ||
                 const DeepCollectionEquality()
-                    .equals(other.apiKakaoBook, apiKakaoBook)));
+                    .equals(other.apiKakaoBook, apiKakaoBook)) &&
+            (identical(other.isDeleted, isDeleted) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDeleted, isDeleted)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(apiKakaoBook);
+      const DeepCollectionEquality().hash(apiKakaoBook) ^
+      const DeepCollectionEquality().hash(isDeleted);
 
   @JsonKey(ignore: true)
   @override
@@ -436,12 +595,15 @@ class _$_ApiKakaoBookMainState implements _ApiKakaoBookMainState {
 abstract class _ApiKakaoBookMainState implements ApiKakaoBookMainState {
   factory _ApiKakaoBookMainState(
       {required bool isLoading,
-      required ApiKakaoBook? apiKakaoBook}) = _$_ApiKakaoBookMainState;
+      required ApiKakaoBook? apiKakaoBook,
+      required bool isDeleted}) = _$_ApiKakaoBookMainState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
   ApiKakaoBook? get apiKakaoBook => throw _privateConstructorUsedError;
+  @override
+  bool get isDeleted => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiKakaoBookMainStateCopyWith<_ApiKakaoBookMainState> get copyWith =>

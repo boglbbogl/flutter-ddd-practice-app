@@ -35,6 +35,10 @@ class ApiKakaoBookMainBloc
         isLoading: false,
         apiKakaoBook: result,
       );
+    }, deleted: (e) async* {
+      yield state.copyWith(
+        isDeleted: true,
+      );
     });
   }
 }
